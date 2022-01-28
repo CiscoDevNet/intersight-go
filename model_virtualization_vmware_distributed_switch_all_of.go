@@ -3,7 +3,7 @@ Cisco Intersight
 
 Cisco Intersight is a management platform delivered as a service with embedded analytics for your Cisco and 3rd party IT infrastructure. This platform offers an intelligent level of management that enables IT organizations to analyze, simplify, and automate their environments in more advanced ways than the prior generations of tools. Cisco Intersight provides an integrated and intuitive management experience for resources in the traditional data center as well as at the edge. With flexible deployment options to address complex security needs, getting started with Intersight is quick and easy. Cisco Intersight has deep integration with Cisco UCS and HyperFlex systems allowing for remote deployment, configuration, and ongoing maintenance. The model-based deployment works for a single system in a remote location or hundreds of systems in a data center and enables rapid, standardized configuration and deployment. It also streamlines maintaining those systems whether you are working with small or very large configurations. The Intersight OpenAPI document defines the complete set of properties that are returned in the HTTP response. From that perspective, a client can expect that no additional properties are returned, unless these properties are explicitly defined in the OpenAPI document. However, when a client uses an older version of the Intersight OpenAPI document, the server may send additional properties because the software is more recent than the client. In that case, the client may receive properties that it does not know about. Some generated SDKs perform a strict validation of the HTTP response body against the OpenAPI document.
 
-API version: 1.0.9-4950
+API version: 1.0.9-5208
 Contact: intersight@cisco.com
 */
 
@@ -23,10 +23,13 @@ type VirtualizationVmwareDistributedSwitchAllOf struct {
 	ObjectType string `json:"ObjectType"`
 	// Switch description (user provided), if any.
 	Description *string `json:"Description,omitempty"`
+	DiscoveryProtocol NullableVirtualizationVmwareDiscoveryProtocol `json:"DiscoveryProtocol,omitempty"`
 	// Maximum number of ports allowed on this distributed virtual switch.
 	MaxPort *int64 `json:"MaxPort,omitempty"`
 	// Maximum transmission unit configured on a distributed virtual switch.
 	Mtu *int64 `json:"Mtu,omitempty"`
+	// If network io control is enabled, will set the value as true.
+	NetworkIoControl *bool `json:"NetworkIoControl,omitempty"`
 	NicTeamingAndFailover NullableVirtualizationVmwareTeamingAndFailover `json:"NicTeamingAndFailover,omitempty"`
 	// The total number of hosts attached to the distributed virtual switch.
 	NumHosts *int64 `json:"NumHosts,omitempty"`
@@ -36,6 +39,7 @@ type VirtualizationVmwareDistributedSwitchAllOf struct {
 	NumStandAlonePorts *int64 `json:"NumStandAlonePorts,omitempty"`
 	// Number of uplinks configured in this distributed virtual switch.
 	NumUplinks *int64 `json:"NumUplinks,omitempty"`
+	ResourceAllocationSystemTraffic []VirtualizationVmwareResourceAllocationSystemTrafficTypes `json:"ResourceAllocationSystemTraffic,omitempty"`
 	SwitchCapacity NullableVirtualizationStorageCapacity `json:"SwitchCapacity,omitempty"`
 	// Universally Unique Id of this distributed virtual switch.
 	Uuid *string `json:"Uuid,omitempty"`
@@ -152,6 +156,48 @@ func (o *VirtualizationVmwareDistributedSwitchAllOf) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetDiscoveryProtocol returns the DiscoveryProtocol field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *VirtualizationVmwareDistributedSwitchAllOf) GetDiscoveryProtocol() VirtualizationVmwareDiscoveryProtocol {
+	if o == nil || o.DiscoveryProtocol.Get() == nil {
+		var ret VirtualizationVmwareDiscoveryProtocol
+		return ret
+	}
+	return *o.DiscoveryProtocol.Get()
+}
+
+// GetDiscoveryProtocolOk returns a tuple with the DiscoveryProtocol field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *VirtualizationVmwareDistributedSwitchAllOf) GetDiscoveryProtocolOk() (*VirtualizationVmwareDiscoveryProtocol, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.DiscoveryProtocol.Get(), o.DiscoveryProtocol.IsSet()
+}
+
+// HasDiscoveryProtocol returns a boolean if a field has been set.
+func (o *VirtualizationVmwareDistributedSwitchAllOf) HasDiscoveryProtocol() bool {
+	if o != nil && o.DiscoveryProtocol.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDiscoveryProtocol gets a reference to the given NullableVirtualizationVmwareDiscoveryProtocol and assigns it to the DiscoveryProtocol field.
+func (o *VirtualizationVmwareDistributedSwitchAllOf) SetDiscoveryProtocol(v VirtualizationVmwareDiscoveryProtocol) {
+	o.DiscoveryProtocol.Set(&v)
+}
+// SetDiscoveryProtocolNil sets the value for DiscoveryProtocol to be an explicit nil
+func (o *VirtualizationVmwareDistributedSwitchAllOf) SetDiscoveryProtocolNil() {
+	o.DiscoveryProtocol.Set(nil)
+}
+
+// UnsetDiscoveryProtocol ensures that no value is present for DiscoveryProtocol, not even an explicit nil
+func (o *VirtualizationVmwareDistributedSwitchAllOf) UnsetDiscoveryProtocol() {
+	o.DiscoveryProtocol.Unset()
+}
+
 // GetMaxPort returns the MaxPort field value if set, zero value otherwise.
 func (o *VirtualizationVmwareDistributedSwitchAllOf) GetMaxPort() int64 {
 	if o == nil || o.MaxPort == nil {
@@ -214,6 +260,38 @@ func (o *VirtualizationVmwareDistributedSwitchAllOf) HasMtu() bool {
 // SetMtu gets a reference to the given int64 and assigns it to the Mtu field.
 func (o *VirtualizationVmwareDistributedSwitchAllOf) SetMtu(v int64) {
 	o.Mtu = &v
+}
+
+// GetNetworkIoControl returns the NetworkIoControl field value if set, zero value otherwise.
+func (o *VirtualizationVmwareDistributedSwitchAllOf) GetNetworkIoControl() bool {
+	if o == nil || o.NetworkIoControl == nil {
+		var ret bool
+		return ret
+	}
+	return *o.NetworkIoControl
+}
+
+// GetNetworkIoControlOk returns a tuple with the NetworkIoControl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VirtualizationVmwareDistributedSwitchAllOf) GetNetworkIoControlOk() (*bool, bool) {
+	if o == nil || o.NetworkIoControl == nil {
+		return nil, false
+	}
+	return o.NetworkIoControl, true
+}
+
+// HasNetworkIoControl returns a boolean if a field has been set.
+func (o *VirtualizationVmwareDistributedSwitchAllOf) HasNetworkIoControl() bool {
+	if o != nil && o.NetworkIoControl != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNetworkIoControl gets a reference to the given bool and assigns it to the NetworkIoControl field.
+func (o *VirtualizationVmwareDistributedSwitchAllOf) SetNetworkIoControl(v bool) {
+	o.NetworkIoControl = &v
 }
 
 // GetNicTeamingAndFailover returns the NicTeamingAndFailover field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -384,6 +462,39 @@ func (o *VirtualizationVmwareDistributedSwitchAllOf) HasNumUplinks() bool {
 // SetNumUplinks gets a reference to the given int64 and assigns it to the NumUplinks field.
 func (o *VirtualizationVmwareDistributedSwitchAllOf) SetNumUplinks(v int64) {
 	o.NumUplinks = &v
+}
+
+// GetResourceAllocationSystemTraffic returns the ResourceAllocationSystemTraffic field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *VirtualizationVmwareDistributedSwitchAllOf) GetResourceAllocationSystemTraffic() []VirtualizationVmwareResourceAllocationSystemTrafficTypes {
+	if o == nil  {
+		var ret []VirtualizationVmwareResourceAllocationSystemTrafficTypes
+		return ret
+	}
+	return o.ResourceAllocationSystemTraffic
+}
+
+// GetResourceAllocationSystemTrafficOk returns a tuple with the ResourceAllocationSystemTraffic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *VirtualizationVmwareDistributedSwitchAllOf) GetResourceAllocationSystemTrafficOk() (*[]VirtualizationVmwareResourceAllocationSystemTrafficTypes, bool) {
+	if o == nil || o.ResourceAllocationSystemTraffic == nil {
+		return nil, false
+	}
+	return &o.ResourceAllocationSystemTraffic, true
+}
+
+// HasResourceAllocationSystemTraffic returns a boolean if a field has been set.
+func (o *VirtualizationVmwareDistributedSwitchAllOf) HasResourceAllocationSystemTraffic() bool {
+	if o != nil && o.ResourceAllocationSystemTraffic != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetResourceAllocationSystemTraffic gets a reference to the given []VirtualizationVmwareResourceAllocationSystemTrafficTypes and assigns it to the ResourceAllocationSystemTraffic field.
+func (o *VirtualizationVmwareDistributedSwitchAllOf) SetResourceAllocationSystemTraffic(v []VirtualizationVmwareResourceAllocationSystemTrafficTypes) {
+	o.ResourceAllocationSystemTraffic = v
 }
 
 // GetSwitchCapacity returns the SwitchCapacity field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -568,11 +679,17 @@ func (o VirtualizationVmwareDistributedSwitchAllOf) MarshalJSON() ([]byte, error
 	if o.Description != nil {
 		toSerialize["Description"] = o.Description
 	}
+	if o.DiscoveryProtocol.IsSet() {
+		toSerialize["DiscoveryProtocol"] = o.DiscoveryProtocol.Get()
+	}
 	if o.MaxPort != nil {
 		toSerialize["MaxPort"] = o.MaxPort
 	}
 	if o.Mtu != nil {
 		toSerialize["Mtu"] = o.Mtu
+	}
+	if o.NetworkIoControl != nil {
+		toSerialize["NetworkIoControl"] = o.NetworkIoControl
 	}
 	if o.NicTeamingAndFailover.IsSet() {
 		toSerialize["NicTeamingAndFailover"] = o.NicTeamingAndFailover.Get()
@@ -588,6 +705,9 @@ func (o VirtualizationVmwareDistributedSwitchAllOf) MarshalJSON() ([]byte, error
 	}
 	if o.NumUplinks != nil {
 		toSerialize["NumUplinks"] = o.NumUplinks
+	}
+	if o.ResourceAllocationSystemTraffic != nil {
+		toSerialize["ResourceAllocationSystemTraffic"] = o.ResourceAllocationSystemTraffic
 	}
 	if o.SwitchCapacity.IsSet() {
 		toSerialize["SwitchCapacity"] = o.SwitchCapacity.Get()
@@ -625,13 +745,16 @@ func (o *VirtualizationVmwareDistributedSwitchAllOf) UnmarshalJSON(bytes []byte)
 		delete(additionalProperties, "ClassId")
 		delete(additionalProperties, "ObjectType")
 		delete(additionalProperties, "Description")
+		delete(additionalProperties, "DiscoveryProtocol")
 		delete(additionalProperties, "MaxPort")
 		delete(additionalProperties, "Mtu")
+		delete(additionalProperties, "NetworkIoControl")
 		delete(additionalProperties, "NicTeamingAndFailover")
 		delete(additionalProperties, "NumHosts")
 		delete(additionalProperties, "NumNetworks")
 		delete(additionalProperties, "NumStandAlonePorts")
 		delete(additionalProperties, "NumUplinks")
+		delete(additionalProperties, "ResourceAllocationSystemTraffic")
 		delete(additionalProperties, "SwitchCapacity")
 		delete(additionalProperties, "Uuid")
 		delete(additionalProperties, "Version")
