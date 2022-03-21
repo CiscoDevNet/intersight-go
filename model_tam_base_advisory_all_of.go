@@ -24,10 +24,10 @@ type TamBaseAdvisoryAllOf struct {
 	// Brief description of the advisory details.
 	Description *string `json:"Description,omitempty"`
 	// A user defined name for the Intersight Advisory.
-	Name *string `json:"Name,omitempty"`
+	Name     *string             `json:"Name,omitempty"`
 	Severity NullableTamSeverity `json:"Severity,omitempty"`
 	// Current state of the advisory. * `ready` - Advisory has been evaluated. The affected devices would be analyzed and corresponding advisory instances would be created. * `evaluating` - Advisory is currently under evaluation. The affected devices would be analyzed but no advisory instances wouldbe created. The results of the analysis would be made available to Intersight engineering for evaluation and validation.
-	State *string `json:"State,omitempty"`
+	State                *string `json:"State,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *TamBaseAdvisoryAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TamBaseAdvisoryAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *TamBaseAdvisoryAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TamBaseAdvisoryAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -181,7 +181,7 @@ func (o *TamBaseAdvisoryAllOf) GetSeverity() TamSeverity {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TamBaseAdvisoryAllOf) GetSeverityOk() (*TamSeverity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Severity.Get(), o.Severity.IsSet()
@@ -200,6 +200,7 @@ func (o *TamBaseAdvisoryAllOf) HasSeverity() bool {
 func (o *TamBaseAdvisoryAllOf) SetSeverity(v TamSeverity) {
 	o.Severity.Set(&v)
 }
+
 // SetSeverityNil sets the value for Severity to be an explicit nil
 func (o *TamBaseAdvisoryAllOf) SetSeverityNil() {
 	o.Severity.Set(nil)
@@ -327,5 +328,3 @@ func (v *NullableTamBaseAdvisoryAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

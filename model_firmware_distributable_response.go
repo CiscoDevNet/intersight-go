@@ -19,31 +19,30 @@ import (
 // FirmwareDistributableResponse - The response body of a HTTP GET request for the 'firmware.Distributable' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'firmware.Distributable' resources.
 type FirmwareDistributableResponse struct {
 	FirmwareDistributableList *FirmwareDistributableList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform      *MoAggregateTransform
+	MoDocumentCount           *MoDocumentCount
+	MoTagSummary              *MoTagSummary
 }
 
 // FirmwareDistributableListAsFirmwareDistributableResponse is a convenience function that returns FirmwareDistributableList wrapped in FirmwareDistributableResponse
 func FirmwareDistributableListAsFirmwareDistributableResponse(v *FirmwareDistributableList) FirmwareDistributableResponse {
-	return FirmwareDistributableResponse{ FirmwareDistributableList: v}
+	return FirmwareDistributableResponse{FirmwareDistributableList: v}
 }
 
 // MoAggregateTransformAsFirmwareDistributableResponse is a convenience function that returns MoAggregateTransform wrapped in FirmwareDistributableResponse
 func MoAggregateTransformAsFirmwareDistributableResponse(v *MoAggregateTransform) FirmwareDistributableResponse {
-	return FirmwareDistributableResponse{ MoAggregateTransform: v}
+	return FirmwareDistributableResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsFirmwareDistributableResponse is a convenience function that returns MoDocumentCount wrapped in FirmwareDistributableResponse
 func MoDocumentCountAsFirmwareDistributableResponse(v *MoDocumentCount) FirmwareDistributableResponse {
-	return FirmwareDistributableResponse{ MoDocumentCount: v}
+	return FirmwareDistributableResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsFirmwareDistributableResponse is a convenience function that returns MoTagSummary wrapped in FirmwareDistributableResponse
 func MoTagSummaryAsFirmwareDistributableResponse(v *MoTagSummary) FirmwareDistributableResponse {
-	return FirmwareDistributableResponse{ MoTagSummary: v}
+	return FirmwareDistributableResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FirmwareDistributableResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src FirmwareDistributableResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FirmwareDistributableResponse) GetActualInstance() (interface{}) {
+func (obj *FirmwareDistributableResponse) GetActualInstance() interface{} {
 	if obj.FirmwareDistributableList != nil {
 		return obj.FirmwareDistributableList
 	}
@@ -184,5 +183,3 @@ func (v *NullableFirmwareDistributableResponse) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -35,7 +35,7 @@ type CapabilityIoCardManufacturingDef struct {
 	// SKU information for a chassis Iocard module.
 	Sku *string `json:"Sku,omitempty"`
 	// VID information for a chassis Iocard module.
-	Vid *string `json:"Vid,omitempty"`
+	Vid                  *string `json:"Vid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *CapabilityIoCardManufacturingDef) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityIoCardManufacturingDef) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *CapabilityIoCardManufacturingDef) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityIoCardManufacturingDef) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -464,5 +464,3 @@ func (v *NullableCapabilityIoCardManufacturingDef) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

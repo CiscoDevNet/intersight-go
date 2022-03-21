@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // RecoveryBackupSchedule Encapsulates the various backup settings available to the user for scheduling a backup on the endpoint.
@@ -30,7 +30,7 @@ type RecoveryBackupSchedule struct {
 	// The frequency at which the backup schedule must run. * `Daily` - Allows the user to run the backup daily at a given time. * `Periodic` - Allows the user to run the backup after a certain number of hours.
 	FrequencyUnit *string `json:"FrequencyUnit,omitempty"`
 	// The frequency, in hours, at which the backup schedule runs. * `8` - The backup interval is 8 hours. * `4` - The backup interval is 4 hours. * `12` - The backup interval is 12 hours. * `16` - The backup interval is 16 hours. * `20` - The backup interval is 20 hours.
-	Hours *int32 `json:"Hours,omitempty"`
+	Hours                *int32 `json:"Hours,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *RecoveryBackupSchedule) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *RecoveryBackupSchedule) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *RecoveryBackupSchedule) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *RecoveryBackupSchedule) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -350,5 +350,3 @@ func (v *NullableRecoveryBackupSchedule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

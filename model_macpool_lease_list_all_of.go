@@ -20,7 +20,7 @@ type MacpoolLeaseListAllOf struct {
 	// The total number of 'macpool.Lease' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'macpool.Lease' resources matching the request.
-	Results []MacpoolLease `json:"Results,omitempty"`
+	Results              []MacpoolLease `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *MacpoolLeaseListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MacpoolLeaseListAllOf) GetResults() []MacpoolLease {
-	if o == nil  {
+	if o == nil {
 		var ret []MacpoolLease
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableMacpoolLeaseListAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,19 +19,18 @@ import (
 // ForecastDefinitionRelationship - A relationship to the 'forecast.Definition' resource, or the expanded 'forecast.Definition' resource, or the 'null' value.
 type ForecastDefinitionRelationship struct {
 	ForecastDefinition *ForecastDefinition
-	MoMoRef *MoMoRef
+	MoMoRef            *MoMoRef
 }
 
 // ForecastDefinitionAsForecastDefinitionRelationship is a convenience function that returns ForecastDefinition wrapped in ForecastDefinitionRelationship
 func ForecastDefinitionAsForecastDefinitionRelationship(v *ForecastDefinition) ForecastDefinitionRelationship {
-	return ForecastDefinitionRelationship{ ForecastDefinition: v}
+	return ForecastDefinitionRelationship{ForecastDefinition: v}
 }
 
 // MoMoRefAsForecastDefinitionRelationship is a convenience function that returns MoMoRef wrapped in ForecastDefinitionRelationship
 func MoMoRefAsForecastDefinitionRelationship(v *MoMoRef) ForecastDefinitionRelationship {
-	return ForecastDefinitionRelationship{ MoMoRef: v}
+	return ForecastDefinitionRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ForecastDefinitionRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ForecastDefinitionRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ForecastDefinitionRelationship) GetActualInstance() (interface{}) {
+func (obj *ForecastDefinitionRelationship) GetActualInstance() interface{} {
 	if obj.ForecastDefinition != nil {
 		return obj.ForecastDefinition
 	}
@@ -137,5 +136,3 @@ func (v *NullableForecastDefinitionRelationship) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

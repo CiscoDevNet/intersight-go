@@ -18,20 +18,19 @@ import (
 
 // StoragePureControllerRelationship - A relationship to the 'storage.PureController' resource, or the expanded 'storage.PureController' resource, or the 'null' value.
 type StoragePureControllerRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef               *MoMoRef
 	StoragePureController *StoragePureController
 }
 
 // MoMoRefAsStoragePureControllerRelationship is a convenience function that returns MoMoRef wrapped in StoragePureControllerRelationship
 func MoMoRefAsStoragePureControllerRelationship(v *MoMoRef) StoragePureControllerRelationship {
-	return StoragePureControllerRelationship{ MoMoRef: v}
+	return StoragePureControllerRelationship{MoMoRef: v}
 }
 
 // StoragePureControllerAsStoragePureControllerRelationship is a convenience function that returns StoragePureController wrapped in StoragePureControllerRelationship
 func StoragePureControllerAsStoragePureControllerRelationship(v *StoragePureController) StoragePureControllerRelationship {
-	return StoragePureControllerRelationship{ StoragePureController: v}
+	return StoragePureControllerRelationship{StoragePureController: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StoragePureControllerRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StoragePureControllerRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StoragePureControllerRelationship) GetActualInstance() (interface{}) {
+func (obj *StoragePureControllerRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStoragePureControllerRelationship) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

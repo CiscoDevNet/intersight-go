@@ -19,19 +19,18 @@ import (
 // HyperflexVolumeRelationship - A relationship to the 'hyperflex.Volume' resource, or the expanded 'hyperflex.Volume' resource, or the 'null' value.
 type HyperflexVolumeRelationship struct {
 	HyperflexVolume *HyperflexVolume
-	MoMoRef *MoMoRef
+	MoMoRef         *MoMoRef
 }
 
 // HyperflexVolumeAsHyperflexVolumeRelationship is a convenience function that returns HyperflexVolume wrapped in HyperflexVolumeRelationship
 func HyperflexVolumeAsHyperflexVolumeRelationship(v *HyperflexVolume) HyperflexVolumeRelationship {
-	return HyperflexVolumeRelationship{ HyperflexVolume: v}
+	return HyperflexVolumeRelationship{HyperflexVolume: v}
 }
 
 // MoMoRefAsHyperflexVolumeRelationship is a convenience function that returns MoMoRef wrapped in HyperflexVolumeRelationship
 func MoMoRefAsHyperflexVolumeRelationship(v *MoMoRef) HyperflexVolumeRelationship {
-	return HyperflexVolumeRelationship{ MoMoRef: v}
+	return HyperflexVolumeRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexVolumeRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexVolumeRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexVolumeRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexVolumeRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexVolume != nil {
 		return obj.HyperflexVolume
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexVolumeRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

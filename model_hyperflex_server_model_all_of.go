@@ -20,9 +20,9 @@ type HyperflexServerModelAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	ServerModelEntries []HyperflexServerModelEntry `json:"ServerModelEntries,omitempty"`
-	AppCatalog *HyperflexAppCatalogRelationship `json:"AppCatalog,omitempty"`
+	ObjectType           string                           `json:"ObjectType"`
+	ServerModelEntries   []HyperflexServerModelEntry      `json:"ServerModelEntries,omitempty"`
+	AppCatalog           *HyperflexAppCatalogRelationship `json:"AppCatalog,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,7 +64,7 @@ func (o *HyperflexServerModelAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexServerModelAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -88,7 +88,7 @@ func (o *HyperflexServerModelAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexServerModelAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -101,7 +101,7 @@ func (o *HyperflexServerModelAllOf) SetObjectType(v string) {
 
 // GetServerModelEntries returns the ServerModelEntries field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexServerModelAllOf) GetServerModelEntries() []HyperflexServerModelEntry {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexServerModelEntry
 		return ret
 	}
@@ -241,5 +241,3 @@ func (v *NullableHyperflexServerModelAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

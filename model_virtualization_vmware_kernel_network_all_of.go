@@ -22,8 +22,8 @@ type VirtualizationVmwareKernelNetworkAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Indicates that fault tolerance logging is enabled on this kernel network.
-	FaultToleranceLogging *bool `json:"FaultToleranceLogging,omitempty"`
-	IpAddress []string `json:"IpAddress,omitempty"`
+	FaultToleranceLogging *bool    `json:"FaultToleranceLogging,omitempty"`
+	IpAddress             []string `json:"IpAddress,omitempty"`
 	// Standard MAC address assigned to this kernel network.
 	MacAddress *string `json:"MacAddress,omitempty"`
 	// Indicates that management traffic is enabled on this kernel network.
@@ -43,11 +43,11 @@ type VirtualizationVmwareKernelNetworkAllOf struct {
 	// Indicates that vsphere replication is enabled on this kernel network.
 	VsphereReplication *bool `json:"VsphereReplication,omitempty"`
 	// Indicates that vsphere replication nfc is enabled on this kernel network.
-	VsphereReplicationNfc *bool `json:"VsphereReplicationNfc,omitempty"`
-	DistributedNetwork *VirtualizationVmwareDistributedNetworkRelationship `json:"DistributedNetwork,omitempty"`
-	Host *VirtualizationVmwareHostRelationship `json:"Host,omitempty"`
-	Network *VirtualizationVmwareNetworkRelationship `json:"Network,omitempty"`
-	AdditionalProperties map[string]interface{}
+	VsphereReplicationNfc *bool                                               `json:"VsphereReplicationNfc,omitempty"`
+	DistributedNetwork    *VirtualizationVmwareDistributedNetworkRelationship `json:"DistributedNetwork,omitempty"`
+	Host                  *VirtualizationVmwareHostRelationship               `json:"Host,omitempty"`
+	Network               *VirtualizationVmwareNetworkRelationship            `json:"Network,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _VirtualizationVmwareKernelNetworkAllOf VirtualizationVmwareKernelNetworkAllOf
@@ -88,7 +88,7 @@ func (o *VirtualizationVmwareKernelNetworkAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareKernelNetworkAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *VirtualizationVmwareKernelNetworkAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareKernelNetworkAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -157,7 +157,7 @@ func (o *VirtualizationVmwareKernelNetworkAllOf) SetFaultToleranceLogging(v bool
 
 // GetIpAddress returns the IpAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareKernelNetworkAllOf) GetIpAddress() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -733,5 +733,3 @@ func (v *NullableVirtualizationVmwareKernelNetworkAllOf) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

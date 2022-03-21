@@ -38,7 +38,7 @@ type WorkflowActionWorkflowDefinition struct {
 	Version *int64 `json:"Version,omitempty"`
 	// The qualified name of workflow that should be executed.
 	WorkflowDefinitionName *string `json:"WorkflowDefinitionName,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties   map[string]interface{}
 }
 
 type _WorkflowActionWorkflowDefinition WorkflowActionWorkflowDefinition
@@ -79,7 +79,7 @@ func (o *WorkflowActionWorkflowDefinition) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowActionWorkflowDefinition) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *WorkflowActionWorkflowDefinition) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowActionWorkflowDefinition) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -180,7 +180,7 @@ func (o *WorkflowActionWorkflowDefinition) SetDescription(v string) {
 
 // GetInputParameters returns the InputParameters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowActionWorkflowDefinition) GetInputParameters() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -506,5 +506,3 @@ func (v *NullableWorkflowActionWorkflowDefinition) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

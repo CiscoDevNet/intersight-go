@@ -39,8 +39,8 @@ type ConnectorHttpRequest struct {
 	// Method specifies the HTTP method (GET, POST, PUT, etc.). For client requests an empty string means GET.
 	Method *string `json:"Method,omitempty"`
 	// The timeout for the HTTP request to complete, from connection establishment to response body read complete. If not set a default timeout of five minutes is used.
-	Timeout *int64 `json:"Timeout,omitempty"`
-	Url NullableConnectorUrl `json:"Url,omitempty"`
+	Timeout              *int64               `json:"Timeout,omitempty"`
+	Url                  NullableConnectorUrl `json:"Url,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *ConnectorHttpRequest) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorHttpRequest) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *ConnectorHttpRequest) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorHttpRequest) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -247,7 +247,7 @@ func (o *ConnectorHttpRequest) SetEndpointMoid(v string) {
 
 // GetHeader returns the Header field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ConnectorHttpRequest) GetHeader() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -387,7 +387,7 @@ func (o *ConnectorHttpRequest) GetUrl() ConnectorUrl {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ConnectorHttpRequest) GetUrlOk() (*ConnectorUrl, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Url.Get(), o.Url.IsSet()
@@ -406,6 +406,7 @@ func (o *ConnectorHttpRequest) HasUrl() bool {
 func (o *ConnectorHttpRequest) SetUrl(v ConnectorUrl) {
 	o.Url.Set(&v)
 }
+
 // SetUrlNil sets the value for Url to be an explicit nil
 func (o *ConnectorHttpRequest) SetUrlNil() {
 	o.Url.Set(nil)
@@ -488,8 +489,8 @@ func (o *ConnectorHttpRequest) UnmarshalJSON(bytes []byte) (err error) {
 		// Method specifies the HTTP method (GET, POST, PUT, etc.). For client requests an empty string means GET.
 		Method *string `json:"Method,omitempty"`
 		// The timeout for the HTTP request to complete, from connection establishment to response body read complete. If not set a default timeout of five minutes is used.
-		Timeout *int64 `json:"Timeout,omitempty"`
-		Url NullableConnectorUrl `json:"Url,omitempty"`
+		Timeout *int64               `json:"Timeout,omitempty"`
+		Url     NullableConnectorUrl `json:"Url,omitempty"`
 	}
 
 	varConnectorHttpRequestWithoutEmbeddedStruct := ConnectorHttpRequestWithoutEmbeddedStruct{}
@@ -596,5 +597,3 @@ func (v *NullableConnectorHttpRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

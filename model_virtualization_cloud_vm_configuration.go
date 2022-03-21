@@ -25,19 +25,19 @@ type VirtualizationCloudVmConfiguration struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ObjectType string `json:"ObjectType"`
 	// Availability zone for the VM.
-	AvailabilityZoneId *string `json:"AvailabilityZoneId,omitempty"`
-	Compute NullableVirtualizationCloudVmComputeConfiguration `json:"Compute,omitempty"`
+	AvailabilityZoneId *string                                           `json:"AvailabilityZoneId,omitempty"`
+	Compute            NullableVirtualizationCloudVmComputeConfiguration `json:"Compute,omitempty"`
 	// Virtual machine image used by this VM.
 	ImageId *string `json:"ImageId,omitempty"`
 	// Keypair for accessing the VM.
-	KeyPairName *string `json:"KeyPairName,omitempty"`
-	Network NullableVirtualizationCloudVmNetworkConfiguration `json:"Network,omitempty"`
+	KeyPairName *string                                           `json:"KeyPairName,omitempty"`
+	Network     NullableVirtualizationCloudVmNetworkConfiguration `json:"Network,omitempty"`
 	// Region where the VM instance is created.
-	RegionId *string `json:"RegionId,omitempty"`
-	SecurityGroups []string `json:"SecurityGroups,omitempty"`
-	Storage NullableVirtualizationCloudVmStorageConfiguration `json:"Storage,omitempty"`
+	RegionId       *string                                           `json:"RegionId,omitempty"`
+	SecurityGroups []string                                          `json:"SecurityGroups,omitempty"`
+	Storage        NullableVirtualizationCloudVmStorageConfiguration `json:"Storage,omitempty"`
 	// Unique Identifier of the cloud VM.
-	VmId *string `json:"VmId,omitempty"`
+	VmId                 *string `json:"VmId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *VirtualizationCloudVmConfiguration) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationCloudVmConfiguration) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *VirtualizationCloudVmConfiguration) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationCloudVmConfiguration) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -159,7 +159,7 @@ func (o *VirtualizationCloudVmConfiguration) GetCompute() VirtualizationCloudVmC
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationCloudVmConfiguration) GetComputeOk() (*VirtualizationCloudVmComputeConfiguration, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Compute.Get(), o.Compute.IsSet()
@@ -178,6 +178,7 @@ func (o *VirtualizationCloudVmConfiguration) HasCompute() bool {
 func (o *VirtualizationCloudVmConfiguration) SetCompute(v VirtualizationCloudVmComputeConfiguration) {
 	o.Compute.Set(&v)
 }
+
 // SetComputeNil sets the value for Compute to be an explicit nil
 func (o *VirtualizationCloudVmConfiguration) SetComputeNil() {
 	o.Compute.Set(nil)
@@ -265,7 +266,7 @@ func (o *VirtualizationCloudVmConfiguration) GetNetwork() VirtualizationCloudVmN
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationCloudVmConfiguration) GetNetworkOk() (*VirtualizationCloudVmNetworkConfiguration, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Network.Get(), o.Network.IsSet()
@@ -284,6 +285,7 @@ func (o *VirtualizationCloudVmConfiguration) HasNetwork() bool {
 func (o *VirtualizationCloudVmConfiguration) SetNetwork(v VirtualizationCloudVmNetworkConfiguration) {
 	o.Network.Set(&v)
 }
+
 // SetNetworkNil sets the value for Network to be an explicit nil
 func (o *VirtualizationCloudVmConfiguration) SetNetworkNil() {
 	o.Network.Set(nil)
@@ -328,7 +330,7 @@ func (o *VirtualizationCloudVmConfiguration) SetRegionId(v string) {
 
 // GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationCloudVmConfiguration) GetSecurityGroups() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -372,7 +374,7 @@ func (o *VirtualizationCloudVmConfiguration) GetStorage() VirtualizationCloudVmS
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationCloudVmConfiguration) GetStorageOk() (*VirtualizationCloudVmStorageConfiguration, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Storage.Get(), o.Storage.IsSet()
@@ -391,6 +393,7 @@ func (o *VirtualizationCloudVmConfiguration) HasStorage() bool {
 func (o *VirtualizationCloudVmConfiguration) SetStorage(v VirtualizationCloudVmStorageConfiguration) {
 	o.Storage.Set(&v)
 }
+
 // SetStorageNil sets the value for Storage to be an explicit nil
 func (o *VirtualizationCloudVmConfiguration) SetStorageNil() {
 	o.Storage.Set(nil)
@@ -491,17 +494,17 @@ func (o *VirtualizationCloudVmConfiguration) UnmarshalJSON(bytes []byte) (err er
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 		ObjectType string `json:"ObjectType"`
 		// Availability zone for the VM.
-		AvailabilityZoneId *string `json:"AvailabilityZoneId,omitempty"`
-		Compute NullableVirtualizationCloudVmComputeConfiguration `json:"Compute,omitempty"`
+		AvailabilityZoneId *string                                           `json:"AvailabilityZoneId,omitempty"`
+		Compute            NullableVirtualizationCloudVmComputeConfiguration `json:"Compute,omitempty"`
 		// Virtual machine image used by this VM.
 		ImageId *string `json:"ImageId,omitempty"`
 		// Keypair for accessing the VM.
-		KeyPairName *string `json:"KeyPairName,omitempty"`
-		Network NullableVirtualizationCloudVmNetworkConfiguration `json:"Network,omitempty"`
+		KeyPairName *string                                           `json:"KeyPairName,omitempty"`
+		Network     NullableVirtualizationCloudVmNetworkConfiguration `json:"Network,omitempty"`
 		// Region where the VM instance is created.
-		RegionId *string `json:"RegionId,omitempty"`
-		SecurityGroups []string `json:"SecurityGroups,omitempty"`
-		Storage NullableVirtualizationCloudVmStorageConfiguration `json:"Storage,omitempty"`
+		RegionId       *string                                           `json:"RegionId,omitempty"`
+		SecurityGroups []string                                          `json:"SecurityGroups,omitempty"`
+		Storage        NullableVirtualizationCloudVmStorageConfiguration `json:"Storage,omitempty"`
 		// Unique Identifier of the cloud VM.
 		VmId *string `json:"VmId,omitempty"`
 	}
@@ -610,5 +613,3 @@ func (v *NullableVirtualizationCloudVmConfiguration) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

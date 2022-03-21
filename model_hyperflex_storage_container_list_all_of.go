@@ -20,7 +20,7 @@ type HyperflexStorageContainerListAllOf struct {
 	// The total number of 'hyperflex.StorageContainer' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'hyperflex.StorageContainer' resources matching the request.
-	Results []HyperflexStorageContainer `json:"Results,omitempty"`
+	Results              []HyperflexStorageContainer `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *HyperflexStorageContainerListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexStorageContainerListAllOf) GetResults() []HyperflexStorageContainer {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexStorageContainer
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableHyperflexStorageContainerListAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

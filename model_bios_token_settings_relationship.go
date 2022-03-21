@@ -19,19 +19,18 @@ import (
 // BiosTokenSettingsRelationship - A relationship to the 'bios.TokenSettings' resource, or the expanded 'bios.TokenSettings' resource, or the 'null' value.
 type BiosTokenSettingsRelationship struct {
 	BiosTokenSettings *BiosTokenSettings
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 }
 
 // BiosTokenSettingsAsBiosTokenSettingsRelationship is a convenience function that returns BiosTokenSettings wrapped in BiosTokenSettingsRelationship
 func BiosTokenSettingsAsBiosTokenSettingsRelationship(v *BiosTokenSettings) BiosTokenSettingsRelationship {
-	return BiosTokenSettingsRelationship{ BiosTokenSettings: v}
+	return BiosTokenSettingsRelationship{BiosTokenSettings: v}
 }
 
 // MoMoRefAsBiosTokenSettingsRelationship is a convenience function that returns MoMoRef wrapped in BiosTokenSettingsRelationship
 func MoMoRefAsBiosTokenSettingsRelationship(v *MoMoRef) BiosTokenSettingsRelationship {
-	return BiosTokenSettingsRelationship{ MoMoRef: v}
+	return BiosTokenSettingsRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BiosTokenSettingsRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BiosTokenSettingsRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BiosTokenSettingsRelationship) GetActualInstance() (interface{}) {
+func (obj *BiosTokenSettingsRelationship) GetActualInstance() interface{} {
 	if obj.BiosTokenSettings != nil {
 		return obj.BiosTokenSettings
 	}
@@ -137,5 +136,3 @@ func (v *NullableBiosTokenSettingsRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

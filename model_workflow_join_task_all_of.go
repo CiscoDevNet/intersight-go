@@ -20,10 +20,10 @@ type WorkflowJoinTaskAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType  string   `json:"ObjectType"`
 	JoinOnTasks []string `json:"JoinOnTasks,omitempty"`
 	// Name of the next task to run if all fork path specified in the JoinOnTasks list succeeds which is the unique name given to the task instance within the workflow. In a graph model, denotes an edge to another Task Node.
-	OnSuccess *string `json:"OnSuccess,omitempty"`
+	OnSuccess            *string `json:"OnSuccess,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,7 +65,7 @@ func (o *WorkflowJoinTaskAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowJoinTaskAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *WorkflowJoinTaskAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowJoinTaskAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -102,7 +102,7 @@ func (o *WorkflowJoinTaskAllOf) SetObjectType(v string) {
 
 // GetJoinOnTasks returns the JoinOnTasks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowJoinTaskAllOf) GetJoinOnTasks() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -242,5 +242,3 @@ func (v *NullableWorkflowJoinTaskAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

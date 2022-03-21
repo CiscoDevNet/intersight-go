@@ -18,20 +18,19 @@ import (
 
 // StorageNetAppDiskEventRelationship - A relationship to the 'storage.NetAppDiskEvent' resource, or the expanded 'storage.NetAppDiskEvent' resource, or the 'null' value.
 type StorageNetAppDiskEventRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                *MoMoRef
 	StorageNetAppDiskEvent *StorageNetAppDiskEvent
 }
 
 // MoMoRefAsStorageNetAppDiskEventRelationship is a convenience function that returns MoMoRef wrapped in StorageNetAppDiskEventRelationship
 func MoMoRefAsStorageNetAppDiskEventRelationship(v *MoMoRef) StorageNetAppDiskEventRelationship {
-	return StorageNetAppDiskEventRelationship{ MoMoRef: v}
+	return StorageNetAppDiskEventRelationship{MoMoRef: v}
 }
 
 // StorageNetAppDiskEventAsStorageNetAppDiskEventRelationship is a convenience function that returns StorageNetAppDiskEvent wrapped in StorageNetAppDiskEventRelationship
 func StorageNetAppDiskEventAsStorageNetAppDiskEventRelationship(v *StorageNetAppDiskEvent) StorageNetAppDiskEventRelationship {
-	return StorageNetAppDiskEventRelationship{ StorageNetAppDiskEvent: v}
+	return StorageNetAppDiskEventRelationship{StorageNetAppDiskEvent: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageNetAppDiskEventRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageNetAppDiskEventRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageNetAppDiskEventRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageNetAppDiskEventRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageNetAppDiskEventRelationship) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

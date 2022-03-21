@@ -22,9 +22,9 @@ type IamQualifierAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The name of the SAML attribute used to qualify a user to user group. By default this is memberOf attribute in SAML assertion.
-	Name *string `json:"Name,omitempty"`
-	Value []string `json:"Value,omitempty"`
-	Usergroup *IamUserGroupRelationship `json:"Usergroup,omitempty"`
+	Name                 *string                   `json:"Name,omitempty"`
+	Value                []string                  `json:"Value,omitempty"`
+	Usergroup            *IamUserGroupRelationship `json:"Usergroup,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *IamQualifierAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamQualifierAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *IamQualifierAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamQualifierAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -135,7 +135,7 @@ func (o *IamQualifierAllOf) SetName(v string) {
 
 // GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamQualifierAllOf) GetValue() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -279,5 +279,3 @@ func (v *NullableIamQualifierAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

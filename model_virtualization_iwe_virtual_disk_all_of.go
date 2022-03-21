@@ -28,12 +28,12 @@ type VirtualizationIweVirtualDiskAllOf struct {
 	// Source file path associated with virtual machine disk.
 	SourceFilePath *string `json:"SourceFilePath,omitempty"`
 	// Virtual disk used for cloning new disk.
-	SourceVirtualDisk *string `json:"SourceVirtualDisk,omitempty"`
-	Status NullableVirtualizationDiskStatus `json:"Status,omitempty"`
+	SourceVirtualDisk *string                          `json:"SourceVirtualDisk,omitempty"`
+	Status            NullableVirtualizationDiskStatus `json:"Status,omitempty"`
 	// UUID of the virtual disk.
-	Uuid *string `json:"Uuid,omitempty"`
-	Cluster *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
-	VirtualMachine *VirtualizationIweVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
+	Uuid                 *string                                      `json:"Uuid,omitempty"`
+	Cluster              *VirtualizationIweClusterRelationship        `json:"Cluster,omitempty"`
+	VirtualMachine       *VirtualizationIweVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *VirtualizationIweVirtualDiskAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweVirtualDiskAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *VirtualizationIweVirtualDiskAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweVirtualDiskAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -251,7 +251,7 @@ func (o *VirtualizationIweVirtualDiskAllOf) GetStatus() VirtualizationDiskStatus
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationIweVirtualDiskAllOf) GetStatusOk() (*VirtualizationDiskStatus, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Status.Get(), o.Status.IsSet()
@@ -270,6 +270,7 @@ func (o *VirtualizationIweVirtualDiskAllOf) HasStatus() bool {
 func (o *VirtualizationIweVirtualDiskAllOf) SetStatus(v VirtualizationDiskStatus) {
 	o.Status.Set(&v)
 }
+
 // SetStatusNil sets the value for Status to be an explicit nil
 func (o *VirtualizationIweVirtualDiskAllOf) SetStatusNil() {
 	o.Status.Set(nil)
@@ -477,5 +478,3 @@ func (v *NullableVirtualizationIweVirtualDiskAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,7 +29,7 @@ type TerraformCloudResource struct {
 	// Desiredstatus of the resource if applicable on the cloud.
 	DesiredStatus *string `json:"DesiredStatus,omitempty"`
 	// Unique id of the resource from the cloud provider.
-	ResourceId *string `json:"ResourceId,omitempty"`
+	ResourceId           *string `json:"ResourceId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *TerraformCloudResource) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TerraformCloudResource) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *TerraformCloudResource) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TerraformCloudResource) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -341,5 +341,3 @@ func (v *NullableTerraformCloudResource) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

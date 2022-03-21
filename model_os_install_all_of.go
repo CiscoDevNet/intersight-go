@@ -22,13 +22,13 @@ type OsInstallAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The name of the OS install configuration.
-	Name *string `json:"Name,omitempty"`
-	ConfigurationFile *OsConfigurationFileRelationship `json:"ConfigurationFile,omitempty"`
-	Image *SoftwarerepositoryOperatingSystemFileRelationship `json:"Image,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	OsduImage *FirmwareServerConfigurationUtilityDistributableRelationship `json:"OsduImage,omitempty"`
-	Server *ComputePhysicalRelationship `json:"Server,omitempty"`
-	WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
+	Name                 *string                                                      `json:"Name,omitempty"`
+	ConfigurationFile    *OsConfigurationFileRelationship                             `json:"ConfigurationFile,omitempty"`
+	Image                *SoftwarerepositoryOperatingSystemFileRelationship           `json:"Image,omitempty"`
+	Organization         *OrganizationOrganizationRelationship                        `json:"Organization,omitempty"`
+	OsduImage            *FirmwareServerConfigurationUtilityDistributableRelationship `json:"OsduImage,omitempty"`
+	Server               *ComputePhysicalRelationship                                 `json:"Server,omitempty"`
+	WorkflowInfo         *WorkflowWorkflowInfoRelationship                            `json:"WorkflowInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *OsInstallAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OsInstallAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *OsInstallAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OsInstallAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -426,5 +426,3 @@ func (v *NullableOsInstallAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,31 +19,30 @@ import (
 // FirmwareIomDescriptorResponse - The response body of a HTTP GET request for the 'firmware.IomDescriptor' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'firmware.IomDescriptor' resources.
 type FirmwareIomDescriptorResponse struct {
 	FirmwareIomDescriptorList *FirmwareIomDescriptorList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform      *MoAggregateTransform
+	MoDocumentCount           *MoDocumentCount
+	MoTagSummary              *MoTagSummary
 }
 
 // FirmwareIomDescriptorListAsFirmwareIomDescriptorResponse is a convenience function that returns FirmwareIomDescriptorList wrapped in FirmwareIomDescriptorResponse
 func FirmwareIomDescriptorListAsFirmwareIomDescriptorResponse(v *FirmwareIomDescriptorList) FirmwareIomDescriptorResponse {
-	return FirmwareIomDescriptorResponse{ FirmwareIomDescriptorList: v}
+	return FirmwareIomDescriptorResponse{FirmwareIomDescriptorList: v}
 }
 
 // MoAggregateTransformAsFirmwareIomDescriptorResponse is a convenience function that returns MoAggregateTransform wrapped in FirmwareIomDescriptorResponse
 func MoAggregateTransformAsFirmwareIomDescriptorResponse(v *MoAggregateTransform) FirmwareIomDescriptorResponse {
-	return FirmwareIomDescriptorResponse{ MoAggregateTransform: v}
+	return FirmwareIomDescriptorResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsFirmwareIomDescriptorResponse is a convenience function that returns MoDocumentCount wrapped in FirmwareIomDescriptorResponse
 func MoDocumentCountAsFirmwareIomDescriptorResponse(v *MoDocumentCount) FirmwareIomDescriptorResponse {
-	return FirmwareIomDescriptorResponse{ MoDocumentCount: v}
+	return FirmwareIomDescriptorResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsFirmwareIomDescriptorResponse is a convenience function that returns MoTagSummary wrapped in FirmwareIomDescriptorResponse
 func MoTagSummaryAsFirmwareIomDescriptorResponse(v *MoTagSummary) FirmwareIomDescriptorResponse {
-	return FirmwareIomDescriptorResponse{ MoTagSummary: v}
+	return FirmwareIomDescriptorResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FirmwareIomDescriptorResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src FirmwareIomDescriptorResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FirmwareIomDescriptorResponse) GetActualInstance() (interface{}) {
+func (obj *FirmwareIomDescriptorResponse) GetActualInstance() interface{} {
 	if obj.FirmwareIomDescriptorList != nil {
 		return obj.FirmwareIomDescriptorList
 	}
@@ -184,5 +183,3 @@ func (v *NullableFirmwareIomDescriptorResponse) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

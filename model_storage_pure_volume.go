@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // StoragePureVolume A volume entity in PureStorage FlashArray.
@@ -30,10 +30,10 @@ type StoragePureVolume struct {
 	// Serial number of the volume.
 	Serial *string `json:"Serial,omitempty"`
 	// Source from which the volume is created. Applicable only if the volume is cloned from other volume or snapshot.
-	Source *string `json:"Source,omitempty"`
-	Array *StoragePureArrayRelationship `json:"Array,omitempty"`
-	ProtectionGroup *StoragePureProtectionGroupRelationship `json:"ProtectionGroup,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Source               *string                                 `json:"Source,omitempty"`
+	Array                *StoragePureArrayRelationship           `json:"Array,omitempty"`
+	ProtectionGroup      *StoragePureProtectionGroupRelationship `json:"ProtectionGroup,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *StoragePureVolume) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StoragePureVolume) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *StoragePureVolume) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StoragePureVolume) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -355,10 +355,10 @@ func (o *StoragePureVolume) UnmarshalJSON(bytes []byte) (err error) {
 		// Serial number of the volume.
 		Serial *string `json:"Serial,omitempty"`
 		// Source from which the volume is created. Applicable only if the volume is cloned from other volume or snapshot.
-		Source *string `json:"Source,omitempty"`
-		Array *StoragePureArrayRelationship `json:"Array,omitempty"`
-		ProtectionGroup *StoragePureProtectionGroupRelationship `json:"ProtectionGroup,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		Source           *string                                 `json:"Source,omitempty"`
+		Array            *StoragePureArrayRelationship           `json:"Array,omitempty"`
+		ProtectionGroup  *StoragePureProtectionGroupRelationship `json:"ProtectionGroup,omitempty"`
+		RegisteredDevice *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	}
 
 	varStoragePureVolumeWithoutEmbeddedStruct := StoragePureVolumeWithoutEmbeddedStruct{}
@@ -459,5 +459,3 @@ func (v *NullableStoragePureVolume) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

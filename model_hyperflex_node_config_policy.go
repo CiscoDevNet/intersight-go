@@ -23,17 +23,17 @@ type HyperflexNodeConfigPolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	DataIpRange NullableHyperflexIpAddrRange `json:"DataIpRange,omitempty"`
-	HxdpIpRange NullableHyperflexIpAddrRange `json:"HxdpIpRange,omitempty"`
+	ObjectType               string                       `json:"ObjectType"`
+	DataIpRange              NullableHyperflexIpAddrRange `json:"DataIpRange,omitempty"`
+	HxdpIpRange              NullableHyperflexIpAddrRange `json:"HxdpIpRange,omitempty"`
 	HypervisorControlIpRange NullableHyperflexIpAddrRange `json:"HypervisorControlIpRange,omitempty"`
-	MgmtIpRange NullableHyperflexIpAddrRange `json:"MgmtIpRange,omitempty"`
+	MgmtIpRange              NullableHyperflexIpAddrRange `json:"MgmtIpRange,omitempty"`
 	// The node name prefix that is used to automatically generate the default hostname for each server. A dash (-) will be appended to the prefix followed by the node number to form a hostname. This default naming scheme can be manually overridden in the node configuration. The maximum length of a prefix is 60, must only contain alphanumeric characters or dash (-), and must start with an alphanumeric character.
 	// Deprecated
 	NodeNamePrefix *string `json:"NodeNamePrefix,omitempty"`
 	// An array of relationships to hyperflexClusterProfile resources.
-	ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ClusterProfiles      []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *HyperflexNodeConfigPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexNodeConfigPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *HyperflexNodeConfigPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexNodeConfigPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -123,7 +123,7 @@ func (o *HyperflexNodeConfigPolicy) GetDataIpRange() HyperflexIpAddrRange {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexNodeConfigPolicy) GetDataIpRangeOk() (*HyperflexIpAddrRange, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DataIpRange.Get(), o.DataIpRange.IsSet()
@@ -142,6 +142,7 @@ func (o *HyperflexNodeConfigPolicy) HasDataIpRange() bool {
 func (o *HyperflexNodeConfigPolicy) SetDataIpRange(v HyperflexIpAddrRange) {
 	o.DataIpRange.Set(&v)
 }
+
 // SetDataIpRangeNil sets the value for DataIpRange to be an explicit nil
 func (o *HyperflexNodeConfigPolicy) SetDataIpRangeNil() {
 	o.DataIpRange.Set(nil)
@@ -165,7 +166,7 @@ func (o *HyperflexNodeConfigPolicy) GetHxdpIpRange() HyperflexIpAddrRange {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexNodeConfigPolicy) GetHxdpIpRangeOk() (*HyperflexIpAddrRange, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HxdpIpRange.Get(), o.HxdpIpRange.IsSet()
@@ -184,6 +185,7 @@ func (o *HyperflexNodeConfigPolicy) HasHxdpIpRange() bool {
 func (o *HyperflexNodeConfigPolicy) SetHxdpIpRange(v HyperflexIpAddrRange) {
 	o.HxdpIpRange.Set(&v)
 }
+
 // SetHxdpIpRangeNil sets the value for HxdpIpRange to be an explicit nil
 func (o *HyperflexNodeConfigPolicy) SetHxdpIpRangeNil() {
 	o.HxdpIpRange.Set(nil)
@@ -207,7 +209,7 @@ func (o *HyperflexNodeConfigPolicy) GetHypervisorControlIpRange() HyperflexIpAdd
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexNodeConfigPolicy) GetHypervisorControlIpRangeOk() (*HyperflexIpAddrRange, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HypervisorControlIpRange.Get(), o.HypervisorControlIpRange.IsSet()
@@ -226,6 +228,7 @@ func (o *HyperflexNodeConfigPolicy) HasHypervisorControlIpRange() bool {
 func (o *HyperflexNodeConfigPolicy) SetHypervisorControlIpRange(v HyperflexIpAddrRange) {
 	o.HypervisorControlIpRange.Set(&v)
 }
+
 // SetHypervisorControlIpRangeNil sets the value for HypervisorControlIpRange to be an explicit nil
 func (o *HyperflexNodeConfigPolicy) SetHypervisorControlIpRangeNil() {
 	o.HypervisorControlIpRange.Set(nil)
@@ -249,7 +252,7 @@ func (o *HyperflexNodeConfigPolicy) GetMgmtIpRange() HyperflexIpAddrRange {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexNodeConfigPolicy) GetMgmtIpRangeOk() (*HyperflexIpAddrRange, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MgmtIpRange.Get(), o.MgmtIpRange.IsSet()
@@ -268,6 +271,7 @@ func (o *HyperflexNodeConfigPolicy) HasMgmtIpRange() bool {
 func (o *HyperflexNodeConfigPolicy) SetMgmtIpRange(v HyperflexIpAddrRange) {
 	o.MgmtIpRange.Set(&v)
 }
+
 // SetMgmtIpRangeNil sets the value for MgmtIpRange to be an explicit nil
 func (o *HyperflexNodeConfigPolicy) SetMgmtIpRangeNil() {
 	o.MgmtIpRange.Set(nil)
@@ -315,7 +319,7 @@ func (o *HyperflexNodeConfigPolicy) SetNodeNamePrefix(v string) {
 
 // GetClusterProfiles returns the ClusterProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexNodeConfigPolicy) GetClusterProfiles() []HyperflexClusterProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexClusterProfileRelationship
 		return ret
 	}
@@ -428,17 +432,17 @@ func (o *HyperflexNodeConfigPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		DataIpRange NullableHyperflexIpAddrRange `json:"DataIpRange,omitempty"`
-		HxdpIpRange NullableHyperflexIpAddrRange `json:"HxdpIpRange,omitempty"`
+		ObjectType               string                       `json:"ObjectType"`
+		DataIpRange              NullableHyperflexIpAddrRange `json:"DataIpRange,omitempty"`
+		HxdpIpRange              NullableHyperflexIpAddrRange `json:"HxdpIpRange,omitempty"`
 		HypervisorControlIpRange NullableHyperflexIpAddrRange `json:"HypervisorControlIpRange,omitempty"`
-		MgmtIpRange NullableHyperflexIpAddrRange `json:"MgmtIpRange,omitempty"`
+		MgmtIpRange              NullableHyperflexIpAddrRange `json:"MgmtIpRange,omitempty"`
 		// The node name prefix that is used to automatically generate the default hostname for each server. A dash (-) will be appended to the prefix followed by the node number to form a hostname. This default naming scheme can be manually overridden in the node configuration. The maximum length of a prefix is 60, must only contain alphanumeric characters or dash (-), and must start with an alphanumeric character.
 		// Deprecated
 		NodeNamePrefix *string `json:"NodeNamePrefix,omitempty"`
 		// An array of relationships to hyperflexClusterProfile resources.
 		ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		Organization    *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
 	varHyperflexNodeConfigPolicyWithoutEmbeddedStruct := HyperflexNodeConfigPolicyWithoutEmbeddedStruct{}
@@ -541,5 +545,3 @@ func (v *NullableHyperflexNodeConfigPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

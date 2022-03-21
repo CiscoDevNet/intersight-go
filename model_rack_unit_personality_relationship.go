@@ -18,20 +18,19 @@ import (
 
 // RackUnitPersonalityRelationship - A relationship to the 'rack.UnitPersonality' resource, or the expanded 'rack.UnitPersonality' resource, or the 'null' value.
 type RackUnitPersonalityRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 	RackUnitPersonality *RackUnitPersonality
 }
 
 // MoMoRefAsRackUnitPersonalityRelationship is a convenience function that returns MoMoRef wrapped in RackUnitPersonalityRelationship
 func MoMoRefAsRackUnitPersonalityRelationship(v *MoMoRef) RackUnitPersonalityRelationship {
-	return RackUnitPersonalityRelationship{ MoMoRef: v}
+	return RackUnitPersonalityRelationship{MoMoRef: v}
 }
 
 // RackUnitPersonalityAsRackUnitPersonalityRelationship is a convenience function that returns RackUnitPersonality wrapped in RackUnitPersonalityRelationship
 func RackUnitPersonalityAsRackUnitPersonalityRelationship(v *RackUnitPersonality) RackUnitPersonalityRelationship {
-	return RackUnitPersonalityRelationship{ RackUnitPersonality: v}
+	return RackUnitPersonalityRelationship{RackUnitPersonality: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *RackUnitPersonalityRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src RackUnitPersonalityRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *RackUnitPersonalityRelationship) GetActualInstance() (interface{}) {
+func (obj *RackUnitPersonalityRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableRackUnitPersonalityRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

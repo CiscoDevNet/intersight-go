@@ -26,7 +26,7 @@ type WorkflowFileDownloadOpAllOf struct {
 	// Source bucket name hosting the file.
 	SourceBucket *string `json:"SourceBucket,omitempty"`
 	// Name of the file to be downloaded from bucket to endpoint devices.
-	SourceFile *string `json:"SourceFile,omitempty"`
+	SourceFile           *string `json:"SourceFile,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *WorkflowFileDownloadOpAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowFileDownloadOpAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *WorkflowFileDownloadOpAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowFileDownloadOpAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,5 +280,3 @@ func (v *NullableWorkflowFileDownloadOpAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

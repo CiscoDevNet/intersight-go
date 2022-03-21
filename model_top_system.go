@@ -37,12 +37,12 @@ type TopSystem struct {
 	// An array of relationships to computeBlade resources.
 	ComputeBlades []ComputeBladeRelationship `json:"ComputeBlades,omitempty"`
 	// An array of relationships to computeRackUnit resources.
-	ComputeRackUnits []ComputeRackUnitRelationship `json:"ComputeRackUnits,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+	ComputeRackUnits     []ComputeRackUnitRelationship     `json:"ComputeRackUnits,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship  `json:"InventoryDeviceInfo,omitempty"`
 	ManagementController *ManagementControllerRelationship `json:"ManagementController,omitempty"`
 	// An array of relationships to networkElement resources.
-	NetworkElements []NetworkElementRelationship `json:"NetworkElements,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	NetworkElements      []NetworkElementRelationship         `json:"NetworkElements,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *TopSystem) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TopSystem) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -108,7 +108,7 @@ func (o *TopSystem) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TopSystem) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -281,7 +281,7 @@ func (o *TopSystem) SetTimeZone(v string) {
 
 // GetComputeBlades returns the ComputeBlades field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TopSystem) GetComputeBlades() []ComputeBladeRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ComputeBladeRelationship
 		return ret
 	}
@@ -314,7 +314,7 @@ func (o *TopSystem) SetComputeBlades(v []ComputeBladeRelationship) {
 
 // GetComputeRackUnits returns the ComputeRackUnits field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TopSystem) GetComputeRackUnits() []ComputeRackUnitRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ComputeRackUnitRelationship
 		return ret
 	}
@@ -411,7 +411,7 @@ func (o *TopSystem) SetManagementController(v ManagementControllerRelationship) 
 
 // GetNetworkElements returns the NetworkElements field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TopSystem) GetNetworkElements() []NetworkElementRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []NetworkElementRelationship
 		return ret
 	}
@@ -550,11 +550,11 @@ func (o *TopSystem) UnmarshalJSON(bytes []byte) (err error) {
 		// An array of relationships to computeBlade resources.
 		ComputeBlades []ComputeBladeRelationship `json:"ComputeBlades,omitempty"`
 		// An array of relationships to computeRackUnit resources.
-		ComputeRackUnits []ComputeRackUnitRelationship `json:"ComputeRackUnits,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+		ComputeRackUnits     []ComputeRackUnitRelationship     `json:"ComputeRackUnits,omitempty"`
+		InventoryDeviceInfo  *InventoryDeviceInfoRelationship  `json:"InventoryDeviceInfo,omitempty"`
 		ManagementController *ManagementControllerRelationship `json:"ManagementController,omitempty"`
 		// An array of relationships to networkElement resources.
-		NetworkElements []NetworkElementRelationship `json:"NetworkElements,omitempty"`
+		NetworkElements  []NetworkElementRelationship         `json:"NetworkElements,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -666,5 +666,3 @@ func (v *NullableTopSystem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -25,8 +25,8 @@ type HyperflexMapClusterIdToProtectionInfo struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The Cluster Id we are using to map to ProtectionInfo.
-	ClusterId *string `json:"ClusterId,omitempty"`
-	ProtectionInfo NullableHyperflexProtectionInfo `json:"ProtectionInfo,omitempty"`
+	ClusterId            *string                         `json:"ClusterId,omitempty"`
+	ProtectionInfo       NullableHyperflexProtectionInfo `json:"ProtectionInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *HyperflexMapClusterIdToProtectionInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexMapClusterIdToProtectionInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *HyperflexMapClusterIdToProtectionInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexMapClusterIdToProtectionInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -148,7 +148,7 @@ func (o *HyperflexMapClusterIdToProtectionInfo) GetProtectionInfo() HyperflexPro
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexMapClusterIdToProtectionInfo) GetProtectionInfoOk() (*HyperflexProtectionInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ProtectionInfo.Get(), o.ProtectionInfo.IsSet()
@@ -167,6 +167,7 @@ func (o *HyperflexMapClusterIdToProtectionInfo) HasProtectionInfo() bool {
 func (o *HyperflexMapClusterIdToProtectionInfo) SetProtectionInfo(v HyperflexProtectionInfo) {
 	o.ProtectionInfo.Set(&v)
 }
+
 // SetProtectionInfoNil sets the value for ProtectionInfo to be an explicit nil
 func (o *HyperflexMapClusterIdToProtectionInfo) SetProtectionInfoNil() {
 	o.ProtectionInfo.Set(nil)
@@ -214,7 +215,7 @@ func (o *HyperflexMapClusterIdToProtectionInfo) UnmarshalJSON(bytes []byte) (err
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The Cluster Id we are using to map to ProtectionInfo.
-		ClusterId *string `json:"ClusterId,omitempty"`
+		ClusterId      *string                         `json:"ClusterId,omitempty"`
 		ProtectionInfo NullableHyperflexProtectionInfo `json:"ProtectionInfo,omitempty"`
 	}
 
@@ -308,5 +309,3 @@ func (v *NullableHyperflexMapClusterIdToProtectionInfo) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

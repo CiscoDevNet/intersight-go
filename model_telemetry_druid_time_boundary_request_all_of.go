@@ -19,9 +19,9 @@ import (
 type TelemetryDruidTimeBoundaryRequestAllOf struct {
 	DataSource TelemetryDruidDataSource `json:"dataSource"`
 	// Optional, set to maxTime or minTime to return only the latest or earliest timestamp. Default to returning both if not set.
-	Bound *string `json:"bound,omitempty"`
-	Filter *TelemetryDruidFilter `json:"filter,omitempty"`
-	Context *TelemetryDruidQueryContext `json:"context,omitempty"`
+	Bound                *string                     `json:"bound,omitempty"`
+	Filter               *TelemetryDruidFilter       `json:"filter,omitempty"`
+	Context              *TelemetryDruidQueryContext `json:"context,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -58,7 +58,7 @@ func (o *TelemetryDruidTimeBoundaryRequestAllOf) GetDataSource() TelemetryDruidD
 // GetDataSourceOk returns a tuple with the DataSource field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidTimeBoundaryRequestAllOf) GetDataSourceOk() (*TelemetryDruidDataSource, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DataSource, true
@@ -242,5 +242,3 @@ func (v *NullableTelemetryDruidTimeBoundaryRequestAllOf) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

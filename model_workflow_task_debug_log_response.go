@@ -18,32 +18,31 @@ import (
 
 // WorkflowTaskDebugLogResponse - The response body of a HTTP GET request for the 'workflow.TaskDebugLog' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'workflow.TaskDebugLog' resources.
 type WorkflowTaskDebugLogResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform     *MoAggregateTransform
+	MoDocumentCount          *MoDocumentCount
+	MoTagSummary             *MoTagSummary
 	WorkflowTaskDebugLogList *WorkflowTaskDebugLogList
 }
 
 // MoAggregateTransformAsWorkflowTaskDebugLogResponse is a convenience function that returns MoAggregateTransform wrapped in WorkflowTaskDebugLogResponse
 func MoAggregateTransformAsWorkflowTaskDebugLogResponse(v *MoAggregateTransform) WorkflowTaskDebugLogResponse {
-	return WorkflowTaskDebugLogResponse{ MoAggregateTransform: v}
+	return WorkflowTaskDebugLogResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsWorkflowTaskDebugLogResponse is a convenience function that returns MoDocumentCount wrapped in WorkflowTaskDebugLogResponse
 func MoDocumentCountAsWorkflowTaskDebugLogResponse(v *MoDocumentCount) WorkflowTaskDebugLogResponse {
-	return WorkflowTaskDebugLogResponse{ MoDocumentCount: v}
+	return WorkflowTaskDebugLogResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsWorkflowTaskDebugLogResponse is a convenience function that returns MoTagSummary wrapped in WorkflowTaskDebugLogResponse
 func MoTagSummaryAsWorkflowTaskDebugLogResponse(v *MoTagSummary) WorkflowTaskDebugLogResponse {
-	return WorkflowTaskDebugLogResponse{ MoTagSummary: v}
+	return WorkflowTaskDebugLogResponse{MoTagSummary: v}
 }
 
 // WorkflowTaskDebugLogListAsWorkflowTaskDebugLogResponse is a convenience function that returns WorkflowTaskDebugLogList wrapped in WorkflowTaskDebugLogResponse
 func WorkflowTaskDebugLogListAsWorkflowTaskDebugLogResponse(v *WorkflowTaskDebugLogList) WorkflowTaskDebugLogResponse {
-	return WorkflowTaskDebugLogResponse{ WorkflowTaskDebugLogList: v}
+	return WorkflowTaskDebugLogResponse{WorkflowTaskDebugLogList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *WorkflowTaskDebugLogResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src WorkflowTaskDebugLogResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *WorkflowTaskDebugLogResponse) GetActualInstance() (interface{}) {
+func (obj *WorkflowTaskDebugLogResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableWorkflowTaskDebugLogResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

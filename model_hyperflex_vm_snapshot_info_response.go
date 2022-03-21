@@ -19,31 +19,30 @@ import (
 // HyperflexVmSnapshotInfoResponse - The response body of a HTTP GET request for the 'hyperflex.VmSnapshotInfo' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'hyperflex.VmSnapshotInfo' resources.
 type HyperflexVmSnapshotInfoResponse struct {
 	HyperflexVmSnapshotInfoList *HyperflexVmSnapshotInfoList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform        *MoAggregateTransform
+	MoDocumentCount             *MoDocumentCount
+	MoTagSummary                *MoTagSummary
 }
 
 // HyperflexVmSnapshotInfoListAsHyperflexVmSnapshotInfoResponse is a convenience function that returns HyperflexVmSnapshotInfoList wrapped in HyperflexVmSnapshotInfoResponse
 func HyperflexVmSnapshotInfoListAsHyperflexVmSnapshotInfoResponse(v *HyperflexVmSnapshotInfoList) HyperflexVmSnapshotInfoResponse {
-	return HyperflexVmSnapshotInfoResponse{ HyperflexVmSnapshotInfoList: v}
+	return HyperflexVmSnapshotInfoResponse{HyperflexVmSnapshotInfoList: v}
 }
 
 // MoAggregateTransformAsHyperflexVmSnapshotInfoResponse is a convenience function that returns MoAggregateTransform wrapped in HyperflexVmSnapshotInfoResponse
 func MoAggregateTransformAsHyperflexVmSnapshotInfoResponse(v *MoAggregateTransform) HyperflexVmSnapshotInfoResponse {
-	return HyperflexVmSnapshotInfoResponse{ MoAggregateTransform: v}
+	return HyperflexVmSnapshotInfoResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsHyperflexVmSnapshotInfoResponse is a convenience function that returns MoDocumentCount wrapped in HyperflexVmSnapshotInfoResponse
 func MoDocumentCountAsHyperflexVmSnapshotInfoResponse(v *MoDocumentCount) HyperflexVmSnapshotInfoResponse {
-	return HyperflexVmSnapshotInfoResponse{ MoDocumentCount: v}
+	return HyperflexVmSnapshotInfoResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsHyperflexVmSnapshotInfoResponse is a convenience function that returns MoTagSummary wrapped in HyperflexVmSnapshotInfoResponse
 func MoTagSummaryAsHyperflexVmSnapshotInfoResponse(v *MoTagSummary) HyperflexVmSnapshotInfoResponse {
-	return HyperflexVmSnapshotInfoResponse{ MoTagSummary: v}
+	return HyperflexVmSnapshotInfoResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexVmSnapshotInfoResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src HyperflexVmSnapshotInfoResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexVmSnapshotInfoResponse) GetActualInstance() (interface{}) {
+func (obj *HyperflexVmSnapshotInfoResponse) GetActualInstance() interface{} {
 	if obj.HyperflexVmSnapshotInfoList != nil {
 		return obj.HyperflexVmSnapshotInfoList
 	}
@@ -184,5 +183,3 @@ func (v *NullableHyperflexVmSnapshotInfoResponse) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

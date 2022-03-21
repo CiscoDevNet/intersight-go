@@ -47,10 +47,10 @@ type SoftwarerepositoryFileAllOf struct {
 	// The size (in bytes) of the file. This information is available for all Cisco distributed images and files imported to the local repository.
 	Size *int64 `json:"Size,omitempty"`
 	// The software advisory, if any, provided by the vendor for this file.
-	SoftwareAdvisoryUrl *string `json:"SoftwareAdvisoryUrl,omitempty"`
-	Source NullableSoftwarerepositoryFileServer `json:"Source,omitempty"`
+	SoftwareAdvisoryUrl *string                              `json:"SoftwareAdvisoryUrl,omitempty"`
+	Source              NullableSoftwarerepositoryFileServer `json:"Source,omitempty"`
 	// Vendor provided version for the file.
-	Version *string `json:"Version,omitempty"`
+	Version              *string `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -92,7 +92,7 @@ func (o *SoftwarerepositoryFileAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryFileAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -116,7 +116,7 @@ func (o *SoftwarerepositoryFileAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryFileAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -556,7 +556,7 @@ func (o *SoftwarerepositoryFileAllOf) GetSource() SoftwarerepositoryFileServer {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SoftwarerepositoryFileAllOf) GetSourceOk() (*SoftwarerepositoryFileServer, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Source.Get(), o.Source.IsSet()
@@ -575,6 +575,7 @@ func (o *SoftwarerepositoryFileAllOf) HasSource() bool {
 func (o *SoftwarerepositoryFileAllOf) SetSource(v SoftwarerepositoryFileServer) {
 	o.Source.Set(&v)
 }
+
 // SetSourceNil sets the value for Source to be an explicit nil
 func (o *SoftwarerepositoryFileAllOf) SetSourceNil() {
 	o.Source.Set(nil)
@@ -746,5 +747,3 @@ func (v *NullableSoftwarerepositoryFileAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,50 +18,49 @@ import (
 
 // TelemetryDruidPostAggregator - struct for TelemetryDruidPostAggregator
 type TelemetryDruidPostAggregator struct {
-	TelemetryDruidArithmeticPostAggregator *TelemetryDruidArithmeticPostAggregator
-	TelemetryDruidConstantPostAggregator *TelemetryDruidConstantPostAggregator
-	TelemetryDruidFieldAccessorPostAggregator *TelemetryDruidFieldAccessorPostAggregator
-	TelemetryDruidGreatestLeastPostAggregator *TelemetryDruidGreatestLeastPostAggregator
-	TelemetryDruidHyperUniquePostAggregator *TelemetryDruidHyperUniquePostAggregator
-	TelemetryDruidThetaSketchEstimatePostAggregator *TelemetryDruidThetaSketchEstimatePostAggregator
+	TelemetryDruidArithmeticPostAggregator            *TelemetryDruidArithmeticPostAggregator
+	TelemetryDruidConstantPostAggregator              *TelemetryDruidConstantPostAggregator
+	TelemetryDruidFieldAccessorPostAggregator         *TelemetryDruidFieldAccessorPostAggregator
+	TelemetryDruidGreatestLeastPostAggregator         *TelemetryDruidGreatestLeastPostAggregator
+	TelemetryDruidHyperUniquePostAggregator           *TelemetryDruidHyperUniquePostAggregator
+	TelemetryDruidThetaSketchEstimatePostAggregator   *TelemetryDruidThetaSketchEstimatePostAggregator
 	TelemetryDruidThetaSketchOperationsPostAggregator *TelemetryDruidThetaSketchOperationsPostAggregator
 }
 
 // TelemetryDruidArithmeticPostAggregatorAsTelemetryDruidPostAggregator is a convenience function that returns TelemetryDruidArithmeticPostAggregator wrapped in TelemetryDruidPostAggregator
 func TelemetryDruidArithmeticPostAggregatorAsTelemetryDruidPostAggregator(v *TelemetryDruidArithmeticPostAggregator) TelemetryDruidPostAggregator {
-	return TelemetryDruidPostAggregator{ TelemetryDruidArithmeticPostAggregator: v}
+	return TelemetryDruidPostAggregator{TelemetryDruidArithmeticPostAggregator: v}
 }
 
 // TelemetryDruidConstantPostAggregatorAsTelemetryDruidPostAggregator is a convenience function that returns TelemetryDruidConstantPostAggregator wrapped in TelemetryDruidPostAggregator
 func TelemetryDruidConstantPostAggregatorAsTelemetryDruidPostAggregator(v *TelemetryDruidConstantPostAggregator) TelemetryDruidPostAggregator {
-	return TelemetryDruidPostAggregator{ TelemetryDruidConstantPostAggregator: v}
+	return TelemetryDruidPostAggregator{TelemetryDruidConstantPostAggregator: v}
 }
 
 // TelemetryDruidFieldAccessorPostAggregatorAsTelemetryDruidPostAggregator is a convenience function that returns TelemetryDruidFieldAccessorPostAggregator wrapped in TelemetryDruidPostAggregator
 func TelemetryDruidFieldAccessorPostAggregatorAsTelemetryDruidPostAggregator(v *TelemetryDruidFieldAccessorPostAggregator) TelemetryDruidPostAggregator {
-	return TelemetryDruidPostAggregator{ TelemetryDruidFieldAccessorPostAggregator: v}
+	return TelemetryDruidPostAggregator{TelemetryDruidFieldAccessorPostAggregator: v}
 }
 
 // TelemetryDruidGreatestLeastPostAggregatorAsTelemetryDruidPostAggregator is a convenience function that returns TelemetryDruidGreatestLeastPostAggregator wrapped in TelemetryDruidPostAggregator
 func TelemetryDruidGreatestLeastPostAggregatorAsTelemetryDruidPostAggregator(v *TelemetryDruidGreatestLeastPostAggregator) TelemetryDruidPostAggregator {
-	return TelemetryDruidPostAggregator{ TelemetryDruidGreatestLeastPostAggregator: v}
+	return TelemetryDruidPostAggregator{TelemetryDruidGreatestLeastPostAggregator: v}
 }
 
 // TelemetryDruidHyperUniquePostAggregatorAsTelemetryDruidPostAggregator is a convenience function that returns TelemetryDruidHyperUniquePostAggregator wrapped in TelemetryDruidPostAggregator
 func TelemetryDruidHyperUniquePostAggregatorAsTelemetryDruidPostAggregator(v *TelemetryDruidHyperUniquePostAggregator) TelemetryDruidPostAggregator {
-	return TelemetryDruidPostAggregator{ TelemetryDruidHyperUniquePostAggregator: v}
+	return TelemetryDruidPostAggregator{TelemetryDruidHyperUniquePostAggregator: v}
 }
 
 // TelemetryDruidThetaSketchEstimatePostAggregatorAsTelemetryDruidPostAggregator is a convenience function that returns TelemetryDruidThetaSketchEstimatePostAggregator wrapped in TelemetryDruidPostAggregator
 func TelemetryDruidThetaSketchEstimatePostAggregatorAsTelemetryDruidPostAggregator(v *TelemetryDruidThetaSketchEstimatePostAggregator) TelemetryDruidPostAggregator {
-	return TelemetryDruidPostAggregator{ TelemetryDruidThetaSketchEstimatePostAggregator: v}
+	return TelemetryDruidPostAggregator{TelemetryDruidThetaSketchEstimatePostAggregator: v}
 }
 
 // TelemetryDruidThetaSketchOperationsPostAggregatorAsTelemetryDruidPostAggregator is a convenience function that returns TelemetryDruidThetaSketchOperationsPostAggregator wrapped in TelemetryDruidPostAggregator
 func TelemetryDruidThetaSketchOperationsPostAggregatorAsTelemetryDruidPostAggregator(v *TelemetryDruidThetaSketchOperationsPostAggregator) TelemetryDruidPostAggregator {
-	return TelemetryDruidPostAggregator{ TelemetryDruidThetaSketchOperationsPostAggregator: v}
+	return TelemetryDruidPostAggregator{TelemetryDruidThetaSketchOperationsPostAggregator: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *TelemetryDruidPostAggregator) UnmarshalJSON(data []byte) error {
@@ -326,7 +325,7 @@ func (src TelemetryDruidPostAggregator) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *TelemetryDruidPostAggregator) GetActualInstance() (interface{}) {
+func (obj *TelemetryDruidPostAggregator) GetActualInstance() interface{} {
 	if obj.TelemetryDruidArithmeticPostAggregator != nil {
 		return obj.TelemetryDruidArithmeticPostAggregator
 	}
@@ -394,5 +393,3 @@ func (v *NullableTelemetryDruidPostAggregator) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

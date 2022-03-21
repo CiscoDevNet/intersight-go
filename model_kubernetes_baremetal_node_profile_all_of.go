@@ -22,9 +22,9 @@ type KubernetesBaremetalNodeProfileAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Network interface from NetworkInfo (by name) to use for kubernetes VIP.
-	KubernetesNic *string `json:"KubernetesNic,omitempty"`
-	NetworkInfo NullableKubernetesBaremetalNetworkInfo `json:"NetworkInfo,omitempty"`
-	Server *ComputeRackUnitRelationship `json:"Server,omitempty"`
+	KubernetesNic        *string                                `json:"KubernetesNic,omitempty"`
+	NetworkInfo          NullableKubernetesBaremetalNetworkInfo `json:"NetworkInfo,omitempty"`
+	Server               *ComputeRackUnitRelationship           `json:"Server,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *KubernetesBaremetalNodeProfileAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesBaremetalNodeProfileAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *KubernetesBaremetalNodeProfileAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesBaremetalNodeProfileAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -146,7 +146,7 @@ func (o *KubernetesBaremetalNodeProfileAllOf) GetNetworkInfo() KubernetesBaremet
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KubernetesBaremetalNodeProfileAllOf) GetNetworkInfoOk() (*KubernetesBaremetalNetworkInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NetworkInfo.Get(), o.NetworkInfo.IsSet()
@@ -165,6 +165,7 @@ func (o *KubernetesBaremetalNodeProfileAllOf) HasNetworkInfo() bool {
 func (o *KubernetesBaremetalNodeProfileAllOf) SetNetworkInfo(v KubernetesBaremetalNetworkInfo) {
 	o.NetworkInfo.Set(&v)
 }
+
 // SetNetworkInfoNil sets the value for NetworkInfo to be an explicit nil
 func (o *KubernetesBaremetalNodeProfileAllOf) SetNetworkInfoNil() {
 	o.NetworkInfo.Set(nil)
@@ -288,5 +289,3 @@ func (v *NullableKubernetesBaremetalNodeProfileAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

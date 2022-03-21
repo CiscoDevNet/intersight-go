@@ -25,10 +25,10 @@ type ForecastModel struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The standard error of the estimate is a measure of the accuracy of predictions from predective modeling.
-	Accuracy *float32 `json:"Accuracy,omitempty"`
+	Accuracy  *float32  `json:"Accuracy,omitempty"`
 	ModelData []float32 `json:"ModelData,omitempty"`
 	// Model type indicating type of predictive model used for computing forecast. * `Linear` - The Enum value Linear represents that the predictive model type used for forecast computation is linear regression.
-	ModelType *string `json:"ModelType,omitempty"`
+	ModelType            *string `json:"ModelType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *ForecastModel) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ForecastModel) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *ForecastModel) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ForecastModel) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -143,7 +143,7 @@ func (o *ForecastModel) SetAccuracy(v float32) {
 
 // GetModelData returns the ModelData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ForecastModel) GetModelData() []float32 {
-	if o == nil  {
+	if o == nil {
 		var ret []float32
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *ForecastModel) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The standard error of the estimate is a measure of the accuracy of predictions from predective modeling.
-		Accuracy *float32 `json:"Accuracy,omitempty"`
+		Accuracy  *float32  `json:"Accuracy,omitempty"`
 		ModelData []float32 `json:"ModelData,omitempty"`
 		// Model type indicating type of predictive model used for computing forecast. * `Linear` - The Enum value Linear represents that the predictive model type used for forecast computation is linear regression.
 		ModelType *string `json:"ModelType,omitempty"`
@@ -344,5 +344,3 @@ func (v *NullableForecastModel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

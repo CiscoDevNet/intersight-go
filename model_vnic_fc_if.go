@@ -29,8 +29,8 @@ type VnicFcIf struct {
 	// The order in which the virtual interface is brought up. The order assigned to an interface should be unique for all the Ethernet and Fibre-Channel interfaces on each PCI link on a VIC adapter. The maximum value of PCI order is limited by the number of virtual interfaces (Ethernet and Fibre-Channel) on each PCI link on a VIC adapter. All VIC adapters have a single PCI link except VIC 1385 which has two.
 	Order *int64 `json:"Order,omitempty"`
 	// Enables retention of LUN ID associations in memory until they are manually cleared.
-	PersistentBindings *bool `json:"PersistentBindings,omitempty"`
-	Placement NullableVnicPlacementSettings `json:"Placement,omitempty"`
+	PersistentBindings *bool                         `json:"PersistentBindings,omitempty"`
+	Placement          NullableVnicPlacementSettings `json:"Placement,omitempty"`
 	// The WWPN address must be in hexadecimal format xx:xx:xx:xx:xx:xx:xx:xx. Allowed ranges are 20:00:00:00:00:00:00:00 to 20:FF:FF:FF:FF:FF:FF:FF or from 50:00:00:00:00:00:00:00 to 5F:FF:FF:FF:FF:FF:FF:FF. To ensure uniqueness of WWN's in the SAN fabric, you are strongly encouraged to use the WWN prefix - 20:00:00:25:B5:xx:xx:xx.
 	StaticWwpnAddress *string `json:"StaticWwpnAddress,omitempty"`
 	// VHBA Type configuration for SAN Connectivity Policy. This configuration is supported only on Cisco VIC 14XX series and higher series of adapters. * `fc-initiator` - The default value set for vHBA Type Configuration. Fc-initiator specifies vHBA as a consumer of storage. Enables SCSI commands to transfer data and status information between host and target storage systems. * `fc-nvme-initiator` - Fc-nvme-initiator specifies vHBA as a consumer of storage. Enables NVMe-based message commands to transfer data and status information between host and target storage systems. * `fc-nvme-target` - Fc-nvme-target specifies vHBA as a provider of storage volumes to initiators. Enables NVMe-based message commands to transfer data and status information between host and target storage systems. Currently tech-preview, only enabled with an asynchronous driver. * `fc-target` - Fc-target specifies vHBA as a provider of storage volumes to initiators. Enables SCSI commands to transfer data and status information between host and target storage systems. fc-target is enabled only with an asynchronous driver.
@@ -40,17 +40,17 @@ type VnicFcIf struct {
 	// The WWPN address that is assigned to the vHBA based on the wwn pool that has been assigned to the SAN Connectivity Policy.
 	Wwpn *string `json:"Wwpn,omitempty"`
 	// Type of allocation selected to assign a WWPN address to the vhba. * `POOL` - The user selects a pool from which the mac/wwn address will be leased for the Virtual Interface. * `STATIC` - The user assigns a static mac/wwn address for the Virtual Interface.
-	WwpnAddressType *string `json:"WwpnAddressType,omitempty"`
-	FcAdapterPolicy *VnicFcAdapterPolicyRelationship `json:"FcAdapterPolicy,omitempty"`
-	FcNetworkPolicy *VnicFcNetworkPolicyRelationship `json:"FcNetworkPolicy,omitempty"`
-	FcQosPolicy *VnicFcQosPolicyRelationship `json:"FcQosPolicy,omitempty"`
-	Profile *PolicyAbstractConfigProfileRelationship `json:"Profile,omitempty"`
-	SanConnectivityPolicy *VnicSanConnectivityPolicyRelationship `json:"SanConnectivityPolicy,omitempty"`
-	ScpVhba *VnicFcIfRelationship `json:"ScpVhba,omitempty"`
+	WwpnAddressType       *string                                  `json:"WwpnAddressType,omitempty"`
+	FcAdapterPolicy       *VnicFcAdapterPolicyRelationship         `json:"FcAdapterPolicy,omitempty"`
+	FcNetworkPolicy       *VnicFcNetworkPolicyRelationship         `json:"FcNetworkPolicy,omitempty"`
+	FcQosPolicy           *VnicFcQosPolicyRelationship             `json:"FcQosPolicy,omitempty"`
+	Profile               *PolicyAbstractConfigProfileRelationship `json:"Profile,omitempty"`
+	SanConnectivityPolicy *VnicSanConnectivityPolicyRelationship   `json:"SanConnectivityPolicy,omitempty"`
+	ScpVhba               *VnicFcIfRelationship                    `json:"ScpVhba,omitempty"`
 	// An array of relationships to vnicFcIf resources.
-	SpVhbas []VnicFcIfRelationship `json:"SpVhbas,omitempty"`
-	WwpnLease *FcpoolLeaseRelationship `json:"WwpnLease,omitempty"`
-	WwpnPool *FcpoolPoolRelationship `json:"WwpnPool,omitempty"`
+	SpVhbas              []VnicFcIfRelationship   `json:"SpVhbas,omitempty"`
+	WwpnLease            *FcpoolLeaseRelationship `json:"WwpnLease,omitempty"`
+	WwpnPool             *FcpoolPoolRelationship  `json:"WwpnPool,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -100,7 +100,7 @@ func (o *VnicFcIf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicFcIf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -124,7 +124,7 @@ func (o *VnicFcIf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicFcIf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -244,7 +244,7 @@ func (o *VnicFcIf) GetPlacement() VnicPlacementSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicFcIf) GetPlacementOk() (*VnicPlacementSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Placement.Get(), o.Placement.IsSet()
@@ -263,6 +263,7 @@ func (o *VnicFcIf) HasPlacement() bool {
 func (o *VnicFcIf) SetPlacement(v VnicPlacementSettings) {
 	o.Placement.Set(&v)
 }
+
 // SetPlacementNil sets the value for Placement to be an explicit nil
 func (o *VnicFcIf) SetPlacementNil() {
 	o.Placement.Set(nil)
@@ -627,7 +628,7 @@ func (o *VnicFcIf) SetScpVhba(v VnicFcIfRelationship) {
 
 // GetSpVhbas returns the SpVhbas field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VnicFcIf) GetSpVhbas() []VnicFcIfRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []VnicFcIfRelationship
 		return ret
 	}
@@ -811,8 +812,8 @@ func (o *VnicFcIf) UnmarshalJSON(bytes []byte) (err error) {
 		// The order in which the virtual interface is brought up. The order assigned to an interface should be unique for all the Ethernet and Fibre-Channel interfaces on each PCI link on a VIC adapter. The maximum value of PCI order is limited by the number of virtual interfaces (Ethernet and Fibre-Channel) on each PCI link on a VIC adapter. All VIC adapters have a single PCI link except VIC 1385 which has two.
 		Order *int64 `json:"Order,omitempty"`
 		// Enables retention of LUN ID associations in memory until they are manually cleared.
-		PersistentBindings *bool `json:"PersistentBindings,omitempty"`
-		Placement NullableVnicPlacementSettings `json:"Placement,omitempty"`
+		PersistentBindings *bool                         `json:"PersistentBindings,omitempty"`
+		Placement          NullableVnicPlacementSettings `json:"Placement,omitempty"`
 		// The WWPN address must be in hexadecimal format xx:xx:xx:xx:xx:xx:xx:xx. Allowed ranges are 20:00:00:00:00:00:00:00 to 20:FF:FF:FF:FF:FF:FF:FF or from 50:00:00:00:00:00:00:00 to 5F:FF:FF:FF:FF:FF:FF:FF. To ensure uniqueness of WWN's in the SAN fabric, you are strongly encouraged to use the WWN prefix - 20:00:00:25:B5:xx:xx:xx.
 		StaticWwpnAddress *string `json:"StaticWwpnAddress,omitempty"`
 		// VHBA Type configuration for SAN Connectivity Policy. This configuration is supported only on Cisco VIC 14XX series and higher series of adapters. * `fc-initiator` - The default value set for vHBA Type Configuration. Fc-initiator specifies vHBA as a consumer of storage. Enables SCSI commands to transfer data and status information between host and target storage systems. * `fc-nvme-initiator` - Fc-nvme-initiator specifies vHBA as a consumer of storage. Enables NVMe-based message commands to transfer data and status information between host and target storage systems. * `fc-nvme-target` - Fc-nvme-target specifies vHBA as a provider of storage volumes to initiators. Enables NVMe-based message commands to transfer data and status information between host and target storage systems. Currently tech-preview, only enabled with an asynchronous driver. * `fc-target` - Fc-target specifies vHBA as a provider of storage volumes to initiators. Enables SCSI commands to transfer data and status information between host and target storage systems. fc-target is enabled only with an asynchronous driver.
@@ -822,17 +823,17 @@ func (o *VnicFcIf) UnmarshalJSON(bytes []byte) (err error) {
 		// The WWPN address that is assigned to the vHBA based on the wwn pool that has been assigned to the SAN Connectivity Policy.
 		Wwpn *string `json:"Wwpn,omitempty"`
 		// Type of allocation selected to assign a WWPN address to the vhba. * `POOL` - The user selects a pool from which the mac/wwn address will be leased for the Virtual Interface. * `STATIC` - The user assigns a static mac/wwn address for the Virtual Interface.
-		WwpnAddressType *string `json:"WwpnAddressType,omitempty"`
-		FcAdapterPolicy *VnicFcAdapterPolicyRelationship `json:"FcAdapterPolicy,omitempty"`
-		FcNetworkPolicy *VnicFcNetworkPolicyRelationship `json:"FcNetworkPolicy,omitempty"`
-		FcQosPolicy *VnicFcQosPolicyRelationship `json:"FcQosPolicy,omitempty"`
-		Profile *PolicyAbstractConfigProfileRelationship `json:"Profile,omitempty"`
-		SanConnectivityPolicy *VnicSanConnectivityPolicyRelationship `json:"SanConnectivityPolicy,omitempty"`
-		ScpVhba *VnicFcIfRelationship `json:"ScpVhba,omitempty"`
+		WwpnAddressType       *string                                  `json:"WwpnAddressType,omitempty"`
+		FcAdapterPolicy       *VnicFcAdapterPolicyRelationship         `json:"FcAdapterPolicy,omitempty"`
+		FcNetworkPolicy       *VnicFcNetworkPolicyRelationship         `json:"FcNetworkPolicy,omitempty"`
+		FcQosPolicy           *VnicFcQosPolicyRelationship             `json:"FcQosPolicy,omitempty"`
+		Profile               *PolicyAbstractConfigProfileRelationship `json:"Profile,omitempty"`
+		SanConnectivityPolicy *VnicSanConnectivityPolicyRelationship   `json:"SanConnectivityPolicy,omitempty"`
+		ScpVhba               *VnicFcIfRelationship                    `json:"ScpVhba,omitempty"`
 		// An array of relationships to vnicFcIf resources.
-		SpVhbas []VnicFcIfRelationship `json:"SpVhbas,omitempty"`
+		SpVhbas   []VnicFcIfRelationship   `json:"SpVhbas,omitempty"`
 		WwpnLease *FcpoolLeaseRelationship `json:"WwpnLease,omitempty"`
-		WwpnPool *FcpoolPoolRelationship `json:"WwpnPool,omitempty"`
+		WwpnPool  *FcpoolPoolRelationship  `json:"WwpnPool,omitempty"`
 	}
 
 	varVnicFcIfWithoutEmbeddedStruct := VnicFcIfWithoutEmbeddedStruct{}
@@ -957,5 +958,3 @@ func (v *NullableVnicFcIf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,19 +19,18 @@ import (
 // IamPermissionRelationship - A relationship to the 'iam.Permission' resource, or the expanded 'iam.Permission' resource, or the 'null' value.
 type IamPermissionRelationship struct {
 	IamPermission *IamPermission
-	MoMoRef *MoMoRef
+	MoMoRef       *MoMoRef
 }
 
 // IamPermissionAsIamPermissionRelationship is a convenience function that returns IamPermission wrapped in IamPermissionRelationship
 func IamPermissionAsIamPermissionRelationship(v *IamPermission) IamPermissionRelationship {
-	return IamPermissionRelationship{ IamPermission: v}
+	return IamPermissionRelationship{IamPermission: v}
 }
 
 // MoMoRefAsIamPermissionRelationship is a convenience function that returns MoMoRef wrapped in IamPermissionRelationship
 func MoMoRefAsIamPermissionRelationship(v *MoMoRef) IamPermissionRelationship {
-	return IamPermissionRelationship{ MoMoRef: v}
+	return IamPermissionRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamPermissionRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamPermissionRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamPermissionRelationship) GetActualInstance() (interface{}) {
+func (obj *IamPermissionRelationship) GetActualInstance() interface{} {
 	if obj.IamPermission != nil {
 		return obj.IamPermission
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamPermissionRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

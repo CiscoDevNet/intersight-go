@@ -19,19 +19,18 @@ import (
 // KubernetesVirtualMachineInstanceTypeRelationship - A relationship to the 'kubernetes.VirtualMachineInstanceType' resource, or the expanded 'kubernetes.VirtualMachineInstanceType' resource, or the 'null' value.
 type KubernetesVirtualMachineInstanceTypeRelationship struct {
 	KubernetesVirtualMachineInstanceType *KubernetesVirtualMachineInstanceType
-	MoMoRef *MoMoRef
+	MoMoRef                              *MoMoRef
 }
 
 // KubernetesVirtualMachineInstanceTypeAsKubernetesVirtualMachineInstanceTypeRelationship is a convenience function that returns KubernetesVirtualMachineInstanceType wrapped in KubernetesVirtualMachineInstanceTypeRelationship
 func KubernetesVirtualMachineInstanceTypeAsKubernetesVirtualMachineInstanceTypeRelationship(v *KubernetesVirtualMachineInstanceType) KubernetesVirtualMachineInstanceTypeRelationship {
-	return KubernetesVirtualMachineInstanceTypeRelationship{ KubernetesVirtualMachineInstanceType: v}
+	return KubernetesVirtualMachineInstanceTypeRelationship{KubernetesVirtualMachineInstanceType: v}
 }
 
 // MoMoRefAsKubernetesVirtualMachineInstanceTypeRelationship is a convenience function that returns MoMoRef wrapped in KubernetesVirtualMachineInstanceTypeRelationship
 func MoMoRefAsKubernetesVirtualMachineInstanceTypeRelationship(v *MoMoRef) KubernetesVirtualMachineInstanceTypeRelationship {
-	return KubernetesVirtualMachineInstanceTypeRelationship{ MoMoRef: v}
+	return KubernetesVirtualMachineInstanceTypeRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesVirtualMachineInstanceTypeRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesVirtualMachineInstanceTypeRelationship) MarshalJSON() ([]byt
 }
 
 // Get the actual instance
-func (obj *KubernetesVirtualMachineInstanceTypeRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesVirtualMachineInstanceTypeRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesVirtualMachineInstanceType != nil {
 		return obj.KubernetesVirtualMachineInstanceType
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesVirtualMachineInstanceTypeRelationship) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

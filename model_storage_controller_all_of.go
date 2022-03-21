@@ -74,26 +74,26 @@ type StorageControllerAllOf struct {
 	// The total configured cache memory, measured in MiB.
 	TotalCacheSize *int64 `json:"TotalCacheSize,omitempty"`
 	// Controller types are Raid, FlexFlash.
-	Type *string `json:"Type,omitempty"`
-	ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
-	ComputeBoard *ComputeBoardRelationship `json:"ComputeBoard,omitempty"`
+	Type            *string                      `json:"Type,omitempty"`
+	ComputeBlade    *ComputeBladeRelationship    `json:"ComputeBlade,omitempty"`
+	ComputeBoard    *ComputeBoardRelationship    `json:"ComputeBoard,omitempty"`
 	ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
 	// An array of relationships to storageDiskGroup resources.
 	DiskGroup []StorageDiskGroupRelationship `json:"DiskGroup,omitempty"`
 	// An array of relationships to storageDiskSlot resources.
-	DiskSlot []StorageDiskSlotRelationship `json:"DiskSlot,omitempty"`
+	DiskSlot            []StorageDiskSlotRelationship    `json:"DiskSlot,omitempty"`
 	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
 	// An array of relationships to storagePhysicalDiskExtension resources.
 	PhysicalDiskExtensions []StoragePhysicalDiskExtensionRelationship `json:"PhysicalDiskExtensions,omitempty"`
 	// An array of relationships to storagePhysicalDisk resources.
-	PhysicalDisks []StoragePhysicalDiskRelationship `json:"PhysicalDisks,omitempty"`
+	PhysicalDisks    []StoragePhysicalDiskRelationship    `json:"PhysicalDisks,omitempty"`
 	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to firmwareRunningFirmware resources.
 	RunningFirmware []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
 	// An array of relationships to storageVirtualDriveExtension resources.
 	VirtualDriveExtensions []StorageVirtualDriveExtensionRelationship `json:"VirtualDriveExtensions,omitempty"`
 	// An array of relationships to storageVirtualDrive resources.
-	VirtualDrives []StorageVirtualDriveRelationship `json:"VirtualDrives,omitempty"`
+	VirtualDrives        []StorageVirtualDriveRelationship `json:"VirtualDrives,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -135,7 +135,7 @@ func (o *StorageControllerAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageControllerAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -159,7 +159,7 @@ func (o *StorageControllerAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageControllerAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -1132,7 +1132,7 @@ func (o *StorageControllerAllOf) SetComputeRackUnit(v ComputeRackUnitRelationshi
 
 // GetDiskGroup returns the DiskGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageControllerAllOf) GetDiskGroup() []StorageDiskGroupRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageDiskGroupRelationship
 		return ret
 	}
@@ -1165,7 +1165,7 @@ func (o *StorageControllerAllOf) SetDiskGroup(v []StorageDiskGroupRelationship) 
 
 // GetDiskSlot returns the DiskSlot field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageControllerAllOf) GetDiskSlot() []StorageDiskSlotRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageDiskSlotRelationship
 		return ret
 	}
@@ -1230,7 +1230,7 @@ func (o *StorageControllerAllOf) SetInventoryDeviceInfo(v InventoryDeviceInfoRel
 
 // GetPhysicalDiskExtensions returns the PhysicalDiskExtensions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageControllerAllOf) GetPhysicalDiskExtensions() []StoragePhysicalDiskExtensionRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StoragePhysicalDiskExtensionRelationship
 		return ret
 	}
@@ -1263,7 +1263,7 @@ func (o *StorageControllerAllOf) SetPhysicalDiskExtensions(v []StoragePhysicalDi
 
 // GetPhysicalDisks returns the PhysicalDisks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageControllerAllOf) GetPhysicalDisks() []StoragePhysicalDiskRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StoragePhysicalDiskRelationship
 		return ret
 	}
@@ -1328,7 +1328,7 @@ func (o *StorageControllerAllOf) SetRegisteredDevice(v AssetDeviceRegistrationRe
 
 // GetRunningFirmware returns the RunningFirmware field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageControllerAllOf) GetRunningFirmware() []FirmwareRunningFirmwareRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareRunningFirmwareRelationship
 		return ret
 	}
@@ -1361,7 +1361,7 @@ func (o *StorageControllerAllOf) SetRunningFirmware(v []FirmwareRunningFirmwareR
 
 // GetVirtualDriveExtensions returns the VirtualDriveExtensions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageControllerAllOf) GetVirtualDriveExtensions() []StorageVirtualDriveExtensionRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageVirtualDriveExtensionRelationship
 		return ret
 	}
@@ -1394,7 +1394,7 @@ func (o *StorageControllerAllOf) SetVirtualDriveExtensions(v []StorageVirtualDri
 
 // GetVirtualDrives returns the VirtualDrives field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageControllerAllOf) GetVirtualDrives() []StorageVirtualDriveRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageVirtualDriveRelationship
 		return ret
 	}
@@ -1650,5 +1650,3 @@ func (v *NullableStorageControllerAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

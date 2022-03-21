@@ -27,11 +27,11 @@ type ApplianceDataExportPolicy struct {
 	// Status of the data collection mode. If the value is 'true', then data collection is enabled.
 	Enable *bool `json:"Enable,omitempty"`
 	// Name of the Data Export Policy.
-	Name *string `json:"Name,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	Name         *string                                `json:"Name,omitempty"`
+	Account      *IamAccountRelationship                `json:"Account,omitempty"`
 	ParentConfig *ApplianceDataExportPolicyRelationship `json:"ParentConfig,omitempty"`
 	// An array of relationships to applianceDataExportPolicy resources.
-	SubConfigs []ApplianceDataExportPolicyRelationship `json:"SubConfigs,omitempty"`
+	SubConfigs           []ApplianceDataExportPolicyRelationship `json:"SubConfigs,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *ApplianceDataExportPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceDataExportPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *ApplianceDataExportPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceDataExportPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -238,7 +238,7 @@ func (o *ApplianceDataExportPolicy) SetParentConfig(v ApplianceDataExportPolicyR
 
 // GetSubConfigs returns the SubConfigs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceDataExportPolicy) GetSubConfigs() []ApplianceDataExportPolicyRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ApplianceDataExportPolicyRelationship
 		return ret
 	}
@@ -317,8 +317,8 @@ func (o *ApplianceDataExportPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// Status of the data collection mode. If the value is 'true', then data collection is enabled.
 		Enable *bool `json:"Enable,omitempty"`
 		// Name of the Data Export Policy.
-		Name *string `json:"Name,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
+		Name         *string                                `json:"Name,omitempty"`
+		Account      *IamAccountRelationship                `json:"Account,omitempty"`
 		ParentConfig *ApplianceDataExportPolicyRelationship `json:"ParentConfig,omitempty"`
 		// An array of relationships to applianceDataExportPolicy resources.
 		SubConfigs []ApplianceDataExportPolicyRelationship `json:"SubConfigs,omitempty"`
@@ -420,5 +420,3 @@ func (v *NullableApplianceDataExportPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

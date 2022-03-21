@@ -29,13 +29,13 @@ type ComputeMapping struct {
 	// The identity assigned to this Virtual Media Image by server.
 	Identifier *string `json:"Identifier,omitempty"`
 	// Image name of uploaded Virtual Media Image.
-	ImageName *string `json:"ImageName,omitempty"`
+	ImageName  *string  `json:"ImageName,omitempty"`
 	MediaTypes []string `json:"MediaTypes,omitempty"`
 	// Name of Virtual Media mapping assigne by server.
-	Name *string `json:"Name,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	Vmedia *ComputeVmediaRelationship `json:"Vmedia,omitempty"`
+	Name                 *string                              `json:"Name,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Vmedia               *ComputeVmediaRelationship           `json:"Vmedia,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *ComputeMapping) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ComputeMapping) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *ComputeMapping) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ComputeMapping) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -210,7 +210,7 @@ func (o *ComputeMapping) SetImageName(v string) {
 
 // GetMediaTypes returns the MediaTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeMapping) GetMediaTypes() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -428,13 +428,13 @@ func (o *ComputeMapping) UnmarshalJSON(bytes []byte) (err error) {
 		// The identity assigned to this Virtual Media Image by server.
 		Identifier *string `json:"Identifier,omitempty"`
 		// Image name of uploaded Virtual Media Image.
-		ImageName *string `json:"ImageName,omitempty"`
+		ImageName  *string  `json:"ImageName,omitempty"`
 		MediaTypes []string `json:"MediaTypes,omitempty"`
 		// Name of Virtual Media mapping assigne by server.
-		Name *string `json:"Name,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-		Vmedia *ComputeVmediaRelationship `json:"Vmedia,omitempty"`
+		Name                *string                              `json:"Name,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		Vmedia              *ComputeVmediaRelationship           `json:"Vmedia,omitempty"`
 	}
 
 	varComputeMappingWithoutEmbeddedStruct := ComputeMappingWithoutEmbeddedStruct{}
@@ -539,5 +539,3 @@ func (v *NullableComputeMapping) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

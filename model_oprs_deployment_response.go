@@ -19,31 +19,30 @@ import (
 // OprsDeploymentResponse - The response body of a HTTP GET request for the 'oprs.Deployment' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'oprs.Deployment' resources.
 type OprsDeploymentResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
-	OprsDeploymentList *OprsDeploymentList
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
+	OprsDeploymentList   *OprsDeploymentList
 }
 
 // MoAggregateTransformAsOprsDeploymentResponse is a convenience function that returns MoAggregateTransform wrapped in OprsDeploymentResponse
 func MoAggregateTransformAsOprsDeploymentResponse(v *MoAggregateTransform) OprsDeploymentResponse {
-	return OprsDeploymentResponse{ MoAggregateTransform: v}
+	return OprsDeploymentResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsOprsDeploymentResponse is a convenience function that returns MoDocumentCount wrapped in OprsDeploymentResponse
 func MoDocumentCountAsOprsDeploymentResponse(v *MoDocumentCount) OprsDeploymentResponse {
-	return OprsDeploymentResponse{ MoDocumentCount: v}
+	return OprsDeploymentResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsOprsDeploymentResponse is a convenience function that returns MoTagSummary wrapped in OprsDeploymentResponse
 func MoTagSummaryAsOprsDeploymentResponse(v *MoTagSummary) OprsDeploymentResponse {
-	return OprsDeploymentResponse{ MoTagSummary: v}
+	return OprsDeploymentResponse{MoTagSummary: v}
 }
 
 // OprsDeploymentListAsOprsDeploymentResponse is a convenience function that returns OprsDeploymentList wrapped in OprsDeploymentResponse
 func OprsDeploymentListAsOprsDeploymentResponse(v *OprsDeploymentList) OprsDeploymentResponse {
-	return OprsDeploymentResponse{ OprsDeploymentList: v}
+	return OprsDeploymentResponse{OprsDeploymentList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *OprsDeploymentResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src OprsDeploymentResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *OprsDeploymentResponse) GetActualInstance() (interface{}) {
+func (obj *OprsDeploymentResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableOprsDeploymentResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

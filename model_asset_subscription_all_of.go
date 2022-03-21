@@ -26,8 +26,8 @@ type AssetSubscriptionAllOf struct {
 	// Identifies the consumption-based subscription.
 	SubscriptionRefId *string `json:"SubscriptionRefId,omitempty"`
 	// An array of relationships to assetDeployment resources.
-	Deployments []AssetDeploymentRelationship `json:"Deployments,omitempty"`
-	SubscriptionAccount *AssetSubscriptionAccountRelationship `json:"SubscriptionAccount,omitempty"`
+	Deployments          []AssetDeploymentRelationship         `json:"Deployments,omitempty"`
+	SubscriptionAccount  *AssetSubscriptionAccountRelationship `json:"SubscriptionAccount,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *AssetSubscriptionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetSubscriptionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *AssetSubscriptionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetSubscriptionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -170,7 +170,7 @@ func (o *AssetSubscriptionAllOf) SetSubscriptionRefId(v string) {
 
 // GetDeployments returns the Deployments field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetSubscriptionAllOf) GetDeployments() []AssetDeploymentRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []AssetDeploymentRelationship
 		return ret
 	}
@@ -318,5 +318,3 @@ func (v *NullableAssetSubscriptionAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

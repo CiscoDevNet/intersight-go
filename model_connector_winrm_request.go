@@ -35,7 +35,7 @@ type ConnectorWinrmRequest struct {
 	// A unique id to track long running script executions. Every execution request is identified by a unique session id. Scripts that have longer execution times can be tracked to completion by using their unique session id.
 	SessionId *string `json:"SessionId,omitempty"`
 	// The time within which the script execution must be completed. If the script execution exceeds the given time limit an appropriate response is sent back to the calling service.
-	Timeout *int64 `json:"Timeout,omitempty"`
+	Timeout              *int64 `json:"Timeout,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *ConnectorWinrmRequest) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorWinrmRequest) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *ConnectorWinrmRequest) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorWinrmRequest) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -468,5 +468,3 @@ func (v *NullableConnectorWinrmRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

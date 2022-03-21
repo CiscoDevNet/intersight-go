@@ -20,9 +20,9 @@ type FabricEthNetworkGroupPolicyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	VlanSettings NullableFabricVlanSettings `json:"VlanSettings,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ObjectType           string                                `json:"ObjectType"`
+	VlanSettings         NullableFabricVlanSettings            `json:"VlanSettings,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,7 +64,7 @@ func (o *FabricEthNetworkGroupPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricEthNetworkGroupPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -88,7 +88,7 @@ func (o *FabricEthNetworkGroupPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricEthNetworkGroupPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -112,7 +112,7 @@ func (o *FabricEthNetworkGroupPolicyAllOf) GetVlanSettings() FabricVlanSettings 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FabricEthNetworkGroupPolicyAllOf) GetVlanSettingsOk() (*FabricVlanSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VlanSettings.Get(), o.VlanSettings.IsSet()
@@ -131,6 +131,7 @@ func (o *FabricEthNetworkGroupPolicyAllOf) HasVlanSettings() bool {
 func (o *FabricEthNetworkGroupPolicyAllOf) SetVlanSettings(v FabricVlanSettings) {
 	o.VlanSettings.Set(&v)
 }
+
 // SetVlanSettingsNil sets the value for VlanSettings to be an explicit nil
 func (o *FabricEthNetworkGroupPolicyAllOf) SetVlanSettingsNil() {
 	o.VlanSettings.Set(nil)
@@ -250,5 +251,3 @@ func (v *NullableFabricEthNetworkGroupPolicyAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

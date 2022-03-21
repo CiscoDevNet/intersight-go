@@ -26,7 +26,7 @@ type OsAnswersAllOf struct {
 	// Hostname to be configured for the server in the OS.
 	Hostname *string `json:"Hostname,omitempty"`
 	// IP configuration type. Values are Static or Dynamic configuration of IP. In case of static IP configuration, IP address, gateway and other details need to be populated. In case of dynamic the IP configuration is obtained dynamically from DHCP. * `static` - In case of static IP configuraton, provide the details such as IP address, netmask, and gateway. * `DHCP` - In case of dynamic IP configuration, the IP address, netmask and gateway detailsare obtained from DHCP.
-	IpConfigType *string `json:"IpConfigType,omitempty"`
+	IpConfigType    *string                   `json:"IpConfigType,omitempty"`
 	IpConfiguration NullableOsIpConfiguration `json:"IpConfiguration,omitempty"`
 	// Indicates whether the value of the 'answerFile' property has been set.
 	IsAnswerFileSet *bool `json:"IsAnswerFileSet,omitempty"`
@@ -43,7 +43,7 @@ type OsAnswersAllOf struct {
 	// Password configured for the root / administrator user in the OS. You can enter a plain text or an encrypted password. Intersight encrypts the plaintext password. Enable the Encrypted Password option to provide an encrypted password. For more details on encrypting passwords, see Help Center.
 	RootPassword *string `json:"RootPassword,omitempty"`
 	// Answer values can be provided from three sources - Embedded in OS image, static file, or as placeholder values for an answer file template. Source of the answers is given as value, Embedded/File/Template. 'Embedded' option indicates that the answer file is embedded within the OS Image. 'File' option indicates that the answers are provided as a file. 'Template' indicates that the placeholders in the selected os.ConfigurationFile MO are replaced with values provided as os.Answers MO. * `None` - Indicates that answers is not sent and values must be populated from Install Template.   * `Embedded` - Indicates that the answer file is embedded within OS image. * `File` - Indicates that the answer file is a static content that has all thevalues populated. * `Template` - Indicates that the given answers are used to populate the answer filetemplate. The template allows the users to refer some server specificanswers as fields/placeholders and replace these placeholders with theactual values for each Server during OS installation using 'Answers' and'AdditionalParameters' properties in os.Install MO.The answer file templates can be created by users as os.ConfigurationFile objects.
-	Source *string `json:"Source,omitempty"`
+	Source               *string `json:"Source,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -93,7 +93,7 @@ func (o *OsAnswersAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OsAnswersAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -117,7 +117,7 @@ func (o *OsAnswersAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OsAnswersAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -237,7 +237,7 @@ func (o *OsAnswersAllOf) GetIpConfiguration() OsIpConfiguration {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsAnswersAllOf) GetIpConfigurationOk() (*OsIpConfiguration, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IpConfiguration.Get(), o.IpConfiguration.IsSet()
@@ -256,6 +256,7 @@ func (o *OsAnswersAllOf) HasIpConfiguration() bool {
 func (o *OsAnswersAllOf) SetIpConfiguration(v OsIpConfiguration) {
 	o.IpConfiguration.Set(&v)
 }
+
 // SetIpConfigurationNil sets the value for IpConfiguration to be an explicit nil
 func (o *OsAnswersAllOf) SetIpConfigurationNil() {
 	o.IpConfiguration.Set(nil)
@@ -639,5 +640,3 @@ func (v *NullableOsAnswersAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

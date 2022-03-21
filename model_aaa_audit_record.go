@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // AaaAuditRecord AuditRecord presents the configuration changes made by the user per transaction.
@@ -36,10 +36,10 @@ type AaaAuditRecord struct {
 	// The creation time of AuditRecordLocal, which is the time when the affected MO was created/modified/deleted.
 	Timestamp *time.Time `json:"Timestamp,omitempty"`
 	// The userId or the email of the associated user that made the change. In case that user is later deleted, we still have some reference to the information.
-	UserIdOrEmail *string `json:"UserIdOrEmail,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
-	Sessions *IamSessionRelationship `json:"Sessions,omitempty"`
-	User *IamUserRelationship `json:"User,omitempty"`
+	UserIdOrEmail        *string                 `json:"UserIdOrEmail,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
+	Sessions             *IamSessionRelationship `json:"Sessions,omitempty"`
+	User                 *IamUserRelationship    `json:"User,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *AaaAuditRecord) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AaaAuditRecord) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *AaaAuditRecord) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AaaAuditRecord) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -472,10 +472,10 @@ func (o *AaaAuditRecord) UnmarshalJSON(bytes []byte) (err error) {
 		// The creation time of AuditRecordLocal, which is the time when the affected MO was created/modified/deleted.
 		Timestamp *time.Time `json:"Timestamp,omitempty"`
 		// The userId or the email of the associated user that made the change. In case that user is later deleted, we still have some reference to the information.
-		UserIdOrEmail *string `json:"UserIdOrEmail,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
-		Sessions *IamSessionRelationship `json:"Sessions,omitempty"`
-		User *IamUserRelationship `json:"User,omitempty"`
+		UserIdOrEmail *string                 `json:"UserIdOrEmail,omitempty"`
+		Account       *IamAccountRelationship `json:"Account,omitempty"`
+		Sessions      *IamSessionRelationship `json:"Sessions,omitempty"`
+		User          *IamUserRelationship    `json:"User,omitempty"`
 	}
 
 	varAaaAuditRecordWithoutEmbeddedStruct := AaaAuditRecordWithoutEmbeddedStruct{}
@@ -582,5 +582,3 @@ func (v *NullableAaaAuditRecord) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,19 +19,18 @@ import (
 // ComputeMappingRelationship - A relationship to the 'compute.Mapping' resource, or the expanded 'compute.Mapping' resource, or the 'null' value.
 type ComputeMappingRelationship struct {
 	ComputeMapping *ComputeMapping
-	MoMoRef *MoMoRef
+	MoMoRef        *MoMoRef
 }
 
 // ComputeMappingAsComputeMappingRelationship is a convenience function that returns ComputeMapping wrapped in ComputeMappingRelationship
 func ComputeMappingAsComputeMappingRelationship(v *ComputeMapping) ComputeMappingRelationship {
-	return ComputeMappingRelationship{ ComputeMapping: v}
+	return ComputeMappingRelationship{ComputeMapping: v}
 }
 
 // MoMoRefAsComputeMappingRelationship is a convenience function that returns MoMoRef wrapped in ComputeMappingRelationship
 func MoMoRefAsComputeMappingRelationship(v *MoMoRef) ComputeMappingRelationship {
-	return ComputeMappingRelationship{ MoMoRef: v}
+	return ComputeMappingRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ComputeMappingRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ComputeMappingRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ComputeMappingRelationship) GetActualInstance() (interface{}) {
+func (obj *ComputeMappingRelationship) GetActualInstance() interface{} {
 	if obj.ComputeMapping != nil {
 		return obj.ComputeMapping
 	}
@@ -137,5 +136,3 @@ func (v *NullableComputeMappingRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

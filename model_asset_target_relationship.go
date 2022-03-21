@@ -19,19 +19,18 @@ import (
 // AssetTargetRelationship - A relationship to the 'asset.Target' resource, or the expanded 'asset.Target' resource, or the 'null' value.
 type AssetTargetRelationship struct {
 	AssetTarget *AssetTarget
-	MoMoRef *MoMoRef
+	MoMoRef     *MoMoRef
 }
 
 // AssetTargetAsAssetTargetRelationship is a convenience function that returns AssetTarget wrapped in AssetTargetRelationship
 func AssetTargetAsAssetTargetRelationship(v *AssetTarget) AssetTargetRelationship {
-	return AssetTargetRelationship{ AssetTarget: v}
+	return AssetTargetRelationship{AssetTarget: v}
 }
 
 // MoMoRefAsAssetTargetRelationship is a convenience function that returns MoMoRef wrapped in AssetTargetRelationship
 func MoMoRefAsAssetTargetRelationship(v *MoMoRef) AssetTargetRelationship {
-	return AssetTargetRelationship{ MoMoRef: v}
+	return AssetTargetRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AssetTargetRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src AssetTargetRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AssetTargetRelationship) GetActualInstance() (interface{}) {
+func (obj *AssetTargetRelationship) GetActualInstance() interface{} {
 	if obj.AssetTarget != nil {
 		return obj.AssetTarget
 	}
@@ -137,5 +136,3 @@ func (v *NullableAssetTargetRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

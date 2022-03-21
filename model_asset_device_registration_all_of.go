@@ -27,30 +27,30 @@ type AssetDeviceRegistrationAllOf struct {
 	// The name of the user who claimed the device for the account.
 	ClaimedByUserName *string `json:"ClaimedByUserName,omitempty"`
 	// The date and time at which the device was claimed to this account.
-	ClaimedTime *time.Time `json:"ClaimedTime,omitempty"`
-	DeviceHostname []string `json:"DeviceHostname,omitempty"`
-	DeviceIpAddress []string `json:"DeviceIpAddress,omitempty"`
+	ClaimedTime     *time.Time `json:"ClaimedTime,omitempty"`
+	DeviceHostname  []string   `json:"DeviceHostname,omitempty"`
+	DeviceIpAddress []string   `json:"DeviceIpAddress,omitempty"`
 	// Indicates if the platform is an actual device or an emulated device for testing, demos, etc. Permitted values are [Normal, Emulator, ContainerEmulator]. * `` - The device reported an empty or unrecognized executionMode. * `Normal` - The device connector is running in normal mode, i.e. it is not a simulation. * `Emulator` - The device connector is running in simulation mode inside an emulated device. * `ContainerEmulator` - The device connector is running in simulation mode inside a containerized emulated device.
-	ExecutionMode *string `json:"ExecutionMode,omitempty"`
+	ExecutionMode   *string                     `json:"ExecutionMode,omitempty"`
 	ParentSignature NullableAssetClaimSignature `json:"ParentSignature,omitempty"`
-	Pid []string `json:"Pid,omitempty"`
+	Pid             []string                    `json:"Pid,omitempty"`
 	// The platform type on which device connector is executing. * `` - The device reported an empty or unrecognized platform type. * `APIC` - An Application Policy Infrastructure Controller cluster. * `DCNM` - A Data Center Network Manager instance. Data Center Network Manager (DCNM) is the network management platform for all NX-OS-enabled deployments, spanning new fabric architectures, IP Fabric for Media, and storage networking deployments for the Cisco Nexus-powered data center. * `UCSFI` - A UCS Fabric Interconnect in HA or standalone mode, which is being managed by UCS Manager (UCSM). * `UCSFIISM` - A UCS Fabric Interconnect in HA or standalone mode, managed directly by Intersight. * `IMC` - A standalone UCS Server Integrated Management Controller. * `IMCM4` - A standalone UCS M4 Server. * `IMCM5` - A standalone UCS M5 server. * `IMCRack` - A standalone UCS M6 and above server. * `UCSIOM` - An UCS Chassis IO module. * `HX` - A HyperFlex storage controller. * `HyperFlexAP` - A HyperFlex Application Platform. * `IWE` - An Intersight Workload Engine. * `UCSD` - A UCS Director virtual appliance. Cisco UCS Director automates, orchestrates, and manages Cisco and third-party hardware. * `IntersightAppliance` - A Cisco Intersight Connected Virtual Appliance. * `IntersightAssist` - A Cisco Intersight Assist. * `PureStorageFlashArray` - A Pure Storage FlashArray device. * `NexusDevice` - A generic platform type to support Nexus Network Device. This can also be extended to support all network devices later on. * `MDSDevice` - A platform type to support MDS devices. * `UCSC890` - A standalone Cisco UCSC890 server. * `NetAppOntap` - A NetApp ONTAP storage system. * `NetAppActiveIqUnifiedManager` - A NetApp Active IQ Unified Manager. * `EmcScaleIo` - An EMC ScaleIO storage system. * `EmcVmax` - An EMC VMAX storage system. * `EmcVplex` - An EMC VPLEX storage system. * `EmcXtremIo` - An EMC XtremIO storage system. * `VmwareVcenter` - A VMware vCenter device that manages Virtual Machines. * `MicrosoftHyperV` - A Microsoft Hyper-V system that manages Virtual Machines. * `AppDynamics` - An AppDynamics controller that monitors applications. * `Dynatrace` - A software-intelligence monitoring platform that simplifies enterprise cloud complexity and accelerates digital transformation. * `NewRelic` - A software-intelligence monitoring platform that simplifies enterprise cloud complexity and accelerates digital transformation. * `ServiceNow` - A cloud-based workflow automation platform that enables enterprise organizations to improve operational efficiencies by streamlining and automating routine work tasks. * `ReadHatOpenStack` - An OpenStack target manages Virtual Machines, Physical Machines, Datacenters and Virtual Datacenters using different OpenStack services as administrative endpoints. * `CloudFoundry` - An open source cloud platform on which developers can build, deploy, run and scale applications. * `MicrosoftAzureApplicationInsights` - A feature of Azure Monitor, is an extensible Application Performance Management service for developers and DevOps professionals to monitor their live applications. * `OpenStack` - An OpenStack target manages Virtual Machines, Physical Machines, Datacenters and Virtual Datacenters using different OpenStack services as administrative endpoints. * `MicrosoftSqlServer` - A Microsoft SQL database server. * `MySqlServer` - An instance of either Oracle MySQL Database or the open source MariaDB. * `Kubernetes` - A Kubernetes cluster that runs containerized applications. * `AmazonWebService` - A Amazon web service target that discovers and monitors different services like EC2. It discovers entities like VMs, Volumes, regions etc. and monitors attributes like Mem, CPU, cost. * `AmazonWebServiceBilling` - A Amazon web service billing target to retrieve billing information stored in S3 bucket. * `MicrosoftAzureServicePrincipal` - A Microsoft Azure Service Principal target that discovers all the associated Azure subscriptions. * `MicrosoftAzureEnterpriseAgreement` - A Microsoft Azure Enterprise Agreement target that discovers cost, billing and RIs. * `DellCompellent` - A Dell Compellent storage system. * `HPE3Par` - A HPE 3PAR storage system. * `RedHatEnterpriseVirtualization` - A Red Hat Enterprise Virtualization Hypervisor system that manages Virtual Machines. * `NutanixAcropolis` - A Nutanix Acropolis system that combines servers and storage into a distributed infrastructure platform. * `HPEOneView` - A HPE Oneview management system that manages compute, storage, and networking. * `ServiceEngine` - Cisco Application Services Engine. Cisco Application Services Engine is a platform to deploy and manage applications. * `HitachiVirtualStoragePlatform` - A Hitachi Virtual Storage Platform also referred to as Hitachi VSP. It includes various storage systems designed for data centers. * `IMCBlade` - An Intersight managed UCS Blade Server. * `TerraformCloud` - A Terraform Cloud account. * `TerraformAgent` - A Terraform Cloud Agent that Intersight will deploy in datacenter. The agent will execute Terraform plan for Terraform Cloud workspace configured to use the agent. * `CustomTarget` - An external endpoint added as Target that can be accessed through its HTTP API interface in Intersight Orchestrator automation workflow.Standard HTTP authentication scheme supported: Basic. * `AnsibleEndpoint` - An external endpoint added as Target that can be accessed through Ansible in Intersight Cloud Orchestrator automation workflow. * `HTTPEndpoint` - An external endpoint added as Target that can be accessed through its HTTP API interface in Intersight Orchestrator automation workflow.Standard HTTP authentication scheme supported: Basic, Bearer Token. * `SSHEndpoint` - An external endpoint added as Target that can be accessed through SSH in Intersight Cloud Orchestrator automation workflow. * `CiscoCatalyst` - A Cisco Catalyst networking switch device. * `PowerShellEndpoint` - A Windows machine on which PowerShell scripts can be executed remotely.
 	PlatformType *string `json:"PlatformType,omitempty"`
 	// The device connector's public key used by Intersight to authenticate a connection from the device connector. The public key is used to verify that the signature a device connector sends on connect has been signed by the connector's private key stored on the device's filesystem. Must be a PEM encoded RSA public key string.
 	PublicAccessKey *string `json:"PublicAccessKey,omitempty"`
 	// Flag reported by devices to indicate an administrator of the device has disabled management operations of the device connector and only monitoring is permitted.
-	ReadOnly *bool `json:"ReadOnly,omitempty"`
-	Serial []string `json:"Serial,omitempty"`
+	ReadOnly *bool    `json:"ReadOnly,omitempty"`
+	Serial   []string `json:"Serial,omitempty"`
 	// The vendor of the managed device.
-	Vendor *string `json:"Vendor,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
-	ClaimedByUser *IamUserRelationship `json:"ClaimedByUser,omitempty"`
+	Vendor        *string                 `json:"Vendor,omitempty"`
+	Account       *IamAccountRelationship `json:"Account,omitempty"`
+	ClaimedByUser *IamUserRelationship    `json:"ClaimedByUser,omitempty"`
 	// An array of relationships to assetClusterMember resources.
-	ClusterMembers []AssetClusterMemberRelationship `json:"ClusterMembers,omitempty"`
-	DeviceClaim *AssetDeviceClaimRelationship `json:"DeviceClaim,omitempty"`
-	DeviceConfiguration *AssetDeviceConfigurationRelationship `json:"DeviceConfiguration,omitempty"`
-	DomainGroup *IamDomainGroupRelationship `json:"DomainGroup,omitempty"`
-	ParentConnection *AssetDeviceRegistrationRelationship `json:"ParentConnection,omitempty"`
+	ClusterMembers       []AssetClusterMemberRelationship      `json:"ClusterMembers,omitempty"`
+	DeviceClaim          *AssetDeviceClaimRelationship         `json:"DeviceClaim,omitempty"`
+	DeviceConfiguration  *AssetDeviceConfigurationRelationship `json:"DeviceConfiguration,omitempty"`
+	DomainGroup          *IamDomainGroupRelationship           `json:"DomainGroup,omitempty"`
+	ParentConnection     *AssetDeviceRegistrationRelationship  `json:"ParentConnection,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -100,7 +100,7 @@ func (o *AssetDeviceRegistrationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeviceRegistrationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -124,7 +124,7 @@ func (o *AssetDeviceRegistrationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeviceRegistrationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -233,7 +233,7 @@ func (o *AssetDeviceRegistrationAllOf) SetClaimedTime(v time.Time) {
 
 // GetDeviceHostname returns the DeviceHostname field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetDeviceRegistrationAllOf) GetDeviceHostname() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -266,7 +266,7 @@ func (o *AssetDeviceRegistrationAllOf) SetDeviceHostname(v []string) {
 
 // GetDeviceIpAddress returns the DeviceIpAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetDeviceRegistrationAllOf) GetDeviceIpAddress() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -342,7 +342,7 @@ func (o *AssetDeviceRegistrationAllOf) GetParentSignature() AssetClaimSignature 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeviceRegistrationAllOf) GetParentSignatureOk() (*AssetClaimSignature, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ParentSignature.Get(), o.ParentSignature.IsSet()
@@ -361,6 +361,7 @@ func (o *AssetDeviceRegistrationAllOf) HasParentSignature() bool {
 func (o *AssetDeviceRegistrationAllOf) SetParentSignature(v AssetClaimSignature) {
 	o.ParentSignature.Set(&v)
 }
+
 // SetParentSignatureNil sets the value for ParentSignature to be an explicit nil
 func (o *AssetDeviceRegistrationAllOf) SetParentSignatureNil() {
 	o.ParentSignature.Set(nil)
@@ -373,7 +374,7 @@ func (o *AssetDeviceRegistrationAllOf) UnsetParentSignature() {
 
 // GetPid returns the Pid field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetDeviceRegistrationAllOf) GetPid() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -502,7 +503,7 @@ func (o *AssetDeviceRegistrationAllOf) SetReadOnly(v bool) {
 
 // GetSerial returns the Serial field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetDeviceRegistrationAllOf) GetSerial() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -631,7 +632,7 @@ func (o *AssetDeviceRegistrationAllOf) SetClaimedByUser(v IamUserRelationship) {
 
 // GetClusterMembers returns the ClusterMembers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetDeviceRegistrationAllOf) GetClusterMembers() []AssetClusterMemberRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []AssetClusterMemberRelationship
 		return ret
 	}
@@ -939,5 +940,3 @@ func (v *NullableAssetDeviceRegistrationAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

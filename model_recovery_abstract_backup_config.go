@@ -39,7 +39,7 @@ type RecoveryAbstractBackupConfig struct {
 	// Number of backup copies maintained on the local or remote server. When the created backup files exceed this number, the initial backup files are overwritten in a sequential manner.
 	RetentionCount *int64 `json:"RetentionCount,omitempty"`
 	// Username for the backup server.
-	UserName *string `json:"UserName,omitempty"`
+	UserName             *string `json:"UserName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -89,7 +89,7 @@ func (o *RecoveryAbstractBackupConfig) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *RecoveryAbstractBackupConfig) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -113,7 +113,7 @@ func (o *RecoveryAbstractBackupConfig) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *RecoveryAbstractBackupConfig) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -554,5 +554,3 @@ func (v *NullableRecoveryAbstractBackupConfig) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

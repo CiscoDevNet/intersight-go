@@ -20,7 +20,7 @@ type FirmwareDistributableMetaListAllOf struct {
 	// The total number of 'firmware.DistributableMeta' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'firmware.DistributableMeta' resources matching the request.
-	Results []FirmwareDistributableMeta `json:"Results,omitempty"`
+	Results              []FirmwareDistributableMeta `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *FirmwareDistributableMetaListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareDistributableMetaListAllOf) GetResults() []FirmwareDistributableMeta {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareDistributableMeta
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableFirmwareDistributableMetaListAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

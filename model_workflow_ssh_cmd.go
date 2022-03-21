@@ -33,7 +33,7 @@ type WorkflowSshCmd struct {
 	// Regex of the remote server's shell prompt.
 	ShellPrompt *string `json:"ShellPrompt,omitempty"`
 	// Expect timeout value in seconds for the shell prompt.
-	ShellPromptTimeout *int64 `json:"ShellPromptTimeout,omitempty"`
+	ShellPromptTimeout   *int64 `json:"ShellPromptTimeout,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *WorkflowSshCmd) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowSshCmd) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *WorkflowSshCmd) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowSshCmd) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -176,7 +176,7 @@ func (o *WorkflowSshCmd) SetCommandType(v string) {
 
 // GetExpectPrompts returns the ExpectPrompts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSshCmd) GetExpectPrompts() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -424,5 +424,3 @@ func (v *NullableWorkflowSshCmd) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

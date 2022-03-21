@@ -38,13 +38,13 @@ type EquipmentSharedIoModuleAllOf struct {
 	// User label configured for the SIOM.
 	UsrLbl *string `json:"UsrLbl,omitempty"`
 	// This field identifies the vendor id for this SIOM Unit.
-	Vid *string `json:"Vid,omitempty"`
-	Controller *ManagementControllerRelationship `json:"Controller,omitempty"`
+	Vid                         *string                                  `json:"Vid,omitempty"`
+	Controller                  *ManagementControllerRelationship        `json:"Controller,omitempty"`
 	EquipmentSystemIoController *EquipmentSystemIoControllerRelationship `json:"EquipmentSystemIoController,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+	InventoryDeviceInfo         *InventoryDeviceInfoRelationship         `json:"InventoryDeviceInfo,omitempty"`
 	// An array of relationships to portGroup resources.
-	PortGroups []PortGroupRelationship `json:"PortGroups,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	PortGroups           []PortGroupRelationship              `json:"PortGroups,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -86,7 +86,7 @@ func (o *EquipmentSharedIoModuleAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentSharedIoModuleAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -110,7 +110,7 @@ func (o *EquipmentSharedIoModuleAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentSharedIoModuleAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -507,7 +507,7 @@ func (o *EquipmentSharedIoModuleAllOf) SetInventoryDeviceInfo(v InventoryDeviceI
 
 // GetPortGroups returns the PortGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentSharedIoModuleAllOf) GetPortGroups() []PortGroupRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PortGroupRelationship
 		return ret
 	}
@@ -695,5 +695,3 @@ func (v *NullableEquipmentSharedIoModuleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

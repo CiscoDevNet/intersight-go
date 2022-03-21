@@ -26,12 +26,12 @@ type HyperflexVmRestoreOperationAllOf struct {
 	// Power on the Virtual Machine after recovery.
 	PowerOn *bool `json:"PowerOn,omitempty"`
 	// Start time for the replication.
-	StartTime *int64 `json:"StartTime,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	RestoreEdgeClusterMoid *HyperflexClusterRelationship `json:"RestoreEdgeClusterMoid,omitempty"`
-	VmBackupInfoMoid *HyperflexVmBackupInfoRelationship `json:"VmBackupInfoMoid,omitempty"`
-	VmSnapshotInfoMoid *HyperflexVmSnapshotInfoRelationship `json:"VmSnapshotInfoMoid,omitempty"`
-	AdditionalProperties map[string]interface{}
+	StartTime              *int64                                `json:"StartTime,omitempty"`
+	Organization           *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	RestoreEdgeClusterMoid *HyperflexClusterRelationship         `json:"RestoreEdgeClusterMoid,omitempty"`
+	VmBackupInfoMoid       *HyperflexVmBackupInfoRelationship    `json:"VmBackupInfoMoid,omitempty"`
+	VmSnapshotInfoMoid     *HyperflexVmSnapshotInfoRelationship  `json:"VmSnapshotInfoMoid,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _HyperflexVmRestoreOperationAllOf HyperflexVmRestoreOperationAllOf
@@ -76,7 +76,7 @@ func (o *HyperflexVmRestoreOperationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexVmRestoreOperationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *HyperflexVmRestoreOperationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexVmRestoreOperationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -432,5 +432,3 @@ func (v *NullableHyperflexVmRestoreOperationAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

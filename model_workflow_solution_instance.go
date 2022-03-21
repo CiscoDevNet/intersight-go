@@ -33,9 +33,9 @@ type WorkflowSolutionInstance struct {
 	// Status of the solution instance which controls the actions that can be performed on this instance. * `NotCreated` - Solution is not yet created and it is in a draft mode. A solution instance can be deleted in this state. * `InProgress` - An action is in progress and until that action has reached a final state, another action cannot be started. * `Failed` - The last action on the solution failed and corrective measures need to be taken to bring the solution back to valid state. * `Okay` - The last action on the solution completed and the solution is in Okay state. * `Decommissioned` - The solution is decommissioned and can be safely deleted. Solution in any other state after it has been created cannot be deleted until it has been decommissioned.
 	Status *string `json:"Status,omitempty"`
 	// The user identifier which indicates the user that started this workflow.
-	UserId *string `json:"UserId,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	SolutionDefinition *WorkflowSolutionDefinitionRelationship `json:"SolutionDefinition,omitempty"`
+	UserId               *string                                 `json:"UserId,omitempty"`
+	Organization         *OrganizationOrganizationRelationship   `json:"Organization,omitempty"`
+	SolutionDefinition   *WorkflowSolutionDefinitionRelationship `json:"SolutionDefinition,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *WorkflowSolutionInstance) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowSolutionInstance) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *WorkflowSolutionInstance) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowSolutionInstance) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -396,8 +396,8 @@ func (o *WorkflowSolutionInstance) UnmarshalJSON(bytes []byte) (err error) {
 		// Status of the solution instance which controls the actions that can be performed on this instance. * `NotCreated` - Solution is not yet created and it is in a draft mode. A solution instance can be deleted in this state. * `InProgress` - An action is in progress and until that action has reached a final state, another action cannot be started. * `Failed` - The last action on the solution failed and corrective measures need to be taken to bring the solution back to valid state. * `Okay` - The last action on the solution completed and the solution is in Okay state. * `Decommissioned` - The solution is decommissioned and can be safely deleted. Solution in any other state after it has been created cannot be deleted until it has been decommissioned.
 		Status *string `json:"Status,omitempty"`
 		// The user identifier which indicates the user that started this workflow.
-		UserId *string `json:"UserId,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		UserId             *string                                 `json:"UserId,omitempty"`
+		Organization       *OrganizationOrganizationRelationship   `json:"Organization,omitempty"`
 		SolutionDefinition *WorkflowSolutionDefinitionRelationship `json:"SolutionDefinition,omitempty"`
 	}
 
@@ -501,5 +501,3 @@ func (v *NullableWorkflowSolutionInstance) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

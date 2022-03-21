@@ -41,8 +41,8 @@ type NiatelemetryApicFanDetails struct {
 	// Vendor name of the fan in APIC.
 	VendorName *string `json:"VendorName,omitempty"`
 	// VID for the fan in the inventory.
-	Vid *string `json:"Vid,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Vid                  *string                              `json:"Vid,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *NiatelemetryApicFanDetails) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryApicFanDetails) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -108,7 +108,7 @@ func (o *NiatelemetryApicFanDetails) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryApicFanDetails) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -516,7 +516,7 @@ func (o *NiatelemetryApicFanDetails) UnmarshalJSON(bytes []byte) (err error) {
 		// Vendor name of the fan in APIC.
 		VendorName *string `json:"VendorName,omitempty"`
 		// VID for the fan in the inventory.
-		Vid *string `json:"Vid,omitempty"`
+		Vid              *string                              `json:"Vid,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -626,5 +626,3 @@ func (v *NullableNiatelemetryApicFanDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

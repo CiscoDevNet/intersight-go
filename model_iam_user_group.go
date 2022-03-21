@@ -25,14 +25,14 @@ type IamUserGroup struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The name of the user group which the dynamic user belongs to.
-	Name *string `json:"Name,omitempty"`
-	Idp *IamIdpRelationship `json:"Idp,omitempty"`
+	Name         *string                      `json:"Name,omitempty"`
+	Idp          *IamIdpRelationship          `json:"Idp,omitempty"`
 	Idpreference *IamIdpReferenceRelationship `json:"Idpreference,omitempty"`
 	// An array of relationships to iamPermission resources.
 	Permissions []IamPermissionRelationship `json:"Permissions,omitempty"`
-	Qualifier *IamQualifierRelationship `json:"Qualifier,omitempty"`
+	Qualifier   *IamQualifierRelationship   `json:"Qualifier,omitempty"`
 	// An array of relationships to iamUser resources.
-	Users []IamUserRelationship `json:"Users,omitempty"`
+	Users                []IamUserRelationship `json:"Users,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *IamUserGroup) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamUserGroup) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *IamUserGroup) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamUserGroup) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -207,7 +207,7 @@ func (o *IamUserGroup) SetIdpreference(v IamIdpReferenceRelationship) {
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamUserGroup) GetPermissions() []IamPermissionRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPermissionRelationship
 		return ret
 	}
@@ -272,7 +272,7 @@ func (o *IamUserGroup) SetQualifier(v IamQualifierRelationship) {
 
 // GetUsers returns the Users field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamUserGroup) GetUsers() []IamUserRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamUserRelationship
 		return ret
 	}
@@ -352,12 +352,12 @@ func (o *IamUserGroup) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The name of the user group which the dynamic user belongs to.
-		Name *string `json:"Name,omitempty"`
-		Idp *IamIdpRelationship `json:"Idp,omitempty"`
+		Name         *string                      `json:"Name,omitempty"`
+		Idp          *IamIdpRelationship          `json:"Idp,omitempty"`
 		Idpreference *IamIdpReferenceRelationship `json:"Idpreference,omitempty"`
 		// An array of relationships to iamPermission resources.
 		Permissions []IamPermissionRelationship `json:"Permissions,omitempty"`
-		Qualifier *IamQualifierRelationship `json:"Qualifier,omitempty"`
+		Qualifier   *IamQualifierRelationship   `json:"Qualifier,omitempty"`
 		// An array of relationships to iamUser resources.
 		Users []IamUserRelationship `json:"Users,omitempty"`
 	}
@@ -460,5 +460,3 @@ func (v *NullableIamUserGroup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

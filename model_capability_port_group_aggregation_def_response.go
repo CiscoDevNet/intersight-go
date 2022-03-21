@@ -19,31 +19,30 @@ import (
 // CapabilityPortGroupAggregationDefResponse - The response body of a HTTP GET request for the 'capability.PortGroupAggregationDef' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'capability.PortGroupAggregationDef' resources.
 type CapabilityPortGroupAggregationDefResponse struct {
 	CapabilityPortGroupAggregationDefList *CapabilityPortGroupAggregationDefList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                  *MoAggregateTransform
+	MoDocumentCount                       *MoDocumentCount
+	MoTagSummary                          *MoTagSummary
 }
 
 // CapabilityPortGroupAggregationDefListAsCapabilityPortGroupAggregationDefResponse is a convenience function that returns CapabilityPortGroupAggregationDefList wrapped in CapabilityPortGroupAggregationDefResponse
 func CapabilityPortGroupAggregationDefListAsCapabilityPortGroupAggregationDefResponse(v *CapabilityPortGroupAggregationDefList) CapabilityPortGroupAggregationDefResponse {
-	return CapabilityPortGroupAggregationDefResponse{ CapabilityPortGroupAggregationDefList: v}
+	return CapabilityPortGroupAggregationDefResponse{CapabilityPortGroupAggregationDefList: v}
 }
 
 // MoAggregateTransformAsCapabilityPortGroupAggregationDefResponse is a convenience function that returns MoAggregateTransform wrapped in CapabilityPortGroupAggregationDefResponse
 func MoAggregateTransformAsCapabilityPortGroupAggregationDefResponse(v *MoAggregateTransform) CapabilityPortGroupAggregationDefResponse {
-	return CapabilityPortGroupAggregationDefResponse{ MoAggregateTransform: v}
+	return CapabilityPortGroupAggregationDefResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsCapabilityPortGroupAggregationDefResponse is a convenience function that returns MoDocumentCount wrapped in CapabilityPortGroupAggregationDefResponse
 func MoDocumentCountAsCapabilityPortGroupAggregationDefResponse(v *MoDocumentCount) CapabilityPortGroupAggregationDefResponse {
-	return CapabilityPortGroupAggregationDefResponse{ MoDocumentCount: v}
+	return CapabilityPortGroupAggregationDefResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsCapabilityPortGroupAggregationDefResponse is a convenience function that returns MoTagSummary wrapped in CapabilityPortGroupAggregationDefResponse
 func MoTagSummaryAsCapabilityPortGroupAggregationDefResponse(v *MoTagSummary) CapabilityPortGroupAggregationDefResponse {
-	return CapabilityPortGroupAggregationDefResponse{ MoTagSummary: v}
+	return CapabilityPortGroupAggregationDefResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CapabilityPortGroupAggregationDefResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src CapabilityPortGroupAggregationDefResponse) MarshalJSON() ([]byte, erro
 }
 
 // Get the actual instance
-func (obj *CapabilityPortGroupAggregationDefResponse) GetActualInstance() (interface{}) {
+func (obj *CapabilityPortGroupAggregationDefResponse) GetActualInstance() interface{} {
 	if obj.CapabilityPortGroupAggregationDefList != nil {
 		return obj.CapabilityPortGroupAggregationDefList
 	}
@@ -184,5 +183,3 @@ func (v *NullableCapabilityPortGroupAggregationDefResponse) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

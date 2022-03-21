@@ -35,11 +35,11 @@ type MemoryPersistentMemoryNamespace struct {
 	// Name of the Persistent Memory Namespace.
 	Name *string `json:"Name,omitempty"`
 	// UUID of the Persistent Memory Namespace.
-	Uuid *string `json:"Uuid,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+	Uuid                         *string                                   `json:"Uuid,omitempty"`
+	InventoryDeviceInfo          *InventoryDeviceInfoRelationship          `json:"InventoryDeviceInfo,omitempty"`
 	MemoryPersistentMemoryRegion *MemoryPersistentMemoryRegionRelationship `json:"MemoryPersistentMemoryRegion,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RegisteredDevice             *AssetDeviceRegistrationRelationship      `json:"RegisteredDevice,omitempty"`
+	AdditionalProperties         map[string]interface{}
 }
 
 type _MemoryPersistentMemoryNamespace MemoryPersistentMemoryNamespace
@@ -80,7 +80,7 @@ func (o *MemoryPersistentMemoryNamespace) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryNamespace) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *MemoryPersistentMemoryNamespace) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryNamespace) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -471,10 +471,10 @@ func (o *MemoryPersistentMemoryNamespace) UnmarshalJSON(bytes []byte) (err error
 		// Name of the Persistent Memory Namespace.
 		Name *string `json:"Name,omitempty"`
 		// UUID of the Persistent Memory Namespace.
-		Uuid *string `json:"Uuid,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+		Uuid                         *string                                   `json:"Uuid,omitempty"`
+		InventoryDeviceInfo          *InventoryDeviceInfoRelationship          `json:"InventoryDeviceInfo,omitempty"`
 		MemoryPersistentMemoryRegion *MemoryPersistentMemoryRegionRelationship `json:"MemoryPersistentMemoryRegion,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		RegisteredDevice             *AssetDeviceRegistrationRelationship      `json:"RegisteredDevice,omitempty"`
 	}
 
 	varMemoryPersistentMemoryNamespaceWithoutEmbeddedStruct := MemoryPersistentMemoryNamespaceWithoutEmbeddedStruct{}
@@ -581,5 +581,3 @@ func (v *NullableMemoryPersistentMemoryNamespace) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

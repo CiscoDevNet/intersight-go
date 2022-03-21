@@ -42,8 +42,8 @@ type HyperflexClusterBackupPolicyDeploymentAllOf struct {
 	// Deployed cluster profile moid.
 	ProfileMoid *string `json:"ProfileMoid,omitempty"`
 	// Replication cluster pairing name prefix.
-	ReplicationPairNamePrefix *string `json:"ReplicationPairNamePrefix,omitempty"`
-	ReplicationSchedule NullableHyperflexReplicationSchedule `json:"ReplicationSchedule,omitempty"`
+	ReplicationPairNamePrefix *string                              `json:"ReplicationPairNamePrefix,omitempty"`
+	ReplicationSchedule       NullableHyperflexReplicationSchedule `json:"ReplicationSchedule,omitempty"`
 	// Number of snapshots that will be retained as part of the Multi Point in Time support.
 	SnapshotRetentionCount *int64 `json:"SnapshotRetentionCount,omitempty"`
 	// True if policy was detached from source Hyperflex Cluster.
@@ -57,10 +57,10 @@ type HyperflexClusterBackupPolicyDeploymentAllOf struct {
 	// Unique target cluster request ID allowing retry of the same logical request following a transient communication failure.
 	TargetRequestId *string `json:"TargetRequestId,omitempty"`
 	// Uuid of the target Hyperflex Cluster.
-	TargetUuid *string `json:"TargetUuid,omitempty"`
-	BackupTarget *HyperflexClusterRelationship `json:"BackupTarget,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	SourceCluster *HyperflexClusterRelationship `json:"SourceCluster,omitempty"`
+	TargetUuid           *string                               `json:"TargetUuid,omitempty"`
+	BackupTarget         *HyperflexClusterRelationship         `json:"BackupTarget,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	SourceCluster        *HyperflexClusterRelationship         `json:"SourceCluster,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -102,7 +102,7 @@ func (o *HyperflexClusterBackupPolicyDeploymentAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexClusterBackupPolicyDeploymentAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -126,7 +126,7 @@ func (o *HyperflexClusterBackupPolicyDeploymentAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexClusterBackupPolicyDeploymentAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -502,7 +502,7 @@ func (o *HyperflexClusterBackupPolicyDeploymentAllOf) GetReplicationSchedule() H
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexClusterBackupPolicyDeploymentAllOf) GetReplicationScheduleOk() (*HyperflexReplicationSchedule, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ReplicationSchedule.Get(), o.ReplicationSchedule.IsSet()
@@ -521,6 +521,7 @@ func (o *HyperflexClusterBackupPolicyDeploymentAllOf) HasReplicationSchedule() b
 func (o *HyperflexClusterBackupPolicyDeploymentAllOf) SetReplicationSchedule(v HyperflexReplicationSchedule) {
 	o.ReplicationSchedule.Set(&v)
 }
+
 // SetReplicationScheduleNil sets the value for ReplicationSchedule to be an explicit nil
 func (o *HyperflexClusterBackupPolicyDeploymentAllOf) SetReplicationScheduleNil() {
 	o.ReplicationSchedule.Set(nil)
@@ -1008,5 +1009,3 @@ func (v *NullableHyperflexClusterBackupPolicyDeploymentAllOf) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

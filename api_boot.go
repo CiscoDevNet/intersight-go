@@ -29,11 +29,11 @@ var (
 type BootApiService service
 
 type ApiCreateBootPrecisionPolicyRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
+	ctx                 _context.Context
+	ApiService          *BootApiService
 	bootPrecisionPolicy *BootPrecisionPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch             *string
+	ifNoneMatch         *string
 }
 
 // The &#39;boot.PrecisionPolicy&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateBootPrecisionPolicyRequest) BootPrecisionPolicy(bootPrecisionPo
 	r.bootPrecisionPolicy = &bootPrecisionPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateBootPrecisionPolicyRequest) IfMatch(ifMatch string) ApiCreateBootPrecisionPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateBootPrecisionPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateBootPrecisionPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateBootPrecisionPolicy Create a 'boot.PrecisionPolicy' resource.
 func (a *BootApiService) CreateBootPrecisionPolicy(ctx _context.Context) ApiCreateBootPrecisionPolicyRequest {
 	return ApiCreateBootPrecisionPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *BootApiService) CreateBootPrecisionPolicyExecute(r ApiCreateBootPrecisi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,10 @@ func (a *BootApiService) CreateBootPrecisionPolicyExecute(r ApiCreateBootPrecisi
 }
 
 type ApiDeleteBootPrecisionPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BootApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteBootPrecisionPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteBootPrecisionPolicyExecute(r)
@@ -225,8 +226,8 @@ DeleteBootPrecisionPolicy Delete a 'boot.PrecisionPolicy' resource.
 func (a *BootApiService) DeleteBootPrecisionPolicy(ctx _context.Context, moid string) ApiDeleteBootPrecisionPolicyRequest {
 	return ApiDeleteBootPrecisionPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -331,13 +332,13 @@ func (a *BootApiService) DeleteBootPrecisionPolicyExecute(r ApiDeleteBootPrecisi
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -345,11 +346,10 @@ func (a *BootApiService) DeleteBootPrecisionPolicyExecute(r ApiDeleteBootPrecisi
 }
 
 type ApiGetBootCddDeviceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BootApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBootCddDeviceByMoidRequest) Execute() (BootCddDevice, *_nethttp.Response, error) {
 	return r.ApiService.GetBootCddDeviceByMoidExecute(r)
@@ -365,8 +365,8 @@ GetBootCddDeviceByMoid Read a 'boot.CddDevice' resource.
 func (a *BootApiService) GetBootCddDeviceByMoid(ctx _context.Context, moid string) ApiGetBootCddDeviceByMoidRequest {
 	return ApiGetBootCddDeviceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -473,13 +473,13 @@ func (a *BootApiService) GetBootCddDeviceByMoidExecute(r ApiGetBootCddDeviceByMo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -496,19 +496,19 @@ func (a *BootApiService) GetBootCddDeviceByMoidExecute(r ApiGetBootCddDeviceByMo
 }
 
 type ApiGetBootCddDeviceListRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BootApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -516,51 +516,61 @@ func (r ApiGetBootCddDeviceListRequest) Filter(filter string) ApiGetBootCddDevic
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBootCddDeviceListRequest) Orderby(orderby string) ApiGetBootCddDeviceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBootCddDeviceListRequest) Top(top int32) ApiGetBootCddDeviceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBootCddDeviceListRequest) Skip(skip int32) ApiGetBootCddDeviceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBootCddDeviceListRequest) Select_(select_ string) ApiGetBootCddDeviceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBootCddDeviceListRequest) Expand(expand string) ApiGetBootCddDeviceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBootCddDeviceListRequest) Apply(apply string) ApiGetBootCddDeviceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBootCddDeviceListRequest) Count(count bool) ApiGetBootCddDeviceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBootCddDeviceListRequest) Inlinecount(inlinecount string) ApiGetBootCddDeviceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBootCddDeviceListRequest) At(at string) ApiGetBootCddDeviceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBootCddDeviceListRequest) Tags(tags string) ApiGetBootCddDeviceListRequest {
 	r.tags = &tags
@@ -580,7 +590,7 @@ GetBootCddDeviceList Read a 'boot.CddDevice' resource.
 func (a *BootApiService) GetBootCddDeviceList(ctx _context.Context) ApiGetBootCddDeviceListRequest {
 	return ApiGetBootCddDeviceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -719,13 +729,13 @@ func (a *BootApiService) GetBootCddDeviceListExecute(r ApiGetBootCddDeviceListRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -742,11 +752,10 @@ func (a *BootApiService) GetBootCddDeviceListExecute(r ApiGetBootCddDeviceListRe
 }
 
 type ApiGetBootDeviceBootModeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BootApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBootDeviceBootModeByMoidRequest) Execute() (BootDeviceBootMode, *_nethttp.Response, error) {
 	return r.ApiService.GetBootDeviceBootModeByMoidExecute(r)
@@ -762,8 +771,8 @@ GetBootDeviceBootModeByMoid Read a 'boot.DeviceBootMode' resource.
 func (a *BootApiService) GetBootDeviceBootModeByMoid(ctx _context.Context, moid string) ApiGetBootDeviceBootModeByMoidRequest {
 	return ApiGetBootDeviceBootModeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -870,13 +879,13 @@ func (a *BootApiService) GetBootDeviceBootModeByMoidExecute(r ApiGetBootDeviceBo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -893,19 +902,19 @@ func (a *BootApiService) GetBootDeviceBootModeByMoidExecute(r ApiGetBootDeviceBo
 }
 
 type ApiGetBootDeviceBootModeListRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BootApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -913,51 +922,61 @@ func (r ApiGetBootDeviceBootModeListRequest) Filter(filter string) ApiGetBootDev
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBootDeviceBootModeListRequest) Orderby(orderby string) ApiGetBootDeviceBootModeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBootDeviceBootModeListRequest) Top(top int32) ApiGetBootDeviceBootModeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBootDeviceBootModeListRequest) Skip(skip int32) ApiGetBootDeviceBootModeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBootDeviceBootModeListRequest) Select_(select_ string) ApiGetBootDeviceBootModeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBootDeviceBootModeListRequest) Expand(expand string) ApiGetBootDeviceBootModeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBootDeviceBootModeListRequest) Apply(apply string) ApiGetBootDeviceBootModeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBootDeviceBootModeListRequest) Count(count bool) ApiGetBootDeviceBootModeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBootDeviceBootModeListRequest) Inlinecount(inlinecount string) ApiGetBootDeviceBootModeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBootDeviceBootModeListRequest) At(at string) ApiGetBootDeviceBootModeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBootDeviceBootModeListRequest) Tags(tags string) ApiGetBootDeviceBootModeListRequest {
 	r.tags = &tags
@@ -977,7 +996,7 @@ GetBootDeviceBootModeList Read a 'boot.DeviceBootMode' resource.
 func (a *BootApiService) GetBootDeviceBootModeList(ctx _context.Context) ApiGetBootDeviceBootModeListRequest {
 	return ApiGetBootDeviceBootModeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1116,13 +1135,13 @@ func (a *BootApiService) GetBootDeviceBootModeListExecute(r ApiGetBootDeviceBoot
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1139,11 +1158,10 @@ func (a *BootApiService) GetBootDeviceBootModeListExecute(r ApiGetBootDeviceBoot
 }
 
 type ApiGetBootDeviceBootSecurityByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BootApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBootDeviceBootSecurityByMoidRequest) Execute() (BootDeviceBootSecurity, *_nethttp.Response, error) {
 	return r.ApiService.GetBootDeviceBootSecurityByMoidExecute(r)
@@ -1159,8 +1177,8 @@ GetBootDeviceBootSecurityByMoid Read a 'boot.DeviceBootSecurity' resource.
 func (a *BootApiService) GetBootDeviceBootSecurityByMoid(ctx _context.Context, moid string) ApiGetBootDeviceBootSecurityByMoidRequest {
 	return ApiGetBootDeviceBootSecurityByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1267,13 +1285,13 @@ func (a *BootApiService) GetBootDeviceBootSecurityByMoidExecute(r ApiGetBootDevi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1290,19 +1308,19 @@ func (a *BootApiService) GetBootDeviceBootSecurityByMoidExecute(r ApiGetBootDevi
 }
 
 type ApiGetBootDeviceBootSecurityListRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BootApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1310,51 +1328,61 @@ func (r ApiGetBootDeviceBootSecurityListRequest) Filter(filter string) ApiGetBoo
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBootDeviceBootSecurityListRequest) Orderby(orderby string) ApiGetBootDeviceBootSecurityListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBootDeviceBootSecurityListRequest) Top(top int32) ApiGetBootDeviceBootSecurityListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBootDeviceBootSecurityListRequest) Skip(skip int32) ApiGetBootDeviceBootSecurityListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBootDeviceBootSecurityListRequest) Select_(select_ string) ApiGetBootDeviceBootSecurityListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBootDeviceBootSecurityListRequest) Expand(expand string) ApiGetBootDeviceBootSecurityListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBootDeviceBootSecurityListRequest) Apply(apply string) ApiGetBootDeviceBootSecurityListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBootDeviceBootSecurityListRequest) Count(count bool) ApiGetBootDeviceBootSecurityListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBootDeviceBootSecurityListRequest) Inlinecount(inlinecount string) ApiGetBootDeviceBootSecurityListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBootDeviceBootSecurityListRequest) At(at string) ApiGetBootDeviceBootSecurityListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBootDeviceBootSecurityListRequest) Tags(tags string) ApiGetBootDeviceBootSecurityListRequest {
 	r.tags = &tags
@@ -1374,7 +1402,7 @@ GetBootDeviceBootSecurityList Read a 'boot.DeviceBootSecurity' resource.
 func (a *BootApiService) GetBootDeviceBootSecurityList(ctx _context.Context) ApiGetBootDeviceBootSecurityListRequest {
 	return ApiGetBootDeviceBootSecurityListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1513,13 +1541,13 @@ func (a *BootApiService) GetBootDeviceBootSecurityListExecute(r ApiGetBootDevice
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1536,11 +1564,10 @@ func (a *BootApiService) GetBootDeviceBootSecurityListExecute(r ApiGetBootDevice
 }
 
 type ApiGetBootHddDeviceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BootApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBootHddDeviceByMoidRequest) Execute() (BootHddDevice, *_nethttp.Response, error) {
 	return r.ApiService.GetBootHddDeviceByMoidExecute(r)
@@ -1556,8 +1583,8 @@ GetBootHddDeviceByMoid Read a 'boot.HddDevice' resource.
 func (a *BootApiService) GetBootHddDeviceByMoid(ctx _context.Context, moid string) ApiGetBootHddDeviceByMoidRequest {
 	return ApiGetBootHddDeviceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1664,13 +1691,13 @@ func (a *BootApiService) GetBootHddDeviceByMoidExecute(r ApiGetBootHddDeviceByMo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1687,19 +1714,19 @@ func (a *BootApiService) GetBootHddDeviceByMoidExecute(r ApiGetBootHddDeviceByMo
 }
 
 type ApiGetBootHddDeviceListRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BootApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1707,51 +1734,61 @@ func (r ApiGetBootHddDeviceListRequest) Filter(filter string) ApiGetBootHddDevic
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBootHddDeviceListRequest) Orderby(orderby string) ApiGetBootHddDeviceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBootHddDeviceListRequest) Top(top int32) ApiGetBootHddDeviceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBootHddDeviceListRequest) Skip(skip int32) ApiGetBootHddDeviceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBootHddDeviceListRequest) Select_(select_ string) ApiGetBootHddDeviceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBootHddDeviceListRequest) Expand(expand string) ApiGetBootHddDeviceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBootHddDeviceListRequest) Apply(apply string) ApiGetBootHddDeviceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBootHddDeviceListRequest) Count(count bool) ApiGetBootHddDeviceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBootHddDeviceListRequest) Inlinecount(inlinecount string) ApiGetBootHddDeviceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBootHddDeviceListRequest) At(at string) ApiGetBootHddDeviceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBootHddDeviceListRequest) Tags(tags string) ApiGetBootHddDeviceListRequest {
 	r.tags = &tags
@@ -1771,7 +1808,7 @@ GetBootHddDeviceList Read a 'boot.HddDevice' resource.
 func (a *BootApiService) GetBootHddDeviceList(ctx _context.Context) ApiGetBootHddDeviceListRequest {
 	return ApiGetBootHddDeviceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1910,13 +1947,13 @@ func (a *BootApiService) GetBootHddDeviceListExecute(r ApiGetBootHddDeviceListRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1933,11 +1970,10 @@ func (a *BootApiService) GetBootHddDeviceListExecute(r ApiGetBootHddDeviceListRe
 }
 
 type ApiGetBootIscsiDeviceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BootApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBootIscsiDeviceByMoidRequest) Execute() (BootIscsiDevice, *_nethttp.Response, error) {
 	return r.ApiService.GetBootIscsiDeviceByMoidExecute(r)
@@ -1953,8 +1989,8 @@ GetBootIscsiDeviceByMoid Read a 'boot.IscsiDevice' resource.
 func (a *BootApiService) GetBootIscsiDeviceByMoid(ctx _context.Context, moid string) ApiGetBootIscsiDeviceByMoidRequest {
 	return ApiGetBootIscsiDeviceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2061,13 +2097,13 @@ func (a *BootApiService) GetBootIscsiDeviceByMoidExecute(r ApiGetBootIscsiDevice
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2084,19 +2120,19 @@ func (a *BootApiService) GetBootIscsiDeviceByMoidExecute(r ApiGetBootIscsiDevice
 }
 
 type ApiGetBootIscsiDeviceListRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BootApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2104,51 +2140,61 @@ func (r ApiGetBootIscsiDeviceListRequest) Filter(filter string) ApiGetBootIscsiD
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBootIscsiDeviceListRequest) Orderby(orderby string) ApiGetBootIscsiDeviceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBootIscsiDeviceListRequest) Top(top int32) ApiGetBootIscsiDeviceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBootIscsiDeviceListRequest) Skip(skip int32) ApiGetBootIscsiDeviceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBootIscsiDeviceListRequest) Select_(select_ string) ApiGetBootIscsiDeviceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBootIscsiDeviceListRequest) Expand(expand string) ApiGetBootIscsiDeviceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBootIscsiDeviceListRequest) Apply(apply string) ApiGetBootIscsiDeviceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBootIscsiDeviceListRequest) Count(count bool) ApiGetBootIscsiDeviceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBootIscsiDeviceListRequest) Inlinecount(inlinecount string) ApiGetBootIscsiDeviceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBootIscsiDeviceListRequest) At(at string) ApiGetBootIscsiDeviceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBootIscsiDeviceListRequest) Tags(tags string) ApiGetBootIscsiDeviceListRequest {
 	r.tags = &tags
@@ -2168,7 +2214,7 @@ GetBootIscsiDeviceList Read a 'boot.IscsiDevice' resource.
 func (a *BootApiService) GetBootIscsiDeviceList(ctx _context.Context) ApiGetBootIscsiDeviceListRequest {
 	return ApiGetBootIscsiDeviceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2307,13 +2353,13 @@ func (a *BootApiService) GetBootIscsiDeviceListExecute(r ApiGetBootIscsiDeviceLi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2330,11 +2376,10 @@ func (a *BootApiService) GetBootIscsiDeviceListExecute(r ApiGetBootIscsiDeviceLi
 }
 
 type ApiGetBootNvmeDeviceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BootApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBootNvmeDeviceByMoidRequest) Execute() (BootNvmeDevice, *_nethttp.Response, error) {
 	return r.ApiService.GetBootNvmeDeviceByMoidExecute(r)
@@ -2350,8 +2395,8 @@ GetBootNvmeDeviceByMoid Read a 'boot.NvmeDevice' resource.
 func (a *BootApiService) GetBootNvmeDeviceByMoid(ctx _context.Context, moid string) ApiGetBootNvmeDeviceByMoidRequest {
 	return ApiGetBootNvmeDeviceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2458,13 +2503,13 @@ func (a *BootApiService) GetBootNvmeDeviceByMoidExecute(r ApiGetBootNvmeDeviceBy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2481,19 +2526,19 @@ func (a *BootApiService) GetBootNvmeDeviceByMoidExecute(r ApiGetBootNvmeDeviceBy
 }
 
 type ApiGetBootNvmeDeviceListRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BootApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2501,51 +2546,61 @@ func (r ApiGetBootNvmeDeviceListRequest) Filter(filter string) ApiGetBootNvmeDev
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBootNvmeDeviceListRequest) Orderby(orderby string) ApiGetBootNvmeDeviceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBootNvmeDeviceListRequest) Top(top int32) ApiGetBootNvmeDeviceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBootNvmeDeviceListRequest) Skip(skip int32) ApiGetBootNvmeDeviceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBootNvmeDeviceListRequest) Select_(select_ string) ApiGetBootNvmeDeviceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBootNvmeDeviceListRequest) Expand(expand string) ApiGetBootNvmeDeviceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBootNvmeDeviceListRequest) Apply(apply string) ApiGetBootNvmeDeviceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBootNvmeDeviceListRequest) Count(count bool) ApiGetBootNvmeDeviceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBootNvmeDeviceListRequest) Inlinecount(inlinecount string) ApiGetBootNvmeDeviceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBootNvmeDeviceListRequest) At(at string) ApiGetBootNvmeDeviceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBootNvmeDeviceListRequest) Tags(tags string) ApiGetBootNvmeDeviceListRequest {
 	r.tags = &tags
@@ -2565,7 +2620,7 @@ GetBootNvmeDeviceList Read a 'boot.NvmeDevice' resource.
 func (a *BootApiService) GetBootNvmeDeviceList(ctx _context.Context) ApiGetBootNvmeDeviceListRequest {
 	return ApiGetBootNvmeDeviceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2704,13 +2759,13 @@ func (a *BootApiService) GetBootNvmeDeviceListExecute(r ApiGetBootNvmeDeviceList
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2727,11 +2782,10 @@ func (a *BootApiService) GetBootNvmeDeviceListExecute(r ApiGetBootNvmeDeviceList
 }
 
 type ApiGetBootPchStorageDeviceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BootApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBootPchStorageDeviceByMoidRequest) Execute() (BootPchStorageDevice, *_nethttp.Response, error) {
 	return r.ApiService.GetBootPchStorageDeviceByMoidExecute(r)
@@ -2747,8 +2801,8 @@ GetBootPchStorageDeviceByMoid Read a 'boot.PchStorageDevice' resource.
 func (a *BootApiService) GetBootPchStorageDeviceByMoid(ctx _context.Context, moid string) ApiGetBootPchStorageDeviceByMoidRequest {
 	return ApiGetBootPchStorageDeviceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2855,13 +2909,13 @@ func (a *BootApiService) GetBootPchStorageDeviceByMoidExecute(r ApiGetBootPchSto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2878,19 +2932,19 @@ func (a *BootApiService) GetBootPchStorageDeviceByMoidExecute(r ApiGetBootPchSto
 }
 
 type ApiGetBootPchStorageDeviceListRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BootApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2898,51 +2952,61 @@ func (r ApiGetBootPchStorageDeviceListRequest) Filter(filter string) ApiGetBootP
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBootPchStorageDeviceListRequest) Orderby(orderby string) ApiGetBootPchStorageDeviceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBootPchStorageDeviceListRequest) Top(top int32) ApiGetBootPchStorageDeviceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBootPchStorageDeviceListRequest) Skip(skip int32) ApiGetBootPchStorageDeviceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBootPchStorageDeviceListRequest) Select_(select_ string) ApiGetBootPchStorageDeviceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBootPchStorageDeviceListRequest) Expand(expand string) ApiGetBootPchStorageDeviceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBootPchStorageDeviceListRequest) Apply(apply string) ApiGetBootPchStorageDeviceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBootPchStorageDeviceListRequest) Count(count bool) ApiGetBootPchStorageDeviceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBootPchStorageDeviceListRequest) Inlinecount(inlinecount string) ApiGetBootPchStorageDeviceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBootPchStorageDeviceListRequest) At(at string) ApiGetBootPchStorageDeviceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBootPchStorageDeviceListRequest) Tags(tags string) ApiGetBootPchStorageDeviceListRequest {
 	r.tags = &tags
@@ -2962,7 +3026,7 @@ GetBootPchStorageDeviceList Read a 'boot.PchStorageDevice' resource.
 func (a *BootApiService) GetBootPchStorageDeviceList(ctx _context.Context) ApiGetBootPchStorageDeviceListRequest {
 	return ApiGetBootPchStorageDeviceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3101,13 +3165,13 @@ func (a *BootApiService) GetBootPchStorageDeviceListExecute(r ApiGetBootPchStora
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3124,11 +3188,10 @@ func (a *BootApiService) GetBootPchStorageDeviceListExecute(r ApiGetBootPchStora
 }
 
 type ApiGetBootPrecisionPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BootApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBootPrecisionPolicyByMoidRequest) Execute() (BootPrecisionPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetBootPrecisionPolicyByMoidExecute(r)
@@ -3144,8 +3207,8 @@ GetBootPrecisionPolicyByMoid Read a 'boot.PrecisionPolicy' resource.
 func (a *BootApiService) GetBootPrecisionPolicyByMoid(ctx _context.Context, moid string) ApiGetBootPrecisionPolicyByMoidRequest {
 	return ApiGetBootPrecisionPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3252,13 +3315,13 @@ func (a *BootApiService) GetBootPrecisionPolicyByMoidExecute(r ApiGetBootPrecisi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3275,19 +3338,19 @@ func (a *BootApiService) GetBootPrecisionPolicyByMoidExecute(r ApiGetBootPrecisi
 }
 
 type ApiGetBootPrecisionPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BootApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3295,51 +3358,61 @@ func (r ApiGetBootPrecisionPolicyListRequest) Filter(filter string) ApiGetBootPr
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBootPrecisionPolicyListRequest) Orderby(orderby string) ApiGetBootPrecisionPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBootPrecisionPolicyListRequest) Top(top int32) ApiGetBootPrecisionPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBootPrecisionPolicyListRequest) Skip(skip int32) ApiGetBootPrecisionPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBootPrecisionPolicyListRequest) Select_(select_ string) ApiGetBootPrecisionPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBootPrecisionPolicyListRequest) Expand(expand string) ApiGetBootPrecisionPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBootPrecisionPolicyListRequest) Apply(apply string) ApiGetBootPrecisionPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBootPrecisionPolicyListRequest) Count(count bool) ApiGetBootPrecisionPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBootPrecisionPolicyListRequest) Inlinecount(inlinecount string) ApiGetBootPrecisionPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBootPrecisionPolicyListRequest) At(at string) ApiGetBootPrecisionPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBootPrecisionPolicyListRequest) Tags(tags string) ApiGetBootPrecisionPolicyListRequest {
 	r.tags = &tags
@@ -3359,7 +3432,7 @@ GetBootPrecisionPolicyList Read a 'boot.PrecisionPolicy' resource.
 func (a *BootApiService) GetBootPrecisionPolicyList(ctx _context.Context) ApiGetBootPrecisionPolicyListRequest {
 	return ApiGetBootPrecisionPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3498,13 +3571,13 @@ func (a *BootApiService) GetBootPrecisionPolicyListExecute(r ApiGetBootPrecision
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3521,11 +3594,10 @@ func (a *BootApiService) GetBootPrecisionPolicyListExecute(r ApiGetBootPrecision
 }
 
 type ApiGetBootPxeDeviceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BootApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBootPxeDeviceByMoidRequest) Execute() (BootPxeDevice, *_nethttp.Response, error) {
 	return r.ApiService.GetBootPxeDeviceByMoidExecute(r)
@@ -3541,8 +3613,8 @@ GetBootPxeDeviceByMoid Read a 'boot.PxeDevice' resource.
 func (a *BootApiService) GetBootPxeDeviceByMoid(ctx _context.Context, moid string) ApiGetBootPxeDeviceByMoidRequest {
 	return ApiGetBootPxeDeviceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3649,13 +3721,13 @@ func (a *BootApiService) GetBootPxeDeviceByMoidExecute(r ApiGetBootPxeDeviceByMo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3672,19 +3744,19 @@ func (a *BootApiService) GetBootPxeDeviceByMoidExecute(r ApiGetBootPxeDeviceByMo
 }
 
 type ApiGetBootPxeDeviceListRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BootApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3692,51 +3764,61 @@ func (r ApiGetBootPxeDeviceListRequest) Filter(filter string) ApiGetBootPxeDevic
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBootPxeDeviceListRequest) Orderby(orderby string) ApiGetBootPxeDeviceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBootPxeDeviceListRequest) Top(top int32) ApiGetBootPxeDeviceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBootPxeDeviceListRequest) Skip(skip int32) ApiGetBootPxeDeviceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBootPxeDeviceListRequest) Select_(select_ string) ApiGetBootPxeDeviceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBootPxeDeviceListRequest) Expand(expand string) ApiGetBootPxeDeviceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBootPxeDeviceListRequest) Apply(apply string) ApiGetBootPxeDeviceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBootPxeDeviceListRequest) Count(count bool) ApiGetBootPxeDeviceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBootPxeDeviceListRequest) Inlinecount(inlinecount string) ApiGetBootPxeDeviceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBootPxeDeviceListRequest) At(at string) ApiGetBootPxeDeviceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBootPxeDeviceListRequest) Tags(tags string) ApiGetBootPxeDeviceListRequest {
 	r.tags = &tags
@@ -3756,7 +3838,7 @@ GetBootPxeDeviceList Read a 'boot.PxeDevice' resource.
 func (a *BootApiService) GetBootPxeDeviceList(ctx _context.Context) ApiGetBootPxeDeviceListRequest {
 	return ApiGetBootPxeDeviceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3895,13 +3977,13 @@ func (a *BootApiService) GetBootPxeDeviceListExecute(r ApiGetBootPxeDeviceListRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3918,11 +4000,10 @@ func (a *BootApiService) GetBootPxeDeviceListExecute(r ApiGetBootPxeDeviceListRe
 }
 
 type ApiGetBootSanDeviceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BootApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBootSanDeviceByMoidRequest) Execute() (BootSanDevice, *_nethttp.Response, error) {
 	return r.ApiService.GetBootSanDeviceByMoidExecute(r)
@@ -3938,8 +4019,8 @@ GetBootSanDeviceByMoid Read a 'boot.SanDevice' resource.
 func (a *BootApiService) GetBootSanDeviceByMoid(ctx _context.Context, moid string) ApiGetBootSanDeviceByMoidRequest {
 	return ApiGetBootSanDeviceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4046,13 +4127,13 @@ func (a *BootApiService) GetBootSanDeviceByMoidExecute(r ApiGetBootSanDeviceByMo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4069,19 +4150,19 @@ func (a *BootApiService) GetBootSanDeviceByMoidExecute(r ApiGetBootSanDeviceByMo
 }
 
 type ApiGetBootSanDeviceListRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BootApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4089,51 +4170,61 @@ func (r ApiGetBootSanDeviceListRequest) Filter(filter string) ApiGetBootSanDevic
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBootSanDeviceListRequest) Orderby(orderby string) ApiGetBootSanDeviceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBootSanDeviceListRequest) Top(top int32) ApiGetBootSanDeviceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBootSanDeviceListRequest) Skip(skip int32) ApiGetBootSanDeviceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBootSanDeviceListRequest) Select_(select_ string) ApiGetBootSanDeviceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBootSanDeviceListRequest) Expand(expand string) ApiGetBootSanDeviceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBootSanDeviceListRequest) Apply(apply string) ApiGetBootSanDeviceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBootSanDeviceListRequest) Count(count bool) ApiGetBootSanDeviceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBootSanDeviceListRequest) Inlinecount(inlinecount string) ApiGetBootSanDeviceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBootSanDeviceListRequest) At(at string) ApiGetBootSanDeviceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBootSanDeviceListRequest) Tags(tags string) ApiGetBootSanDeviceListRequest {
 	r.tags = &tags
@@ -4153,7 +4244,7 @@ GetBootSanDeviceList Read a 'boot.SanDevice' resource.
 func (a *BootApiService) GetBootSanDeviceList(ctx _context.Context) ApiGetBootSanDeviceListRequest {
 	return ApiGetBootSanDeviceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4292,13 +4383,13 @@ func (a *BootApiService) GetBootSanDeviceListExecute(r ApiGetBootSanDeviceListRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4315,11 +4406,10 @@ func (a *BootApiService) GetBootSanDeviceListExecute(r ApiGetBootSanDeviceListRe
 }
 
 type ApiGetBootSdDeviceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BootApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBootSdDeviceByMoidRequest) Execute() (BootSdDevice, *_nethttp.Response, error) {
 	return r.ApiService.GetBootSdDeviceByMoidExecute(r)
@@ -4335,8 +4425,8 @@ GetBootSdDeviceByMoid Read a 'boot.SdDevice' resource.
 func (a *BootApiService) GetBootSdDeviceByMoid(ctx _context.Context, moid string) ApiGetBootSdDeviceByMoidRequest {
 	return ApiGetBootSdDeviceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4443,13 +4533,13 @@ func (a *BootApiService) GetBootSdDeviceByMoidExecute(r ApiGetBootSdDeviceByMoid
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4466,19 +4556,19 @@ func (a *BootApiService) GetBootSdDeviceByMoidExecute(r ApiGetBootSdDeviceByMoid
 }
 
 type ApiGetBootSdDeviceListRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BootApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4486,51 +4576,61 @@ func (r ApiGetBootSdDeviceListRequest) Filter(filter string) ApiGetBootSdDeviceL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBootSdDeviceListRequest) Orderby(orderby string) ApiGetBootSdDeviceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBootSdDeviceListRequest) Top(top int32) ApiGetBootSdDeviceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBootSdDeviceListRequest) Skip(skip int32) ApiGetBootSdDeviceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBootSdDeviceListRequest) Select_(select_ string) ApiGetBootSdDeviceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBootSdDeviceListRequest) Expand(expand string) ApiGetBootSdDeviceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBootSdDeviceListRequest) Apply(apply string) ApiGetBootSdDeviceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBootSdDeviceListRequest) Count(count bool) ApiGetBootSdDeviceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBootSdDeviceListRequest) Inlinecount(inlinecount string) ApiGetBootSdDeviceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBootSdDeviceListRequest) At(at string) ApiGetBootSdDeviceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBootSdDeviceListRequest) Tags(tags string) ApiGetBootSdDeviceListRequest {
 	r.tags = &tags
@@ -4550,7 +4650,7 @@ GetBootSdDeviceList Read a 'boot.SdDevice' resource.
 func (a *BootApiService) GetBootSdDeviceList(ctx _context.Context) ApiGetBootSdDeviceListRequest {
 	return ApiGetBootSdDeviceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4689,13 +4789,13 @@ func (a *BootApiService) GetBootSdDeviceListExecute(r ApiGetBootSdDeviceListRequ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4712,11 +4812,10 @@ func (a *BootApiService) GetBootSdDeviceListExecute(r ApiGetBootSdDeviceListRequ
 }
 
 type ApiGetBootUefiShellDeviceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BootApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBootUefiShellDeviceByMoidRequest) Execute() (BootUefiShellDevice, *_nethttp.Response, error) {
 	return r.ApiService.GetBootUefiShellDeviceByMoidExecute(r)
@@ -4732,8 +4831,8 @@ GetBootUefiShellDeviceByMoid Read a 'boot.UefiShellDevice' resource.
 func (a *BootApiService) GetBootUefiShellDeviceByMoid(ctx _context.Context, moid string) ApiGetBootUefiShellDeviceByMoidRequest {
 	return ApiGetBootUefiShellDeviceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4840,13 +4939,13 @@ func (a *BootApiService) GetBootUefiShellDeviceByMoidExecute(r ApiGetBootUefiShe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4863,19 +4962,19 @@ func (a *BootApiService) GetBootUefiShellDeviceByMoidExecute(r ApiGetBootUefiShe
 }
 
 type ApiGetBootUefiShellDeviceListRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BootApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4883,51 +4982,61 @@ func (r ApiGetBootUefiShellDeviceListRequest) Filter(filter string) ApiGetBootUe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBootUefiShellDeviceListRequest) Orderby(orderby string) ApiGetBootUefiShellDeviceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBootUefiShellDeviceListRequest) Top(top int32) ApiGetBootUefiShellDeviceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBootUefiShellDeviceListRequest) Skip(skip int32) ApiGetBootUefiShellDeviceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBootUefiShellDeviceListRequest) Select_(select_ string) ApiGetBootUefiShellDeviceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBootUefiShellDeviceListRequest) Expand(expand string) ApiGetBootUefiShellDeviceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBootUefiShellDeviceListRequest) Apply(apply string) ApiGetBootUefiShellDeviceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBootUefiShellDeviceListRequest) Count(count bool) ApiGetBootUefiShellDeviceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBootUefiShellDeviceListRequest) Inlinecount(inlinecount string) ApiGetBootUefiShellDeviceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBootUefiShellDeviceListRequest) At(at string) ApiGetBootUefiShellDeviceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBootUefiShellDeviceListRequest) Tags(tags string) ApiGetBootUefiShellDeviceListRequest {
 	r.tags = &tags
@@ -4947,7 +5056,7 @@ GetBootUefiShellDeviceList Read a 'boot.UefiShellDevice' resource.
 func (a *BootApiService) GetBootUefiShellDeviceList(ctx _context.Context) ApiGetBootUefiShellDeviceListRequest {
 	return ApiGetBootUefiShellDeviceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5086,13 +5195,13 @@ func (a *BootApiService) GetBootUefiShellDeviceListExecute(r ApiGetBootUefiShell
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5109,11 +5218,10 @@ func (a *BootApiService) GetBootUefiShellDeviceListExecute(r ApiGetBootUefiShell
 }
 
 type ApiGetBootUsbDeviceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BootApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBootUsbDeviceByMoidRequest) Execute() (BootUsbDevice, *_nethttp.Response, error) {
 	return r.ApiService.GetBootUsbDeviceByMoidExecute(r)
@@ -5129,8 +5237,8 @@ GetBootUsbDeviceByMoid Read a 'boot.UsbDevice' resource.
 func (a *BootApiService) GetBootUsbDeviceByMoid(ctx _context.Context, moid string) ApiGetBootUsbDeviceByMoidRequest {
 	return ApiGetBootUsbDeviceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5237,13 +5345,13 @@ func (a *BootApiService) GetBootUsbDeviceByMoidExecute(r ApiGetBootUsbDeviceByMo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5260,19 +5368,19 @@ func (a *BootApiService) GetBootUsbDeviceByMoidExecute(r ApiGetBootUsbDeviceByMo
 }
 
 type ApiGetBootUsbDeviceListRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BootApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5280,51 +5388,61 @@ func (r ApiGetBootUsbDeviceListRequest) Filter(filter string) ApiGetBootUsbDevic
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBootUsbDeviceListRequest) Orderby(orderby string) ApiGetBootUsbDeviceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBootUsbDeviceListRequest) Top(top int32) ApiGetBootUsbDeviceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBootUsbDeviceListRequest) Skip(skip int32) ApiGetBootUsbDeviceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBootUsbDeviceListRequest) Select_(select_ string) ApiGetBootUsbDeviceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBootUsbDeviceListRequest) Expand(expand string) ApiGetBootUsbDeviceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBootUsbDeviceListRequest) Apply(apply string) ApiGetBootUsbDeviceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBootUsbDeviceListRequest) Count(count bool) ApiGetBootUsbDeviceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBootUsbDeviceListRequest) Inlinecount(inlinecount string) ApiGetBootUsbDeviceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBootUsbDeviceListRequest) At(at string) ApiGetBootUsbDeviceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBootUsbDeviceListRequest) Tags(tags string) ApiGetBootUsbDeviceListRequest {
 	r.tags = &tags
@@ -5344,7 +5462,7 @@ GetBootUsbDeviceList Read a 'boot.UsbDevice' resource.
 func (a *BootApiService) GetBootUsbDeviceList(ctx _context.Context) ApiGetBootUsbDeviceListRequest {
 	return ApiGetBootUsbDeviceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5483,13 +5601,13 @@ func (a *BootApiService) GetBootUsbDeviceListExecute(r ApiGetBootUsbDeviceListRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5506,11 +5624,10 @@ func (a *BootApiService) GetBootUsbDeviceListExecute(r ApiGetBootUsbDeviceListRe
 }
 
 type ApiGetBootVmediaDeviceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BootApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBootVmediaDeviceByMoidRequest) Execute() (BootVmediaDevice, *_nethttp.Response, error) {
 	return r.ApiService.GetBootVmediaDeviceByMoidExecute(r)
@@ -5526,8 +5643,8 @@ GetBootVmediaDeviceByMoid Read a 'boot.VmediaDevice' resource.
 func (a *BootApiService) GetBootVmediaDeviceByMoid(ctx _context.Context, moid string) ApiGetBootVmediaDeviceByMoidRequest {
 	return ApiGetBootVmediaDeviceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5634,13 +5751,13 @@ func (a *BootApiService) GetBootVmediaDeviceByMoidExecute(r ApiGetBootVmediaDevi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5657,19 +5774,19 @@ func (a *BootApiService) GetBootVmediaDeviceByMoidExecute(r ApiGetBootVmediaDevi
 }
 
 type ApiGetBootVmediaDeviceListRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BootApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5677,51 +5794,61 @@ func (r ApiGetBootVmediaDeviceListRequest) Filter(filter string) ApiGetBootVmedi
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBootVmediaDeviceListRequest) Orderby(orderby string) ApiGetBootVmediaDeviceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBootVmediaDeviceListRequest) Top(top int32) ApiGetBootVmediaDeviceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBootVmediaDeviceListRequest) Skip(skip int32) ApiGetBootVmediaDeviceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBootVmediaDeviceListRequest) Select_(select_ string) ApiGetBootVmediaDeviceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBootVmediaDeviceListRequest) Expand(expand string) ApiGetBootVmediaDeviceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBootVmediaDeviceListRequest) Apply(apply string) ApiGetBootVmediaDeviceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBootVmediaDeviceListRequest) Count(count bool) ApiGetBootVmediaDeviceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBootVmediaDeviceListRequest) Inlinecount(inlinecount string) ApiGetBootVmediaDeviceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBootVmediaDeviceListRequest) At(at string) ApiGetBootVmediaDeviceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBootVmediaDeviceListRequest) Tags(tags string) ApiGetBootVmediaDeviceListRequest {
 	r.tags = &tags
@@ -5741,7 +5868,7 @@ GetBootVmediaDeviceList Read a 'boot.VmediaDevice' resource.
 func (a *BootApiService) GetBootVmediaDeviceList(ctx _context.Context) ApiGetBootVmediaDeviceListRequest {
 	return ApiGetBootVmediaDeviceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5880,13 +6007,13 @@ func (a *BootApiService) GetBootVmediaDeviceListExecute(r ApiGetBootVmediaDevice
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5903,11 +6030,11 @@ func (a *BootApiService) GetBootVmediaDeviceListExecute(r ApiGetBootVmediaDevice
 }
 
 type ApiPatchBootCddDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx           _context.Context
+	ApiService    *BootApiService
+	moid          string
 	bootCddDevice *BootCddDevice
-	ifMatch *string
+	ifMatch       *string
 }
 
 // The &#39;boot.CddDevice&#39; resource to update.
@@ -5915,6 +6042,7 @@ func (r ApiPatchBootCddDeviceRequest) BootCddDevice(bootCddDevice BootCddDevice)
 	r.bootCddDevice = &bootCddDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchBootCddDeviceRequest) IfMatch(ifMatch string) ApiPatchBootCddDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -5935,8 +6063,8 @@ PatchBootCddDevice Update a 'boot.CddDevice' resource.
 func (a *BootApiService) PatchBootCddDevice(ctx _context.Context, moid string) ApiPatchBootCddDeviceRequest {
 	return ApiPatchBootCddDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6051,13 +6179,13 @@ func (a *BootApiService) PatchBootCddDeviceExecute(r ApiPatchBootCddDeviceReques
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6074,11 +6202,11 @@ func (a *BootApiService) PatchBootCddDeviceExecute(r ApiPatchBootCddDeviceReques
 }
 
 type ApiPatchBootDeviceBootModeRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx                _context.Context
+	ApiService         *BootApiService
+	moid               string
 	bootDeviceBootMode *BootDeviceBootMode
-	ifMatch *string
+	ifMatch            *string
 }
 
 // The &#39;boot.DeviceBootMode&#39; resource to update.
@@ -6086,6 +6214,7 @@ func (r ApiPatchBootDeviceBootModeRequest) BootDeviceBootMode(bootDeviceBootMode
 	r.bootDeviceBootMode = &bootDeviceBootMode
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchBootDeviceBootModeRequest) IfMatch(ifMatch string) ApiPatchBootDeviceBootModeRequest {
 	r.ifMatch = &ifMatch
@@ -6106,8 +6235,8 @@ PatchBootDeviceBootMode Update a 'boot.DeviceBootMode' resource.
 func (a *BootApiService) PatchBootDeviceBootMode(ctx _context.Context, moid string) ApiPatchBootDeviceBootModeRequest {
 	return ApiPatchBootDeviceBootModeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6222,13 +6351,13 @@ func (a *BootApiService) PatchBootDeviceBootModeExecute(r ApiPatchBootDeviceBoot
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6245,11 +6374,11 @@ func (a *BootApiService) PatchBootDeviceBootModeExecute(r ApiPatchBootDeviceBoot
 }
 
 type ApiPatchBootDeviceBootSecurityRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *BootApiService
+	moid                   string
 	bootDeviceBootSecurity *BootDeviceBootSecurity
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;boot.DeviceBootSecurity&#39; resource to update.
@@ -6257,6 +6386,7 @@ func (r ApiPatchBootDeviceBootSecurityRequest) BootDeviceBootSecurity(bootDevice
 	r.bootDeviceBootSecurity = &bootDeviceBootSecurity
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchBootDeviceBootSecurityRequest) IfMatch(ifMatch string) ApiPatchBootDeviceBootSecurityRequest {
 	r.ifMatch = &ifMatch
@@ -6277,8 +6407,8 @@ PatchBootDeviceBootSecurity Update a 'boot.DeviceBootSecurity' resource.
 func (a *BootApiService) PatchBootDeviceBootSecurity(ctx _context.Context, moid string) ApiPatchBootDeviceBootSecurityRequest {
 	return ApiPatchBootDeviceBootSecurityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6393,13 +6523,13 @@ func (a *BootApiService) PatchBootDeviceBootSecurityExecute(r ApiPatchBootDevice
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6416,11 +6546,11 @@ func (a *BootApiService) PatchBootDeviceBootSecurityExecute(r ApiPatchBootDevice
 }
 
 type ApiPatchBootHddDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx           _context.Context
+	ApiService    *BootApiService
+	moid          string
 	bootHddDevice *BootHddDevice
-	ifMatch *string
+	ifMatch       *string
 }
 
 // The &#39;boot.HddDevice&#39; resource to update.
@@ -6428,6 +6558,7 @@ func (r ApiPatchBootHddDeviceRequest) BootHddDevice(bootHddDevice BootHddDevice)
 	r.bootHddDevice = &bootHddDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchBootHddDeviceRequest) IfMatch(ifMatch string) ApiPatchBootHddDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -6448,8 +6579,8 @@ PatchBootHddDevice Update a 'boot.HddDevice' resource.
 func (a *BootApiService) PatchBootHddDevice(ctx _context.Context, moid string) ApiPatchBootHddDeviceRequest {
 	return ApiPatchBootHddDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6564,13 +6695,13 @@ func (a *BootApiService) PatchBootHddDeviceExecute(r ApiPatchBootHddDeviceReques
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6587,11 +6718,11 @@ func (a *BootApiService) PatchBootHddDeviceExecute(r ApiPatchBootHddDeviceReques
 }
 
 type ApiPatchBootIscsiDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *BootApiService
+	moid            string
 	bootIscsiDevice *BootIscsiDevice
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;boot.IscsiDevice&#39; resource to update.
@@ -6599,6 +6730,7 @@ func (r ApiPatchBootIscsiDeviceRequest) BootIscsiDevice(bootIscsiDevice BootIscs
 	r.bootIscsiDevice = &bootIscsiDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchBootIscsiDeviceRequest) IfMatch(ifMatch string) ApiPatchBootIscsiDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -6619,8 +6751,8 @@ PatchBootIscsiDevice Update a 'boot.IscsiDevice' resource.
 func (a *BootApiService) PatchBootIscsiDevice(ctx _context.Context, moid string) ApiPatchBootIscsiDeviceRequest {
 	return ApiPatchBootIscsiDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6735,13 +6867,13 @@ func (a *BootApiService) PatchBootIscsiDeviceExecute(r ApiPatchBootIscsiDeviceRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6758,11 +6890,11 @@ func (a *BootApiService) PatchBootIscsiDeviceExecute(r ApiPatchBootIscsiDeviceRe
 }
 
 type ApiPatchBootNvmeDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx            _context.Context
+	ApiService     *BootApiService
+	moid           string
 	bootNvmeDevice *BootNvmeDevice
-	ifMatch *string
+	ifMatch        *string
 }
 
 // The &#39;boot.NvmeDevice&#39; resource to update.
@@ -6770,6 +6902,7 @@ func (r ApiPatchBootNvmeDeviceRequest) BootNvmeDevice(bootNvmeDevice BootNvmeDev
 	r.bootNvmeDevice = &bootNvmeDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchBootNvmeDeviceRequest) IfMatch(ifMatch string) ApiPatchBootNvmeDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -6790,8 +6923,8 @@ PatchBootNvmeDevice Update a 'boot.NvmeDevice' resource.
 func (a *BootApiService) PatchBootNvmeDevice(ctx _context.Context, moid string) ApiPatchBootNvmeDeviceRequest {
 	return ApiPatchBootNvmeDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6906,13 +7039,13 @@ func (a *BootApiService) PatchBootNvmeDeviceExecute(r ApiPatchBootNvmeDeviceRequ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6929,11 +7062,11 @@ func (a *BootApiService) PatchBootNvmeDeviceExecute(r ApiPatchBootNvmeDeviceRequ
 }
 
 type ApiPatchBootPchStorageDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *BootApiService
+	moid                 string
 	bootPchStorageDevice *BootPchStorageDevice
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;boot.PchStorageDevice&#39; resource to update.
@@ -6941,6 +7074,7 @@ func (r ApiPatchBootPchStorageDeviceRequest) BootPchStorageDevice(bootPchStorage
 	r.bootPchStorageDevice = &bootPchStorageDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchBootPchStorageDeviceRequest) IfMatch(ifMatch string) ApiPatchBootPchStorageDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -6961,8 +7095,8 @@ PatchBootPchStorageDevice Update a 'boot.PchStorageDevice' resource.
 func (a *BootApiService) PatchBootPchStorageDevice(ctx _context.Context, moid string) ApiPatchBootPchStorageDeviceRequest {
 	return ApiPatchBootPchStorageDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7077,13 +7211,13 @@ func (a *BootApiService) PatchBootPchStorageDeviceExecute(r ApiPatchBootPchStora
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7100,11 +7234,11 @@ func (a *BootApiService) PatchBootPchStorageDeviceExecute(r ApiPatchBootPchStora
 }
 
 type ApiPatchBootPrecisionPolicyRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *BootApiService
+	moid                string
 	bootPrecisionPolicy *BootPrecisionPolicy
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;boot.PrecisionPolicy&#39; resource to update.
@@ -7112,6 +7246,7 @@ func (r ApiPatchBootPrecisionPolicyRequest) BootPrecisionPolicy(bootPrecisionPol
 	r.bootPrecisionPolicy = &bootPrecisionPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchBootPrecisionPolicyRequest) IfMatch(ifMatch string) ApiPatchBootPrecisionPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -7132,8 +7267,8 @@ PatchBootPrecisionPolicy Update a 'boot.PrecisionPolicy' resource.
 func (a *BootApiService) PatchBootPrecisionPolicy(ctx _context.Context, moid string) ApiPatchBootPrecisionPolicyRequest {
 	return ApiPatchBootPrecisionPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7248,13 +7383,13 @@ func (a *BootApiService) PatchBootPrecisionPolicyExecute(r ApiPatchBootPrecision
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7271,11 +7406,11 @@ func (a *BootApiService) PatchBootPrecisionPolicyExecute(r ApiPatchBootPrecision
 }
 
 type ApiPatchBootPxeDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx           _context.Context
+	ApiService    *BootApiService
+	moid          string
 	bootPxeDevice *BootPxeDevice
-	ifMatch *string
+	ifMatch       *string
 }
 
 // The &#39;boot.PxeDevice&#39; resource to update.
@@ -7283,6 +7418,7 @@ func (r ApiPatchBootPxeDeviceRequest) BootPxeDevice(bootPxeDevice BootPxeDevice)
 	r.bootPxeDevice = &bootPxeDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchBootPxeDeviceRequest) IfMatch(ifMatch string) ApiPatchBootPxeDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -7303,8 +7439,8 @@ PatchBootPxeDevice Update a 'boot.PxeDevice' resource.
 func (a *BootApiService) PatchBootPxeDevice(ctx _context.Context, moid string) ApiPatchBootPxeDeviceRequest {
 	return ApiPatchBootPxeDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7419,13 +7555,13 @@ func (a *BootApiService) PatchBootPxeDeviceExecute(r ApiPatchBootPxeDeviceReques
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7442,11 +7578,11 @@ func (a *BootApiService) PatchBootPxeDeviceExecute(r ApiPatchBootPxeDeviceReques
 }
 
 type ApiPatchBootSanDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx           _context.Context
+	ApiService    *BootApiService
+	moid          string
 	bootSanDevice *BootSanDevice
-	ifMatch *string
+	ifMatch       *string
 }
 
 // The &#39;boot.SanDevice&#39; resource to update.
@@ -7454,6 +7590,7 @@ func (r ApiPatchBootSanDeviceRequest) BootSanDevice(bootSanDevice BootSanDevice)
 	r.bootSanDevice = &bootSanDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchBootSanDeviceRequest) IfMatch(ifMatch string) ApiPatchBootSanDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -7474,8 +7611,8 @@ PatchBootSanDevice Update a 'boot.SanDevice' resource.
 func (a *BootApiService) PatchBootSanDevice(ctx _context.Context, moid string) ApiPatchBootSanDeviceRequest {
 	return ApiPatchBootSanDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7590,13 +7727,13 @@ func (a *BootApiService) PatchBootSanDeviceExecute(r ApiPatchBootSanDeviceReques
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7613,11 +7750,11 @@ func (a *BootApiService) PatchBootSanDeviceExecute(r ApiPatchBootSanDeviceReques
 }
 
 type ApiPatchBootSdDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *BootApiService
+	moid         string
 	bootSdDevice *BootSdDevice
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;boot.SdDevice&#39; resource to update.
@@ -7625,6 +7762,7 @@ func (r ApiPatchBootSdDeviceRequest) BootSdDevice(bootSdDevice BootSdDevice) Api
 	r.bootSdDevice = &bootSdDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchBootSdDeviceRequest) IfMatch(ifMatch string) ApiPatchBootSdDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -7645,8 +7783,8 @@ PatchBootSdDevice Update a 'boot.SdDevice' resource.
 func (a *BootApiService) PatchBootSdDevice(ctx _context.Context, moid string) ApiPatchBootSdDeviceRequest {
 	return ApiPatchBootSdDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7761,13 +7899,13 @@ func (a *BootApiService) PatchBootSdDeviceExecute(r ApiPatchBootSdDeviceRequest)
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7784,11 +7922,11 @@ func (a *BootApiService) PatchBootSdDeviceExecute(r ApiPatchBootSdDeviceRequest)
 }
 
 type ApiPatchBootUefiShellDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *BootApiService
+	moid                string
 	bootUefiShellDevice *BootUefiShellDevice
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;boot.UefiShellDevice&#39; resource to update.
@@ -7796,6 +7934,7 @@ func (r ApiPatchBootUefiShellDeviceRequest) BootUefiShellDevice(bootUefiShellDev
 	r.bootUefiShellDevice = &bootUefiShellDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchBootUefiShellDeviceRequest) IfMatch(ifMatch string) ApiPatchBootUefiShellDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -7816,8 +7955,8 @@ PatchBootUefiShellDevice Update a 'boot.UefiShellDevice' resource.
 func (a *BootApiService) PatchBootUefiShellDevice(ctx _context.Context, moid string) ApiPatchBootUefiShellDeviceRequest {
 	return ApiPatchBootUefiShellDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7932,13 +8071,13 @@ func (a *BootApiService) PatchBootUefiShellDeviceExecute(r ApiPatchBootUefiShell
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7955,11 +8094,11 @@ func (a *BootApiService) PatchBootUefiShellDeviceExecute(r ApiPatchBootUefiShell
 }
 
 type ApiPatchBootUsbDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx           _context.Context
+	ApiService    *BootApiService
+	moid          string
 	bootUsbDevice *BootUsbDevice
-	ifMatch *string
+	ifMatch       *string
 }
 
 // The &#39;boot.UsbDevice&#39; resource to update.
@@ -7967,6 +8106,7 @@ func (r ApiPatchBootUsbDeviceRequest) BootUsbDevice(bootUsbDevice BootUsbDevice)
 	r.bootUsbDevice = &bootUsbDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchBootUsbDeviceRequest) IfMatch(ifMatch string) ApiPatchBootUsbDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -7987,8 +8127,8 @@ PatchBootUsbDevice Update a 'boot.UsbDevice' resource.
 func (a *BootApiService) PatchBootUsbDevice(ctx _context.Context, moid string) ApiPatchBootUsbDeviceRequest {
 	return ApiPatchBootUsbDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8103,13 +8243,13 @@ func (a *BootApiService) PatchBootUsbDeviceExecute(r ApiPatchBootUsbDeviceReques
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8126,11 +8266,11 @@ func (a *BootApiService) PatchBootUsbDeviceExecute(r ApiPatchBootUsbDeviceReques
 }
 
 type ApiPatchBootVmediaDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *BootApiService
+	moid             string
 	bootVmediaDevice *BootVmediaDevice
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;boot.VmediaDevice&#39; resource to update.
@@ -8138,6 +8278,7 @@ func (r ApiPatchBootVmediaDeviceRequest) BootVmediaDevice(bootVmediaDevice BootV
 	r.bootVmediaDevice = &bootVmediaDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchBootVmediaDeviceRequest) IfMatch(ifMatch string) ApiPatchBootVmediaDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -8158,8 +8299,8 @@ PatchBootVmediaDevice Update a 'boot.VmediaDevice' resource.
 func (a *BootApiService) PatchBootVmediaDevice(ctx _context.Context, moid string) ApiPatchBootVmediaDeviceRequest {
 	return ApiPatchBootVmediaDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8274,13 +8415,13 @@ func (a *BootApiService) PatchBootVmediaDeviceExecute(r ApiPatchBootVmediaDevice
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8297,11 +8438,11 @@ func (a *BootApiService) PatchBootVmediaDeviceExecute(r ApiPatchBootVmediaDevice
 }
 
 type ApiUpdateBootCddDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx           _context.Context
+	ApiService    *BootApiService
+	moid          string
 	bootCddDevice *BootCddDevice
-	ifMatch *string
+	ifMatch       *string
 }
 
 // The &#39;boot.CddDevice&#39; resource to update.
@@ -8309,6 +8450,7 @@ func (r ApiUpdateBootCddDeviceRequest) BootCddDevice(bootCddDevice BootCddDevice
 	r.bootCddDevice = &bootCddDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateBootCddDeviceRequest) IfMatch(ifMatch string) ApiUpdateBootCddDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -8329,8 +8471,8 @@ UpdateBootCddDevice Update a 'boot.CddDevice' resource.
 func (a *BootApiService) UpdateBootCddDevice(ctx _context.Context, moid string) ApiUpdateBootCddDeviceRequest {
 	return ApiUpdateBootCddDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8445,13 +8587,13 @@ func (a *BootApiService) UpdateBootCddDeviceExecute(r ApiUpdateBootCddDeviceRequ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8468,11 +8610,11 @@ func (a *BootApiService) UpdateBootCddDeviceExecute(r ApiUpdateBootCddDeviceRequ
 }
 
 type ApiUpdateBootDeviceBootModeRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx                _context.Context
+	ApiService         *BootApiService
+	moid               string
 	bootDeviceBootMode *BootDeviceBootMode
-	ifMatch *string
+	ifMatch            *string
 }
 
 // The &#39;boot.DeviceBootMode&#39; resource to update.
@@ -8480,6 +8622,7 @@ func (r ApiUpdateBootDeviceBootModeRequest) BootDeviceBootMode(bootDeviceBootMod
 	r.bootDeviceBootMode = &bootDeviceBootMode
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateBootDeviceBootModeRequest) IfMatch(ifMatch string) ApiUpdateBootDeviceBootModeRequest {
 	r.ifMatch = &ifMatch
@@ -8500,8 +8643,8 @@ UpdateBootDeviceBootMode Update a 'boot.DeviceBootMode' resource.
 func (a *BootApiService) UpdateBootDeviceBootMode(ctx _context.Context, moid string) ApiUpdateBootDeviceBootModeRequest {
 	return ApiUpdateBootDeviceBootModeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8616,13 +8759,13 @@ func (a *BootApiService) UpdateBootDeviceBootModeExecute(r ApiUpdateBootDeviceBo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8639,11 +8782,11 @@ func (a *BootApiService) UpdateBootDeviceBootModeExecute(r ApiUpdateBootDeviceBo
 }
 
 type ApiUpdateBootDeviceBootSecurityRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *BootApiService
+	moid                   string
 	bootDeviceBootSecurity *BootDeviceBootSecurity
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;boot.DeviceBootSecurity&#39; resource to update.
@@ -8651,6 +8794,7 @@ func (r ApiUpdateBootDeviceBootSecurityRequest) BootDeviceBootSecurity(bootDevic
 	r.bootDeviceBootSecurity = &bootDeviceBootSecurity
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateBootDeviceBootSecurityRequest) IfMatch(ifMatch string) ApiUpdateBootDeviceBootSecurityRequest {
 	r.ifMatch = &ifMatch
@@ -8671,8 +8815,8 @@ UpdateBootDeviceBootSecurity Update a 'boot.DeviceBootSecurity' resource.
 func (a *BootApiService) UpdateBootDeviceBootSecurity(ctx _context.Context, moid string) ApiUpdateBootDeviceBootSecurityRequest {
 	return ApiUpdateBootDeviceBootSecurityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8787,13 +8931,13 @@ func (a *BootApiService) UpdateBootDeviceBootSecurityExecute(r ApiUpdateBootDevi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8810,11 +8954,11 @@ func (a *BootApiService) UpdateBootDeviceBootSecurityExecute(r ApiUpdateBootDevi
 }
 
 type ApiUpdateBootHddDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx           _context.Context
+	ApiService    *BootApiService
+	moid          string
 	bootHddDevice *BootHddDevice
-	ifMatch *string
+	ifMatch       *string
 }
 
 // The &#39;boot.HddDevice&#39; resource to update.
@@ -8822,6 +8966,7 @@ func (r ApiUpdateBootHddDeviceRequest) BootHddDevice(bootHddDevice BootHddDevice
 	r.bootHddDevice = &bootHddDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateBootHddDeviceRequest) IfMatch(ifMatch string) ApiUpdateBootHddDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -8842,8 +8987,8 @@ UpdateBootHddDevice Update a 'boot.HddDevice' resource.
 func (a *BootApiService) UpdateBootHddDevice(ctx _context.Context, moid string) ApiUpdateBootHddDeviceRequest {
 	return ApiUpdateBootHddDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8958,13 +9103,13 @@ func (a *BootApiService) UpdateBootHddDeviceExecute(r ApiUpdateBootHddDeviceRequ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8981,11 +9126,11 @@ func (a *BootApiService) UpdateBootHddDeviceExecute(r ApiUpdateBootHddDeviceRequ
 }
 
 type ApiUpdateBootIscsiDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *BootApiService
+	moid            string
 	bootIscsiDevice *BootIscsiDevice
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;boot.IscsiDevice&#39; resource to update.
@@ -8993,6 +9138,7 @@ func (r ApiUpdateBootIscsiDeviceRequest) BootIscsiDevice(bootIscsiDevice BootIsc
 	r.bootIscsiDevice = &bootIscsiDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateBootIscsiDeviceRequest) IfMatch(ifMatch string) ApiUpdateBootIscsiDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -9013,8 +9159,8 @@ UpdateBootIscsiDevice Update a 'boot.IscsiDevice' resource.
 func (a *BootApiService) UpdateBootIscsiDevice(ctx _context.Context, moid string) ApiUpdateBootIscsiDeviceRequest {
 	return ApiUpdateBootIscsiDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9129,13 +9275,13 @@ func (a *BootApiService) UpdateBootIscsiDeviceExecute(r ApiUpdateBootIscsiDevice
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9152,11 +9298,11 @@ func (a *BootApiService) UpdateBootIscsiDeviceExecute(r ApiUpdateBootIscsiDevice
 }
 
 type ApiUpdateBootNvmeDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx            _context.Context
+	ApiService     *BootApiService
+	moid           string
 	bootNvmeDevice *BootNvmeDevice
-	ifMatch *string
+	ifMatch        *string
 }
 
 // The &#39;boot.NvmeDevice&#39; resource to update.
@@ -9164,6 +9310,7 @@ func (r ApiUpdateBootNvmeDeviceRequest) BootNvmeDevice(bootNvmeDevice BootNvmeDe
 	r.bootNvmeDevice = &bootNvmeDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateBootNvmeDeviceRequest) IfMatch(ifMatch string) ApiUpdateBootNvmeDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -9184,8 +9331,8 @@ UpdateBootNvmeDevice Update a 'boot.NvmeDevice' resource.
 func (a *BootApiService) UpdateBootNvmeDevice(ctx _context.Context, moid string) ApiUpdateBootNvmeDeviceRequest {
 	return ApiUpdateBootNvmeDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9300,13 +9447,13 @@ func (a *BootApiService) UpdateBootNvmeDeviceExecute(r ApiUpdateBootNvmeDeviceRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9323,11 +9470,11 @@ func (a *BootApiService) UpdateBootNvmeDeviceExecute(r ApiUpdateBootNvmeDeviceRe
 }
 
 type ApiUpdateBootPchStorageDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *BootApiService
+	moid                 string
 	bootPchStorageDevice *BootPchStorageDevice
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;boot.PchStorageDevice&#39; resource to update.
@@ -9335,6 +9482,7 @@ func (r ApiUpdateBootPchStorageDeviceRequest) BootPchStorageDevice(bootPchStorag
 	r.bootPchStorageDevice = &bootPchStorageDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateBootPchStorageDeviceRequest) IfMatch(ifMatch string) ApiUpdateBootPchStorageDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -9355,8 +9503,8 @@ UpdateBootPchStorageDevice Update a 'boot.PchStorageDevice' resource.
 func (a *BootApiService) UpdateBootPchStorageDevice(ctx _context.Context, moid string) ApiUpdateBootPchStorageDeviceRequest {
 	return ApiUpdateBootPchStorageDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9471,13 +9619,13 @@ func (a *BootApiService) UpdateBootPchStorageDeviceExecute(r ApiUpdateBootPchSto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9494,11 +9642,11 @@ func (a *BootApiService) UpdateBootPchStorageDeviceExecute(r ApiUpdateBootPchSto
 }
 
 type ApiUpdateBootPrecisionPolicyRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *BootApiService
+	moid                string
 	bootPrecisionPolicy *BootPrecisionPolicy
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;boot.PrecisionPolicy&#39; resource to update.
@@ -9506,6 +9654,7 @@ func (r ApiUpdateBootPrecisionPolicyRequest) BootPrecisionPolicy(bootPrecisionPo
 	r.bootPrecisionPolicy = &bootPrecisionPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateBootPrecisionPolicyRequest) IfMatch(ifMatch string) ApiUpdateBootPrecisionPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -9526,8 +9675,8 @@ UpdateBootPrecisionPolicy Update a 'boot.PrecisionPolicy' resource.
 func (a *BootApiService) UpdateBootPrecisionPolicy(ctx _context.Context, moid string) ApiUpdateBootPrecisionPolicyRequest {
 	return ApiUpdateBootPrecisionPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9642,13 +9791,13 @@ func (a *BootApiService) UpdateBootPrecisionPolicyExecute(r ApiUpdateBootPrecisi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9665,11 +9814,11 @@ func (a *BootApiService) UpdateBootPrecisionPolicyExecute(r ApiUpdateBootPrecisi
 }
 
 type ApiUpdateBootPxeDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx           _context.Context
+	ApiService    *BootApiService
+	moid          string
 	bootPxeDevice *BootPxeDevice
-	ifMatch *string
+	ifMatch       *string
 }
 
 // The &#39;boot.PxeDevice&#39; resource to update.
@@ -9677,6 +9826,7 @@ func (r ApiUpdateBootPxeDeviceRequest) BootPxeDevice(bootPxeDevice BootPxeDevice
 	r.bootPxeDevice = &bootPxeDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateBootPxeDeviceRequest) IfMatch(ifMatch string) ApiUpdateBootPxeDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -9697,8 +9847,8 @@ UpdateBootPxeDevice Update a 'boot.PxeDevice' resource.
 func (a *BootApiService) UpdateBootPxeDevice(ctx _context.Context, moid string) ApiUpdateBootPxeDeviceRequest {
 	return ApiUpdateBootPxeDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9813,13 +9963,13 @@ func (a *BootApiService) UpdateBootPxeDeviceExecute(r ApiUpdateBootPxeDeviceRequ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9836,11 +9986,11 @@ func (a *BootApiService) UpdateBootPxeDeviceExecute(r ApiUpdateBootPxeDeviceRequ
 }
 
 type ApiUpdateBootSanDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx           _context.Context
+	ApiService    *BootApiService
+	moid          string
 	bootSanDevice *BootSanDevice
-	ifMatch *string
+	ifMatch       *string
 }
 
 // The &#39;boot.SanDevice&#39; resource to update.
@@ -9848,6 +9998,7 @@ func (r ApiUpdateBootSanDeviceRequest) BootSanDevice(bootSanDevice BootSanDevice
 	r.bootSanDevice = &bootSanDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateBootSanDeviceRequest) IfMatch(ifMatch string) ApiUpdateBootSanDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -9868,8 +10019,8 @@ UpdateBootSanDevice Update a 'boot.SanDevice' resource.
 func (a *BootApiService) UpdateBootSanDevice(ctx _context.Context, moid string) ApiUpdateBootSanDeviceRequest {
 	return ApiUpdateBootSanDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9984,13 +10135,13 @@ func (a *BootApiService) UpdateBootSanDeviceExecute(r ApiUpdateBootSanDeviceRequ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10007,11 +10158,11 @@ func (a *BootApiService) UpdateBootSanDeviceExecute(r ApiUpdateBootSanDeviceRequ
 }
 
 type ApiUpdateBootSdDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *BootApiService
+	moid         string
 	bootSdDevice *BootSdDevice
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;boot.SdDevice&#39; resource to update.
@@ -10019,6 +10170,7 @@ func (r ApiUpdateBootSdDeviceRequest) BootSdDevice(bootSdDevice BootSdDevice) Ap
 	r.bootSdDevice = &bootSdDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateBootSdDeviceRequest) IfMatch(ifMatch string) ApiUpdateBootSdDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -10039,8 +10191,8 @@ UpdateBootSdDevice Update a 'boot.SdDevice' resource.
 func (a *BootApiService) UpdateBootSdDevice(ctx _context.Context, moid string) ApiUpdateBootSdDeviceRequest {
 	return ApiUpdateBootSdDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10155,13 +10307,13 @@ func (a *BootApiService) UpdateBootSdDeviceExecute(r ApiUpdateBootSdDeviceReques
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10178,11 +10330,11 @@ func (a *BootApiService) UpdateBootSdDeviceExecute(r ApiUpdateBootSdDeviceReques
 }
 
 type ApiUpdateBootUefiShellDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *BootApiService
+	moid                string
 	bootUefiShellDevice *BootUefiShellDevice
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;boot.UefiShellDevice&#39; resource to update.
@@ -10190,6 +10342,7 @@ func (r ApiUpdateBootUefiShellDeviceRequest) BootUefiShellDevice(bootUefiShellDe
 	r.bootUefiShellDevice = &bootUefiShellDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateBootUefiShellDeviceRequest) IfMatch(ifMatch string) ApiUpdateBootUefiShellDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -10210,8 +10363,8 @@ UpdateBootUefiShellDevice Update a 'boot.UefiShellDevice' resource.
 func (a *BootApiService) UpdateBootUefiShellDevice(ctx _context.Context, moid string) ApiUpdateBootUefiShellDeviceRequest {
 	return ApiUpdateBootUefiShellDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10326,13 +10479,13 @@ func (a *BootApiService) UpdateBootUefiShellDeviceExecute(r ApiUpdateBootUefiShe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10349,11 +10502,11 @@ func (a *BootApiService) UpdateBootUefiShellDeviceExecute(r ApiUpdateBootUefiShe
 }
 
 type ApiUpdateBootUsbDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx           _context.Context
+	ApiService    *BootApiService
+	moid          string
 	bootUsbDevice *BootUsbDevice
-	ifMatch *string
+	ifMatch       *string
 }
 
 // The &#39;boot.UsbDevice&#39; resource to update.
@@ -10361,6 +10514,7 @@ func (r ApiUpdateBootUsbDeviceRequest) BootUsbDevice(bootUsbDevice BootUsbDevice
 	r.bootUsbDevice = &bootUsbDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateBootUsbDeviceRequest) IfMatch(ifMatch string) ApiUpdateBootUsbDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -10381,8 +10535,8 @@ UpdateBootUsbDevice Update a 'boot.UsbDevice' resource.
 func (a *BootApiService) UpdateBootUsbDevice(ctx _context.Context, moid string) ApiUpdateBootUsbDeviceRequest {
 	return ApiUpdateBootUsbDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10497,13 +10651,13 @@ func (a *BootApiService) UpdateBootUsbDeviceExecute(r ApiUpdateBootUsbDeviceRequ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10520,11 +10674,11 @@ func (a *BootApiService) UpdateBootUsbDeviceExecute(r ApiUpdateBootUsbDeviceRequ
 }
 
 type ApiUpdateBootVmediaDeviceRequest struct {
-	ctx _context.Context
-	ApiService *BootApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *BootApiService
+	moid             string
 	bootVmediaDevice *BootVmediaDevice
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;boot.VmediaDevice&#39; resource to update.
@@ -10532,6 +10686,7 @@ func (r ApiUpdateBootVmediaDeviceRequest) BootVmediaDevice(bootVmediaDevice Boot
 	r.bootVmediaDevice = &bootVmediaDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateBootVmediaDeviceRequest) IfMatch(ifMatch string) ApiUpdateBootVmediaDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -10552,8 +10707,8 @@ UpdateBootVmediaDevice Update a 'boot.VmediaDevice' resource.
 func (a *BootApiService) UpdateBootVmediaDevice(ctx _context.Context, moid string) ApiUpdateBootVmediaDeviceRequest {
 	return ApiUpdateBootVmediaDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10668,13 +10823,13 @@ func (a *BootApiService) UpdateBootVmediaDeviceExecute(r ApiUpdateBootVmediaDevi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

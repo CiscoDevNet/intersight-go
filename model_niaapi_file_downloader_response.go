@@ -18,32 +18,31 @@ import (
 
 // NiaapiFileDownloaderResponse - The response body of a HTTP GET request for the 'niaapi.FileDownloader' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'niaapi.FileDownloader' resources.
 type NiaapiFileDownloaderResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform     *MoAggregateTransform
+	MoDocumentCount          *MoDocumentCount
+	MoTagSummary             *MoTagSummary
 	NiaapiFileDownloaderList *NiaapiFileDownloaderList
 }
 
 // MoAggregateTransformAsNiaapiFileDownloaderResponse is a convenience function that returns MoAggregateTransform wrapped in NiaapiFileDownloaderResponse
 func MoAggregateTransformAsNiaapiFileDownloaderResponse(v *MoAggregateTransform) NiaapiFileDownloaderResponse {
-	return NiaapiFileDownloaderResponse{ MoAggregateTransform: v}
+	return NiaapiFileDownloaderResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsNiaapiFileDownloaderResponse is a convenience function that returns MoDocumentCount wrapped in NiaapiFileDownloaderResponse
 func MoDocumentCountAsNiaapiFileDownloaderResponse(v *MoDocumentCount) NiaapiFileDownloaderResponse {
-	return NiaapiFileDownloaderResponse{ MoDocumentCount: v}
+	return NiaapiFileDownloaderResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsNiaapiFileDownloaderResponse is a convenience function that returns MoTagSummary wrapped in NiaapiFileDownloaderResponse
 func MoTagSummaryAsNiaapiFileDownloaderResponse(v *MoTagSummary) NiaapiFileDownloaderResponse {
-	return NiaapiFileDownloaderResponse{ MoTagSummary: v}
+	return NiaapiFileDownloaderResponse{MoTagSummary: v}
 }
 
 // NiaapiFileDownloaderListAsNiaapiFileDownloaderResponse is a convenience function that returns NiaapiFileDownloaderList wrapped in NiaapiFileDownloaderResponse
 func NiaapiFileDownloaderListAsNiaapiFileDownloaderResponse(v *NiaapiFileDownloaderList) NiaapiFileDownloaderResponse {
-	return NiaapiFileDownloaderResponse{ NiaapiFileDownloaderList: v}
+	return NiaapiFileDownloaderResponse{NiaapiFileDownloaderList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiaapiFileDownloaderResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src NiaapiFileDownloaderResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NiaapiFileDownloaderResponse) GetActualInstance() (interface{}) {
+func (obj *NiaapiFileDownloaderResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableNiaapiFileDownloaderResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

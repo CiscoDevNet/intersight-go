@@ -27,10 +27,10 @@ type StoragePurePort struct {
 	// Name of the port to which this port has failed over.
 	Failover *string `json:"Failover,omitempty"`
 	// Ip address of iSCSI portal configured on the port.
-	Portal *string `json:"Portal,omitempty"`
-	Array *StoragePureArrayRelationship `json:"Array,omitempty"`
-	Controller *StoragePureControllerRelationship `json:"Controller,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Portal               *string                              `json:"Portal,omitempty"`
+	Array                *StoragePureArrayRelationship        `json:"Array,omitempty"`
+	Controller           *StoragePureControllerRelationship   `json:"Controller,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *StoragePurePort) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StoragePurePort) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *StoragePurePort) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StoragePurePort) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -315,9 +315,9 @@ func (o *StoragePurePort) UnmarshalJSON(bytes []byte) (err error) {
 		// Name of the port to which this port has failed over.
 		Failover *string `json:"Failover,omitempty"`
 		// Ip address of iSCSI portal configured on the port.
-		Portal *string `json:"Portal,omitempty"`
-		Array *StoragePureArrayRelationship `json:"Array,omitempty"`
-		Controller *StoragePureControllerRelationship `json:"Controller,omitempty"`
+		Portal           *string                              `json:"Portal,omitempty"`
+		Array            *StoragePureArrayRelationship        `json:"Array,omitempty"`
+		Controller       *StoragePureControllerRelationship   `json:"Controller,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -417,5 +417,3 @@ func (v *NullableStoragePurePort) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

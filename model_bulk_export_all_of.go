@@ -24,11 +24,11 @@ type BulkExportAllOf struct {
 	// Action to be performed on the export operation. * `Start` - Starts the export operation. * `Cancel` - Cancels the export operation that is in progress.
 	Action *string `json:"Action,omitempty"`
 	// Specifies whether tags must be exported and will be considered for all the items MOs.
-	ExportTags *bool `json:"ExportTags,omitempty"`
+	ExportTags      *bool            `json:"ExportTags,omitempty"`
 	ExportedObjects []BulkSubRequest `json:"ExportedObjects,omitempty"`
 	// Contains the list of import order.
 	ImportOrder interface{} `json:"ImportOrder,omitempty"`
-	Items []MoMoRef `json:"Items,omitempty"`
+	Items       []MoMoRef   `json:"Items,omitempty"`
 	// An identifier for the export instance. Name can only contain letters (a-z, A-Z), numbers (0-9), hyphen (-) or an underscore (_).
 	Name *string `json:"Name,omitempty"`
 	// Status of the export operation. * `` - The operation has not started. * `InProgress` - The operation is in progress. * `OrderInProgress` - The archive operation is in progress. * `Success` - The operation has succeeded. * `Failed` - The operation has failed. * `OperationTimedOut` - The operation has timed out. * `OperationCancelled` - The operation has been cancelled. * `CancelInProgress` - The operation is being cancelled.
@@ -36,8 +36,8 @@ type BulkExportAllOf struct {
 	// Status message associated with failures or progress indication.
 	StatusMessage *string `json:"StatusMessage,omitempty"`
 	// An array of relationships to bulkExportedItem resources.
-	ExportedItems []BulkExportedItemRelationship `json:"ExportedItems,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ExportedItems        []BulkExportedItemRelationship        `json:"ExportedItems,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -87,7 +87,7 @@ func (o *BulkExportAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BulkExportAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -111,7 +111,7 @@ func (o *BulkExportAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BulkExportAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -188,7 +188,7 @@ func (o *BulkExportAllOf) SetExportTags(v bool) {
 
 // GetExportedObjects returns the ExportedObjects field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BulkExportAllOf) GetExportedObjects() []BulkSubRequest {
-	if o == nil  {
+	if o == nil {
 		var ret []BulkSubRequest
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *BulkExportAllOf) SetExportedObjects(v []BulkSubRequest) {
 
 // GetImportOrder returns the ImportOrder field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BulkExportAllOf) GetImportOrder() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *BulkExportAllOf) SetImportOrder(v interface{}) {
 
 // GetItems returns the Items field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BulkExportAllOf) GetItems() []MoMoRef {
-	if o == nil  {
+	if o == nil {
 		var ret []MoMoRef
 		return ret
 	}
@@ -383,7 +383,7 @@ func (o *BulkExportAllOf) SetStatusMessage(v string) {
 
 // GetExportedItems returns the ExportedItems field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BulkExportAllOf) GetExportedItems() []BulkExportedItemRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []BulkExportedItemRelationship
 		return ret
 	}
@@ -555,5 +555,3 @@ func (v *NullableBulkExportAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

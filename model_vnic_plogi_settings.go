@@ -27,7 +27,7 @@ type VnicPlogiSettings struct {
 	// The number of times that the system tries to log in to a port after the first failure.
 	Retries *int64 `json:"Retries,omitempty"`
 	// The number of milliseconds that the system waits before it tries to log in again.
-	Timeout *int64 `json:"Timeout,omitempty"`
+	Timeout              *int64 `json:"Timeout,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *VnicPlogiSettings) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicPlogiSettings) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *VnicPlogiSettings) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicPlogiSettings) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -308,5 +308,3 @@ func (v *NullableVnicPlogiSettings) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

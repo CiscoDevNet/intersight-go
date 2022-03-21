@@ -18,20 +18,20 @@ import (
 // TelemetryDruidSearchRequest These types of queries returns dimension values that match the search specification
 type TelemetryDruidSearchRequest struct {
 	// null
-	QueryType string `json:"queryType"`
+	QueryType  string                   `json:"queryType"`
 	DataSource TelemetryDruidDataSource `json:"dataSource"`
 	// A JSON Object representing ISO-8601 Intervals. This defines the time ranges to run the query over.
-	Intervals []string `json:"intervals"`
+	Intervals   []string                  `json:"intervals"`
 	Granularity TelemetryDruidGranularity `json:"granularity"`
-	Filter *TelemetryDruidFilter `json:"filter,omitempty"`
+	Filter      *TelemetryDruidFilter     `json:"filter,omitempty"`
 	// Aggregation functions are used to summarize data in buckets. Summarization functions include counting rows, calculating the min/max/sum of metrics and retrieving the first/last value of metrics for each bucket. Additional summarization functions are available with extensions. If no aggregator is provided, the results will be empty for each bucket.
 	Aggregations *[]TelemetryDruidAggregator `json:"aggregations,omitempty"`
 	// The list of dimensions to run the search over. Excluding this means the search is run over all dimensions.
-	SearchDimensions *[]string `json:"searchDimensions,omitempty"`
-	Query *TelemetryDruidAggregateSearchSpec `json:"query,omitempty"`
+	SearchDimensions *[]string                          `json:"searchDimensions,omitempty"`
+	Query            *TelemetryDruidAggregateSearchSpec `json:"query,omitempty"`
 	// An integer that limits the number of results. The default is unlimited.
-	Limit *int32 `json:"limit,omitempty"`
-	Context *TelemetryDruidQueryContext `json:"context,omitempty"`
+	Limit                *int32                      `json:"limit,omitempty"`
+	Context              *TelemetryDruidQueryContext `json:"context,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *TelemetryDruidSearchRequest) GetQueryType() string {
 // GetQueryTypeOk returns a tuple with the QueryType field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidSearchRequest) GetQueryTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.QueryType, true
@@ -95,7 +95,7 @@ func (o *TelemetryDruidSearchRequest) GetDataSource() TelemetryDruidDataSource {
 // GetDataSourceOk returns a tuple with the DataSource field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidSearchRequest) GetDataSourceOk() (*TelemetryDruidDataSource, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DataSource, true
@@ -119,7 +119,7 @@ func (o *TelemetryDruidSearchRequest) GetIntervals() []string {
 // GetIntervalsOk returns a tuple with the Intervals field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidSearchRequest) GetIntervalsOk() (*[]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Intervals, true
@@ -143,7 +143,7 @@ func (o *TelemetryDruidSearchRequest) GetGranularity() TelemetryDruidGranularity
 // GetGranularityOk returns a tuple with the Granularity field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidSearchRequest) GetGranularityOk() (*TelemetryDruidGranularity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Granularity, true
@@ -447,5 +447,3 @@ func (v *NullableTelemetryDruidSearchRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

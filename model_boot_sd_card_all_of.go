@@ -20,12 +20,12 @@ type BootSdCardAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType string                 `json:"ObjectType"`
 	Bootloader NullableBootBootloader `json:"Bootloader,omitempty"`
 	// The Logical Unit Number (LUN) of the device.
 	Lun *int64 `json:"Lun,omitempty"`
 	// The subtype for the selected device type. * `None` - No sub type for SD card boot device. * `flex-util` - Use of FlexUtil (microSD) card as sub type for SD card boot device. * `flex-flash` - Use of FlexFlash (SD) card as sub type for SD card boot device. * `SDCARD` - Use of SD card as sub type for the SD Card boot device.
-	Subtype *string `json:"Subtype,omitempty"`
+	Subtype              *string `json:"Subtype,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *BootSdCardAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BootSdCardAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *BootSdCardAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BootSdCardAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -123,7 +123,7 @@ func (o *BootSdCardAllOf) GetBootloader() BootBootloader {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BootSdCardAllOf) GetBootloaderOk() (*BootBootloader, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Bootloader.Get(), o.Bootloader.IsSet()
@@ -142,6 +142,7 @@ func (o *BootSdCardAllOf) HasBootloader() bool {
 func (o *BootSdCardAllOf) SetBootloader(v BootBootloader) {
 	o.Bootloader.Set(&v)
 }
+
 // SetBootloaderNil sets the value for Bootloader to be an explicit nil
 func (o *BootSdCardAllOf) SetBootloaderNil() {
 	o.Bootloader.Set(nil)
@@ -297,5 +298,3 @@ func (v *NullableBootSdCardAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

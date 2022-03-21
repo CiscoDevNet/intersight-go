@@ -25,11 +25,11 @@ type MacpoolLease struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// MAC address allocated for pool-based allocation.
-	MacAddress *string `json:"MacAddress,omitempty"`
-	AssignedToEntity *MoBaseMoRelationship `json:"AssignedToEntity,omitempty"`
-	Pool *MacpoolPoolRelationship `json:"Pool,omitempty"`
-	PoolMember *MacpoolPoolMemberRelationship `json:"PoolMember,omitempty"`
-	Universe *MacpoolUniverseRelationship `json:"Universe,omitempty"`
+	MacAddress           *string                        `json:"MacAddress,omitempty"`
+	AssignedToEntity     *MoBaseMoRelationship          `json:"AssignedToEntity,omitempty"`
+	Pool                 *MacpoolPoolRelationship       `json:"Pool,omitempty"`
+	PoolMember           *MacpoolPoolMemberRelationship `json:"PoolMember,omitempty"`
+	Universe             *MacpoolUniverseRelationship   `json:"Universe,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *MacpoolLease) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MacpoolLease) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *MacpoolLease) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MacpoolLease) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -314,11 +314,11 @@ func (o *MacpoolLease) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// MAC address allocated for pool-based allocation.
-		MacAddress *string `json:"MacAddress,omitempty"`
-		AssignedToEntity *MoBaseMoRelationship `json:"AssignedToEntity,omitempty"`
-		Pool *MacpoolPoolRelationship `json:"Pool,omitempty"`
-		PoolMember *MacpoolPoolMemberRelationship `json:"PoolMember,omitempty"`
-		Universe *MacpoolUniverseRelationship `json:"Universe,omitempty"`
+		MacAddress       *string                        `json:"MacAddress,omitempty"`
+		AssignedToEntity *MoBaseMoRelationship          `json:"AssignedToEntity,omitempty"`
+		Pool             *MacpoolPoolRelationship       `json:"Pool,omitempty"`
+		PoolMember       *MacpoolPoolMemberRelationship `json:"PoolMember,omitempty"`
+		Universe         *MacpoolUniverseRelationship   `json:"Universe,omitempty"`
 	}
 
 	varMacpoolLeaseWithoutEmbeddedStruct := MacpoolLeaseWithoutEmbeddedStruct{}
@@ -417,5 +417,3 @@ func (v *NullableMacpoolLease) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

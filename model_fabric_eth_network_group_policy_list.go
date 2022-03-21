@@ -23,7 +23,7 @@ type FabricEthNetworkGroupPolicyList struct {
 	// The total number of 'fabric.EthNetworkGroupPolicy' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'fabric.EthNetworkGroupPolicy' resources matching the request.
-	Results []FabricEthNetworkGroupPolicy `json:"Results,omitempty"`
+	Results              []FabricEthNetworkGroupPolicy `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *FabricEthNetworkGroupPolicyList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FabricEthNetworkGroupPolicyList) GetResults() []FabricEthNetworkGroupPolicy {
-	if o == nil  {
+	if o == nil {
 		var ret []FabricEthNetworkGroupPolicy
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableFabricEthNetworkGroupPolicyList) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,7 +23,7 @@ type CondHclStatusList struct {
 	// The total number of 'cond.HclStatus' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'cond.HclStatus' resources matching the request.
-	Results []CondHclStatus `json:"Results,omitempty"`
+	Results              []CondHclStatus `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *CondHclStatusList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CondHclStatusList) GetResults() []CondHclStatus {
-	if o == nil  {
+	if o == nil {
 		var ret []CondHclStatus
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableCondHclStatusList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

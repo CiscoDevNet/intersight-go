@@ -19,19 +19,18 @@ import (
 // ChassisConfigChangeDetailRelationship - A relationship to the 'chassis.ConfigChangeDetail' resource, or the expanded 'chassis.ConfigChangeDetail' resource, or the 'null' value.
 type ChassisConfigChangeDetailRelationship struct {
 	ChassisConfigChangeDetail *ChassisConfigChangeDetail
-	MoMoRef *MoMoRef
+	MoMoRef                   *MoMoRef
 }
 
 // ChassisConfigChangeDetailAsChassisConfigChangeDetailRelationship is a convenience function that returns ChassisConfigChangeDetail wrapped in ChassisConfigChangeDetailRelationship
 func ChassisConfigChangeDetailAsChassisConfigChangeDetailRelationship(v *ChassisConfigChangeDetail) ChassisConfigChangeDetailRelationship {
-	return ChassisConfigChangeDetailRelationship{ ChassisConfigChangeDetail: v}
+	return ChassisConfigChangeDetailRelationship{ChassisConfigChangeDetail: v}
 }
 
 // MoMoRefAsChassisConfigChangeDetailRelationship is a convenience function that returns MoMoRef wrapped in ChassisConfigChangeDetailRelationship
 func MoMoRefAsChassisConfigChangeDetailRelationship(v *MoMoRef) ChassisConfigChangeDetailRelationship {
-	return ChassisConfigChangeDetailRelationship{ MoMoRef: v}
+	return ChassisConfigChangeDetailRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ChassisConfigChangeDetailRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ChassisConfigChangeDetailRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ChassisConfigChangeDetailRelationship) GetActualInstance() (interface{}) {
+func (obj *ChassisConfigChangeDetailRelationship) GetActualInstance() interface{} {
 	if obj.ChassisConfigChangeDetail != nil {
 		return obj.ChassisConfigChangeDetail
 	}
@@ -137,5 +136,3 @@ func (v *NullableChassisConfigChangeDetailRelationship) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

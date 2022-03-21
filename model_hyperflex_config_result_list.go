@@ -23,7 +23,7 @@ type HyperflexConfigResultList struct {
 	// The total number of 'hyperflex.ConfigResult' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'hyperflex.ConfigResult' resources matching the request.
-	Results []HyperflexConfigResult `json:"Results,omitempty"`
+	Results              []HyperflexConfigResult `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *HyperflexConfigResultList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexConfigResultList) GetResults() []HyperflexConfigResult {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexConfigResult
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableHyperflexConfigResultList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

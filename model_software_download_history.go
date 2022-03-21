@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // SoftwareDownloadHistory An object to keep track of software downloads from the Private Appliance portal in SaaS.
@@ -32,9 +32,9 @@ type SoftwareDownloadHistory struct {
 	// The download time of the software image.
 	Timestamp *time.Time `json:"Timestamp,omitempty"`
 	// The version of software which was downloaded.
-	Version *string `json:"Version,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
-	Image *FirmwareBaseDistributableRelationship `json:"Image,omitempty"`
+	Version              *string                                `json:"Version,omitempty"`
+	Account              *IamAccountRelationship                `json:"Account,omitempty"`
+	Image                *FirmwareBaseDistributableRelationship `json:"Image,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *SoftwareDownloadHistory) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SoftwareDownloadHistory) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *SoftwareDownloadHistory) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SoftwareDownloadHistory) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -358,9 +358,9 @@ func (o *SoftwareDownloadHistory) UnmarshalJSON(bytes []byte) (err error) {
 		// The download time of the software image.
 		Timestamp *time.Time `json:"Timestamp,omitempty"`
 		// The version of software which was downloaded.
-		Version *string `json:"Version,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
-		Image *FirmwareBaseDistributableRelationship `json:"Image,omitempty"`
+		Version *string                                `json:"Version,omitempty"`
+		Account *IamAccountRelationship                `json:"Account,omitempty"`
+		Image   *FirmwareBaseDistributableRelationship `json:"Image,omitempty"`
 	}
 
 	varSoftwareDownloadHistoryWithoutEmbeddedStruct := SoftwareDownloadHistoryWithoutEmbeddedStruct{}
@@ -461,5 +461,3 @@ func (v *NullableSoftwareDownloadHistory) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

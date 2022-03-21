@@ -23,13 +23,13 @@ type WorkflowMoReferenceProperty struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType        string   `json:"ObjectType"`
 	DisplayAttributes []string `json:"DisplayAttributes,omitempty"`
 	// Field to hold an Intersight API along with an optional filter to narrow down the search options.
-	Selector *string `json:"Selector,omitempty"`
+	Selector         *string                          `json:"Selector,omitempty"`
 	SelectorProperty NullableWorkflowSelectorProperty `json:"SelectorProperty,omitempty"`
 	// A property from the Intersight object, value of which can be used as value for referenced input definition.
-	ValueAttribute *string `json:"ValueAttribute,omitempty"`
+	ValueAttribute       *string `json:"ValueAttribute,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *WorkflowMoReferenceProperty) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowMoReferenceProperty) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *WorkflowMoReferenceProperty) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowMoReferenceProperty) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -108,7 +108,7 @@ func (o *WorkflowMoReferenceProperty) SetObjectType(v string) {
 
 // GetDisplayAttributes returns the DisplayAttributes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowMoReferenceProperty) GetDisplayAttributes() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *WorkflowMoReferenceProperty) GetSelectorProperty() WorkflowSelectorProp
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowMoReferenceProperty) GetSelectorPropertyOk() (*WorkflowSelectorProperty, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SelectorProperty.Get(), o.SelectorProperty.IsSet()
@@ -203,6 +203,7 @@ func (o *WorkflowMoReferenceProperty) HasSelectorProperty() bool {
 func (o *WorkflowMoReferenceProperty) SetSelectorProperty(v WorkflowSelectorProperty) {
 	o.SelectorProperty.Set(&v)
 }
+
 // SetSelectorPropertyNil sets the value for SelectorProperty to be an explicit nil
 func (o *WorkflowMoReferenceProperty) SetSelectorPropertyNil() {
 	o.SelectorProperty.Set(nil)
@@ -286,10 +287,10 @@ func (o *WorkflowMoReferenceProperty) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType        string   `json:"ObjectType"`
 		DisplayAttributes []string `json:"DisplayAttributes,omitempty"`
 		// Field to hold an Intersight API along with an optional filter to narrow down the search options.
-		Selector *string `json:"Selector,omitempty"`
+		Selector         *string                          `json:"Selector,omitempty"`
 		SelectorProperty NullableWorkflowSelectorProperty `json:"SelectorProperty,omitempty"`
 		// A property from the Intersight object, value of which can be used as value for referenced input definition.
 		ValueAttribute *string `json:"ValueAttribute,omitempty"`
@@ -389,5 +390,3 @@ func (v *NullableWorkflowMoReferenceProperty) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

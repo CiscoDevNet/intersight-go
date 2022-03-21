@@ -27,7 +27,7 @@ type TamBaseDataSource struct {
 	// Name is used to unique identify and refer a given data source in an alert definition.
 	Name *string `json:"Name,omitempty"`
 	// Type of data source (for e.g. TextFsmTempalate based, Intersight API based etc.). * `intersightApi` - Collector type for this data collection is Intersight APIs. * `nxos` - Collector type for this data collection is NXOS. * `s3File` - Collector type for this data collection is a file in a cloud hosted object storage bucket.
-	Type *string `json:"Type,omitempty"`
+	Type                 *string `json:"Type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *TamBaseDataSource) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TamBaseDataSource) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *TamBaseDataSource) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TamBaseDataSource) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -300,5 +300,3 @@ func (v *NullableTamBaseDataSource) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

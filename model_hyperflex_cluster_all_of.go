@@ -27,7 +27,7 @@ type HyperflexClusterAllOf struct {
 	// The unique identifier for this HyperFlex cluster.
 	ClusterUuid *string `json:"ClusterUuid,omitempty"`
 	// The unique identifier of the device registration that represents this HyperFlex cluster's connection to Intersight.
-	DeviceId *string `json:"DeviceId,omitempty"`
+	DeviceId   *string  `json:"DeviceId,omitempty"`
 	DnsServers []string `json:"DnsServers,omitempty"`
 	// This captures the encryption status for a HyperFlex cluster. Currently it will have the status if HXA-CLU-0020 alarm is raised. In the future it can capture other details.
 	EncryptionStatus *string `json:"EncryptionStatus,omitempty"`
@@ -35,28 +35,28 @@ type HyperflexClusterAllOf struct {
 	// Deprecated
 	FltAggr *int64 `json:"FltAggr,omitempty"`
 	// The version and build number of the HyperFlex Data Platform for this cluster. After a cluster upgrade, this version string will be updated on the next inventory cycle to reflect the newly installed version.
-	HxdpBuildVersion *string `json:"HxdpBuildVersion,omitempty"`
-	NtpServers []string `json:"NtpServers,omitempty"`
-	Summary NullableHyperflexSummary `json:"Summary,omitempty"`
+	HxdpBuildVersion *string                  `json:"HxdpBuildVersion,omitempty"`
+	NtpServers       []string                 `json:"NtpServers,omitempty"`
+	Summary          NullableHyperflexSummary `json:"Summary,omitempty"`
 	// The upgrade status of the HyperFlex cluster. * `Unknown` - The upgrade status of the HyperFlex cluster could not be determined. * `Ok` - The upgrade of the HyperFlex cluster is complete. * `InProgress` - The upgrade of the HyperFlex cluster is in-progress. * `Failed` - The upgrade of the HyperFlex cluster has failed. * `Waiting` - The upgrade of the HyperFlex cluster is waiting to continue execution.
 	UpgradeStatus *string `json:"UpgradeStatus,omitempty"`
 	// The number of virtual machines present on this cluster.
 	VmCount *int64 `json:"VmCount,omitempty"`
 	// An array of relationships to hyperflexAlarm resources.
-	Alarm []HyperflexAlarmRelationship `json:"Alarm,omitempty"`
+	Alarm      []HyperflexAlarmRelationship     `json:"Alarm,omitempty"`
 	Encryption *HyperflexEncryptionRelationship `json:"Encryption,omitempty"`
-	Health *HyperflexHealthRelationship `json:"Health,omitempty"`
-	License *HyperflexLicenseRelationship `json:"License,omitempty"`
+	Health     *HyperflexHealthRelationship     `json:"Health,omitempty"`
+	License    *HyperflexLicenseRelationship    `json:"License,omitempty"`
 	// An array of relationships to hyperflexNode resources.
-	Nodes []HyperflexNodeRelationship `json:"Nodes,omitempty"`
+	Nodes            []HyperflexNodeRelationship          `json:"Nodes,omitempty"`
 	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to ippoolPool resources.
 	StorageClientIpPools []IppoolPoolRelationship `json:"StorageClientIpPools,omitempty"`
-	StorageClientVrf *VrfVrfRelationship `json:"StorageClientVrf,omitempty"`
+	StorageClientVrf     *VrfVrfRelationship      `json:"StorageClientVrf,omitempty"`
 	// An array of relationships to storageHyperFlexStorageContainer resources.
 	StorageContainers []StorageHyperFlexStorageContainerRelationship `json:"StorageContainers,omitempty"`
 	// An array of relationships to storageHyperFlexVolume resources.
-	Volumes []StorageHyperFlexVolumeRelationship `json:"Volumes,omitempty"`
+	Volumes              []StorageHyperFlexVolumeRelationship `json:"Volumes,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -98,7 +98,7 @@ func (o *HyperflexClusterAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexClusterAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -122,7 +122,7 @@ func (o *HyperflexClusterAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexClusterAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -234,7 +234,7 @@ func (o *HyperflexClusterAllOf) SetDeviceId(v string) {
 
 // GetDnsServers returns the DnsServers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexClusterAllOf) GetDnsServers() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -366,7 +366,7 @@ func (o *HyperflexClusterAllOf) SetHxdpBuildVersion(v string) {
 
 // GetNtpServers returns the NtpServers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexClusterAllOf) GetNtpServers() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -410,7 +410,7 @@ func (o *HyperflexClusterAllOf) GetSummary() HyperflexSummary {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexClusterAllOf) GetSummaryOk() (*HyperflexSummary, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Summary.Get(), o.Summary.IsSet()
@@ -429,6 +429,7 @@ func (o *HyperflexClusterAllOf) HasSummary() bool {
 func (o *HyperflexClusterAllOf) SetSummary(v HyperflexSummary) {
 	o.Summary.Set(&v)
 }
+
 // SetSummaryNil sets the value for Summary to be an explicit nil
 func (o *HyperflexClusterAllOf) SetSummaryNil() {
 	o.Summary.Set(nil)
@@ -505,7 +506,7 @@ func (o *HyperflexClusterAllOf) SetVmCount(v int64) {
 
 // GetAlarm returns the Alarm field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexClusterAllOf) GetAlarm() []HyperflexAlarmRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexAlarmRelationship
 		return ret
 	}
@@ -634,7 +635,7 @@ func (o *HyperflexClusterAllOf) SetLicense(v HyperflexLicenseRelationship) {
 
 // GetNodes returns the Nodes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexClusterAllOf) GetNodes() []HyperflexNodeRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexNodeRelationship
 		return ret
 	}
@@ -699,7 +700,7 @@ func (o *HyperflexClusterAllOf) SetRegisteredDevice(v AssetDeviceRegistrationRel
 
 // GetStorageClientIpPools returns the StorageClientIpPools field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexClusterAllOf) GetStorageClientIpPools() []IppoolPoolRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IppoolPoolRelationship
 		return ret
 	}
@@ -764,7 +765,7 @@ func (o *HyperflexClusterAllOf) SetStorageClientVrf(v VrfVrfRelationship) {
 
 // GetStorageContainers returns the StorageContainers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexClusterAllOf) GetStorageContainers() []StorageHyperFlexStorageContainerRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageHyperFlexStorageContainerRelationship
 		return ret
 	}
@@ -797,7 +798,7 @@ func (o *HyperflexClusterAllOf) SetStorageContainers(v []StorageHyperFlexStorage
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexClusterAllOf) GetVolumes() []StorageHyperFlexVolumeRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageHyperFlexVolumeRelationship
 		return ret
 	}
@@ -981,5 +982,3 @@ func (v *NullableHyperflexClusterAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

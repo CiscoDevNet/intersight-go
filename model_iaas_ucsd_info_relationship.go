@@ -19,19 +19,18 @@ import (
 // IaasUcsdInfoRelationship - A relationship to the 'iaas.UcsdInfo' resource, or the expanded 'iaas.UcsdInfo' resource, or the 'null' value.
 type IaasUcsdInfoRelationship struct {
 	IaasUcsdInfo *IaasUcsdInfo
-	MoMoRef *MoMoRef
+	MoMoRef      *MoMoRef
 }
 
 // IaasUcsdInfoAsIaasUcsdInfoRelationship is a convenience function that returns IaasUcsdInfo wrapped in IaasUcsdInfoRelationship
 func IaasUcsdInfoAsIaasUcsdInfoRelationship(v *IaasUcsdInfo) IaasUcsdInfoRelationship {
-	return IaasUcsdInfoRelationship{ IaasUcsdInfo: v}
+	return IaasUcsdInfoRelationship{IaasUcsdInfo: v}
 }
 
 // MoMoRefAsIaasUcsdInfoRelationship is a convenience function that returns MoMoRef wrapped in IaasUcsdInfoRelationship
 func MoMoRefAsIaasUcsdInfoRelationship(v *MoMoRef) IaasUcsdInfoRelationship {
-	return IaasUcsdInfoRelationship{ MoMoRef: v}
+	return IaasUcsdInfoRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IaasUcsdInfoRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IaasUcsdInfoRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IaasUcsdInfoRelationship) GetActualInstance() (interface{}) {
+func (obj *IaasUcsdInfoRelationship) GetActualInstance() interface{} {
 	if obj.IaasUcsdInfo != nil {
 		return obj.IaasUcsdInfo
 	}
@@ -137,5 +136,3 @@ func (v *NullableIaasUcsdInfoRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

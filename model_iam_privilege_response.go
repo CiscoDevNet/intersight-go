@@ -18,32 +18,31 @@ import (
 
 // IamPrivilegeResponse - The response body of a HTTP GET request for the 'iam.Privilege' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'iam.Privilege' resources.
 type IamPrivilegeResponse struct {
-	IamPrivilegeList *IamPrivilegeList
+	IamPrivilegeList     *IamPrivilegeList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IamPrivilegeListAsIamPrivilegeResponse is a convenience function that returns IamPrivilegeList wrapped in IamPrivilegeResponse
 func IamPrivilegeListAsIamPrivilegeResponse(v *IamPrivilegeList) IamPrivilegeResponse {
-	return IamPrivilegeResponse{ IamPrivilegeList: v}
+	return IamPrivilegeResponse{IamPrivilegeList: v}
 }
 
 // MoAggregateTransformAsIamPrivilegeResponse is a convenience function that returns MoAggregateTransform wrapped in IamPrivilegeResponse
 func MoAggregateTransformAsIamPrivilegeResponse(v *MoAggregateTransform) IamPrivilegeResponse {
-	return IamPrivilegeResponse{ MoAggregateTransform: v}
+	return IamPrivilegeResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIamPrivilegeResponse is a convenience function that returns MoDocumentCount wrapped in IamPrivilegeResponse
 func MoDocumentCountAsIamPrivilegeResponse(v *MoDocumentCount) IamPrivilegeResponse {
-	return IamPrivilegeResponse{ MoDocumentCount: v}
+	return IamPrivilegeResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIamPrivilegeResponse is a convenience function that returns MoTagSummary wrapped in IamPrivilegeResponse
 func MoTagSummaryAsIamPrivilegeResponse(v *MoTagSummary) IamPrivilegeResponse {
-	return IamPrivilegeResponse{ MoTagSummary: v}
+	return IamPrivilegeResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamPrivilegeResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IamPrivilegeResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamPrivilegeResponse) GetActualInstance() (interface{}) {
+func (obj *IamPrivilegeResponse) GetActualInstance() interface{} {
 	if obj.IamPrivilegeList != nil {
 		return obj.IamPrivilegeList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIamPrivilegeResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

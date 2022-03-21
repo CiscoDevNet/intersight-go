@@ -18,20 +18,19 @@ import (
 
 // StorageSasPortRelationship - A relationship to the 'storage.SasPort' resource, or the expanded 'storage.SasPort' resource, or the 'null' value.
 type StorageSasPortRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef        *MoMoRef
 	StorageSasPort *StorageSasPort
 }
 
 // MoMoRefAsStorageSasPortRelationship is a convenience function that returns MoMoRef wrapped in StorageSasPortRelationship
 func MoMoRefAsStorageSasPortRelationship(v *MoMoRef) StorageSasPortRelationship {
-	return StorageSasPortRelationship{ MoMoRef: v}
+	return StorageSasPortRelationship{MoMoRef: v}
 }
 
 // StorageSasPortAsStorageSasPortRelationship is a convenience function that returns StorageSasPort wrapped in StorageSasPortRelationship
 func StorageSasPortAsStorageSasPortRelationship(v *StorageSasPort) StorageSasPortRelationship {
-	return StorageSasPortRelationship{ StorageSasPort: v}
+	return StorageSasPortRelationship{StorageSasPort: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageSasPortRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageSasPortRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageSasPortRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageSasPortRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageSasPortRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

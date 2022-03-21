@@ -30,8 +30,8 @@ type StorageNetAppEthernetPortAllOf struct {
 	// Maximum transmission unit of the physical port available in storage array.
 	Mtu *string `json:"Mtu,omitempty"`
 	// Name of the port available in storage array.
-	Name *string `json:"Name,omitempty"`
-	NetAppEthernetPortLag NullableStorageNetAppEthernetPortLag `json:"NetAppEthernetPortLag,omitempty"`
+	Name                   *string                               `json:"Name,omitempty"`
+	NetAppEthernetPortLag  NullableStorageNetAppEthernetPortLag  `json:"NetAppEthernetPortLag,omitempty"`
 	NetAppEthernetPortVlan NullableStorageNetAppEthernetPortVlan `json:"NetAppEthernetPortVlan,omitempty"`
 	// Operational speed of port measured.
 	Speed *int64 `json:"Speed,omitempty"`
@@ -40,10 +40,10 @@ type StorageNetAppEthernetPortAllOf struct {
 	// Type of the port available in storage array. * `LAG` - Storage port of type lag. * `physical` - LIFs can be configured directly on physical ports. * `VLAN` - A logical port that receives and sends VLAN-tagged (IEEE 802.1Q standard) traffic. VLAN port characteristics include the VLAN ID for the port.
 	Type *string `json:"Type,omitempty"`
 	// Universally unique identifier of the physical port.
-	Uuid *string `json:"Uuid,omitempty"`
+	Uuid            *string                        `json:"Uuid,omitempty"`
 	ArrayController *StorageNetAppNodeRelationship `json:"ArrayController,omitempty"`
 	// An array of relationships to storageNetAppEthernetPortEvent resources.
-	Events []StorageNetAppEthernetPortEventRelationship `json:"Events,omitempty"`
+	Events               []StorageNetAppEthernetPortEventRelationship `json:"Events,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -85,7 +85,7 @@ func (o *StorageNetAppEthernetPortAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppEthernetPortAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -109,7 +109,7 @@ func (o *StorageNetAppEthernetPortAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppEthernetPortAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -293,7 +293,7 @@ func (o *StorageNetAppEthernetPortAllOf) GetNetAppEthernetPortLag() StorageNetAp
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageNetAppEthernetPortAllOf) GetNetAppEthernetPortLagOk() (*StorageNetAppEthernetPortLag, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NetAppEthernetPortLag.Get(), o.NetAppEthernetPortLag.IsSet()
@@ -312,6 +312,7 @@ func (o *StorageNetAppEthernetPortAllOf) HasNetAppEthernetPortLag() bool {
 func (o *StorageNetAppEthernetPortAllOf) SetNetAppEthernetPortLag(v StorageNetAppEthernetPortLag) {
 	o.NetAppEthernetPortLag.Set(&v)
 }
+
 // SetNetAppEthernetPortLagNil sets the value for NetAppEthernetPortLag to be an explicit nil
 func (o *StorageNetAppEthernetPortAllOf) SetNetAppEthernetPortLagNil() {
 	o.NetAppEthernetPortLag.Set(nil)
@@ -335,7 +336,7 @@ func (o *StorageNetAppEthernetPortAllOf) GetNetAppEthernetPortVlan() StorageNetA
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageNetAppEthernetPortAllOf) GetNetAppEthernetPortVlanOk() (*StorageNetAppEthernetPortVlan, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NetAppEthernetPortVlan.Get(), o.NetAppEthernetPortVlan.IsSet()
@@ -354,6 +355,7 @@ func (o *StorageNetAppEthernetPortAllOf) HasNetAppEthernetPortVlan() bool {
 func (o *StorageNetAppEthernetPortAllOf) SetNetAppEthernetPortVlan(v StorageNetAppEthernetPortVlan) {
 	o.NetAppEthernetPortVlan.Set(&v)
 }
+
 // SetNetAppEthernetPortVlanNil sets the value for NetAppEthernetPortVlan to be an explicit nil
 func (o *StorageNetAppEthernetPortAllOf) SetNetAppEthernetPortVlanNil() {
 	o.NetAppEthernetPortVlan.Set(nil)
@@ -526,7 +528,7 @@ func (o *StorageNetAppEthernetPortAllOf) SetArrayController(v StorageNetAppNodeR
 
 // GetEvents returns the Events field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppEthernetPortAllOf) GetEvents() []StorageNetAppEthernetPortEventRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppEthernetPortEventRelationship
 		return ret
 	}
@@ -678,5 +680,3 @@ func (v *NullableStorageNetAppEthernetPortAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

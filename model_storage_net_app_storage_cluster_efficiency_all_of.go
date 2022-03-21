@@ -26,7 +26,7 @@ type StorageNetAppStorageClusterEfficiencyAllOf struct {
 	// Data reduction ratio (logical_used / used).
 	Ratio *float32 `json:"Ratio,omitempty"`
 	// Space saved by storage efficiencies (logical_used - used).
-	Savings *int64 `json:"Savings,omitempty"`
+	Savings              *int64 `json:"Savings,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *StorageNetAppStorageClusterEfficiencyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppStorageClusterEfficiencyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *StorageNetAppStorageClusterEfficiencyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppStorageClusterEfficiencyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,5 +280,3 @@ func (v *NullableStorageNetAppStorageClusterEfficiencyAllOf) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

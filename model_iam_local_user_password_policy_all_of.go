@@ -36,9 +36,9 @@ type IamLocalUserPasswordPolicyAllOf struct {
 	// Minimum number of required upper case characters.
 	MinUpperCase *int64 `json:"MinUpperCase,omitempty"`
 	// Number of previous passwords disallowed.
-	NumPreviousPasswordsDisallowed *int64 `json:"NumPreviousPasswordsDisallowed,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NumPreviousPasswordsDisallowed *int64                  `json:"NumPreviousPasswordsDisallowed,omitempty"`
+	Account                        *IamAccountRelationship `json:"Account,omitempty"`
+	AdditionalProperties           map[string]interface{}
 }
 
 type _IamLocalUserPasswordPolicyAllOf IamLocalUserPasswordPolicyAllOf
@@ -111,7 +111,7 @@ func (o *IamLocalUserPasswordPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamLocalUserPasswordPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -135,7 +135,7 @@ func (o *IamLocalUserPasswordPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamLocalUserPasswordPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -539,5 +539,3 @@ func (v *NullableIamLocalUserPasswordPolicyAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

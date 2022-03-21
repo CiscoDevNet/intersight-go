@@ -26,10 +26,10 @@ type KubernetesVirtualMachineInstanceTypeAllOf struct {
 	// Ephemeral disk capacity to be provided with units example - 10Gi.
 	DiskSize *int64 `json:"DiskSize,omitempty"`
 	// Virtual machine memory defined in mebibytes (MiB).
-	Memory *int64 `json:"Memory,omitempty"`
+	Memory       *int64                                `json:"Memory,omitempty"`
 	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to kubernetesVirtualMachineInfrastructureProvider resources.
-	Profiles []KubernetesVirtualMachineInfrastructureProviderRelationship `json:"Profiles,omitempty"`
+	Profiles             []KubernetesVirtualMachineInfrastructureProviderRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *KubernetesVirtualMachineInstanceTypeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesVirtualMachineInstanceTypeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *KubernetesVirtualMachineInstanceTypeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesVirtualMachineInstanceTypeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -244,7 +244,7 @@ func (o *KubernetesVirtualMachineInstanceTypeAllOf) SetOrganization(v Organizati
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesVirtualMachineInstanceTypeAllOf) GetProfiles() []KubernetesVirtualMachineInfrastructureProviderRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesVirtualMachineInfrastructureProviderRelationship
 		return ret
 	}
@@ -364,5 +364,3 @@ func (v *NullableKubernetesVirtualMachineInstanceTypeAllOf) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

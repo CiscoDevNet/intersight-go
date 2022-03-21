@@ -28,10 +28,10 @@ type StorageEnclosureDiskSlotEpAllOf struct {
 	// This field identifies the disk is present in the enclosure slot.
 	Presence *string `json:"Presence,omitempty"`
 	// This field represents the slot Id in the storage enclosure.
-	Slot *string `json:"Slot,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	StorageEnclosure *StorageEnclosureRelationship `json:"StorageEnclosure,omitempty"`
+	Slot                 *string                              `json:"Slot,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	StorageEnclosure     *StorageEnclosureRelationship        `json:"StorageEnclosure,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *StorageEnclosureDiskSlotEpAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageEnclosureDiskSlotEpAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *StorageEnclosureDiskSlotEpAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageEnclosureDiskSlotEpAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -429,5 +429,3 @@ func (v *NullableStorageEnclosureDiskSlotEpAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

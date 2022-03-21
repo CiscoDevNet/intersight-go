@@ -19,19 +19,18 @@ import (
 // AssetDeviceClaimRelationship - A relationship to the 'asset.DeviceClaim' resource, or the expanded 'asset.DeviceClaim' resource, or the 'null' value.
 type AssetDeviceClaimRelationship struct {
 	AssetDeviceClaim *AssetDeviceClaim
-	MoMoRef *MoMoRef
+	MoMoRef          *MoMoRef
 }
 
 // AssetDeviceClaimAsAssetDeviceClaimRelationship is a convenience function that returns AssetDeviceClaim wrapped in AssetDeviceClaimRelationship
 func AssetDeviceClaimAsAssetDeviceClaimRelationship(v *AssetDeviceClaim) AssetDeviceClaimRelationship {
-	return AssetDeviceClaimRelationship{ AssetDeviceClaim: v}
+	return AssetDeviceClaimRelationship{AssetDeviceClaim: v}
 }
 
 // MoMoRefAsAssetDeviceClaimRelationship is a convenience function that returns MoMoRef wrapped in AssetDeviceClaimRelationship
 func MoMoRefAsAssetDeviceClaimRelationship(v *MoMoRef) AssetDeviceClaimRelationship {
-	return AssetDeviceClaimRelationship{ MoMoRef: v}
+	return AssetDeviceClaimRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AssetDeviceClaimRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src AssetDeviceClaimRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AssetDeviceClaimRelationship) GetActualInstance() (interface{}) {
+func (obj *AssetDeviceClaimRelationship) GetActualInstance() interface{} {
 	if obj.AssetDeviceClaim != nil {
 		return obj.AssetDeviceClaim
 	}
@@ -137,5 +136,3 @@ func (v *NullableAssetDeviceClaimRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

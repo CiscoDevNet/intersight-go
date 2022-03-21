@@ -25,9 +25,9 @@ type StorageNetAppVolumeSnapshot struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Universally unique identifier of the volume snapshot.
-	Uuid *string `json:"Uuid,omitempty"`
-	Array *StorageNetAppClusterRelationship `json:"Array,omitempty"`
-	StorageContainer *StorageNetAppVolumeRelationship `json:"StorageContainer,omitempty"`
+	Uuid                 *string                           `json:"Uuid,omitempty"`
+	Array                *StorageNetAppClusterRelationship `json:"Array,omitempty"`
+	StorageContainer     *StorageNetAppVolumeRelationship  `json:"StorageContainer,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *StorageNetAppVolumeSnapshot) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppVolumeSnapshot) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *StorageNetAppVolumeSnapshot) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppVolumeSnapshot) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -240,9 +240,9 @@ func (o *StorageNetAppVolumeSnapshot) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Universally unique identifier of the volume snapshot.
-		Uuid *string `json:"Uuid,omitempty"`
-		Array *StorageNetAppClusterRelationship `json:"Array,omitempty"`
-		StorageContainer *StorageNetAppVolumeRelationship `json:"StorageContainer,omitempty"`
+		Uuid             *string                           `json:"Uuid,omitempty"`
+		Array            *StorageNetAppClusterRelationship `json:"Array,omitempty"`
+		StorageContainer *StorageNetAppVolumeRelationship  `json:"StorageContainer,omitempty"`
 	}
 
 	varStorageNetAppVolumeSnapshotWithoutEmbeddedStruct := StorageNetAppVolumeSnapshotWithoutEmbeddedStruct{}
@@ -337,5 +337,3 @@ func (v *NullableStorageNetAppVolumeSnapshot) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

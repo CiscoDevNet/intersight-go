@@ -118,18 +118,18 @@ type StoragePhysicalDiskAllOf struct {
 	// The number of write errors that are permitted while accessing the drive/card.
 	WriteErrorCountThreshold *int64 `json:"WriteErrorCountThreshold,omitempty"`
 	// Number of IO Errors that occured while writing data to the disk.
-	WriteIoErrorCount *int64 `json:"WriteIoErrorCount,omitempty"`
+	WriteIoErrorCount   *int64                           `json:"WriteIoErrorCount,omitempty"`
 	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	LocatorLed *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
+	LocatorLed          *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
 	// An array of relationships to storagePhysicalDiskExtension resources.
 	PhysicalDiskExtensions []StoragePhysicalDiskExtensionRelationship `json:"PhysicalDiskExtensions,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	RegisteredDevice       *AssetDeviceRegistrationRelationship       `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to firmwareRunningFirmware resources.
 	RunningFirmware []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
 	// An array of relationships to storageSasPort resources.
-	SasPorts []StorageSasPortRelationship `json:"SasPorts,omitempty"`
-	StorageController *StorageControllerRelationship `json:"StorageController,omitempty"`
-	StorageEnclosure *StorageEnclosureRelationship `json:"StorageEnclosure,omitempty"`
+	SasPorts             []StorageSasPortRelationship   `json:"SasPorts,omitempty"`
+	StorageController    *StorageControllerRelationship `json:"StorageController,omitempty"`
+	StorageEnclosure     *StorageEnclosureRelationship  `json:"StorageEnclosure,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -171,7 +171,7 @@ func (o *StoragePhysicalDiskAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StoragePhysicalDiskAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -195,7 +195,7 @@ func (o *StoragePhysicalDiskAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StoragePhysicalDiskAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -1840,7 +1840,7 @@ func (o *StoragePhysicalDiskAllOf) SetLocatorLed(v EquipmentLocatorLedRelationsh
 
 // GetPhysicalDiskExtensions returns the PhysicalDiskExtensions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StoragePhysicalDiskAllOf) GetPhysicalDiskExtensions() []StoragePhysicalDiskExtensionRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StoragePhysicalDiskExtensionRelationship
 		return ret
 	}
@@ -1905,7 +1905,7 @@ func (o *StoragePhysicalDiskAllOf) SetRegisteredDevice(v AssetDeviceRegistration
 
 // GetRunningFirmware returns the RunningFirmware field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StoragePhysicalDiskAllOf) GetRunningFirmware() []FirmwareRunningFirmwareRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareRunningFirmwareRelationship
 		return ret
 	}
@@ -1938,7 +1938,7 @@ func (o *StoragePhysicalDiskAllOf) SetRunningFirmware(v []FirmwareRunningFirmwar
 
 // GetSasPorts returns the SasPorts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StoragePhysicalDiskAllOf) GetSasPorts() []StorageSasPortRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageSasPortRelationship
 		return ret
 	}
@@ -2330,5 +2330,3 @@ func (v *NullableStoragePhysicalDiskAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

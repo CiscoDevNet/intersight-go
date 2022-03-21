@@ -42,11 +42,11 @@ type FcPhysicalPortAllOf struct {
 	// Virtual San that is associated to the port.
 	Vsan *int64 `json:"Vsan,omitempty"`
 	// World Wide Name of a Fibre Channel port.
-	Wwn *string `json:"Wwn,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	PortGroup *PortGroupRelationship `json:"PortGroup,omitempty"`
-	PortSubGroup *PortSubGroupRelationship `json:"PortSubGroup,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Wwn                  *string                              `json:"Wwn,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	PortGroup            *PortGroupRelationship               `json:"PortGroup,omitempty"`
+	PortSubGroup         *PortSubGroupRelationship            `json:"PortSubGroup,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -88,7 +88,7 @@ func (o *FcPhysicalPortAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FcPhysicalPortAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *FcPhysicalPortAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FcPhysicalPortAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -732,5 +732,3 @@ func (v *NullableFcPhysicalPortAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

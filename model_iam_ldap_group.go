@@ -29,8 +29,8 @@ type IamLdapGroup struct {
 	// LDAP Group name in the LDAP server database.
 	Name *string `json:"Name,omitempty"`
 	// An array of relationships to iamEndPointRole resources.
-	EndPointRole []IamEndPointRoleRelationship `json:"EndPointRole,omitempty"`
-	LdapPolicy *IamLdapPolicyRelationship `json:"LdapPolicy,omitempty"`
+	EndPointRole         []IamEndPointRoleRelationship `json:"EndPointRole,omitempty"`
+	LdapPolicy           *IamLdapPolicyRelationship    `json:"LdapPolicy,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *IamLdapGroup) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamLdapGroup) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *IamLdapGroup) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamLdapGroup) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -173,7 +173,7 @@ func (o *IamLdapGroup) SetName(v string) {
 
 // GetEndPointRole returns the EndPointRole field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamLdapGroup) GetEndPointRole() []IamEndPointRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamEndPointRoleRelationship
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *IamLdapGroup) UnmarshalJSON(bytes []byte) (err error) {
 		Name *string `json:"Name,omitempty"`
 		// An array of relationships to iamEndPointRole resources.
 		EndPointRole []IamEndPointRoleRelationship `json:"EndPointRole,omitempty"`
-		LdapPolicy *IamLdapPolicyRelationship `json:"LdapPolicy,omitempty"`
+		LdapPolicy   *IamLdapPolicyRelationship    `json:"LdapPolicy,omitempty"`
 	}
 
 	varIamLdapGroupWithoutEmbeddedStruct := IamLdapGroupWithoutEmbeddedStruct{}
@@ -381,5 +381,3 @@ func (v *NullableIamLdapGroup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,20 +18,19 @@ import (
 
 // NiatelemetryNexusDashboardsRelationship - A relationship to the 'niatelemetry.NexusDashboards' resource, or the expanded 'niatelemetry.NexusDashboards' resource, or the 'null' value.
 type NiatelemetryNexusDashboardsRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                     *MoMoRef
 	NiatelemetryNexusDashboards *NiatelemetryNexusDashboards
 }
 
 // MoMoRefAsNiatelemetryNexusDashboardsRelationship is a convenience function that returns MoMoRef wrapped in NiatelemetryNexusDashboardsRelationship
 func MoMoRefAsNiatelemetryNexusDashboardsRelationship(v *MoMoRef) NiatelemetryNexusDashboardsRelationship {
-	return NiatelemetryNexusDashboardsRelationship{ MoMoRef: v}
+	return NiatelemetryNexusDashboardsRelationship{MoMoRef: v}
 }
 
 // NiatelemetryNexusDashboardsAsNiatelemetryNexusDashboardsRelationship is a convenience function that returns NiatelemetryNexusDashboards wrapped in NiatelemetryNexusDashboardsRelationship
 func NiatelemetryNexusDashboardsAsNiatelemetryNexusDashboardsRelationship(v *NiatelemetryNexusDashboards) NiatelemetryNexusDashboardsRelationship {
-	return NiatelemetryNexusDashboardsRelationship{ NiatelemetryNexusDashboards: v}
+	return NiatelemetryNexusDashboardsRelationship{NiatelemetryNexusDashboards: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiatelemetryNexusDashboardsRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src NiatelemetryNexusDashboardsRelationship) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *NiatelemetryNexusDashboardsRelationship) GetActualInstance() (interface{}) {
+func (obj *NiatelemetryNexusDashboardsRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableNiatelemetryNexusDashboardsRelationship) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

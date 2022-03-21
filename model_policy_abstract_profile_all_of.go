@@ -26,8 +26,8 @@ type PolicyAbstractProfileAllOf struct {
 	// Name of the profile instance or profile template.
 	Name *string `json:"Name,omitempty"`
 	// Defines the type of the profile. Accepted values are instance or template. * `instance` - The profile defines the configuration for a specific instance of a target.
-	Type *string `json:"Type,omitempty"`
-	SrcTemplate *PolicyAbstractProfileRelationship `json:"SrcTemplate,omitempty"`
+	Type                 *string                            `json:"Type,omitempty"`
+	SrcTemplate          *PolicyAbstractProfileRelationship `json:"SrcTemplate,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *PolicyAbstractProfileAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PolicyAbstractProfileAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *PolicyAbstractProfileAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PolicyAbstractProfileAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -317,5 +317,3 @@ func (v *NullablePolicyAbstractProfileAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

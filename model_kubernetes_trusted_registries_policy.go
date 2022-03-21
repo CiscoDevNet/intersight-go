@@ -23,12 +23,12 @@ type KubernetesTrustedRegistriesPolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	RootCaRegistries []string `json:"RootCaRegistries,omitempty"`
+	ObjectType         string   `json:"ObjectType"`
+	RootCaRegistries   []string `json:"RootCaRegistries,omitempty"`
 	UnsignedRegistries []string `json:"UnsignedRegistries,omitempty"`
 	// An array of relationships to kubernetesClusterProfile resources.
-	ClusterProfiles []KubernetesClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ClusterProfiles      []KubernetesClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship  `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *KubernetesTrustedRegistriesPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesTrustedRegistriesPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *KubernetesTrustedRegistriesPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesTrustedRegistriesPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -107,7 +107,7 @@ func (o *KubernetesTrustedRegistriesPolicy) SetObjectType(v string) {
 
 // GetRootCaRegistries returns the RootCaRegistries field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesTrustedRegistriesPolicy) GetRootCaRegistries() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *KubernetesTrustedRegistriesPolicy) SetRootCaRegistries(v []string) {
 
 // GetUnsignedRegistries returns the UnsignedRegistries field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesTrustedRegistriesPolicy) GetUnsignedRegistries() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *KubernetesTrustedRegistriesPolicy) SetUnsignedRegistries(v []string) {
 
 // GetClusterProfiles returns the ClusterProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesTrustedRegistriesPolicy) GetClusterProfiles() []KubernetesClusterProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesClusterProfileRelationship
 		return ret
 	}
@@ -277,12 +277,12 @@ func (o *KubernetesTrustedRegistriesPolicy) UnmarshalJSON(bytes []byte) (err err
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		RootCaRegistries []string `json:"RootCaRegistries,omitempty"`
+		ObjectType         string   `json:"ObjectType"`
+		RootCaRegistries   []string `json:"RootCaRegistries,omitempty"`
 		UnsignedRegistries []string `json:"UnsignedRegistries,omitempty"`
 		// An array of relationships to kubernetesClusterProfile resources.
 		ClusterProfiles []KubernetesClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		Organization    *OrganizationOrganizationRelationship  `json:"Organization,omitempty"`
 	}
 
 	varKubernetesTrustedRegistriesPolicyWithoutEmbeddedStruct := KubernetesTrustedRegistriesPolicyWithoutEmbeddedStruct{}
@@ -379,5 +379,3 @@ func (v *NullableKubernetesTrustedRegistriesPolicy) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

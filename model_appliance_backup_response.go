@@ -18,32 +18,31 @@ import (
 
 // ApplianceBackupResponse - The response body of a HTTP GET request for the 'appliance.Backup' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'appliance.Backup' resources.
 type ApplianceBackupResponse struct {
-	ApplianceBackupList *ApplianceBackupList
+	ApplianceBackupList  *ApplianceBackupList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // ApplianceBackupListAsApplianceBackupResponse is a convenience function that returns ApplianceBackupList wrapped in ApplianceBackupResponse
 func ApplianceBackupListAsApplianceBackupResponse(v *ApplianceBackupList) ApplianceBackupResponse {
-	return ApplianceBackupResponse{ ApplianceBackupList: v}
+	return ApplianceBackupResponse{ApplianceBackupList: v}
 }
 
 // MoAggregateTransformAsApplianceBackupResponse is a convenience function that returns MoAggregateTransform wrapped in ApplianceBackupResponse
 func MoAggregateTransformAsApplianceBackupResponse(v *MoAggregateTransform) ApplianceBackupResponse {
-	return ApplianceBackupResponse{ MoAggregateTransform: v}
+	return ApplianceBackupResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsApplianceBackupResponse is a convenience function that returns MoDocumentCount wrapped in ApplianceBackupResponse
 func MoDocumentCountAsApplianceBackupResponse(v *MoDocumentCount) ApplianceBackupResponse {
-	return ApplianceBackupResponse{ MoDocumentCount: v}
+	return ApplianceBackupResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsApplianceBackupResponse is a convenience function that returns MoTagSummary wrapped in ApplianceBackupResponse
 func MoTagSummaryAsApplianceBackupResponse(v *MoTagSummary) ApplianceBackupResponse {
-	return ApplianceBackupResponse{ MoTagSummary: v}
+	return ApplianceBackupResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ApplianceBackupResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ApplianceBackupResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ApplianceBackupResponse) GetActualInstance() (interface{}) {
+func (obj *ApplianceBackupResponse) GetActualInstance() interface{} {
 	if obj.ApplianceBackupList != nil {
 		return obj.ApplianceBackupList
 	}
@@ -184,5 +183,3 @@ func (v *NullableApplianceBackupResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

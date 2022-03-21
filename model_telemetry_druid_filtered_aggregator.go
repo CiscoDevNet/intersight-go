@@ -18,9 +18,9 @@ import (
 // TelemetryDruidFilteredAggregator A filtered aggregator wraps any given aggregator, but only aggregates the values for which the given dimension filter matches. This makes it possible to compute the results of a filtered and an unfiltered aggregation simultaneously, without having to issue multiple queries, and use both results as part of post-aggregations. If only the filtered results are required, consider putting the filter on the query itself, which will be much faster since it does not require scanning all the data.
 type TelemetryDruidFilteredAggregator struct {
 	// The aggregator type.
-	Type string `json:"type"`
-	Filter TelemetryDruidFilter `json:"filter"`
-	Aggregator TelemetryDruidAggregator `json:"aggregator"`
+	Type                 string                   `json:"type"`
+	Filter               TelemetryDruidFilter     `json:"filter"`
+	Aggregator           TelemetryDruidAggregator `json:"aggregator"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -59,7 +59,7 @@ func (o *TelemetryDruidFilteredAggregator) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidFilteredAggregator) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -83,7 +83,7 @@ func (o *TelemetryDruidFilteredAggregator) GetFilter() TelemetryDruidFilter {
 // GetFilterOk returns a tuple with the Filter field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidFilteredAggregator) GetFilterOk() (*TelemetryDruidFilter, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Filter, true
@@ -107,7 +107,7 @@ func (o *TelemetryDruidFilteredAggregator) GetAggregator() TelemetryDruidAggrega
 // GetAggregatorOk returns a tuple with the Aggregator field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidFilteredAggregator) GetAggregatorOk() (*TelemetryDruidAggregator, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Aggregator, true
@@ -191,5 +191,3 @@ func (v *NullableTelemetryDruidFilteredAggregator) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

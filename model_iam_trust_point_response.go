@@ -18,32 +18,31 @@ import (
 
 // IamTrustPointResponse - The response body of a HTTP GET request for the 'iam.TrustPoint' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'iam.TrustPoint' resources.
 type IamTrustPointResponse struct {
-	IamTrustPointList *IamTrustPointList
+	IamTrustPointList    *IamTrustPointList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IamTrustPointListAsIamTrustPointResponse is a convenience function that returns IamTrustPointList wrapped in IamTrustPointResponse
 func IamTrustPointListAsIamTrustPointResponse(v *IamTrustPointList) IamTrustPointResponse {
-	return IamTrustPointResponse{ IamTrustPointList: v}
+	return IamTrustPointResponse{IamTrustPointList: v}
 }
 
 // MoAggregateTransformAsIamTrustPointResponse is a convenience function that returns MoAggregateTransform wrapped in IamTrustPointResponse
 func MoAggregateTransformAsIamTrustPointResponse(v *MoAggregateTransform) IamTrustPointResponse {
-	return IamTrustPointResponse{ MoAggregateTransform: v}
+	return IamTrustPointResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIamTrustPointResponse is a convenience function that returns MoDocumentCount wrapped in IamTrustPointResponse
 func MoDocumentCountAsIamTrustPointResponse(v *MoDocumentCount) IamTrustPointResponse {
-	return IamTrustPointResponse{ MoDocumentCount: v}
+	return IamTrustPointResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIamTrustPointResponse is a convenience function that returns MoTagSummary wrapped in IamTrustPointResponse
 func MoTagSummaryAsIamTrustPointResponse(v *MoTagSummary) IamTrustPointResponse {
-	return IamTrustPointResponse{ MoTagSummary: v}
+	return IamTrustPointResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamTrustPointResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IamTrustPointResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamTrustPointResponse) GetActualInstance() (interface{}) {
+func (obj *IamTrustPointResponse) GetActualInstance() interface{} {
 	if obj.IamTrustPointList != nil {
 		return obj.IamTrustPointList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIamTrustPointResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

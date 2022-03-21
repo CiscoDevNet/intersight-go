@@ -18,20 +18,19 @@ import (
 
 // StorageFlexUtilPhysicalDriveRelationship - A relationship to the 'storage.FlexUtilPhysicalDrive' resource, or the expanded 'storage.FlexUtilPhysicalDrive' resource, or the 'null' value.
 type StorageFlexUtilPhysicalDriveRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                      *MoMoRef
 	StorageFlexUtilPhysicalDrive *StorageFlexUtilPhysicalDrive
 }
 
 // MoMoRefAsStorageFlexUtilPhysicalDriveRelationship is a convenience function that returns MoMoRef wrapped in StorageFlexUtilPhysicalDriveRelationship
 func MoMoRefAsStorageFlexUtilPhysicalDriveRelationship(v *MoMoRef) StorageFlexUtilPhysicalDriveRelationship {
-	return StorageFlexUtilPhysicalDriveRelationship{ MoMoRef: v}
+	return StorageFlexUtilPhysicalDriveRelationship{MoMoRef: v}
 }
 
 // StorageFlexUtilPhysicalDriveAsStorageFlexUtilPhysicalDriveRelationship is a convenience function that returns StorageFlexUtilPhysicalDrive wrapped in StorageFlexUtilPhysicalDriveRelationship
 func StorageFlexUtilPhysicalDriveAsStorageFlexUtilPhysicalDriveRelationship(v *StorageFlexUtilPhysicalDrive) StorageFlexUtilPhysicalDriveRelationship {
-	return StorageFlexUtilPhysicalDriveRelationship{ StorageFlexUtilPhysicalDrive: v}
+	return StorageFlexUtilPhysicalDriveRelationship{StorageFlexUtilPhysicalDrive: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageFlexUtilPhysicalDriveRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageFlexUtilPhysicalDriveRelationship) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *StorageFlexUtilPhysicalDriveRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageFlexUtilPhysicalDriveRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageFlexUtilPhysicalDriveRelationship) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

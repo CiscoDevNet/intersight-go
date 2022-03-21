@@ -19,43 +19,42 @@ import (
 // TelemetryDruidDataSource - A data source is the Apache Druid equivalent of a database table. However, a query can also masquerade as a data source, providing subquery-like functionality. Query data sources are currently supported only by GroupBy queries.
 type TelemetryDruidDataSource struct {
 	TelemetryDruidInlineDataSource *TelemetryDruidInlineDataSource
-	TelemetryDruidJoinDataSource *TelemetryDruidJoinDataSource
+	TelemetryDruidJoinDataSource   *TelemetryDruidJoinDataSource
 	TelemetryDruidLookupDataSource *TelemetryDruidLookupDataSource
-	TelemetryDruidQueryDataSource *TelemetryDruidQueryDataSource
-	TelemetryDruidTableDataSource *TelemetryDruidTableDataSource
-	TelemetryDruidUnionDataSource *TelemetryDruidUnionDataSource
+	TelemetryDruidQueryDataSource  *TelemetryDruidQueryDataSource
+	TelemetryDruidTableDataSource  *TelemetryDruidTableDataSource
+	TelemetryDruidUnionDataSource  *TelemetryDruidUnionDataSource
 }
 
 // TelemetryDruidInlineDataSourceAsTelemetryDruidDataSource is a convenience function that returns TelemetryDruidInlineDataSource wrapped in TelemetryDruidDataSource
 func TelemetryDruidInlineDataSourceAsTelemetryDruidDataSource(v *TelemetryDruidInlineDataSource) TelemetryDruidDataSource {
-	return TelemetryDruidDataSource{ TelemetryDruidInlineDataSource: v}
+	return TelemetryDruidDataSource{TelemetryDruidInlineDataSource: v}
 }
 
 // TelemetryDruidJoinDataSourceAsTelemetryDruidDataSource is a convenience function that returns TelemetryDruidJoinDataSource wrapped in TelemetryDruidDataSource
 func TelemetryDruidJoinDataSourceAsTelemetryDruidDataSource(v *TelemetryDruidJoinDataSource) TelemetryDruidDataSource {
-	return TelemetryDruidDataSource{ TelemetryDruidJoinDataSource: v}
+	return TelemetryDruidDataSource{TelemetryDruidJoinDataSource: v}
 }
 
 // TelemetryDruidLookupDataSourceAsTelemetryDruidDataSource is a convenience function that returns TelemetryDruidLookupDataSource wrapped in TelemetryDruidDataSource
 func TelemetryDruidLookupDataSourceAsTelemetryDruidDataSource(v *TelemetryDruidLookupDataSource) TelemetryDruidDataSource {
-	return TelemetryDruidDataSource{ TelemetryDruidLookupDataSource: v}
+	return TelemetryDruidDataSource{TelemetryDruidLookupDataSource: v}
 }
 
 // TelemetryDruidQueryDataSourceAsTelemetryDruidDataSource is a convenience function that returns TelemetryDruidQueryDataSource wrapped in TelemetryDruidDataSource
 func TelemetryDruidQueryDataSourceAsTelemetryDruidDataSource(v *TelemetryDruidQueryDataSource) TelemetryDruidDataSource {
-	return TelemetryDruidDataSource{ TelemetryDruidQueryDataSource: v}
+	return TelemetryDruidDataSource{TelemetryDruidQueryDataSource: v}
 }
 
 // TelemetryDruidTableDataSourceAsTelemetryDruidDataSource is a convenience function that returns TelemetryDruidTableDataSource wrapped in TelemetryDruidDataSource
 func TelemetryDruidTableDataSourceAsTelemetryDruidDataSource(v *TelemetryDruidTableDataSource) TelemetryDruidDataSource {
-	return TelemetryDruidDataSource{ TelemetryDruidTableDataSource: v}
+	return TelemetryDruidDataSource{TelemetryDruidTableDataSource: v}
 }
 
 // TelemetryDruidUnionDataSourceAsTelemetryDruidDataSource is a convenience function that returns TelemetryDruidUnionDataSource wrapped in TelemetryDruidDataSource
 func TelemetryDruidUnionDataSourceAsTelemetryDruidDataSource(v *TelemetryDruidUnionDataSource) TelemetryDruidDataSource {
-	return TelemetryDruidDataSource{ TelemetryDruidUnionDataSource: v}
+	return TelemetryDruidDataSource{TelemetryDruidUnionDataSource: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *TelemetryDruidDataSource) UnmarshalJSON(data []byte) error {
@@ -244,7 +243,7 @@ func (src TelemetryDruidDataSource) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *TelemetryDruidDataSource) GetActualInstance() (interface{}) {
+func (obj *TelemetryDruidDataSource) GetActualInstance() interface{} {
 	if obj.TelemetryDruidInlineDataSource != nil {
 		return obj.TelemetryDruidInlineDataSource
 	}
@@ -308,5 +307,3 @@ func (v *NullableTelemetryDruidDataSource) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

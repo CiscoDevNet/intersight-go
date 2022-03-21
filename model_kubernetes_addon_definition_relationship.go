@@ -19,19 +19,18 @@ import (
 // KubernetesAddonDefinitionRelationship - A relationship to the 'kubernetes.AddonDefinition' resource, or the expanded 'kubernetes.AddonDefinition' resource, or the 'null' value.
 type KubernetesAddonDefinitionRelationship struct {
 	KubernetesAddonDefinition *KubernetesAddonDefinition
-	MoMoRef *MoMoRef
+	MoMoRef                   *MoMoRef
 }
 
 // KubernetesAddonDefinitionAsKubernetesAddonDefinitionRelationship is a convenience function that returns KubernetesAddonDefinition wrapped in KubernetesAddonDefinitionRelationship
 func KubernetesAddonDefinitionAsKubernetesAddonDefinitionRelationship(v *KubernetesAddonDefinition) KubernetesAddonDefinitionRelationship {
-	return KubernetesAddonDefinitionRelationship{ KubernetesAddonDefinition: v}
+	return KubernetesAddonDefinitionRelationship{KubernetesAddonDefinition: v}
 }
 
 // MoMoRefAsKubernetesAddonDefinitionRelationship is a convenience function that returns MoMoRef wrapped in KubernetesAddonDefinitionRelationship
 func MoMoRefAsKubernetesAddonDefinitionRelationship(v *MoMoRef) KubernetesAddonDefinitionRelationship {
-	return KubernetesAddonDefinitionRelationship{ MoMoRef: v}
+	return KubernetesAddonDefinitionRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesAddonDefinitionRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesAddonDefinitionRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KubernetesAddonDefinitionRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesAddonDefinitionRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesAddonDefinition != nil {
 		return obj.KubernetesAddonDefinition
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesAddonDefinitionRelationship) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

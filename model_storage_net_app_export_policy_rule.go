@@ -23,15 +23,15 @@ type StorageNetAppExportPolicyRule struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType  string   `json:"ObjectType"`
 	ClientMatch []string `json:"ClientMatch,omitempty"`
 	// Position of export rule in the list of rules.
-	Index *int64 `json:"Index,omitempty"`
-	RoRule []string `json:"RoRule,omitempty"`
-	RwRule []string `json:"RwRule,omitempty"`
+	Index     *int64   `json:"Index,omitempty"`
+	RoRule    []string `json:"RoRule,omitempty"`
+	RwRule    []string `json:"RwRule,omitempty"`
 	SuperUser []string `json:"SuperUser,omitempty"`
 	// Export Policy rule that are mapped to this User ID.
-	User *string `json:"User,omitempty"`
+	User                 *string `json:"User,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *StorageNetAppExportPolicyRule) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppExportPolicyRule) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *StorageNetAppExportPolicyRule) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppExportPolicyRule) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -110,7 +110,7 @@ func (o *StorageNetAppExportPolicyRule) SetObjectType(v string) {
 
 // GetClientMatch returns the ClientMatch field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppExportPolicyRule) GetClientMatch() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *StorageNetAppExportPolicyRule) SetIndex(v int64) {
 
 // GetRoRule returns the RoRule field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppExportPolicyRule) GetRoRule() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -208,7 +208,7 @@ func (o *StorageNetAppExportPolicyRule) SetRoRule(v []string) {
 
 // GetRwRule returns the RwRule field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppExportPolicyRule) GetRwRule() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -241,7 +241,7 @@ func (o *StorageNetAppExportPolicyRule) SetRwRule(v []string) {
 
 // GetSuperUser returns the SuperUser field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppExportPolicyRule) GetSuperUser() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -351,12 +351,12 @@ func (o *StorageNetAppExportPolicyRule) UnmarshalJSON(bytes []byte) (err error) 
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType  string   `json:"ObjectType"`
 		ClientMatch []string `json:"ClientMatch,omitempty"`
 		// Position of export rule in the list of rules.
-		Index *int64 `json:"Index,omitempty"`
-		RoRule []string `json:"RoRule,omitempty"`
-		RwRule []string `json:"RwRule,omitempty"`
+		Index     *int64   `json:"Index,omitempty"`
+		RoRule    []string `json:"RoRule,omitempty"`
+		RwRule    []string `json:"RwRule,omitempty"`
 		SuperUser []string `json:"SuperUser,omitempty"`
 		// Export Policy rule that are mapped to this User ID.
 		User *string `json:"User,omitempty"`
@@ -460,5 +460,3 @@ func (v *NullableStorageNetAppExportPolicyRule) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

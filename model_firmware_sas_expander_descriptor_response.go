@@ -19,31 +19,30 @@ import (
 // FirmwareSasExpanderDescriptorResponse - The response body of a HTTP GET request for the 'firmware.SasExpanderDescriptor' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'firmware.SasExpanderDescriptor' resources.
 type FirmwareSasExpanderDescriptorResponse struct {
 	FirmwareSasExpanderDescriptorList *FirmwareSasExpanderDescriptorList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform              *MoAggregateTransform
+	MoDocumentCount                   *MoDocumentCount
+	MoTagSummary                      *MoTagSummary
 }
 
 // FirmwareSasExpanderDescriptorListAsFirmwareSasExpanderDescriptorResponse is a convenience function that returns FirmwareSasExpanderDescriptorList wrapped in FirmwareSasExpanderDescriptorResponse
 func FirmwareSasExpanderDescriptorListAsFirmwareSasExpanderDescriptorResponse(v *FirmwareSasExpanderDescriptorList) FirmwareSasExpanderDescriptorResponse {
-	return FirmwareSasExpanderDescriptorResponse{ FirmwareSasExpanderDescriptorList: v}
+	return FirmwareSasExpanderDescriptorResponse{FirmwareSasExpanderDescriptorList: v}
 }
 
 // MoAggregateTransformAsFirmwareSasExpanderDescriptorResponse is a convenience function that returns MoAggregateTransform wrapped in FirmwareSasExpanderDescriptorResponse
 func MoAggregateTransformAsFirmwareSasExpanderDescriptorResponse(v *MoAggregateTransform) FirmwareSasExpanderDescriptorResponse {
-	return FirmwareSasExpanderDescriptorResponse{ MoAggregateTransform: v}
+	return FirmwareSasExpanderDescriptorResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsFirmwareSasExpanderDescriptorResponse is a convenience function that returns MoDocumentCount wrapped in FirmwareSasExpanderDescriptorResponse
 func MoDocumentCountAsFirmwareSasExpanderDescriptorResponse(v *MoDocumentCount) FirmwareSasExpanderDescriptorResponse {
-	return FirmwareSasExpanderDescriptorResponse{ MoDocumentCount: v}
+	return FirmwareSasExpanderDescriptorResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsFirmwareSasExpanderDescriptorResponse is a convenience function that returns MoTagSummary wrapped in FirmwareSasExpanderDescriptorResponse
 func MoTagSummaryAsFirmwareSasExpanderDescriptorResponse(v *MoTagSummary) FirmwareSasExpanderDescriptorResponse {
-	return FirmwareSasExpanderDescriptorResponse{ MoTagSummary: v}
+	return FirmwareSasExpanderDescriptorResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FirmwareSasExpanderDescriptorResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src FirmwareSasExpanderDescriptorResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FirmwareSasExpanderDescriptorResponse) GetActualInstance() (interface{}) {
+func (obj *FirmwareSasExpanderDescriptorResponse) GetActualInstance() interface{} {
 	if obj.FirmwareSasExpanderDescriptorList != nil {
 		return obj.FirmwareSasExpanderDescriptorList
 	}
@@ -184,5 +183,3 @@ func (v *NullableFirmwareSasExpanderDescriptorResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

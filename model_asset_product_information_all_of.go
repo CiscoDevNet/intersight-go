@@ -20,8 +20,8 @@ type AssetProductInformationAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	BillTo NullableAssetAddressInformation `json:"BillTo,omitempty"`
+	ObjectType string                          `json:"ObjectType"`
+	BillTo     NullableAssetAddressInformation `json:"BillTo,omitempty"`
 	// Short description of the Cisco product that helps identify the product easily. example \"DISTI:UCS 6248UP 1RU Fabric Int/No PSU/32 UP/ 12p LIC\".
 	Description *string `json:"Description,omitempty"`
 	// Family that the product belongs to. Example \"UCSB\".
@@ -29,10 +29,10 @@ type AssetProductInformationAllOf struct {
 	// Group that the product belongs to. It is one higher level categorization above family. example \"Switch\".
 	Group *string `json:"Group,omitempty"`
 	// Product number that identifies the product. example PID. example \"UCS-FI-6248UP-CH2\".
-	Number *string `json:"Number,omitempty"`
+	Number *string                         `json:"Number,omitempty"`
 	ShipTo NullableAssetAddressInformation `json:"ShipTo,omitempty"`
 	// Sub type of the product being specified. example \"UCS 6200 SER\".
-	SubType *string `json:"SubType,omitempty"`
+	SubType              *string `json:"SubType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *AssetProductInformationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetProductInformationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *AssetProductInformationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetProductInformationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -122,7 +122,7 @@ func (o *AssetProductInformationAllOf) GetBillTo() AssetAddressInformation {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetProductInformationAllOf) GetBillToOk() (*AssetAddressInformation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BillTo.Get(), o.BillTo.IsSet()
@@ -141,6 +141,7 @@ func (o *AssetProductInformationAllOf) HasBillTo() bool {
 func (o *AssetProductInformationAllOf) SetBillTo(v AssetAddressInformation) {
 	o.BillTo.Set(&v)
 }
+
 // SetBillToNil sets the value for BillTo to be an explicit nil
 func (o *AssetProductInformationAllOf) SetBillToNil() {
 	o.BillTo.Set(nil)
@@ -292,7 +293,7 @@ func (o *AssetProductInformationAllOf) GetShipTo() AssetAddressInformation {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetProductInformationAllOf) GetShipToOk() (*AssetAddressInformation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ShipTo.Get(), o.ShipTo.IsSet()
@@ -311,6 +312,7 @@ func (o *AssetProductInformationAllOf) HasShipTo() bool {
 func (o *AssetProductInformationAllOf) SetShipTo(v AssetAddressInformation) {
 	o.ShipTo.Set(&v)
 }
+
 // SetShipToNil sets the value for ShipTo to be an explicit nil
 func (o *AssetProductInformationAllOf) SetShipToNil() {
 	o.ShipTo.Set(nil)
@@ -450,5 +452,3 @@ func (v *NullableAssetProductInformationAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

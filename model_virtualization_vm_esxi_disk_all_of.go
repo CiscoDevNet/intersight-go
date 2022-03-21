@@ -32,7 +32,7 @@ type VirtualizationVmEsxiDiskAllOf struct {
 	// Specify the allocation type as thin or thick.
 	StorageAllocation *string `json:"StorageAllocation,omitempty"`
 	// Controller name of the disk, if not specified uses the default one.
-	StorageController *string `json:"StorageController,omitempty"`
+	StorageController    *string `json:"StorageController,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *VirtualizationVmEsxiDiskAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmEsxiDiskAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *VirtualizationVmEsxiDiskAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmEsxiDiskAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -394,5 +394,3 @@ func (v *NullableVirtualizationVmEsxiDiskAllOf) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,8 +20,8 @@ type AssetConnectionAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
-	Credential NullableAssetCredential `json:"Credential,omitempty"`
+	ObjectType           string                  `json:"ObjectType"`
+	Credential           NullableAssetCredential `json:"Credential,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -59,7 +59,7 @@ func (o *AssetConnectionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetConnectionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -83,7 +83,7 @@ func (o *AssetConnectionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetConnectionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -107,7 +107,7 @@ func (o *AssetConnectionAllOf) GetCredential() AssetCredential {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetConnectionAllOf) GetCredentialOk() (*AssetCredential, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Credential.Get(), o.Credential.IsSet()
@@ -126,6 +126,7 @@ func (o *AssetConnectionAllOf) HasCredential() bool {
 func (o *AssetConnectionAllOf) SetCredential(v AssetCredential) {
 	o.Credential.Set(&v)
 }
+
 // SetCredentialNil sets the value for Credential to be an explicit nil
 func (o *AssetConnectionAllOf) SetCredentialNil() {
 	o.Credential.Set(nil)
@@ -209,5 +210,3 @@ func (v *NullableAssetConnectionAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -26,7 +26,7 @@ type EquipmentIoCardBaseAllOf struct {
 	// This field is to provide description for the iocard module model.
 	Description *string `json:"Description,omitempty"`
 	// Module Identifier for the IO module.
-	ModuleId *int64 `json:"ModuleId,omitempty"`
+	ModuleId   *int64   `json:"ModuleId,omitempty"`
 	OperReason []string `json:"OperReason,omitempty"`
 	// Operational state of IO card or fabric extender.
 	OperState *string `json:"OperState,omitempty"`
@@ -43,10 +43,10 @@ type EquipmentIoCardBaseAllOf struct {
 	// This field identifies the Vendor ID for the IO card module.
 	Vid *string `json:"Vid,omitempty"`
 	// An array of relationships to etherHostPort resources.
-	HostPorts []EtherHostPortRelationship `json:"HostPorts,omitempty"`
+	HostPorts      []EtherHostPortRelationship       `json:"HostPorts,omitempty"`
 	MgmtController *ManagementControllerRelationship `json:"MgmtController,omitempty"`
 	// An array of relationships to etherNetworkPort resources.
-	NetworkPorts []EtherNetworkPortRelationship `json:"NetworkPorts,omitempty"`
+	NetworkPorts         []EtherNetworkPortRelationship `json:"NetworkPorts,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *EquipmentIoCardBaseAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentIoCardBaseAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -108,7 +108,7 @@ func (o *EquipmentIoCardBaseAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentIoCardBaseAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -217,7 +217,7 @@ func (o *EquipmentIoCardBaseAllOf) SetModuleId(v int64) {
 
 // GetOperReason returns the OperReason field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentIoCardBaseAllOf) GetOperReason() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -474,7 +474,7 @@ func (o *EquipmentIoCardBaseAllOf) SetVid(v string) {
 
 // GetHostPorts returns the HostPorts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentIoCardBaseAllOf) GetHostPorts() []EtherHostPortRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EtherHostPortRelationship
 		return ret
 	}
@@ -539,7 +539,7 @@ func (o *EquipmentIoCardBaseAllOf) SetMgmtController(v ManagementControllerRelat
 
 // GetNetworkPorts returns the NetworkPorts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentIoCardBaseAllOf) GetNetworkPorts() []EtherNetworkPortRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EtherNetworkPortRelationship
 		return ret
 	}
@@ -695,5 +695,3 @@ func (v *NullableEquipmentIoCardBaseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

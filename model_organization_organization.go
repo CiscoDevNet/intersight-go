@@ -27,10 +27,10 @@ type OrganizationOrganization struct {
 	// The informative description about the usage of this organization.
 	Description *string `json:"Description,omitempty"`
 	// The name of the organization. There can be multiple organizations under an account.
-	Name *string `json:"Name,omitempty"`
+	Name    *string                 `json:"Name,omitempty"`
 	Account *IamAccountRelationship `json:"Account,omitempty"`
 	// An array of relationships to resourceGroup resources.
-	ResourceGroups []ResourceGroupRelationship `json:"ResourceGroups,omitempty"`
+	ResourceGroups       []ResourceGroupRelationship `json:"ResourceGroups,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *OrganizationOrganization) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OrganizationOrganization) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *OrganizationOrganization) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OrganizationOrganization) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -205,7 +205,7 @@ func (o *OrganizationOrganization) SetAccount(v IamAccountRelationship) {
 
 // GetResourceGroups returns the ResourceGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrganizationOrganization) GetResourceGroups() []ResourceGroupRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ResourceGroupRelationship
 		return ret
 	}
@@ -281,7 +281,7 @@ func (o *OrganizationOrganization) UnmarshalJSON(bytes []byte) (err error) {
 		// The informative description about the usage of this organization.
 		Description *string `json:"Description,omitempty"`
 		// The name of the organization. There can be multiple organizations under an account.
-		Name *string `json:"Name,omitempty"`
+		Name    *string                 `json:"Name,omitempty"`
 		Account *IamAccountRelationship `json:"Account,omitempty"`
 		// An array of relationships to resourceGroup resources.
 		ResourceGroups []ResourceGroupRelationship `json:"ResourceGroups,omitempty"`
@@ -381,5 +381,3 @@ func (v *NullableOrganizationOrganization) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

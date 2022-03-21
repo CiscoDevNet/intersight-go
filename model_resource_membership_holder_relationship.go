@@ -18,20 +18,19 @@ import (
 
 // ResourceMembershipHolderRelationship - A relationship to the 'resource.MembershipHolder' resource, or the expanded 'resource.MembershipHolder' resource, or the 'null' value.
 type ResourceMembershipHolderRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                  *MoMoRef
 	ResourceMembershipHolder *ResourceMembershipHolder
 }
 
 // MoMoRefAsResourceMembershipHolderRelationship is a convenience function that returns MoMoRef wrapped in ResourceMembershipHolderRelationship
 func MoMoRefAsResourceMembershipHolderRelationship(v *MoMoRef) ResourceMembershipHolderRelationship {
-	return ResourceMembershipHolderRelationship{ MoMoRef: v}
+	return ResourceMembershipHolderRelationship{MoMoRef: v}
 }
 
 // ResourceMembershipHolderAsResourceMembershipHolderRelationship is a convenience function that returns ResourceMembershipHolder wrapped in ResourceMembershipHolderRelationship
 func ResourceMembershipHolderAsResourceMembershipHolderRelationship(v *ResourceMembershipHolder) ResourceMembershipHolderRelationship {
-	return ResourceMembershipHolderRelationship{ ResourceMembershipHolder: v}
+	return ResourceMembershipHolderRelationship{ResourceMembershipHolder: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ResourceMembershipHolderRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ResourceMembershipHolderRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ResourceMembershipHolderRelationship) GetActualInstance() (interface{}) {
+func (obj *ResourceMembershipHolderRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableResourceMembershipHolderRelationship) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

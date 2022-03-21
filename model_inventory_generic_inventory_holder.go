@@ -25,13 +25,13 @@ type InventoryGenericInventoryHolder struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The endpoint represented by this holder.
-	Endpoint *string `json:"Endpoint,omitempty"`
-	ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
+	Endpoint        *string                      `json:"Endpoint,omitempty"`
+	ComputeBlade    *ComputeBladeRelationship    `json:"ComputeBlade,omitempty"`
 	ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
 	// An array of relationships to inventoryGenericInventory resources.
-	GenericInventory []InventoryGenericInventoryRelationship `json:"GenericInventory,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	GenericInventory     []InventoryGenericInventoryRelationship `json:"GenericInventory,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship        `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *InventoryGenericInventoryHolder) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *InventoryGenericInventoryHolder) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *InventoryGenericInventoryHolder) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *InventoryGenericInventoryHolder) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -206,7 +206,7 @@ func (o *InventoryGenericInventoryHolder) SetComputeRackUnit(v ComputeRackUnitRe
 
 // GetGenericInventory returns the GenericInventory field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InventoryGenericInventoryHolder) GetGenericInventory() []InventoryGenericInventoryRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []InventoryGenericInventoryRelationship
 		return ret
 	}
@@ -350,13 +350,13 @@ func (o *InventoryGenericInventoryHolder) UnmarshalJSON(bytes []byte) (err error
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The endpoint represented by this holder.
-		Endpoint *string `json:"Endpoint,omitempty"`
-		ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
+		Endpoint        *string                      `json:"Endpoint,omitempty"`
+		ComputeBlade    *ComputeBladeRelationship    `json:"ComputeBlade,omitempty"`
 		ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
 		// An array of relationships to inventoryGenericInventory resources.
-		GenericInventory []InventoryGenericInventoryRelationship `json:"GenericInventory,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		GenericInventory    []InventoryGenericInventoryRelationship `json:"GenericInventory,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship        `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	}
 
 	varInventoryGenericInventoryHolderWithoutEmbeddedStruct := InventoryGenericInventoryHolderWithoutEmbeddedStruct{}
@@ -457,5 +457,3 @@ func (v *NullableInventoryGenericInventoryHolder) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

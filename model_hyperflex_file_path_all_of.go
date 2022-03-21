@@ -20,10 +20,10 @@ type HyperflexFilePathAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	DsInfo NullableHyperflexDatastoreInfo `json:"DsInfo,omitempty"`
+	ObjectType string                         `json:"ObjectType"`
+	DsInfo     NullableHyperflexDatastoreInfo `json:"DsInfo,omitempty"`
 	// Relative file path within the datastore.
-	RelativeFilePath *string `json:"RelativeFilePath,omitempty"`
+	RelativeFilePath     *string `json:"RelativeFilePath,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,7 +65,7 @@ func (o *HyperflexFilePathAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexFilePathAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *HyperflexFilePathAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexFilePathAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -113,7 +113,7 @@ func (o *HyperflexFilePathAllOf) GetDsInfo() HyperflexDatastoreInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexFilePathAllOf) GetDsInfoOk() (*HyperflexDatastoreInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DsInfo.Get(), o.DsInfo.IsSet()
@@ -132,6 +132,7 @@ func (o *HyperflexFilePathAllOf) HasDsInfo() bool {
 func (o *HyperflexFilePathAllOf) SetDsInfo(v HyperflexDatastoreInfo) {
 	o.DsInfo.Set(&v)
 }
+
 // SetDsInfoNil sets the value for DsInfo to be an explicit nil
 func (o *HyperflexFilePathAllOf) SetDsInfoNil() {
 	o.DsInfo.Set(nil)
@@ -251,5 +252,3 @@ func (v *NullableHyperflexFilePathAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

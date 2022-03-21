@@ -27,8 +27,8 @@ type StorageNetAppLicense struct {
 	// Unique identity of the device.
 	ClusterUuid *string `json:"ClusterUuid,omitempty"`
 	// The name of the licensed package.
-	Name *string `json:"Name,omitempty"`
-	Array *StorageNetAppClusterRelationship `json:"Array,omitempty"`
+	Name                 *string                           `json:"Name,omitempty"`
+	Array                *StorageNetAppClusterRelationship `json:"Array,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *StorageNetAppLicense) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppLicense) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *StorageNetAppLicense) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppLicense) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -243,7 +243,7 @@ func (o *StorageNetAppLicense) UnmarshalJSON(bytes []byte) (err error) {
 		// Unique identity of the device.
 		ClusterUuid *string `json:"ClusterUuid,omitempty"`
 		// The name of the licensed package.
-		Name *string `json:"Name,omitempty"`
+		Name  *string                           `json:"Name,omitempty"`
 		Array *StorageNetAppClusterRelationship `json:"Array,omitempty"`
 	}
 
@@ -339,5 +339,3 @@ func (v *NullableStorageNetAppLicense) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

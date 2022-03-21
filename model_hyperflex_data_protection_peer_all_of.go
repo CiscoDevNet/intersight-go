@@ -20,11 +20,11 @@ type HyperflexDataProtectionPeerAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Er NullableHyperflexEntityReference `json:"Er,omitempty"`
-	PeerInfo NullableHyperflexReplicationPeerInfo `json:"PeerInfo,omitempty"`
-	SrcCluster *HyperflexClusterRelationship `json:"SrcCluster,omitempty"`
-	TgtCluster *HyperflexClusterRelationship `json:"TgtCluster,omitempty"`
+	ObjectType           string                               `json:"ObjectType"`
+	Er                   NullableHyperflexEntityReference     `json:"Er,omitempty"`
+	PeerInfo             NullableHyperflexReplicationPeerInfo `json:"PeerInfo,omitempty"`
+	SrcCluster           *HyperflexClusterRelationship        `json:"SrcCluster,omitempty"`
+	TgtCluster           *HyperflexClusterRelationship        `json:"TgtCluster,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *HyperflexDataProtectionPeerAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexDataProtectionPeerAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *HyperflexDataProtectionPeerAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexDataProtectionPeerAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -114,7 +114,7 @@ func (o *HyperflexDataProtectionPeerAllOf) GetEr() HyperflexEntityReference {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexDataProtectionPeerAllOf) GetErOk() (*HyperflexEntityReference, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Er.Get(), o.Er.IsSet()
@@ -133,6 +133,7 @@ func (o *HyperflexDataProtectionPeerAllOf) HasEr() bool {
 func (o *HyperflexDataProtectionPeerAllOf) SetEr(v HyperflexEntityReference) {
 	o.Er.Set(&v)
 }
+
 // SetErNil sets the value for Er to be an explicit nil
 func (o *HyperflexDataProtectionPeerAllOf) SetErNil() {
 	o.Er.Set(nil)
@@ -156,7 +157,7 @@ func (o *HyperflexDataProtectionPeerAllOf) GetPeerInfo() HyperflexReplicationPee
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexDataProtectionPeerAllOf) GetPeerInfoOk() (*HyperflexReplicationPeerInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PeerInfo.Get(), o.PeerInfo.IsSet()
@@ -175,6 +176,7 @@ func (o *HyperflexDataProtectionPeerAllOf) HasPeerInfo() bool {
 func (o *HyperflexDataProtectionPeerAllOf) SetPeerInfo(v HyperflexReplicationPeerInfo) {
 	o.PeerInfo.Set(&v)
 }
+
 // SetPeerInfoNil sets the value for PeerInfo to be an explicit nil
 func (o *HyperflexDataProtectionPeerAllOf) SetPeerInfoNil() {
 	o.PeerInfo.Set(nil)
@@ -334,5 +336,3 @@ func (v *NullableHyperflexDataProtectionPeerAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

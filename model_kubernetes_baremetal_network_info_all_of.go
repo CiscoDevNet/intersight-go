@@ -20,9 +20,9 @@ type KubernetesBaremetalNetworkInfoAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Ethernets []KubernetesEthernet `json:"Ethernets,omitempty"`
-	Ovsbonds []KubernetesOvsBond `json:"Ovsbonds,omitempty"`
+	ObjectType           string               `json:"ObjectType"`
+	Ethernets            []KubernetesEthernet `json:"Ethernets,omitempty"`
+	Ovsbonds             []KubernetesOvsBond  `json:"Ovsbonds,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,7 +64,7 @@ func (o *KubernetesBaremetalNetworkInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesBaremetalNetworkInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -88,7 +88,7 @@ func (o *KubernetesBaremetalNetworkInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesBaremetalNetworkInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -101,7 +101,7 @@ func (o *KubernetesBaremetalNetworkInfoAllOf) SetObjectType(v string) {
 
 // GetEthernets returns the Ethernets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesBaremetalNetworkInfoAllOf) GetEthernets() []KubernetesEthernet {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesEthernet
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *KubernetesBaremetalNetworkInfoAllOf) SetEthernets(v []KubernetesEtherne
 
 // GetOvsbonds returns the Ovsbonds field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesBaremetalNetworkInfoAllOf) GetOvsbonds() []KubernetesOvsBond {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesOvsBond
 		return ret
 	}
@@ -242,5 +242,3 @@ func (v *NullableKubernetesBaremetalNetworkInfoAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

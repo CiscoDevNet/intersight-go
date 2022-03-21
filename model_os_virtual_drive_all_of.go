@@ -27,7 +27,7 @@ type OsVirtualDriveAllOf struct {
 	Name *string `json:"Name,omitempty"`
 	// The SlotID of the Storage Controller associated to the virtual drive.
 	StorageControllerSlotId *string `json:"StorageControllerSlotId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties    map[string]interface{}
 }
 
 type _OsVirtualDriveAllOf OsVirtualDriveAllOf
@@ -68,7 +68,7 @@ func (o *OsVirtualDriveAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OsVirtualDriveAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *OsVirtualDriveAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OsVirtualDriveAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,5 +280,3 @@ func (v *NullableOsVirtualDriveAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

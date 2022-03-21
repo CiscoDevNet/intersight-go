@@ -19,31 +19,30 @@ import (
 // UuidpoolBlockResponse - The response body of a HTTP GET request for the 'uuidpool.Block' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'uuidpool.Block' resources.
 type UuidpoolBlockResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
-	UuidpoolBlockList *UuidpoolBlockList
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
+	UuidpoolBlockList    *UuidpoolBlockList
 }
 
 // MoAggregateTransformAsUuidpoolBlockResponse is a convenience function that returns MoAggregateTransform wrapped in UuidpoolBlockResponse
 func MoAggregateTransformAsUuidpoolBlockResponse(v *MoAggregateTransform) UuidpoolBlockResponse {
-	return UuidpoolBlockResponse{ MoAggregateTransform: v}
+	return UuidpoolBlockResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsUuidpoolBlockResponse is a convenience function that returns MoDocumentCount wrapped in UuidpoolBlockResponse
 func MoDocumentCountAsUuidpoolBlockResponse(v *MoDocumentCount) UuidpoolBlockResponse {
-	return UuidpoolBlockResponse{ MoDocumentCount: v}
+	return UuidpoolBlockResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsUuidpoolBlockResponse is a convenience function that returns MoTagSummary wrapped in UuidpoolBlockResponse
 func MoTagSummaryAsUuidpoolBlockResponse(v *MoTagSummary) UuidpoolBlockResponse {
-	return UuidpoolBlockResponse{ MoTagSummary: v}
+	return UuidpoolBlockResponse{MoTagSummary: v}
 }
 
 // UuidpoolBlockListAsUuidpoolBlockResponse is a convenience function that returns UuidpoolBlockList wrapped in UuidpoolBlockResponse
 func UuidpoolBlockListAsUuidpoolBlockResponse(v *UuidpoolBlockList) UuidpoolBlockResponse {
-	return UuidpoolBlockResponse{ UuidpoolBlockList: v}
+	return UuidpoolBlockResponse{UuidpoolBlockList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UuidpoolBlockResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src UuidpoolBlockResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *UuidpoolBlockResponse) GetActualInstance() (interface{}) {
+func (obj *UuidpoolBlockResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableUuidpoolBlockResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

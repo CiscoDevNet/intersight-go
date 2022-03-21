@@ -21,8 +21,8 @@ type AssetDeviceContractNotificationAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Contract NullableAssetContractInformation `json:"Contract,omitempty"`
+	ObjectType string                           `json:"ObjectType"`
+	Contract   NullableAssetContractInformation `json:"Contract,omitempty"`
 	// Calculated contract status that is derived based on the service line status and contract end date. It is different from serviceLineStatus property. serviceLineStatus gives us ACTIVE, OVERDUE, EXPIRED. These are transformed into Active, Expiring Soon and Not Covered. * `Unknown` - The device's contract status cannot be determined. * `Not Covered` - The Cisco device does not have a valid support contract. * `Active` - The Cisco device is covered under a active support contract. * `Expiring Soon` - The contract for this Cisco device is going to expire in the next 30 days.
 	ContractStatus *string `json:"ContractStatus,omitempty"`
 	// Reason for contract status. In case of Not Covered, reason is either Terminated or Expired. * `` - There is no reason for the specified contract status. * `Line Item Expired` - The Cisco device does not have a valid support contract, it has expired. * `Line Item Terminated` - The Cisco device does not have a valid support contract, it has been terminated.
@@ -32,9 +32,9 @@ type AssetDeviceContractNotificationAllOf struct {
 	// End date of the covered product line. The coverage end date is fetched from Cisco SN2INFO API.
 	CoveredProductLineEndDate *string `json:"CoveredProductLineEndDate,omitempty"`
 	// Unique identifier of the Cisco device.
-	DeviceId *string `json:"DeviceId,omitempty"`
-	EndCustomer NullableAssetCustomerInformation `json:"EndCustomer,omitempty"`
-	EndUserGlobalUltimate NullableAssetGlobalUltimate `json:"EndUserGlobalUltimate,omitempty"`
+	DeviceId              *string                          `json:"DeviceId,omitempty"`
+	EndCustomer           NullableAssetCustomerInformation `json:"EndCustomer,omitempty"`
+	EndUserGlobalUltimate NullableAssetGlobalUltimate      `json:"EndUserGlobalUltimate,omitempty"`
 	// Validates if the device is a genuine Cisco device. Validated is done using the Cisco SN2INFO APIs.
 	IsValid *bool `json:"IsValid,omitempty"`
 	// Item type of this specific Cisco device. example \"Chassis\".
@@ -42,10 +42,10 @@ type AssetDeviceContractNotificationAllOf struct {
 	// Maintenance purchase order number for the Cisco device.
 	MaintenancePurchaseOrderNumber *string `json:"MaintenancePurchaseOrderNumber,omitempty"`
 	// Maintenance sales order number for the Cisco device.
-	MaintenanceSalesOrderNumber *string `json:"MaintenanceSalesOrderNumber,omitempty"`
-	Product NullableAssetProductInformation `json:"Product,omitempty"`
+	MaintenanceSalesOrderNumber *string                         `json:"MaintenanceSalesOrderNumber,omitempty"`
+	Product                     NullableAssetProductInformation `json:"Product,omitempty"`
 	// Purchase order number for the Cisco device. It is a unique number assigned for every purchase.
-	PurchaseOrderNumber *string `json:"PurchaseOrderNumber,omitempty"`
+	PurchaseOrderNumber    *string                     `json:"PurchaseOrderNumber,omitempty"`
 	ResellerGlobalUltimate NullableAssetGlobalUltimate `json:"ResellerGlobalUltimate,omitempty"`
 	// Sales order number for the Cisco device. It is a unique number assigned for every sale.
 	SalesOrderNumber *string `json:"SalesOrderNumber,omitempty"`
@@ -66,8 +66,8 @@ type AssetDeviceContractNotificationAllOf struct {
 	// End date for the warranty that covers the Cisco device.
 	WarrantyEndDate *string `json:"WarrantyEndDate,omitempty"`
 	// Type of warranty that covers the Cisco device.
-	WarrantyType *string `json:"WarrantyType,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	WarrantyType         *string                              `json:"WarrantyType,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -125,7 +125,7 @@ func (o *AssetDeviceContractNotificationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeviceContractNotificationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -149,7 +149,7 @@ func (o *AssetDeviceContractNotificationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeviceContractNotificationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -173,7 +173,7 @@ func (o *AssetDeviceContractNotificationAllOf) GetContract() AssetContractInform
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeviceContractNotificationAllOf) GetContractOk() (*AssetContractInformation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Contract.Get(), o.Contract.IsSet()
@@ -192,6 +192,7 @@ func (o *AssetDeviceContractNotificationAllOf) HasContract() bool {
 func (o *AssetDeviceContractNotificationAllOf) SetContract(v AssetContractInformation) {
 	o.Contract.Set(&v)
 }
+
 // SetContractNil sets the value for Contract to be an explicit nil
 func (o *AssetDeviceContractNotificationAllOf) SetContractNil() {
 	o.Contract.Set(nil)
@@ -375,7 +376,7 @@ func (o *AssetDeviceContractNotificationAllOf) GetEndCustomer() AssetCustomerInf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeviceContractNotificationAllOf) GetEndCustomerOk() (*AssetCustomerInformation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.EndCustomer.Get(), o.EndCustomer.IsSet()
@@ -394,6 +395,7 @@ func (o *AssetDeviceContractNotificationAllOf) HasEndCustomer() bool {
 func (o *AssetDeviceContractNotificationAllOf) SetEndCustomer(v AssetCustomerInformation) {
 	o.EndCustomer.Set(&v)
 }
+
 // SetEndCustomerNil sets the value for EndCustomer to be an explicit nil
 func (o *AssetDeviceContractNotificationAllOf) SetEndCustomerNil() {
 	o.EndCustomer.Set(nil)
@@ -417,7 +419,7 @@ func (o *AssetDeviceContractNotificationAllOf) GetEndUserGlobalUltimate() AssetG
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeviceContractNotificationAllOf) GetEndUserGlobalUltimateOk() (*AssetGlobalUltimate, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.EndUserGlobalUltimate.Get(), o.EndUserGlobalUltimate.IsSet()
@@ -436,6 +438,7 @@ func (o *AssetDeviceContractNotificationAllOf) HasEndUserGlobalUltimate() bool {
 func (o *AssetDeviceContractNotificationAllOf) SetEndUserGlobalUltimate(v AssetGlobalUltimate) {
 	o.EndUserGlobalUltimate.Set(&v)
 }
+
 // SetEndUserGlobalUltimateNil sets the value for EndUserGlobalUltimate to be an explicit nil
 func (o *AssetDeviceContractNotificationAllOf) SetEndUserGlobalUltimateNil() {
 	o.EndUserGlobalUltimate.Set(nil)
@@ -587,7 +590,7 @@ func (o *AssetDeviceContractNotificationAllOf) GetProduct() AssetProductInformat
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeviceContractNotificationAllOf) GetProductOk() (*AssetProductInformation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Product.Get(), o.Product.IsSet()
@@ -606,6 +609,7 @@ func (o *AssetDeviceContractNotificationAllOf) HasProduct() bool {
 func (o *AssetDeviceContractNotificationAllOf) SetProduct(v AssetProductInformation) {
 	o.Product.Set(&v)
 }
+
 // SetProductNil sets the value for Product to be an explicit nil
 func (o *AssetDeviceContractNotificationAllOf) SetProductNil() {
 	o.Product.Set(nil)
@@ -661,7 +665,7 @@ func (o *AssetDeviceContractNotificationAllOf) GetResellerGlobalUltimate() Asset
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeviceContractNotificationAllOf) GetResellerGlobalUltimateOk() (*AssetGlobalUltimate, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResellerGlobalUltimate.Get(), o.ResellerGlobalUltimate.IsSet()
@@ -680,6 +684,7 @@ func (o *AssetDeviceContractNotificationAllOf) HasResellerGlobalUltimate() bool 
 func (o *AssetDeviceContractNotificationAllOf) SetResellerGlobalUltimate(v AssetGlobalUltimate) {
 	o.ResellerGlobalUltimate.Set(&v)
 }
+
 // SetResellerGlobalUltimateNil sets the value for ResellerGlobalUltimate to be an explicit nil
 func (o *AssetDeviceContractNotificationAllOf) SetResellerGlobalUltimateNil() {
 	o.ResellerGlobalUltimate.Set(nil)
@@ -1215,5 +1220,3 @@ func (v *NullableAssetDeviceContractNotificationAllOf) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

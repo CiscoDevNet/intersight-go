@@ -29,11 +29,11 @@ type InventoryGenericInventory struct {
 	// Type of inventory data for Generic Inventory data set.
 	Type *string `json:"Type,omitempty"`
 	// Value of inventory data for Generic Inventory data set.
-	Value *string `json:"Value,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+	Value                           *string                                      `json:"Value,omitempty"`
+	InventoryDeviceInfo             *InventoryDeviceInfoRelationship             `json:"InventoryDeviceInfo,omitempty"`
 	InventoryGenericInventoryHolder *InventoryGenericInventoryHolderRelationship `json:"InventoryGenericInventoryHolder,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RegisteredDevice                *AssetDeviceRegistrationRelationship         `json:"RegisteredDevice,omitempty"`
+	AdditionalProperties            map[string]interface{}
 }
 
 type _InventoryGenericInventory InventoryGenericInventory
@@ -74,7 +74,7 @@ func (o *InventoryGenericInventory) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *InventoryGenericInventory) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *InventoryGenericInventory) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *InventoryGenericInventory) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -354,10 +354,10 @@ func (o *InventoryGenericInventory) UnmarshalJSON(bytes []byte) (err error) {
 		// Type of inventory data for Generic Inventory data set.
 		Type *string `json:"Type,omitempty"`
 		// Value of inventory data for Generic Inventory data set.
-		Value *string `json:"Value,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+		Value                           *string                                      `json:"Value,omitempty"`
+		InventoryDeviceInfo             *InventoryDeviceInfoRelationship             `json:"InventoryDeviceInfo,omitempty"`
 		InventoryGenericInventoryHolder *InventoryGenericInventoryHolderRelationship `json:"InventoryGenericInventoryHolder,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		RegisteredDevice                *AssetDeviceRegistrationRelationship         `json:"RegisteredDevice,omitempty"`
 	}
 
 	varInventoryGenericInventoryWithoutEmbeddedStruct := InventoryGenericInventoryWithoutEmbeddedStruct{}
@@ -458,5 +458,3 @@ func (v *NullableInventoryGenericInventory) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

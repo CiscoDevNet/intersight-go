@@ -19,19 +19,18 @@ import (
 // IamAppRegistrationRelationship - A relationship to the 'iam.AppRegistration' resource, or the expanded 'iam.AppRegistration' resource, or the 'null' value.
 type IamAppRegistrationRelationship struct {
 	IamAppRegistration *IamAppRegistration
-	MoMoRef *MoMoRef
+	MoMoRef            *MoMoRef
 }
 
 // IamAppRegistrationAsIamAppRegistrationRelationship is a convenience function that returns IamAppRegistration wrapped in IamAppRegistrationRelationship
 func IamAppRegistrationAsIamAppRegistrationRelationship(v *IamAppRegistration) IamAppRegistrationRelationship {
-	return IamAppRegistrationRelationship{ IamAppRegistration: v}
+	return IamAppRegistrationRelationship{IamAppRegistration: v}
 }
 
 // MoMoRefAsIamAppRegistrationRelationship is a convenience function that returns MoMoRef wrapped in IamAppRegistrationRelationship
 func MoMoRefAsIamAppRegistrationRelationship(v *MoMoRef) IamAppRegistrationRelationship {
-	return IamAppRegistrationRelationship{ MoMoRef: v}
+	return IamAppRegistrationRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamAppRegistrationRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamAppRegistrationRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamAppRegistrationRelationship) GetActualInstance() (interface{}) {
+func (obj *IamAppRegistrationRelationship) GetActualInstance() interface{} {
 	if obj.IamAppRegistration != nil {
 		return obj.IamAppRegistration
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamAppRegistrationRelationship) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,7 +20,7 @@ type ConvergedinfraHealthCheckDefinitionListAllOf struct {
 	// The total number of 'convergedinfra.HealthCheckDefinition' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'convergedinfra.HealthCheckDefinition' resources matching the request.
-	Results []ConvergedinfraHealthCheckDefinition `json:"Results,omitempty"`
+	Results              []ConvergedinfraHealthCheckDefinition `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *ConvergedinfraHealthCheckDefinitionListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ConvergedinfraHealthCheckDefinitionListAllOf) GetResults() []ConvergedinfraHealthCheckDefinition {
-	if o == nil  {
+	if o == nil {
 		var ret []ConvergedinfraHealthCheckDefinition
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableConvergedinfraHealthCheckDefinitionListAllOf) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

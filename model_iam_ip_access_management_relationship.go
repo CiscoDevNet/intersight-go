@@ -19,19 +19,18 @@ import (
 // IamIpAccessManagementRelationship - A relationship to the 'iam.IpAccessManagement' resource, or the expanded 'iam.IpAccessManagement' resource, or the 'null' value.
 type IamIpAccessManagementRelationship struct {
 	IamIpAccessManagement *IamIpAccessManagement
-	MoMoRef *MoMoRef
+	MoMoRef               *MoMoRef
 }
 
 // IamIpAccessManagementAsIamIpAccessManagementRelationship is a convenience function that returns IamIpAccessManagement wrapped in IamIpAccessManagementRelationship
 func IamIpAccessManagementAsIamIpAccessManagementRelationship(v *IamIpAccessManagement) IamIpAccessManagementRelationship {
-	return IamIpAccessManagementRelationship{ IamIpAccessManagement: v}
+	return IamIpAccessManagementRelationship{IamIpAccessManagement: v}
 }
 
 // MoMoRefAsIamIpAccessManagementRelationship is a convenience function that returns MoMoRef wrapped in IamIpAccessManagementRelationship
 func MoMoRefAsIamIpAccessManagementRelationship(v *MoMoRef) IamIpAccessManagementRelationship {
-	return IamIpAccessManagementRelationship{ MoMoRef: v}
+	return IamIpAccessManagementRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamIpAccessManagementRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamIpAccessManagementRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamIpAccessManagementRelationship) GetActualInstance() (interface{}) {
+func (obj *IamIpAccessManagementRelationship) GetActualInstance() interface{} {
 	if obj.IamIpAccessManagement != nil {
 		return obj.IamIpAccessManagement
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamIpAccessManagementRelationship) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

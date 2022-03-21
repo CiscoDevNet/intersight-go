@@ -18,20 +18,19 @@ import (
 
 // VirtualizationVmwareDistributedSwitchRelationship - A relationship to the 'virtualization.VmwareDistributedSwitch' resource, or the expanded 'virtualization.VmwareDistributedSwitch' resource, or the 'null' value.
 type VirtualizationVmwareDistributedSwitchRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                               *MoMoRef
 	VirtualizationVmwareDistributedSwitch *VirtualizationVmwareDistributedSwitch
 }
 
 // MoMoRefAsVirtualizationVmwareDistributedSwitchRelationship is a convenience function that returns MoMoRef wrapped in VirtualizationVmwareDistributedSwitchRelationship
 func MoMoRefAsVirtualizationVmwareDistributedSwitchRelationship(v *MoMoRef) VirtualizationVmwareDistributedSwitchRelationship {
-	return VirtualizationVmwareDistributedSwitchRelationship{ MoMoRef: v}
+	return VirtualizationVmwareDistributedSwitchRelationship{MoMoRef: v}
 }
 
 // VirtualizationVmwareDistributedSwitchAsVirtualizationVmwareDistributedSwitchRelationship is a convenience function that returns VirtualizationVmwareDistributedSwitch wrapped in VirtualizationVmwareDistributedSwitchRelationship
 func VirtualizationVmwareDistributedSwitchAsVirtualizationVmwareDistributedSwitchRelationship(v *VirtualizationVmwareDistributedSwitch) VirtualizationVmwareDistributedSwitchRelationship {
-	return VirtualizationVmwareDistributedSwitchRelationship{ VirtualizationVmwareDistributedSwitch: v}
+	return VirtualizationVmwareDistributedSwitchRelationship{VirtualizationVmwareDistributedSwitch: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VirtualizationVmwareDistributedSwitchRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src VirtualizationVmwareDistributedSwitchRelationship) MarshalJSON() ([]by
 }
 
 // Get the actual instance
-func (obj *VirtualizationVmwareDistributedSwitchRelationship) GetActualInstance() (interface{}) {
+func (obj *VirtualizationVmwareDistributedSwitchRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableVirtualizationVmwareDistributedSwitchRelationship) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

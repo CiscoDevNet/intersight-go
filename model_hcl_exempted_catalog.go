@@ -33,7 +33,7 @@ type HclExemptedCatalog struct {
 	// Version of the Operating system.
 	OsVersion *string `json:"OsVersion,omitempty"`
 	// Name of the processor supported for the server.
-	ProcessorName *string `json:"ProcessorName,omitempty"`
+	ProcessorName *string  `json:"ProcessorName,omitempty"`
 	ProductModels []string `json:"ProductModels,omitempty"`
 	// Type of the product/adapter say GPU for graphic cards. * `` - Default type of the Product. * `Adapter` - Represents network adapter cards. * `StorageController` - Represents storage controllers. * `GPU` - Represents graphics cards.
 	ProductType *string `json:"ProductType,omitempty"`
@@ -42,7 +42,7 @@ type HclExemptedCatalog struct {
 	// Version of the UCS software.
 	UcsVersion *string `json:"UcsVersion,omitempty"`
 	// Type of the UCS version indicating whether it is a UCSM release vesion or a IMC release.
-	VersionType *string `json:"VersionType,omitempty"`
+	VersionType          *string `json:"VersionType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -88,7 +88,7 @@ func (o *HclExemptedCatalog) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HclExemptedCatalog) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *HclExemptedCatalog) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HclExemptedCatalog) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -285,7 +285,7 @@ func (o *HclExemptedCatalog) SetProcessorName(v string) {
 
 // GetProductModels returns the ProductModels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HclExemptedCatalog) GetProductModels() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -513,7 +513,7 @@ func (o *HclExemptedCatalog) UnmarshalJSON(bytes []byte) (err error) {
 		// Version of the Operating system.
 		OsVersion *string `json:"OsVersion,omitempty"`
 		// Name of the processor supported for the server.
-		ProcessorName *string `json:"ProcessorName,omitempty"`
+		ProcessorName *string  `json:"ProcessorName,omitempty"`
 		ProductModels []string `json:"ProductModels,omitempty"`
 		// Type of the product/adapter say GPU for graphic cards. * `` - Default type of the Product. * `Adapter` - Represents network adapter cards. * `StorageController` - Represents storage controllers. * `GPU` - Represents graphics cards.
 		ProductType *string `json:"ProductType,omitempty"`
@@ -631,5 +631,3 @@ func (v *NullableHclExemptedCatalog) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

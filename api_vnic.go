@@ -29,11 +29,11 @@ var (
 type VnicApiService service
 
 type ApiCreateVnicEthAdapterPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
+	ctx                  _context.Context
+	ApiService           *VnicApiService
 	vnicEthAdapterPolicy *VnicEthAdapterPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch              *string
+	ifNoneMatch          *string
 }
 
 // The &#39;vnic.EthAdapterPolicy&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateVnicEthAdapterPolicyRequest) VnicEthAdapterPolicy(vnicEthAdapte
 	r.vnicEthAdapterPolicy = &vnicEthAdapterPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVnicEthAdapterPolicyRequest) IfMatch(ifMatch string) ApiCreateVnicEthAdapterPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVnicEthAdapterPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVnicEthAdapterPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateVnicEthAdapterPolicy Create a 'vnic.EthAdapterPolicy' resource.
 func (a *VnicApiService) CreateVnicEthAdapterPolicy(ctx _context.Context) ApiCreateVnicEthAdapterPolicyRequest {
 	return ApiCreateVnicEthAdapterPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *VnicApiService) CreateVnicEthAdapterPolicyExecute(r ApiCreateVnicEthAda
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,10 +207,10 @@ func (a *VnicApiService) CreateVnicEthAdapterPolicyExecute(r ApiCreateVnicEthAda
 }
 
 type ApiCreateVnicEthIfRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	vnicEthIf *VnicEthIf
-	ifMatch *string
+	ctx         _context.Context
+	ApiService  *VnicApiService
+	vnicEthIf   *VnicEthIf
+	ifMatch     *string
 	ifNoneMatch *string
 }
 
@@ -217,11 +219,13 @@ func (r ApiCreateVnicEthIfRequest) VnicEthIf(vnicEthIf VnicEthIf) ApiCreateVnicE
 	r.vnicEthIf = &vnicEthIf
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVnicEthIfRequest) IfMatch(ifMatch string) ApiCreateVnicEthIfRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVnicEthIfRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVnicEthIfRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateVnicEthIf Create a 'vnic.EthIf' resource.
 func (a *VnicApiService) CreateVnicEthIf(ctx _context.Context) ApiCreateVnicEthIfRequest {
 	return ApiCreateVnicEthIfRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *VnicApiService) CreateVnicEthIfExecute(r ApiCreateVnicEthIfRequest) (Vn
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,11 +385,11 @@ func (a *VnicApiService) CreateVnicEthIfExecute(r ApiCreateVnicEthIfRequest) (Vn
 }
 
 type ApiCreateVnicEthNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
+	ctx                  _context.Context
+	ApiService           *VnicApiService
 	vnicEthNetworkPolicy *VnicEthNetworkPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch              *string
+	ifNoneMatch          *string
 }
 
 // The &#39;vnic.EthNetworkPolicy&#39; resource to create.
@@ -393,11 +397,13 @@ func (r ApiCreateVnicEthNetworkPolicyRequest) VnicEthNetworkPolicy(vnicEthNetwor
 	r.vnicEthNetworkPolicy = &vnicEthNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVnicEthNetworkPolicyRequest) IfMatch(ifMatch string) ApiCreateVnicEthNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVnicEthNetworkPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVnicEthNetworkPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -417,7 +423,7 @@ CreateVnicEthNetworkPolicy Create a 'vnic.EthNetworkPolicy' resource.
 func (a *VnicApiService) CreateVnicEthNetworkPolicy(ctx _context.Context) ApiCreateVnicEthNetworkPolicyRequest {
 	return ApiCreateVnicEthNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -534,13 +540,13 @@ func (a *VnicApiService) CreateVnicEthNetworkPolicyExecute(r ApiCreateVnicEthNet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -557,11 +563,11 @@ func (a *VnicApiService) CreateVnicEthNetworkPolicyExecute(r ApiCreateVnicEthNet
 }
 
 type ApiCreateVnicEthQosPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
+	ctx              _context.Context
+	ApiService       *VnicApiService
 	vnicEthQosPolicy *VnicEthQosPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch          *string
+	ifNoneMatch      *string
 }
 
 // The &#39;vnic.EthQosPolicy&#39; resource to create.
@@ -569,11 +575,13 @@ func (r ApiCreateVnicEthQosPolicyRequest) VnicEthQosPolicy(vnicEthQosPolicy Vnic
 	r.vnicEthQosPolicy = &vnicEthQosPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVnicEthQosPolicyRequest) IfMatch(ifMatch string) ApiCreateVnicEthQosPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVnicEthQosPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVnicEthQosPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -593,7 +601,7 @@ CreateVnicEthQosPolicy Create a 'vnic.EthQosPolicy' resource.
 func (a *VnicApiService) CreateVnicEthQosPolicy(ctx _context.Context) ApiCreateVnicEthQosPolicyRequest {
 	return ApiCreateVnicEthQosPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -710,13 +718,13 @@ func (a *VnicApiService) CreateVnicEthQosPolicyExecute(r ApiCreateVnicEthQosPoli
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -733,11 +741,11 @@ func (a *VnicApiService) CreateVnicEthQosPolicyExecute(r ApiCreateVnicEthQosPoli
 }
 
 type ApiCreateVnicFcAdapterPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
+	ctx                 _context.Context
+	ApiService          *VnicApiService
 	vnicFcAdapterPolicy *VnicFcAdapterPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch             *string
+	ifNoneMatch         *string
 }
 
 // The &#39;vnic.FcAdapterPolicy&#39; resource to create.
@@ -745,11 +753,13 @@ func (r ApiCreateVnicFcAdapterPolicyRequest) VnicFcAdapterPolicy(vnicFcAdapterPo
 	r.vnicFcAdapterPolicy = &vnicFcAdapterPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVnicFcAdapterPolicyRequest) IfMatch(ifMatch string) ApiCreateVnicFcAdapterPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVnicFcAdapterPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVnicFcAdapterPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -769,7 +779,7 @@ CreateVnicFcAdapterPolicy Create a 'vnic.FcAdapterPolicy' resource.
 func (a *VnicApiService) CreateVnicFcAdapterPolicy(ctx _context.Context) ApiCreateVnicFcAdapterPolicyRequest {
 	return ApiCreateVnicFcAdapterPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -886,13 +896,13 @@ func (a *VnicApiService) CreateVnicFcAdapterPolicyExecute(r ApiCreateVnicFcAdapt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -909,10 +919,10 @@ func (a *VnicApiService) CreateVnicFcAdapterPolicyExecute(r ApiCreateVnicFcAdapt
 }
 
 type ApiCreateVnicFcIfRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	vnicFcIf *VnicFcIf
-	ifMatch *string
+	ctx         _context.Context
+	ApiService  *VnicApiService
+	vnicFcIf    *VnicFcIf
+	ifMatch     *string
 	ifNoneMatch *string
 }
 
@@ -921,11 +931,13 @@ func (r ApiCreateVnicFcIfRequest) VnicFcIf(vnicFcIf VnicFcIf) ApiCreateVnicFcIfR
 	r.vnicFcIf = &vnicFcIf
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVnicFcIfRequest) IfMatch(ifMatch string) ApiCreateVnicFcIfRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVnicFcIfRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVnicFcIfRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -945,7 +957,7 @@ CreateVnicFcIf Create a 'vnic.FcIf' resource.
 func (a *VnicApiService) CreateVnicFcIf(ctx _context.Context) ApiCreateVnicFcIfRequest {
 	return ApiCreateVnicFcIfRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1062,13 +1074,13 @@ func (a *VnicApiService) CreateVnicFcIfExecute(r ApiCreateVnicFcIfRequest) (Vnic
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1085,11 +1097,11 @@ func (a *VnicApiService) CreateVnicFcIfExecute(r ApiCreateVnicFcIfRequest) (Vnic
 }
 
 type ApiCreateVnicFcNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
+	ctx                 _context.Context
+	ApiService          *VnicApiService
 	vnicFcNetworkPolicy *VnicFcNetworkPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch             *string
+	ifNoneMatch         *string
 }
 
 // The &#39;vnic.FcNetworkPolicy&#39; resource to create.
@@ -1097,11 +1109,13 @@ func (r ApiCreateVnicFcNetworkPolicyRequest) VnicFcNetworkPolicy(vnicFcNetworkPo
 	r.vnicFcNetworkPolicy = &vnicFcNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVnicFcNetworkPolicyRequest) IfMatch(ifMatch string) ApiCreateVnicFcNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVnicFcNetworkPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVnicFcNetworkPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1121,7 +1135,7 @@ CreateVnicFcNetworkPolicy Create a 'vnic.FcNetworkPolicy' resource.
 func (a *VnicApiService) CreateVnicFcNetworkPolicy(ctx _context.Context) ApiCreateVnicFcNetworkPolicyRequest {
 	return ApiCreateVnicFcNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1238,13 +1252,13 @@ func (a *VnicApiService) CreateVnicFcNetworkPolicyExecute(r ApiCreateVnicFcNetwo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1261,11 +1275,11 @@ func (a *VnicApiService) CreateVnicFcNetworkPolicyExecute(r ApiCreateVnicFcNetwo
 }
 
 type ApiCreateVnicFcQosPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
+	ctx             _context.Context
+	ApiService      *VnicApiService
 	vnicFcQosPolicy *VnicFcQosPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch         *string
+	ifNoneMatch     *string
 }
 
 // The &#39;vnic.FcQosPolicy&#39; resource to create.
@@ -1273,11 +1287,13 @@ func (r ApiCreateVnicFcQosPolicyRequest) VnicFcQosPolicy(vnicFcQosPolicy VnicFcQ
 	r.vnicFcQosPolicy = &vnicFcQosPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVnicFcQosPolicyRequest) IfMatch(ifMatch string) ApiCreateVnicFcQosPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVnicFcQosPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVnicFcQosPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1297,7 +1313,7 @@ CreateVnicFcQosPolicy Create a 'vnic.FcQosPolicy' resource.
 func (a *VnicApiService) CreateVnicFcQosPolicy(ctx _context.Context) ApiCreateVnicFcQosPolicyRequest {
 	return ApiCreateVnicFcQosPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1414,13 +1430,13 @@ func (a *VnicApiService) CreateVnicFcQosPolicyExecute(r ApiCreateVnicFcQosPolicy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1437,11 +1453,11 @@ func (a *VnicApiService) CreateVnicFcQosPolicyExecute(r ApiCreateVnicFcQosPolicy
 }
 
 type ApiCreateVnicIscsiAdapterPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
+	ctx                    _context.Context
+	ApiService             *VnicApiService
 	vnicIscsiAdapterPolicy *VnicIscsiAdapterPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                *string
+	ifNoneMatch            *string
 }
 
 // The &#39;vnic.IscsiAdapterPolicy&#39; resource to create.
@@ -1449,11 +1465,13 @@ func (r ApiCreateVnicIscsiAdapterPolicyRequest) VnicIscsiAdapterPolicy(vnicIscsi
 	r.vnicIscsiAdapterPolicy = &vnicIscsiAdapterPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVnicIscsiAdapterPolicyRequest) IfMatch(ifMatch string) ApiCreateVnicIscsiAdapterPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVnicIscsiAdapterPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVnicIscsiAdapterPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1473,7 +1491,7 @@ CreateVnicIscsiAdapterPolicy Create a 'vnic.IscsiAdapterPolicy' resource.
 func (a *VnicApiService) CreateVnicIscsiAdapterPolicy(ctx _context.Context) ApiCreateVnicIscsiAdapterPolicyRequest {
 	return ApiCreateVnicIscsiAdapterPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1590,13 +1608,13 @@ func (a *VnicApiService) CreateVnicIscsiAdapterPolicyExecute(r ApiCreateVnicIscs
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1613,11 +1631,11 @@ func (a *VnicApiService) CreateVnicIscsiAdapterPolicyExecute(r ApiCreateVnicIscs
 }
 
 type ApiCreateVnicIscsiBootPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
+	ctx                 _context.Context
+	ApiService          *VnicApiService
 	vnicIscsiBootPolicy *VnicIscsiBootPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch             *string
+	ifNoneMatch         *string
 }
 
 // The &#39;vnic.IscsiBootPolicy&#39; resource to create.
@@ -1625,11 +1643,13 @@ func (r ApiCreateVnicIscsiBootPolicyRequest) VnicIscsiBootPolicy(vnicIscsiBootPo
 	r.vnicIscsiBootPolicy = &vnicIscsiBootPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVnicIscsiBootPolicyRequest) IfMatch(ifMatch string) ApiCreateVnicIscsiBootPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVnicIscsiBootPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVnicIscsiBootPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1649,7 +1669,7 @@ CreateVnicIscsiBootPolicy Create a 'vnic.IscsiBootPolicy' resource.
 func (a *VnicApiService) CreateVnicIscsiBootPolicy(ctx _context.Context) ApiCreateVnicIscsiBootPolicyRequest {
 	return ApiCreateVnicIscsiBootPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1766,13 +1786,13 @@ func (a *VnicApiService) CreateVnicIscsiBootPolicyExecute(r ApiCreateVnicIscsiBo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1789,11 +1809,11 @@ func (a *VnicApiService) CreateVnicIscsiBootPolicyExecute(r ApiCreateVnicIscsiBo
 }
 
 type ApiCreateVnicIscsiStaticTargetPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
+	ctx                         _context.Context
+	ApiService                  *VnicApiService
 	vnicIscsiStaticTargetPolicy *VnicIscsiStaticTargetPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                     *string
+	ifNoneMatch                 *string
 }
 
 // The &#39;vnic.IscsiStaticTargetPolicy&#39; resource to create.
@@ -1801,11 +1821,13 @@ func (r ApiCreateVnicIscsiStaticTargetPolicyRequest) VnicIscsiStaticTargetPolicy
 	r.vnicIscsiStaticTargetPolicy = &vnicIscsiStaticTargetPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVnicIscsiStaticTargetPolicyRequest) IfMatch(ifMatch string) ApiCreateVnicIscsiStaticTargetPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVnicIscsiStaticTargetPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVnicIscsiStaticTargetPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1825,7 +1847,7 @@ CreateVnicIscsiStaticTargetPolicy Create a 'vnic.IscsiStaticTargetPolicy' resour
 func (a *VnicApiService) CreateVnicIscsiStaticTargetPolicy(ctx _context.Context) ApiCreateVnicIscsiStaticTargetPolicyRequest {
 	return ApiCreateVnicIscsiStaticTargetPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1942,13 +1964,13 @@ func (a *VnicApiService) CreateVnicIscsiStaticTargetPolicyExecute(r ApiCreateVni
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1965,11 +1987,11 @@ func (a *VnicApiService) CreateVnicIscsiStaticTargetPolicyExecute(r ApiCreateVni
 }
 
 type ApiCreateVnicLanConnectivityPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
+	ctx                       _context.Context
+	ApiService                *VnicApiService
 	vnicLanConnectivityPolicy *VnicLanConnectivityPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                   *string
+	ifNoneMatch               *string
 }
 
 // The &#39;vnic.LanConnectivityPolicy&#39; resource to create.
@@ -1977,11 +1999,13 @@ func (r ApiCreateVnicLanConnectivityPolicyRequest) VnicLanConnectivityPolicy(vni
 	r.vnicLanConnectivityPolicy = &vnicLanConnectivityPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVnicLanConnectivityPolicyRequest) IfMatch(ifMatch string) ApiCreateVnicLanConnectivityPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVnicLanConnectivityPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVnicLanConnectivityPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2001,7 +2025,7 @@ CreateVnicLanConnectivityPolicy Create a 'vnic.LanConnectivityPolicy' resource.
 func (a *VnicApiService) CreateVnicLanConnectivityPolicy(ctx _context.Context) ApiCreateVnicLanConnectivityPolicyRequest {
 	return ApiCreateVnicLanConnectivityPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2118,13 +2142,13 @@ func (a *VnicApiService) CreateVnicLanConnectivityPolicyExecute(r ApiCreateVnicL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2141,11 +2165,11 @@ func (a *VnicApiService) CreateVnicLanConnectivityPolicyExecute(r ApiCreateVnicL
 }
 
 type ApiCreateVnicSanConnectivityPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
+	ctx                       _context.Context
+	ApiService                *VnicApiService
 	vnicSanConnectivityPolicy *VnicSanConnectivityPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                   *string
+	ifNoneMatch               *string
 }
 
 // The &#39;vnic.SanConnectivityPolicy&#39; resource to create.
@@ -2153,11 +2177,13 @@ func (r ApiCreateVnicSanConnectivityPolicyRequest) VnicSanConnectivityPolicy(vni
 	r.vnicSanConnectivityPolicy = &vnicSanConnectivityPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVnicSanConnectivityPolicyRequest) IfMatch(ifMatch string) ApiCreateVnicSanConnectivityPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVnicSanConnectivityPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVnicSanConnectivityPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2177,7 +2203,7 @@ CreateVnicSanConnectivityPolicy Create a 'vnic.SanConnectivityPolicy' resource.
 func (a *VnicApiService) CreateVnicSanConnectivityPolicy(ctx _context.Context) ApiCreateVnicSanConnectivityPolicyRequest {
 	return ApiCreateVnicSanConnectivityPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2294,13 +2320,13 @@ func (a *VnicApiService) CreateVnicSanConnectivityPolicyExecute(r ApiCreateVnicS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2317,11 +2343,10 @@ func (a *VnicApiService) CreateVnicSanConnectivityPolicyExecute(r ApiCreateVnicS
 }
 
 type ApiDeleteVnicEthAdapterPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVnicEthAdapterPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVnicEthAdapterPolicyExecute(r)
@@ -2337,8 +2362,8 @@ DeleteVnicEthAdapterPolicy Delete a 'vnic.EthAdapterPolicy' resource.
 func (a *VnicApiService) DeleteVnicEthAdapterPolicy(ctx _context.Context, moid string) ApiDeleteVnicEthAdapterPolicyRequest {
 	return ApiDeleteVnicEthAdapterPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2443,13 +2468,13 @@ func (a *VnicApiService) DeleteVnicEthAdapterPolicyExecute(r ApiDeleteVnicEthAda
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -2457,11 +2482,10 @@ func (a *VnicApiService) DeleteVnicEthAdapterPolicyExecute(r ApiDeleteVnicEthAda
 }
 
 type ApiDeleteVnicEthIfRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVnicEthIfRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVnicEthIfExecute(r)
@@ -2477,8 +2501,8 @@ DeleteVnicEthIf Delete a 'vnic.EthIf' resource.
 func (a *VnicApiService) DeleteVnicEthIf(ctx _context.Context, moid string) ApiDeleteVnicEthIfRequest {
 	return ApiDeleteVnicEthIfRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2583,13 +2607,13 @@ func (a *VnicApiService) DeleteVnicEthIfExecute(r ApiDeleteVnicEthIfRequest) (*_
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -2597,11 +2621,10 @@ func (a *VnicApiService) DeleteVnicEthIfExecute(r ApiDeleteVnicEthIfRequest) (*_
 }
 
 type ApiDeleteVnicEthNetworkPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVnicEthNetworkPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVnicEthNetworkPolicyExecute(r)
@@ -2617,8 +2640,8 @@ DeleteVnicEthNetworkPolicy Delete a 'vnic.EthNetworkPolicy' resource.
 func (a *VnicApiService) DeleteVnicEthNetworkPolicy(ctx _context.Context, moid string) ApiDeleteVnicEthNetworkPolicyRequest {
 	return ApiDeleteVnicEthNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2723,13 +2746,13 @@ func (a *VnicApiService) DeleteVnicEthNetworkPolicyExecute(r ApiDeleteVnicEthNet
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -2737,11 +2760,10 @@ func (a *VnicApiService) DeleteVnicEthNetworkPolicyExecute(r ApiDeleteVnicEthNet
 }
 
 type ApiDeleteVnicEthQosPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVnicEthQosPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVnicEthQosPolicyExecute(r)
@@ -2757,8 +2779,8 @@ DeleteVnicEthQosPolicy Delete a 'vnic.EthQosPolicy' resource.
 func (a *VnicApiService) DeleteVnicEthQosPolicy(ctx _context.Context, moid string) ApiDeleteVnicEthQosPolicyRequest {
 	return ApiDeleteVnicEthQosPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2863,13 +2885,13 @@ func (a *VnicApiService) DeleteVnicEthQosPolicyExecute(r ApiDeleteVnicEthQosPoli
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -2877,11 +2899,10 @@ func (a *VnicApiService) DeleteVnicEthQosPolicyExecute(r ApiDeleteVnicEthQosPoli
 }
 
 type ApiDeleteVnicFcAdapterPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVnicFcAdapterPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVnicFcAdapterPolicyExecute(r)
@@ -2897,8 +2918,8 @@ DeleteVnicFcAdapterPolicy Delete a 'vnic.FcAdapterPolicy' resource.
 func (a *VnicApiService) DeleteVnicFcAdapterPolicy(ctx _context.Context, moid string) ApiDeleteVnicFcAdapterPolicyRequest {
 	return ApiDeleteVnicFcAdapterPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3003,13 +3024,13 @@ func (a *VnicApiService) DeleteVnicFcAdapterPolicyExecute(r ApiDeleteVnicFcAdapt
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -3017,11 +3038,10 @@ func (a *VnicApiService) DeleteVnicFcAdapterPolicyExecute(r ApiDeleteVnicFcAdapt
 }
 
 type ApiDeleteVnicFcIfRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVnicFcIfRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVnicFcIfExecute(r)
@@ -3037,8 +3057,8 @@ DeleteVnicFcIf Delete a 'vnic.FcIf' resource.
 func (a *VnicApiService) DeleteVnicFcIf(ctx _context.Context, moid string) ApiDeleteVnicFcIfRequest {
 	return ApiDeleteVnicFcIfRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3143,13 +3163,13 @@ func (a *VnicApiService) DeleteVnicFcIfExecute(r ApiDeleteVnicFcIfRequest) (*_ne
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -3157,11 +3177,10 @@ func (a *VnicApiService) DeleteVnicFcIfExecute(r ApiDeleteVnicFcIfRequest) (*_ne
 }
 
 type ApiDeleteVnicFcNetworkPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVnicFcNetworkPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVnicFcNetworkPolicyExecute(r)
@@ -3177,8 +3196,8 @@ DeleteVnicFcNetworkPolicy Delete a 'vnic.FcNetworkPolicy' resource.
 func (a *VnicApiService) DeleteVnicFcNetworkPolicy(ctx _context.Context, moid string) ApiDeleteVnicFcNetworkPolicyRequest {
 	return ApiDeleteVnicFcNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3283,13 +3302,13 @@ func (a *VnicApiService) DeleteVnicFcNetworkPolicyExecute(r ApiDeleteVnicFcNetwo
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -3297,11 +3316,10 @@ func (a *VnicApiService) DeleteVnicFcNetworkPolicyExecute(r ApiDeleteVnicFcNetwo
 }
 
 type ApiDeleteVnicFcQosPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVnicFcQosPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVnicFcQosPolicyExecute(r)
@@ -3317,8 +3335,8 @@ DeleteVnicFcQosPolicy Delete a 'vnic.FcQosPolicy' resource.
 func (a *VnicApiService) DeleteVnicFcQosPolicy(ctx _context.Context, moid string) ApiDeleteVnicFcQosPolicyRequest {
 	return ApiDeleteVnicFcQosPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3423,13 +3441,13 @@ func (a *VnicApiService) DeleteVnicFcQosPolicyExecute(r ApiDeleteVnicFcQosPolicy
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -3437,11 +3455,10 @@ func (a *VnicApiService) DeleteVnicFcQosPolicyExecute(r ApiDeleteVnicFcQosPolicy
 }
 
 type ApiDeleteVnicIscsiAdapterPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVnicIscsiAdapterPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVnicIscsiAdapterPolicyExecute(r)
@@ -3457,8 +3474,8 @@ DeleteVnicIscsiAdapterPolicy Delete a 'vnic.IscsiAdapterPolicy' resource.
 func (a *VnicApiService) DeleteVnicIscsiAdapterPolicy(ctx _context.Context, moid string) ApiDeleteVnicIscsiAdapterPolicyRequest {
 	return ApiDeleteVnicIscsiAdapterPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3563,13 +3580,13 @@ func (a *VnicApiService) DeleteVnicIscsiAdapterPolicyExecute(r ApiDeleteVnicIscs
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -3577,11 +3594,10 @@ func (a *VnicApiService) DeleteVnicIscsiAdapterPolicyExecute(r ApiDeleteVnicIscs
 }
 
 type ApiDeleteVnicIscsiBootPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVnicIscsiBootPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVnicIscsiBootPolicyExecute(r)
@@ -3597,8 +3613,8 @@ DeleteVnicIscsiBootPolicy Delete a 'vnic.IscsiBootPolicy' resource.
 func (a *VnicApiService) DeleteVnicIscsiBootPolicy(ctx _context.Context, moid string) ApiDeleteVnicIscsiBootPolicyRequest {
 	return ApiDeleteVnicIscsiBootPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3703,13 +3719,13 @@ func (a *VnicApiService) DeleteVnicIscsiBootPolicyExecute(r ApiDeleteVnicIscsiBo
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -3717,11 +3733,10 @@ func (a *VnicApiService) DeleteVnicIscsiBootPolicyExecute(r ApiDeleteVnicIscsiBo
 }
 
 type ApiDeleteVnicIscsiStaticTargetPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVnicIscsiStaticTargetPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVnicIscsiStaticTargetPolicyExecute(r)
@@ -3737,8 +3752,8 @@ DeleteVnicIscsiStaticTargetPolicy Delete a 'vnic.IscsiStaticTargetPolicy' resour
 func (a *VnicApiService) DeleteVnicIscsiStaticTargetPolicy(ctx _context.Context, moid string) ApiDeleteVnicIscsiStaticTargetPolicyRequest {
 	return ApiDeleteVnicIscsiStaticTargetPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3843,13 +3858,13 @@ func (a *VnicApiService) DeleteVnicIscsiStaticTargetPolicyExecute(r ApiDeleteVni
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -3857,11 +3872,10 @@ func (a *VnicApiService) DeleteVnicIscsiStaticTargetPolicyExecute(r ApiDeleteVni
 }
 
 type ApiDeleteVnicLanConnectivityPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVnicLanConnectivityPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVnicLanConnectivityPolicyExecute(r)
@@ -3877,8 +3891,8 @@ DeleteVnicLanConnectivityPolicy Delete a 'vnic.LanConnectivityPolicy' resource.
 func (a *VnicApiService) DeleteVnicLanConnectivityPolicy(ctx _context.Context, moid string) ApiDeleteVnicLanConnectivityPolicyRequest {
 	return ApiDeleteVnicLanConnectivityPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3983,13 +3997,13 @@ func (a *VnicApiService) DeleteVnicLanConnectivityPolicyExecute(r ApiDeleteVnicL
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -3997,11 +4011,10 @@ func (a *VnicApiService) DeleteVnicLanConnectivityPolicyExecute(r ApiDeleteVnicL
 }
 
 type ApiDeleteVnicSanConnectivityPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVnicSanConnectivityPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVnicSanConnectivityPolicyExecute(r)
@@ -4017,8 +4030,8 @@ DeleteVnicSanConnectivityPolicy Delete a 'vnic.SanConnectivityPolicy' resource.
 func (a *VnicApiService) DeleteVnicSanConnectivityPolicy(ctx _context.Context, moid string) ApiDeleteVnicSanConnectivityPolicyRequest {
 	return ApiDeleteVnicSanConnectivityPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4123,13 +4136,13 @@ func (a *VnicApiService) DeleteVnicSanConnectivityPolicyExecute(r ApiDeleteVnicS
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4137,11 +4150,10 @@ func (a *VnicApiService) DeleteVnicSanConnectivityPolicyExecute(r ApiDeleteVnicS
 }
 
 type ApiGetVnicEthAdapterPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVnicEthAdapterPolicyByMoidRequest) Execute() (VnicEthAdapterPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetVnicEthAdapterPolicyByMoidExecute(r)
@@ -4157,8 +4169,8 @@ GetVnicEthAdapterPolicyByMoid Read a 'vnic.EthAdapterPolicy' resource.
 func (a *VnicApiService) GetVnicEthAdapterPolicyByMoid(ctx _context.Context, moid string) ApiGetVnicEthAdapterPolicyByMoidRequest {
 	return ApiGetVnicEthAdapterPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4265,13 +4277,13 @@ func (a *VnicApiService) GetVnicEthAdapterPolicyByMoidExecute(r ApiGetVnicEthAda
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4288,19 +4300,19 @@ func (a *VnicApiService) GetVnicEthAdapterPolicyByMoidExecute(r ApiGetVnicEthAda
 }
 
 type ApiGetVnicEthAdapterPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VnicApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4308,51 +4320,61 @@ func (r ApiGetVnicEthAdapterPolicyListRequest) Filter(filter string) ApiGetVnicE
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVnicEthAdapterPolicyListRequest) Orderby(orderby string) ApiGetVnicEthAdapterPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVnicEthAdapterPolicyListRequest) Top(top int32) ApiGetVnicEthAdapterPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVnicEthAdapterPolicyListRequest) Skip(skip int32) ApiGetVnicEthAdapterPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVnicEthAdapterPolicyListRequest) Select_(select_ string) ApiGetVnicEthAdapterPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVnicEthAdapterPolicyListRequest) Expand(expand string) ApiGetVnicEthAdapterPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVnicEthAdapterPolicyListRequest) Apply(apply string) ApiGetVnicEthAdapterPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVnicEthAdapterPolicyListRequest) Count(count bool) ApiGetVnicEthAdapterPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVnicEthAdapterPolicyListRequest) Inlinecount(inlinecount string) ApiGetVnicEthAdapterPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVnicEthAdapterPolicyListRequest) At(at string) ApiGetVnicEthAdapterPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVnicEthAdapterPolicyListRequest) Tags(tags string) ApiGetVnicEthAdapterPolicyListRequest {
 	r.tags = &tags
@@ -4372,7 +4394,7 @@ GetVnicEthAdapterPolicyList Read a 'vnic.EthAdapterPolicy' resource.
 func (a *VnicApiService) GetVnicEthAdapterPolicyList(ctx _context.Context) ApiGetVnicEthAdapterPolicyListRequest {
 	return ApiGetVnicEthAdapterPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4511,13 +4533,13 @@ func (a *VnicApiService) GetVnicEthAdapterPolicyListExecute(r ApiGetVnicEthAdapt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4534,11 +4556,10 @@ func (a *VnicApiService) GetVnicEthAdapterPolicyListExecute(r ApiGetVnicEthAdapt
 }
 
 type ApiGetVnicEthIfByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVnicEthIfByMoidRequest) Execute() (VnicEthIf, *_nethttp.Response, error) {
 	return r.ApiService.GetVnicEthIfByMoidExecute(r)
@@ -4554,8 +4575,8 @@ GetVnicEthIfByMoid Read a 'vnic.EthIf' resource.
 func (a *VnicApiService) GetVnicEthIfByMoid(ctx _context.Context, moid string) ApiGetVnicEthIfByMoidRequest {
 	return ApiGetVnicEthIfByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4662,13 +4683,13 @@ func (a *VnicApiService) GetVnicEthIfByMoidExecute(r ApiGetVnicEthIfByMoidReques
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4685,19 +4706,19 @@ func (a *VnicApiService) GetVnicEthIfByMoidExecute(r ApiGetVnicEthIfByMoidReques
 }
 
 type ApiGetVnicEthIfListRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VnicApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4705,51 +4726,61 @@ func (r ApiGetVnicEthIfListRequest) Filter(filter string) ApiGetVnicEthIfListReq
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVnicEthIfListRequest) Orderby(orderby string) ApiGetVnicEthIfListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVnicEthIfListRequest) Top(top int32) ApiGetVnicEthIfListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVnicEthIfListRequest) Skip(skip int32) ApiGetVnicEthIfListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVnicEthIfListRequest) Select_(select_ string) ApiGetVnicEthIfListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVnicEthIfListRequest) Expand(expand string) ApiGetVnicEthIfListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVnicEthIfListRequest) Apply(apply string) ApiGetVnicEthIfListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVnicEthIfListRequest) Count(count bool) ApiGetVnicEthIfListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVnicEthIfListRequest) Inlinecount(inlinecount string) ApiGetVnicEthIfListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVnicEthIfListRequest) At(at string) ApiGetVnicEthIfListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVnicEthIfListRequest) Tags(tags string) ApiGetVnicEthIfListRequest {
 	r.tags = &tags
@@ -4769,7 +4800,7 @@ GetVnicEthIfList Read a 'vnic.EthIf' resource.
 func (a *VnicApiService) GetVnicEthIfList(ctx _context.Context) ApiGetVnicEthIfListRequest {
 	return ApiGetVnicEthIfListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4908,13 +4939,13 @@ func (a *VnicApiService) GetVnicEthIfListExecute(r ApiGetVnicEthIfListRequest) (
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4931,11 +4962,10 @@ func (a *VnicApiService) GetVnicEthIfListExecute(r ApiGetVnicEthIfListRequest) (
 }
 
 type ApiGetVnicEthNetworkPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVnicEthNetworkPolicyByMoidRequest) Execute() (VnicEthNetworkPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetVnicEthNetworkPolicyByMoidExecute(r)
@@ -4951,8 +4981,8 @@ GetVnicEthNetworkPolicyByMoid Read a 'vnic.EthNetworkPolicy' resource.
 func (a *VnicApiService) GetVnicEthNetworkPolicyByMoid(ctx _context.Context, moid string) ApiGetVnicEthNetworkPolicyByMoidRequest {
 	return ApiGetVnicEthNetworkPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5059,13 +5089,13 @@ func (a *VnicApiService) GetVnicEthNetworkPolicyByMoidExecute(r ApiGetVnicEthNet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5082,19 +5112,19 @@ func (a *VnicApiService) GetVnicEthNetworkPolicyByMoidExecute(r ApiGetVnicEthNet
 }
 
 type ApiGetVnicEthNetworkPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VnicApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5102,51 +5132,61 @@ func (r ApiGetVnicEthNetworkPolicyListRequest) Filter(filter string) ApiGetVnicE
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVnicEthNetworkPolicyListRequest) Orderby(orderby string) ApiGetVnicEthNetworkPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVnicEthNetworkPolicyListRequest) Top(top int32) ApiGetVnicEthNetworkPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVnicEthNetworkPolicyListRequest) Skip(skip int32) ApiGetVnicEthNetworkPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVnicEthNetworkPolicyListRequest) Select_(select_ string) ApiGetVnicEthNetworkPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVnicEthNetworkPolicyListRequest) Expand(expand string) ApiGetVnicEthNetworkPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVnicEthNetworkPolicyListRequest) Apply(apply string) ApiGetVnicEthNetworkPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVnicEthNetworkPolicyListRequest) Count(count bool) ApiGetVnicEthNetworkPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVnicEthNetworkPolicyListRequest) Inlinecount(inlinecount string) ApiGetVnicEthNetworkPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVnicEthNetworkPolicyListRequest) At(at string) ApiGetVnicEthNetworkPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVnicEthNetworkPolicyListRequest) Tags(tags string) ApiGetVnicEthNetworkPolicyListRequest {
 	r.tags = &tags
@@ -5166,7 +5206,7 @@ GetVnicEthNetworkPolicyList Read a 'vnic.EthNetworkPolicy' resource.
 func (a *VnicApiService) GetVnicEthNetworkPolicyList(ctx _context.Context) ApiGetVnicEthNetworkPolicyListRequest {
 	return ApiGetVnicEthNetworkPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5305,13 +5345,13 @@ func (a *VnicApiService) GetVnicEthNetworkPolicyListExecute(r ApiGetVnicEthNetwo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5328,11 +5368,10 @@ func (a *VnicApiService) GetVnicEthNetworkPolicyListExecute(r ApiGetVnicEthNetwo
 }
 
 type ApiGetVnicEthQosPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVnicEthQosPolicyByMoidRequest) Execute() (VnicEthQosPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetVnicEthQosPolicyByMoidExecute(r)
@@ -5348,8 +5387,8 @@ GetVnicEthQosPolicyByMoid Read a 'vnic.EthQosPolicy' resource.
 func (a *VnicApiService) GetVnicEthQosPolicyByMoid(ctx _context.Context, moid string) ApiGetVnicEthQosPolicyByMoidRequest {
 	return ApiGetVnicEthQosPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5456,13 +5495,13 @@ func (a *VnicApiService) GetVnicEthQosPolicyByMoidExecute(r ApiGetVnicEthQosPoli
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5479,19 +5518,19 @@ func (a *VnicApiService) GetVnicEthQosPolicyByMoidExecute(r ApiGetVnicEthQosPoli
 }
 
 type ApiGetVnicEthQosPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VnicApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5499,51 +5538,61 @@ func (r ApiGetVnicEthQosPolicyListRequest) Filter(filter string) ApiGetVnicEthQo
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVnicEthQosPolicyListRequest) Orderby(orderby string) ApiGetVnicEthQosPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVnicEthQosPolicyListRequest) Top(top int32) ApiGetVnicEthQosPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVnicEthQosPolicyListRequest) Skip(skip int32) ApiGetVnicEthQosPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVnicEthQosPolicyListRequest) Select_(select_ string) ApiGetVnicEthQosPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVnicEthQosPolicyListRequest) Expand(expand string) ApiGetVnicEthQosPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVnicEthQosPolicyListRequest) Apply(apply string) ApiGetVnicEthQosPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVnicEthQosPolicyListRequest) Count(count bool) ApiGetVnicEthQosPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVnicEthQosPolicyListRequest) Inlinecount(inlinecount string) ApiGetVnicEthQosPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVnicEthQosPolicyListRequest) At(at string) ApiGetVnicEthQosPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVnicEthQosPolicyListRequest) Tags(tags string) ApiGetVnicEthQosPolicyListRequest {
 	r.tags = &tags
@@ -5563,7 +5612,7 @@ GetVnicEthQosPolicyList Read a 'vnic.EthQosPolicy' resource.
 func (a *VnicApiService) GetVnicEthQosPolicyList(ctx _context.Context) ApiGetVnicEthQosPolicyListRequest {
 	return ApiGetVnicEthQosPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5702,13 +5751,13 @@ func (a *VnicApiService) GetVnicEthQosPolicyListExecute(r ApiGetVnicEthQosPolicy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5725,11 +5774,10 @@ func (a *VnicApiService) GetVnicEthQosPolicyListExecute(r ApiGetVnicEthQosPolicy
 }
 
 type ApiGetVnicFcAdapterPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVnicFcAdapterPolicyByMoidRequest) Execute() (VnicFcAdapterPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetVnicFcAdapterPolicyByMoidExecute(r)
@@ -5745,8 +5793,8 @@ GetVnicFcAdapterPolicyByMoid Read a 'vnic.FcAdapterPolicy' resource.
 func (a *VnicApiService) GetVnicFcAdapterPolicyByMoid(ctx _context.Context, moid string) ApiGetVnicFcAdapterPolicyByMoidRequest {
 	return ApiGetVnicFcAdapterPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5853,13 +5901,13 @@ func (a *VnicApiService) GetVnicFcAdapterPolicyByMoidExecute(r ApiGetVnicFcAdapt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5876,19 +5924,19 @@ func (a *VnicApiService) GetVnicFcAdapterPolicyByMoidExecute(r ApiGetVnicFcAdapt
 }
 
 type ApiGetVnicFcAdapterPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VnicApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5896,51 +5944,61 @@ func (r ApiGetVnicFcAdapterPolicyListRequest) Filter(filter string) ApiGetVnicFc
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVnicFcAdapterPolicyListRequest) Orderby(orderby string) ApiGetVnicFcAdapterPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVnicFcAdapterPolicyListRequest) Top(top int32) ApiGetVnicFcAdapterPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVnicFcAdapterPolicyListRequest) Skip(skip int32) ApiGetVnicFcAdapterPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVnicFcAdapterPolicyListRequest) Select_(select_ string) ApiGetVnicFcAdapterPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVnicFcAdapterPolicyListRequest) Expand(expand string) ApiGetVnicFcAdapterPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVnicFcAdapterPolicyListRequest) Apply(apply string) ApiGetVnicFcAdapterPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVnicFcAdapterPolicyListRequest) Count(count bool) ApiGetVnicFcAdapterPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVnicFcAdapterPolicyListRequest) Inlinecount(inlinecount string) ApiGetVnicFcAdapterPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVnicFcAdapterPolicyListRequest) At(at string) ApiGetVnicFcAdapterPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVnicFcAdapterPolicyListRequest) Tags(tags string) ApiGetVnicFcAdapterPolicyListRequest {
 	r.tags = &tags
@@ -5960,7 +6018,7 @@ GetVnicFcAdapterPolicyList Read a 'vnic.FcAdapterPolicy' resource.
 func (a *VnicApiService) GetVnicFcAdapterPolicyList(ctx _context.Context) ApiGetVnicFcAdapterPolicyListRequest {
 	return ApiGetVnicFcAdapterPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6099,13 +6157,13 @@ func (a *VnicApiService) GetVnicFcAdapterPolicyListExecute(r ApiGetVnicFcAdapter
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6122,11 +6180,10 @@ func (a *VnicApiService) GetVnicFcAdapterPolicyListExecute(r ApiGetVnicFcAdapter
 }
 
 type ApiGetVnicFcIfByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVnicFcIfByMoidRequest) Execute() (VnicFcIf, *_nethttp.Response, error) {
 	return r.ApiService.GetVnicFcIfByMoidExecute(r)
@@ -6142,8 +6199,8 @@ GetVnicFcIfByMoid Read a 'vnic.FcIf' resource.
 func (a *VnicApiService) GetVnicFcIfByMoid(ctx _context.Context, moid string) ApiGetVnicFcIfByMoidRequest {
 	return ApiGetVnicFcIfByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6250,13 +6307,13 @@ func (a *VnicApiService) GetVnicFcIfByMoidExecute(r ApiGetVnicFcIfByMoidRequest)
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6273,19 +6330,19 @@ func (a *VnicApiService) GetVnicFcIfByMoidExecute(r ApiGetVnicFcIfByMoidRequest)
 }
 
 type ApiGetVnicFcIfListRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VnicApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -6293,51 +6350,61 @@ func (r ApiGetVnicFcIfListRequest) Filter(filter string) ApiGetVnicFcIfListReque
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVnicFcIfListRequest) Orderby(orderby string) ApiGetVnicFcIfListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVnicFcIfListRequest) Top(top int32) ApiGetVnicFcIfListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVnicFcIfListRequest) Skip(skip int32) ApiGetVnicFcIfListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVnicFcIfListRequest) Select_(select_ string) ApiGetVnicFcIfListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVnicFcIfListRequest) Expand(expand string) ApiGetVnicFcIfListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVnicFcIfListRequest) Apply(apply string) ApiGetVnicFcIfListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVnicFcIfListRequest) Count(count bool) ApiGetVnicFcIfListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVnicFcIfListRequest) Inlinecount(inlinecount string) ApiGetVnicFcIfListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVnicFcIfListRequest) At(at string) ApiGetVnicFcIfListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVnicFcIfListRequest) Tags(tags string) ApiGetVnicFcIfListRequest {
 	r.tags = &tags
@@ -6357,7 +6424,7 @@ GetVnicFcIfList Read a 'vnic.FcIf' resource.
 func (a *VnicApiService) GetVnicFcIfList(ctx _context.Context) ApiGetVnicFcIfListRequest {
 	return ApiGetVnicFcIfListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6496,13 +6563,13 @@ func (a *VnicApiService) GetVnicFcIfListExecute(r ApiGetVnicFcIfListRequest) (Vn
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6519,11 +6586,10 @@ func (a *VnicApiService) GetVnicFcIfListExecute(r ApiGetVnicFcIfListRequest) (Vn
 }
 
 type ApiGetVnicFcNetworkPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVnicFcNetworkPolicyByMoidRequest) Execute() (VnicFcNetworkPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetVnicFcNetworkPolicyByMoidExecute(r)
@@ -6539,8 +6605,8 @@ GetVnicFcNetworkPolicyByMoid Read a 'vnic.FcNetworkPolicy' resource.
 func (a *VnicApiService) GetVnicFcNetworkPolicyByMoid(ctx _context.Context, moid string) ApiGetVnicFcNetworkPolicyByMoidRequest {
 	return ApiGetVnicFcNetworkPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6647,13 +6713,13 @@ func (a *VnicApiService) GetVnicFcNetworkPolicyByMoidExecute(r ApiGetVnicFcNetwo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6670,19 +6736,19 @@ func (a *VnicApiService) GetVnicFcNetworkPolicyByMoidExecute(r ApiGetVnicFcNetwo
 }
 
 type ApiGetVnicFcNetworkPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VnicApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -6690,51 +6756,61 @@ func (r ApiGetVnicFcNetworkPolicyListRequest) Filter(filter string) ApiGetVnicFc
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVnicFcNetworkPolicyListRequest) Orderby(orderby string) ApiGetVnicFcNetworkPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVnicFcNetworkPolicyListRequest) Top(top int32) ApiGetVnicFcNetworkPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVnicFcNetworkPolicyListRequest) Skip(skip int32) ApiGetVnicFcNetworkPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVnicFcNetworkPolicyListRequest) Select_(select_ string) ApiGetVnicFcNetworkPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVnicFcNetworkPolicyListRequest) Expand(expand string) ApiGetVnicFcNetworkPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVnicFcNetworkPolicyListRequest) Apply(apply string) ApiGetVnicFcNetworkPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVnicFcNetworkPolicyListRequest) Count(count bool) ApiGetVnicFcNetworkPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVnicFcNetworkPolicyListRequest) Inlinecount(inlinecount string) ApiGetVnicFcNetworkPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVnicFcNetworkPolicyListRequest) At(at string) ApiGetVnicFcNetworkPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVnicFcNetworkPolicyListRequest) Tags(tags string) ApiGetVnicFcNetworkPolicyListRequest {
 	r.tags = &tags
@@ -6754,7 +6830,7 @@ GetVnicFcNetworkPolicyList Read a 'vnic.FcNetworkPolicy' resource.
 func (a *VnicApiService) GetVnicFcNetworkPolicyList(ctx _context.Context) ApiGetVnicFcNetworkPolicyListRequest {
 	return ApiGetVnicFcNetworkPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6893,13 +6969,13 @@ func (a *VnicApiService) GetVnicFcNetworkPolicyListExecute(r ApiGetVnicFcNetwork
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6916,11 +6992,10 @@ func (a *VnicApiService) GetVnicFcNetworkPolicyListExecute(r ApiGetVnicFcNetwork
 }
 
 type ApiGetVnicFcQosPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVnicFcQosPolicyByMoidRequest) Execute() (VnicFcQosPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetVnicFcQosPolicyByMoidExecute(r)
@@ -6936,8 +7011,8 @@ GetVnicFcQosPolicyByMoid Read a 'vnic.FcQosPolicy' resource.
 func (a *VnicApiService) GetVnicFcQosPolicyByMoid(ctx _context.Context, moid string) ApiGetVnicFcQosPolicyByMoidRequest {
 	return ApiGetVnicFcQosPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7044,13 +7119,13 @@ func (a *VnicApiService) GetVnicFcQosPolicyByMoidExecute(r ApiGetVnicFcQosPolicy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7067,19 +7142,19 @@ func (a *VnicApiService) GetVnicFcQosPolicyByMoidExecute(r ApiGetVnicFcQosPolicy
 }
 
 type ApiGetVnicFcQosPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VnicApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7087,51 +7162,61 @@ func (r ApiGetVnicFcQosPolicyListRequest) Filter(filter string) ApiGetVnicFcQosP
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVnicFcQosPolicyListRequest) Orderby(orderby string) ApiGetVnicFcQosPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVnicFcQosPolicyListRequest) Top(top int32) ApiGetVnicFcQosPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVnicFcQosPolicyListRequest) Skip(skip int32) ApiGetVnicFcQosPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVnicFcQosPolicyListRequest) Select_(select_ string) ApiGetVnicFcQosPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVnicFcQosPolicyListRequest) Expand(expand string) ApiGetVnicFcQosPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVnicFcQosPolicyListRequest) Apply(apply string) ApiGetVnicFcQosPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVnicFcQosPolicyListRequest) Count(count bool) ApiGetVnicFcQosPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVnicFcQosPolicyListRequest) Inlinecount(inlinecount string) ApiGetVnicFcQosPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVnicFcQosPolicyListRequest) At(at string) ApiGetVnicFcQosPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVnicFcQosPolicyListRequest) Tags(tags string) ApiGetVnicFcQosPolicyListRequest {
 	r.tags = &tags
@@ -7151,7 +7236,7 @@ GetVnicFcQosPolicyList Read a 'vnic.FcQosPolicy' resource.
 func (a *VnicApiService) GetVnicFcQosPolicyList(ctx _context.Context) ApiGetVnicFcQosPolicyListRequest {
 	return ApiGetVnicFcQosPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7290,13 +7375,13 @@ func (a *VnicApiService) GetVnicFcQosPolicyListExecute(r ApiGetVnicFcQosPolicyLi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7313,11 +7398,10 @@ func (a *VnicApiService) GetVnicFcQosPolicyListExecute(r ApiGetVnicFcQosPolicyLi
 }
 
 type ApiGetVnicIscsiAdapterPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVnicIscsiAdapterPolicyByMoidRequest) Execute() (VnicIscsiAdapterPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetVnicIscsiAdapterPolicyByMoidExecute(r)
@@ -7333,8 +7417,8 @@ GetVnicIscsiAdapterPolicyByMoid Read a 'vnic.IscsiAdapterPolicy' resource.
 func (a *VnicApiService) GetVnicIscsiAdapterPolicyByMoid(ctx _context.Context, moid string) ApiGetVnicIscsiAdapterPolicyByMoidRequest {
 	return ApiGetVnicIscsiAdapterPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7441,13 +7525,13 @@ func (a *VnicApiService) GetVnicIscsiAdapterPolicyByMoidExecute(r ApiGetVnicIscs
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7464,19 +7548,19 @@ func (a *VnicApiService) GetVnicIscsiAdapterPolicyByMoidExecute(r ApiGetVnicIscs
 }
 
 type ApiGetVnicIscsiAdapterPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VnicApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7484,51 +7568,61 @@ func (r ApiGetVnicIscsiAdapterPolicyListRequest) Filter(filter string) ApiGetVni
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVnicIscsiAdapterPolicyListRequest) Orderby(orderby string) ApiGetVnicIscsiAdapterPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVnicIscsiAdapterPolicyListRequest) Top(top int32) ApiGetVnicIscsiAdapterPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVnicIscsiAdapterPolicyListRequest) Skip(skip int32) ApiGetVnicIscsiAdapterPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVnicIscsiAdapterPolicyListRequest) Select_(select_ string) ApiGetVnicIscsiAdapterPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVnicIscsiAdapterPolicyListRequest) Expand(expand string) ApiGetVnicIscsiAdapterPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVnicIscsiAdapterPolicyListRequest) Apply(apply string) ApiGetVnicIscsiAdapterPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVnicIscsiAdapterPolicyListRequest) Count(count bool) ApiGetVnicIscsiAdapterPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVnicIscsiAdapterPolicyListRequest) Inlinecount(inlinecount string) ApiGetVnicIscsiAdapterPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVnicIscsiAdapterPolicyListRequest) At(at string) ApiGetVnicIscsiAdapterPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVnicIscsiAdapterPolicyListRequest) Tags(tags string) ApiGetVnicIscsiAdapterPolicyListRequest {
 	r.tags = &tags
@@ -7548,7 +7642,7 @@ GetVnicIscsiAdapterPolicyList Read a 'vnic.IscsiAdapterPolicy' resource.
 func (a *VnicApiService) GetVnicIscsiAdapterPolicyList(ctx _context.Context) ApiGetVnicIscsiAdapterPolicyListRequest {
 	return ApiGetVnicIscsiAdapterPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7687,13 +7781,13 @@ func (a *VnicApiService) GetVnicIscsiAdapterPolicyListExecute(r ApiGetVnicIscsiA
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7710,11 +7804,10 @@ func (a *VnicApiService) GetVnicIscsiAdapterPolicyListExecute(r ApiGetVnicIscsiA
 }
 
 type ApiGetVnicIscsiBootPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVnicIscsiBootPolicyByMoidRequest) Execute() (VnicIscsiBootPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetVnicIscsiBootPolicyByMoidExecute(r)
@@ -7730,8 +7823,8 @@ GetVnicIscsiBootPolicyByMoid Read a 'vnic.IscsiBootPolicy' resource.
 func (a *VnicApiService) GetVnicIscsiBootPolicyByMoid(ctx _context.Context, moid string) ApiGetVnicIscsiBootPolicyByMoidRequest {
 	return ApiGetVnicIscsiBootPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7838,13 +7931,13 @@ func (a *VnicApiService) GetVnicIscsiBootPolicyByMoidExecute(r ApiGetVnicIscsiBo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7861,19 +7954,19 @@ func (a *VnicApiService) GetVnicIscsiBootPolicyByMoidExecute(r ApiGetVnicIscsiBo
 }
 
 type ApiGetVnicIscsiBootPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VnicApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7881,51 +7974,61 @@ func (r ApiGetVnicIscsiBootPolicyListRequest) Filter(filter string) ApiGetVnicIs
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVnicIscsiBootPolicyListRequest) Orderby(orderby string) ApiGetVnicIscsiBootPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVnicIscsiBootPolicyListRequest) Top(top int32) ApiGetVnicIscsiBootPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVnicIscsiBootPolicyListRequest) Skip(skip int32) ApiGetVnicIscsiBootPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVnicIscsiBootPolicyListRequest) Select_(select_ string) ApiGetVnicIscsiBootPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVnicIscsiBootPolicyListRequest) Expand(expand string) ApiGetVnicIscsiBootPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVnicIscsiBootPolicyListRequest) Apply(apply string) ApiGetVnicIscsiBootPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVnicIscsiBootPolicyListRequest) Count(count bool) ApiGetVnicIscsiBootPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVnicIscsiBootPolicyListRequest) Inlinecount(inlinecount string) ApiGetVnicIscsiBootPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVnicIscsiBootPolicyListRequest) At(at string) ApiGetVnicIscsiBootPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVnicIscsiBootPolicyListRequest) Tags(tags string) ApiGetVnicIscsiBootPolicyListRequest {
 	r.tags = &tags
@@ -7945,7 +8048,7 @@ GetVnicIscsiBootPolicyList Read a 'vnic.IscsiBootPolicy' resource.
 func (a *VnicApiService) GetVnicIscsiBootPolicyList(ctx _context.Context) ApiGetVnicIscsiBootPolicyListRequest {
 	return ApiGetVnicIscsiBootPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8084,13 +8187,13 @@ func (a *VnicApiService) GetVnicIscsiBootPolicyListExecute(r ApiGetVnicIscsiBoot
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8107,11 +8210,10 @@ func (a *VnicApiService) GetVnicIscsiBootPolicyListExecute(r ApiGetVnicIscsiBoot
 }
 
 type ApiGetVnicIscsiStaticTargetPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVnicIscsiStaticTargetPolicyByMoidRequest) Execute() (VnicIscsiStaticTargetPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetVnicIscsiStaticTargetPolicyByMoidExecute(r)
@@ -8127,8 +8229,8 @@ GetVnicIscsiStaticTargetPolicyByMoid Read a 'vnic.IscsiStaticTargetPolicy' resou
 func (a *VnicApiService) GetVnicIscsiStaticTargetPolicyByMoid(ctx _context.Context, moid string) ApiGetVnicIscsiStaticTargetPolicyByMoidRequest {
 	return ApiGetVnicIscsiStaticTargetPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8235,13 +8337,13 @@ func (a *VnicApiService) GetVnicIscsiStaticTargetPolicyByMoidExecute(r ApiGetVni
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8258,19 +8360,19 @@ func (a *VnicApiService) GetVnicIscsiStaticTargetPolicyByMoidExecute(r ApiGetVni
 }
 
 type ApiGetVnicIscsiStaticTargetPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VnicApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8278,51 +8380,61 @@ func (r ApiGetVnicIscsiStaticTargetPolicyListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVnicIscsiStaticTargetPolicyListRequest) Orderby(orderby string) ApiGetVnicIscsiStaticTargetPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVnicIscsiStaticTargetPolicyListRequest) Top(top int32) ApiGetVnicIscsiStaticTargetPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVnicIscsiStaticTargetPolicyListRequest) Skip(skip int32) ApiGetVnicIscsiStaticTargetPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVnicIscsiStaticTargetPolicyListRequest) Select_(select_ string) ApiGetVnicIscsiStaticTargetPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVnicIscsiStaticTargetPolicyListRequest) Expand(expand string) ApiGetVnicIscsiStaticTargetPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVnicIscsiStaticTargetPolicyListRequest) Apply(apply string) ApiGetVnicIscsiStaticTargetPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVnicIscsiStaticTargetPolicyListRequest) Count(count bool) ApiGetVnicIscsiStaticTargetPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVnicIscsiStaticTargetPolicyListRequest) Inlinecount(inlinecount string) ApiGetVnicIscsiStaticTargetPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVnicIscsiStaticTargetPolicyListRequest) At(at string) ApiGetVnicIscsiStaticTargetPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVnicIscsiStaticTargetPolicyListRequest) Tags(tags string) ApiGetVnicIscsiStaticTargetPolicyListRequest {
 	r.tags = &tags
@@ -8342,7 +8454,7 @@ GetVnicIscsiStaticTargetPolicyList Read a 'vnic.IscsiStaticTargetPolicy' resourc
 func (a *VnicApiService) GetVnicIscsiStaticTargetPolicyList(ctx _context.Context) ApiGetVnicIscsiStaticTargetPolicyListRequest {
 	return ApiGetVnicIscsiStaticTargetPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8481,13 +8593,13 @@ func (a *VnicApiService) GetVnicIscsiStaticTargetPolicyListExecute(r ApiGetVnicI
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8504,11 +8616,10 @@ func (a *VnicApiService) GetVnicIscsiStaticTargetPolicyListExecute(r ApiGetVnicI
 }
 
 type ApiGetVnicLanConnectivityPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVnicLanConnectivityPolicyByMoidRequest) Execute() (VnicLanConnectivityPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetVnicLanConnectivityPolicyByMoidExecute(r)
@@ -8524,8 +8635,8 @@ GetVnicLanConnectivityPolicyByMoid Read a 'vnic.LanConnectivityPolicy' resource.
 func (a *VnicApiService) GetVnicLanConnectivityPolicyByMoid(ctx _context.Context, moid string) ApiGetVnicLanConnectivityPolicyByMoidRequest {
 	return ApiGetVnicLanConnectivityPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8632,13 +8743,13 @@ func (a *VnicApiService) GetVnicLanConnectivityPolicyByMoidExecute(r ApiGetVnicL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8655,19 +8766,19 @@ func (a *VnicApiService) GetVnicLanConnectivityPolicyByMoidExecute(r ApiGetVnicL
 }
 
 type ApiGetVnicLanConnectivityPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VnicApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8675,51 +8786,61 @@ func (r ApiGetVnicLanConnectivityPolicyListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVnicLanConnectivityPolicyListRequest) Orderby(orderby string) ApiGetVnicLanConnectivityPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVnicLanConnectivityPolicyListRequest) Top(top int32) ApiGetVnicLanConnectivityPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVnicLanConnectivityPolicyListRequest) Skip(skip int32) ApiGetVnicLanConnectivityPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVnicLanConnectivityPolicyListRequest) Select_(select_ string) ApiGetVnicLanConnectivityPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVnicLanConnectivityPolicyListRequest) Expand(expand string) ApiGetVnicLanConnectivityPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVnicLanConnectivityPolicyListRequest) Apply(apply string) ApiGetVnicLanConnectivityPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVnicLanConnectivityPolicyListRequest) Count(count bool) ApiGetVnicLanConnectivityPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVnicLanConnectivityPolicyListRequest) Inlinecount(inlinecount string) ApiGetVnicLanConnectivityPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVnicLanConnectivityPolicyListRequest) At(at string) ApiGetVnicLanConnectivityPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVnicLanConnectivityPolicyListRequest) Tags(tags string) ApiGetVnicLanConnectivityPolicyListRequest {
 	r.tags = &tags
@@ -8739,7 +8860,7 @@ GetVnicLanConnectivityPolicyList Read a 'vnic.LanConnectivityPolicy' resource.
 func (a *VnicApiService) GetVnicLanConnectivityPolicyList(ctx _context.Context) ApiGetVnicLanConnectivityPolicyListRequest {
 	return ApiGetVnicLanConnectivityPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8878,13 +8999,13 @@ func (a *VnicApiService) GetVnicLanConnectivityPolicyListExecute(r ApiGetVnicLan
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8901,11 +9022,10 @@ func (a *VnicApiService) GetVnicLanConnectivityPolicyListExecute(r ApiGetVnicLan
 }
 
 type ApiGetVnicLcpStatusByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVnicLcpStatusByMoidRequest) Execute() (VnicLcpStatus, *_nethttp.Response, error) {
 	return r.ApiService.GetVnicLcpStatusByMoidExecute(r)
@@ -8921,8 +9041,8 @@ GetVnicLcpStatusByMoid Read a 'vnic.LcpStatus' resource.
 func (a *VnicApiService) GetVnicLcpStatusByMoid(ctx _context.Context, moid string) ApiGetVnicLcpStatusByMoidRequest {
 	return ApiGetVnicLcpStatusByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9029,13 +9149,13 @@ func (a *VnicApiService) GetVnicLcpStatusByMoidExecute(r ApiGetVnicLcpStatusByMo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9052,19 +9172,19 @@ func (a *VnicApiService) GetVnicLcpStatusByMoidExecute(r ApiGetVnicLcpStatusByMo
 }
 
 type ApiGetVnicLcpStatusListRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VnicApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9072,51 +9192,61 @@ func (r ApiGetVnicLcpStatusListRequest) Filter(filter string) ApiGetVnicLcpStatu
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVnicLcpStatusListRequest) Orderby(orderby string) ApiGetVnicLcpStatusListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVnicLcpStatusListRequest) Top(top int32) ApiGetVnicLcpStatusListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVnicLcpStatusListRequest) Skip(skip int32) ApiGetVnicLcpStatusListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVnicLcpStatusListRequest) Select_(select_ string) ApiGetVnicLcpStatusListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVnicLcpStatusListRequest) Expand(expand string) ApiGetVnicLcpStatusListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVnicLcpStatusListRequest) Apply(apply string) ApiGetVnicLcpStatusListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVnicLcpStatusListRequest) Count(count bool) ApiGetVnicLcpStatusListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVnicLcpStatusListRequest) Inlinecount(inlinecount string) ApiGetVnicLcpStatusListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVnicLcpStatusListRequest) At(at string) ApiGetVnicLcpStatusListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVnicLcpStatusListRequest) Tags(tags string) ApiGetVnicLcpStatusListRequest {
 	r.tags = &tags
@@ -9136,7 +9266,7 @@ GetVnicLcpStatusList Read a 'vnic.LcpStatus' resource.
 func (a *VnicApiService) GetVnicLcpStatusList(ctx _context.Context) ApiGetVnicLcpStatusListRequest {
 	return ApiGetVnicLcpStatusListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9275,13 +9405,13 @@ func (a *VnicApiService) GetVnicLcpStatusListExecute(r ApiGetVnicLcpStatusListRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9298,11 +9428,10 @@ func (a *VnicApiService) GetVnicLcpStatusListExecute(r ApiGetVnicLcpStatusListRe
 }
 
 type ApiGetVnicSanConnectivityPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVnicSanConnectivityPolicyByMoidRequest) Execute() (VnicSanConnectivityPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetVnicSanConnectivityPolicyByMoidExecute(r)
@@ -9318,8 +9447,8 @@ GetVnicSanConnectivityPolicyByMoid Read a 'vnic.SanConnectivityPolicy' resource.
 func (a *VnicApiService) GetVnicSanConnectivityPolicyByMoid(ctx _context.Context, moid string) ApiGetVnicSanConnectivityPolicyByMoidRequest {
 	return ApiGetVnicSanConnectivityPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9426,13 +9555,13 @@ func (a *VnicApiService) GetVnicSanConnectivityPolicyByMoidExecute(r ApiGetVnicS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9449,19 +9578,19 @@ func (a *VnicApiService) GetVnicSanConnectivityPolicyByMoidExecute(r ApiGetVnicS
 }
 
 type ApiGetVnicSanConnectivityPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VnicApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9469,51 +9598,61 @@ func (r ApiGetVnicSanConnectivityPolicyListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVnicSanConnectivityPolicyListRequest) Orderby(orderby string) ApiGetVnicSanConnectivityPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVnicSanConnectivityPolicyListRequest) Top(top int32) ApiGetVnicSanConnectivityPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVnicSanConnectivityPolicyListRequest) Skip(skip int32) ApiGetVnicSanConnectivityPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVnicSanConnectivityPolicyListRequest) Select_(select_ string) ApiGetVnicSanConnectivityPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVnicSanConnectivityPolicyListRequest) Expand(expand string) ApiGetVnicSanConnectivityPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVnicSanConnectivityPolicyListRequest) Apply(apply string) ApiGetVnicSanConnectivityPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVnicSanConnectivityPolicyListRequest) Count(count bool) ApiGetVnicSanConnectivityPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVnicSanConnectivityPolicyListRequest) Inlinecount(inlinecount string) ApiGetVnicSanConnectivityPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVnicSanConnectivityPolicyListRequest) At(at string) ApiGetVnicSanConnectivityPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVnicSanConnectivityPolicyListRequest) Tags(tags string) ApiGetVnicSanConnectivityPolicyListRequest {
 	r.tags = &tags
@@ -9533,7 +9672,7 @@ GetVnicSanConnectivityPolicyList Read a 'vnic.SanConnectivityPolicy' resource.
 func (a *VnicApiService) GetVnicSanConnectivityPolicyList(ctx _context.Context) ApiGetVnicSanConnectivityPolicyListRequest {
 	return ApiGetVnicSanConnectivityPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9672,13 +9811,13 @@ func (a *VnicApiService) GetVnicSanConnectivityPolicyListExecute(r ApiGetVnicSan
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9695,11 +9834,10 @@ func (a *VnicApiService) GetVnicSanConnectivityPolicyListExecute(r ApiGetVnicSan
 }
 
 type ApiGetVnicScpStatusByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVnicScpStatusByMoidRequest) Execute() (VnicScpStatus, *_nethttp.Response, error) {
 	return r.ApiService.GetVnicScpStatusByMoidExecute(r)
@@ -9715,8 +9853,8 @@ GetVnicScpStatusByMoid Read a 'vnic.ScpStatus' resource.
 func (a *VnicApiService) GetVnicScpStatusByMoid(ctx _context.Context, moid string) ApiGetVnicScpStatusByMoidRequest {
 	return ApiGetVnicScpStatusByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9823,13 +9961,13 @@ func (a *VnicApiService) GetVnicScpStatusByMoidExecute(r ApiGetVnicScpStatusByMo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9846,19 +9984,19 @@ func (a *VnicApiService) GetVnicScpStatusByMoidExecute(r ApiGetVnicScpStatusByMo
 }
 
 type ApiGetVnicScpStatusListRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VnicApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9866,51 +10004,61 @@ func (r ApiGetVnicScpStatusListRequest) Filter(filter string) ApiGetVnicScpStatu
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVnicScpStatusListRequest) Orderby(orderby string) ApiGetVnicScpStatusListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVnicScpStatusListRequest) Top(top int32) ApiGetVnicScpStatusListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVnicScpStatusListRequest) Skip(skip int32) ApiGetVnicScpStatusListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVnicScpStatusListRequest) Select_(select_ string) ApiGetVnicScpStatusListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVnicScpStatusListRequest) Expand(expand string) ApiGetVnicScpStatusListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVnicScpStatusListRequest) Apply(apply string) ApiGetVnicScpStatusListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVnicScpStatusListRequest) Count(count bool) ApiGetVnicScpStatusListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVnicScpStatusListRequest) Inlinecount(inlinecount string) ApiGetVnicScpStatusListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVnicScpStatusListRequest) At(at string) ApiGetVnicScpStatusListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVnicScpStatusListRequest) Tags(tags string) ApiGetVnicScpStatusListRequest {
 	r.tags = &tags
@@ -9930,7 +10078,7 @@ GetVnicScpStatusList Read a 'vnic.ScpStatus' resource.
 func (a *VnicApiService) GetVnicScpStatusList(ctx _context.Context) ApiGetVnicScpStatusListRequest {
 	return ApiGetVnicScpStatusListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10069,13 +10217,13 @@ func (a *VnicApiService) GetVnicScpStatusListExecute(r ApiGetVnicScpStatusListRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10092,11 +10240,11 @@ func (a *VnicApiService) GetVnicScpStatusListExecute(r ApiGetVnicScpStatusListRe
 }
 
 type ApiPatchVnicEthAdapterPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *VnicApiService
+	moid                 string
 	vnicEthAdapterPolicy *VnicEthAdapterPolicy
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;vnic.EthAdapterPolicy&#39; resource to update.
@@ -10104,6 +10252,7 @@ func (r ApiPatchVnicEthAdapterPolicyRequest) VnicEthAdapterPolicy(vnicEthAdapter
 	r.vnicEthAdapterPolicy = &vnicEthAdapterPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVnicEthAdapterPolicyRequest) IfMatch(ifMatch string) ApiPatchVnicEthAdapterPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -10124,8 +10273,8 @@ PatchVnicEthAdapterPolicy Update a 'vnic.EthAdapterPolicy' resource.
 func (a *VnicApiService) PatchVnicEthAdapterPolicy(ctx _context.Context, moid string) ApiPatchVnicEthAdapterPolicyRequest {
 	return ApiPatchVnicEthAdapterPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10240,13 +10389,13 @@ func (a *VnicApiService) PatchVnicEthAdapterPolicyExecute(r ApiPatchVnicEthAdapt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10263,11 +10412,11 @@ func (a *VnicApiService) PatchVnicEthAdapterPolicyExecute(r ApiPatchVnicEthAdapt
 }
 
 type ApiPatchVnicEthIfRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
-	vnicEthIf *VnicEthIf
-	ifMatch *string
+	moid       string
+	vnicEthIf  *VnicEthIf
+	ifMatch    *string
 }
 
 // The &#39;vnic.EthIf&#39; resource to update.
@@ -10275,6 +10424,7 @@ func (r ApiPatchVnicEthIfRequest) VnicEthIf(vnicEthIf VnicEthIf) ApiPatchVnicEth
 	r.vnicEthIf = &vnicEthIf
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVnicEthIfRequest) IfMatch(ifMatch string) ApiPatchVnicEthIfRequest {
 	r.ifMatch = &ifMatch
@@ -10295,8 +10445,8 @@ PatchVnicEthIf Update a 'vnic.EthIf' resource.
 func (a *VnicApiService) PatchVnicEthIf(ctx _context.Context, moid string) ApiPatchVnicEthIfRequest {
 	return ApiPatchVnicEthIfRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10411,13 +10561,13 @@ func (a *VnicApiService) PatchVnicEthIfExecute(r ApiPatchVnicEthIfRequest) (Vnic
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10434,11 +10584,11 @@ func (a *VnicApiService) PatchVnicEthIfExecute(r ApiPatchVnicEthIfRequest) (Vnic
 }
 
 type ApiPatchVnicEthNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *VnicApiService
+	moid                 string
 	vnicEthNetworkPolicy *VnicEthNetworkPolicy
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;vnic.EthNetworkPolicy&#39; resource to update.
@@ -10446,6 +10596,7 @@ func (r ApiPatchVnicEthNetworkPolicyRequest) VnicEthNetworkPolicy(vnicEthNetwork
 	r.vnicEthNetworkPolicy = &vnicEthNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVnicEthNetworkPolicyRequest) IfMatch(ifMatch string) ApiPatchVnicEthNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -10466,8 +10617,8 @@ PatchVnicEthNetworkPolicy Update a 'vnic.EthNetworkPolicy' resource.
 func (a *VnicApiService) PatchVnicEthNetworkPolicy(ctx _context.Context, moid string) ApiPatchVnicEthNetworkPolicyRequest {
 	return ApiPatchVnicEthNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10582,13 +10733,13 @@ func (a *VnicApiService) PatchVnicEthNetworkPolicyExecute(r ApiPatchVnicEthNetwo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10605,11 +10756,11 @@ func (a *VnicApiService) PatchVnicEthNetworkPolicyExecute(r ApiPatchVnicEthNetwo
 }
 
 type ApiPatchVnicEthQosPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *VnicApiService
+	moid             string
 	vnicEthQosPolicy *VnicEthQosPolicy
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;vnic.EthQosPolicy&#39; resource to update.
@@ -10617,6 +10768,7 @@ func (r ApiPatchVnicEthQosPolicyRequest) VnicEthQosPolicy(vnicEthQosPolicy VnicE
 	r.vnicEthQosPolicy = &vnicEthQosPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVnicEthQosPolicyRequest) IfMatch(ifMatch string) ApiPatchVnicEthQosPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -10637,8 +10789,8 @@ PatchVnicEthQosPolicy Update a 'vnic.EthQosPolicy' resource.
 func (a *VnicApiService) PatchVnicEthQosPolicy(ctx _context.Context, moid string) ApiPatchVnicEthQosPolicyRequest {
 	return ApiPatchVnicEthQosPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10753,13 +10905,13 @@ func (a *VnicApiService) PatchVnicEthQosPolicyExecute(r ApiPatchVnicEthQosPolicy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10776,11 +10928,11 @@ func (a *VnicApiService) PatchVnicEthQosPolicyExecute(r ApiPatchVnicEthQosPolicy
 }
 
 type ApiPatchVnicFcAdapterPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *VnicApiService
+	moid                string
 	vnicFcAdapterPolicy *VnicFcAdapterPolicy
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;vnic.FcAdapterPolicy&#39; resource to update.
@@ -10788,6 +10940,7 @@ func (r ApiPatchVnicFcAdapterPolicyRequest) VnicFcAdapterPolicy(vnicFcAdapterPol
 	r.vnicFcAdapterPolicy = &vnicFcAdapterPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVnicFcAdapterPolicyRequest) IfMatch(ifMatch string) ApiPatchVnicFcAdapterPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -10808,8 +10961,8 @@ PatchVnicFcAdapterPolicy Update a 'vnic.FcAdapterPolicy' resource.
 func (a *VnicApiService) PatchVnicFcAdapterPolicy(ctx _context.Context, moid string) ApiPatchVnicFcAdapterPolicyRequest {
 	return ApiPatchVnicFcAdapterPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10924,13 +11077,13 @@ func (a *VnicApiService) PatchVnicFcAdapterPolicyExecute(r ApiPatchVnicFcAdapter
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10947,11 +11100,11 @@ func (a *VnicApiService) PatchVnicFcAdapterPolicyExecute(r ApiPatchVnicFcAdapter
 }
 
 type ApiPatchVnicFcIfRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
-	vnicFcIf *VnicFcIf
-	ifMatch *string
+	moid       string
+	vnicFcIf   *VnicFcIf
+	ifMatch    *string
 }
 
 // The &#39;vnic.FcIf&#39; resource to update.
@@ -10959,6 +11112,7 @@ func (r ApiPatchVnicFcIfRequest) VnicFcIf(vnicFcIf VnicFcIf) ApiPatchVnicFcIfReq
 	r.vnicFcIf = &vnicFcIf
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVnicFcIfRequest) IfMatch(ifMatch string) ApiPatchVnicFcIfRequest {
 	r.ifMatch = &ifMatch
@@ -10979,8 +11133,8 @@ PatchVnicFcIf Update a 'vnic.FcIf' resource.
 func (a *VnicApiService) PatchVnicFcIf(ctx _context.Context, moid string) ApiPatchVnicFcIfRequest {
 	return ApiPatchVnicFcIfRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11095,13 +11249,13 @@ func (a *VnicApiService) PatchVnicFcIfExecute(r ApiPatchVnicFcIfRequest) (VnicFc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11118,11 +11272,11 @@ func (a *VnicApiService) PatchVnicFcIfExecute(r ApiPatchVnicFcIfRequest) (VnicFc
 }
 
 type ApiPatchVnicFcNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *VnicApiService
+	moid                string
 	vnicFcNetworkPolicy *VnicFcNetworkPolicy
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;vnic.FcNetworkPolicy&#39; resource to update.
@@ -11130,6 +11284,7 @@ func (r ApiPatchVnicFcNetworkPolicyRequest) VnicFcNetworkPolicy(vnicFcNetworkPol
 	r.vnicFcNetworkPolicy = &vnicFcNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVnicFcNetworkPolicyRequest) IfMatch(ifMatch string) ApiPatchVnicFcNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -11150,8 +11305,8 @@ PatchVnicFcNetworkPolicy Update a 'vnic.FcNetworkPolicy' resource.
 func (a *VnicApiService) PatchVnicFcNetworkPolicy(ctx _context.Context, moid string) ApiPatchVnicFcNetworkPolicyRequest {
 	return ApiPatchVnicFcNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11266,13 +11421,13 @@ func (a *VnicApiService) PatchVnicFcNetworkPolicyExecute(r ApiPatchVnicFcNetwork
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11289,11 +11444,11 @@ func (a *VnicApiService) PatchVnicFcNetworkPolicyExecute(r ApiPatchVnicFcNetwork
 }
 
 type ApiPatchVnicFcQosPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *VnicApiService
+	moid            string
 	vnicFcQosPolicy *VnicFcQosPolicy
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;vnic.FcQosPolicy&#39; resource to update.
@@ -11301,6 +11456,7 @@ func (r ApiPatchVnicFcQosPolicyRequest) VnicFcQosPolicy(vnicFcQosPolicy VnicFcQo
 	r.vnicFcQosPolicy = &vnicFcQosPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVnicFcQosPolicyRequest) IfMatch(ifMatch string) ApiPatchVnicFcQosPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -11321,8 +11477,8 @@ PatchVnicFcQosPolicy Update a 'vnic.FcQosPolicy' resource.
 func (a *VnicApiService) PatchVnicFcQosPolicy(ctx _context.Context, moid string) ApiPatchVnicFcQosPolicyRequest {
 	return ApiPatchVnicFcQosPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11437,13 +11593,13 @@ func (a *VnicApiService) PatchVnicFcQosPolicyExecute(r ApiPatchVnicFcQosPolicyRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11460,11 +11616,11 @@ func (a *VnicApiService) PatchVnicFcQosPolicyExecute(r ApiPatchVnicFcQosPolicyRe
 }
 
 type ApiPatchVnicIscsiAdapterPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *VnicApiService
+	moid                   string
 	vnicIscsiAdapterPolicy *VnicIscsiAdapterPolicy
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;vnic.IscsiAdapterPolicy&#39; resource to update.
@@ -11472,6 +11628,7 @@ func (r ApiPatchVnicIscsiAdapterPolicyRequest) VnicIscsiAdapterPolicy(vnicIscsiA
 	r.vnicIscsiAdapterPolicy = &vnicIscsiAdapterPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVnicIscsiAdapterPolicyRequest) IfMatch(ifMatch string) ApiPatchVnicIscsiAdapterPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -11492,8 +11649,8 @@ PatchVnicIscsiAdapterPolicy Update a 'vnic.IscsiAdapterPolicy' resource.
 func (a *VnicApiService) PatchVnicIscsiAdapterPolicy(ctx _context.Context, moid string) ApiPatchVnicIscsiAdapterPolicyRequest {
 	return ApiPatchVnicIscsiAdapterPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11608,13 +11765,13 @@ func (a *VnicApiService) PatchVnicIscsiAdapterPolicyExecute(r ApiPatchVnicIscsiA
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11631,11 +11788,11 @@ func (a *VnicApiService) PatchVnicIscsiAdapterPolicyExecute(r ApiPatchVnicIscsiA
 }
 
 type ApiPatchVnicIscsiBootPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *VnicApiService
+	moid                string
 	vnicIscsiBootPolicy *VnicIscsiBootPolicy
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;vnic.IscsiBootPolicy&#39; resource to update.
@@ -11643,6 +11800,7 @@ func (r ApiPatchVnicIscsiBootPolicyRequest) VnicIscsiBootPolicy(vnicIscsiBootPol
 	r.vnicIscsiBootPolicy = &vnicIscsiBootPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVnicIscsiBootPolicyRequest) IfMatch(ifMatch string) ApiPatchVnicIscsiBootPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -11663,8 +11821,8 @@ PatchVnicIscsiBootPolicy Update a 'vnic.IscsiBootPolicy' resource.
 func (a *VnicApiService) PatchVnicIscsiBootPolicy(ctx _context.Context, moid string) ApiPatchVnicIscsiBootPolicyRequest {
 	return ApiPatchVnicIscsiBootPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11779,13 +11937,13 @@ func (a *VnicApiService) PatchVnicIscsiBootPolicyExecute(r ApiPatchVnicIscsiBoot
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11802,11 +11960,11 @@ func (a *VnicApiService) PatchVnicIscsiBootPolicyExecute(r ApiPatchVnicIscsiBoot
 }
 
 type ApiPatchVnicIscsiStaticTargetPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *VnicApiService
+	moid                        string
 	vnicIscsiStaticTargetPolicy *VnicIscsiStaticTargetPolicy
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;vnic.IscsiStaticTargetPolicy&#39; resource to update.
@@ -11814,6 +11972,7 @@ func (r ApiPatchVnicIscsiStaticTargetPolicyRequest) VnicIscsiStaticTargetPolicy(
 	r.vnicIscsiStaticTargetPolicy = &vnicIscsiStaticTargetPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVnicIscsiStaticTargetPolicyRequest) IfMatch(ifMatch string) ApiPatchVnicIscsiStaticTargetPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -11834,8 +11993,8 @@ PatchVnicIscsiStaticTargetPolicy Update a 'vnic.IscsiStaticTargetPolicy' resourc
 func (a *VnicApiService) PatchVnicIscsiStaticTargetPolicy(ctx _context.Context, moid string) ApiPatchVnicIscsiStaticTargetPolicyRequest {
 	return ApiPatchVnicIscsiStaticTargetPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11950,13 +12109,13 @@ func (a *VnicApiService) PatchVnicIscsiStaticTargetPolicyExecute(r ApiPatchVnicI
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11973,11 +12132,11 @@ func (a *VnicApiService) PatchVnicIscsiStaticTargetPolicyExecute(r ApiPatchVnicI
 }
 
 type ApiPatchVnicLanConnectivityPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *VnicApiService
+	moid                      string
 	vnicLanConnectivityPolicy *VnicLanConnectivityPolicy
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;vnic.LanConnectivityPolicy&#39; resource to update.
@@ -11985,6 +12144,7 @@ func (r ApiPatchVnicLanConnectivityPolicyRequest) VnicLanConnectivityPolicy(vnic
 	r.vnicLanConnectivityPolicy = &vnicLanConnectivityPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVnicLanConnectivityPolicyRequest) IfMatch(ifMatch string) ApiPatchVnicLanConnectivityPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -12005,8 +12165,8 @@ PatchVnicLanConnectivityPolicy Update a 'vnic.LanConnectivityPolicy' resource.
 func (a *VnicApiService) PatchVnicLanConnectivityPolicy(ctx _context.Context, moid string) ApiPatchVnicLanConnectivityPolicyRequest {
 	return ApiPatchVnicLanConnectivityPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12121,13 +12281,13 @@ func (a *VnicApiService) PatchVnicLanConnectivityPolicyExecute(r ApiPatchVnicLan
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12144,11 +12304,11 @@ func (a *VnicApiService) PatchVnicLanConnectivityPolicyExecute(r ApiPatchVnicLan
 }
 
 type ApiPatchVnicSanConnectivityPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *VnicApiService
+	moid                      string
 	vnicSanConnectivityPolicy *VnicSanConnectivityPolicy
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;vnic.SanConnectivityPolicy&#39; resource to update.
@@ -12156,6 +12316,7 @@ func (r ApiPatchVnicSanConnectivityPolicyRequest) VnicSanConnectivityPolicy(vnic
 	r.vnicSanConnectivityPolicy = &vnicSanConnectivityPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVnicSanConnectivityPolicyRequest) IfMatch(ifMatch string) ApiPatchVnicSanConnectivityPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -12176,8 +12337,8 @@ PatchVnicSanConnectivityPolicy Update a 'vnic.SanConnectivityPolicy' resource.
 func (a *VnicApiService) PatchVnicSanConnectivityPolicy(ctx _context.Context, moid string) ApiPatchVnicSanConnectivityPolicyRequest {
 	return ApiPatchVnicSanConnectivityPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12292,13 +12453,13 @@ func (a *VnicApiService) PatchVnicSanConnectivityPolicyExecute(r ApiPatchVnicSan
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12315,11 +12476,11 @@ func (a *VnicApiService) PatchVnicSanConnectivityPolicyExecute(r ApiPatchVnicSan
 }
 
 type ApiUpdateVnicEthAdapterPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *VnicApiService
+	moid                 string
 	vnicEthAdapterPolicy *VnicEthAdapterPolicy
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;vnic.EthAdapterPolicy&#39; resource to update.
@@ -12327,6 +12488,7 @@ func (r ApiUpdateVnicEthAdapterPolicyRequest) VnicEthAdapterPolicy(vnicEthAdapte
 	r.vnicEthAdapterPolicy = &vnicEthAdapterPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVnicEthAdapterPolicyRequest) IfMatch(ifMatch string) ApiUpdateVnicEthAdapterPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -12347,8 +12509,8 @@ UpdateVnicEthAdapterPolicy Update a 'vnic.EthAdapterPolicy' resource.
 func (a *VnicApiService) UpdateVnicEthAdapterPolicy(ctx _context.Context, moid string) ApiUpdateVnicEthAdapterPolicyRequest {
 	return ApiUpdateVnicEthAdapterPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12463,13 +12625,13 @@ func (a *VnicApiService) UpdateVnicEthAdapterPolicyExecute(r ApiUpdateVnicEthAda
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12486,11 +12648,11 @@ func (a *VnicApiService) UpdateVnicEthAdapterPolicyExecute(r ApiUpdateVnicEthAda
 }
 
 type ApiUpdateVnicEthIfRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
-	vnicEthIf *VnicEthIf
-	ifMatch *string
+	moid       string
+	vnicEthIf  *VnicEthIf
+	ifMatch    *string
 }
 
 // The &#39;vnic.EthIf&#39; resource to update.
@@ -12498,6 +12660,7 @@ func (r ApiUpdateVnicEthIfRequest) VnicEthIf(vnicEthIf VnicEthIf) ApiUpdateVnicE
 	r.vnicEthIf = &vnicEthIf
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVnicEthIfRequest) IfMatch(ifMatch string) ApiUpdateVnicEthIfRequest {
 	r.ifMatch = &ifMatch
@@ -12518,8 +12681,8 @@ UpdateVnicEthIf Update a 'vnic.EthIf' resource.
 func (a *VnicApiService) UpdateVnicEthIf(ctx _context.Context, moid string) ApiUpdateVnicEthIfRequest {
 	return ApiUpdateVnicEthIfRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12634,13 +12797,13 @@ func (a *VnicApiService) UpdateVnicEthIfExecute(r ApiUpdateVnicEthIfRequest) (Vn
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12657,11 +12820,11 @@ func (a *VnicApiService) UpdateVnicEthIfExecute(r ApiUpdateVnicEthIfRequest) (Vn
 }
 
 type ApiUpdateVnicEthNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *VnicApiService
+	moid                 string
 	vnicEthNetworkPolicy *VnicEthNetworkPolicy
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;vnic.EthNetworkPolicy&#39; resource to update.
@@ -12669,6 +12832,7 @@ func (r ApiUpdateVnicEthNetworkPolicyRequest) VnicEthNetworkPolicy(vnicEthNetwor
 	r.vnicEthNetworkPolicy = &vnicEthNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVnicEthNetworkPolicyRequest) IfMatch(ifMatch string) ApiUpdateVnicEthNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -12689,8 +12853,8 @@ UpdateVnicEthNetworkPolicy Update a 'vnic.EthNetworkPolicy' resource.
 func (a *VnicApiService) UpdateVnicEthNetworkPolicy(ctx _context.Context, moid string) ApiUpdateVnicEthNetworkPolicyRequest {
 	return ApiUpdateVnicEthNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12805,13 +12969,13 @@ func (a *VnicApiService) UpdateVnicEthNetworkPolicyExecute(r ApiUpdateVnicEthNet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12828,11 +12992,11 @@ func (a *VnicApiService) UpdateVnicEthNetworkPolicyExecute(r ApiUpdateVnicEthNet
 }
 
 type ApiUpdateVnicEthQosPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *VnicApiService
+	moid             string
 	vnicEthQosPolicy *VnicEthQosPolicy
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;vnic.EthQosPolicy&#39; resource to update.
@@ -12840,6 +13004,7 @@ func (r ApiUpdateVnicEthQosPolicyRequest) VnicEthQosPolicy(vnicEthQosPolicy Vnic
 	r.vnicEthQosPolicy = &vnicEthQosPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVnicEthQosPolicyRequest) IfMatch(ifMatch string) ApiUpdateVnicEthQosPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -12860,8 +13025,8 @@ UpdateVnicEthQosPolicy Update a 'vnic.EthQosPolicy' resource.
 func (a *VnicApiService) UpdateVnicEthQosPolicy(ctx _context.Context, moid string) ApiUpdateVnicEthQosPolicyRequest {
 	return ApiUpdateVnicEthQosPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12976,13 +13141,13 @@ func (a *VnicApiService) UpdateVnicEthQosPolicyExecute(r ApiUpdateVnicEthQosPoli
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12999,11 +13164,11 @@ func (a *VnicApiService) UpdateVnicEthQosPolicyExecute(r ApiUpdateVnicEthQosPoli
 }
 
 type ApiUpdateVnicFcAdapterPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *VnicApiService
+	moid                string
 	vnicFcAdapterPolicy *VnicFcAdapterPolicy
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;vnic.FcAdapterPolicy&#39; resource to update.
@@ -13011,6 +13176,7 @@ func (r ApiUpdateVnicFcAdapterPolicyRequest) VnicFcAdapterPolicy(vnicFcAdapterPo
 	r.vnicFcAdapterPolicy = &vnicFcAdapterPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVnicFcAdapterPolicyRequest) IfMatch(ifMatch string) ApiUpdateVnicFcAdapterPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -13031,8 +13197,8 @@ UpdateVnicFcAdapterPolicy Update a 'vnic.FcAdapterPolicy' resource.
 func (a *VnicApiService) UpdateVnicFcAdapterPolicy(ctx _context.Context, moid string) ApiUpdateVnicFcAdapterPolicyRequest {
 	return ApiUpdateVnicFcAdapterPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13147,13 +13313,13 @@ func (a *VnicApiService) UpdateVnicFcAdapterPolicyExecute(r ApiUpdateVnicFcAdapt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13170,11 +13336,11 @@ func (a *VnicApiService) UpdateVnicFcAdapterPolicyExecute(r ApiUpdateVnicFcAdapt
 }
 
 type ApiUpdateVnicFcIfRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VnicApiService
-	moid string
-	vnicFcIf *VnicFcIf
-	ifMatch *string
+	moid       string
+	vnicFcIf   *VnicFcIf
+	ifMatch    *string
 }
 
 // The &#39;vnic.FcIf&#39; resource to update.
@@ -13182,6 +13348,7 @@ func (r ApiUpdateVnicFcIfRequest) VnicFcIf(vnicFcIf VnicFcIf) ApiUpdateVnicFcIfR
 	r.vnicFcIf = &vnicFcIf
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVnicFcIfRequest) IfMatch(ifMatch string) ApiUpdateVnicFcIfRequest {
 	r.ifMatch = &ifMatch
@@ -13202,8 +13369,8 @@ UpdateVnicFcIf Update a 'vnic.FcIf' resource.
 func (a *VnicApiService) UpdateVnicFcIf(ctx _context.Context, moid string) ApiUpdateVnicFcIfRequest {
 	return ApiUpdateVnicFcIfRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13318,13 +13485,13 @@ func (a *VnicApiService) UpdateVnicFcIfExecute(r ApiUpdateVnicFcIfRequest) (Vnic
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13341,11 +13508,11 @@ func (a *VnicApiService) UpdateVnicFcIfExecute(r ApiUpdateVnicFcIfRequest) (Vnic
 }
 
 type ApiUpdateVnicFcNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *VnicApiService
+	moid                string
 	vnicFcNetworkPolicy *VnicFcNetworkPolicy
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;vnic.FcNetworkPolicy&#39; resource to update.
@@ -13353,6 +13520,7 @@ func (r ApiUpdateVnicFcNetworkPolicyRequest) VnicFcNetworkPolicy(vnicFcNetworkPo
 	r.vnicFcNetworkPolicy = &vnicFcNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVnicFcNetworkPolicyRequest) IfMatch(ifMatch string) ApiUpdateVnicFcNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -13373,8 +13541,8 @@ UpdateVnicFcNetworkPolicy Update a 'vnic.FcNetworkPolicy' resource.
 func (a *VnicApiService) UpdateVnicFcNetworkPolicy(ctx _context.Context, moid string) ApiUpdateVnicFcNetworkPolicyRequest {
 	return ApiUpdateVnicFcNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13489,13 +13657,13 @@ func (a *VnicApiService) UpdateVnicFcNetworkPolicyExecute(r ApiUpdateVnicFcNetwo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13512,11 +13680,11 @@ func (a *VnicApiService) UpdateVnicFcNetworkPolicyExecute(r ApiUpdateVnicFcNetwo
 }
 
 type ApiUpdateVnicFcQosPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *VnicApiService
+	moid            string
 	vnicFcQosPolicy *VnicFcQosPolicy
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;vnic.FcQosPolicy&#39; resource to update.
@@ -13524,6 +13692,7 @@ func (r ApiUpdateVnicFcQosPolicyRequest) VnicFcQosPolicy(vnicFcQosPolicy VnicFcQ
 	r.vnicFcQosPolicy = &vnicFcQosPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVnicFcQosPolicyRequest) IfMatch(ifMatch string) ApiUpdateVnicFcQosPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -13544,8 +13713,8 @@ UpdateVnicFcQosPolicy Update a 'vnic.FcQosPolicy' resource.
 func (a *VnicApiService) UpdateVnicFcQosPolicy(ctx _context.Context, moid string) ApiUpdateVnicFcQosPolicyRequest {
 	return ApiUpdateVnicFcQosPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13660,13 +13829,13 @@ func (a *VnicApiService) UpdateVnicFcQosPolicyExecute(r ApiUpdateVnicFcQosPolicy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13683,11 +13852,11 @@ func (a *VnicApiService) UpdateVnicFcQosPolicyExecute(r ApiUpdateVnicFcQosPolicy
 }
 
 type ApiUpdateVnicIscsiAdapterPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *VnicApiService
+	moid                   string
 	vnicIscsiAdapterPolicy *VnicIscsiAdapterPolicy
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;vnic.IscsiAdapterPolicy&#39; resource to update.
@@ -13695,6 +13864,7 @@ func (r ApiUpdateVnicIscsiAdapterPolicyRequest) VnicIscsiAdapterPolicy(vnicIscsi
 	r.vnicIscsiAdapterPolicy = &vnicIscsiAdapterPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVnicIscsiAdapterPolicyRequest) IfMatch(ifMatch string) ApiUpdateVnicIscsiAdapterPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -13715,8 +13885,8 @@ UpdateVnicIscsiAdapterPolicy Update a 'vnic.IscsiAdapterPolicy' resource.
 func (a *VnicApiService) UpdateVnicIscsiAdapterPolicy(ctx _context.Context, moid string) ApiUpdateVnicIscsiAdapterPolicyRequest {
 	return ApiUpdateVnicIscsiAdapterPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13831,13 +14001,13 @@ func (a *VnicApiService) UpdateVnicIscsiAdapterPolicyExecute(r ApiUpdateVnicIscs
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13854,11 +14024,11 @@ func (a *VnicApiService) UpdateVnicIscsiAdapterPolicyExecute(r ApiUpdateVnicIscs
 }
 
 type ApiUpdateVnicIscsiBootPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *VnicApiService
+	moid                string
 	vnicIscsiBootPolicy *VnicIscsiBootPolicy
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;vnic.IscsiBootPolicy&#39; resource to update.
@@ -13866,6 +14036,7 @@ func (r ApiUpdateVnicIscsiBootPolicyRequest) VnicIscsiBootPolicy(vnicIscsiBootPo
 	r.vnicIscsiBootPolicy = &vnicIscsiBootPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVnicIscsiBootPolicyRequest) IfMatch(ifMatch string) ApiUpdateVnicIscsiBootPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -13886,8 +14057,8 @@ UpdateVnicIscsiBootPolicy Update a 'vnic.IscsiBootPolicy' resource.
 func (a *VnicApiService) UpdateVnicIscsiBootPolicy(ctx _context.Context, moid string) ApiUpdateVnicIscsiBootPolicyRequest {
 	return ApiUpdateVnicIscsiBootPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14002,13 +14173,13 @@ func (a *VnicApiService) UpdateVnicIscsiBootPolicyExecute(r ApiUpdateVnicIscsiBo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14025,11 +14196,11 @@ func (a *VnicApiService) UpdateVnicIscsiBootPolicyExecute(r ApiUpdateVnicIscsiBo
 }
 
 type ApiUpdateVnicIscsiStaticTargetPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *VnicApiService
+	moid                        string
 	vnicIscsiStaticTargetPolicy *VnicIscsiStaticTargetPolicy
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;vnic.IscsiStaticTargetPolicy&#39; resource to update.
@@ -14037,6 +14208,7 @@ func (r ApiUpdateVnicIscsiStaticTargetPolicyRequest) VnicIscsiStaticTargetPolicy
 	r.vnicIscsiStaticTargetPolicy = &vnicIscsiStaticTargetPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVnicIscsiStaticTargetPolicyRequest) IfMatch(ifMatch string) ApiUpdateVnicIscsiStaticTargetPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -14057,8 +14229,8 @@ UpdateVnicIscsiStaticTargetPolicy Update a 'vnic.IscsiStaticTargetPolicy' resour
 func (a *VnicApiService) UpdateVnicIscsiStaticTargetPolicy(ctx _context.Context, moid string) ApiUpdateVnicIscsiStaticTargetPolicyRequest {
 	return ApiUpdateVnicIscsiStaticTargetPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14173,13 +14345,13 @@ func (a *VnicApiService) UpdateVnicIscsiStaticTargetPolicyExecute(r ApiUpdateVni
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14196,11 +14368,11 @@ func (a *VnicApiService) UpdateVnicIscsiStaticTargetPolicyExecute(r ApiUpdateVni
 }
 
 type ApiUpdateVnicLanConnectivityPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *VnicApiService
+	moid                      string
 	vnicLanConnectivityPolicy *VnicLanConnectivityPolicy
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;vnic.LanConnectivityPolicy&#39; resource to update.
@@ -14208,6 +14380,7 @@ func (r ApiUpdateVnicLanConnectivityPolicyRequest) VnicLanConnectivityPolicy(vni
 	r.vnicLanConnectivityPolicy = &vnicLanConnectivityPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVnicLanConnectivityPolicyRequest) IfMatch(ifMatch string) ApiUpdateVnicLanConnectivityPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -14228,8 +14401,8 @@ UpdateVnicLanConnectivityPolicy Update a 'vnic.LanConnectivityPolicy' resource.
 func (a *VnicApiService) UpdateVnicLanConnectivityPolicy(ctx _context.Context, moid string) ApiUpdateVnicLanConnectivityPolicyRequest {
 	return ApiUpdateVnicLanConnectivityPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14344,13 +14517,13 @@ func (a *VnicApiService) UpdateVnicLanConnectivityPolicyExecute(r ApiUpdateVnicL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14367,11 +14540,11 @@ func (a *VnicApiService) UpdateVnicLanConnectivityPolicyExecute(r ApiUpdateVnicL
 }
 
 type ApiUpdateVnicSanConnectivityPolicyRequest struct {
-	ctx _context.Context
-	ApiService *VnicApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *VnicApiService
+	moid                      string
 	vnicSanConnectivityPolicy *VnicSanConnectivityPolicy
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;vnic.SanConnectivityPolicy&#39; resource to update.
@@ -14379,6 +14552,7 @@ func (r ApiUpdateVnicSanConnectivityPolicyRequest) VnicSanConnectivityPolicy(vni
 	r.vnicSanConnectivityPolicy = &vnicSanConnectivityPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVnicSanConnectivityPolicyRequest) IfMatch(ifMatch string) ApiUpdateVnicSanConnectivityPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -14399,8 +14573,8 @@ UpdateVnicSanConnectivityPolicy Update a 'vnic.SanConnectivityPolicy' resource.
 func (a *VnicApiService) UpdateVnicSanConnectivityPolicy(ctx _context.Context, moid string) ApiUpdateVnicSanConnectivityPolicyRequest {
 	return ApiUpdateVnicSanConnectivityPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14515,13 +14689,13 @@ func (a *VnicApiService) UpdateVnicSanConnectivityPolicyExecute(r ApiUpdateVnicS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

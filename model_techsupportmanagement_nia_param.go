@@ -29,9 +29,9 @@ type TechsupportmanagementNiaParam struct {
 	// Filename specifies an individual filename to collect from the endpoint.
 	Filename *string `json:"Filename,omitempty"`
 	// ForceFresh controls whether to return pre-collected files or force the collection of new files.
-	ForceFresh *bool `json:"ForceFresh,omitempty"`
-	Pids []string `json:"Pids,omitempty"`
-	SerialNumbers []string `json:"SerialNumbers,omitempty"`
+	ForceFresh           *bool    `json:"ForceFresh,omitempty"`
+	Pids                 []string `json:"Pids,omitempty"`
+	SerialNumbers        []string `json:"SerialNumbers,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *TechsupportmanagementNiaParam) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TechsupportmanagementNiaParam) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *TechsupportmanagementNiaParam) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TechsupportmanagementNiaParam) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -210,7 +210,7 @@ func (o *TechsupportmanagementNiaParam) SetForceFresh(v bool) {
 
 // GetPids returns the Pids field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TechsupportmanagementNiaParam) GetPids() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *TechsupportmanagementNiaParam) SetPids(v []string) {
 
 // GetSerialNumbers returns the SerialNumbers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TechsupportmanagementNiaParam) GetSerialNumbers() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -324,8 +324,8 @@ func (o *TechsupportmanagementNiaParam) UnmarshalJSON(bytes []byte) (err error) 
 		// Filename specifies an individual filename to collect from the endpoint.
 		Filename *string `json:"Filename,omitempty"`
 		// ForceFresh controls whether to return pre-collected files or force the collection of new files.
-		ForceFresh *bool `json:"ForceFresh,omitempty"`
-		Pids []string `json:"Pids,omitempty"`
+		ForceFresh    *bool    `json:"ForceFresh,omitempty"`
+		Pids          []string `json:"Pids,omitempty"`
 		SerialNumbers []string `json:"SerialNumbers,omitempty"`
 	}
 
@@ -425,5 +425,3 @@ func (v *NullableTechsupportmanagementNiaParam) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

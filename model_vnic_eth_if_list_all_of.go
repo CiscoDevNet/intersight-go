@@ -20,7 +20,7 @@ type VnicEthIfListAllOf struct {
 	// The total number of 'vnic.EthIf' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'vnic.EthIf' resources matching the request.
-	Results []VnicEthIf `json:"Results,omitempty"`
+	Results              []VnicEthIf `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *VnicEthIfListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VnicEthIfListAllOf) GetResults() []VnicEthIf {
-	if o == nil  {
+	if o == nil {
 		var ret []VnicEthIf
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableVnicEthIfListAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

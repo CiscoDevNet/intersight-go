@@ -77,26 +77,26 @@ type StorageController struct {
 	// The total configured cache memory, measured in MiB.
 	TotalCacheSize *int64 `json:"TotalCacheSize,omitempty"`
 	// Controller types are Raid, FlexFlash.
-	Type *string `json:"Type,omitempty"`
-	ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
-	ComputeBoard *ComputeBoardRelationship `json:"ComputeBoard,omitempty"`
+	Type            *string                      `json:"Type,omitempty"`
+	ComputeBlade    *ComputeBladeRelationship    `json:"ComputeBlade,omitempty"`
+	ComputeBoard    *ComputeBoardRelationship    `json:"ComputeBoard,omitempty"`
 	ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
 	// An array of relationships to storageDiskGroup resources.
 	DiskGroup []StorageDiskGroupRelationship `json:"DiskGroup,omitempty"`
 	// An array of relationships to storageDiskSlot resources.
-	DiskSlot []StorageDiskSlotRelationship `json:"DiskSlot,omitempty"`
+	DiskSlot            []StorageDiskSlotRelationship    `json:"DiskSlot,omitempty"`
 	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
 	// An array of relationships to storagePhysicalDiskExtension resources.
 	PhysicalDiskExtensions []StoragePhysicalDiskExtensionRelationship `json:"PhysicalDiskExtensions,omitempty"`
 	// An array of relationships to storagePhysicalDisk resources.
-	PhysicalDisks []StoragePhysicalDiskRelationship `json:"PhysicalDisks,omitempty"`
+	PhysicalDisks    []StoragePhysicalDiskRelationship    `json:"PhysicalDisks,omitempty"`
 	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to firmwareRunningFirmware resources.
 	RunningFirmware []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
 	// An array of relationships to storageVirtualDriveExtension resources.
 	VirtualDriveExtensions []StorageVirtualDriveExtensionRelationship `json:"VirtualDriveExtensions,omitempty"`
 	// An array of relationships to storageVirtualDrive resources.
-	VirtualDrives []StorageVirtualDriveRelationship `json:"VirtualDrives,omitempty"`
+	VirtualDrives        []StorageVirtualDriveRelationship `json:"VirtualDrives,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -138,7 +138,7 @@ func (o *StorageController) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageController) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -162,7 +162,7 @@ func (o *StorageController) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageController) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -1135,7 +1135,7 @@ func (o *StorageController) SetComputeRackUnit(v ComputeRackUnitRelationship) {
 
 // GetDiskGroup returns the DiskGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageController) GetDiskGroup() []StorageDiskGroupRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageDiskGroupRelationship
 		return ret
 	}
@@ -1168,7 +1168,7 @@ func (o *StorageController) SetDiskGroup(v []StorageDiskGroupRelationship) {
 
 // GetDiskSlot returns the DiskSlot field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageController) GetDiskSlot() []StorageDiskSlotRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageDiskSlotRelationship
 		return ret
 	}
@@ -1233,7 +1233,7 @@ func (o *StorageController) SetInventoryDeviceInfo(v InventoryDeviceInfoRelation
 
 // GetPhysicalDiskExtensions returns the PhysicalDiskExtensions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageController) GetPhysicalDiskExtensions() []StoragePhysicalDiskExtensionRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StoragePhysicalDiskExtensionRelationship
 		return ret
 	}
@@ -1266,7 +1266,7 @@ func (o *StorageController) SetPhysicalDiskExtensions(v []StoragePhysicalDiskExt
 
 // GetPhysicalDisks returns the PhysicalDisks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageController) GetPhysicalDisks() []StoragePhysicalDiskRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StoragePhysicalDiskRelationship
 		return ret
 	}
@@ -1331,7 +1331,7 @@ func (o *StorageController) SetRegisteredDevice(v AssetDeviceRegistrationRelatio
 
 // GetRunningFirmware returns the RunningFirmware field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageController) GetRunningFirmware() []FirmwareRunningFirmwareRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareRunningFirmwareRelationship
 		return ret
 	}
@@ -1364,7 +1364,7 @@ func (o *StorageController) SetRunningFirmware(v []FirmwareRunningFirmwareRelati
 
 // GetVirtualDriveExtensions returns the VirtualDriveExtensions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageController) GetVirtualDriveExtensions() []StorageVirtualDriveExtensionRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageVirtualDriveExtensionRelationship
 		return ret
 	}
@@ -1397,7 +1397,7 @@ func (o *StorageController) SetVirtualDriveExtensions(v []StorageVirtualDriveExt
 
 // GetVirtualDrives returns the VirtualDrives field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageController) GetVirtualDrives() []StorageVirtualDriveRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageVirtualDriveRelationship
 		return ret
 	}
@@ -1628,19 +1628,19 @@ func (o *StorageController) UnmarshalJSON(bytes []byte) (err error) {
 		// The total configured cache memory, measured in MiB.
 		TotalCacheSize *int64 `json:"TotalCacheSize,omitempty"`
 		// Controller types are Raid, FlexFlash.
-		Type *string `json:"Type,omitempty"`
-		ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
-		ComputeBoard *ComputeBoardRelationship `json:"ComputeBoard,omitempty"`
+		Type            *string                      `json:"Type,omitempty"`
+		ComputeBlade    *ComputeBladeRelationship    `json:"ComputeBlade,omitempty"`
+		ComputeBoard    *ComputeBoardRelationship    `json:"ComputeBoard,omitempty"`
 		ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
 		// An array of relationships to storageDiskGroup resources.
 		DiskGroup []StorageDiskGroupRelationship `json:"DiskGroup,omitempty"`
 		// An array of relationships to storageDiskSlot resources.
-		DiskSlot []StorageDiskSlotRelationship `json:"DiskSlot,omitempty"`
+		DiskSlot            []StorageDiskSlotRelationship    `json:"DiskSlot,omitempty"`
 		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
 		// An array of relationships to storagePhysicalDiskExtension resources.
 		PhysicalDiskExtensions []StoragePhysicalDiskExtensionRelationship `json:"PhysicalDiskExtensions,omitempty"`
 		// An array of relationships to storagePhysicalDisk resources.
-		PhysicalDisks []StoragePhysicalDiskRelationship `json:"PhysicalDisks,omitempty"`
+		PhysicalDisks    []StoragePhysicalDiskRelationship    `json:"PhysicalDisks,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 		// An array of relationships to firmwareRunningFirmware resources.
 		RunningFirmware []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
@@ -1814,5 +1814,3 @@ func (v *NullableStorageController) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

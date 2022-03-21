@@ -19,31 +19,30 @@ import (
 // StoragePureHostResponse - The response body of a HTTP GET request for the 'storage.PureHost' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'storage.PureHost' resources.
 type StoragePureHostResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
-	StoragePureHostList *StoragePureHostList
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
+	StoragePureHostList  *StoragePureHostList
 }
 
 // MoAggregateTransformAsStoragePureHostResponse is a convenience function that returns MoAggregateTransform wrapped in StoragePureHostResponse
 func MoAggregateTransformAsStoragePureHostResponse(v *MoAggregateTransform) StoragePureHostResponse {
-	return StoragePureHostResponse{ MoAggregateTransform: v}
+	return StoragePureHostResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsStoragePureHostResponse is a convenience function that returns MoDocumentCount wrapped in StoragePureHostResponse
 func MoDocumentCountAsStoragePureHostResponse(v *MoDocumentCount) StoragePureHostResponse {
-	return StoragePureHostResponse{ MoDocumentCount: v}
+	return StoragePureHostResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsStoragePureHostResponse is a convenience function that returns MoTagSummary wrapped in StoragePureHostResponse
 func MoTagSummaryAsStoragePureHostResponse(v *MoTagSummary) StoragePureHostResponse {
-	return StoragePureHostResponse{ MoTagSummary: v}
+	return StoragePureHostResponse{MoTagSummary: v}
 }
 
 // StoragePureHostListAsStoragePureHostResponse is a convenience function that returns StoragePureHostList wrapped in StoragePureHostResponse
 func StoragePureHostListAsStoragePureHostResponse(v *StoragePureHostList) StoragePureHostResponse {
-	return StoragePureHostResponse{ StoragePureHostList: v}
+	return StoragePureHostResponse{StoragePureHostList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StoragePureHostResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src StoragePureHostResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StoragePureHostResponse) GetActualInstance() (interface{}) {
+func (obj *StoragePureHostResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableStoragePureHostResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

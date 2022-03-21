@@ -24,18 +24,18 @@ type StorageFlexFlashControllerAllOf struct {
 	// State of the Flex Flash Storage Controller.
 	ControllerState *string `json:"ControllerState,omitempty"`
 	// Identifier for the Flex Flash Storage Controller.
-	FfControllerId *string `json:"FfControllerId,omitempty"`
-	ComputeBoard *ComputeBoardRelationship `json:"ComputeBoard,omitempty"`
+	FfControllerId *string                   `json:"FfControllerId,omitempty"`
+	ComputeBoard   *ComputeBoardRelationship `json:"ComputeBoard,omitempty"`
 	// An array of relationships to storageFlexFlashControllerProps resources.
 	FlexFlashControllerProps []StorageFlexFlashControllerPropsRelationship `json:"FlexFlashControllerProps,omitempty"`
 	// An array of relationships to storageFlexFlashPhysicalDrive resources.
 	FlexFlashPhysicalDrives []StorageFlexFlashPhysicalDriveRelationship `json:"FlexFlashPhysicalDrives,omitempty"`
 	// An array of relationships to storageFlexFlashVirtualDrive resources.
 	FlexFlashVirtualDrives []StorageFlexFlashVirtualDriveRelationship `json:"FlexFlashVirtualDrives,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	InventoryDeviceInfo    *InventoryDeviceInfoRelationship           `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice       *AssetDeviceRegistrationRelationship       `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to firmwareRunningFirmware resources.
-	RunningFirmware []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
+	RunningFirmware      []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *StorageFlexFlashControllerAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageFlexFlashControllerAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *StorageFlexFlashControllerAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageFlexFlashControllerAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -210,7 +210,7 @@ func (o *StorageFlexFlashControllerAllOf) SetComputeBoard(v ComputeBoardRelation
 
 // GetFlexFlashControllerProps returns the FlexFlashControllerProps field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageFlexFlashControllerAllOf) GetFlexFlashControllerProps() []StorageFlexFlashControllerPropsRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageFlexFlashControllerPropsRelationship
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *StorageFlexFlashControllerAllOf) SetFlexFlashControllerProps(v []Storag
 
 // GetFlexFlashPhysicalDrives returns the FlexFlashPhysicalDrives field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageFlexFlashControllerAllOf) GetFlexFlashPhysicalDrives() []StorageFlexFlashPhysicalDriveRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageFlexFlashPhysicalDriveRelationship
 		return ret
 	}
@@ -276,7 +276,7 @@ func (o *StorageFlexFlashControllerAllOf) SetFlexFlashPhysicalDrives(v []Storage
 
 // GetFlexFlashVirtualDrives returns the FlexFlashVirtualDrives field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageFlexFlashControllerAllOf) GetFlexFlashVirtualDrives() []StorageFlexFlashVirtualDriveRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageFlexFlashVirtualDriveRelationship
 		return ret
 	}
@@ -373,7 +373,7 @@ func (o *StorageFlexFlashControllerAllOf) SetRegisteredDevice(v AssetDeviceRegis
 
 // GetRunningFirmware returns the RunningFirmware field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageFlexFlashControllerAllOf) GetRunningFirmware() []FirmwareRunningFirmwareRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareRunningFirmwareRelationship
 		return ret
 	}
@@ -509,5 +509,3 @@ func (v *NullableStorageFlexFlashControllerAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

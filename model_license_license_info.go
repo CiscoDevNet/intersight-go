@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // LicenseLicenseInfo License state information for a specific license entitlement. Essentials license entitlement is supported currently. licenseState attribute is used for license enforcement. When license state is one of TrialPeriod, Compliance, or OutOfCompliance, the feature set defined for the license entitlement is granted to the customer.
@@ -52,8 +52,8 @@ type LicenseLicenseInfo struct {
 	// The date and time when the licenseState entered the TrialPeriod or OutOfCompliance state.
 	StartTime *time.Time `json:"StartTime,omitempty"`
 	// The administrative state of the trial license. When the LicenseState is set to 'NotLicensed', 'trialAdmin' can be set to true to start the trial period, i.e. licenseState is set to be TrialPeriod.
-	TrialAdmin *bool `json:"TrialAdmin,omitempty"`
-	AccountLicenseData *LicenseAccountLicenseDataRelationship `json:"AccountLicenseData,omitempty"`
+	TrialAdmin           *bool                                  `json:"TrialAdmin,omitempty"`
+	AccountLicenseData   *LicenseAccountLicenseDataRelationship `json:"AccountLicenseData,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -95,7 +95,7 @@ func (o *LicenseLicenseInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *LicenseLicenseInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -119,7 +119,7 @@ func (o *LicenseLicenseInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *LicenseLicenseInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -712,7 +712,7 @@ func (o *LicenseLicenseInfo) UnmarshalJSON(bytes []byte) (err error) {
 		// The date and time when the licenseState entered the TrialPeriod or OutOfCompliance state.
 		StartTime *time.Time `json:"StartTime,omitempty"`
 		// The administrative state of the trial license. When the LicenseState is set to 'NotLicensed', 'trialAdmin' can be set to true to start the trial period, i.e. licenseState is set to be TrialPeriod.
-		TrialAdmin *bool `json:"TrialAdmin,omitempty"`
+		TrialAdmin         *bool                                  `json:"TrialAdmin,omitempty"`
 		AccountLicenseData *LicenseAccountLicenseDataRelationship `json:"AccountLicenseData,omitempty"`
 	}
 
@@ -832,5 +832,3 @@ func (v *NullableLicenseLicenseInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -24,9 +24,9 @@ type SoftwarerepositoryCatalogAllOf struct {
 	// The status of the image catalog synchronization operation.
 	IsImagePullFailure *bool `json:"IsImagePullFailure,omitempty"`
 	// The name of the catalog. The names are populated and predefined during MO creation.
-	Name *string `json:"Name,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	System *IamSystemRelationship `json:"System,omitempty"`
+	Name                 *string                               `json:"Name,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	System               *IamSystemRelationship                `json:"System,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *SoftwarerepositoryCatalogAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryCatalogAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *SoftwarerepositoryCatalogAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryCatalogAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -316,5 +316,3 @@ func (v *NullableSoftwarerepositoryCatalogAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

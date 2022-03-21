@@ -28,9 +28,9 @@ type ConvergedinfraHealthCheckExecutionAllOf struct {
 	// Status of the health check execution. * `Unknown` - Indicates that the health heck execution status is unknown. This mostly happens in case where health check could not be performed due to connectivity issues. * `Succeeded` - Indicates that the health check execution has succeeded. * `Failed` - Indicates that the health check execution has failed. * `Timedout` - Indicates that the health check execution timed out before completion.
 	Status *string `json:"Status,omitempty"`
 	// A brief summary of health check results.
-	Summary *string `json:"Summary,omitempty"`
+	Summary               *string                                          `json:"Summary,omitempty"`
 	HealthCheckDefinition *ConvergedinfraHealthCheckDefinitionRelationship `json:"HealthCheckDefinition,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties  map[string]interface{}
 }
 
 type _ConvergedinfraHealthCheckExecutionAllOf ConvergedinfraHealthCheckExecutionAllOf
@@ -71,7 +71,7 @@ func (o *ConvergedinfraHealthCheckExecutionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConvergedinfraHealthCheckExecutionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *ConvergedinfraHealthCheckExecutionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConvergedinfraHealthCheckExecutionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -355,5 +355,3 @@ func (v *NullableConvergedinfraHealthCheckExecutionAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

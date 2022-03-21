@@ -19,19 +19,18 @@ import (
 // IamIdpReferenceRelationship - A relationship to the 'iam.IdpReference' resource, or the expanded 'iam.IdpReference' resource, or the 'null' value.
 type IamIdpReferenceRelationship struct {
 	IamIdpReference *IamIdpReference
-	MoMoRef *MoMoRef
+	MoMoRef         *MoMoRef
 }
 
 // IamIdpReferenceAsIamIdpReferenceRelationship is a convenience function that returns IamIdpReference wrapped in IamIdpReferenceRelationship
 func IamIdpReferenceAsIamIdpReferenceRelationship(v *IamIdpReference) IamIdpReferenceRelationship {
-	return IamIdpReferenceRelationship{ IamIdpReference: v}
+	return IamIdpReferenceRelationship{IamIdpReference: v}
 }
 
 // MoMoRefAsIamIdpReferenceRelationship is a convenience function that returns MoMoRef wrapped in IamIdpReferenceRelationship
 func MoMoRefAsIamIdpReferenceRelationship(v *MoMoRef) IamIdpReferenceRelationship {
-	return IamIdpReferenceRelationship{ MoMoRef: v}
+	return IamIdpReferenceRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamIdpReferenceRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamIdpReferenceRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamIdpReferenceRelationship) GetActualInstance() (interface{}) {
+func (obj *IamIdpReferenceRelationship) GetActualInstance() interface{} {
 	if obj.IamIdpReference != nil {
 		return obj.IamIdpReference
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamIdpReferenceRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

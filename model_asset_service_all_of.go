@@ -20,8 +20,8 @@ type AssetServiceAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
-	Options NullableAssetServiceOptions `json:"Options,omitempty"`
+	ObjectType           string                      `json:"ObjectType"`
+	Options              NullableAssetServiceOptions `json:"Options,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -59,7 +59,7 @@ func (o *AssetServiceAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetServiceAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -83,7 +83,7 @@ func (o *AssetServiceAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetServiceAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -107,7 +107,7 @@ func (o *AssetServiceAllOf) GetOptions() AssetServiceOptions {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetServiceAllOf) GetOptionsOk() (*AssetServiceOptions, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Options.Get(), o.Options.IsSet()
@@ -126,6 +126,7 @@ func (o *AssetServiceAllOf) HasOptions() bool {
 func (o *AssetServiceAllOf) SetOptions(v AssetServiceOptions) {
 	o.Options.Set(&v)
 }
+
 // SetOptionsNil sets the value for Options to be an explicit nil
 func (o *AssetServiceAllOf) SetOptionsNil() {
 	o.Options.Set(nil)
@@ -209,5 +210,3 @@ func (v *NullableAssetServiceAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

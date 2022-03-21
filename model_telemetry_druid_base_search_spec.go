@@ -18,7 +18,7 @@ import (
 // TelemetryDruidBaseSearchSpec The base structure for all Druid search specifications.
 type TelemetryDruidBaseSearchSpec struct {
 	// null
-	Type string `json:"type"`
+	Type                 string `json:"type"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ func (o *TelemetryDruidBaseSearchSpec) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidBaseSearchSpec) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -131,5 +131,3 @@ func (v *NullableTelemetryDruidBaseSearchSpec) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

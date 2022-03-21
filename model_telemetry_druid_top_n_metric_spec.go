@@ -19,25 +19,24 @@ import (
 // TelemetryDruidTopNMetricSpec - A Druid TopN metric spec.
 type TelemetryDruidTopNMetricSpec struct {
 	TelemetryDruidDimensionTopNMetricSpec *TelemetryDruidDimensionTopNMetricSpec
-	TelemetryDruidInvertedTopNMetricSpec *TelemetryDruidInvertedTopNMetricSpec
-	TelemetryDruidNumericTopNMetricSpec *TelemetryDruidNumericTopNMetricSpec
+	TelemetryDruidInvertedTopNMetricSpec  *TelemetryDruidInvertedTopNMetricSpec
+	TelemetryDruidNumericTopNMetricSpec   *TelemetryDruidNumericTopNMetricSpec
 }
 
 // TelemetryDruidDimensionTopNMetricSpecAsTelemetryDruidTopNMetricSpec is a convenience function that returns TelemetryDruidDimensionTopNMetricSpec wrapped in TelemetryDruidTopNMetricSpec
 func TelemetryDruidDimensionTopNMetricSpecAsTelemetryDruidTopNMetricSpec(v *TelemetryDruidDimensionTopNMetricSpec) TelemetryDruidTopNMetricSpec {
-	return TelemetryDruidTopNMetricSpec{ TelemetryDruidDimensionTopNMetricSpec: v}
+	return TelemetryDruidTopNMetricSpec{TelemetryDruidDimensionTopNMetricSpec: v}
 }
 
 // TelemetryDruidInvertedTopNMetricSpecAsTelemetryDruidTopNMetricSpec is a convenience function that returns TelemetryDruidInvertedTopNMetricSpec wrapped in TelemetryDruidTopNMetricSpec
 func TelemetryDruidInvertedTopNMetricSpecAsTelemetryDruidTopNMetricSpec(v *TelemetryDruidInvertedTopNMetricSpec) TelemetryDruidTopNMetricSpec {
-	return TelemetryDruidTopNMetricSpec{ TelemetryDruidInvertedTopNMetricSpec: v}
+	return TelemetryDruidTopNMetricSpec{TelemetryDruidInvertedTopNMetricSpec: v}
 }
 
 // TelemetryDruidNumericTopNMetricSpecAsTelemetryDruidTopNMetricSpec is a convenience function that returns TelemetryDruidNumericTopNMetricSpec wrapped in TelemetryDruidTopNMetricSpec
 func TelemetryDruidNumericTopNMetricSpecAsTelemetryDruidTopNMetricSpec(v *TelemetryDruidNumericTopNMetricSpec) TelemetryDruidTopNMetricSpec {
-	return TelemetryDruidTopNMetricSpec{ TelemetryDruidNumericTopNMetricSpec: v}
+	return TelemetryDruidTopNMetricSpec{TelemetryDruidNumericTopNMetricSpec: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *TelemetryDruidTopNMetricSpec) UnmarshalJSON(data []byte) error {
@@ -142,7 +141,7 @@ func (src TelemetryDruidTopNMetricSpec) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *TelemetryDruidTopNMetricSpec) GetActualInstance() (interface{}) {
+func (obj *TelemetryDruidTopNMetricSpec) GetActualInstance() interface{} {
 	if obj.TelemetryDruidDimensionTopNMetricSpec != nil {
 		return obj.TelemetryDruidDimensionTopNMetricSpec
 	}
@@ -194,5 +193,3 @@ func (v *NullableTelemetryDruidTopNMetricSpec) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

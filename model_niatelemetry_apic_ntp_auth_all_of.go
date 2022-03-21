@@ -30,8 +30,8 @@ type NiatelemetryApicNtpAuthAllOf struct {
 	// Version of record being pushed. This determines what was the API version for data available from the device.
 	RecordVersion *string `json:"RecordVersion,omitempty"`
 	// Name of the APIC site from which this data is being collected.
-	SiteName *string `json:"SiteName,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SiteName             *string                              `json:"SiteName,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *NiatelemetryApicNtpAuthAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryApicNtpAuthAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *NiatelemetryApicNtpAuthAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryApicNtpAuthAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -393,5 +393,3 @@ func (v *NullableNiatelemetryApicNtpAuthAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

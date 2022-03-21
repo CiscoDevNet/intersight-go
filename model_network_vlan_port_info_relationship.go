@@ -18,20 +18,19 @@ import (
 
 // NetworkVlanPortInfoRelationship - A relationship to the 'network.VlanPortInfo' resource, or the expanded 'network.VlanPortInfo' resource, or the 'null' value.
 type NetworkVlanPortInfoRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 	NetworkVlanPortInfo *NetworkVlanPortInfo
 }
 
 // MoMoRefAsNetworkVlanPortInfoRelationship is a convenience function that returns MoMoRef wrapped in NetworkVlanPortInfoRelationship
 func MoMoRefAsNetworkVlanPortInfoRelationship(v *MoMoRef) NetworkVlanPortInfoRelationship {
-	return NetworkVlanPortInfoRelationship{ MoMoRef: v}
+	return NetworkVlanPortInfoRelationship{MoMoRef: v}
 }
 
 // NetworkVlanPortInfoAsNetworkVlanPortInfoRelationship is a convenience function that returns NetworkVlanPortInfo wrapped in NetworkVlanPortInfoRelationship
 func NetworkVlanPortInfoAsNetworkVlanPortInfoRelationship(v *NetworkVlanPortInfo) NetworkVlanPortInfoRelationship {
-	return NetworkVlanPortInfoRelationship{ NetworkVlanPortInfo: v}
+	return NetworkVlanPortInfoRelationship{NetworkVlanPortInfo: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NetworkVlanPortInfoRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src NetworkVlanPortInfoRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NetworkVlanPortInfoRelationship) GetActualInstance() (interface{}) {
+func (obj *NetworkVlanPortInfoRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableNetworkVlanPortInfoRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

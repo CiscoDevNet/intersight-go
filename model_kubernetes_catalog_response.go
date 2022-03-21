@@ -19,31 +19,30 @@ import (
 // KubernetesCatalogResponse - The response body of a HTTP GET request for the 'kubernetes.Catalog' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'kubernetes.Catalog' resources.
 type KubernetesCatalogResponse struct {
 	KubernetesCatalogList *KubernetesCatalogList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform  *MoAggregateTransform
+	MoDocumentCount       *MoDocumentCount
+	MoTagSummary          *MoTagSummary
 }
 
 // KubernetesCatalogListAsKubernetesCatalogResponse is a convenience function that returns KubernetesCatalogList wrapped in KubernetesCatalogResponse
 func KubernetesCatalogListAsKubernetesCatalogResponse(v *KubernetesCatalogList) KubernetesCatalogResponse {
-	return KubernetesCatalogResponse{ KubernetesCatalogList: v}
+	return KubernetesCatalogResponse{KubernetesCatalogList: v}
 }
 
 // MoAggregateTransformAsKubernetesCatalogResponse is a convenience function that returns MoAggregateTransform wrapped in KubernetesCatalogResponse
 func MoAggregateTransformAsKubernetesCatalogResponse(v *MoAggregateTransform) KubernetesCatalogResponse {
-	return KubernetesCatalogResponse{ MoAggregateTransform: v}
+	return KubernetesCatalogResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsKubernetesCatalogResponse is a convenience function that returns MoDocumentCount wrapped in KubernetesCatalogResponse
 func MoDocumentCountAsKubernetesCatalogResponse(v *MoDocumentCount) KubernetesCatalogResponse {
-	return KubernetesCatalogResponse{ MoDocumentCount: v}
+	return KubernetesCatalogResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsKubernetesCatalogResponse is a convenience function that returns MoTagSummary wrapped in KubernetesCatalogResponse
 func MoTagSummaryAsKubernetesCatalogResponse(v *MoTagSummary) KubernetesCatalogResponse {
-	return KubernetesCatalogResponse{ MoTagSummary: v}
+	return KubernetesCatalogResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesCatalogResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src KubernetesCatalogResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KubernetesCatalogResponse) GetActualInstance() (interface{}) {
+func (obj *KubernetesCatalogResponse) GetActualInstance() interface{} {
 	if obj.KubernetesCatalogList != nil {
 		return obj.KubernetesCatalogList
 	}
@@ -184,5 +183,3 @@ func (v *NullableKubernetesCatalogResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

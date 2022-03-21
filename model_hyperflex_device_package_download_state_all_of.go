@@ -25,11 +25,11 @@ type HyperflexDevicePackageDownloadStateAllOf struct {
 	// Checksum of HyperFlex health check Debian package installed on the HyperFlex Device.
 	Checksum *string `json:"Checksum,omitempty"`
 	// HyperFlex Device Name for which the package download state is tracked.
-	HxDeviceName *string `json:"HxDeviceName,omitempty"`
-	HxNodes []string `json:"HxNodes,omitempty"`
+	HxDeviceName *string  `json:"HxDeviceName,omitempty"`
+	HxNodes      []string `json:"HxNodes,omitempty"`
 	// Timestamp of the last health check Debian package installation on the HyperFlex Device.
-	Timestamp *time.Time `json:"Timestamp,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Timestamp            *time.Time                           `json:"Timestamp,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *HyperflexDevicePackageDownloadStateAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexDevicePackageDownloadStateAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *HyperflexDevicePackageDownloadStateAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexDevicePackageDownloadStateAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -172,7 +172,7 @@ func (o *HyperflexDevicePackageDownloadStateAllOf) SetHxDeviceName(v string) {
 
 // GetHxNodes returns the HxNodes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexDevicePackageDownloadStateAllOf) GetHxNodes() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -356,5 +356,3 @@ func (v *NullableHyperflexDevicePackageDownloadStateAllOf) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

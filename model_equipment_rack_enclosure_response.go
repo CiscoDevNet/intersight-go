@@ -19,31 +19,30 @@ import (
 // EquipmentRackEnclosureResponse - The response body of a HTTP GET request for the 'equipment.RackEnclosure' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'equipment.RackEnclosure' resources.
 type EquipmentRackEnclosureResponse struct {
 	EquipmentRackEnclosureList *EquipmentRackEnclosureList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform       *MoAggregateTransform
+	MoDocumentCount            *MoDocumentCount
+	MoTagSummary               *MoTagSummary
 }
 
 // EquipmentRackEnclosureListAsEquipmentRackEnclosureResponse is a convenience function that returns EquipmentRackEnclosureList wrapped in EquipmentRackEnclosureResponse
 func EquipmentRackEnclosureListAsEquipmentRackEnclosureResponse(v *EquipmentRackEnclosureList) EquipmentRackEnclosureResponse {
-	return EquipmentRackEnclosureResponse{ EquipmentRackEnclosureList: v}
+	return EquipmentRackEnclosureResponse{EquipmentRackEnclosureList: v}
 }
 
 // MoAggregateTransformAsEquipmentRackEnclosureResponse is a convenience function that returns MoAggregateTransform wrapped in EquipmentRackEnclosureResponse
 func MoAggregateTransformAsEquipmentRackEnclosureResponse(v *MoAggregateTransform) EquipmentRackEnclosureResponse {
-	return EquipmentRackEnclosureResponse{ MoAggregateTransform: v}
+	return EquipmentRackEnclosureResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsEquipmentRackEnclosureResponse is a convenience function that returns MoDocumentCount wrapped in EquipmentRackEnclosureResponse
 func MoDocumentCountAsEquipmentRackEnclosureResponse(v *MoDocumentCount) EquipmentRackEnclosureResponse {
-	return EquipmentRackEnclosureResponse{ MoDocumentCount: v}
+	return EquipmentRackEnclosureResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsEquipmentRackEnclosureResponse is a convenience function that returns MoTagSummary wrapped in EquipmentRackEnclosureResponse
 func MoTagSummaryAsEquipmentRackEnclosureResponse(v *MoTagSummary) EquipmentRackEnclosureResponse {
-	return EquipmentRackEnclosureResponse{ MoTagSummary: v}
+	return EquipmentRackEnclosureResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentRackEnclosureResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src EquipmentRackEnclosureResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentRackEnclosureResponse) GetActualInstance() (interface{}) {
+func (obj *EquipmentRackEnclosureResponse) GetActualInstance() interface{} {
 	if obj.EquipmentRackEnclosureList != nil {
 		return obj.EquipmentRackEnclosureList
 	}
@@ -184,5 +183,3 @@ func (v *NullableEquipmentRackEnclosureResponse) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

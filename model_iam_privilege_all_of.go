@@ -30,9 +30,9 @@ type IamPrivilegeAllOf struct {
 	// The REST API path of the resource corresponding to this privilege. For example /v1/iam/Accounts, /v1/iam/Sessions.
 	RestPath *string `json:"RestPath,omitempty"`
 	// The URL path prefix of the resource corresponding to this privilege. For example /devops/kibana, /devops/grafana etc.
-	UrlPrefix *string `json:"UrlPrefix,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
-	System *IamSystemRelationship `json:"System,omitempty"`
+	UrlPrefix            *string                 `json:"UrlPrefix,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
+	System               *IamSystemRelationship  `json:"System,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *IamPrivilegeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamPrivilegeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *IamPrivilegeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamPrivilegeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -430,5 +430,3 @@ func (v *NullableIamPrivilegeAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

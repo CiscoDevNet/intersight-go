@@ -19,19 +19,18 @@ import (
 // IamSessionRelationship - A relationship to the 'iam.Session' resource, or the expanded 'iam.Session' resource, or the 'null' value.
 type IamSessionRelationship struct {
 	IamSession *IamSession
-	MoMoRef *MoMoRef
+	MoMoRef    *MoMoRef
 }
 
 // IamSessionAsIamSessionRelationship is a convenience function that returns IamSession wrapped in IamSessionRelationship
 func IamSessionAsIamSessionRelationship(v *IamSession) IamSessionRelationship {
-	return IamSessionRelationship{ IamSession: v}
+	return IamSessionRelationship{IamSession: v}
 }
 
 // MoMoRefAsIamSessionRelationship is a convenience function that returns MoMoRef wrapped in IamSessionRelationship
 func MoMoRefAsIamSessionRelationship(v *MoMoRef) IamSessionRelationship {
-	return IamSessionRelationship{ MoMoRef: v}
+	return IamSessionRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamSessionRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamSessionRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamSessionRelationship) GetActualInstance() (interface{}) {
+func (obj *IamSessionRelationship) GetActualInstance() interface{} {
 	if obj.IamSession != nil {
 		return obj.IamSession
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamSessionRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

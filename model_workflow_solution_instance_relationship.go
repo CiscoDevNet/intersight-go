@@ -18,20 +18,19 @@ import (
 
 // WorkflowSolutionInstanceRelationship - A relationship to the 'workflow.SolutionInstance' resource, or the expanded 'workflow.SolutionInstance' resource, or the 'null' value.
 type WorkflowSolutionInstanceRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                  *MoMoRef
 	WorkflowSolutionInstance *WorkflowSolutionInstance
 }
 
 // MoMoRefAsWorkflowSolutionInstanceRelationship is a convenience function that returns MoMoRef wrapped in WorkflowSolutionInstanceRelationship
 func MoMoRefAsWorkflowSolutionInstanceRelationship(v *MoMoRef) WorkflowSolutionInstanceRelationship {
-	return WorkflowSolutionInstanceRelationship{ MoMoRef: v}
+	return WorkflowSolutionInstanceRelationship{MoMoRef: v}
 }
 
 // WorkflowSolutionInstanceAsWorkflowSolutionInstanceRelationship is a convenience function that returns WorkflowSolutionInstance wrapped in WorkflowSolutionInstanceRelationship
 func WorkflowSolutionInstanceAsWorkflowSolutionInstanceRelationship(v *WorkflowSolutionInstance) WorkflowSolutionInstanceRelationship {
-	return WorkflowSolutionInstanceRelationship{ WorkflowSolutionInstance: v}
+	return WorkflowSolutionInstanceRelationship{WorkflowSolutionInstance: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *WorkflowSolutionInstanceRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src WorkflowSolutionInstanceRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *WorkflowSolutionInstanceRelationship) GetActualInstance() (interface{}) {
+func (obj *WorkflowSolutionInstanceRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableWorkflowSolutionInstanceRelationship) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -39,10 +39,10 @@ type StorageHyperFlexVolumeAllOf struct {
 	// Mode of the volume. * `Block` - It is a Block virtual disk. * `Filesystem` - It is a File system virtual disk. * `` - Disk mode is either unknown or not supported.
 	VolumeMode *string `json:"VolumeMode,omitempty"`
 	// The Type of the volume.
-	VolumeType *string `json:"VolumeType,omitempty"`
-	Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	StorageContainer *StorageHyperFlexStorageContainerRelationship `json:"StorageContainer,omitempty"`
+	VolumeType           *string                                       `json:"VolumeType,omitempty"`
+	Cluster              *HyperflexClusterRelationship                 `json:"Cluster,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship          `json:"RegisteredDevice,omitempty"`
+	StorageContainer     *StorageHyperFlexStorageContainerRelationship `json:"StorageContainer,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *StorageHyperFlexVolumeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageHyperFlexVolumeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -108,7 +108,7 @@ func (o *StorageHyperFlexVolumeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageHyperFlexVolumeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -620,5 +620,3 @@ func (v *NullableStorageHyperFlexVolumeAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

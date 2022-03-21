@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // NiaapiNiaMetadata Contains the latest Metadata available for download from server.
@@ -24,8 +24,8 @@ type NiaapiNiaMetadata struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Content []NiaapiDetail `json:"Content,omitempty"`
+	ObjectType string         `json:"ObjectType"`
+	Content    []NiaapiDetail `json:"Content,omitempty"`
 	// The date when this package is generated.
 	Date *time.Time `json:"Date,omitempty"`
 	// Chksum used to check the integrity of the Metadata file downloaded.
@@ -33,7 +33,7 @@ type NiaapiNiaMetadata struct {
 	// The Filename of this Metadata package.
 	MetadataFilename *string `json:"MetadataFilename,omitempty"`
 	// The version number of the Metadata package.
-	Version *int64 `json:"Version,omitempty"`
+	Version              *int64 `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *NiaapiNiaMetadata) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiNiaMetadata) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *NiaapiNiaMetadata) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiNiaMetadata) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -112,7 +112,7 @@ func (o *NiaapiNiaMetadata) SetObjectType(v string) {
 
 // GetContent returns the Content field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiaapiNiaMetadata) GetContent() []NiaapiDetail {
-	if o == nil  {
+	if o == nil {
 		var ret []NiaapiDetail
 		return ret
 	}
@@ -315,8 +315,8 @@ func (o *NiaapiNiaMetadata) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Content []NiaapiDetail `json:"Content,omitempty"`
+		ObjectType string         `json:"ObjectType"`
+		Content    []NiaapiDetail `json:"Content,omitempty"`
 		// The date when this package is generated.
 		Date *time.Time `json:"Date,omitempty"`
 		// Chksum used to check the integrity of the Metadata file downloaded.
@@ -423,5 +423,3 @@ func (v *NullableNiaapiNiaMetadata) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

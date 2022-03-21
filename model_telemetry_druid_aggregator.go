@@ -18,62 +18,61 @@ import (
 
 // TelemetryDruidAggregator - struct for TelemetryDruidAggregator
 type TelemetryDruidAggregator struct {
-	TelemetryDruidAnyAggregator *TelemetryDruidAnyAggregator
-	TelemetryDruidCountAggregator *TelemetryDruidCountAggregator
-	TelemetryDruidFilteredAggregator *TelemetryDruidFilteredAggregator
-	TelemetryDruidFirstLastAggregator *TelemetryDruidFirstLastAggregator
-	TelemetryDruidMinMaxAggregator *TelemetryDruidMinMaxAggregator
-	TelemetryDruidStringAnyAggregator *TelemetryDruidStringAnyAggregator
+	TelemetryDruidAnyAggregator             *TelemetryDruidAnyAggregator
+	TelemetryDruidCountAggregator           *TelemetryDruidCountAggregator
+	TelemetryDruidFilteredAggregator        *TelemetryDruidFilteredAggregator
+	TelemetryDruidFirstLastAggregator       *TelemetryDruidFirstLastAggregator
+	TelemetryDruidMinMaxAggregator          *TelemetryDruidMinMaxAggregator
+	TelemetryDruidStringAnyAggregator       *TelemetryDruidStringAnyAggregator
 	TelemetryDruidStringFirstLastAggregator *TelemetryDruidStringFirstLastAggregator
-	TelemetryDruidSumAggregator *TelemetryDruidSumAggregator
-	TelemetryDruidThetaSketchAggregator *TelemetryDruidThetaSketchAggregator
+	TelemetryDruidSumAggregator             *TelemetryDruidSumAggregator
+	TelemetryDruidThetaSketchAggregator     *TelemetryDruidThetaSketchAggregator
 }
 
 // TelemetryDruidAnyAggregatorAsTelemetryDruidAggregator is a convenience function that returns TelemetryDruidAnyAggregator wrapped in TelemetryDruidAggregator
 func TelemetryDruidAnyAggregatorAsTelemetryDruidAggregator(v *TelemetryDruidAnyAggregator) TelemetryDruidAggregator {
-	return TelemetryDruidAggregator{ TelemetryDruidAnyAggregator: v}
+	return TelemetryDruidAggregator{TelemetryDruidAnyAggregator: v}
 }
 
 // TelemetryDruidCountAggregatorAsTelemetryDruidAggregator is a convenience function that returns TelemetryDruidCountAggregator wrapped in TelemetryDruidAggregator
 func TelemetryDruidCountAggregatorAsTelemetryDruidAggregator(v *TelemetryDruidCountAggregator) TelemetryDruidAggregator {
-	return TelemetryDruidAggregator{ TelemetryDruidCountAggregator: v}
+	return TelemetryDruidAggregator{TelemetryDruidCountAggregator: v}
 }
 
 // TelemetryDruidFilteredAggregatorAsTelemetryDruidAggregator is a convenience function that returns TelemetryDruidFilteredAggregator wrapped in TelemetryDruidAggregator
 func TelemetryDruidFilteredAggregatorAsTelemetryDruidAggregator(v *TelemetryDruidFilteredAggregator) TelemetryDruidAggregator {
-	return TelemetryDruidAggregator{ TelemetryDruidFilteredAggregator: v}
+	return TelemetryDruidAggregator{TelemetryDruidFilteredAggregator: v}
 }
 
 // TelemetryDruidFirstLastAggregatorAsTelemetryDruidAggregator is a convenience function that returns TelemetryDruidFirstLastAggregator wrapped in TelemetryDruidAggregator
 func TelemetryDruidFirstLastAggregatorAsTelemetryDruidAggregator(v *TelemetryDruidFirstLastAggregator) TelemetryDruidAggregator {
-	return TelemetryDruidAggregator{ TelemetryDruidFirstLastAggregator: v}
+	return TelemetryDruidAggregator{TelemetryDruidFirstLastAggregator: v}
 }
 
 // TelemetryDruidMinMaxAggregatorAsTelemetryDruidAggregator is a convenience function that returns TelemetryDruidMinMaxAggregator wrapped in TelemetryDruidAggregator
 func TelemetryDruidMinMaxAggregatorAsTelemetryDruidAggregator(v *TelemetryDruidMinMaxAggregator) TelemetryDruidAggregator {
-	return TelemetryDruidAggregator{ TelemetryDruidMinMaxAggregator: v}
+	return TelemetryDruidAggregator{TelemetryDruidMinMaxAggregator: v}
 }
 
 // TelemetryDruidStringAnyAggregatorAsTelemetryDruidAggregator is a convenience function that returns TelemetryDruidStringAnyAggregator wrapped in TelemetryDruidAggregator
 func TelemetryDruidStringAnyAggregatorAsTelemetryDruidAggregator(v *TelemetryDruidStringAnyAggregator) TelemetryDruidAggregator {
-	return TelemetryDruidAggregator{ TelemetryDruidStringAnyAggregator: v}
+	return TelemetryDruidAggregator{TelemetryDruidStringAnyAggregator: v}
 }
 
 // TelemetryDruidStringFirstLastAggregatorAsTelemetryDruidAggregator is a convenience function that returns TelemetryDruidStringFirstLastAggregator wrapped in TelemetryDruidAggregator
 func TelemetryDruidStringFirstLastAggregatorAsTelemetryDruidAggregator(v *TelemetryDruidStringFirstLastAggregator) TelemetryDruidAggregator {
-	return TelemetryDruidAggregator{ TelemetryDruidStringFirstLastAggregator: v}
+	return TelemetryDruidAggregator{TelemetryDruidStringFirstLastAggregator: v}
 }
 
 // TelemetryDruidSumAggregatorAsTelemetryDruidAggregator is a convenience function that returns TelemetryDruidSumAggregator wrapped in TelemetryDruidAggregator
 func TelemetryDruidSumAggregatorAsTelemetryDruidAggregator(v *TelemetryDruidSumAggregator) TelemetryDruidAggregator {
-	return TelemetryDruidAggregator{ TelemetryDruidSumAggregator: v}
+	return TelemetryDruidAggregator{TelemetryDruidSumAggregator: v}
 }
 
 // TelemetryDruidThetaSketchAggregatorAsTelemetryDruidAggregator is a convenience function that returns TelemetryDruidThetaSketchAggregator wrapped in TelemetryDruidAggregator
 func TelemetryDruidThetaSketchAggregatorAsTelemetryDruidAggregator(v *TelemetryDruidThetaSketchAggregator) TelemetryDruidAggregator {
-	return TelemetryDruidAggregator{ TelemetryDruidThetaSketchAggregator: v}
+	return TelemetryDruidAggregator{TelemetryDruidThetaSketchAggregator: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *TelemetryDruidAggregator) UnmarshalJSON(data []byte) error {
@@ -526,7 +525,7 @@ func (src TelemetryDruidAggregator) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *TelemetryDruidAggregator) GetActualInstance() (interface{}) {
+func (obj *TelemetryDruidAggregator) GetActualInstance() interface{} {
 	if obj.TelemetryDruidAnyAggregator != nil {
 		return obj.TelemetryDruidAnyAggregator
 	}
@@ -602,5 +601,3 @@ func (v *NullableTelemetryDruidAggregator) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

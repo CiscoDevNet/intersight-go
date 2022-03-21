@@ -43,12 +43,12 @@ type HyperflexHealthCheckExecutionSnapshotAllOf struct {
 	// HyperFlex Device Name where the healthcheck is executed.
 	HxDeviceName *string `json:"HxDeviceName,omitempty"`
 	// Information detailing a suggegsted resolution for the healthcheck failure, if the check fails.
-	SuggestedResolution *string `json:"SuggestedResolution,omitempty"`
+	SuggestedResolution   *string                                     `json:"SuggestedResolution,omitempty"`
 	HealthCheckDefinition *HyperflexHealthCheckDefinitionRelationship `json:"HealthCheckDefinition,omitempty"`
-	HxCluster *HyperflexClusterRelationship `json:"HxCluster,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	Workflow *WorkflowWorkflowInfoRelationship `json:"Workflow,omitempty"`
-	AdditionalProperties map[string]interface{}
+	HxCluster             *HyperflexClusterRelationship               `json:"HxCluster,omitempty"`
+	RegisteredDevice      *AssetDeviceRegistrationRelationship        `json:"RegisteredDevice,omitempty"`
+	Workflow              *WorkflowWorkflowInfoRelationship           `json:"Workflow,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _HyperflexHealthCheckExecutionSnapshotAllOf HyperflexHealthCheckExecutionSnapshotAllOf
@@ -89,7 +89,7 @@ func (o *HyperflexHealthCheckExecutionSnapshotAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHealthCheckExecutionSnapshotAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -113,7 +113,7 @@ func (o *HyperflexHealthCheckExecutionSnapshotAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHealthCheckExecutionSnapshotAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -733,5 +733,3 @@ func (v *NullableHyperflexHealthCheckExecutionSnapshotAllOf) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

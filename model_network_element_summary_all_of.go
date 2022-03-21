@@ -24,8 +24,8 @@ type NetworkElementSummaryAllOf struct {
 	// Administratively configured state of Fabric Evacuation feature, for this switch.
 	AdminEvacState *string `json:"AdminEvacState,omitempty"`
 	// The administrative state of the network Element inband management interface.
-	AdminInbandInterfaceState *string `json:"AdminInbandInterfaceState,omitempty"`
-	AlarmSummary NullableComputeAlarmSummary `json:"AlarmSummary,omitempty"`
+	AdminInbandInterfaceState *string                     `json:"AdminInbandInterfaceState,omitempty"`
+	AlarmSummary              NullableComputeAlarmSummary `json:"AlarmSummary,omitempty"`
 	// Available memory (un-used) on this switch platform.
 	AvailableMemory *string `json:"AvailableMemory,omitempty"`
 	// The database identifier of the registered device of an object.
@@ -120,8 +120,8 @@ type NetworkElementSummaryAllOf struct {
 	// This field identifies the vendor of the given component.
 	Vendor *string `json:"Vendor,omitempty"`
 	// Version holds the firmware version related information.
-	Version *string `json:"Version,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Version              *string                              `json:"Version,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -163,7 +163,7 @@ func (o *NetworkElementSummaryAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NetworkElementSummaryAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -187,7 +187,7 @@ func (o *NetworkElementSummaryAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NetworkElementSummaryAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -275,7 +275,7 @@ func (o *NetworkElementSummaryAllOf) GetAlarmSummary() ComputeAlarmSummary {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkElementSummaryAllOf) GetAlarmSummaryOk() (*ComputeAlarmSummary, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AlarmSummary.Get(), o.AlarmSummary.IsSet()
@@ -294,6 +294,7 @@ func (o *NetworkElementSummaryAllOf) HasAlarmSummary() bool {
 func (o *NetworkElementSummaryAllOf) SetAlarmSummary(v ComputeAlarmSummary) {
 	o.AlarmSummary.Set(&v)
 }
+
 // SetAlarmSummaryNil sets the value for AlarmSummary to be an explicit nil
 func (o *NetworkElementSummaryAllOf) SetAlarmSummaryNil() {
 	o.AlarmSummary.Set(nil)
@@ -2086,5 +2087,3 @@ func (v *NullableNetworkElementSummaryAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

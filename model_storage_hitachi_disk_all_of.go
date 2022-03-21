@@ -28,10 +28,10 @@ type StorageHitachiDiskAllOf struct {
 	// Drive type of the Hitachi Disk. * `N/A` - Drive Type is not available. * `SAS` - SAS stands for Serial Attached SCSI. * `SSD(MLC)` - SSD (MLC) stands for Multiple Level Cell. * `SSD(FMC)` - SSD (FMC) stands for Flash Memory Compressed. * `SSD(FMD)` - SSD (FMD) stands for Flash Module Drive. * `SSD(SLC)` - SSD (SLC) stands for Single Level Cell. * `SSD` - SSD stands for Solid-State Drive. * `SSD(RI)` - SSD (RI) stands for Read Intensive. * `SCM` - SCM stands for Storage Class Memory.
 	TypeDetail *string `json:"TypeDetail,omitempty"`
 	// Purpose for which the drive is used.
-	Usage *string `json:"Usage,omitempty"`
-	Array *StorageHitachiArrayRelationship `json:"Array,omitempty"`
-	ParityGroup *StorageHitachiParityGroupRelationship `json:"ParityGroup,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Usage                *string                                `json:"Usage,omitempty"`
+	Array                *StorageHitachiArrayRelationship       `json:"Array,omitempty"`
+	ParityGroup          *StorageHitachiParityGroupRelationship `json:"ParityGroup,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship   `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *StorageHitachiDiskAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageHitachiDiskAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *StorageHitachiDiskAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageHitachiDiskAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -429,5 +429,3 @@ func (v *NullableStorageHitachiDiskAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -22,12 +22,12 @@ type StorageNetAppExportPolicyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Unique identity of the device.
-	ClusterUuid *string `json:"ClusterUuid,omitempty"`
+	ClusterUuid            *string                         `json:"ClusterUuid,omitempty"`
 	NetAppExportPolicyRule []StorageNetAppExportPolicyRule `json:"NetAppExportPolicyRule,omitempty"`
 	// ID for the Export Policy.
-	PolicyId *int64 `json:"PolicyId,omitempty"`
-	Array *StorageNetAppClusterRelationship `json:"Array,omitempty"`
-	Tenant *StorageNetAppStorageVmRelationship `json:"Tenant,omitempty"`
+	PolicyId             *int64                              `json:"PolicyId,omitempty"`
+	Array                *StorageNetAppClusterRelationship   `json:"Array,omitempty"`
+	Tenant               *StorageNetAppStorageVmRelationship `json:"Tenant,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *StorageNetAppExportPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppExportPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *StorageNetAppExportPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppExportPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -138,7 +138,7 @@ func (o *StorageNetAppExportPolicyAllOf) SetClusterUuid(v string) {
 
 // GetNetAppExportPolicyRule returns the NetAppExportPolicyRule field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppExportPolicyAllOf) GetNetAppExportPolicyRule() []StorageNetAppExportPolicyRule {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppExportPolicyRule
 		return ret
 	}
@@ -354,5 +354,3 @@ func (v *NullableStorageNetAppExportPolicyAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

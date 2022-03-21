@@ -18,32 +18,31 @@ import (
 
 // VirtualizationVmwareVirtualDiskResponse - The response body of a HTTP GET request for the 'virtualization.VmwareVirtualDisk' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'virtualization.VmwareVirtualDisk' resources.
 type VirtualizationVmwareVirtualDiskResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                *MoAggregateTransform
+	MoDocumentCount                     *MoDocumentCount
+	MoTagSummary                        *MoTagSummary
 	VirtualizationVmwareVirtualDiskList *VirtualizationVmwareVirtualDiskList
 }
 
 // MoAggregateTransformAsVirtualizationVmwareVirtualDiskResponse is a convenience function that returns MoAggregateTransform wrapped in VirtualizationVmwareVirtualDiskResponse
 func MoAggregateTransformAsVirtualizationVmwareVirtualDiskResponse(v *MoAggregateTransform) VirtualizationVmwareVirtualDiskResponse {
-	return VirtualizationVmwareVirtualDiskResponse{ MoAggregateTransform: v}
+	return VirtualizationVmwareVirtualDiskResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsVirtualizationVmwareVirtualDiskResponse is a convenience function that returns MoDocumentCount wrapped in VirtualizationVmwareVirtualDiskResponse
 func MoDocumentCountAsVirtualizationVmwareVirtualDiskResponse(v *MoDocumentCount) VirtualizationVmwareVirtualDiskResponse {
-	return VirtualizationVmwareVirtualDiskResponse{ MoDocumentCount: v}
+	return VirtualizationVmwareVirtualDiskResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsVirtualizationVmwareVirtualDiskResponse is a convenience function that returns MoTagSummary wrapped in VirtualizationVmwareVirtualDiskResponse
 func MoTagSummaryAsVirtualizationVmwareVirtualDiskResponse(v *MoTagSummary) VirtualizationVmwareVirtualDiskResponse {
-	return VirtualizationVmwareVirtualDiskResponse{ MoTagSummary: v}
+	return VirtualizationVmwareVirtualDiskResponse{MoTagSummary: v}
 }
 
 // VirtualizationVmwareVirtualDiskListAsVirtualizationVmwareVirtualDiskResponse is a convenience function that returns VirtualizationVmwareVirtualDiskList wrapped in VirtualizationVmwareVirtualDiskResponse
 func VirtualizationVmwareVirtualDiskListAsVirtualizationVmwareVirtualDiskResponse(v *VirtualizationVmwareVirtualDiskList) VirtualizationVmwareVirtualDiskResponse {
-	return VirtualizationVmwareVirtualDiskResponse{ VirtualizationVmwareVirtualDiskList: v}
+	return VirtualizationVmwareVirtualDiskResponse{VirtualizationVmwareVirtualDiskList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VirtualizationVmwareVirtualDiskResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src VirtualizationVmwareVirtualDiskResponse) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *VirtualizationVmwareVirtualDiskResponse) GetActualInstance() (interface{}) {
+func (obj *VirtualizationVmwareVirtualDiskResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableVirtualizationVmwareVirtualDiskResponse) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

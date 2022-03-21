@@ -28,7 +28,7 @@ type AssetOauthBearerTokenCredentialAllOf struct {
 	// Scope value for the credential i.e. username, organization name or team name.
 	ScopeValue *string `json:"ScopeValue,omitempty"`
 	// The token used to authenticate with a managed target.
-	Token *string `json:"Token,omitempty"`
+	Token                *string `json:"Token,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *AssetOauthBearerTokenCredentialAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetOauthBearerTokenCredentialAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *AssetOauthBearerTokenCredentialAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetOauthBearerTokenCredentialAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -318,5 +318,3 @@ func (v *NullableAssetOauthBearerTokenCredentialAllOf) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

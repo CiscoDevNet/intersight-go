@@ -23,7 +23,7 @@ type IamCertificateList struct {
 	// The total number of 'iam.Certificate' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'iam.Certificate' resources matching the request.
-	Results []IamCertificate `json:"Results,omitempty"`
+	Results              []IamCertificate `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *IamCertificateList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamCertificateList) GetResults() []IamCertificate {
-	if o == nil  {
+	if o == nil {
 		var ret []IamCertificate
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableIamCertificateList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -22,7 +22,7 @@ type WorkflowWorkflowMetaAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The description for the workflow.
-	Description *string `json:"Description,omitempty"`
+	Description     *string  `json:"Description,omitempty"`
 	InputParameters []string `json:"InputParameters,omitempty"`
 	// The name given to the workflow.
 	Name *string `json:"Name,omitempty"`
@@ -41,8 +41,8 @@ type WorkflowWorkflowMetaAllOf struct {
 	// The version for the workflow so we can support multiple versions for the same workflow name.
 	Version *int64 `json:"Version,omitempty"`
 	// Parameter decides if workflows will wait for a duplicate to finish before starting a new one.
-	WaitOnDuplicate *bool `json:"WaitOnDuplicate,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	WaitOnDuplicate      *bool                                 `json:"WaitOnDuplicate,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -96,7 +96,7 @@ func (o *WorkflowWorkflowMetaAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWorkflowMetaAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -120,7 +120,7 @@ func (o *WorkflowWorkflowMetaAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWorkflowMetaAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -165,7 +165,7 @@ func (o *WorkflowWorkflowMetaAllOf) SetDescription(v string) {
 
 // GetInputParameters returns the InputParameters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWorkflowMetaAllOf) GetInputParameters() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -230,7 +230,7 @@ func (o *WorkflowWorkflowMetaAllOf) SetName(v string) {
 
 // GetOutputParameters returns the OutputParameters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWorkflowMetaAllOf) GetOutputParameters() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -359,7 +359,7 @@ func (o *WorkflowWorkflowMetaAllOf) SetSrc(v string) {
 
 // GetTasks returns the Tasks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWorkflowMetaAllOf) GetTasks() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -635,5 +635,3 @@ func (v *NullableWorkflowWorkflowMetaAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

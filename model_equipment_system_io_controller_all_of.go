@@ -38,12 +38,12 @@ type EquipmentSystemIoControllerAllOf struct {
 	// This field identifies the Product ID for systemIOController.
 	Pid *string `json:"Pid,omitempty"`
 	// This represents system I/O Controller identifier.
-	SystemIoControllerId *int64 `json:"SystemIoControllerId,omitempty"`
-	Cmc *ManagementControllerRelationship `json:"Cmc,omitempty"`
-	EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	SharedIoModule *EquipmentSharedIoModuleRelationship `json:"SharedIoModule,omitempty"`
+	SystemIoControllerId *int64                               `json:"SystemIoControllerId,omitempty"`
+	Cmc                  *ManagementControllerRelationship    `json:"Cmc,omitempty"`
+	EquipmentChassis     *EquipmentChassisRelationship        `json:"EquipmentChassis,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SharedIoModule       *EquipmentSharedIoModuleRelationship `json:"SharedIoModule,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -85,7 +85,7 @@ func (o *EquipmentSystemIoControllerAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentSystemIoControllerAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -109,7 +109,7 @@ func (o *EquipmentSystemIoControllerAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentSystemIoControllerAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -693,5 +693,3 @@ func (v *NullableEquipmentSystemIoControllerAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

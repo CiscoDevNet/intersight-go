@@ -25,8 +25,8 @@ type VirtualizationEsxiVmStorageConfiguration struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Datastore where virtual machine is deployed.
-	Datastore *string `json:"Datastore,omitempty"`
-	Disks []VirtualizationVmEsxiDisk `json:"Disks,omitempty"`
+	Datastore            *string                    `json:"Datastore,omitempty"`
+	Disks                []VirtualizationVmEsxiDisk `json:"Disks,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *VirtualizationEsxiVmStorageConfiguration) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationEsxiVmStorageConfiguration) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *VirtualizationEsxiVmStorageConfiguration) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationEsxiVmStorageConfiguration) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -137,7 +137,7 @@ func (o *VirtualizationEsxiVmStorageConfiguration) SetDatastore(v string) {
 
 // GetDisks returns the Disks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationEsxiVmStorageConfiguration) GetDisks() []VirtualizationVmEsxiDisk {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationVmEsxiDisk
 		return ret
 	}
@@ -205,8 +205,8 @@ func (o *VirtualizationEsxiVmStorageConfiguration) UnmarshalJSON(bytes []byte) (
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Datastore where virtual machine is deployed.
-		Datastore *string `json:"Datastore,omitempty"`
-		Disks []VirtualizationVmEsxiDisk `json:"Disks,omitempty"`
+		Datastore *string                    `json:"Datastore,omitempty"`
+		Disks     []VirtualizationVmEsxiDisk `json:"Disks,omitempty"`
 	}
 
 	varVirtualizationEsxiVmStorageConfigurationWithoutEmbeddedStruct := VirtualizationEsxiVmStorageConfigurationWithoutEmbeddedStruct{}
@@ -299,5 +299,3 @@ func (v *NullableVirtualizationEsxiVmStorageConfiguration) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

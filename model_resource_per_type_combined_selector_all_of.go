@@ -26,7 +26,7 @@ type ResourcePerTypeCombinedSelectorAllOf struct {
 	// If true, then resources are added using just object type without filter.
 	EmptyFilter *bool `json:"EmptyFilter,omitempty"`
 	// The ObjectType on which the selectors are defined. Used to efficiently query resource groups for a given ObjectType.
-	SelectorObjectType *string `json:"SelectorObjectType,omitempty"`
+	SelectorObjectType   *string `json:"SelectorObjectType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *ResourcePerTypeCombinedSelectorAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ResourcePerTypeCombinedSelectorAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *ResourcePerTypeCombinedSelectorAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ResourcePerTypeCombinedSelectorAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,5 +280,3 @@ func (v *NullableResourcePerTypeCombinedSelectorAllOf) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

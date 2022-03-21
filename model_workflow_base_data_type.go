@@ -23,10 +23,10 @@ type WorkflowBaseDataType struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
-	Default NullableWorkflowDefaultValue `json:"Default,omitempty"`
+	ObjectType string                       `json:"ObjectType"`
+	Default    NullableWorkflowDefaultValue `json:"Default,omitempty"`
 	// Provide a detailed description of the data type.
-	Description *string `json:"Description,omitempty"`
+	Description *string                     `json:"Description,omitempty"`
 	DisplayMeta NullableWorkflowDisplayMeta `json:"DisplayMeta,omitempty"`
 	// JSON formatted mapping from other property of the definition to the current property. Input parameter mapping is supported only for custom data type property in workflow definition and custom data type definition. The format to specify mapping ina workflow definition when source property is of scalar types is '${workflow.input.property}'. The format to specify mapping when the source property is of object reference and mapping needs to be made to the property of the object is '${workflow.input.property.subproperty}'. The format to specify mapping in a custom data type definition is '${datatype.type.property}'. When the current property is of non-scalar type like composite custom data type, then mapping can be provided to the individual property of the custom data type like 'cdt_property:${workflow.input.property}'.
 	InputParameters interface{} `json:"InputParameters,omitempty"`
@@ -35,7 +35,7 @@ type WorkflowBaseDataType struct {
 	// Descriptive name for the data type. Name can only contain letters (a-z, A-Z), numbers (0-9), hyphen (-) or an underscore (_). The first and last character in name must be an alphanumeric character.
 	Name *string `json:"Name,omitempty"`
 	// Specifies whether this parameter is required. The field is applicable for task and workflow.
-	Required *bool `json:"Required,omitempty"`
+	Required             *bool `json:"Required,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *WorkflowBaseDataType) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowBaseDataType) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *WorkflowBaseDataType) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowBaseDataType) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -121,7 +121,7 @@ func (o *WorkflowBaseDataType) GetDefault() WorkflowDefaultValue {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowBaseDataType) GetDefaultOk() (*WorkflowDefaultValue, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Default.Get(), o.Default.IsSet()
@@ -140,6 +140,7 @@ func (o *WorkflowBaseDataType) HasDefault() bool {
 func (o *WorkflowBaseDataType) SetDefault(v WorkflowDefaultValue) {
 	o.Default.Set(&v)
 }
+
 // SetDefaultNil sets the value for Default to be an explicit nil
 func (o *WorkflowBaseDataType) SetDefaultNil() {
 	o.Default.Set(nil)
@@ -195,7 +196,7 @@ func (o *WorkflowBaseDataType) GetDisplayMeta() WorkflowDisplayMeta {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowBaseDataType) GetDisplayMetaOk() (*WorkflowDisplayMeta, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DisplayMeta.Get(), o.DisplayMeta.IsSet()
@@ -214,6 +215,7 @@ func (o *WorkflowBaseDataType) HasDisplayMeta() bool {
 func (o *WorkflowBaseDataType) SetDisplayMeta(v WorkflowDisplayMeta) {
 	o.DisplayMeta.Set(&v)
 }
+
 // SetDisplayMetaNil sets the value for DisplayMeta to be an explicit nil
 func (o *WorkflowBaseDataType) SetDisplayMetaNil() {
 	o.DisplayMeta.Set(nil)
@@ -226,7 +228,7 @@ func (o *WorkflowBaseDataType) UnsetDisplayMeta() {
 
 // GetInputParameters returns the InputParameters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowBaseDataType) GetInputParameters() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -403,10 +405,10 @@ func (o *WorkflowBaseDataType) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-		ObjectType string `json:"ObjectType"`
-		Default NullableWorkflowDefaultValue `json:"Default,omitempty"`
+		ObjectType string                       `json:"ObjectType"`
+		Default    NullableWorkflowDefaultValue `json:"Default,omitempty"`
 		// Provide a detailed description of the data type.
-		Description *string `json:"Description,omitempty"`
+		Description *string                     `json:"Description,omitempty"`
 		DisplayMeta NullableWorkflowDisplayMeta `json:"DisplayMeta,omitempty"`
 		// JSON formatted mapping from other property of the definition to the current property. Input parameter mapping is supported only for custom data type property in workflow definition and custom data type definition. The format to specify mapping ina workflow definition when source property is of scalar types is '${workflow.input.property}'. The format to specify mapping when the source property is of object reference and mapping needs to be made to the property of the object is '${workflow.input.property.subproperty}'. The format to specify mapping in a custom data type definition is '${datatype.type.property}'. When the current property is of non-scalar type like composite custom data type, then mapping can be provided to the individual property of the custom data type like 'cdt_property:${workflow.input.property}'.
 		InputParameters interface{} `json:"InputParameters,omitempty"`
@@ -518,5 +520,3 @@ func (v *NullableWorkflowBaseDataType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

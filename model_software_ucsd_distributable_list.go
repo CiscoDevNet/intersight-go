@@ -23,7 +23,7 @@ type SoftwareUcsdDistributableList struct {
 	// The total number of 'software.UcsdDistributable' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'software.UcsdDistributable' resources matching the request.
-	Results []SoftwareUcsdDistributable `json:"Results,omitempty"`
+	Results              []SoftwareUcsdDistributable `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *SoftwareUcsdDistributableList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SoftwareUcsdDistributableList) GetResults() []SoftwareUcsdDistributable {
-	if o == nil  {
+	if o == nil {
 		var ret []SoftwareUcsdDistributable
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableSoftwareUcsdDistributableList) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,7 +20,7 @@ type VirtualizationVmwareDistributedNetworkListAllOf struct {
 	// The total number of 'virtualization.VmwareDistributedNetwork' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'virtualization.VmwareDistributedNetwork' resources matching the request.
-	Results []VirtualizationVmwareDistributedNetwork `json:"Results,omitempty"`
+	Results              []VirtualizationVmwareDistributedNetwork `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *VirtualizationVmwareDistributedNetworkListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareDistributedNetworkListAllOf) GetResults() []VirtualizationVmwareDistributedNetwork {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationVmwareDistributedNetwork
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableVirtualizationVmwareDistributedNetworkListAllOf) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,20 +18,19 @@ import (
 
 // TamBaseAdvisoryRelationship - A relationship to the 'tam.BaseAdvisory' resource, or the expanded 'tam.BaseAdvisory' resource, or the 'null' value.
 type TamBaseAdvisoryRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef         *MoMoRef
 	TamBaseAdvisory *TamBaseAdvisory
 }
 
 // MoMoRefAsTamBaseAdvisoryRelationship is a convenience function that returns MoMoRef wrapped in TamBaseAdvisoryRelationship
 func MoMoRefAsTamBaseAdvisoryRelationship(v *MoMoRef) TamBaseAdvisoryRelationship {
-	return TamBaseAdvisoryRelationship{ MoMoRef: v}
+	return TamBaseAdvisoryRelationship{MoMoRef: v}
 }
 
 // TamBaseAdvisoryAsTamBaseAdvisoryRelationship is a convenience function that returns TamBaseAdvisory wrapped in TamBaseAdvisoryRelationship
 func TamBaseAdvisoryAsTamBaseAdvisoryRelationship(v *TamBaseAdvisory) TamBaseAdvisoryRelationship {
-	return TamBaseAdvisoryRelationship{ TamBaseAdvisory: v}
+	return TamBaseAdvisoryRelationship{TamBaseAdvisory: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *TamBaseAdvisoryRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src TamBaseAdvisoryRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *TamBaseAdvisoryRelationship) GetActualInstance() (interface{}) {
+func (obj *TamBaseAdvisoryRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableTamBaseAdvisoryRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

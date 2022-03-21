@@ -20,12 +20,12 @@ type SyslogPolicyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	LocalClients []SyslogLocalClientBase `json:"LocalClients,omitempty"`
-	RemoteClients []SyslogRemoteClientBase `json:"RemoteClients,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ObjectType    string                                `json:"ObjectType"`
+	LocalClients  []SyslogLocalClientBase               `json:"LocalClients,omitempty"`
+	RemoteClients []SyslogRemoteClientBase              `json:"RemoteClients,omitempty"`
+	Organization  *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
-	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *SyslogPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SyslogPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *SyslogPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SyslogPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -104,7 +104,7 @@ func (o *SyslogPolicyAllOf) SetObjectType(v string) {
 
 // GetLocalClients returns the LocalClients field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SyslogPolicyAllOf) GetLocalClients() []SyslogLocalClientBase {
-	if o == nil  {
+	if o == nil {
 		var ret []SyslogLocalClientBase
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *SyslogPolicyAllOf) SetLocalClients(v []SyslogLocalClientBase) {
 
 // GetRemoteClients returns the RemoteClients field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SyslogPolicyAllOf) GetRemoteClients() []SyslogRemoteClientBase {
-	if o == nil  {
+	if o == nil {
 		var ret []SyslogRemoteClientBase
 		return ret
 	}
@@ -202,7 +202,7 @@ func (o *SyslogPolicyAllOf) SetOrganization(v OrganizationOrganizationRelationsh
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SyslogPolicyAllOf) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -318,5 +318,3 @@ func (v *NullableSyslogPolicyAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,31 +19,30 @@ import (
 // TamAdvisoryInfoResponse - The response body of a HTTP GET request for the 'tam.AdvisoryInfo' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'tam.AdvisoryInfo' resources.
 type TamAdvisoryInfoResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
-	TamAdvisoryInfoList *TamAdvisoryInfoList
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
+	TamAdvisoryInfoList  *TamAdvisoryInfoList
 }
 
 // MoAggregateTransformAsTamAdvisoryInfoResponse is a convenience function that returns MoAggregateTransform wrapped in TamAdvisoryInfoResponse
 func MoAggregateTransformAsTamAdvisoryInfoResponse(v *MoAggregateTransform) TamAdvisoryInfoResponse {
-	return TamAdvisoryInfoResponse{ MoAggregateTransform: v}
+	return TamAdvisoryInfoResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsTamAdvisoryInfoResponse is a convenience function that returns MoDocumentCount wrapped in TamAdvisoryInfoResponse
 func MoDocumentCountAsTamAdvisoryInfoResponse(v *MoDocumentCount) TamAdvisoryInfoResponse {
-	return TamAdvisoryInfoResponse{ MoDocumentCount: v}
+	return TamAdvisoryInfoResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsTamAdvisoryInfoResponse is a convenience function that returns MoTagSummary wrapped in TamAdvisoryInfoResponse
 func MoTagSummaryAsTamAdvisoryInfoResponse(v *MoTagSummary) TamAdvisoryInfoResponse {
-	return TamAdvisoryInfoResponse{ MoTagSummary: v}
+	return TamAdvisoryInfoResponse{MoTagSummary: v}
 }
 
 // TamAdvisoryInfoListAsTamAdvisoryInfoResponse is a convenience function that returns TamAdvisoryInfoList wrapped in TamAdvisoryInfoResponse
 func TamAdvisoryInfoListAsTamAdvisoryInfoResponse(v *TamAdvisoryInfoList) TamAdvisoryInfoResponse {
-	return TamAdvisoryInfoResponse{ TamAdvisoryInfoList: v}
+	return TamAdvisoryInfoResponse{TamAdvisoryInfoList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *TamAdvisoryInfoResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src TamAdvisoryInfoResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *TamAdvisoryInfoResponse) GetActualInstance() (interface{}) {
+func (obj *TamAdvisoryInfoResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableTamAdvisoryInfoResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

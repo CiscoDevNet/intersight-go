@@ -20,7 +20,7 @@ type SoftwarerepositoryDownloadSpecListAllOf struct {
 	// The total number of 'softwarerepository.DownloadSpec' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'softwarerepository.DownloadSpec' resources matching the request.
-	Results []SoftwarerepositoryDownloadSpec `json:"Results,omitempty"`
+	Results              []SoftwarerepositoryDownloadSpec `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *SoftwarerepositoryDownloadSpecListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SoftwarerepositoryDownloadSpecListAllOf) GetResults() []SoftwarerepositoryDownloadSpec {
-	if o == nil  {
+	if o == nil {
 		var ret []SoftwarerepositoryDownloadSpec
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableSoftwarerepositoryDownloadSpecListAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

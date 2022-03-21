@@ -27,7 +27,7 @@ type VnicCdn struct {
 	// Source of the CDN. It can either be user specified or be the same as the vNIC name. * `vnic` - Source of the CDN is the same as the vNIC name. * `user` - Source of the CDN is specified by the user.
 	Source *string `json:"Source,omitempty"`
 	// The CDN value entered in case of user defined mode.
-	Value *string `json:"Value,omitempty"`
+	Value                *string `json:"Value,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *VnicCdn) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicCdn) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *VnicCdn) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicCdn) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -304,5 +304,3 @@ func (v *NullableVnicCdn) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

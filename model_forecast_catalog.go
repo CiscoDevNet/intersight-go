@@ -29,7 +29,7 @@ type ForecastCatalog struct {
 	// The catalog version used in forecast configuration service.
 	Version *string `json:"Version,omitempty"`
 	// An array of relationships to forecastDefinition resources.
-	Definition []ForecastDefinitionRelationship `json:"Definition,omitempty"`
+	Definition           []ForecastDefinitionRelationship `json:"Definition,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *ForecastCatalog) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ForecastCatalog) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *ForecastCatalog) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ForecastCatalog) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -172,7 +172,7 @@ func (o *ForecastCatalog) SetVersion(v string) {
 
 // GetDefinition returns the Definition field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ForecastCatalog) GetDefinition() []ForecastDefinitionRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ForecastDefinitionRelationship
 		return ret
 	}
@@ -342,5 +342,3 @@ func (v *NullableForecastCatalog) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

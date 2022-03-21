@@ -19,19 +19,18 @@ import (
 // EquipmentFanControlRelationship - A relationship to the 'equipment.FanControl' resource, or the expanded 'equipment.FanControl' resource, or the 'null' value.
 type EquipmentFanControlRelationship struct {
 	EquipmentFanControl *EquipmentFanControl
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 }
 
 // EquipmentFanControlAsEquipmentFanControlRelationship is a convenience function that returns EquipmentFanControl wrapped in EquipmentFanControlRelationship
 func EquipmentFanControlAsEquipmentFanControlRelationship(v *EquipmentFanControl) EquipmentFanControlRelationship {
-	return EquipmentFanControlRelationship{ EquipmentFanControl: v}
+	return EquipmentFanControlRelationship{EquipmentFanControl: v}
 }
 
 // MoMoRefAsEquipmentFanControlRelationship is a convenience function that returns MoMoRef wrapped in EquipmentFanControlRelationship
 func MoMoRefAsEquipmentFanControlRelationship(v *MoMoRef) EquipmentFanControlRelationship {
-	return EquipmentFanControlRelationship{ MoMoRef: v}
+	return EquipmentFanControlRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentFanControlRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src EquipmentFanControlRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentFanControlRelationship) GetActualInstance() (interface{}) {
+func (obj *EquipmentFanControlRelationship) GetActualInstance() interface{} {
 	if obj.EquipmentFanControl != nil {
 		return obj.EquipmentFanControl
 	}
@@ -137,5 +136,3 @@ func (v *NullableEquipmentFanControlRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

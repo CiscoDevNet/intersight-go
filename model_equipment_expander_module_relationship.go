@@ -19,19 +19,18 @@ import (
 // EquipmentExpanderModuleRelationship - A relationship to the 'equipment.ExpanderModule' resource, or the expanded 'equipment.ExpanderModule' resource, or the 'null' value.
 type EquipmentExpanderModuleRelationship struct {
 	EquipmentExpanderModule *EquipmentExpanderModule
-	MoMoRef *MoMoRef
+	MoMoRef                 *MoMoRef
 }
 
 // EquipmentExpanderModuleAsEquipmentExpanderModuleRelationship is a convenience function that returns EquipmentExpanderModule wrapped in EquipmentExpanderModuleRelationship
 func EquipmentExpanderModuleAsEquipmentExpanderModuleRelationship(v *EquipmentExpanderModule) EquipmentExpanderModuleRelationship {
-	return EquipmentExpanderModuleRelationship{ EquipmentExpanderModule: v}
+	return EquipmentExpanderModuleRelationship{EquipmentExpanderModule: v}
 }
 
 // MoMoRefAsEquipmentExpanderModuleRelationship is a convenience function that returns MoMoRef wrapped in EquipmentExpanderModuleRelationship
 func MoMoRefAsEquipmentExpanderModuleRelationship(v *MoMoRef) EquipmentExpanderModuleRelationship {
-	return EquipmentExpanderModuleRelationship{ MoMoRef: v}
+	return EquipmentExpanderModuleRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentExpanderModuleRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src EquipmentExpanderModuleRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentExpanderModuleRelationship) GetActualInstance() (interface{}) {
+func (obj *EquipmentExpanderModuleRelationship) GetActualInstance() interface{} {
 	if obj.EquipmentExpanderModule != nil {
 		return obj.EquipmentExpanderModule
 	}
@@ -137,5 +136,3 @@ func (v *NullableEquipmentExpanderModuleRelationship) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

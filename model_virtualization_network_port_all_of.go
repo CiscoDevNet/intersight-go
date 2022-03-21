@@ -20,13 +20,13 @@ type VirtualizationNetworkPortAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	BondState NullableVirtualizationBondState `json:"BondState,omitempty"`
-	NetInterfaces []string `json:"NetInterfaces,omitempty"`
+	ObjectType    string                          `json:"ObjectType"`
+	BondState     NullableVirtualizationBondState `json:"BondState,omitempty"`
+	NetInterfaces []string                        `json:"NetInterfaces,omitempty"`
 	// The type of the network port. * `unknown` - This port is of an unknown port type. * `hypervisor` - This port is connected to the hypervisor. * `vm` - This port is connected to a VM. * `uplink` - This port is an uplink port.
 	PortType *string `json:"PortType,omitempty"`
 	// The vlan id associated with this port.
-	Vlans *string `json:"Vlans,omitempty"`
+	Vlans                *string `json:"Vlans,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *VirtualizationNetworkPortAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationNetworkPortAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *VirtualizationNetworkPortAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationNetworkPortAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -116,7 +116,7 @@ func (o *VirtualizationNetworkPortAllOf) GetBondState() VirtualizationBondState 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationNetworkPortAllOf) GetBondStateOk() (*VirtualizationBondState, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BondState.Get(), o.BondState.IsSet()
@@ -135,6 +135,7 @@ func (o *VirtualizationNetworkPortAllOf) HasBondState() bool {
 func (o *VirtualizationNetworkPortAllOf) SetBondState(v VirtualizationBondState) {
 	o.BondState.Set(&v)
 }
+
 // SetBondStateNil sets the value for BondState to be an explicit nil
 func (o *VirtualizationNetworkPortAllOf) SetBondStateNil() {
 	o.BondState.Set(nil)
@@ -147,7 +148,7 @@ func (o *VirtualizationNetworkPortAllOf) UnsetBondState() {
 
 // GetNetInterfaces returns the NetInterfaces field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationNetworkPortAllOf) GetNetInterfaces() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -327,5 +328,3 @@ func (v *NullableVirtualizationNetworkPortAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

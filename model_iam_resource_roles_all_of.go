@@ -23,12 +23,12 @@ type IamResourceRolesAllOf struct {
 	ObjectType string `json:"ObjectType"`
 	// An array of relationships to iamEndPointRole resources.
 	EndPointRoles []IamEndPointRoleRelationship `json:"EndPointRoles,omitempty"`
-	Permission *IamPermissionRelationship `json:"Permission,omitempty"`
+	Permission    *IamPermissionRelationship    `json:"Permission,omitempty"`
 	// An array of relationships to iamPrivilegeSet resources.
 	PrivilegeSets []IamPrivilegeSetRelationship `json:"PrivilegeSets,omitempty"`
-	Resource *MoBaseMoRelationship `json:"Resource,omitempty"`
+	Resource      *MoBaseMoRelationship         `json:"Resource,omitempty"`
 	// An array of relationships to iamRole resources.
-	Roles []IamRoleRelationship `json:"Roles,omitempty"`
+	Roles                []IamRoleRelationship `json:"Roles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *IamResourceRolesAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamResourceRolesAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *IamResourceRolesAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamResourceRolesAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -107,7 +107,7 @@ func (o *IamResourceRolesAllOf) SetObjectType(v string) {
 
 // GetEndPointRoles returns the EndPointRoles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamResourceRolesAllOf) GetEndPointRoles() []IamEndPointRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamEndPointRoleRelationship
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *IamResourceRolesAllOf) SetPermission(v IamPermissionRelationship) {
 
 // GetPrivilegeSets returns the PrivilegeSets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamResourceRolesAllOf) GetPrivilegeSets() []IamPrivilegeSetRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPrivilegeSetRelationship
 		return ret
 	}
@@ -237,7 +237,7 @@ func (o *IamResourceRolesAllOf) SetResource(v MoBaseMoRelationship) {
 
 // GetRoles returns the Roles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamResourceRolesAllOf) GetRoles() []IamRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamRoleRelationship
 		return ret
 	}
@@ -357,5 +357,3 @@ func (v *NullableIamResourceRolesAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

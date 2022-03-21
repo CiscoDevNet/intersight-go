@@ -22,8 +22,8 @@ type ComputePhysicalSummaryAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The desired power state of the server.
-	AdminPowerState *string `json:"AdminPowerState,omitempty"`
-	AlarmSummary NullableComputeAlarmSummary `json:"AlarmSummary,omitempty"`
+	AdminPowerState *string                     `json:"AdminPowerState,omitempty"`
+	AlarmSummary    NullableComputeAlarmSummary `json:"AlarmSummary,omitempty"`
 	// The user defined asset tag assigned to the server.
 	AssetTag *string `json:"AssetTag,omitempty"`
 	// The amount of memory available on the server.
@@ -48,7 +48,7 @@ type ComputePhysicalSummaryAllOf struct {
 	// The universally unique hardware identity of the server provided by the manufacturer.
 	HardwareUuid *string `json:"HardwareUuid,omitempty"`
 	// The IPv4 address configured on the management interface of the Integrated Management Controller.
-	Ipv4Address *string `json:"Ipv4Address,omitempty"`
+	Ipv4Address    *string            `json:"Ipv4Address,omitempty"`
 	KvmIpAddresses []ComputeIpAddress `json:"KvmIpAddresses,omitempty"`
 	// The management mode of the server. * `IntersightStandalone` - Intersight Standalone mode of operation. * `UCSM` - Unified Computing System Manager mode of operation. * `Intersight` - Intersight managed mode of operation.
 	ManagementMode *string `json:"ManagementMode,omitempty"`
@@ -75,8 +75,8 @@ type ComputePhysicalSummaryAllOf struct {
 	// The total number of threads the server is capable of handling.
 	NumThreads *int64 `json:"NumThreads,omitempty"`
 	// The actual power state of the server.
-	OperPowerState *string `json:"OperPowerState,omitempty"`
-	OperReason []string `json:"OperReason,omitempty"`
+	OperPowerState *string  `json:"OperPowerState,omitempty"`
+	OperReason     []string `json:"OperReason,omitempty"`
 	// The operational state of the server.
 	OperState *string `json:"OperState,omitempty"`
 	// The operability of the server.
@@ -114,9 +114,9 @@ type ComputePhysicalSummaryAllOf struct {
 	// The universally unique identity of the server.
 	Uuid *string `json:"Uuid,omitempty"`
 	// This field identifies the vendor of the given component.
-	Vendor *string `json:"Vendor,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Vendor               *string                              `json:"Vendor,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -158,7 +158,7 @@ func (o *ComputePhysicalSummaryAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ComputePhysicalSummaryAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -182,7 +182,7 @@ func (o *ComputePhysicalSummaryAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ComputePhysicalSummaryAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -238,7 +238,7 @@ func (o *ComputePhysicalSummaryAllOf) GetAlarmSummary() ComputeAlarmSummary {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ComputePhysicalSummaryAllOf) GetAlarmSummaryOk() (*ComputeAlarmSummary, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AlarmSummary.Get(), o.AlarmSummary.IsSet()
@@ -257,6 +257,7 @@ func (o *ComputePhysicalSummaryAllOf) HasAlarmSummary() bool {
 func (o *ComputePhysicalSummaryAllOf) SetAlarmSummary(v ComputeAlarmSummary) {
 	o.AlarmSummary.Set(&v)
 }
+
 // SetAlarmSummaryNil sets the value for AlarmSummary to be an explicit nil
 func (o *ComputePhysicalSummaryAllOf) SetAlarmSummaryNil() {
 	o.AlarmSummary.Set(nil)
@@ -656,7 +657,7 @@ func (o *ComputePhysicalSummaryAllOf) SetIpv4Address(v string) {
 
 // GetKvmIpAddresses returns the KvmIpAddresses field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputePhysicalSummaryAllOf) GetKvmIpAddresses() []ComputeIpAddress {
-	if o == nil  {
+	if o == nil {
 		var ret []ComputeIpAddress
 		return ret
 	}
@@ -1105,7 +1106,7 @@ func (o *ComputePhysicalSummaryAllOf) SetOperPowerState(v string) {
 
 // GetOperReason returns the OperReason field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputePhysicalSummaryAllOf) GetOperReason() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -2077,5 +2078,3 @@ func (v *NullableComputePhysicalSummaryAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

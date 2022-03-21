@@ -18,32 +18,31 @@ import (
 
 // WorkflowErrorResponseHandlerResponse - The response body of a HTTP GET request for the 'workflow.ErrorResponseHandler' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'workflow.ErrorResponseHandler' resources.
 type WorkflowErrorResponseHandlerResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform             *MoAggregateTransform
+	MoDocumentCount                  *MoDocumentCount
+	MoTagSummary                     *MoTagSummary
 	WorkflowErrorResponseHandlerList *WorkflowErrorResponseHandlerList
 }
 
 // MoAggregateTransformAsWorkflowErrorResponseHandlerResponse is a convenience function that returns MoAggregateTransform wrapped in WorkflowErrorResponseHandlerResponse
 func MoAggregateTransformAsWorkflowErrorResponseHandlerResponse(v *MoAggregateTransform) WorkflowErrorResponseHandlerResponse {
-	return WorkflowErrorResponseHandlerResponse{ MoAggregateTransform: v}
+	return WorkflowErrorResponseHandlerResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsWorkflowErrorResponseHandlerResponse is a convenience function that returns MoDocumentCount wrapped in WorkflowErrorResponseHandlerResponse
 func MoDocumentCountAsWorkflowErrorResponseHandlerResponse(v *MoDocumentCount) WorkflowErrorResponseHandlerResponse {
-	return WorkflowErrorResponseHandlerResponse{ MoDocumentCount: v}
+	return WorkflowErrorResponseHandlerResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsWorkflowErrorResponseHandlerResponse is a convenience function that returns MoTagSummary wrapped in WorkflowErrorResponseHandlerResponse
 func MoTagSummaryAsWorkflowErrorResponseHandlerResponse(v *MoTagSummary) WorkflowErrorResponseHandlerResponse {
-	return WorkflowErrorResponseHandlerResponse{ MoTagSummary: v}
+	return WorkflowErrorResponseHandlerResponse{MoTagSummary: v}
 }
 
 // WorkflowErrorResponseHandlerListAsWorkflowErrorResponseHandlerResponse is a convenience function that returns WorkflowErrorResponseHandlerList wrapped in WorkflowErrorResponseHandlerResponse
 func WorkflowErrorResponseHandlerListAsWorkflowErrorResponseHandlerResponse(v *WorkflowErrorResponseHandlerList) WorkflowErrorResponseHandlerResponse {
-	return WorkflowErrorResponseHandlerResponse{ WorkflowErrorResponseHandlerList: v}
+	return WorkflowErrorResponseHandlerResponse{WorkflowErrorResponseHandlerList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *WorkflowErrorResponseHandlerResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src WorkflowErrorResponseHandlerResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *WorkflowErrorResponseHandlerResponse) GetActualInstance() (interface{}) {
+func (obj *WorkflowErrorResponseHandlerResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableWorkflowErrorResponseHandlerResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

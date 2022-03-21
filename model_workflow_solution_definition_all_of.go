@@ -34,13 +34,13 @@ type WorkflowSolutionDefinitionAllOf struct {
 	// License entitlement required to run this solution. * `Base` - Base as a License type. It is default license type. * `Essential` - Essential as a License type. * `Standard` - Standard as a License type. * `Advantage` - Advantage as a License type. * `Premier` - Premier as a License type. * `IWO-Essential` - IWO-Essential as a License type. * `IWO-Advantage` - IWO-Advantage as a License type. * `IWO-Premier` - IWO-Premier as a License type. * `IKS-Advantage` - IKS-Advantage as a License type.
 	LicenseEntitlement *string `json:"LicenseEntitlement,omitempty"`
 	// The name for this solution definition. You can have multiple versions of the solution with the same name. Name can only contain letters (a-z, A-Z), numbers (0-9), hyphen (-), period (.), colon (:) or an underscore (_).
-	Name *string `json:"Name,omitempty"`
+	Name             *string                `json:"Name,omitempty"`
 	OutputDefinition []WorkflowBaseDataType `json:"OutputDefinition,omitempty"`
 	// The version of the solution to support multiple versions.
 	Version *int64 `json:"Version,omitempty"`
 	// An array of relationships to workflowSolutionActionDefinition resources.
-	ActionDefinitions []WorkflowSolutionActionDefinitionRelationship `json:"ActionDefinitions,omitempty"`
-	Catalog *WorkflowCatalogRelationship `json:"Catalog,omitempty"`
+	ActionDefinitions    []WorkflowSolutionActionDefinitionRelationship `json:"ActionDefinitions,omitempty"`
+	Catalog              *WorkflowCatalogRelationship                   `json:"Catalog,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -94,7 +94,7 @@ func (o *WorkflowSolutionDefinitionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowSolutionDefinitionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -118,7 +118,7 @@ func (o *WorkflowSolutionDefinitionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowSolutionDefinitionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -355,7 +355,7 @@ func (o *WorkflowSolutionDefinitionAllOf) SetName(v string) {
 
 // GetOutputDefinition returns the OutputDefinition field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionDefinitionAllOf) GetOutputDefinition() []WorkflowBaseDataType {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowBaseDataType
 		return ret
 	}
@@ -420,7 +420,7 @@ func (o *WorkflowSolutionDefinitionAllOf) SetVersion(v int64) {
 
 // GetActionDefinitions returns the ActionDefinitions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionDefinitionAllOf) GetActionDefinitions() []WorkflowSolutionActionDefinitionRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowSolutionActionDefinitionRelationship
 		return ret
 	}
@@ -596,5 +596,3 @@ func (v *NullableWorkflowSolutionDefinitionAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

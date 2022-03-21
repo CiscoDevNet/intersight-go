@@ -19,19 +19,18 @@ import (
 // BiosVfSelectMemoryRasConfigurationRelationship - A relationship to the 'bios.VfSelectMemoryRasConfiguration' resource, or the expanded 'bios.VfSelectMemoryRasConfiguration' resource, or the 'null' value.
 type BiosVfSelectMemoryRasConfigurationRelationship struct {
 	BiosVfSelectMemoryRasConfiguration *BiosVfSelectMemoryRasConfiguration
-	MoMoRef *MoMoRef
+	MoMoRef                            *MoMoRef
 }
 
 // BiosVfSelectMemoryRasConfigurationAsBiosVfSelectMemoryRasConfigurationRelationship is a convenience function that returns BiosVfSelectMemoryRasConfiguration wrapped in BiosVfSelectMemoryRasConfigurationRelationship
 func BiosVfSelectMemoryRasConfigurationAsBiosVfSelectMemoryRasConfigurationRelationship(v *BiosVfSelectMemoryRasConfiguration) BiosVfSelectMemoryRasConfigurationRelationship {
-	return BiosVfSelectMemoryRasConfigurationRelationship{ BiosVfSelectMemoryRasConfiguration: v}
+	return BiosVfSelectMemoryRasConfigurationRelationship{BiosVfSelectMemoryRasConfiguration: v}
 }
 
 // MoMoRefAsBiosVfSelectMemoryRasConfigurationRelationship is a convenience function that returns MoMoRef wrapped in BiosVfSelectMemoryRasConfigurationRelationship
 func MoMoRefAsBiosVfSelectMemoryRasConfigurationRelationship(v *MoMoRef) BiosVfSelectMemoryRasConfigurationRelationship {
-	return BiosVfSelectMemoryRasConfigurationRelationship{ MoMoRef: v}
+	return BiosVfSelectMemoryRasConfigurationRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BiosVfSelectMemoryRasConfigurationRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BiosVfSelectMemoryRasConfigurationRelationship) MarshalJSON() ([]byte,
 }
 
 // Get the actual instance
-func (obj *BiosVfSelectMemoryRasConfigurationRelationship) GetActualInstance() (interface{}) {
+func (obj *BiosVfSelectMemoryRasConfigurationRelationship) GetActualInstance() interface{} {
 	if obj.BiosVfSelectMemoryRasConfiguration != nil {
 		return obj.BiosVfSelectMemoryRasConfiguration
 	}
@@ -137,5 +136,3 @@ func (v *NullableBiosVfSelectMemoryRasConfigurationRelationship) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

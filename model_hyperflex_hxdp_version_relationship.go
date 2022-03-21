@@ -19,19 +19,18 @@ import (
 // HyperflexHxdpVersionRelationship - A relationship to the 'hyperflex.HxdpVersion' resource, or the expanded 'hyperflex.HxdpVersion' resource, or the 'null' value.
 type HyperflexHxdpVersionRelationship struct {
 	HyperflexHxdpVersion *HyperflexHxdpVersion
-	MoMoRef *MoMoRef
+	MoMoRef              *MoMoRef
 }
 
 // HyperflexHxdpVersionAsHyperflexHxdpVersionRelationship is a convenience function that returns HyperflexHxdpVersion wrapped in HyperflexHxdpVersionRelationship
 func HyperflexHxdpVersionAsHyperflexHxdpVersionRelationship(v *HyperflexHxdpVersion) HyperflexHxdpVersionRelationship {
-	return HyperflexHxdpVersionRelationship{ HyperflexHxdpVersion: v}
+	return HyperflexHxdpVersionRelationship{HyperflexHxdpVersion: v}
 }
 
 // MoMoRefAsHyperflexHxdpVersionRelationship is a convenience function that returns MoMoRef wrapped in HyperflexHxdpVersionRelationship
 func MoMoRefAsHyperflexHxdpVersionRelationship(v *MoMoRef) HyperflexHxdpVersionRelationship {
-	return HyperflexHxdpVersionRelationship{ MoMoRef: v}
+	return HyperflexHxdpVersionRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexHxdpVersionRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexHxdpVersionRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexHxdpVersionRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexHxdpVersionRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexHxdpVersion != nil {
 		return obj.HyperflexHxdpVersion
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexHxdpVersionRelationship) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

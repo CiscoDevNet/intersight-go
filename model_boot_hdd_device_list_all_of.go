@@ -20,7 +20,7 @@ type BootHddDeviceListAllOf struct {
 	// The total number of 'boot.HddDevice' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'boot.HddDevice' resources matching the request.
-	Results []BootHddDevice `json:"Results,omitempty"`
+	Results              []BootHddDevice `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *BootHddDeviceListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BootHddDeviceListAllOf) GetResults() []BootHddDevice {
-	if o == nil  {
+	if o == nil {
 		var ret []BootHddDevice
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableBootHddDeviceListAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

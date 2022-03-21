@@ -19,31 +19,30 @@ import (
 // HyperflexHealthCheckPackageChecksumResponse - The response body of a HTTP GET request for the 'hyperflex.HealthCheckPackageChecksum' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'hyperflex.HealthCheckPackageChecksum' resources.
 type HyperflexHealthCheckPackageChecksumResponse struct {
 	HyperflexHealthCheckPackageChecksumList *HyperflexHealthCheckPackageChecksumList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                    *MoAggregateTransform
+	MoDocumentCount                         *MoDocumentCount
+	MoTagSummary                            *MoTagSummary
 }
 
 // HyperflexHealthCheckPackageChecksumListAsHyperflexHealthCheckPackageChecksumResponse is a convenience function that returns HyperflexHealthCheckPackageChecksumList wrapped in HyperflexHealthCheckPackageChecksumResponse
 func HyperflexHealthCheckPackageChecksumListAsHyperflexHealthCheckPackageChecksumResponse(v *HyperflexHealthCheckPackageChecksumList) HyperflexHealthCheckPackageChecksumResponse {
-	return HyperflexHealthCheckPackageChecksumResponse{ HyperflexHealthCheckPackageChecksumList: v}
+	return HyperflexHealthCheckPackageChecksumResponse{HyperflexHealthCheckPackageChecksumList: v}
 }
 
 // MoAggregateTransformAsHyperflexHealthCheckPackageChecksumResponse is a convenience function that returns MoAggregateTransform wrapped in HyperflexHealthCheckPackageChecksumResponse
 func MoAggregateTransformAsHyperflexHealthCheckPackageChecksumResponse(v *MoAggregateTransform) HyperflexHealthCheckPackageChecksumResponse {
-	return HyperflexHealthCheckPackageChecksumResponse{ MoAggregateTransform: v}
+	return HyperflexHealthCheckPackageChecksumResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsHyperflexHealthCheckPackageChecksumResponse is a convenience function that returns MoDocumentCount wrapped in HyperflexHealthCheckPackageChecksumResponse
 func MoDocumentCountAsHyperflexHealthCheckPackageChecksumResponse(v *MoDocumentCount) HyperflexHealthCheckPackageChecksumResponse {
-	return HyperflexHealthCheckPackageChecksumResponse{ MoDocumentCount: v}
+	return HyperflexHealthCheckPackageChecksumResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsHyperflexHealthCheckPackageChecksumResponse is a convenience function that returns MoTagSummary wrapped in HyperflexHealthCheckPackageChecksumResponse
 func MoTagSummaryAsHyperflexHealthCheckPackageChecksumResponse(v *MoTagSummary) HyperflexHealthCheckPackageChecksumResponse {
-	return HyperflexHealthCheckPackageChecksumResponse{ MoTagSummary: v}
+	return HyperflexHealthCheckPackageChecksumResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexHealthCheckPackageChecksumResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src HyperflexHealthCheckPackageChecksumResponse) MarshalJSON() ([]byte, er
 }
 
 // Get the actual instance
-func (obj *HyperflexHealthCheckPackageChecksumResponse) GetActualInstance() (interface{}) {
+func (obj *HyperflexHealthCheckPackageChecksumResponse) GetActualInstance() interface{} {
 	if obj.HyperflexHealthCheckPackageChecksumList != nil {
 		return obj.HyperflexHealthCheckPackageChecksumList
 	}
@@ -184,5 +183,3 @@ func (v *NullableHyperflexHealthCheckPackageChecksumResponse) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

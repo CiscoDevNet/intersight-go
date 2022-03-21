@@ -20,30 +20,29 @@ import (
 type FabricServerRoleResponse struct {
 	FabricServerRoleList *FabricServerRoleList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // FabricServerRoleListAsFabricServerRoleResponse is a convenience function that returns FabricServerRoleList wrapped in FabricServerRoleResponse
 func FabricServerRoleListAsFabricServerRoleResponse(v *FabricServerRoleList) FabricServerRoleResponse {
-	return FabricServerRoleResponse{ FabricServerRoleList: v}
+	return FabricServerRoleResponse{FabricServerRoleList: v}
 }
 
 // MoAggregateTransformAsFabricServerRoleResponse is a convenience function that returns MoAggregateTransform wrapped in FabricServerRoleResponse
 func MoAggregateTransformAsFabricServerRoleResponse(v *MoAggregateTransform) FabricServerRoleResponse {
-	return FabricServerRoleResponse{ MoAggregateTransform: v}
+	return FabricServerRoleResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsFabricServerRoleResponse is a convenience function that returns MoDocumentCount wrapped in FabricServerRoleResponse
 func MoDocumentCountAsFabricServerRoleResponse(v *MoDocumentCount) FabricServerRoleResponse {
-	return FabricServerRoleResponse{ MoDocumentCount: v}
+	return FabricServerRoleResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsFabricServerRoleResponse is a convenience function that returns MoTagSummary wrapped in FabricServerRoleResponse
 func MoTagSummaryAsFabricServerRoleResponse(v *MoTagSummary) FabricServerRoleResponse {
-	return FabricServerRoleResponse{ MoTagSummary: v}
+	return FabricServerRoleResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FabricServerRoleResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src FabricServerRoleResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FabricServerRoleResponse) GetActualInstance() (interface{}) {
+func (obj *FabricServerRoleResponse) GetActualInstance() interface{} {
 	if obj.FabricServerRoleList != nil {
 		return obj.FabricServerRoleList
 	}
@@ -184,5 +183,3 @@ func (v *NullableFabricServerRoleResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

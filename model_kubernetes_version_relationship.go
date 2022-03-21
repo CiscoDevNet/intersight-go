@@ -19,19 +19,18 @@ import (
 // KubernetesVersionRelationship - A relationship to the 'kubernetes.Version' resource, or the expanded 'kubernetes.Version' resource, or the 'null' value.
 type KubernetesVersionRelationship struct {
 	KubernetesVersion *KubernetesVersion
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 }
 
 // KubernetesVersionAsKubernetesVersionRelationship is a convenience function that returns KubernetesVersion wrapped in KubernetesVersionRelationship
 func KubernetesVersionAsKubernetesVersionRelationship(v *KubernetesVersion) KubernetesVersionRelationship {
-	return KubernetesVersionRelationship{ KubernetesVersion: v}
+	return KubernetesVersionRelationship{KubernetesVersion: v}
 }
 
 // MoMoRefAsKubernetesVersionRelationship is a convenience function that returns MoMoRef wrapped in KubernetesVersionRelationship
 func MoMoRefAsKubernetesVersionRelationship(v *MoMoRef) KubernetesVersionRelationship {
-	return KubernetesVersionRelationship{ MoMoRef: v}
+	return KubernetesVersionRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesVersionRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesVersionRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KubernetesVersionRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesVersionRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesVersion != nil {
 		return obj.KubernetesVersion
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesVersionRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

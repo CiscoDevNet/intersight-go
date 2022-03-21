@@ -19,19 +19,18 @@ import (
 // ManagementControllerRelationship - A relationship to the 'management.Controller' resource, or the expanded 'management.Controller' resource, or the 'null' value.
 type ManagementControllerRelationship struct {
 	ManagementController *ManagementController
-	MoMoRef *MoMoRef
+	MoMoRef              *MoMoRef
 }
 
 // ManagementControllerAsManagementControllerRelationship is a convenience function that returns ManagementController wrapped in ManagementControllerRelationship
 func ManagementControllerAsManagementControllerRelationship(v *ManagementController) ManagementControllerRelationship {
-	return ManagementControllerRelationship{ ManagementController: v}
+	return ManagementControllerRelationship{ManagementController: v}
 }
 
 // MoMoRefAsManagementControllerRelationship is a convenience function that returns MoMoRef wrapped in ManagementControllerRelationship
 func MoMoRefAsManagementControllerRelationship(v *MoMoRef) ManagementControllerRelationship {
-	return ManagementControllerRelationship{ MoMoRef: v}
+	return ManagementControllerRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ManagementControllerRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ManagementControllerRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ManagementControllerRelationship) GetActualInstance() (interface{}) {
+func (obj *ManagementControllerRelationship) GetActualInstance() interface{} {
 	if obj.ManagementController != nil {
 		return obj.ManagementController
 	}
@@ -137,5 +136,3 @@ func (v *NullableManagementControllerRelationship) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

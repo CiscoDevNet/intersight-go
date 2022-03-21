@@ -20,30 +20,29 @@ import (
 type ApplianceRestoreResponse struct {
 	ApplianceRestoreList *ApplianceRestoreList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // ApplianceRestoreListAsApplianceRestoreResponse is a convenience function that returns ApplianceRestoreList wrapped in ApplianceRestoreResponse
 func ApplianceRestoreListAsApplianceRestoreResponse(v *ApplianceRestoreList) ApplianceRestoreResponse {
-	return ApplianceRestoreResponse{ ApplianceRestoreList: v}
+	return ApplianceRestoreResponse{ApplianceRestoreList: v}
 }
 
 // MoAggregateTransformAsApplianceRestoreResponse is a convenience function that returns MoAggregateTransform wrapped in ApplianceRestoreResponse
 func MoAggregateTransformAsApplianceRestoreResponse(v *MoAggregateTransform) ApplianceRestoreResponse {
-	return ApplianceRestoreResponse{ MoAggregateTransform: v}
+	return ApplianceRestoreResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsApplianceRestoreResponse is a convenience function that returns MoDocumentCount wrapped in ApplianceRestoreResponse
 func MoDocumentCountAsApplianceRestoreResponse(v *MoDocumentCount) ApplianceRestoreResponse {
-	return ApplianceRestoreResponse{ MoDocumentCount: v}
+	return ApplianceRestoreResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsApplianceRestoreResponse is a convenience function that returns MoTagSummary wrapped in ApplianceRestoreResponse
 func MoTagSummaryAsApplianceRestoreResponse(v *MoTagSummary) ApplianceRestoreResponse {
-	return ApplianceRestoreResponse{ MoTagSummary: v}
+	return ApplianceRestoreResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ApplianceRestoreResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ApplianceRestoreResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ApplianceRestoreResponse) GetActualInstance() (interface{}) {
+func (obj *ApplianceRestoreResponse) GetActualInstance() interface{} {
 	if obj.ApplianceRestoreList != nil {
 		return obj.ApplianceRestoreList
 	}
@@ -184,5 +183,3 @@ func (v *NullableApplianceRestoreResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

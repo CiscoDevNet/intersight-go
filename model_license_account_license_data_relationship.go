@@ -19,19 +19,18 @@ import (
 // LicenseAccountLicenseDataRelationship - A relationship to the 'license.AccountLicenseData' resource, or the expanded 'license.AccountLicenseData' resource, or the 'null' value.
 type LicenseAccountLicenseDataRelationship struct {
 	LicenseAccountLicenseData *LicenseAccountLicenseData
-	MoMoRef *MoMoRef
+	MoMoRef                   *MoMoRef
 }
 
 // LicenseAccountLicenseDataAsLicenseAccountLicenseDataRelationship is a convenience function that returns LicenseAccountLicenseData wrapped in LicenseAccountLicenseDataRelationship
 func LicenseAccountLicenseDataAsLicenseAccountLicenseDataRelationship(v *LicenseAccountLicenseData) LicenseAccountLicenseDataRelationship {
-	return LicenseAccountLicenseDataRelationship{ LicenseAccountLicenseData: v}
+	return LicenseAccountLicenseDataRelationship{LicenseAccountLicenseData: v}
 }
 
 // MoMoRefAsLicenseAccountLicenseDataRelationship is a convenience function that returns MoMoRef wrapped in LicenseAccountLicenseDataRelationship
 func MoMoRefAsLicenseAccountLicenseDataRelationship(v *MoMoRef) LicenseAccountLicenseDataRelationship {
-	return LicenseAccountLicenseDataRelationship{ MoMoRef: v}
+	return LicenseAccountLicenseDataRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *LicenseAccountLicenseDataRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src LicenseAccountLicenseDataRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *LicenseAccountLicenseDataRelationship) GetActualInstance() (interface{}) {
+func (obj *LicenseAccountLicenseDataRelationship) GetActualInstance() interface{} {
 	if obj.LicenseAccountLicenseData != nil {
 		return obj.LicenseAccountLicenseData
 	}
@@ -137,5 +136,3 @@ func (v *NullableLicenseAccountLicenseDataRelationship) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

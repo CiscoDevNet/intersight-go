@@ -19,19 +19,18 @@ import (
 // EquipmentSwitchCardRelationship - A relationship to the 'equipment.SwitchCard' resource, or the expanded 'equipment.SwitchCard' resource, or the 'null' value.
 type EquipmentSwitchCardRelationship struct {
 	EquipmentSwitchCard *EquipmentSwitchCard
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 }
 
 // EquipmentSwitchCardAsEquipmentSwitchCardRelationship is a convenience function that returns EquipmentSwitchCard wrapped in EquipmentSwitchCardRelationship
 func EquipmentSwitchCardAsEquipmentSwitchCardRelationship(v *EquipmentSwitchCard) EquipmentSwitchCardRelationship {
-	return EquipmentSwitchCardRelationship{ EquipmentSwitchCard: v}
+	return EquipmentSwitchCardRelationship{EquipmentSwitchCard: v}
 }
 
 // MoMoRefAsEquipmentSwitchCardRelationship is a convenience function that returns MoMoRef wrapped in EquipmentSwitchCardRelationship
 func MoMoRefAsEquipmentSwitchCardRelationship(v *MoMoRef) EquipmentSwitchCardRelationship {
-	return EquipmentSwitchCardRelationship{ MoMoRef: v}
+	return EquipmentSwitchCardRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentSwitchCardRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src EquipmentSwitchCardRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentSwitchCardRelationship) GetActualInstance() (interface{}) {
+func (obj *EquipmentSwitchCardRelationship) GetActualInstance() interface{} {
 	if obj.EquipmentSwitchCard != nil {
 		return obj.EquipmentSwitchCard
 	}
@@ -137,5 +136,3 @@ func (v *NullableEquipmentSwitchCardRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

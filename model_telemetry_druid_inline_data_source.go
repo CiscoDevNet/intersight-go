@@ -22,7 +22,7 @@ type TelemetryDruidInlineDataSource struct {
 	// the column names.
 	ColumnNames []string `json:"columnNames"`
 	// an array of rows.
-	Rows [][]string `json:"rows"`
+	Rows                 [][]string `json:"rows"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -61,7 +61,7 @@ func (o *TelemetryDruidInlineDataSource) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidInlineDataSource) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -85,7 +85,7 @@ func (o *TelemetryDruidInlineDataSource) GetColumnNames() []string {
 // GetColumnNamesOk returns a tuple with the ColumnNames field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidInlineDataSource) GetColumnNamesOk() (*[]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ColumnNames, true
@@ -109,7 +109,7 @@ func (o *TelemetryDruidInlineDataSource) GetRows() [][]string {
 // GetRowsOk returns a tuple with the Rows field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidInlineDataSource) GetRowsOk() (*[][]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Rows, true
@@ -193,5 +193,3 @@ func (v *NullableTelemetryDruidInlineDataSource) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

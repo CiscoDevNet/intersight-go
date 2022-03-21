@@ -20,12 +20,12 @@ type IamResourcePermissionAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType      string                 `json:"ObjectType"`
 	PermissionRoles []IamPermissionToRoles `json:"PermissionRoles,omitempty"`
 	// Name of the service owning the resource.
-	TargetApp *string `json:"TargetApp,omitempty"`
-	Holder *IamSecurityHolderRelationship `json:"Holder,omitempty"`
-	Resource *MoBaseMoRelationship `json:"Resource,omitempty"`
+	TargetApp            *string                        `json:"TargetApp,omitempty"`
+	Holder               *IamSecurityHolderRelationship `json:"Holder,omitempty"`
+	Resource             *MoBaseMoRelationship          `json:"Resource,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *IamResourcePermissionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamResourcePermissionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *IamResourcePermissionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamResourcePermissionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -104,7 +104,7 @@ func (o *IamResourcePermissionAllOf) SetObjectType(v string) {
 
 // GetPermissionRoles returns the PermissionRoles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamResourcePermissionAllOf) GetPermissionRoles() []IamPermissionToRoles {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPermissionToRoles
 		return ret
 	}
@@ -316,5 +316,3 @@ func (v *NullableIamResourcePermissionAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

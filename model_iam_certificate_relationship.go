@@ -19,19 +19,18 @@ import (
 // IamCertificateRelationship - A relationship to the 'iam.Certificate' resource, or the expanded 'iam.Certificate' resource, or the 'null' value.
 type IamCertificateRelationship struct {
 	IamCertificate *IamCertificate
-	MoMoRef *MoMoRef
+	MoMoRef        *MoMoRef
 }
 
 // IamCertificateAsIamCertificateRelationship is a convenience function that returns IamCertificate wrapped in IamCertificateRelationship
 func IamCertificateAsIamCertificateRelationship(v *IamCertificate) IamCertificateRelationship {
-	return IamCertificateRelationship{ IamCertificate: v}
+	return IamCertificateRelationship{IamCertificate: v}
 }
 
 // MoMoRefAsIamCertificateRelationship is a convenience function that returns MoMoRef wrapped in IamCertificateRelationship
 func MoMoRefAsIamCertificateRelationship(v *MoMoRef) IamCertificateRelationship {
-	return IamCertificateRelationship{ MoMoRef: v}
+	return IamCertificateRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamCertificateRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamCertificateRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamCertificateRelationship) GetActualInstance() (interface{}) {
+func (obj *IamCertificateRelationship) GetActualInstance() interface{} {
 	if obj.IamCertificate != nil {
 		return obj.IamCertificate
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamCertificateRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -45,11 +45,11 @@ type StorageFlexFlashControllerProps struct {
 	// Startup firmware version of the Flex flash controller.
 	StartupFwVersion *string `json:"StartupFwVersion,omitempty"`
 	// Number of virtual drives for a specific Flex flash controller.
-	VirtualDriveCount *string `json:"VirtualDriveCount,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	VirtualDriveCount          *string                                 `json:"VirtualDriveCount,omitempty"`
+	InventoryDeviceInfo        *InventoryDeviceInfoRelationship        `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice           *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	StorageFlexFlashController *StorageFlexFlashControllerRelationship `json:"StorageFlexFlashController,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties       map[string]interface{}
 }
 
 type _StorageFlexFlashControllerProps StorageFlexFlashControllerProps
@@ -90,7 +90,7 @@ func (o *StorageFlexFlashControllerProps) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageFlexFlashControllerProps) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -114,7 +114,7 @@ func (o *StorageFlexFlashControllerProps) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageFlexFlashControllerProps) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -666,9 +666,9 @@ func (o *StorageFlexFlashControllerProps) UnmarshalJSON(bytes []byte) (err error
 		// Startup firmware version of the Flex flash controller.
 		StartupFwVersion *string `json:"StartupFwVersion,omitempty"`
 		// Number of virtual drives for a specific Flex flash controller.
-		VirtualDriveCount *string `json:"VirtualDriveCount,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		VirtualDriveCount          *string                                 `json:"VirtualDriveCount,omitempty"`
+		InventoryDeviceInfo        *InventoryDeviceInfoRelationship        `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice           *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 		StorageFlexFlashController *StorageFlexFlashControllerRelationship `json:"StorageFlexFlashController,omitempty"`
 	}
 
@@ -786,5 +786,3 @@ func (v *NullableStorageFlexFlashControllerProps) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

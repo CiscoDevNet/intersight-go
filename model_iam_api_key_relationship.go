@@ -19,19 +19,18 @@ import (
 // IamApiKeyRelationship - A relationship to the 'iam.ApiKey' resource, or the expanded 'iam.ApiKey' resource, or the 'null' value.
 type IamApiKeyRelationship struct {
 	IamApiKey *IamApiKey
-	MoMoRef *MoMoRef
+	MoMoRef   *MoMoRef
 }
 
 // IamApiKeyAsIamApiKeyRelationship is a convenience function that returns IamApiKey wrapped in IamApiKeyRelationship
 func IamApiKeyAsIamApiKeyRelationship(v *IamApiKey) IamApiKeyRelationship {
-	return IamApiKeyRelationship{ IamApiKey: v}
+	return IamApiKeyRelationship{IamApiKey: v}
 }
 
 // MoMoRefAsIamApiKeyRelationship is a convenience function that returns MoMoRef wrapped in IamApiKeyRelationship
 func MoMoRefAsIamApiKeyRelationship(v *MoMoRef) IamApiKeyRelationship {
-	return IamApiKeyRelationship{ MoMoRef: v}
+	return IamApiKeyRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamApiKeyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamApiKeyRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamApiKeyRelationship) GetActualInstance() (interface{}) {
+func (obj *IamApiKeyRelationship) GetActualInstance() interface{} {
 	if obj.IamApiKey != nil {
 		return obj.IamApiKey
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamApiKeyRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

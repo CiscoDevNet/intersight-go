@@ -34,7 +34,7 @@ type IamEndPointPasswordPropertiesAllOf struct {
 	// Set time period for password expiration. Value should be greater than notification period and grace period.
 	PasswordExpiryDuration *int64 `json:"PasswordExpiryDuration,omitempty"`
 	// Tracks password change history. Specifies in number of instances, that the new password was already used.
-	PasswordHistory *int64 `json:"PasswordHistory,omitempty"`
+	PasswordHistory      *int64 `json:"PasswordHistory,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -104,7 +104,7 @@ func (o *IamEndPointPasswordPropertiesAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamEndPointPasswordPropertiesAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -128,7 +128,7 @@ func (o *IamEndPointPasswordPropertiesAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamEndPointPasswordPropertiesAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -460,5 +460,3 @@ func (v *NullableIamEndPointPasswordPropertiesAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

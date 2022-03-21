@@ -18,32 +18,31 @@ import (
 
 // KvmTunnelResponse - The response body of a HTTP GET request for the 'kvm.Tunnel' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'kvm.Tunnel' resources.
 type KvmTunnelResponse struct {
-	KvmTunnelList *KvmTunnelList
+	KvmTunnelList        *KvmTunnelList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // KvmTunnelListAsKvmTunnelResponse is a convenience function that returns KvmTunnelList wrapped in KvmTunnelResponse
 func KvmTunnelListAsKvmTunnelResponse(v *KvmTunnelList) KvmTunnelResponse {
-	return KvmTunnelResponse{ KvmTunnelList: v}
+	return KvmTunnelResponse{KvmTunnelList: v}
 }
 
 // MoAggregateTransformAsKvmTunnelResponse is a convenience function that returns MoAggregateTransform wrapped in KvmTunnelResponse
 func MoAggregateTransformAsKvmTunnelResponse(v *MoAggregateTransform) KvmTunnelResponse {
-	return KvmTunnelResponse{ MoAggregateTransform: v}
+	return KvmTunnelResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsKvmTunnelResponse is a convenience function that returns MoDocumentCount wrapped in KvmTunnelResponse
 func MoDocumentCountAsKvmTunnelResponse(v *MoDocumentCount) KvmTunnelResponse {
-	return KvmTunnelResponse{ MoDocumentCount: v}
+	return KvmTunnelResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsKvmTunnelResponse is a convenience function that returns MoTagSummary wrapped in KvmTunnelResponse
 func MoTagSummaryAsKvmTunnelResponse(v *MoTagSummary) KvmTunnelResponse {
-	return KvmTunnelResponse{ MoTagSummary: v}
+	return KvmTunnelResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KvmTunnelResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src KvmTunnelResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KvmTunnelResponse) GetActualInstance() (interface{}) {
+func (obj *KvmTunnelResponse) GetActualInstance() interface{} {
 	if obj.KvmTunnelList != nil {
 		return obj.KvmTunnelList
 	}
@@ -184,5 +183,3 @@ func (v *NullableKvmTunnelResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,19 +19,18 @@ import (
 // IamSystemRelationship - A relationship to the 'iam.System' resource, or the expanded 'iam.System' resource, or the 'null' value.
 type IamSystemRelationship struct {
 	IamSystem *IamSystem
-	MoMoRef *MoMoRef
+	MoMoRef   *MoMoRef
 }
 
 // IamSystemAsIamSystemRelationship is a convenience function that returns IamSystem wrapped in IamSystemRelationship
 func IamSystemAsIamSystemRelationship(v *IamSystem) IamSystemRelationship {
-	return IamSystemRelationship{ IamSystem: v}
+	return IamSystemRelationship{IamSystem: v}
 }
 
 // MoMoRefAsIamSystemRelationship is a convenience function that returns MoMoRef wrapped in IamSystemRelationship
 func MoMoRefAsIamSystemRelationship(v *MoMoRef) IamSystemRelationship {
-	return IamSystemRelationship{ MoMoRef: v}
+	return IamSystemRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamSystemRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamSystemRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamSystemRelationship) GetActualInstance() (interface{}) {
+func (obj *IamSystemRelationship) GetActualInstance() interface{} {
 	if obj.IamSystem != nil {
 		return obj.IamSystem
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamSystemRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

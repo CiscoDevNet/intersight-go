@@ -22,7 +22,7 @@ type MoTagKeySummary struct {
 	// The number of times this tag Key has been set in an API resource.
 	NumKeys *int32 `json:"NumKeys,omitempty"`
 	// A list of all Tag values that have been assigned to this tag Key.
-	Values *[]string `json:"Values,omitempty"`
+	Values               *[]string `json:"Values,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -214,5 +214,3 @@ func (v *NullableMoTagKeySummary) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

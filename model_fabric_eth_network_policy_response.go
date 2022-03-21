@@ -19,31 +19,30 @@ import (
 // FabricEthNetworkPolicyResponse - The response body of a HTTP GET request for the 'fabric.EthNetworkPolicy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'fabric.EthNetworkPolicy' resources.
 type FabricEthNetworkPolicyResponse struct {
 	FabricEthNetworkPolicyList *FabricEthNetworkPolicyList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform       *MoAggregateTransform
+	MoDocumentCount            *MoDocumentCount
+	MoTagSummary               *MoTagSummary
 }
 
 // FabricEthNetworkPolicyListAsFabricEthNetworkPolicyResponse is a convenience function that returns FabricEthNetworkPolicyList wrapped in FabricEthNetworkPolicyResponse
 func FabricEthNetworkPolicyListAsFabricEthNetworkPolicyResponse(v *FabricEthNetworkPolicyList) FabricEthNetworkPolicyResponse {
-	return FabricEthNetworkPolicyResponse{ FabricEthNetworkPolicyList: v}
+	return FabricEthNetworkPolicyResponse{FabricEthNetworkPolicyList: v}
 }
 
 // MoAggregateTransformAsFabricEthNetworkPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in FabricEthNetworkPolicyResponse
 func MoAggregateTransformAsFabricEthNetworkPolicyResponse(v *MoAggregateTransform) FabricEthNetworkPolicyResponse {
-	return FabricEthNetworkPolicyResponse{ MoAggregateTransform: v}
+	return FabricEthNetworkPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsFabricEthNetworkPolicyResponse is a convenience function that returns MoDocumentCount wrapped in FabricEthNetworkPolicyResponse
 func MoDocumentCountAsFabricEthNetworkPolicyResponse(v *MoDocumentCount) FabricEthNetworkPolicyResponse {
-	return FabricEthNetworkPolicyResponse{ MoDocumentCount: v}
+	return FabricEthNetworkPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsFabricEthNetworkPolicyResponse is a convenience function that returns MoTagSummary wrapped in FabricEthNetworkPolicyResponse
 func MoTagSummaryAsFabricEthNetworkPolicyResponse(v *MoTagSummary) FabricEthNetworkPolicyResponse {
-	return FabricEthNetworkPolicyResponse{ MoTagSummary: v}
+	return FabricEthNetworkPolicyResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FabricEthNetworkPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src FabricEthNetworkPolicyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FabricEthNetworkPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *FabricEthNetworkPolicyResponse) GetActualInstance() interface{} {
 	if obj.FabricEthNetworkPolicyList != nil {
 		return obj.FabricEthNetworkPolicyList
 	}
@@ -184,5 +183,3 @@ func (v *NullableFabricEthNetworkPolicyResponse) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

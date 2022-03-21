@@ -19,31 +19,30 @@ import (
 // HyperflexDataProtectionPeerResponse - The response body of a HTTP GET request for the 'hyperflex.DataProtectionPeer' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'hyperflex.DataProtectionPeer' resources.
 type HyperflexDataProtectionPeerResponse struct {
 	HyperflexDataProtectionPeerList *HyperflexDataProtectionPeerList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform            *MoAggregateTransform
+	MoDocumentCount                 *MoDocumentCount
+	MoTagSummary                    *MoTagSummary
 }
 
 // HyperflexDataProtectionPeerListAsHyperflexDataProtectionPeerResponse is a convenience function that returns HyperflexDataProtectionPeerList wrapped in HyperflexDataProtectionPeerResponse
 func HyperflexDataProtectionPeerListAsHyperflexDataProtectionPeerResponse(v *HyperflexDataProtectionPeerList) HyperflexDataProtectionPeerResponse {
-	return HyperflexDataProtectionPeerResponse{ HyperflexDataProtectionPeerList: v}
+	return HyperflexDataProtectionPeerResponse{HyperflexDataProtectionPeerList: v}
 }
 
 // MoAggregateTransformAsHyperflexDataProtectionPeerResponse is a convenience function that returns MoAggregateTransform wrapped in HyperflexDataProtectionPeerResponse
 func MoAggregateTransformAsHyperflexDataProtectionPeerResponse(v *MoAggregateTransform) HyperflexDataProtectionPeerResponse {
-	return HyperflexDataProtectionPeerResponse{ MoAggregateTransform: v}
+	return HyperflexDataProtectionPeerResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsHyperflexDataProtectionPeerResponse is a convenience function that returns MoDocumentCount wrapped in HyperflexDataProtectionPeerResponse
 func MoDocumentCountAsHyperflexDataProtectionPeerResponse(v *MoDocumentCount) HyperflexDataProtectionPeerResponse {
-	return HyperflexDataProtectionPeerResponse{ MoDocumentCount: v}
+	return HyperflexDataProtectionPeerResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsHyperflexDataProtectionPeerResponse is a convenience function that returns MoTagSummary wrapped in HyperflexDataProtectionPeerResponse
 func MoTagSummaryAsHyperflexDataProtectionPeerResponse(v *MoTagSummary) HyperflexDataProtectionPeerResponse {
-	return HyperflexDataProtectionPeerResponse{ MoTagSummary: v}
+	return HyperflexDataProtectionPeerResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexDataProtectionPeerResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src HyperflexDataProtectionPeerResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexDataProtectionPeerResponse) GetActualInstance() (interface{}) {
+func (obj *HyperflexDataProtectionPeerResponse) GetActualInstance() interface{} {
 	if obj.HyperflexDataProtectionPeerList != nil {
 		return obj.HyperflexDataProtectionPeerList
 	}
@@ -184,5 +183,3 @@ func (v *NullableHyperflexDataProtectionPeerResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

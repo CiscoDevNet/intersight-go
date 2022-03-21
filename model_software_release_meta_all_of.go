@@ -28,9 +28,9 @@ type SoftwareReleaseMetaAllOf struct {
 	// Latest version of the image avaiable for a specific software.
 	LatestVersion *string `json:"LatestVersion,omitempty"`
 	// The software type id of the image (For e.g. firmware.Distributable, software.ApplianceDistributable, software.HyperflexBundleDistributable, software.UcsdBundleDistributable).
-	SoftwareTypeId *string `json:"SoftwareTypeId,omitempty"`
-	Catalog *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
-	Image *FirmwareBaseDistributableRelationship `json:"Image,omitempty"`
+	SoftwareTypeId       *string                                `json:"SoftwareTypeId,omitempty"`
+	Catalog              *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
+	Image                *FirmwareBaseDistributableRelationship `json:"Image,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *SoftwareReleaseMetaAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SoftwareReleaseMetaAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *SoftwareReleaseMetaAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SoftwareReleaseMetaAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -392,5 +392,3 @@ func (v *NullableSoftwareReleaseMetaAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

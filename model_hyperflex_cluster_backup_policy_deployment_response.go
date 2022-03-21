@@ -19,31 +19,30 @@ import (
 // HyperflexClusterBackupPolicyDeploymentResponse - The response body of a HTTP GET request for the 'hyperflex.ClusterBackupPolicyDeployment' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'hyperflex.ClusterBackupPolicyDeployment' resources.
 type HyperflexClusterBackupPolicyDeploymentResponse struct {
 	HyperflexClusterBackupPolicyDeploymentList *HyperflexClusterBackupPolicyDeploymentList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                       *MoAggregateTransform
+	MoDocumentCount                            *MoDocumentCount
+	MoTagSummary                               *MoTagSummary
 }
 
 // HyperflexClusterBackupPolicyDeploymentListAsHyperflexClusterBackupPolicyDeploymentResponse is a convenience function that returns HyperflexClusterBackupPolicyDeploymentList wrapped in HyperflexClusterBackupPolicyDeploymentResponse
 func HyperflexClusterBackupPolicyDeploymentListAsHyperflexClusterBackupPolicyDeploymentResponse(v *HyperflexClusterBackupPolicyDeploymentList) HyperflexClusterBackupPolicyDeploymentResponse {
-	return HyperflexClusterBackupPolicyDeploymentResponse{ HyperflexClusterBackupPolicyDeploymentList: v}
+	return HyperflexClusterBackupPolicyDeploymentResponse{HyperflexClusterBackupPolicyDeploymentList: v}
 }
 
 // MoAggregateTransformAsHyperflexClusterBackupPolicyDeploymentResponse is a convenience function that returns MoAggregateTransform wrapped in HyperflexClusterBackupPolicyDeploymentResponse
 func MoAggregateTransformAsHyperflexClusterBackupPolicyDeploymentResponse(v *MoAggregateTransform) HyperflexClusterBackupPolicyDeploymentResponse {
-	return HyperflexClusterBackupPolicyDeploymentResponse{ MoAggregateTransform: v}
+	return HyperflexClusterBackupPolicyDeploymentResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsHyperflexClusterBackupPolicyDeploymentResponse is a convenience function that returns MoDocumentCount wrapped in HyperflexClusterBackupPolicyDeploymentResponse
 func MoDocumentCountAsHyperflexClusterBackupPolicyDeploymentResponse(v *MoDocumentCount) HyperflexClusterBackupPolicyDeploymentResponse {
-	return HyperflexClusterBackupPolicyDeploymentResponse{ MoDocumentCount: v}
+	return HyperflexClusterBackupPolicyDeploymentResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsHyperflexClusterBackupPolicyDeploymentResponse is a convenience function that returns MoTagSummary wrapped in HyperflexClusterBackupPolicyDeploymentResponse
 func MoTagSummaryAsHyperflexClusterBackupPolicyDeploymentResponse(v *MoTagSummary) HyperflexClusterBackupPolicyDeploymentResponse {
-	return HyperflexClusterBackupPolicyDeploymentResponse{ MoTagSummary: v}
+	return HyperflexClusterBackupPolicyDeploymentResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexClusterBackupPolicyDeploymentResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src HyperflexClusterBackupPolicyDeploymentResponse) MarshalJSON() ([]byte,
 }
 
 // Get the actual instance
-func (obj *HyperflexClusterBackupPolicyDeploymentResponse) GetActualInstance() (interface{}) {
+func (obj *HyperflexClusterBackupPolicyDeploymentResponse) GetActualInstance() interface{} {
 	if obj.HyperflexClusterBackupPolicyDeploymentList != nil {
 		return obj.HyperflexClusterBackupPolicyDeploymentList
 	}
@@ -184,5 +183,3 @@ func (v *NullableHyperflexClusterBackupPolicyDeploymentResponse) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

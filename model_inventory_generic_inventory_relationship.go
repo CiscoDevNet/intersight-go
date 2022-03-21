@@ -19,19 +19,18 @@ import (
 // InventoryGenericInventoryRelationship - A relationship to the 'inventory.GenericInventory' resource, or the expanded 'inventory.GenericInventory' resource, or the 'null' value.
 type InventoryGenericInventoryRelationship struct {
 	InventoryGenericInventory *InventoryGenericInventory
-	MoMoRef *MoMoRef
+	MoMoRef                   *MoMoRef
 }
 
 // InventoryGenericInventoryAsInventoryGenericInventoryRelationship is a convenience function that returns InventoryGenericInventory wrapped in InventoryGenericInventoryRelationship
 func InventoryGenericInventoryAsInventoryGenericInventoryRelationship(v *InventoryGenericInventory) InventoryGenericInventoryRelationship {
-	return InventoryGenericInventoryRelationship{ InventoryGenericInventory: v}
+	return InventoryGenericInventoryRelationship{InventoryGenericInventory: v}
 }
 
 // MoMoRefAsInventoryGenericInventoryRelationship is a convenience function that returns MoMoRef wrapped in InventoryGenericInventoryRelationship
 func MoMoRefAsInventoryGenericInventoryRelationship(v *MoMoRef) InventoryGenericInventoryRelationship {
-	return InventoryGenericInventoryRelationship{ MoMoRef: v}
+	return InventoryGenericInventoryRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *InventoryGenericInventoryRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src InventoryGenericInventoryRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *InventoryGenericInventoryRelationship) GetActualInstance() (interface{}) {
+func (obj *InventoryGenericInventoryRelationship) GetActualInstance() interface{} {
 	if obj.InventoryGenericInventory != nil {
 		return obj.InventoryGenericInventory
 	}
@@ -137,5 +136,3 @@ func (v *NullableInventoryGenericInventoryRelationship) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

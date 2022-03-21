@@ -31,12 +31,12 @@ type IamCertificateRequest struct {
 	// Generated certificate signing request (CSR) in PEM format.
 	Request *string `json:"Request,omitempty"`
 	// Whether the user wants the generated CSR to be self-signed by the appliance.
-	SelfSigned *bool `json:"SelfSigned,omitempty"`
-	Subject NullablePkixDistinguishedName `json:"Subject,omitempty"`
+	SelfSigned           *bool                            `json:"SelfSigned,omitempty"`
+	Subject              NullablePkixDistinguishedName    `json:"Subject,omitempty"`
 	SubjectAlternateName NullablePkixSubjectAlternateName `json:"SubjectAlternateName,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
-	Certificate *IamCertificateRelationship `json:"Certificate,omitempty"`
-	PrivateKeySpec *IamPrivateKeySpecRelationship `json:"PrivateKeySpec,omitempty"`
+	Account              *IamAccountRelationship          `json:"Account,omitempty"`
+	Certificate          *IamCertificateRelationship      `json:"Certificate,omitempty"`
+	PrivateKeySpec       *IamPrivateKeySpecRelationship   `json:"PrivateKeySpec,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *IamCertificateRequest) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamCertificateRequest) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *IamCertificateRequest) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamCertificateRequest) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -254,7 +254,7 @@ func (o *IamCertificateRequest) GetSubject() PkixDistinguishedName {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IamCertificateRequest) GetSubjectOk() (*PkixDistinguishedName, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Subject.Get(), o.Subject.IsSet()
@@ -273,6 +273,7 @@ func (o *IamCertificateRequest) HasSubject() bool {
 func (o *IamCertificateRequest) SetSubject(v PkixDistinguishedName) {
 	o.Subject.Set(&v)
 }
+
 // SetSubjectNil sets the value for Subject to be an explicit nil
 func (o *IamCertificateRequest) SetSubjectNil() {
 	o.Subject.Set(nil)
@@ -296,7 +297,7 @@ func (o *IamCertificateRequest) GetSubjectAlternateName() PkixSubjectAlternateNa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IamCertificateRequest) GetSubjectAlternateNameOk() (*PkixSubjectAlternateName, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SubjectAlternateName.Get(), o.SubjectAlternateName.IsSet()
@@ -315,6 +316,7 @@ func (o *IamCertificateRequest) HasSubjectAlternateName() bool {
 func (o *IamCertificateRequest) SetSubjectAlternateName(v PkixSubjectAlternateName) {
 	o.SubjectAlternateName.Set(&v)
 }
+
 // SetSubjectAlternateNameNil sets the value for SubjectAlternateName to be an explicit nil
 func (o *IamCertificateRequest) SetSubjectAlternateNameNil() {
 	o.SubjectAlternateName.Set(nil)
@@ -485,12 +487,12 @@ func (o *IamCertificateRequest) UnmarshalJSON(bytes []byte) (err error) {
 		// Generated certificate signing request (CSR) in PEM format.
 		Request *string `json:"Request,omitempty"`
 		// Whether the user wants the generated CSR to be self-signed by the appliance.
-		SelfSigned *bool `json:"SelfSigned,omitempty"`
-		Subject NullablePkixDistinguishedName `json:"Subject,omitempty"`
+		SelfSigned           *bool                            `json:"SelfSigned,omitempty"`
+		Subject              NullablePkixDistinguishedName    `json:"Subject,omitempty"`
 		SubjectAlternateName NullablePkixSubjectAlternateName `json:"SubjectAlternateName,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
-		Certificate *IamCertificateRelationship `json:"Certificate,omitempty"`
-		PrivateKeySpec *IamPrivateKeySpecRelationship `json:"PrivateKeySpec,omitempty"`
+		Account              *IamAccountRelationship          `json:"Account,omitempty"`
+		Certificate          *IamCertificateRelationship      `json:"Certificate,omitempty"`
+		PrivateKeySpec       *IamPrivateKeySpecRelationship   `json:"PrivateKeySpec,omitempty"`
 	}
 
 	varIamCertificateRequestWithoutEmbeddedStruct := IamCertificateRequestWithoutEmbeddedStruct{}
@@ -597,5 +599,3 @@ func (v *NullableIamCertificateRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,7 +17,7 @@ import (
 
 // TelemetryDruidHavingQueryFilterAllOf struct for TelemetryDruidHavingQueryFilterAllOf
 type TelemetryDruidHavingQueryFilterAllOf struct {
-	Filter TelemetryDruidFilter `json:"filter"`
+	Filter               TelemetryDruidFilter `json:"filter"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -54,7 +54,7 @@ func (o *TelemetryDruidHavingQueryFilterAllOf) GetFilter() TelemetryDruidFilter 
 // GetFilterOk returns a tuple with the Filter field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidHavingQueryFilterAllOf) GetFilterOk() (*TelemetryDruidFilter, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Filter, true
@@ -130,5 +130,3 @@ func (v *NullableTelemetryDruidHavingQueryFilterAllOf) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

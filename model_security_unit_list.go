@@ -23,7 +23,7 @@ type SecurityUnitList struct {
 	// The total number of 'security.Unit' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'security.Unit' resources matching the request.
-	Results []SecurityUnit `json:"Results,omitempty"`
+	Results              []SecurityUnit `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *SecurityUnitList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SecurityUnitList) GetResults() []SecurityUnit {
-	if o == nil  {
+	if o == nil {
 		var ret []SecurityUnit
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableSecurityUnitList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

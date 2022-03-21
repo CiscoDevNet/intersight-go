@@ -29,11 +29,10 @@ var (
 type RecommendationApiService service
 
 type ApiGetRecommendationCapacityRunwayByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *RecommendationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetRecommendationCapacityRunwayByMoidRequest) Execute() (RecommendationCapacityRunway, *_nethttp.Response, error) {
 	return r.ApiService.GetRecommendationCapacityRunwayByMoidExecute(r)
@@ -49,8 +48,8 @@ GetRecommendationCapacityRunwayByMoid Read a 'recommendation.CapacityRunway' res
 func (a *RecommendationApiService) GetRecommendationCapacityRunwayByMoid(ctx _context.Context, moid string) ApiGetRecommendationCapacityRunwayByMoidRequest {
 	return ApiGetRecommendationCapacityRunwayByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -157,13 +156,13 @@ func (a *RecommendationApiService) GetRecommendationCapacityRunwayByMoidExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -180,19 +179,19 @@ func (a *RecommendationApiService) GetRecommendationCapacityRunwayByMoidExecute(
 }
 
 type ApiGetRecommendationCapacityRunwayListRequest struct {
-	ctx _context.Context
-	ApiService *RecommendationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *RecommendationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -200,51 +199,61 @@ func (r ApiGetRecommendationCapacityRunwayListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetRecommendationCapacityRunwayListRequest) Orderby(orderby string) ApiGetRecommendationCapacityRunwayListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetRecommendationCapacityRunwayListRequest) Top(top int32) ApiGetRecommendationCapacityRunwayListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetRecommendationCapacityRunwayListRequest) Skip(skip int32) ApiGetRecommendationCapacityRunwayListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetRecommendationCapacityRunwayListRequest) Select_(select_ string) ApiGetRecommendationCapacityRunwayListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetRecommendationCapacityRunwayListRequest) Expand(expand string) ApiGetRecommendationCapacityRunwayListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetRecommendationCapacityRunwayListRequest) Apply(apply string) ApiGetRecommendationCapacityRunwayListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetRecommendationCapacityRunwayListRequest) Count(count bool) ApiGetRecommendationCapacityRunwayListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetRecommendationCapacityRunwayListRequest) Inlinecount(inlinecount string) ApiGetRecommendationCapacityRunwayListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetRecommendationCapacityRunwayListRequest) At(at string) ApiGetRecommendationCapacityRunwayListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetRecommendationCapacityRunwayListRequest) Tags(tags string) ApiGetRecommendationCapacityRunwayListRequest {
 	r.tags = &tags
@@ -264,7 +273,7 @@ GetRecommendationCapacityRunwayList Read a 'recommendation.CapacityRunway' resou
 func (a *RecommendationApiService) GetRecommendationCapacityRunwayList(ctx _context.Context) ApiGetRecommendationCapacityRunwayListRequest {
 	return ApiGetRecommendationCapacityRunwayListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -403,13 +412,13 @@ func (a *RecommendationApiService) GetRecommendationCapacityRunwayListExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -426,11 +435,10 @@ func (a *RecommendationApiService) GetRecommendationCapacityRunwayListExecute(r 
 }
 
 type ApiGetRecommendationPhysicalItemByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *RecommendationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetRecommendationPhysicalItemByMoidRequest) Execute() (RecommendationPhysicalItem, *_nethttp.Response, error) {
 	return r.ApiService.GetRecommendationPhysicalItemByMoidExecute(r)
@@ -446,8 +454,8 @@ GetRecommendationPhysicalItemByMoid Read a 'recommendation.PhysicalItem' resourc
 func (a *RecommendationApiService) GetRecommendationPhysicalItemByMoid(ctx _context.Context, moid string) ApiGetRecommendationPhysicalItemByMoidRequest {
 	return ApiGetRecommendationPhysicalItemByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -554,13 +562,13 @@ func (a *RecommendationApiService) GetRecommendationPhysicalItemByMoidExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -577,19 +585,19 @@ func (a *RecommendationApiService) GetRecommendationPhysicalItemByMoidExecute(r 
 }
 
 type ApiGetRecommendationPhysicalItemListRequest struct {
-	ctx _context.Context
-	ApiService *RecommendationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *RecommendationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -597,51 +605,61 @@ func (r ApiGetRecommendationPhysicalItemListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetRecommendationPhysicalItemListRequest) Orderby(orderby string) ApiGetRecommendationPhysicalItemListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetRecommendationPhysicalItemListRequest) Top(top int32) ApiGetRecommendationPhysicalItemListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetRecommendationPhysicalItemListRequest) Skip(skip int32) ApiGetRecommendationPhysicalItemListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetRecommendationPhysicalItemListRequest) Select_(select_ string) ApiGetRecommendationPhysicalItemListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetRecommendationPhysicalItemListRequest) Expand(expand string) ApiGetRecommendationPhysicalItemListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetRecommendationPhysicalItemListRequest) Apply(apply string) ApiGetRecommendationPhysicalItemListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetRecommendationPhysicalItemListRequest) Count(count bool) ApiGetRecommendationPhysicalItemListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetRecommendationPhysicalItemListRequest) Inlinecount(inlinecount string) ApiGetRecommendationPhysicalItemListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetRecommendationPhysicalItemListRequest) At(at string) ApiGetRecommendationPhysicalItemListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetRecommendationPhysicalItemListRequest) Tags(tags string) ApiGetRecommendationPhysicalItemListRequest {
 	r.tags = &tags
@@ -661,7 +679,7 @@ GetRecommendationPhysicalItemList Read a 'recommendation.PhysicalItem' resource.
 func (a *RecommendationApiService) GetRecommendationPhysicalItemList(ctx _context.Context) ApiGetRecommendationPhysicalItemListRequest {
 	return ApiGetRecommendationPhysicalItemListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -800,13 +818,13 @@ func (a *RecommendationApiService) GetRecommendationPhysicalItemListExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

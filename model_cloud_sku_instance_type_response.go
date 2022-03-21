@@ -19,31 +19,30 @@ import (
 // CloudSkuInstanceTypeResponse - The response body of a HTTP GET request for the 'cloud.SkuInstanceType' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'cloud.SkuInstanceType' resources.
 type CloudSkuInstanceTypeResponse struct {
 	CloudSkuInstanceTypeList *CloudSkuInstanceTypeList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform     *MoAggregateTransform
+	MoDocumentCount          *MoDocumentCount
+	MoTagSummary             *MoTagSummary
 }
 
 // CloudSkuInstanceTypeListAsCloudSkuInstanceTypeResponse is a convenience function that returns CloudSkuInstanceTypeList wrapped in CloudSkuInstanceTypeResponse
 func CloudSkuInstanceTypeListAsCloudSkuInstanceTypeResponse(v *CloudSkuInstanceTypeList) CloudSkuInstanceTypeResponse {
-	return CloudSkuInstanceTypeResponse{ CloudSkuInstanceTypeList: v}
+	return CloudSkuInstanceTypeResponse{CloudSkuInstanceTypeList: v}
 }
 
 // MoAggregateTransformAsCloudSkuInstanceTypeResponse is a convenience function that returns MoAggregateTransform wrapped in CloudSkuInstanceTypeResponse
 func MoAggregateTransformAsCloudSkuInstanceTypeResponse(v *MoAggregateTransform) CloudSkuInstanceTypeResponse {
-	return CloudSkuInstanceTypeResponse{ MoAggregateTransform: v}
+	return CloudSkuInstanceTypeResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsCloudSkuInstanceTypeResponse is a convenience function that returns MoDocumentCount wrapped in CloudSkuInstanceTypeResponse
 func MoDocumentCountAsCloudSkuInstanceTypeResponse(v *MoDocumentCount) CloudSkuInstanceTypeResponse {
-	return CloudSkuInstanceTypeResponse{ MoDocumentCount: v}
+	return CloudSkuInstanceTypeResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsCloudSkuInstanceTypeResponse is a convenience function that returns MoTagSummary wrapped in CloudSkuInstanceTypeResponse
 func MoTagSummaryAsCloudSkuInstanceTypeResponse(v *MoTagSummary) CloudSkuInstanceTypeResponse {
-	return CloudSkuInstanceTypeResponse{ MoTagSummary: v}
+	return CloudSkuInstanceTypeResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CloudSkuInstanceTypeResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src CloudSkuInstanceTypeResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CloudSkuInstanceTypeResponse) GetActualInstance() (interface{}) {
+func (obj *CloudSkuInstanceTypeResponse) GetActualInstance() interface{} {
 	if obj.CloudSkuInstanceTypeList != nil {
 		return obj.CloudSkuInstanceTypeList
 	}
@@ -184,5 +183,3 @@ func (v *NullableCloudSkuInstanceTypeResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

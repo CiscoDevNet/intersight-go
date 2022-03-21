@@ -50,7 +50,7 @@ type CapabilitySwitchNetworkLimitsAllOf struct {
 	// Maximum configurable VLANs on Switch/Fabric-Interconnect.
 	MaximumVlans *int64 `json:"MaximumVlans,omitempty"`
 	// Minimum required fans in 'active' state for this Switch/Fabric-Interconnect.
-	MinimumActiveFans *int64 `json:"MinimumActiveFans,omitempty"`
+	MinimumActiveFans    *int64 `json:"MinimumActiveFans,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -92,7 +92,7 @@ func (o *CapabilitySwitchNetworkLimitsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CapabilitySwitchNetworkLimitsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -116,7 +116,7 @@ func (o *CapabilitySwitchNetworkLimitsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CapabilitySwitchNetworkLimitsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -736,5 +736,3 @@ func (v *NullableCapabilitySwitchNetworkLimitsAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

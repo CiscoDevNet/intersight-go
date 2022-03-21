@@ -20,7 +20,7 @@ type FirmwareCimcDescriptorListAllOf struct {
 	// The total number of 'firmware.CimcDescriptor' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'firmware.CimcDescriptor' resources matching the request.
-	Results []FirmwareCimcDescriptor `json:"Results,omitempty"`
+	Results              []FirmwareCimcDescriptor `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *FirmwareCimcDescriptorListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareCimcDescriptorListAllOf) GetResults() []FirmwareCimcDescriptor {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareCimcDescriptor
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableFirmwareCimcDescriptorListAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

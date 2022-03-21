@@ -20,7 +20,7 @@ type TelemetryDruidHavingDimensionSelectorFilterAllOf struct {
 	// dimension
 	Dimension string `json:"dimension"`
 	// null
-	Value float64 `json:"value"`
+	Value                float64 `json:"value"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -58,7 +58,7 @@ func (o *TelemetryDruidHavingDimensionSelectorFilterAllOf) GetDimension() string
 // GetDimensionOk returns a tuple with the Dimension field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidHavingDimensionSelectorFilterAllOf) GetDimensionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Dimension, true
@@ -82,7 +82,7 @@ func (o *TelemetryDruidHavingDimensionSelectorFilterAllOf) GetValue() float64 {
 // GetValueOk returns a tuple with the Value field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidHavingDimensionSelectorFilterAllOf) GetValueOk() (*float64, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Value, true
@@ -162,5 +162,3 @@ func (v *NullableTelemetryDruidHavingDimensionSelectorFilterAllOf) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

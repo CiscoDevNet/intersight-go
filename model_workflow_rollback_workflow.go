@@ -27,14 +27,14 @@ type WorkflowRollbackWorkflow struct {
 	// The action of the rollback workflow such as Create and Start. * `None` - If no action is set, then the default value is set to none for the action field. * `Create` - Create rollback workflow data for the execution of the rollback workflow. * `Start` - Start a new execution of the rollback workflow.
 	Action *string `json:"Action,omitempty"`
 	// When set to true, if a task in the workflow fails, the rollback workflow continues to the subsequent task. When set to false, the rollback workflow execution halts if a task fails.
-	ContinueOnTaskFailure *bool `json:"ContinueOnTaskFailure,omitempty"`
-	RollbackTasks []WorkflowRollbackWorkflowTask `json:"RollbackTasks,omitempty"`
-	SelectedTasks []WorkflowRollbackWorkflowTask `json:"SelectedTasks,omitempty"`
+	ContinueOnTaskFailure *bool                          `json:"ContinueOnTaskFailure,omitempty"`
+	RollbackTasks         []WorkflowRollbackWorkflowTask `json:"RollbackTasks,omitempty"`
+	SelectedTasks         []WorkflowRollbackWorkflowTask `json:"SelectedTasks,omitempty"`
 	// Status of the rollback workflow instance (Created, Running, Completed, Failed). * `None` - If no status is set, then the default value is set none for the status field. * `Created` - Status of the rollback workflow when it identifies the eligible tasks for rollback. * `Running` - Status of the rollback workflow when it is in-progress. * `Completed` - Status of the rollback workflow after execution is successful. * `Failed` - Status of the rollback workflow after execution results in failure.
-	Status *string `json:"Status,omitempty"`
+	Status          *string                           `json:"Status,omitempty"`
 	PrimaryWorkflow *WorkflowWorkflowInfoRelationship `json:"PrimaryWorkflow,omitempty"`
 	// An array of relationships to workflowWorkflowInfo resources.
-	RollbackWorkflows []WorkflowWorkflowInfoRelationship `json:"RollbackWorkflows,omitempty"`
+	RollbackWorkflows    []WorkflowWorkflowInfoRelationship `json:"RollbackWorkflows,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *WorkflowRollbackWorkflow) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowRollbackWorkflow) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -108,7 +108,7 @@ func (o *WorkflowRollbackWorkflow) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowRollbackWorkflow) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -185,7 +185,7 @@ func (o *WorkflowRollbackWorkflow) SetContinueOnTaskFailure(v bool) {
 
 // GetRollbackTasks returns the RollbackTasks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowRollbackWorkflow) GetRollbackTasks() []WorkflowRollbackWorkflowTask {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowRollbackWorkflowTask
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *WorkflowRollbackWorkflow) SetRollbackTasks(v []WorkflowRollbackWorkflow
 
 // GetSelectedTasks returns the SelectedTasks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowRollbackWorkflow) GetSelectedTasks() []WorkflowRollbackWorkflowTask {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowRollbackWorkflowTask
 		return ret
 	}
@@ -315,7 +315,7 @@ func (o *WorkflowRollbackWorkflow) SetPrimaryWorkflow(v WorkflowWorkflowInfoRela
 
 // GetRollbackWorkflows returns the RollbackWorkflows field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowRollbackWorkflow) GetRollbackWorkflows() []WorkflowWorkflowInfoRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowWorkflowInfoRelationship
 		return ret
 	}
@@ -400,11 +400,11 @@ func (o *WorkflowRollbackWorkflow) UnmarshalJSON(bytes []byte) (err error) {
 		// The action of the rollback workflow such as Create and Start. * `None` - If no action is set, then the default value is set to none for the action field. * `Create` - Create rollback workflow data for the execution of the rollback workflow. * `Start` - Start a new execution of the rollback workflow.
 		Action *string `json:"Action,omitempty"`
 		// When set to true, if a task in the workflow fails, the rollback workflow continues to the subsequent task. When set to false, the rollback workflow execution halts if a task fails.
-		ContinueOnTaskFailure *bool `json:"ContinueOnTaskFailure,omitempty"`
-		RollbackTasks []WorkflowRollbackWorkflowTask `json:"RollbackTasks,omitempty"`
-		SelectedTasks []WorkflowRollbackWorkflowTask `json:"SelectedTasks,omitempty"`
+		ContinueOnTaskFailure *bool                          `json:"ContinueOnTaskFailure,omitempty"`
+		RollbackTasks         []WorkflowRollbackWorkflowTask `json:"RollbackTasks,omitempty"`
+		SelectedTasks         []WorkflowRollbackWorkflowTask `json:"SelectedTasks,omitempty"`
 		// Status of the rollback workflow instance (Created, Running, Completed, Failed). * `None` - If no status is set, then the default value is set none for the status field. * `Created` - Status of the rollback workflow when it identifies the eligible tasks for rollback. * `Running` - Status of the rollback workflow when it is in-progress. * `Completed` - Status of the rollback workflow after execution is successful. * `Failed` - Status of the rollback workflow after execution results in failure.
-		Status *string `json:"Status,omitempty"`
+		Status          *string                           `json:"Status,omitempty"`
 		PrimaryWorkflow *WorkflowWorkflowInfoRelationship `json:"PrimaryWorkflow,omitempty"`
 		// An array of relationships to workflowWorkflowInfo resources.
 		RollbackWorkflows []WorkflowWorkflowInfoRelationship `json:"RollbackWorkflows,omitempty"`
@@ -510,5 +510,3 @@ func (v *NullableWorkflowRollbackWorkflow) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

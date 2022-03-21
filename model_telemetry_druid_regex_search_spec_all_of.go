@@ -18,7 +18,7 @@ import (
 // TelemetryDruidRegexSearchSpecAllOf struct for TelemetryDruidRegexSearchSpecAllOf
 type TelemetryDruidRegexSearchSpecAllOf struct {
 	// The regular expression to match.  If any part of a dimension value contains the pattern specified in this search query a \"match\" occurs.
-	Regex string `json:"regex"`
+	Regex                string `json:"regex"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ func (o *TelemetryDruidRegexSearchSpecAllOf) GetRegex() string {
 // GetRegexOk returns a tuple with the Regex field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidRegexSearchSpecAllOf) GetRegexOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Regex, true
@@ -131,5 +131,3 @@ func (v *NullableTelemetryDruidRegexSearchSpecAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

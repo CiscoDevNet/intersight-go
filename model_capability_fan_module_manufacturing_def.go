@@ -35,7 +35,7 @@ type CapabilityFanModuleManufacturingDef struct {
 	// SKU information for a fan module.
 	Sku *string `json:"Sku,omitempty"`
 	// VID information for a fan module.
-	Vid *string `json:"Vid,omitempty"`
+	Vid                  *string `json:"Vid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *CapabilityFanModuleManufacturingDef) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityFanModuleManufacturingDef) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *CapabilityFanModuleManufacturingDef) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityFanModuleManufacturingDef) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -464,5 +464,3 @@ func (v *NullableCapabilityFanModuleManufacturingDef) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

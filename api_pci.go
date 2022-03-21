@@ -29,11 +29,10 @@ var (
 type PciApiService service
 
 type ApiGetPciCoprocessorCardByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *PciApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetPciCoprocessorCardByMoidRequest) Execute() (PciCoprocessorCard, *_nethttp.Response, error) {
 	return r.ApiService.GetPciCoprocessorCardByMoidExecute(r)
@@ -49,8 +48,8 @@ GetPciCoprocessorCardByMoid Read a 'pci.CoprocessorCard' resource.
 func (a *PciApiService) GetPciCoprocessorCardByMoid(ctx _context.Context, moid string) ApiGetPciCoprocessorCardByMoidRequest {
 	return ApiGetPciCoprocessorCardByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -157,13 +156,13 @@ func (a *PciApiService) GetPciCoprocessorCardByMoidExecute(r ApiGetPciCoprocesso
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -180,19 +179,19 @@ func (a *PciApiService) GetPciCoprocessorCardByMoidExecute(r ApiGetPciCoprocesso
 }
 
 type ApiGetPciCoprocessorCardListRequest struct {
-	ctx _context.Context
-	ApiService *PciApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *PciApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -200,51 +199,61 @@ func (r ApiGetPciCoprocessorCardListRequest) Filter(filter string) ApiGetPciCopr
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetPciCoprocessorCardListRequest) Orderby(orderby string) ApiGetPciCoprocessorCardListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetPciCoprocessorCardListRequest) Top(top int32) ApiGetPciCoprocessorCardListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetPciCoprocessorCardListRequest) Skip(skip int32) ApiGetPciCoprocessorCardListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetPciCoprocessorCardListRequest) Select_(select_ string) ApiGetPciCoprocessorCardListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetPciCoprocessorCardListRequest) Expand(expand string) ApiGetPciCoprocessorCardListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetPciCoprocessorCardListRequest) Apply(apply string) ApiGetPciCoprocessorCardListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetPciCoprocessorCardListRequest) Count(count bool) ApiGetPciCoprocessorCardListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetPciCoprocessorCardListRequest) Inlinecount(inlinecount string) ApiGetPciCoprocessorCardListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetPciCoprocessorCardListRequest) At(at string) ApiGetPciCoprocessorCardListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetPciCoprocessorCardListRequest) Tags(tags string) ApiGetPciCoprocessorCardListRequest {
 	r.tags = &tags
@@ -264,7 +273,7 @@ GetPciCoprocessorCardList Read a 'pci.CoprocessorCard' resource.
 func (a *PciApiService) GetPciCoprocessorCardList(ctx _context.Context) ApiGetPciCoprocessorCardListRequest {
 	return ApiGetPciCoprocessorCardListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -403,13 +412,13 @@ func (a *PciApiService) GetPciCoprocessorCardListExecute(r ApiGetPciCoprocessorC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -426,11 +435,10 @@ func (a *PciApiService) GetPciCoprocessorCardListExecute(r ApiGetPciCoprocessorC
 }
 
 type ApiGetPciDeviceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *PciApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetPciDeviceByMoidRequest) Execute() (PciDevice, *_nethttp.Response, error) {
 	return r.ApiService.GetPciDeviceByMoidExecute(r)
@@ -446,8 +454,8 @@ GetPciDeviceByMoid Read a 'pci.Device' resource.
 func (a *PciApiService) GetPciDeviceByMoid(ctx _context.Context, moid string) ApiGetPciDeviceByMoidRequest {
 	return ApiGetPciDeviceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -554,13 +562,13 @@ func (a *PciApiService) GetPciDeviceByMoidExecute(r ApiGetPciDeviceByMoidRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -577,19 +585,19 @@ func (a *PciApiService) GetPciDeviceByMoidExecute(r ApiGetPciDeviceByMoidRequest
 }
 
 type ApiGetPciDeviceListRequest struct {
-	ctx _context.Context
-	ApiService *PciApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *PciApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -597,51 +605,61 @@ func (r ApiGetPciDeviceListRequest) Filter(filter string) ApiGetPciDeviceListReq
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetPciDeviceListRequest) Orderby(orderby string) ApiGetPciDeviceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetPciDeviceListRequest) Top(top int32) ApiGetPciDeviceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetPciDeviceListRequest) Skip(skip int32) ApiGetPciDeviceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetPciDeviceListRequest) Select_(select_ string) ApiGetPciDeviceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetPciDeviceListRequest) Expand(expand string) ApiGetPciDeviceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetPciDeviceListRequest) Apply(apply string) ApiGetPciDeviceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetPciDeviceListRequest) Count(count bool) ApiGetPciDeviceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetPciDeviceListRequest) Inlinecount(inlinecount string) ApiGetPciDeviceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetPciDeviceListRequest) At(at string) ApiGetPciDeviceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetPciDeviceListRequest) Tags(tags string) ApiGetPciDeviceListRequest {
 	r.tags = &tags
@@ -661,7 +679,7 @@ GetPciDeviceList Read a 'pci.Device' resource.
 func (a *PciApiService) GetPciDeviceList(ctx _context.Context) ApiGetPciDeviceListRequest {
 	return ApiGetPciDeviceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -800,13 +818,13 @@ func (a *PciApiService) GetPciDeviceListExecute(r ApiGetPciDeviceListRequest) (P
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -823,11 +841,10 @@ func (a *PciApiService) GetPciDeviceListExecute(r ApiGetPciDeviceListRequest) (P
 }
 
 type ApiGetPciLinkByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *PciApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetPciLinkByMoidRequest) Execute() (PciLink, *_nethttp.Response, error) {
 	return r.ApiService.GetPciLinkByMoidExecute(r)
@@ -843,8 +860,8 @@ GetPciLinkByMoid Read a 'pci.Link' resource.
 func (a *PciApiService) GetPciLinkByMoid(ctx _context.Context, moid string) ApiGetPciLinkByMoidRequest {
 	return ApiGetPciLinkByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -951,13 +968,13 @@ func (a *PciApiService) GetPciLinkByMoidExecute(r ApiGetPciLinkByMoidRequest) (P
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -974,19 +991,19 @@ func (a *PciApiService) GetPciLinkByMoidExecute(r ApiGetPciLinkByMoidRequest) (P
 }
 
 type ApiGetPciLinkListRequest struct {
-	ctx _context.Context
-	ApiService *PciApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *PciApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -994,51 +1011,61 @@ func (r ApiGetPciLinkListRequest) Filter(filter string) ApiGetPciLinkListRequest
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetPciLinkListRequest) Orderby(orderby string) ApiGetPciLinkListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetPciLinkListRequest) Top(top int32) ApiGetPciLinkListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetPciLinkListRequest) Skip(skip int32) ApiGetPciLinkListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetPciLinkListRequest) Select_(select_ string) ApiGetPciLinkListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetPciLinkListRequest) Expand(expand string) ApiGetPciLinkListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetPciLinkListRequest) Apply(apply string) ApiGetPciLinkListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetPciLinkListRequest) Count(count bool) ApiGetPciLinkListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetPciLinkListRequest) Inlinecount(inlinecount string) ApiGetPciLinkListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetPciLinkListRequest) At(at string) ApiGetPciLinkListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetPciLinkListRequest) Tags(tags string) ApiGetPciLinkListRequest {
 	r.tags = &tags
@@ -1058,7 +1085,7 @@ GetPciLinkList Read a 'pci.Link' resource.
 func (a *PciApiService) GetPciLinkList(ctx _context.Context) ApiGetPciLinkListRequest {
 	return ApiGetPciLinkListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1197,13 +1224,13 @@ func (a *PciApiService) GetPciLinkListExecute(r ApiGetPciLinkListRequest) (PciLi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1220,11 +1247,10 @@ func (a *PciApiService) GetPciLinkListExecute(r ApiGetPciLinkListRequest) (PciLi
 }
 
 type ApiGetPciSwitchByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *PciApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetPciSwitchByMoidRequest) Execute() (PciSwitch, *_nethttp.Response, error) {
 	return r.ApiService.GetPciSwitchByMoidExecute(r)
@@ -1240,8 +1266,8 @@ GetPciSwitchByMoid Read a 'pci.Switch' resource.
 func (a *PciApiService) GetPciSwitchByMoid(ctx _context.Context, moid string) ApiGetPciSwitchByMoidRequest {
 	return ApiGetPciSwitchByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1348,13 +1374,13 @@ func (a *PciApiService) GetPciSwitchByMoidExecute(r ApiGetPciSwitchByMoidRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1371,19 +1397,19 @@ func (a *PciApiService) GetPciSwitchByMoidExecute(r ApiGetPciSwitchByMoidRequest
 }
 
 type ApiGetPciSwitchListRequest struct {
-	ctx _context.Context
-	ApiService *PciApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *PciApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1391,51 +1417,61 @@ func (r ApiGetPciSwitchListRequest) Filter(filter string) ApiGetPciSwitchListReq
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetPciSwitchListRequest) Orderby(orderby string) ApiGetPciSwitchListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetPciSwitchListRequest) Top(top int32) ApiGetPciSwitchListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetPciSwitchListRequest) Skip(skip int32) ApiGetPciSwitchListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetPciSwitchListRequest) Select_(select_ string) ApiGetPciSwitchListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetPciSwitchListRequest) Expand(expand string) ApiGetPciSwitchListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetPciSwitchListRequest) Apply(apply string) ApiGetPciSwitchListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetPciSwitchListRequest) Count(count bool) ApiGetPciSwitchListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetPciSwitchListRequest) Inlinecount(inlinecount string) ApiGetPciSwitchListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetPciSwitchListRequest) At(at string) ApiGetPciSwitchListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetPciSwitchListRequest) Tags(tags string) ApiGetPciSwitchListRequest {
 	r.tags = &tags
@@ -1455,7 +1491,7 @@ GetPciSwitchList Read a 'pci.Switch' resource.
 func (a *PciApiService) GetPciSwitchList(ctx _context.Context) ApiGetPciSwitchListRequest {
 	return ApiGetPciSwitchListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1594,13 +1630,13 @@ func (a *PciApiService) GetPciSwitchListExecute(r ApiGetPciSwitchListRequest) (P
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1617,11 +1653,11 @@ func (a *PciApiService) GetPciSwitchListExecute(r ApiGetPciSwitchListRequest) (P
 }
 
 type ApiPatchPciDeviceRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *PciApiService
-	moid string
-	pciDevice *PciDevice
-	ifMatch *string
+	moid       string
+	pciDevice  *PciDevice
+	ifMatch    *string
 }
 
 // The &#39;pci.Device&#39; resource to update.
@@ -1629,6 +1665,7 @@ func (r ApiPatchPciDeviceRequest) PciDevice(pciDevice PciDevice) ApiPatchPciDevi
 	r.pciDevice = &pciDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchPciDeviceRequest) IfMatch(ifMatch string) ApiPatchPciDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -1649,8 +1686,8 @@ PatchPciDevice Update a 'pci.Device' resource.
 func (a *PciApiService) PatchPciDevice(ctx _context.Context, moid string) ApiPatchPciDeviceRequest {
 	return ApiPatchPciDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1765,13 +1802,13 @@ func (a *PciApiService) PatchPciDeviceExecute(r ApiPatchPciDeviceRequest) (PciDe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1788,11 +1825,11 @@ func (a *PciApiService) PatchPciDeviceExecute(r ApiPatchPciDeviceRequest) (PciDe
 }
 
 type ApiPatchPciLinkRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *PciApiService
-	moid string
-	pciLink *PciLink
-	ifMatch *string
+	moid       string
+	pciLink    *PciLink
+	ifMatch    *string
 }
 
 // The &#39;pci.Link&#39; resource to update.
@@ -1800,6 +1837,7 @@ func (r ApiPatchPciLinkRequest) PciLink(pciLink PciLink) ApiPatchPciLinkRequest 
 	r.pciLink = &pciLink
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchPciLinkRequest) IfMatch(ifMatch string) ApiPatchPciLinkRequest {
 	r.ifMatch = &ifMatch
@@ -1820,8 +1858,8 @@ PatchPciLink Update a 'pci.Link' resource.
 func (a *PciApiService) PatchPciLink(ctx _context.Context, moid string) ApiPatchPciLinkRequest {
 	return ApiPatchPciLinkRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1936,13 +1974,13 @@ func (a *PciApiService) PatchPciLinkExecute(r ApiPatchPciLinkRequest) (PciLink, 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1959,11 +1997,11 @@ func (a *PciApiService) PatchPciLinkExecute(r ApiPatchPciLinkRequest) (PciLink, 
 }
 
 type ApiPatchPciSwitchRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *PciApiService
-	moid string
-	pciSwitch *PciSwitch
-	ifMatch *string
+	moid       string
+	pciSwitch  *PciSwitch
+	ifMatch    *string
 }
 
 // The &#39;pci.Switch&#39; resource to update.
@@ -1971,6 +2009,7 @@ func (r ApiPatchPciSwitchRequest) PciSwitch(pciSwitch PciSwitch) ApiPatchPciSwit
 	r.pciSwitch = &pciSwitch
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchPciSwitchRequest) IfMatch(ifMatch string) ApiPatchPciSwitchRequest {
 	r.ifMatch = &ifMatch
@@ -1991,8 +2030,8 @@ PatchPciSwitch Update a 'pci.Switch' resource.
 func (a *PciApiService) PatchPciSwitch(ctx _context.Context, moid string) ApiPatchPciSwitchRequest {
 	return ApiPatchPciSwitchRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2107,13 +2146,13 @@ func (a *PciApiService) PatchPciSwitchExecute(r ApiPatchPciSwitchRequest) (PciSw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2130,11 +2169,11 @@ func (a *PciApiService) PatchPciSwitchExecute(r ApiPatchPciSwitchRequest) (PciSw
 }
 
 type ApiUpdatePciDeviceRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *PciApiService
-	moid string
-	pciDevice *PciDevice
-	ifMatch *string
+	moid       string
+	pciDevice  *PciDevice
+	ifMatch    *string
 }
 
 // The &#39;pci.Device&#39; resource to update.
@@ -2142,6 +2181,7 @@ func (r ApiUpdatePciDeviceRequest) PciDevice(pciDevice PciDevice) ApiUpdatePciDe
 	r.pciDevice = &pciDevice
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdatePciDeviceRequest) IfMatch(ifMatch string) ApiUpdatePciDeviceRequest {
 	r.ifMatch = &ifMatch
@@ -2162,8 +2202,8 @@ UpdatePciDevice Update a 'pci.Device' resource.
 func (a *PciApiService) UpdatePciDevice(ctx _context.Context, moid string) ApiUpdatePciDeviceRequest {
 	return ApiUpdatePciDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2278,13 +2318,13 @@ func (a *PciApiService) UpdatePciDeviceExecute(r ApiUpdatePciDeviceRequest) (Pci
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2301,11 +2341,11 @@ func (a *PciApiService) UpdatePciDeviceExecute(r ApiUpdatePciDeviceRequest) (Pci
 }
 
 type ApiUpdatePciLinkRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *PciApiService
-	moid string
-	pciLink *PciLink
-	ifMatch *string
+	moid       string
+	pciLink    *PciLink
+	ifMatch    *string
 }
 
 // The &#39;pci.Link&#39; resource to update.
@@ -2313,6 +2353,7 @@ func (r ApiUpdatePciLinkRequest) PciLink(pciLink PciLink) ApiUpdatePciLinkReques
 	r.pciLink = &pciLink
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdatePciLinkRequest) IfMatch(ifMatch string) ApiUpdatePciLinkRequest {
 	r.ifMatch = &ifMatch
@@ -2333,8 +2374,8 @@ UpdatePciLink Update a 'pci.Link' resource.
 func (a *PciApiService) UpdatePciLink(ctx _context.Context, moid string) ApiUpdatePciLinkRequest {
 	return ApiUpdatePciLinkRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2449,13 +2490,13 @@ func (a *PciApiService) UpdatePciLinkExecute(r ApiUpdatePciLinkRequest) (PciLink
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2472,11 +2513,11 @@ func (a *PciApiService) UpdatePciLinkExecute(r ApiUpdatePciLinkRequest) (PciLink
 }
 
 type ApiUpdatePciSwitchRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *PciApiService
-	moid string
-	pciSwitch *PciSwitch
-	ifMatch *string
+	moid       string
+	pciSwitch  *PciSwitch
+	ifMatch    *string
 }
 
 // The &#39;pci.Switch&#39; resource to update.
@@ -2484,6 +2525,7 @@ func (r ApiUpdatePciSwitchRequest) PciSwitch(pciSwitch PciSwitch) ApiUpdatePciSw
 	r.pciSwitch = &pciSwitch
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdatePciSwitchRequest) IfMatch(ifMatch string) ApiUpdatePciSwitchRequest {
 	r.ifMatch = &ifMatch
@@ -2504,8 +2546,8 @@ UpdatePciSwitch Update a 'pci.Switch' resource.
 func (a *PciApiService) UpdatePciSwitch(ctx _context.Context, moid string) ApiUpdatePciSwitchRequest {
 	return ApiUpdatePciSwitchRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2620,13 +2662,13 @@ func (a *PciApiService) UpdatePciSwitchExecute(r ApiUpdatePciSwitchRequest) (Pci
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

@@ -25,17 +25,17 @@ type UcsdConnectorPack struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// State of the connector pack whether it is enabled or disabled.
-	ConnectorFeature *string `json:"ConnectorFeature,omitempty"`
-	DependencyNames []string `json:"DependencyNames,omitempty"`
+	ConnectorFeature *string  `json:"ConnectorFeature,omitempty"`
+	DependencyNames  []string `json:"DependencyNames,omitempty"`
 	// Version of the connector pack that is last downloaded successfully to UCS Director.
 	DownloadedVersion *string `json:"DownloadedVersion,omitempty"`
 	// Name of the connector pack running on the UCS Director.
-	Name *string `json:"Name,omitempty"`
+	Name     *string  `json:"Name,omitempty"`
 	Services []string `json:"Services,omitempty"`
 	// State of the connector pack whether it is enabled or disabled.
 	State *string `json:"State,omitempty"`
 	// Version of the connector pack.
-	Version *string `json:"Version,omitempty"`
+	Version              *string `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *UcsdConnectorPack) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *UcsdConnectorPack) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *UcsdConnectorPack) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *UcsdConnectorPack) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -146,7 +146,7 @@ func (o *UcsdConnectorPack) SetConnectorFeature(v string) {
 
 // GetDependencyNames returns the DependencyNames field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UcsdConnectorPack) GetDependencyNames() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *UcsdConnectorPack) SetName(v string) {
 
 // GetServices returns the Services field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UcsdConnectorPack) GetServices() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -390,12 +390,12 @@ func (o *UcsdConnectorPack) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// State of the connector pack whether it is enabled or disabled.
-		ConnectorFeature *string `json:"ConnectorFeature,omitempty"`
-		DependencyNames []string `json:"DependencyNames,omitempty"`
+		ConnectorFeature *string  `json:"ConnectorFeature,omitempty"`
+		DependencyNames  []string `json:"DependencyNames,omitempty"`
 		// Version of the connector pack that is last downloaded successfully to UCS Director.
 		DownloadedVersion *string `json:"DownloadedVersion,omitempty"`
 		// Name of the connector pack running on the UCS Director.
-		Name *string `json:"Name,omitempty"`
+		Name     *string  `json:"Name,omitempty"`
 		Services []string `json:"Services,omitempty"`
 		// State of the connector pack whether it is enabled or disabled.
 		State *string `json:"State,omitempty"`
@@ -503,5 +503,3 @@ func (v *NullableUcsdConnectorPack) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

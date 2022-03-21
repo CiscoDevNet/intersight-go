@@ -20,9 +20,9 @@ type FeedbackFeedbackPostAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	FeedbackData NullableFeedbackFeedbackData `json:"FeedbackData,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	ObjectType           string                       `json:"ObjectType"`
+	FeedbackData         NullableFeedbackFeedbackData `json:"FeedbackData,omitempty"`
+	Account              *IamAccountRelationship      `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,7 +64,7 @@ func (o *FeedbackFeedbackPostAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FeedbackFeedbackPostAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -88,7 +88,7 @@ func (o *FeedbackFeedbackPostAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FeedbackFeedbackPostAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -112,7 +112,7 @@ func (o *FeedbackFeedbackPostAllOf) GetFeedbackData() FeedbackFeedbackData {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FeedbackFeedbackPostAllOf) GetFeedbackDataOk() (*FeedbackFeedbackData, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.FeedbackData.Get(), o.FeedbackData.IsSet()
@@ -131,6 +131,7 @@ func (o *FeedbackFeedbackPostAllOf) HasFeedbackData() bool {
 func (o *FeedbackFeedbackPostAllOf) SetFeedbackData(v FeedbackFeedbackData) {
 	o.FeedbackData.Set(&v)
 }
+
 // SetFeedbackDataNil sets the value for FeedbackData to be an explicit nil
 func (o *FeedbackFeedbackPostAllOf) SetFeedbackDataNil() {
 	o.FeedbackData.Set(nil)
@@ -250,5 +251,3 @@ func (v *NullableFeedbackFeedbackPostAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

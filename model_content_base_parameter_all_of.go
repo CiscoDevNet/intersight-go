@@ -34,7 +34,7 @@ type ContentBaseParameterAllOf struct {
 	// The flag indicates if the extracted value is secure. This flag is applicable for parameters of type String only.
 	Secure *bool `json:"Secure,omitempty"`
 	// The type of the parameter. Accepted values are simple, complex, collection. * `simple` - The parameter value to be extracted is of the type simple. All the common scalar typessuch as int, bool, string, etc are represented by the simple enum. * `string` - The parameter value to be extracted is of the string type. * `integer` - The parameter value to be extracted is of the number type. * `float` - The parameter value to be extracted is of the float number type. * `boolean` - The parameter value to be extracted is of the boolean type. * `json` - The parameter values to be extracted is of the generic JSON literal. JSON type is applicable only if the content to be parsed is of JSON type. * `complex` - The parameter value to be extracted is a complex parameter that itself isanother collection of simple/complex parameters. * `collection` - The parameter value to be extracted is a collection parameter whose item typeshall be either simple type or complex type.
-	Type *string `json:"Type,omitempty"`
+	Type                 *string `json:"Type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *ContentBaseParameterAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ContentBaseParameterAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *ContentBaseParameterAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ContentBaseParameterAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -436,5 +436,3 @@ func (v *NullableContentBaseParameterAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

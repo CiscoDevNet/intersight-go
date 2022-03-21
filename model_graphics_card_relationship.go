@@ -19,19 +19,18 @@ import (
 // GraphicsCardRelationship - A relationship to the 'graphics.Card' resource, or the expanded 'graphics.Card' resource, or the 'null' value.
 type GraphicsCardRelationship struct {
 	GraphicsCard *GraphicsCard
-	MoMoRef *MoMoRef
+	MoMoRef      *MoMoRef
 }
 
 // GraphicsCardAsGraphicsCardRelationship is a convenience function that returns GraphicsCard wrapped in GraphicsCardRelationship
 func GraphicsCardAsGraphicsCardRelationship(v *GraphicsCard) GraphicsCardRelationship {
-	return GraphicsCardRelationship{ GraphicsCard: v}
+	return GraphicsCardRelationship{GraphicsCard: v}
 }
 
 // MoMoRefAsGraphicsCardRelationship is a convenience function that returns MoMoRef wrapped in GraphicsCardRelationship
 func MoMoRefAsGraphicsCardRelationship(v *MoMoRef) GraphicsCardRelationship {
-	return GraphicsCardRelationship{ MoMoRef: v}
+	return GraphicsCardRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GraphicsCardRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src GraphicsCardRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GraphicsCardRelationship) GetActualInstance() (interface{}) {
+func (obj *GraphicsCardRelationship) GetActualInstance() interface{} {
 	if obj.GraphicsCard != nil {
 		return obj.GraphicsCard
 	}
@@ -137,5 +136,3 @@ func (v *NullableGraphicsCardRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // HyperflexHealthCheckExecution Health check execution result for a health check definition on a HyperFlex device.
@@ -48,11 +48,11 @@ type HyperflexHealthCheckExecution struct {
 	// Information detailing a suggested resolution for the healthcheck failure, if the check fails.
 	SuggestedResolution *string `json:"SuggestedResolution,omitempty"`
 	// UUID of an instance of health check execution.
-	Uuid *string `json:"Uuid,omitempty"`
+	Uuid                  *string                                     `json:"Uuid,omitempty"`
 	HealthCheckDefinition *HyperflexHealthCheckDefinitionRelationship `json:"HealthCheckDefinition,omitempty"`
-	HxCluster *HyperflexClusterRelationship `json:"HxCluster,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	HxCluster             *HyperflexClusterRelationship               `json:"HxCluster,omitempty"`
+	RegisteredDevice      *AssetDeviceRegistrationRelationship        `json:"RegisteredDevice,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _HyperflexHealthCheckExecution HyperflexHealthCheckExecution
@@ -93,7 +93,7 @@ func (o *HyperflexHealthCheckExecution) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHealthCheckExecution) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -117,7 +117,7 @@ func (o *HyperflexHealthCheckExecution) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHealthCheckExecution) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -706,10 +706,10 @@ func (o *HyperflexHealthCheckExecution) UnmarshalJSON(bytes []byte) (err error) 
 		// Information detailing a suggested resolution for the healthcheck failure, if the check fails.
 		SuggestedResolution *string `json:"SuggestedResolution,omitempty"`
 		// UUID of an instance of health check execution.
-		Uuid *string `json:"Uuid,omitempty"`
+		Uuid                  *string                                     `json:"Uuid,omitempty"`
 		HealthCheckDefinition *HyperflexHealthCheckDefinitionRelationship `json:"HealthCheckDefinition,omitempty"`
-		HxCluster *HyperflexClusterRelationship `json:"HxCluster,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		HxCluster             *HyperflexClusterRelationship               `json:"HxCluster,omitempty"`
+		RegisteredDevice      *AssetDeviceRegistrationRelationship        `json:"RegisteredDevice,omitempty"`
 	}
 
 	varHyperflexHealthCheckExecutionWithoutEmbeddedStruct := HyperflexHealthCheckExecutionWithoutEmbeddedStruct{}
@@ -828,5 +828,3 @@ func (v *NullableHyperflexHealthCheckExecution) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

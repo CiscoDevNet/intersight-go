@@ -25,13 +25,13 @@ type HyperflexClusterStoragePolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// If enabled, formats existing disk partitions (destroys all user data).
-	DiskPartitionCleanup *bool `json:"DiskPartitionCleanup,omitempty"`
+	DiskPartitionCleanup         *bool                                    `json:"DiskPartitionCleanup,omitempty"`
 	LogicalAvalabilityZoneConfig NullableHyperflexLogicalAvailabilityZone `json:"LogicalAvalabilityZoneConfig,omitempty"`
 	// Enable or disable VDI optimization (hybrid HyperFlex systems only).
 	VdiOptimization *bool `json:"VdiOptimization,omitempty"`
 	// An array of relationships to hyperflexClusterProfile resources.
-	ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ClusterProfiles      []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *HyperflexClusterStoragePolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexClusterStoragePolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *HyperflexClusterStoragePolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexClusterStoragePolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -157,7 +157,7 @@ func (o *HyperflexClusterStoragePolicy) GetLogicalAvalabilityZoneConfig() Hyperf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexClusterStoragePolicy) GetLogicalAvalabilityZoneConfigOk() (*HyperflexLogicalAvailabilityZone, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LogicalAvalabilityZoneConfig.Get(), o.LogicalAvalabilityZoneConfig.IsSet()
@@ -176,6 +176,7 @@ func (o *HyperflexClusterStoragePolicy) HasLogicalAvalabilityZoneConfig() bool {
 func (o *HyperflexClusterStoragePolicy) SetLogicalAvalabilityZoneConfig(v HyperflexLogicalAvailabilityZone) {
 	o.LogicalAvalabilityZoneConfig.Set(&v)
 }
+
 // SetLogicalAvalabilityZoneConfigNil sets the value for LogicalAvalabilityZoneConfig to be an explicit nil
 func (o *HyperflexClusterStoragePolicy) SetLogicalAvalabilityZoneConfigNil() {
 	o.LogicalAvalabilityZoneConfig.Set(nil)
@@ -220,7 +221,7 @@ func (o *HyperflexClusterStoragePolicy) SetVdiOptimization(v bool) {
 
 // GetClusterProfiles returns the ClusterProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexClusterStoragePolicy) GetClusterProfiles() []HyperflexClusterProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexClusterProfileRelationship
 		return ret
 	}
@@ -329,13 +330,13 @@ func (o *HyperflexClusterStoragePolicy) UnmarshalJSON(bytes []byte) (err error) 
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// If enabled, formats existing disk partitions (destroys all user data).
-		DiskPartitionCleanup *bool `json:"DiskPartitionCleanup,omitempty"`
+		DiskPartitionCleanup         *bool                                    `json:"DiskPartitionCleanup,omitempty"`
 		LogicalAvalabilityZoneConfig NullableHyperflexLogicalAvailabilityZone `json:"LogicalAvalabilityZoneConfig,omitempty"`
 		// Enable or disable VDI optimization (hybrid HyperFlex systems only).
 		VdiOptimization *bool `json:"VdiOptimization,omitempty"`
 		// An array of relationships to hyperflexClusterProfile resources.
 		ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		Organization    *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
 	varHyperflexClusterStoragePolicyWithoutEmbeddedStruct := HyperflexClusterStoragePolicyWithoutEmbeddedStruct{}
@@ -434,5 +435,3 @@ func (v *NullableHyperflexClusterStoragePolicy) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

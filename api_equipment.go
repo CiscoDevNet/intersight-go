@@ -29,11 +29,10 @@ var (
 type EquipmentApiService service
 
 type ApiGetEquipmentChassisByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentChassisByMoidRequest) Execute() (EquipmentChassis, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentChassisByMoidExecute(r)
@@ -49,8 +48,8 @@ GetEquipmentChassisByMoid Read a 'equipment.Chassis' resource.
 func (a *EquipmentApiService) GetEquipmentChassisByMoid(ctx _context.Context, moid string) ApiGetEquipmentChassisByMoidRequest {
 	return ApiGetEquipmentChassisByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -157,13 +156,13 @@ func (a *EquipmentApiService) GetEquipmentChassisByMoidExecute(r ApiGetEquipment
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -180,11 +179,10 @@ func (a *EquipmentApiService) GetEquipmentChassisByMoidExecute(r ApiGetEquipment
 }
 
 type ApiGetEquipmentChassisIdentityByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentChassisIdentityByMoidRequest) Execute() (EquipmentChassisIdentity, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentChassisIdentityByMoidExecute(r)
@@ -200,8 +198,8 @@ GetEquipmentChassisIdentityByMoid Read a 'equipment.ChassisIdentity' resource.
 func (a *EquipmentApiService) GetEquipmentChassisIdentityByMoid(ctx _context.Context, moid string) ApiGetEquipmentChassisIdentityByMoidRequest {
 	return ApiGetEquipmentChassisIdentityByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -308,13 +306,13 @@ func (a *EquipmentApiService) GetEquipmentChassisIdentityByMoidExecute(r ApiGetE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -331,19 +329,19 @@ func (a *EquipmentApiService) GetEquipmentChassisIdentityByMoidExecute(r ApiGetE
 }
 
 type ApiGetEquipmentChassisIdentityListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -351,51 +349,61 @@ func (r ApiGetEquipmentChassisIdentityListRequest) Filter(filter string) ApiGetE
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentChassisIdentityListRequest) Orderby(orderby string) ApiGetEquipmentChassisIdentityListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentChassisIdentityListRequest) Top(top int32) ApiGetEquipmentChassisIdentityListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentChassisIdentityListRequest) Skip(skip int32) ApiGetEquipmentChassisIdentityListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentChassisIdentityListRequest) Select_(select_ string) ApiGetEquipmentChassisIdentityListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentChassisIdentityListRequest) Expand(expand string) ApiGetEquipmentChassisIdentityListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentChassisIdentityListRequest) Apply(apply string) ApiGetEquipmentChassisIdentityListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentChassisIdentityListRequest) Count(count bool) ApiGetEquipmentChassisIdentityListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentChassisIdentityListRequest) Inlinecount(inlinecount string) ApiGetEquipmentChassisIdentityListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentChassisIdentityListRequest) At(at string) ApiGetEquipmentChassisIdentityListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentChassisIdentityListRequest) Tags(tags string) ApiGetEquipmentChassisIdentityListRequest {
 	r.tags = &tags
@@ -415,7 +423,7 @@ GetEquipmentChassisIdentityList Read a 'equipment.ChassisIdentity' resource.
 func (a *EquipmentApiService) GetEquipmentChassisIdentityList(ctx _context.Context) ApiGetEquipmentChassisIdentityListRequest {
 	return ApiGetEquipmentChassisIdentityListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -554,13 +562,13 @@ func (a *EquipmentApiService) GetEquipmentChassisIdentityListExecute(r ApiGetEqu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -577,19 +585,19 @@ func (a *EquipmentApiService) GetEquipmentChassisIdentityListExecute(r ApiGetEqu
 }
 
 type ApiGetEquipmentChassisListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -597,51 +605,61 @@ func (r ApiGetEquipmentChassisListRequest) Filter(filter string) ApiGetEquipment
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentChassisListRequest) Orderby(orderby string) ApiGetEquipmentChassisListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentChassisListRequest) Top(top int32) ApiGetEquipmentChassisListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentChassisListRequest) Skip(skip int32) ApiGetEquipmentChassisListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentChassisListRequest) Select_(select_ string) ApiGetEquipmentChassisListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentChassisListRequest) Expand(expand string) ApiGetEquipmentChassisListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentChassisListRequest) Apply(apply string) ApiGetEquipmentChassisListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentChassisListRequest) Count(count bool) ApiGetEquipmentChassisListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentChassisListRequest) Inlinecount(inlinecount string) ApiGetEquipmentChassisListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentChassisListRequest) At(at string) ApiGetEquipmentChassisListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentChassisListRequest) Tags(tags string) ApiGetEquipmentChassisListRequest {
 	r.tags = &tags
@@ -661,7 +679,7 @@ GetEquipmentChassisList Read a 'equipment.Chassis' resource.
 func (a *EquipmentApiService) GetEquipmentChassisList(ctx _context.Context) ApiGetEquipmentChassisListRequest {
 	return ApiGetEquipmentChassisListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -800,13 +818,13 @@ func (a *EquipmentApiService) GetEquipmentChassisListExecute(r ApiGetEquipmentCh
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -823,11 +841,10 @@ func (a *EquipmentApiService) GetEquipmentChassisListExecute(r ApiGetEquipmentCh
 }
 
 type ApiGetEquipmentChassisOperationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentChassisOperationByMoidRequest) Execute() (EquipmentChassisOperation, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentChassisOperationByMoidExecute(r)
@@ -843,8 +860,8 @@ GetEquipmentChassisOperationByMoid Read a 'equipment.ChassisOperation' resource.
 func (a *EquipmentApiService) GetEquipmentChassisOperationByMoid(ctx _context.Context, moid string) ApiGetEquipmentChassisOperationByMoidRequest {
 	return ApiGetEquipmentChassisOperationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -951,13 +968,13 @@ func (a *EquipmentApiService) GetEquipmentChassisOperationByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -974,19 +991,19 @@ func (a *EquipmentApiService) GetEquipmentChassisOperationByMoidExecute(r ApiGet
 }
 
 type ApiGetEquipmentChassisOperationListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -994,51 +1011,61 @@ func (r ApiGetEquipmentChassisOperationListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentChassisOperationListRequest) Orderby(orderby string) ApiGetEquipmentChassisOperationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentChassisOperationListRequest) Top(top int32) ApiGetEquipmentChassisOperationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentChassisOperationListRequest) Skip(skip int32) ApiGetEquipmentChassisOperationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentChassisOperationListRequest) Select_(select_ string) ApiGetEquipmentChassisOperationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentChassisOperationListRequest) Expand(expand string) ApiGetEquipmentChassisOperationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentChassisOperationListRequest) Apply(apply string) ApiGetEquipmentChassisOperationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentChassisOperationListRequest) Count(count bool) ApiGetEquipmentChassisOperationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentChassisOperationListRequest) Inlinecount(inlinecount string) ApiGetEquipmentChassisOperationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentChassisOperationListRequest) At(at string) ApiGetEquipmentChassisOperationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentChassisOperationListRequest) Tags(tags string) ApiGetEquipmentChassisOperationListRequest {
 	r.tags = &tags
@@ -1058,7 +1085,7 @@ GetEquipmentChassisOperationList Read a 'equipment.ChassisOperation' resource.
 func (a *EquipmentApiService) GetEquipmentChassisOperationList(ctx _context.Context) ApiGetEquipmentChassisOperationListRequest {
 	return ApiGetEquipmentChassisOperationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1197,13 +1224,13 @@ func (a *EquipmentApiService) GetEquipmentChassisOperationListExecute(r ApiGetEq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1220,11 +1247,10 @@ func (a *EquipmentApiService) GetEquipmentChassisOperationListExecute(r ApiGetEq
 }
 
 type ApiGetEquipmentDeviceSummaryByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentDeviceSummaryByMoidRequest) Execute() (EquipmentDeviceSummary, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentDeviceSummaryByMoidExecute(r)
@@ -1240,8 +1266,8 @@ GetEquipmentDeviceSummaryByMoid Read a 'equipment.DeviceSummary' resource.
 func (a *EquipmentApiService) GetEquipmentDeviceSummaryByMoid(ctx _context.Context, moid string) ApiGetEquipmentDeviceSummaryByMoidRequest {
 	return ApiGetEquipmentDeviceSummaryByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1348,13 +1374,13 @@ func (a *EquipmentApiService) GetEquipmentDeviceSummaryByMoidExecute(r ApiGetEqu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1371,19 +1397,19 @@ func (a *EquipmentApiService) GetEquipmentDeviceSummaryByMoidExecute(r ApiGetEqu
 }
 
 type ApiGetEquipmentDeviceSummaryListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1391,51 +1417,61 @@ func (r ApiGetEquipmentDeviceSummaryListRequest) Filter(filter string) ApiGetEqu
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentDeviceSummaryListRequest) Orderby(orderby string) ApiGetEquipmentDeviceSummaryListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentDeviceSummaryListRequest) Top(top int32) ApiGetEquipmentDeviceSummaryListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentDeviceSummaryListRequest) Skip(skip int32) ApiGetEquipmentDeviceSummaryListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentDeviceSummaryListRequest) Select_(select_ string) ApiGetEquipmentDeviceSummaryListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentDeviceSummaryListRequest) Expand(expand string) ApiGetEquipmentDeviceSummaryListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentDeviceSummaryListRequest) Apply(apply string) ApiGetEquipmentDeviceSummaryListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentDeviceSummaryListRequest) Count(count bool) ApiGetEquipmentDeviceSummaryListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentDeviceSummaryListRequest) Inlinecount(inlinecount string) ApiGetEquipmentDeviceSummaryListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentDeviceSummaryListRequest) At(at string) ApiGetEquipmentDeviceSummaryListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentDeviceSummaryListRequest) Tags(tags string) ApiGetEquipmentDeviceSummaryListRequest {
 	r.tags = &tags
@@ -1455,7 +1491,7 @@ GetEquipmentDeviceSummaryList Read a 'equipment.DeviceSummary' resource.
 func (a *EquipmentApiService) GetEquipmentDeviceSummaryList(ctx _context.Context) ApiGetEquipmentDeviceSummaryListRequest {
 	return ApiGetEquipmentDeviceSummaryListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1594,13 +1630,13 @@ func (a *EquipmentApiService) GetEquipmentDeviceSummaryListExecute(r ApiGetEquip
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1617,11 +1653,10 @@ func (a *EquipmentApiService) GetEquipmentDeviceSummaryListExecute(r ApiGetEquip
 }
 
 type ApiGetEquipmentExpanderModuleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentExpanderModuleByMoidRequest) Execute() (EquipmentExpanderModule, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentExpanderModuleByMoidExecute(r)
@@ -1637,8 +1672,8 @@ GetEquipmentExpanderModuleByMoid Read a 'equipment.ExpanderModule' resource.
 func (a *EquipmentApiService) GetEquipmentExpanderModuleByMoid(ctx _context.Context, moid string) ApiGetEquipmentExpanderModuleByMoidRequest {
 	return ApiGetEquipmentExpanderModuleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1745,13 +1780,13 @@ func (a *EquipmentApiService) GetEquipmentExpanderModuleByMoidExecute(r ApiGetEq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1768,19 +1803,19 @@ func (a *EquipmentApiService) GetEquipmentExpanderModuleByMoidExecute(r ApiGetEq
 }
 
 type ApiGetEquipmentExpanderModuleListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1788,51 +1823,61 @@ func (r ApiGetEquipmentExpanderModuleListRequest) Filter(filter string) ApiGetEq
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentExpanderModuleListRequest) Orderby(orderby string) ApiGetEquipmentExpanderModuleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentExpanderModuleListRequest) Top(top int32) ApiGetEquipmentExpanderModuleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentExpanderModuleListRequest) Skip(skip int32) ApiGetEquipmentExpanderModuleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentExpanderModuleListRequest) Select_(select_ string) ApiGetEquipmentExpanderModuleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentExpanderModuleListRequest) Expand(expand string) ApiGetEquipmentExpanderModuleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentExpanderModuleListRequest) Apply(apply string) ApiGetEquipmentExpanderModuleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentExpanderModuleListRequest) Count(count bool) ApiGetEquipmentExpanderModuleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentExpanderModuleListRequest) Inlinecount(inlinecount string) ApiGetEquipmentExpanderModuleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentExpanderModuleListRequest) At(at string) ApiGetEquipmentExpanderModuleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentExpanderModuleListRequest) Tags(tags string) ApiGetEquipmentExpanderModuleListRequest {
 	r.tags = &tags
@@ -1852,7 +1897,7 @@ GetEquipmentExpanderModuleList Read a 'equipment.ExpanderModule' resource.
 func (a *EquipmentApiService) GetEquipmentExpanderModuleList(ctx _context.Context) ApiGetEquipmentExpanderModuleListRequest {
 	return ApiGetEquipmentExpanderModuleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1991,13 +2036,13 @@ func (a *EquipmentApiService) GetEquipmentExpanderModuleListExecute(r ApiGetEqui
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2014,11 +2059,10 @@ func (a *EquipmentApiService) GetEquipmentExpanderModuleListExecute(r ApiGetEqui
 }
 
 type ApiGetEquipmentFanByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentFanByMoidRequest) Execute() (EquipmentFan, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentFanByMoidExecute(r)
@@ -2034,8 +2078,8 @@ GetEquipmentFanByMoid Read a 'equipment.Fan' resource.
 func (a *EquipmentApiService) GetEquipmentFanByMoid(ctx _context.Context, moid string) ApiGetEquipmentFanByMoidRequest {
 	return ApiGetEquipmentFanByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2142,13 +2186,13 @@ func (a *EquipmentApiService) GetEquipmentFanByMoidExecute(r ApiGetEquipmentFanB
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2165,11 +2209,10 @@ func (a *EquipmentApiService) GetEquipmentFanByMoidExecute(r ApiGetEquipmentFanB
 }
 
 type ApiGetEquipmentFanControlByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentFanControlByMoidRequest) Execute() (EquipmentFanControl, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentFanControlByMoidExecute(r)
@@ -2185,8 +2228,8 @@ GetEquipmentFanControlByMoid Read a 'equipment.FanControl' resource.
 func (a *EquipmentApiService) GetEquipmentFanControlByMoid(ctx _context.Context, moid string) ApiGetEquipmentFanControlByMoidRequest {
 	return ApiGetEquipmentFanControlByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2293,13 +2336,13 @@ func (a *EquipmentApiService) GetEquipmentFanControlByMoidExecute(r ApiGetEquipm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2316,19 +2359,19 @@ func (a *EquipmentApiService) GetEquipmentFanControlByMoidExecute(r ApiGetEquipm
 }
 
 type ApiGetEquipmentFanControlListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2336,51 +2379,61 @@ func (r ApiGetEquipmentFanControlListRequest) Filter(filter string) ApiGetEquipm
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentFanControlListRequest) Orderby(orderby string) ApiGetEquipmentFanControlListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentFanControlListRequest) Top(top int32) ApiGetEquipmentFanControlListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentFanControlListRequest) Skip(skip int32) ApiGetEquipmentFanControlListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentFanControlListRequest) Select_(select_ string) ApiGetEquipmentFanControlListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentFanControlListRequest) Expand(expand string) ApiGetEquipmentFanControlListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentFanControlListRequest) Apply(apply string) ApiGetEquipmentFanControlListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentFanControlListRequest) Count(count bool) ApiGetEquipmentFanControlListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentFanControlListRequest) Inlinecount(inlinecount string) ApiGetEquipmentFanControlListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentFanControlListRequest) At(at string) ApiGetEquipmentFanControlListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentFanControlListRequest) Tags(tags string) ApiGetEquipmentFanControlListRequest {
 	r.tags = &tags
@@ -2400,7 +2453,7 @@ GetEquipmentFanControlList Read a 'equipment.FanControl' resource.
 func (a *EquipmentApiService) GetEquipmentFanControlList(ctx _context.Context) ApiGetEquipmentFanControlListRequest {
 	return ApiGetEquipmentFanControlListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2539,13 +2592,13 @@ func (a *EquipmentApiService) GetEquipmentFanControlListExecute(r ApiGetEquipmen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2562,19 +2615,19 @@ func (a *EquipmentApiService) GetEquipmentFanControlListExecute(r ApiGetEquipmen
 }
 
 type ApiGetEquipmentFanListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2582,51 +2635,61 @@ func (r ApiGetEquipmentFanListRequest) Filter(filter string) ApiGetEquipmentFanL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentFanListRequest) Orderby(orderby string) ApiGetEquipmentFanListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentFanListRequest) Top(top int32) ApiGetEquipmentFanListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentFanListRequest) Skip(skip int32) ApiGetEquipmentFanListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentFanListRequest) Select_(select_ string) ApiGetEquipmentFanListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentFanListRequest) Expand(expand string) ApiGetEquipmentFanListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentFanListRequest) Apply(apply string) ApiGetEquipmentFanListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentFanListRequest) Count(count bool) ApiGetEquipmentFanListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentFanListRequest) Inlinecount(inlinecount string) ApiGetEquipmentFanListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentFanListRequest) At(at string) ApiGetEquipmentFanListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentFanListRequest) Tags(tags string) ApiGetEquipmentFanListRequest {
 	r.tags = &tags
@@ -2646,7 +2709,7 @@ GetEquipmentFanList Read a 'equipment.Fan' resource.
 func (a *EquipmentApiService) GetEquipmentFanList(ctx _context.Context) ApiGetEquipmentFanListRequest {
 	return ApiGetEquipmentFanListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2785,13 +2848,13 @@ func (a *EquipmentApiService) GetEquipmentFanListExecute(r ApiGetEquipmentFanLis
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2808,11 +2871,10 @@ func (a *EquipmentApiService) GetEquipmentFanListExecute(r ApiGetEquipmentFanLis
 }
 
 type ApiGetEquipmentFanModuleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentFanModuleByMoidRequest) Execute() (EquipmentFanModule, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentFanModuleByMoidExecute(r)
@@ -2828,8 +2890,8 @@ GetEquipmentFanModuleByMoid Read a 'equipment.FanModule' resource.
 func (a *EquipmentApiService) GetEquipmentFanModuleByMoid(ctx _context.Context, moid string) ApiGetEquipmentFanModuleByMoidRequest {
 	return ApiGetEquipmentFanModuleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2936,13 +2998,13 @@ func (a *EquipmentApiService) GetEquipmentFanModuleByMoidExecute(r ApiGetEquipme
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2959,19 +3021,19 @@ func (a *EquipmentApiService) GetEquipmentFanModuleByMoidExecute(r ApiGetEquipme
 }
 
 type ApiGetEquipmentFanModuleListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2979,51 +3041,61 @@ func (r ApiGetEquipmentFanModuleListRequest) Filter(filter string) ApiGetEquipme
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentFanModuleListRequest) Orderby(orderby string) ApiGetEquipmentFanModuleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentFanModuleListRequest) Top(top int32) ApiGetEquipmentFanModuleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentFanModuleListRequest) Skip(skip int32) ApiGetEquipmentFanModuleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentFanModuleListRequest) Select_(select_ string) ApiGetEquipmentFanModuleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentFanModuleListRequest) Expand(expand string) ApiGetEquipmentFanModuleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentFanModuleListRequest) Apply(apply string) ApiGetEquipmentFanModuleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentFanModuleListRequest) Count(count bool) ApiGetEquipmentFanModuleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentFanModuleListRequest) Inlinecount(inlinecount string) ApiGetEquipmentFanModuleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentFanModuleListRequest) At(at string) ApiGetEquipmentFanModuleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentFanModuleListRequest) Tags(tags string) ApiGetEquipmentFanModuleListRequest {
 	r.tags = &tags
@@ -3043,7 +3115,7 @@ GetEquipmentFanModuleList Read a 'equipment.FanModule' resource.
 func (a *EquipmentApiService) GetEquipmentFanModuleList(ctx _context.Context) ApiGetEquipmentFanModuleListRequest {
 	return ApiGetEquipmentFanModuleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3182,13 +3254,13 @@ func (a *EquipmentApiService) GetEquipmentFanModuleListExecute(r ApiGetEquipment
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3205,11 +3277,10 @@ func (a *EquipmentApiService) GetEquipmentFanModuleListExecute(r ApiGetEquipment
 }
 
 type ApiGetEquipmentFexByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentFexByMoidRequest) Execute() (EquipmentFex, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentFexByMoidExecute(r)
@@ -3225,8 +3296,8 @@ GetEquipmentFexByMoid Read a 'equipment.Fex' resource.
 func (a *EquipmentApiService) GetEquipmentFexByMoid(ctx _context.Context, moid string) ApiGetEquipmentFexByMoidRequest {
 	return ApiGetEquipmentFexByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3333,13 +3404,13 @@ func (a *EquipmentApiService) GetEquipmentFexByMoidExecute(r ApiGetEquipmentFexB
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3356,11 +3427,10 @@ func (a *EquipmentApiService) GetEquipmentFexByMoidExecute(r ApiGetEquipmentFexB
 }
 
 type ApiGetEquipmentFexIdentityByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentFexIdentityByMoidRequest) Execute() (EquipmentFexIdentity, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentFexIdentityByMoidExecute(r)
@@ -3376,8 +3446,8 @@ GetEquipmentFexIdentityByMoid Read a 'equipment.FexIdentity' resource.
 func (a *EquipmentApiService) GetEquipmentFexIdentityByMoid(ctx _context.Context, moid string) ApiGetEquipmentFexIdentityByMoidRequest {
 	return ApiGetEquipmentFexIdentityByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3484,13 +3554,13 @@ func (a *EquipmentApiService) GetEquipmentFexIdentityByMoidExecute(r ApiGetEquip
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3507,19 +3577,19 @@ func (a *EquipmentApiService) GetEquipmentFexIdentityByMoidExecute(r ApiGetEquip
 }
 
 type ApiGetEquipmentFexIdentityListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3527,51 +3597,61 @@ func (r ApiGetEquipmentFexIdentityListRequest) Filter(filter string) ApiGetEquip
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentFexIdentityListRequest) Orderby(orderby string) ApiGetEquipmentFexIdentityListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentFexIdentityListRequest) Top(top int32) ApiGetEquipmentFexIdentityListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentFexIdentityListRequest) Skip(skip int32) ApiGetEquipmentFexIdentityListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentFexIdentityListRequest) Select_(select_ string) ApiGetEquipmentFexIdentityListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentFexIdentityListRequest) Expand(expand string) ApiGetEquipmentFexIdentityListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentFexIdentityListRequest) Apply(apply string) ApiGetEquipmentFexIdentityListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentFexIdentityListRequest) Count(count bool) ApiGetEquipmentFexIdentityListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentFexIdentityListRequest) Inlinecount(inlinecount string) ApiGetEquipmentFexIdentityListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentFexIdentityListRequest) At(at string) ApiGetEquipmentFexIdentityListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentFexIdentityListRequest) Tags(tags string) ApiGetEquipmentFexIdentityListRequest {
 	r.tags = &tags
@@ -3591,7 +3671,7 @@ GetEquipmentFexIdentityList Read a 'equipment.FexIdentity' resource.
 func (a *EquipmentApiService) GetEquipmentFexIdentityList(ctx _context.Context) ApiGetEquipmentFexIdentityListRequest {
 	return ApiGetEquipmentFexIdentityListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3730,13 +3810,13 @@ func (a *EquipmentApiService) GetEquipmentFexIdentityListExecute(r ApiGetEquipme
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3753,19 +3833,19 @@ func (a *EquipmentApiService) GetEquipmentFexIdentityListExecute(r ApiGetEquipme
 }
 
 type ApiGetEquipmentFexListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3773,51 +3853,61 @@ func (r ApiGetEquipmentFexListRequest) Filter(filter string) ApiGetEquipmentFexL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentFexListRequest) Orderby(orderby string) ApiGetEquipmentFexListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentFexListRequest) Top(top int32) ApiGetEquipmentFexListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentFexListRequest) Skip(skip int32) ApiGetEquipmentFexListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentFexListRequest) Select_(select_ string) ApiGetEquipmentFexListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentFexListRequest) Expand(expand string) ApiGetEquipmentFexListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentFexListRequest) Apply(apply string) ApiGetEquipmentFexListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentFexListRequest) Count(count bool) ApiGetEquipmentFexListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentFexListRequest) Inlinecount(inlinecount string) ApiGetEquipmentFexListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentFexListRequest) At(at string) ApiGetEquipmentFexListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentFexListRequest) Tags(tags string) ApiGetEquipmentFexListRequest {
 	r.tags = &tags
@@ -3837,7 +3927,7 @@ GetEquipmentFexList Read a 'equipment.Fex' resource.
 func (a *EquipmentApiService) GetEquipmentFexList(ctx _context.Context) ApiGetEquipmentFexListRequest {
 	return ApiGetEquipmentFexListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3976,13 +4066,13 @@ func (a *EquipmentApiService) GetEquipmentFexListExecute(r ApiGetEquipmentFexLis
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3999,11 +4089,10 @@ func (a *EquipmentApiService) GetEquipmentFexListExecute(r ApiGetEquipmentFexLis
 }
 
 type ApiGetEquipmentFexOperationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentFexOperationByMoidRequest) Execute() (EquipmentFexOperation, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentFexOperationByMoidExecute(r)
@@ -4019,8 +4108,8 @@ GetEquipmentFexOperationByMoid Read a 'equipment.FexOperation' resource.
 func (a *EquipmentApiService) GetEquipmentFexOperationByMoid(ctx _context.Context, moid string) ApiGetEquipmentFexOperationByMoidRequest {
 	return ApiGetEquipmentFexOperationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4127,13 +4216,13 @@ func (a *EquipmentApiService) GetEquipmentFexOperationByMoidExecute(r ApiGetEqui
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4150,19 +4239,19 @@ func (a *EquipmentApiService) GetEquipmentFexOperationByMoidExecute(r ApiGetEqui
 }
 
 type ApiGetEquipmentFexOperationListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4170,51 +4259,61 @@ func (r ApiGetEquipmentFexOperationListRequest) Filter(filter string) ApiGetEqui
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentFexOperationListRequest) Orderby(orderby string) ApiGetEquipmentFexOperationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentFexOperationListRequest) Top(top int32) ApiGetEquipmentFexOperationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentFexOperationListRequest) Skip(skip int32) ApiGetEquipmentFexOperationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentFexOperationListRequest) Select_(select_ string) ApiGetEquipmentFexOperationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentFexOperationListRequest) Expand(expand string) ApiGetEquipmentFexOperationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentFexOperationListRequest) Apply(apply string) ApiGetEquipmentFexOperationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentFexOperationListRequest) Count(count bool) ApiGetEquipmentFexOperationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentFexOperationListRequest) Inlinecount(inlinecount string) ApiGetEquipmentFexOperationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentFexOperationListRequest) At(at string) ApiGetEquipmentFexOperationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentFexOperationListRequest) Tags(tags string) ApiGetEquipmentFexOperationListRequest {
 	r.tags = &tags
@@ -4234,7 +4333,7 @@ GetEquipmentFexOperationList Read a 'equipment.FexOperation' resource.
 func (a *EquipmentApiService) GetEquipmentFexOperationList(ctx _context.Context) ApiGetEquipmentFexOperationListRequest {
 	return ApiGetEquipmentFexOperationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4373,13 +4472,13 @@ func (a *EquipmentApiService) GetEquipmentFexOperationListExecute(r ApiGetEquipm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4396,11 +4495,10 @@ func (a *EquipmentApiService) GetEquipmentFexOperationListExecute(r ApiGetEquipm
 }
 
 type ApiGetEquipmentFruByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentFruByMoidRequest) Execute() (EquipmentFru, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentFruByMoidExecute(r)
@@ -4416,8 +4514,8 @@ GetEquipmentFruByMoid Read a 'equipment.Fru' resource.
 func (a *EquipmentApiService) GetEquipmentFruByMoid(ctx _context.Context, moid string) ApiGetEquipmentFruByMoidRequest {
 	return ApiGetEquipmentFruByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4524,13 +4622,13 @@ func (a *EquipmentApiService) GetEquipmentFruByMoidExecute(r ApiGetEquipmentFruB
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4547,19 +4645,19 @@ func (a *EquipmentApiService) GetEquipmentFruByMoidExecute(r ApiGetEquipmentFruB
 }
 
 type ApiGetEquipmentFruListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4567,51 +4665,61 @@ func (r ApiGetEquipmentFruListRequest) Filter(filter string) ApiGetEquipmentFruL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentFruListRequest) Orderby(orderby string) ApiGetEquipmentFruListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentFruListRequest) Top(top int32) ApiGetEquipmentFruListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentFruListRequest) Skip(skip int32) ApiGetEquipmentFruListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentFruListRequest) Select_(select_ string) ApiGetEquipmentFruListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentFruListRequest) Expand(expand string) ApiGetEquipmentFruListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentFruListRequest) Apply(apply string) ApiGetEquipmentFruListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentFruListRequest) Count(count bool) ApiGetEquipmentFruListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentFruListRequest) Inlinecount(inlinecount string) ApiGetEquipmentFruListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentFruListRequest) At(at string) ApiGetEquipmentFruListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentFruListRequest) Tags(tags string) ApiGetEquipmentFruListRequest {
 	r.tags = &tags
@@ -4631,7 +4739,7 @@ GetEquipmentFruList Read a 'equipment.Fru' resource.
 func (a *EquipmentApiService) GetEquipmentFruList(ctx _context.Context) ApiGetEquipmentFruListRequest {
 	return ApiGetEquipmentFruListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4770,13 +4878,13 @@ func (a *EquipmentApiService) GetEquipmentFruListExecute(r ApiGetEquipmentFruLis
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4793,11 +4901,10 @@ func (a *EquipmentApiService) GetEquipmentFruListExecute(r ApiGetEquipmentFruLis
 }
 
 type ApiGetEquipmentIdentitySummaryByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentIdentitySummaryByMoidRequest) Execute() (EquipmentIdentitySummary, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentIdentitySummaryByMoidExecute(r)
@@ -4813,8 +4920,8 @@ GetEquipmentIdentitySummaryByMoid Read a 'equipment.IdentitySummary' resource.
 func (a *EquipmentApiService) GetEquipmentIdentitySummaryByMoid(ctx _context.Context, moid string) ApiGetEquipmentIdentitySummaryByMoidRequest {
 	return ApiGetEquipmentIdentitySummaryByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4921,13 +5028,13 @@ func (a *EquipmentApiService) GetEquipmentIdentitySummaryByMoidExecute(r ApiGetE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4944,19 +5051,19 @@ func (a *EquipmentApiService) GetEquipmentIdentitySummaryByMoidExecute(r ApiGetE
 }
 
 type ApiGetEquipmentIdentitySummaryListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4964,51 +5071,61 @@ func (r ApiGetEquipmentIdentitySummaryListRequest) Filter(filter string) ApiGetE
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentIdentitySummaryListRequest) Orderby(orderby string) ApiGetEquipmentIdentitySummaryListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentIdentitySummaryListRequest) Top(top int32) ApiGetEquipmentIdentitySummaryListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentIdentitySummaryListRequest) Skip(skip int32) ApiGetEquipmentIdentitySummaryListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentIdentitySummaryListRequest) Select_(select_ string) ApiGetEquipmentIdentitySummaryListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentIdentitySummaryListRequest) Expand(expand string) ApiGetEquipmentIdentitySummaryListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentIdentitySummaryListRequest) Apply(apply string) ApiGetEquipmentIdentitySummaryListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentIdentitySummaryListRequest) Count(count bool) ApiGetEquipmentIdentitySummaryListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentIdentitySummaryListRequest) Inlinecount(inlinecount string) ApiGetEquipmentIdentitySummaryListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentIdentitySummaryListRequest) At(at string) ApiGetEquipmentIdentitySummaryListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentIdentitySummaryListRequest) Tags(tags string) ApiGetEquipmentIdentitySummaryListRequest {
 	r.tags = &tags
@@ -5028,7 +5145,7 @@ GetEquipmentIdentitySummaryList Read a 'equipment.IdentitySummary' resource.
 func (a *EquipmentApiService) GetEquipmentIdentitySummaryList(ctx _context.Context) ApiGetEquipmentIdentitySummaryListRequest {
 	return ApiGetEquipmentIdentitySummaryListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5167,13 +5284,13 @@ func (a *EquipmentApiService) GetEquipmentIdentitySummaryListExecute(r ApiGetEqu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5190,11 +5307,10 @@ func (a *EquipmentApiService) GetEquipmentIdentitySummaryListExecute(r ApiGetEqu
 }
 
 type ApiGetEquipmentIoCardByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentIoCardByMoidRequest) Execute() (EquipmentIoCard, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentIoCardByMoidExecute(r)
@@ -5210,8 +5326,8 @@ GetEquipmentIoCardByMoid Read a 'equipment.IoCard' resource.
 func (a *EquipmentApiService) GetEquipmentIoCardByMoid(ctx _context.Context, moid string) ApiGetEquipmentIoCardByMoidRequest {
 	return ApiGetEquipmentIoCardByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5318,13 +5434,13 @@ func (a *EquipmentApiService) GetEquipmentIoCardByMoidExecute(r ApiGetEquipmentI
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5341,19 +5457,19 @@ func (a *EquipmentApiService) GetEquipmentIoCardByMoidExecute(r ApiGetEquipmentI
 }
 
 type ApiGetEquipmentIoCardListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5361,51 +5477,61 @@ func (r ApiGetEquipmentIoCardListRequest) Filter(filter string) ApiGetEquipmentI
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentIoCardListRequest) Orderby(orderby string) ApiGetEquipmentIoCardListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentIoCardListRequest) Top(top int32) ApiGetEquipmentIoCardListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentIoCardListRequest) Skip(skip int32) ApiGetEquipmentIoCardListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentIoCardListRequest) Select_(select_ string) ApiGetEquipmentIoCardListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentIoCardListRequest) Expand(expand string) ApiGetEquipmentIoCardListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentIoCardListRequest) Apply(apply string) ApiGetEquipmentIoCardListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentIoCardListRequest) Count(count bool) ApiGetEquipmentIoCardListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentIoCardListRequest) Inlinecount(inlinecount string) ApiGetEquipmentIoCardListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentIoCardListRequest) At(at string) ApiGetEquipmentIoCardListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentIoCardListRequest) Tags(tags string) ApiGetEquipmentIoCardListRequest {
 	r.tags = &tags
@@ -5425,7 +5551,7 @@ GetEquipmentIoCardList Read a 'equipment.IoCard' resource.
 func (a *EquipmentApiService) GetEquipmentIoCardList(ctx _context.Context) ApiGetEquipmentIoCardListRequest {
 	return ApiGetEquipmentIoCardListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5564,13 +5690,13 @@ func (a *EquipmentApiService) GetEquipmentIoCardListExecute(r ApiGetEquipmentIoC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5587,11 +5713,10 @@ func (a *EquipmentApiService) GetEquipmentIoCardListExecute(r ApiGetEquipmentIoC
 }
 
 type ApiGetEquipmentIoCardOperationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentIoCardOperationByMoidRequest) Execute() (EquipmentIoCardOperation, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentIoCardOperationByMoidExecute(r)
@@ -5607,8 +5732,8 @@ GetEquipmentIoCardOperationByMoid Read a 'equipment.IoCardOperation' resource.
 func (a *EquipmentApiService) GetEquipmentIoCardOperationByMoid(ctx _context.Context, moid string) ApiGetEquipmentIoCardOperationByMoidRequest {
 	return ApiGetEquipmentIoCardOperationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5715,13 +5840,13 @@ func (a *EquipmentApiService) GetEquipmentIoCardOperationByMoidExecute(r ApiGetE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5738,19 +5863,19 @@ func (a *EquipmentApiService) GetEquipmentIoCardOperationByMoidExecute(r ApiGetE
 }
 
 type ApiGetEquipmentIoCardOperationListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5758,51 +5883,61 @@ func (r ApiGetEquipmentIoCardOperationListRequest) Filter(filter string) ApiGetE
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentIoCardOperationListRequest) Orderby(orderby string) ApiGetEquipmentIoCardOperationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentIoCardOperationListRequest) Top(top int32) ApiGetEquipmentIoCardOperationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentIoCardOperationListRequest) Skip(skip int32) ApiGetEquipmentIoCardOperationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentIoCardOperationListRequest) Select_(select_ string) ApiGetEquipmentIoCardOperationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentIoCardOperationListRequest) Expand(expand string) ApiGetEquipmentIoCardOperationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentIoCardOperationListRequest) Apply(apply string) ApiGetEquipmentIoCardOperationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentIoCardOperationListRequest) Count(count bool) ApiGetEquipmentIoCardOperationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentIoCardOperationListRequest) Inlinecount(inlinecount string) ApiGetEquipmentIoCardOperationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentIoCardOperationListRequest) At(at string) ApiGetEquipmentIoCardOperationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentIoCardOperationListRequest) Tags(tags string) ApiGetEquipmentIoCardOperationListRequest {
 	r.tags = &tags
@@ -5822,7 +5957,7 @@ GetEquipmentIoCardOperationList Read a 'equipment.IoCardOperation' resource.
 func (a *EquipmentApiService) GetEquipmentIoCardOperationList(ctx _context.Context) ApiGetEquipmentIoCardOperationListRequest {
 	return ApiGetEquipmentIoCardOperationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5961,13 +6096,13 @@ func (a *EquipmentApiService) GetEquipmentIoCardOperationListExecute(r ApiGetEqu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5984,11 +6119,10 @@ func (a *EquipmentApiService) GetEquipmentIoCardOperationListExecute(r ApiGetEqu
 }
 
 type ApiGetEquipmentIoExpanderByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentIoExpanderByMoidRequest) Execute() (EquipmentIoExpander, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentIoExpanderByMoidExecute(r)
@@ -6004,8 +6138,8 @@ GetEquipmentIoExpanderByMoid Read a 'equipment.IoExpander' resource.
 func (a *EquipmentApiService) GetEquipmentIoExpanderByMoid(ctx _context.Context, moid string) ApiGetEquipmentIoExpanderByMoidRequest {
 	return ApiGetEquipmentIoExpanderByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6112,13 +6246,13 @@ func (a *EquipmentApiService) GetEquipmentIoExpanderByMoidExecute(r ApiGetEquipm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6135,19 +6269,19 @@ func (a *EquipmentApiService) GetEquipmentIoExpanderByMoidExecute(r ApiGetEquipm
 }
 
 type ApiGetEquipmentIoExpanderListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -6155,51 +6289,61 @@ func (r ApiGetEquipmentIoExpanderListRequest) Filter(filter string) ApiGetEquipm
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentIoExpanderListRequest) Orderby(orderby string) ApiGetEquipmentIoExpanderListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentIoExpanderListRequest) Top(top int32) ApiGetEquipmentIoExpanderListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentIoExpanderListRequest) Skip(skip int32) ApiGetEquipmentIoExpanderListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentIoExpanderListRequest) Select_(select_ string) ApiGetEquipmentIoExpanderListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentIoExpanderListRequest) Expand(expand string) ApiGetEquipmentIoExpanderListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentIoExpanderListRequest) Apply(apply string) ApiGetEquipmentIoExpanderListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentIoExpanderListRequest) Count(count bool) ApiGetEquipmentIoExpanderListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentIoExpanderListRequest) Inlinecount(inlinecount string) ApiGetEquipmentIoExpanderListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentIoExpanderListRequest) At(at string) ApiGetEquipmentIoExpanderListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentIoExpanderListRequest) Tags(tags string) ApiGetEquipmentIoExpanderListRequest {
 	r.tags = &tags
@@ -6219,7 +6363,7 @@ GetEquipmentIoExpanderList Read a 'equipment.IoExpander' resource.
 func (a *EquipmentApiService) GetEquipmentIoExpanderList(ctx _context.Context) ApiGetEquipmentIoExpanderListRequest {
 	return ApiGetEquipmentIoExpanderListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6358,13 +6502,13 @@ func (a *EquipmentApiService) GetEquipmentIoExpanderListExecute(r ApiGetEquipmen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6381,11 +6525,10 @@ func (a *EquipmentApiService) GetEquipmentIoExpanderListExecute(r ApiGetEquipmen
 }
 
 type ApiGetEquipmentLocatorLedByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentLocatorLedByMoidRequest) Execute() (EquipmentLocatorLed, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentLocatorLedByMoidExecute(r)
@@ -6401,8 +6544,8 @@ GetEquipmentLocatorLedByMoid Read a 'equipment.LocatorLed' resource.
 func (a *EquipmentApiService) GetEquipmentLocatorLedByMoid(ctx _context.Context, moid string) ApiGetEquipmentLocatorLedByMoidRequest {
 	return ApiGetEquipmentLocatorLedByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6509,13 +6652,13 @@ func (a *EquipmentApiService) GetEquipmentLocatorLedByMoidExecute(r ApiGetEquipm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6532,19 +6675,19 @@ func (a *EquipmentApiService) GetEquipmentLocatorLedByMoidExecute(r ApiGetEquipm
 }
 
 type ApiGetEquipmentLocatorLedListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -6552,51 +6695,61 @@ func (r ApiGetEquipmentLocatorLedListRequest) Filter(filter string) ApiGetEquipm
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentLocatorLedListRequest) Orderby(orderby string) ApiGetEquipmentLocatorLedListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentLocatorLedListRequest) Top(top int32) ApiGetEquipmentLocatorLedListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentLocatorLedListRequest) Skip(skip int32) ApiGetEquipmentLocatorLedListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentLocatorLedListRequest) Select_(select_ string) ApiGetEquipmentLocatorLedListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentLocatorLedListRequest) Expand(expand string) ApiGetEquipmentLocatorLedListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentLocatorLedListRequest) Apply(apply string) ApiGetEquipmentLocatorLedListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentLocatorLedListRequest) Count(count bool) ApiGetEquipmentLocatorLedListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentLocatorLedListRequest) Inlinecount(inlinecount string) ApiGetEquipmentLocatorLedListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentLocatorLedListRequest) At(at string) ApiGetEquipmentLocatorLedListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentLocatorLedListRequest) Tags(tags string) ApiGetEquipmentLocatorLedListRequest {
 	r.tags = &tags
@@ -6616,7 +6769,7 @@ GetEquipmentLocatorLedList Read a 'equipment.LocatorLed' resource.
 func (a *EquipmentApiService) GetEquipmentLocatorLedList(ctx _context.Context) ApiGetEquipmentLocatorLedListRequest {
 	return ApiGetEquipmentLocatorLedListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6755,13 +6908,13 @@ func (a *EquipmentApiService) GetEquipmentLocatorLedListExecute(r ApiGetEquipmen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6778,11 +6931,10 @@ func (a *EquipmentApiService) GetEquipmentLocatorLedListExecute(r ApiGetEquipmen
 }
 
 type ApiGetEquipmentPsuByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentPsuByMoidRequest) Execute() (EquipmentPsu, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentPsuByMoidExecute(r)
@@ -6798,8 +6950,8 @@ GetEquipmentPsuByMoid Read a 'equipment.Psu' resource.
 func (a *EquipmentApiService) GetEquipmentPsuByMoid(ctx _context.Context, moid string) ApiGetEquipmentPsuByMoidRequest {
 	return ApiGetEquipmentPsuByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6906,13 +7058,13 @@ func (a *EquipmentApiService) GetEquipmentPsuByMoidExecute(r ApiGetEquipmentPsuB
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6929,11 +7081,10 @@ func (a *EquipmentApiService) GetEquipmentPsuByMoidExecute(r ApiGetEquipmentPsuB
 }
 
 type ApiGetEquipmentPsuControlByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentPsuControlByMoidRequest) Execute() (EquipmentPsuControl, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentPsuControlByMoidExecute(r)
@@ -6949,8 +7100,8 @@ GetEquipmentPsuControlByMoid Read a 'equipment.PsuControl' resource.
 func (a *EquipmentApiService) GetEquipmentPsuControlByMoid(ctx _context.Context, moid string) ApiGetEquipmentPsuControlByMoidRequest {
 	return ApiGetEquipmentPsuControlByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7057,13 +7208,13 @@ func (a *EquipmentApiService) GetEquipmentPsuControlByMoidExecute(r ApiGetEquipm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7080,19 +7231,19 @@ func (a *EquipmentApiService) GetEquipmentPsuControlByMoidExecute(r ApiGetEquipm
 }
 
 type ApiGetEquipmentPsuControlListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7100,51 +7251,61 @@ func (r ApiGetEquipmentPsuControlListRequest) Filter(filter string) ApiGetEquipm
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentPsuControlListRequest) Orderby(orderby string) ApiGetEquipmentPsuControlListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentPsuControlListRequest) Top(top int32) ApiGetEquipmentPsuControlListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentPsuControlListRequest) Skip(skip int32) ApiGetEquipmentPsuControlListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentPsuControlListRequest) Select_(select_ string) ApiGetEquipmentPsuControlListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentPsuControlListRequest) Expand(expand string) ApiGetEquipmentPsuControlListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentPsuControlListRequest) Apply(apply string) ApiGetEquipmentPsuControlListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentPsuControlListRequest) Count(count bool) ApiGetEquipmentPsuControlListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentPsuControlListRequest) Inlinecount(inlinecount string) ApiGetEquipmentPsuControlListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentPsuControlListRequest) At(at string) ApiGetEquipmentPsuControlListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentPsuControlListRequest) Tags(tags string) ApiGetEquipmentPsuControlListRequest {
 	r.tags = &tags
@@ -7164,7 +7325,7 @@ GetEquipmentPsuControlList Read a 'equipment.PsuControl' resource.
 func (a *EquipmentApiService) GetEquipmentPsuControlList(ctx _context.Context) ApiGetEquipmentPsuControlListRequest {
 	return ApiGetEquipmentPsuControlListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7303,13 +7464,13 @@ func (a *EquipmentApiService) GetEquipmentPsuControlListExecute(r ApiGetEquipmen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7326,19 +7487,19 @@ func (a *EquipmentApiService) GetEquipmentPsuControlListExecute(r ApiGetEquipmen
 }
 
 type ApiGetEquipmentPsuListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7346,51 +7507,61 @@ func (r ApiGetEquipmentPsuListRequest) Filter(filter string) ApiGetEquipmentPsuL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentPsuListRequest) Orderby(orderby string) ApiGetEquipmentPsuListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentPsuListRequest) Top(top int32) ApiGetEquipmentPsuListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentPsuListRequest) Skip(skip int32) ApiGetEquipmentPsuListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentPsuListRequest) Select_(select_ string) ApiGetEquipmentPsuListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentPsuListRequest) Expand(expand string) ApiGetEquipmentPsuListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentPsuListRequest) Apply(apply string) ApiGetEquipmentPsuListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentPsuListRequest) Count(count bool) ApiGetEquipmentPsuListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentPsuListRequest) Inlinecount(inlinecount string) ApiGetEquipmentPsuListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentPsuListRequest) At(at string) ApiGetEquipmentPsuListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentPsuListRequest) Tags(tags string) ApiGetEquipmentPsuListRequest {
 	r.tags = &tags
@@ -7410,7 +7581,7 @@ GetEquipmentPsuList Read a 'equipment.Psu' resource.
 func (a *EquipmentApiService) GetEquipmentPsuList(ctx _context.Context) ApiGetEquipmentPsuListRequest {
 	return ApiGetEquipmentPsuListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7549,13 +7720,13 @@ func (a *EquipmentApiService) GetEquipmentPsuListExecute(r ApiGetEquipmentPsuLis
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7572,11 +7743,10 @@ func (a *EquipmentApiService) GetEquipmentPsuListExecute(r ApiGetEquipmentPsuLis
 }
 
 type ApiGetEquipmentRackEnclosureByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentRackEnclosureByMoidRequest) Execute() (EquipmentRackEnclosure, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentRackEnclosureByMoidExecute(r)
@@ -7592,8 +7762,8 @@ GetEquipmentRackEnclosureByMoid Read a 'equipment.RackEnclosure' resource.
 func (a *EquipmentApiService) GetEquipmentRackEnclosureByMoid(ctx _context.Context, moid string) ApiGetEquipmentRackEnclosureByMoidRequest {
 	return ApiGetEquipmentRackEnclosureByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7700,13 +7870,13 @@ func (a *EquipmentApiService) GetEquipmentRackEnclosureByMoidExecute(r ApiGetEqu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7723,19 +7893,19 @@ func (a *EquipmentApiService) GetEquipmentRackEnclosureByMoidExecute(r ApiGetEqu
 }
 
 type ApiGetEquipmentRackEnclosureListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7743,51 +7913,61 @@ func (r ApiGetEquipmentRackEnclosureListRequest) Filter(filter string) ApiGetEqu
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentRackEnclosureListRequest) Orderby(orderby string) ApiGetEquipmentRackEnclosureListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentRackEnclosureListRequest) Top(top int32) ApiGetEquipmentRackEnclosureListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentRackEnclosureListRequest) Skip(skip int32) ApiGetEquipmentRackEnclosureListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentRackEnclosureListRequest) Select_(select_ string) ApiGetEquipmentRackEnclosureListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentRackEnclosureListRequest) Expand(expand string) ApiGetEquipmentRackEnclosureListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentRackEnclosureListRequest) Apply(apply string) ApiGetEquipmentRackEnclosureListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentRackEnclosureListRequest) Count(count bool) ApiGetEquipmentRackEnclosureListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentRackEnclosureListRequest) Inlinecount(inlinecount string) ApiGetEquipmentRackEnclosureListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentRackEnclosureListRequest) At(at string) ApiGetEquipmentRackEnclosureListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentRackEnclosureListRequest) Tags(tags string) ApiGetEquipmentRackEnclosureListRequest {
 	r.tags = &tags
@@ -7807,7 +7987,7 @@ GetEquipmentRackEnclosureList Read a 'equipment.RackEnclosure' resource.
 func (a *EquipmentApiService) GetEquipmentRackEnclosureList(ctx _context.Context) ApiGetEquipmentRackEnclosureListRequest {
 	return ApiGetEquipmentRackEnclosureListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7946,13 +8126,13 @@ func (a *EquipmentApiService) GetEquipmentRackEnclosureListExecute(r ApiGetEquip
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7969,11 +8149,10 @@ func (a *EquipmentApiService) GetEquipmentRackEnclosureListExecute(r ApiGetEquip
 }
 
 type ApiGetEquipmentRackEnclosureSlotByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentRackEnclosureSlotByMoidRequest) Execute() (EquipmentRackEnclosureSlot, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentRackEnclosureSlotByMoidExecute(r)
@@ -7989,8 +8168,8 @@ GetEquipmentRackEnclosureSlotByMoid Read a 'equipment.RackEnclosureSlot' resourc
 func (a *EquipmentApiService) GetEquipmentRackEnclosureSlotByMoid(ctx _context.Context, moid string) ApiGetEquipmentRackEnclosureSlotByMoidRequest {
 	return ApiGetEquipmentRackEnclosureSlotByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8097,13 +8276,13 @@ func (a *EquipmentApiService) GetEquipmentRackEnclosureSlotByMoidExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8120,19 +8299,19 @@ func (a *EquipmentApiService) GetEquipmentRackEnclosureSlotByMoidExecute(r ApiGe
 }
 
 type ApiGetEquipmentRackEnclosureSlotListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8140,51 +8319,61 @@ func (r ApiGetEquipmentRackEnclosureSlotListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentRackEnclosureSlotListRequest) Orderby(orderby string) ApiGetEquipmentRackEnclosureSlotListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentRackEnclosureSlotListRequest) Top(top int32) ApiGetEquipmentRackEnclosureSlotListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentRackEnclosureSlotListRequest) Skip(skip int32) ApiGetEquipmentRackEnclosureSlotListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentRackEnclosureSlotListRequest) Select_(select_ string) ApiGetEquipmentRackEnclosureSlotListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentRackEnclosureSlotListRequest) Expand(expand string) ApiGetEquipmentRackEnclosureSlotListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentRackEnclosureSlotListRequest) Apply(apply string) ApiGetEquipmentRackEnclosureSlotListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentRackEnclosureSlotListRequest) Count(count bool) ApiGetEquipmentRackEnclosureSlotListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentRackEnclosureSlotListRequest) Inlinecount(inlinecount string) ApiGetEquipmentRackEnclosureSlotListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentRackEnclosureSlotListRequest) At(at string) ApiGetEquipmentRackEnclosureSlotListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentRackEnclosureSlotListRequest) Tags(tags string) ApiGetEquipmentRackEnclosureSlotListRequest {
 	r.tags = &tags
@@ -8204,7 +8393,7 @@ GetEquipmentRackEnclosureSlotList Read a 'equipment.RackEnclosureSlot' resource.
 func (a *EquipmentApiService) GetEquipmentRackEnclosureSlotList(ctx _context.Context) ApiGetEquipmentRackEnclosureSlotListRequest {
 	return ApiGetEquipmentRackEnclosureSlotListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8343,13 +8532,13 @@ func (a *EquipmentApiService) GetEquipmentRackEnclosureSlotListExecute(r ApiGetE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8366,11 +8555,10 @@ func (a *EquipmentApiService) GetEquipmentRackEnclosureSlotListExecute(r ApiGetE
 }
 
 type ApiGetEquipmentSharedIoModuleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentSharedIoModuleByMoidRequest) Execute() (EquipmentSharedIoModule, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentSharedIoModuleByMoidExecute(r)
@@ -8386,8 +8574,8 @@ GetEquipmentSharedIoModuleByMoid Read a 'equipment.SharedIoModule' resource.
 func (a *EquipmentApiService) GetEquipmentSharedIoModuleByMoid(ctx _context.Context, moid string) ApiGetEquipmentSharedIoModuleByMoidRequest {
 	return ApiGetEquipmentSharedIoModuleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8494,13 +8682,13 @@ func (a *EquipmentApiService) GetEquipmentSharedIoModuleByMoidExecute(r ApiGetEq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8517,19 +8705,19 @@ func (a *EquipmentApiService) GetEquipmentSharedIoModuleByMoidExecute(r ApiGetEq
 }
 
 type ApiGetEquipmentSharedIoModuleListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8537,51 +8725,61 @@ func (r ApiGetEquipmentSharedIoModuleListRequest) Filter(filter string) ApiGetEq
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentSharedIoModuleListRequest) Orderby(orderby string) ApiGetEquipmentSharedIoModuleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentSharedIoModuleListRequest) Top(top int32) ApiGetEquipmentSharedIoModuleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentSharedIoModuleListRequest) Skip(skip int32) ApiGetEquipmentSharedIoModuleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentSharedIoModuleListRequest) Select_(select_ string) ApiGetEquipmentSharedIoModuleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentSharedIoModuleListRequest) Expand(expand string) ApiGetEquipmentSharedIoModuleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentSharedIoModuleListRequest) Apply(apply string) ApiGetEquipmentSharedIoModuleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentSharedIoModuleListRequest) Count(count bool) ApiGetEquipmentSharedIoModuleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentSharedIoModuleListRequest) Inlinecount(inlinecount string) ApiGetEquipmentSharedIoModuleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentSharedIoModuleListRequest) At(at string) ApiGetEquipmentSharedIoModuleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentSharedIoModuleListRequest) Tags(tags string) ApiGetEquipmentSharedIoModuleListRequest {
 	r.tags = &tags
@@ -8601,7 +8799,7 @@ GetEquipmentSharedIoModuleList Read a 'equipment.SharedIoModule' resource.
 func (a *EquipmentApiService) GetEquipmentSharedIoModuleList(ctx _context.Context) ApiGetEquipmentSharedIoModuleListRequest {
 	return ApiGetEquipmentSharedIoModuleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8740,13 +8938,13 @@ func (a *EquipmentApiService) GetEquipmentSharedIoModuleListExecute(r ApiGetEqui
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8763,11 +8961,10 @@ func (a *EquipmentApiService) GetEquipmentSharedIoModuleListExecute(r ApiGetEqui
 }
 
 type ApiGetEquipmentSwitchCardByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentSwitchCardByMoidRequest) Execute() (EquipmentSwitchCard, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentSwitchCardByMoidExecute(r)
@@ -8783,8 +8980,8 @@ GetEquipmentSwitchCardByMoid Read a 'equipment.SwitchCard' resource.
 func (a *EquipmentApiService) GetEquipmentSwitchCardByMoid(ctx _context.Context, moid string) ApiGetEquipmentSwitchCardByMoidRequest {
 	return ApiGetEquipmentSwitchCardByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8891,13 +9088,13 @@ func (a *EquipmentApiService) GetEquipmentSwitchCardByMoidExecute(r ApiGetEquipm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8914,19 +9111,19 @@ func (a *EquipmentApiService) GetEquipmentSwitchCardByMoidExecute(r ApiGetEquipm
 }
 
 type ApiGetEquipmentSwitchCardListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8934,51 +9131,61 @@ func (r ApiGetEquipmentSwitchCardListRequest) Filter(filter string) ApiGetEquipm
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentSwitchCardListRequest) Orderby(orderby string) ApiGetEquipmentSwitchCardListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentSwitchCardListRequest) Top(top int32) ApiGetEquipmentSwitchCardListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentSwitchCardListRequest) Skip(skip int32) ApiGetEquipmentSwitchCardListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentSwitchCardListRequest) Select_(select_ string) ApiGetEquipmentSwitchCardListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentSwitchCardListRequest) Expand(expand string) ApiGetEquipmentSwitchCardListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentSwitchCardListRequest) Apply(apply string) ApiGetEquipmentSwitchCardListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentSwitchCardListRequest) Count(count bool) ApiGetEquipmentSwitchCardListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentSwitchCardListRequest) Inlinecount(inlinecount string) ApiGetEquipmentSwitchCardListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentSwitchCardListRequest) At(at string) ApiGetEquipmentSwitchCardListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentSwitchCardListRequest) Tags(tags string) ApiGetEquipmentSwitchCardListRequest {
 	r.tags = &tags
@@ -8998,7 +9205,7 @@ GetEquipmentSwitchCardList Read a 'equipment.SwitchCard' resource.
 func (a *EquipmentApiService) GetEquipmentSwitchCardList(ctx _context.Context) ApiGetEquipmentSwitchCardListRequest {
 	return ApiGetEquipmentSwitchCardListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9137,13 +9344,13 @@ func (a *EquipmentApiService) GetEquipmentSwitchCardListExecute(r ApiGetEquipmen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9160,11 +9367,10 @@ func (a *EquipmentApiService) GetEquipmentSwitchCardListExecute(r ApiGetEquipmen
 }
 
 type ApiGetEquipmentSystemIoControllerByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentSystemIoControllerByMoidRequest) Execute() (EquipmentSystemIoController, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentSystemIoControllerByMoidExecute(r)
@@ -9180,8 +9386,8 @@ GetEquipmentSystemIoControllerByMoid Read a 'equipment.SystemIoController' resou
 func (a *EquipmentApiService) GetEquipmentSystemIoControllerByMoid(ctx _context.Context, moid string) ApiGetEquipmentSystemIoControllerByMoidRequest {
 	return ApiGetEquipmentSystemIoControllerByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9288,13 +9494,13 @@ func (a *EquipmentApiService) GetEquipmentSystemIoControllerByMoidExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9311,19 +9517,19 @@ func (a *EquipmentApiService) GetEquipmentSystemIoControllerByMoidExecute(r ApiG
 }
 
 type ApiGetEquipmentSystemIoControllerListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9331,51 +9537,61 @@ func (r ApiGetEquipmentSystemIoControllerListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentSystemIoControllerListRequest) Orderby(orderby string) ApiGetEquipmentSystemIoControllerListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentSystemIoControllerListRequest) Top(top int32) ApiGetEquipmentSystemIoControllerListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentSystemIoControllerListRequest) Skip(skip int32) ApiGetEquipmentSystemIoControllerListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentSystemIoControllerListRequest) Select_(select_ string) ApiGetEquipmentSystemIoControllerListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentSystemIoControllerListRequest) Expand(expand string) ApiGetEquipmentSystemIoControllerListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentSystemIoControllerListRequest) Apply(apply string) ApiGetEquipmentSystemIoControllerListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentSystemIoControllerListRequest) Count(count bool) ApiGetEquipmentSystemIoControllerListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentSystemIoControllerListRequest) Inlinecount(inlinecount string) ApiGetEquipmentSystemIoControllerListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentSystemIoControllerListRequest) At(at string) ApiGetEquipmentSystemIoControllerListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentSystemIoControllerListRequest) Tags(tags string) ApiGetEquipmentSystemIoControllerListRequest {
 	r.tags = &tags
@@ -9395,7 +9611,7 @@ GetEquipmentSystemIoControllerList Read a 'equipment.SystemIoController' resourc
 func (a *EquipmentApiService) GetEquipmentSystemIoControllerList(ctx _context.Context) ApiGetEquipmentSystemIoControllerListRequest {
 	return ApiGetEquipmentSystemIoControllerListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9534,13 +9750,13 @@ func (a *EquipmentApiService) GetEquipmentSystemIoControllerListExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9557,11 +9773,10 @@ func (a *EquipmentApiService) GetEquipmentSystemIoControllerListExecute(r ApiGet
 }
 
 type ApiGetEquipmentTpmByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentTpmByMoidRequest) Execute() (EquipmentTpm, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentTpmByMoidExecute(r)
@@ -9577,8 +9792,8 @@ GetEquipmentTpmByMoid Read a 'equipment.Tpm' resource.
 func (a *EquipmentApiService) GetEquipmentTpmByMoid(ctx _context.Context, moid string) ApiGetEquipmentTpmByMoidRequest {
 	return ApiGetEquipmentTpmByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9685,13 +9900,13 @@ func (a *EquipmentApiService) GetEquipmentTpmByMoidExecute(r ApiGetEquipmentTpmB
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9708,19 +9923,19 @@ func (a *EquipmentApiService) GetEquipmentTpmByMoidExecute(r ApiGetEquipmentTpmB
 }
 
 type ApiGetEquipmentTpmListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9728,51 +9943,61 @@ func (r ApiGetEquipmentTpmListRequest) Filter(filter string) ApiGetEquipmentTpmL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentTpmListRequest) Orderby(orderby string) ApiGetEquipmentTpmListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentTpmListRequest) Top(top int32) ApiGetEquipmentTpmListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentTpmListRequest) Skip(skip int32) ApiGetEquipmentTpmListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentTpmListRequest) Select_(select_ string) ApiGetEquipmentTpmListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentTpmListRequest) Expand(expand string) ApiGetEquipmentTpmListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentTpmListRequest) Apply(apply string) ApiGetEquipmentTpmListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentTpmListRequest) Count(count bool) ApiGetEquipmentTpmListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentTpmListRequest) Inlinecount(inlinecount string) ApiGetEquipmentTpmListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentTpmListRequest) At(at string) ApiGetEquipmentTpmListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentTpmListRequest) Tags(tags string) ApiGetEquipmentTpmListRequest {
 	r.tags = &tags
@@ -9792,7 +10017,7 @@ GetEquipmentTpmList Read a 'equipment.Tpm' resource.
 func (a *EquipmentApiService) GetEquipmentTpmList(ctx _context.Context) ApiGetEquipmentTpmListRequest {
 	return ApiGetEquipmentTpmListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9931,13 +10156,13 @@ func (a *EquipmentApiService) GetEquipmentTpmListExecute(r ApiGetEquipmentTpmLis
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9954,11 +10179,10 @@ func (a *EquipmentApiService) GetEquipmentTpmListExecute(r ApiGetEquipmentTpmLis
 }
 
 type ApiGetEquipmentTransceiverByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EquipmentApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEquipmentTransceiverByMoidRequest) Execute() (EquipmentTransceiver, *_nethttp.Response, error) {
 	return r.ApiService.GetEquipmentTransceiverByMoidExecute(r)
@@ -9974,8 +10198,8 @@ GetEquipmentTransceiverByMoid Read a 'equipment.Transceiver' resource.
 func (a *EquipmentApiService) GetEquipmentTransceiverByMoid(ctx _context.Context, moid string) ApiGetEquipmentTransceiverByMoidRequest {
 	return ApiGetEquipmentTransceiverByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10082,13 +10306,13 @@ func (a *EquipmentApiService) GetEquipmentTransceiverByMoidExecute(r ApiGetEquip
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10105,19 +10329,19 @@ func (a *EquipmentApiService) GetEquipmentTransceiverByMoidExecute(r ApiGetEquip
 }
 
 type ApiGetEquipmentTransceiverListRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EquipmentApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10125,51 +10349,61 @@ func (r ApiGetEquipmentTransceiverListRequest) Filter(filter string) ApiGetEquip
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEquipmentTransceiverListRequest) Orderby(orderby string) ApiGetEquipmentTransceiverListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEquipmentTransceiverListRequest) Top(top int32) ApiGetEquipmentTransceiverListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEquipmentTransceiverListRequest) Skip(skip int32) ApiGetEquipmentTransceiverListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEquipmentTransceiverListRequest) Select_(select_ string) ApiGetEquipmentTransceiverListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEquipmentTransceiverListRequest) Expand(expand string) ApiGetEquipmentTransceiverListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEquipmentTransceiverListRequest) Apply(apply string) ApiGetEquipmentTransceiverListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEquipmentTransceiverListRequest) Count(count bool) ApiGetEquipmentTransceiverListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEquipmentTransceiverListRequest) Inlinecount(inlinecount string) ApiGetEquipmentTransceiverListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEquipmentTransceiverListRequest) At(at string) ApiGetEquipmentTransceiverListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEquipmentTransceiverListRequest) Tags(tags string) ApiGetEquipmentTransceiverListRequest {
 	r.tags = &tags
@@ -10189,7 +10423,7 @@ GetEquipmentTransceiverList Read a 'equipment.Transceiver' resource.
 func (a *EquipmentApiService) GetEquipmentTransceiverList(ctx _context.Context) ApiGetEquipmentTransceiverListRequest {
 	return ApiGetEquipmentTransceiverListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10328,13 +10562,13 @@ func (a *EquipmentApiService) GetEquipmentTransceiverListExecute(r ApiGetEquipme
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10351,11 +10585,11 @@ func (a *EquipmentApiService) GetEquipmentTransceiverListExecute(r ApiGetEquipme
 }
 
 type ApiPatchEquipmentChassisRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *EquipmentApiService
+	moid             string
 	equipmentChassis *EquipmentChassis
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;equipment.Chassis&#39; resource to update.
@@ -10363,6 +10597,7 @@ func (r ApiPatchEquipmentChassisRequest) EquipmentChassis(equipmentChassis Equip
 	r.equipmentChassis = &equipmentChassis
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentChassisRequest) IfMatch(ifMatch string) ApiPatchEquipmentChassisRequest {
 	r.ifMatch = &ifMatch
@@ -10383,8 +10618,8 @@ PatchEquipmentChassis Update a 'equipment.Chassis' resource.
 func (a *EquipmentApiService) PatchEquipmentChassis(ctx _context.Context, moid string) ApiPatchEquipmentChassisRequest {
 	return ApiPatchEquipmentChassisRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10499,13 +10734,13 @@ func (a *EquipmentApiService) PatchEquipmentChassisExecute(r ApiPatchEquipmentCh
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10522,11 +10757,11 @@ func (a *EquipmentApiService) PatchEquipmentChassisExecute(r ApiPatchEquipmentCh
 }
 
 type ApiPatchEquipmentChassisIdentityRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *EquipmentApiService
+	moid                     string
 	equipmentChassisIdentity *EquipmentChassisIdentity
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;equipment.ChassisIdentity&#39; resource to update.
@@ -10534,6 +10769,7 @@ func (r ApiPatchEquipmentChassisIdentityRequest) EquipmentChassisIdentity(equipm
 	r.equipmentChassisIdentity = &equipmentChassisIdentity
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentChassisIdentityRequest) IfMatch(ifMatch string) ApiPatchEquipmentChassisIdentityRequest {
 	r.ifMatch = &ifMatch
@@ -10554,8 +10790,8 @@ PatchEquipmentChassisIdentity Update a 'equipment.ChassisIdentity' resource.
 func (a *EquipmentApiService) PatchEquipmentChassisIdentity(ctx _context.Context, moid string) ApiPatchEquipmentChassisIdentityRequest {
 	return ApiPatchEquipmentChassisIdentityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10670,13 +10906,13 @@ func (a *EquipmentApiService) PatchEquipmentChassisIdentityExecute(r ApiPatchEqu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10693,11 +10929,11 @@ func (a *EquipmentApiService) PatchEquipmentChassisIdentityExecute(r ApiPatchEqu
 }
 
 type ApiPatchEquipmentChassisOperationRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *EquipmentApiService
+	moid                      string
 	equipmentChassisOperation *EquipmentChassisOperation
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;equipment.ChassisOperation&#39; resource to update.
@@ -10705,6 +10941,7 @@ func (r ApiPatchEquipmentChassisOperationRequest) EquipmentChassisOperation(equi
 	r.equipmentChassisOperation = &equipmentChassisOperation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentChassisOperationRequest) IfMatch(ifMatch string) ApiPatchEquipmentChassisOperationRequest {
 	r.ifMatch = &ifMatch
@@ -10725,8 +10962,8 @@ PatchEquipmentChassisOperation Update a 'equipment.ChassisOperation' resource.
 func (a *EquipmentApiService) PatchEquipmentChassisOperation(ctx _context.Context, moid string) ApiPatchEquipmentChassisOperationRequest {
 	return ApiPatchEquipmentChassisOperationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10841,13 +11078,13 @@ func (a *EquipmentApiService) PatchEquipmentChassisOperationExecute(r ApiPatchEq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10864,11 +11101,11 @@ func (a *EquipmentApiService) PatchEquipmentChassisOperationExecute(r ApiPatchEq
 }
 
 type ApiPatchEquipmentExpanderModuleRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *EquipmentApiService
+	moid                    string
 	equipmentExpanderModule *EquipmentExpanderModule
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;equipment.ExpanderModule&#39; resource to update.
@@ -10876,6 +11113,7 @@ func (r ApiPatchEquipmentExpanderModuleRequest) EquipmentExpanderModule(equipmen
 	r.equipmentExpanderModule = &equipmentExpanderModule
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentExpanderModuleRequest) IfMatch(ifMatch string) ApiPatchEquipmentExpanderModuleRequest {
 	r.ifMatch = &ifMatch
@@ -10896,8 +11134,8 @@ PatchEquipmentExpanderModule Update a 'equipment.ExpanderModule' resource.
 func (a *EquipmentApiService) PatchEquipmentExpanderModule(ctx _context.Context, moid string) ApiPatchEquipmentExpanderModuleRequest {
 	return ApiPatchEquipmentExpanderModuleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11012,13 +11250,13 @@ func (a *EquipmentApiService) PatchEquipmentExpanderModuleExecute(r ApiPatchEqui
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11035,11 +11273,11 @@ func (a *EquipmentApiService) PatchEquipmentExpanderModuleExecute(r ApiPatchEqui
 }
 
 type ApiPatchEquipmentFanRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *EquipmentApiService
+	moid         string
 	equipmentFan *EquipmentFan
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;equipment.Fan&#39; resource to update.
@@ -11047,6 +11285,7 @@ func (r ApiPatchEquipmentFanRequest) EquipmentFan(equipmentFan EquipmentFan) Api
 	r.equipmentFan = &equipmentFan
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentFanRequest) IfMatch(ifMatch string) ApiPatchEquipmentFanRequest {
 	r.ifMatch = &ifMatch
@@ -11067,8 +11306,8 @@ PatchEquipmentFan Update a 'equipment.Fan' resource.
 func (a *EquipmentApiService) PatchEquipmentFan(ctx _context.Context, moid string) ApiPatchEquipmentFanRequest {
 	return ApiPatchEquipmentFanRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11183,13 +11422,13 @@ func (a *EquipmentApiService) PatchEquipmentFanExecute(r ApiPatchEquipmentFanReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11206,11 +11445,11 @@ func (a *EquipmentApiService) PatchEquipmentFanExecute(r ApiPatchEquipmentFanReq
 }
 
 type ApiPatchEquipmentFanControlRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *EquipmentApiService
+	moid                string
 	equipmentFanControl *EquipmentFanControl
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;equipment.FanControl&#39; resource to update.
@@ -11218,6 +11457,7 @@ func (r ApiPatchEquipmentFanControlRequest) EquipmentFanControl(equipmentFanCont
 	r.equipmentFanControl = &equipmentFanControl
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentFanControlRequest) IfMatch(ifMatch string) ApiPatchEquipmentFanControlRequest {
 	r.ifMatch = &ifMatch
@@ -11238,8 +11478,8 @@ PatchEquipmentFanControl Update a 'equipment.FanControl' resource.
 func (a *EquipmentApiService) PatchEquipmentFanControl(ctx _context.Context, moid string) ApiPatchEquipmentFanControlRequest {
 	return ApiPatchEquipmentFanControlRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11354,13 +11594,13 @@ func (a *EquipmentApiService) PatchEquipmentFanControlExecute(r ApiPatchEquipmen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11377,11 +11617,11 @@ func (a *EquipmentApiService) PatchEquipmentFanControlExecute(r ApiPatchEquipmen
 }
 
 type ApiPatchEquipmentFanModuleRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                _context.Context
+	ApiService         *EquipmentApiService
+	moid               string
 	equipmentFanModule *EquipmentFanModule
-	ifMatch *string
+	ifMatch            *string
 }
 
 // The &#39;equipment.FanModule&#39; resource to update.
@@ -11389,6 +11629,7 @@ func (r ApiPatchEquipmentFanModuleRequest) EquipmentFanModule(equipmentFanModule
 	r.equipmentFanModule = &equipmentFanModule
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentFanModuleRequest) IfMatch(ifMatch string) ApiPatchEquipmentFanModuleRequest {
 	r.ifMatch = &ifMatch
@@ -11409,8 +11650,8 @@ PatchEquipmentFanModule Update a 'equipment.FanModule' resource.
 func (a *EquipmentApiService) PatchEquipmentFanModule(ctx _context.Context, moid string) ApiPatchEquipmentFanModuleRequest {
 	return ApiPatchEquipmentFanModuleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11525,13 +11766,13 @@ func (a *EquipmentApiService) PatchEquipmentFanModuleExecute(r ApiPatchEquipment
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11548,11 +11789,11 @@ func (a *EquipmentApiService) PatchEquipmentFanModuleExecute(r ApiPatchEquipment
 }
 
 type ApiPatchEquipmentFexRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *EquipmentApiService
+	moid         string
 	equipmentFex *EquipmentFex
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;equipment.Fex&#39; resource to update.
@@ -11560,6 +11801,7 @@ func (r ApiPatchEquipmentFexRequest) EquipmentFex(equipmentFex EquipmentFex) Api
 	r.equipmentFex = &equipmentFex
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentFexRequest) IfMatch(ifMatch string) ApiPatchEquipmentFexRequest {
 	r.ifMatch = &ifMatch
@@ -11580,8 +11822,8 @@ PatchEquipmentFex Update a 'equipment.Fex' resource.
 func (a *EquipmentApiService) PatchEquipmentFex(ctx _context.Context, moid string) ApiPatchEquipmentFexRequest {
 	return ApiPatchEquipmentFexRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11696,13 +11938,13 @@ func (a *EquipmentApiService) PatchEquipmentFexExecute(r ApiPatchEquipmentFexReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11719,11 +11961,11 @@ func (a *EquipmentApiService) PatchEquipmentFexExecute(r ApiPatchEquipmentFexReq
 }
 
 type ApiPatchEquipmentFexIdentityRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *EquipmentApiService
+	moid                 string
 	equipmentFexIdentity *EquipmentFexIdentity
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;equipment.FexIdentity&#39; resource to update.
@@ -11731,6 +11973,7 @@ func (r ApiPatchEquipmentFexIdentityRequest) EquipmentFexIdentity(equipmentFexId
 	r.equipmentFexIdentity = &equipmentFexIdentity
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentFexIdentityRequest) IfMatch(ifMatch string) ApiPatchEquipmentFexIdentityRequest {
 	r.ifMatch = &ifMatch
@@ -11751,8 +11994,8 @@ PatchEquipmentFexIdentity Update a 'equipment.FexIdentity' resource.
 func (a *EquipmentApiService) PatchEquipmentFexIdentity(ctx _context.Context, moid string) ApiPatchEquipmentFexIdentityRequest {
 	return ApiPatchEquipmentFexIdentityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11867,13 +12110,13 @@ func (a *EquipmentApiService) PatchEquipmentFexIdentityExecute(r ApiPatchEquipme
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11890,11 +12133,11 @@ func (a *EquipmentApiService) PatchEquipmentFexIdentityExecute(r ApiPatchEquipme
 }
 
 type ApiPatchEquipmentFexOperationRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *EquipmentApiService
+	moid                  string
 	equipmentFexOperation *EquipmentFexOperation
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;equipment.FexOperation&#39; resource to update.
@@ -11902,6 +12145,7 @@ func (r ApiPatchEquipmentFexOperationRequest) EquipmentFexOperation(equipmentFex
 	r.equipmentFexOperation = &equipmentFexOperation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentFexOperationRequest) IfMatch(ifMatch string) ApiPatchEquipmentFexOperationRequest {
 	r.ifMatch = &ifMatch
@@ -11922,8 +12166,8 @@ PatchEquipmentFexOperation Update a 'equipment.FexOperation' resource.
 func (a *EquipmentApiService) PatchEquipmentFexOperation(ctx _context.Context, moid string) ApiPatchEquipmentFexOperationRequest {
 	return ApiPatchEquipmentFexOperationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12038,13 +12282,13 @@ func (a *EquipmentApiService) PatchEquipmentFexOperationExecute(r ApiPatchEquipm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12061,11 +12305,11 @@ func (a *EquipmentApiService) PatchEquipmentFexOperationExecute(r ApiPatchEquipm
 }
 
 type ApiPatchEquipmentFruRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *EquipmentApiService
+	moid         string
 	equipmentFru *EquipmentFru
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;equipment.Fru&#39; resource to update.
@@ -12073,6 +12317,7 @@ func (r ApiPatchEquipmentFruRequest) EquipmentFru(equipmentFru EquipmentFru) Api
 	r.equipmentFru = &equipmentFru
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentFruRequest) IfMatch(ifMatch string) ApiPatchEquipmentFruRequest {
 	r.ifMatch = &ifMatch
@@ -12093,8 +12338,8 @@ PatchEquipmentFru Update a 'equipment.Fru' resource.
 func (a *EquipmentApiService) PatchEquipmentFru(ctx _context.Context, moid string) ApiPatchEquipmentFruRequest {
 	return ApiPatchEquipmentFruRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12209,13 +12454,13 @@ func (a *EquipmentApiService) PatchEquipmentFruExecute(r ApiPatchEquipmentFruReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12232,11 +12477,11 @@ func (a *EquipmentApiService) PatchEquipmentFruExecute(r ApiPatchEquipmentFruReq
 }
 
 type ApiPatchEquipmentIoCardRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *EquipmentApiService
+	moid            string
 	equipmentIoCard *EquipmentIoCard
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;equipment.IoCard&#39; resource to update.
@@ -12244,6 +12489,7 @@ func (r ApiPatchEquipmentIoCardRequest) EquipmentIoCard(equipmentIoCard Equipmen
 	r.equipmentIoCard = &equipmentIoCard
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentIoCardRequest) IfMatch(ifMatch string) ApiPatchEquipmentIoCardRequest {
 	r.ifMatch = &ifMatch
@@ -12264,8 +12510,8 @@ PatchEquipmentIoCard Update a 'equipment.IoCard' resource.
 func (a *EquipmentApiService) PatchEquipmentIoCard(ctx _context.Context, moid string) ApiPatchEquipmentIoCardRequest {
 	return ApiPatchEquipmentIoCardRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12380,13 +12626,13 @@ func (a *EquipmentApiService) PatchEquipmentIoCardExecute(r ApiPatchEquipmentIoC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12403,11 +12649,11 @@ func (a *EquipmentApiService) PatchEquipmentIoCardExecute(r ApiPatchEquipmentIoC
 }
 
 type ApiPatchEquipmentIoCardOperationRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *EquipmentApiService
+	moid                     string
 	equipmentIoCardOperation *EquipmentIoCardOperation
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;equipment.IoCardOperation&#39; resource to update.
@@ -12415,6 +12661,7 @@ func (r ApiPatchEquipmentIoCardOperationRequest) EquipmentIoCardOperation(equipm
 	r.equipmentIoCardOperation = &equipmentIoCardOperation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentIoCardOperationRequest) IfMatch(ifMatch string) ApiPatchEquipmentIoCardOperationRequest {
 	r.ifMatch = &ifMatch
@@ -12435,8 +12682,8 @@ PatchEquipmentIoCardOperation Update a 'equipment.IoCardOperation' resource.
 func (a *EquipmentApiService) PatchEquipmentIoCardOperation(ctx _context.Context, moid string) ApiPatchEquipmentIoCardOperationRequest {
 	return ApiPatchEquipmentIoCardOperationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12551,13 +12798,13 @@ func (a *EquipmentApiService) PatchEquipmentIoCardOperationExecute(r ApiPatchEqu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12574,11 +12821,11 @@ func (a *EquipmentApiService) PatchEquipmentIoCardOperationExecute(r ApiPatchEqu
 }
 
 type ApiPatchEquipmentIoExpanderRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *EquipmentApiService
+	moid                string
 	equipmentIoExpander *EquipmentIoExpander
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;equipment.IoExpander&#39; resource to update.
@@ -12586,6 +12833,7 @@ func (r ApiPatchEquipmentIoExpanderRequest) EquipmentIoExpander(equipmentIoExpan
 	r.equipmentIoExpander = &equipmentIoExpander
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentIoExpanderRequest) IfMatch(ifMatch string) ApiPatchEquipmentIoExpanderRequest {
 	r.ifMatch = &ifMatch
@@ -12606,8 +12854,8 @@ PatchEquipmentIoExpander Update a 'equipment.IoExpander' resource.
 func (a *EquipmentApiService) PatchEquipmentIoExpander(ctx _context.Context, moid string) ApiPatchEquipmentIoExpanderRequest {
 	return ApiPatchEquipmentIoExpanderRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12722,13 +12970,13 @@ func (a *EquipmentApiService) PatchEquipmentIoExpanderExecute(r ApiPatchEquipmen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12745,11 +12993,11 @@ func (a *EquipmentApiService) PatchEquipmentIoExpanderExecute(r ApiPatchEquipmen
 }
 
 type ApiPatchEquipmentLocatorLedRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *EquipmentApiService
+	moid                string
 	equipmentLocatorLed *EquipmentLocatorLed
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;equipment.LocatorLed&#39; resource to update.
@@ -12757,6 +13005,7 @@ func (r ApiPatchEquipmentLocatorLedRequest) EquipmentLocatorLed(equipmentLocator
 	r.equipmentLocatorLed = &equipmentLocatorLed
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentLocatorLedRequest) IfMatch(ifMatch string) ApiPatchEquipmentLocatorLedRequest {
 	r.ifMatch = &ifMatch
@@ -12777,8 +13026,8 @@ PatchEquipmentLocatorLed Update a 'equipment.LocatorLed' resource.
 func (a *EquipmentApiService) PatchEquipmentLocatorLed(ctx _context.Context, moid string) ApiPatchEquipmentLocatorLedRequest {
 	return ApiPatchEquipmentLocatorLedRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12893,13 +13142,13 @@ func (a *EquipmentApiService) PatchEquipmentLocatorLedExecute(r ApiPatchEquipmen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12916,11 +13165,11 @@ func (a *EquipmentApiService) PatchEquipmentLocatorLedExecute(r ApiPatchEquipmen
 }
 
 type ApiPatchEquipmentPsuRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *EquipmentApiService
+	moid         string
 	equipmentPsu *EquipmentPsu
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;equipment.Psu&#39; resource to update.
@@ -12928,6 +13177,7 @@ func (r ApiPatchEquipmentPsuRequest) EquipmentPsu(equipmentPsu EquipmentPsu) Api
 	r.equipmentPsu = &equipmentPsu
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentPsuRequest) IfMatch(ifMatch string) ApiPatchEquipmentPsuRequest {
 	r.ifMatch = &ifMatch
@@ -12948,8 +13198,8 @@ PatchEquipmentPsu Update a 'equipment.Psu' resource.
 func (a *EquipmentApiService) PatchEquipmentPsu(ctx _context.Context, moid string) ApiPatchEquipmentPsuRequest {
 	return ApiPatchEquipmentPsuRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13064,13 +13314,13 @@ func (a *EquipmentApiService) PatchEquipmentPsuExecute(r ApiPatchEquipmentPsuReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13087,11 +13337,11 @@ func (a *EquipmentApiService) PatchEquipmentPsuExecute(r ApiPatchEquipmentPsuReq
 }
 
 type ApiPatchEquipmentPsuControlRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *EquipmentApiService
+	moid                string
 	equipmentPsuControl *EquipmentPsuControl
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;equipment.PsuControl&#39; resource to update.
@@ -13099,6 +13349,7 @@ func (r ApiPatchEquipmentPsuControlRequest) EquipmentPsuControl(equipmentPsuCont
 	r.equipmentPsuControl = &equipmentPsuControl
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentPsuControlRequest) IfMatch(ifMatch string) ApiPatchEquipmentPsuControlRequest {
 	r.ifMatch = &ifMatch
@@ -13119,8 +13370,8 @@ PatchEquipmentPsuControl Update a 'equipment.PsuControl' resource.
 func (a *EquipmentApiService) PatchEquipmentPsuControl(ctx _context.Context, moid string) ApiPatchEquipmentPsuControlRequest {
 	return ApiPatchEquipmentPsuControlRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13235,13 +13486,13 @@ func (a *EquipmentApiService) PatchEquipmentPsuControlExecute(r ApiPatchEquipmen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13258,11 +13509,11 @@ func (a *EquipmentApiService) PatchEquipmentPsuControlExecute(r ApiPatchEquipmen
 }
 
 type ApiPatchEquipmentRackEnclosureRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *EquipmentApiService
+	moid                   string
 	equipmentRackEnclosure *EquipmentRackEnclosure
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;equipment.RackEnclosure&#39; resource to update.
@@ -13270,6 +13521,7 @@ func (r ApiPatchEquipmentRackEnclosureRequest) EquipmentRackEnclosure(equipmentR
 	r.equipmentRackEnclosure = &equipmentRackEnclosure
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentRackEnclosureRequest) IfMatch(ifMatch string) ApiPatchEquipmentRackEnclosureRequest {
 	r.ifMatch = &ifMatch
@@ -13290,8 +13542,8 @@ PatchEquipmentRackEnclosure Update a 'equipment.RackEnclosure' resource.
 func (a *EquipmentApiService) PatchEquipmentRackEnclosure(ctx _context.Context, moid string) ApiPatchEquipmentRackEnclosureRequest {
 	return ApiPatchEquipmentRackEnclosureRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13406,13 +13658,13 @@ func (a *EquipmentApiService) PatchEquipmentRackEnclosureExecute(r ApiPatchEquip
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13429,11 +13681,11 @@ func (a *EquipmentApiService) PatchEquipmentRackEnclosureExecute(r ApiPatchEquip
 }
 
 type ApiPatchEquipmentRackEnclosureSlotRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *EquipmentApiService
+	moid                       string
 	equipmentRackEnclosureSlot *EquipmentRackEnclosureSlot
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;equipment.RackEnclosureSlot&#39; resource to update.
@@ -13441,6 +13693,7 @@ func (r ApiPatchEquipmentRackEnclosureSlotRequest) EquipmentRackEnclosureSlot(eq
 	r.equipmentRackEnclosureSlot = &equipmentRackEnclosureSlot
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentRackEnclosureSlotRequest) IfMatch(ifMatch string) ApiPatchEquipmentRackEnclosureSlotRequest {
 	r.ifMatch = &ifMatch
@@ -13461,8 +13714,8 @@ PatchEquipmentRackEnclosureSlot Update a 'equipment.RackEnclosureSlot' resource.
 func (a *EquipmentApiService) PatchEquipmentRackEnclosureSlot(ctx _context.Context, moid string) ApiPatchEquipmentRackEnclosureSlotRequest {
 	return ApiPatchEquipmentRackEnclosureSlotRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13577,13 +13830,13 @@ func (a *EquipmentApiService) PatchEquipmentRackEnclosureSlotExecute(r ApiPatchE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13600,11 +13853,11 @@ func (a *EquipmentApiService) PatchEquipmentRackEnclosureSlotExecute(r ApiPatchE
 }
 
 type ApiPatchEquipmentSharedIoModuleRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *EquipmentApiService
+	moid                    string
 	equipmentSharedIoModule *EquipmentSharedIoModule
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;equipment.SharedIoModule&#39; resource to update.
@@ -13612,6 +13865,7 @@ func (r ApiPatchEquipmentSharedIoModuleRequest) EquipmentSharedIoModule(equipmen
 	r.equipmentSharedIoModule = &equipmentSharedIoModule
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentSharedIoModuleRequest) IfMatch(ifMatch string) ApiPatchEquipmentSharedIoModuleRequest {
 	r.ifMatch = &ifMatch
@@ -13632,8 +13886,8 @@ PatchEquipmentSharedIoModule Update a 'equipment.SharedIoModule' resource.
 func (a *EquipmentApiService) PatchEquipmentSharedIoModule(ctx _context.Context, moid string) ApiPatchEquipmentSharedIoModuleRequest {
 	return ApiPatchEquipmentSharedIoModuleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13748,13 +14002,13 @@ func (a *EquipmentApiService) PatchEquipmentSharedIoModuleExecute(r ApiPatchEqui
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13771,11 +14025,11 @@ func (a *EquipmentApiService) PatchEquipmentSharedIoModuleExecute(r ApiPatchEqui
 }
 
 type ApiPatchEquipmentSwitchCardRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *EquipmentApiService
+	moid                string
 	equipmentSwitchCard *EquipmentSwitchCard
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;equipment.SwitchCard&#39; resource to update.
@@ -13783,6 +14037,7 @@ func (r ApiPatchEquipmentSwitchCardRequest) EquipmentSwitchCard(equipmentSwitchC
 	r.equipmentSwitchCard = &equipmentSwitchCard
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentSwitchCardRequest) IfMatch(ifMatch string) ApiPatchEquipmentSwitchCardRequest {
 	r.ifMatch = &ifMatch
@@ -13803,8 +14058,8 @@ PatchEquipmentSwitchCard Update a 'equipment.SwitchCard' resource.
 func (a *EquipmentApiService) PatchEquipmentSwitchCard(ctx _context.Context, moid string) ApiPatchEquipmentSwitchCardRequest {
 	return ApiPatchEquipmentSwitchCardRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13919,13 +14174,13 @@ func (a *EquipmentApiService) PatchEquipmentSwitchCardExecute(r ApiPatchEquipmen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13942,11 +14197,11 @@ func (a *EquipmentApiService) PatchEquipmentSwitchCardExecute(r ApiPatchEquipmen
 }
 
 type ApiPatchEquipmentSystemIoControllerRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *EquipmentApiService
+	moid                        string
 	equipmentSystemIoController *EquipmentSystemIoController
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;equipment.SystemIoController&#39; resource to update.
@@ -13954,6 +14209,7 @@ func (r ApiPatchEquipmentSystemIoControllerRequest) EquipmentSystemIoController(
 	r.equipmentSystemIoController = &equipmentSystemIoController
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentSystemIoControllerRequest) IfMatch(ifMatch string) ApiPatchEquipmentSystemIoControllerRequest {
 	r.ifMatch = &ifMatch
@@ -13974,8 +14230,8 @@ PatchEquipmentSystemIoController Update a 'equipment.SystemIoController' resourc
 func (a *EquipmentApiService) PatchEquipmentSystemIoController(ctx _context.Context, moid string) ApiPatchEquipmentSystemIoControllerRequest {
 	return ApiPatchEquipmentSystemIoControllerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14090,13 +14346,13 @@ func (a *EquipmentApiService) PatchEquipmentSystemIoControllerExecute(r ApiPatch
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14113,11 +14369,11 @@ func (a *EquipmentApiService) PatchEquipmentSystemIoControllerExecute(r ApiPatch
 }
 
 type ApiPatchEquipmentTpmRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *EquipmentApiService
+	moid         string
 	equipmentTpm *EquipmentTpm
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;equipment.Tpm&#39; resource to update.
@@ -14125,6 +14381,7 @@ func (r ApiPatchEquipmentTpmRequest) EquipmentTpm(equipmentTpm EquipmentTpm) Api
 	r.equipmentTpm = &equipmentTpm
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentTpmRequest) IfMatch(ifMatch string) ApiPatchEquipmentTpmRequest {
 	r.ifMatch = &ifMatch
@@ -14145,8 +14402,8 @@ PatchEquipmentTpm Update a 'equipment.Tpm' resource.
 func (a *EquipmentApiService) PatchEquipmentTpm(ctx _context.Context, moid string) ApiPatchEquipmentTpmRequest {
 	return ApiPatchEquipmentTpmRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14261,13 +14518,13 @@ func (a *EquipmentApiService) PatchEquipmentTpmExecute(r ApiPatchEquipmentTpmReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14284,11 +14541,11 @@ func (a *EquipmentApiService) PatchEquipmentTpmExecute(r ApiPatchEquipmentTpmReq
 }
 
 type ApiPatchEquipmentTransceiverRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *EquipmentApiService
+	moid                 string
 	equipmentTransceiver *EquipmentTransceiver
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;equipment.Transceiver&#39; resource to update.
@@ -14296,6 +14553,7 @@ func (r ApiPatchEquipmentTransceiverRequest) EquipmentTransceiver(equipmentTrans
 	r.equipmentTransceiver = &equipmentTransceiver
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEquipmentTransceiverRequest) IfMatch(ifMatch string) ApiPatchEquipmentTransceiverRequest {
 	r.ifMatch = &ifMatch
@@ -14316,8 +14574,8 @@ PatchEquipmentTransceiver Update a 'equipment.Transceiver' resource.
 func (a *EquipmentApiService) PatchEquipmentTransceiver(ctx _context.Context, moid string) ApiPatchEquipmentTransceiverRequest {
 	return ApiPatchEquipmentTransceiverRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14432,13 +14690,13 @@ func (a *EquipmentApiService) PatchEquipmentTransceiverExecute(r ApiPatchEquipme
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14455,11 +14713,11 @@ func (a *EquipmentApiService) PatchEquipmentTransceiverExecute(r ApiPatchEquipme
 }
 
 type ApiUpdateEquipmentChassisRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *EquipmentApiService
+	moid             string
 	equipmentChassis *EquipmentChassis
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;equipment.Chassis&#39; resource to update.
@@ -14467,6 +14725,7 @@ func (r ApiUpdateEquipmentChassisRequest) EquipmentChassis(equipmentChassis Equi
 	r.equipmentChassis = &equipmentChassis
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentChassisRequest) IfMatch(ifMatch string) ApiUpdateEquipmentChassisRequest {
 	r.ifMatch = &ifMatch
@@ -14487,8 +14746,8 @@ UpdateEquipmentChassis Update a 'equipment.Chassis' resource.
 func (a *EquipmentApiService) UpdateEquipmentChassis(ctx _context.Context, moid string) ApiUpdateEquipmentChassisRequest {
 	return ApiUpdateEquipmentChassisRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14603,13 +14862,13 @@ func (a *EquipmentApiService) UpdateEquipmentChassisExecute(r ApiUpdateEquipment
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14626,11 +14885,11 @@ func (a *EquipmentApiService) UpdateEquipmentChassisExecute(r ApiUpdateEquipment
 }
 
 type ApiUpdateEquipmentChassisIdentityRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *EquipmentApiService
+	moid                     string
 	equipmentChassisIdentity *EquipmentChassisIdentity
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;equipment.ChassisIdentity&#39; resource to update.
@@ -14638,6 +14897,7 @@ func (r ApiUpdateEquipmentChassisIdentityRequest) EquipmentChassisIdentity(equip
 	r.equipmentChassisIdentity = &equipmentChassisIdentity
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentChassisIdentityRequest) IfMatch(ifMatch string) ApiUpdateEquipmentChassisIdentityRequest {
 	r.ifMatch = &ifMatch
@@ -14658,8 +14918,8 @@ UpdateEquipmentChassisIdentity Update a 'equipment.ChassisIdentity' resource.
 func (a *EquipmentApiService) UpdateEquipmentChassisIdentity(ctx _context.Context, moid string) ApiUpdateEquipmentChassisIdentityRequest {
 	return ApiUpdateEquipmentChassisIdentityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14774,13 +15034,13 @@ func (a *EquipmentApiService) UpdateEquipmentChassisIdentityExecute(r ApiUpdateE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14797,11 +15057,11 @@ func (a *EquipmentApiService) UpdateEquipmentChassisIdentityExecute(r ApiUpdateE
 }
 
 type ApiUpdateEquipmentChassisOperationRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *EquipmentApiService
+	moid                      string
 	equipmentChassisOperation *EquipmentChassisOperation
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;equipment.ChassisOperation&#39; resource to update.
@@ -14809,6 +15069,7 @@ func (r ApiUpdateEquipmentChassisOperationRequest) EquipmentChassisOperation(equ
 	r.equipmentChassisOperation = &equipmentChassisOperation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentChassisOperationRequest) IfMatch(ifMatch string) ApiUpdateEquipmentChassisOperationRequest {
 	r.ifMatch = &ifMatch
@@ -14829,8 +15090,8 @@ UpdateEquipmentChassisOperation Update a 'equipment.ChassisOperation' resource.
 func (a *EquipmentApiService) UpdateEquipmentChassisOperation(ctx _context.Context, moid string) ApiUpdateEquipmentChassisOperationRequest {
 	return ApiUpdateEquipmentChassisOperationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14945,13 +15206,13 @@ func (a *EquipmentApiService) UpdateEquipmentChassisOperationExecute(r ApiUpdate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14968,11 +15229,11 @@ func (a *EquipmentApiService) UpdateEquipmentChassisOperationExecute(r ApiUpdate
 }
 
 type ApiUpdateEquipmentExpanderModuleRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *EquipmentApiService
+	moid                    string
 	equipmentExpanderModule *EquipmentExpanderModule
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;equipment.ExpanderModule&#39; resource to update.
@@ -14980,6 +15241,7 @@ func (r ApiUpdateEquipmentExpanderModuleRequest) EquipmentExpanderModule(equipme
 	r.equipmentExpanderModule = &equipmentExpanderModule
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentExpanderModuleRequest) IfMatch(ifMatch string) ApiUpdateEquipmentExpanderModuleRequest {
 	r.ifMatch = &ifMatch
@@ -15000,8 +15262,8 @@ UpdateEquipmentExpanderModule Update a 'equipment.ExpanderModule' resource.
 func (a *EquipmentApiService) UpdateEquipmentExpanderModule(ctx _context.Context, moid string) ApiUpdateEquipmentExpanderModuleRequest {
 	return ApiUpdateEquipmentExpanderModuleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15116,13 +15378,13 @@ func (a *EquipmentApiService) UpdateEquipmentExpanderModuleExecute(r ApiUpdateEq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15139,11 +15401,11 @@ func (a *EquipmentApiService) UpdateEquipmentExpanderModuleExecute(r ApiUpdateEq
 }
 
 type ApiUpdateEquipmentFanRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *EquipmentApiService
+	moid         string
 	equipmentFan *EquipmentFan
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;equipment.Fan&#39; resource to update.
@@ -15151,6 +15413,7 @@ func (r ApiUpdateEquipmentFanRequest) EquipmentFan(equipmentFan EquipmentFan) Ap
 	r.equipmentFan = &equipmentFan
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentFanRequest) IfMatch(ifMatch string) ApiUpdateEquipmentFanRequest {
 	r.ifMatch = &ifMatch
@@ -15171,8 +15434,8 @@ UpdateEquipmentFan Update a 'equipment.Fan' resource.
 func (a *EquipmentApiService) UpdateEquipmentFan(ctx _context.Context, moid string) ApiUpdateEquipmentFanRequest {
 	return ApiUpdateEquipmentFanRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15287,13 +15550,13 @@ func (a *EquipmentApiService) UpdateEquipmentFanExecute(r ApiUpdateEquipmentFanR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15310,11 +15573,11 @@ func (a *EquipmentApiService) UpdateEquipmentFanExecute(r ApiUpdateEquipmentFanR
 }
 
 type ApiUpdateEquipmentFanControlRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *EquipmentApiService
+	moid                string
 	equipmentFanControl *EquipmentFanControl
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;equipment.FanControl&#39; resource to update.
@@ -15322,6 +15585,7 @@ func (r ApiUpdateEquipmentFanControlRequest) EquipmentFanControl(equipmentFanCon
 	r.equipmentFanControl = &equipmentFanControl
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentFanControlRequest) IfMatch(ifMatch string) ApiUpdateEquipmentFanControlRequest {
 	r.ifMatch = &ifMatch
@@ -15342,8 +15606,8 @@ UpdateEquipmentFanControl Update a 'equipment.FanControl' resource.
 func (a *EquipmentApiService) UpdateEquipmentFanControl(ctx _context.Context, moid string) ApiUpdateEquipmentFanControlRequest {
 	return ApiUpdateEquipmentFanControlRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15458,13 +15722,13 @@ func (a *EquipmentApiService) UpdateEquipmentFanControlExecute(r ApiUpdateEquipm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15481,11 +15745,11 @@ func (a *EquipmentApiService) UpdateEquipmentFanControlExecute(r ApiUpdateEquipm
 }
 
 type ApiUpdateEquipmentFanModuleRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                _context.Context
+	ApiService         *EquipmentApiService
+	moid               string
 	equipmentFanModule *EquipmentFanModule
-	ifMatch *string
+	ifMatch            *string
 }
 
 // The &#39;equipment.FanModule&#39; resource to update.
@@ -15493,6 +15757,7 @@ func (r ApiUpdateEquipmentFanModuleRequest) EquipmentFanModule(equipmentFanModul
 	r.equipmentFanModule = &equipmentFanModule
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentFanModuleRequest) IfMatch(ifMatch string) ApiUpdateEquipmentFanModuleRequest {
 	r.ifMatch = &ifMatch
@@ -15513,8 +15778,8 @@ UpdateEquipmentFanModule Update a 'equipment.FanModule' resource.
 func (a *EquipmentApiService) UpdateEquipmentFanModule(ctx _context.Context, moid string) ApiUpdateEquipmentFanModuleRequest {
 	return ApiUpdateEquipmentFanModuleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15629,13 +15894,13 @@ func (a *EquipmentApiService) UpdateEquipmentFanModuleExecute(r ApiUpdateEquipme
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15652,11 +15917,11 @@ func (a *EquipmentApiService) UpdateEquipmentFanModuleExecute(r ApiUpdateEquipme
 }
 
 type ApiUpdateEquipmentFexRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *EquipmentApiService
+	moid         string
 	equipmentFex *EquipmentFex
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;equipment.Fex&#39; resource to update.
@@ -15664,6 +15929,7 @@ func (r ApiUpdateEquipmentFexRequest) EquipmentFex(equipmentFex EquipmentFex) Ap
 	r.equipmentFex = &equipmentFex
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentFexRequest) IfMatch(ifMatch string) ApiUpdateEquipmentFexRequest {
 	r.ifMatch = &ifMatch
@@ -15684,8 +15950,8 @@ UpdateEquipmentFex Update a 'equipment.Fex' resource.
 func (a *EquipmentApiService) UpdateEquipmentFex(ctx _context.Context, moid string) ApiUpdateEquipmentFexRequest {
 	return ApiUpdateEquipmentFexRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15800,13 +16066,13 @@ func (a *EquipmentApiService) UpdateEquipmentFexExecute(r ApiUpdateEquipmentFexR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15823,11 +16089,11 @@ func (a *EquipmentApiService) UpdateEquipmentFexExecute(r ApiUpdateEquipmentFexR
 }
 
 type ApiUpdateEquipmentFexIdentityRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *EquipmentApiService
+	moid                 string
 	equipmentFexIdentity *EquipmentFexIdentity
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;equipment.FexIdentity&#39; resource to update.
@@ -15835,6 +16101,7 @@ func (r ApiUpdateEquipmentFexIdentityRequest) EquipmentFexIdentity(equipmentFexI
 	r.equipmentFexIdentity = &equipmentFexIdentity
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentFexIdentityRequest) IfMatch(ifMatch string) ApiUpdateEquipmentFexIdentityRequest {
 	r.ifMatch = &ifMatch
@@ -15855,8 +16122,8 @@ UpdateEquipmentFexIdentity Update a 'equipment.FexIdentity' resource.
 func (a *EquipmentApiService) UpdateEquipmentFexIdentity(ctx _context.Context, moid string) ApiUpdateEquipmentFexIdentityRequest {
 	return ApiUpdateEquipmentFexIdentityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15971,13 +16238,13 @@ func (a *EquipmentApiService) UpdateEquipmentFexIdentityExecute(r ApiUpdateEquip
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15994,11 +16261,11 @@ func (a *EquipmentApiService) UpdateEquipmentFexIdentityExecute(r ApiUpdateEquip
 }
 
 type ApiUpdateEquipmentFexOperationRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *EquipmentApiService
+	moid                  string
 	equipmentFexOperation *EquipmentFexOperation
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;equipment.FexOperation&#39; resource to update.
@@ -16006,6 +16273,7 @@ func (r ApiUpdateEquipmentFexOperationRequest) EquipmentFexOperation(equipmentFe
 	r.equipmentFexOperation = &equipmentFexOperation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentFexOperationRequest) IfMatch(ifMatch string) ApiUpdateEquipmentFexOperationRequest {
 	r.ifMatch = &ifMatch
@@ -16026,8 +16294,8 @@ UpdateEquipmentFexOperation Update a 'equipment.FexOperation' resource.
 func (a *EquipmentApiService) UpdateEquipmentFexOperation(ctx _context.Context, moid string) ApiUpdateEquipmentFexOperationRequest {
 	return ApiUpdateEquipmentFexOperationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16142,13 +16410,13 @@ func (a *EquipmentApiService) UpdateEquipmentFexOperationExecute(r ApiUpdateEqui
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16165,11 +16433,11 @@ func (a *EquipmentApiService) UpdateEquipmentFexOperationExecute(r ApiUpdateEqui
 }
 
 type ApiUpdateEquipmentFruRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *EquipmentApiService
+	moid         string
 	equipmentFru *EquipmentFru
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;equipment.Fru&#39; resource to update.
@@ -16177,6 +16445,7 @@ func (r ApiUpdateEquipmentFruRequest) EquipmentFru(equipmentFru EquipmentFru) Ap
 	r.equipmentFru = &equipmentFru
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentFruRequest) IfMatch(ifMatch string) ApiUpdateEquipmentFruRequest {
 	r.ifMatch = &ifMatch
@@ -16197,8 +16466,8 @@ UpdateEquipmentFru Update a 'equipment.Fru' resource.
 func (a *EquipmentApiService) UpdateEquipmentFru(ctx _context.Context, moid string) ApiUpdateEquipmentFruRequest {
 	return ApiUpdateEquipmentFruRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16313,13 +16582,13 @@ func (a *EquipmentApiService) UpdateEquipmentFruExecute(r ApiUpdateEquipmentFruR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16336,11 +16605,11 @@ func (a *EquipmentApiService) UpdateEquipmentFruExecute(r ApiUpdateEquipmentFruR
 }
 
 type ApiUpdateEquipmentIoCardRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *EquipmentApiService
+	moid            string
 	equipmentIoCard *EquipmentIoCard
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;equipment.IoCard&#39; resource to update.
@@ -16348,6 +16617,7 @@ func (r ApiUpdateEquipmentIoCardRequest) EquipmentIoCard(equipmentIoCard Equipme
 	r.equipmentIoCard = &equipmentIoCard
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentIoCardRequest) IfMatch(ifMatch string) ApiUpdateEquipmentIoCardRequest {
 	r.ifMatch = &ifMatch
@@ -16368,8 +16638,8 @@ UpdateEquipmentIoCard Update a 'equipment.IoCard' resource.
 func (a *EquipmentApiService) UpdateEquipmentIoCard(ctx _context.Context, moid string) ApiUpdateEquipmentIoCardRequest {
 	return ApiUpdateEquipmentIoCardRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16484,13 +16754,13 @@ func (a *EquipmentApiService) UpdateEquipmentIoCardExecute(r ApiUpdateEquipmentI
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16507,11 +16777,11 @@ func (a *EquipmentApiService) UpdateEquipmentIoCardExecute(r ApiUpdateEquipmentI
 }
 
 type ApiUpdateEquipmentIoCardOperationRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *EquipmentApiService
+	moid                     string
 	equipmentIoCardOperation *EquipmentIoCardOperation
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;equipment.IoCardOperation&#39; resource to update.
@@ -16519,6 +16789,7 @@ func (r ApiUpdateEquipmentIoCardOperationRequest) EquipmentIoCardOperation(equip
 	r.equipmentIoCardOperation = &equipmentIoCardOperation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentIoCardOperationRequest) IfMatch(ifMatch string) ApiUpdateEquipmentIoCardOperationRequest {
 	r.ifMatch = &ifMatch
@@ -16539,8 +16810,8 @@ UpdateEquipmentIoCardOperation Update a 'equipment.IoCardOperation' resource.
 func (a *EquipmentApiService) UpdateEquipmentIoCardOperation(ctx _context.Context, moid string) ApiUpdateEquipmentIoCardOperationRequest {
 	return ApiUpdateEquipmentIoCardOperationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16655,13 +16926,13 @@ func (a *EquipmentApiService) UpdateEquipmentIoCardOperationExecute(r ApiUpdateE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16678,11 +16949,11 @@ func (a *EquipmentApiService) UpdateEquipmentIoCardOperationExecute(r ApiUpdateE
 }
 
 type ApiUpdateEquipmentIoExpanderRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *EquipmentApiService
+	moid                string
 	equipmentIoExpander *EquipmentIoExpander
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;equipment.IoExpander&#39; resource to update.
@@ -16690,6 +16961,7 @@ func (r ApiUpdateEquipmentIoExpanderRequest) EquipmentIoExpander(equipmentIoExpa
 	r.equipmentIoExpander = &equipmentIoExpander
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentIoExpanderRequest) IfMatch(ifMatch string) ApiUpdateEquipmentIoExpanderRequest {
 	r.ifMatch = &ifMatch
@@ -16710,8 +16982,8 @@ UpdateEquipmentIoExpander Update a 'equipment.IoExpander' resource.
 func (a *EquipmentApiService) UpdateEquipmentIoExpander(ctx _context.Context, moid string) ApiUpdateEquipmentIoExpanderRequest {
 	return ApiUpdateEquipmentIoExpanderRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16826,13 +17098,13 @@ func (a *EquipmentApiService) UpdateEquipmentIoExpanderExecute(r ApiUpdateEquipm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16849,11 +17121,11 @@ func (a *EquipmentApiService) UpdateEquipmentIoExpanderExecute(r ApiUpdateEquipm
 }
 
 type ApiUpdateEquipmentLocatorLedRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *EquipmentApiService
+	moid                string
 	equipmentLocatorLed *EquipmentLocatorLed
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;equipment.LocatorLed&#39; resource to update.
@@ -16861,6 +17133,7 @@ func (r ApiUpdateEquipmentLocatorLedRequest) EquipmentLocatorLed(equipmentLocato
 	r.equipmentLocatorLed = &equipmentLocatorLed
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentLocatorLedRequest) IfMatch(ifMatch string) ApiUpdateEquipmentLocatorLedRequest {
 	r.ifMatch = &ifMatch
@@ -16881,8 +17154,8 @@ UpdateEquipmentLocatorLed Update a 'equipment.LocatorLed' resource.
 func (a *EquipmentApiService) UpdateEquipmentLocatorLed(ctx _context.Context, moid string) ApiUpdateEquipmentLocatorLedRequest {
 	return ApiUpdateEquipmentLocatorLedRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16997,13 +17270,13 @@ func (a *EquipmentApiService) UpdateEquipmentLocatorLedExecute(r ApiUpdateEquipm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17020,11 +17293,11 @@ func (a *EquipmentApiService) UpdateEquipmentLocatorLedExecute(r ApiUpdateEquipm
 }
 
 type ApiUpdateEquipmentPsuRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *EquipmentApiService
+	moid         string
 	equipmentPsu *EquipmentPsu
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;equipment.Psu&#39; resource to update.
@@ -17032,6 +17305,7 @@ func (r ApiUpdateEquipmentPsuRequest) EquipmentPsu(equipmentPsu EquipmentPsu) Ap
 	r.equipmentPsu = &equipmentPsu
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentPsuRequest) IfMatch(ifMatch string) ApiUpdateEquipmentPsuRequest {
 	r.ifMatch = &ifMatch
@@ -17052,8 +17326,8 @@ UpdateEquipmentPsu Update a 'equipment.Psu' resource.
 func (a *EquipmentApiService) UpdateEquipmentPsu(ctx _context.Context, moid string) ApiUpdateEquipmentPsuRequest {
 	return ApiUpdateEquipmentPsuRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17168,13 +17442,13 @@ func (a *EquipmentApiService) UpdateEquipmentPsuExecute(r ApiUpdateEquipmentPsuR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17191,11 +17465,11 @@ func (a *EquipmentApiService) UpdateEquipmentPsuExecute(r ApiUpdateEquipmentPsuR
 }
 
 type ApiUpdateEquipmentPsuControlRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *EquipmentApiService
+	moid                string
 	equipmentPsuControl *EquipmentPsuControl
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;equipment.PsuControl&#39; resource to update.
@@ -17203,6 +17477,7 @@ func (r ApiUpdateEquipmentPsuControlRequest) EquipmentPsuControl(equipmentPsuCon
 	r.equipmentPsuControl = &equipmentPsuControl
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentPsuControlRequest) IfMatch(ifMatch string) ApiUpdateEquipmentPsuControlRequest {
 	r.ifMatch = &ifMatch
@@ -17223,8 +17498,8 @@ UpdateEquipmentPsuControl Update a 'equipment.PsuControl' resource.
 func (a *EquipmentApiService) UpdateEquipmentPsuControl(ctx _context.Context, moid string) ApiUpdateEquipmentPsuControlRequest {
 	return ApiUpdateEquipmentPsuControlRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17339,13 +17614,13 @@ func (a *EquipmentApiService) UpdateEquipmentPsuControlExecute(r ApiUpdateEquipm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17362,11 +17637,11 @@ func (a *EquipmentApiService) UpdateEquipmentPsuControlExecute(r ApiUpdateEquipm
 }
 
 type ApiUpdateEquipmentRackEnclosureRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *EquipmentApiService
+	moid                   string
 	equipmentRackEnclosure *EquipmentRackEnclosure
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;equipment.RackEnclosure&#39; resource to update.
@@ -17374,6 +17649,7 @@ func (r ApiUpdateEquipmentRackEnclosureRequest) EquipmentRackEnclosure(equipment
 	r.equipmentRackEnclosure = &equipmentRackEnclosure
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentRackEnclosureRequest) IfMatch(ifMatch string) ApiUpdateEquipmentRackEnclosureRequest {
 	r.ifMatch = &ifMatch
@@ -17394,8 +17670,8 @@ UpdateEquipmentRackEnclosure Update a 'equipment.RackEnclosure' resource.
 func (a *EquipmentApiService) UpdateEquipmentRackEnclosure(ctx _context.Context, moid string) ApiUpdateEquipmentRackEnclosureRequest {
 	return ApiUpdateEquipmentRackEnclosureRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17510,13 +17786,13 @@ func (a *EquipmentApiService) UpdateEquipmentRackEnclosureExecute(r ApiUpdateEqu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17533,11 +17809,11 @@ func (a *EquipmentApiService) UpdateEquipmentRackEnclosureExecute(r ApiUpdateEqu
 }
 
 type ApiUpdateEquipmentRackEnclosureSlotRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *EquipmentApiService
+	moid                       string
 	equipmentRackEnclosureSlot *EquipmentRackEnclosureSlot
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;equipment.RackEnclosureSlot&#39; resource to update.
@@ -17545,6 +17821,7 @@ func (r ApiUpdateEquipmentRackEnclosureSlotRequest) EquipmentRackEnclosureSlot(e
 	r.equipmentRackEnclosureSlot = &equipmentRackEnclosureSlot
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentRackEnclosureSlotRequest) IfMatch(ifMatch string) ApiUpdateEquipmentRackEnclosureSlotRequest {
 	r.ifMatch = &ifMatch
@@ -17565,8 +17842,8 @@ UpdateEquipmentRackEnclosureSlot Update a 'equipment.RackEnclosureSlot' resource
 func (a *EquipmentApiService) UpdateEquipmentRackEnclosureSlot(ctx _context.Context, moid string) ApiUpdateEquipmentRackEnclosureSlotRequest {
 	return ApiUpdateEquipmentRackEnclosureSlotRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17681,13 +17958,13 @@ func (a *EquipmentApiService) UpdateEquipmentRackEnclosureSlotExecute(r ApiUpdat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17704,11 +17981,11 @@ func (a *EquipmentApiService) UpdateEquipmentRackEnclosureSlotExecute(r ApiUpdat
 }
 
 type ApiUpdateEquipmentSharedIoModuleRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *EquipmentApiService
+	moid                    string
 	equipmentSharedIoModule *EquipmentSharedIoModule
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;equipment.SharedIoModule&#39; resource to update.
@@ -17716,6 +17993,7 @@ func (r ApiUpdateEquipmentSharedIoModuleRequest) EquipmentSharedIoModule(equipme
 	r.equipmentSharedIoModule = &equipmentSharedIoModule
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentSharedIoModuleRequest) IfMatch(ifMatch string) ApiUpdateEquipmentSharedIoModuleRequest {
 	r.ifMatch = &ifMatch
@@ -17736,8 +18014,8 @@ UpdateEquipmentSharedIoModule Update a 'equipment.SharedIoModule' resource.
 func (a *EquipmentApiService) UpdateEquipmentSharedIoModule(ctx _context.Context, moid string) ApiUpdateEquipmentSharedIoModuleRequest {
 	return ApiUpdateEquipmentSharedIoModuleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17852,13 +18130,13 @@ func (a *EquipmentApiService) UpdateEquipmentSharedIoModuleExecute(r ApiUpdateEq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17875,11 +18153,11 @@ func (a *EquipmentApiService) UpdateEquipmentSharedIoModuleExecute(r ApiUpdateEq
 }
 
 type ApiUpdateEquipmentSwitchCardRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *EquipmentApiService
+	moid                string
 	equipmentSwitchCard *EquipmentSwitchCard
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;equipment.SwitchCard&#39; resource to update.
@@ -17887,6 +18165,7 @@ func (r ApiUpdateEquipmentSwitchCardRequest) EquipmentSwitchCard(equipmentSwitch
 	r.equipmentSwitchCard = &equipmentSwitchCard
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentSwitchCardRequest) IfMatch(ifMatch string) ApiUpdateEquipmentSwitchCardRequest {
 	r.ifMatch = &ifMatch
@@ -17907,8 +18186,8 @@ UpdateEquipmentSwitchCard Update a 'equipment.SwitchCard' resource.
 func (a *EquipmentApiService) UpdateEquipmentSwitchCard(ctx _context.Context, moid string) ApiUpdateEquipmentSwitchCardRequest {
 	return ApiUpdateEquipmentSwitchCardRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18023,13 +18302,13 @@ func (a *EquipmentApiService) UpdateEquipmentSwitchCardExecute(r ApiUpdateEquipm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18046,11 +18325,11 @@ func (a *EquipmentApiService) UpdateEquipmentSwitchCardExecute(r ApiUpdateEquipm
 }
 
 type ApiUpdateEquipmentSystemIoControllerRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *EquipmentApiService
+	moid                        string
 	equipmentSystemIoController *EquipmentSystemIoController
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;equipment.SystemIoController&#39; resource to update.
@@ -18058,6 +18337,7 @@ func (r ApiUpdateEquipmentSystemIoControllerRequest) EquipmentSystemIoController
 	r.equipmentSystemIoController = &equipmentSystemIoController
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentSystemIoControllerRequest) IfMatch(ifMatch string) ApiUpdateEquipmentSystemIoControllerRequest {
 	r.ifMatch = &ifMatch
@@ -18078,8 +18358,8 @@ UpdateEquipmentSystemIoController Update a 'equipment.SystemIoController' resour
 func (a *EquipmentApiService) UpdateEquipmentSystemIoController(ctx _context.Context, moid string) ApiUpdateEquipmentSystemIoControllerRequest {
 	return ApiUpdateEquipmentSystemIoControllerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18194,13 +18474,13 @@ func (a *EquipmentApiService) UpdateEquipmentSystemIoControllerExecute(r ApiUpda
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18217,11 +18497,11 @@ func (a *EquipmentApiService) UpdateEquipmentSystemIoControllerExecute(r ApiUpda
 }
 
 type ApiUpdateEquipmentTpmRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *EquipmentApiService
+	moid         string
 	equipmentTpm *EquipmentTpm
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;equipment.Tpm&#39; resource to update.
@@ -18229,6 +18509,7 @@ func (r ApiUpdateEquipmentTpmRequest) EquipmentTpm(equipmentTpm EquipmentTpm) Ap
 	r.equipmentTpm = &equipmentTpm
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentTpmRequest) IfMatch(ifMatch string) ApiUpdateEquipmentTpmRequest {
 	r.ifMatch = &ifMatch
@@ -18249,8 +18530,8 @@ UpdateEquipmentTpm Update a 'equipment.Tpm' resource.
 func (a *EquipmentApiService) UpdateEquipmentTpm(ctx _context.Context, moid string) ApiUpdateEquipmentTpmRequest {
 	return ApiUpdateEquipmentTpmRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18365,13 +18646,13 @@ func (a *EquipmentApiService) UpdateEquipmentTpmExecute(r ApiUpdateEquipmentTpmR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18388,11 +18669,11 @@ func (a *EquipmentApiService) UpdateEquipmentTpmExecute(r ApiUpdateEquipmentTpmR
 }
 
 type ApiUpdateEquipmentTransceiverRequest struct {
-	ctx _context.Context
-	ApiService *EquipmentApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *EquipmentApiService
+	moid                 string
 	equipmentTransceiver *EquipmentTransceiver
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;equipment.Transceiver&#39; resource to update.
@@ -18400,6 +18681,7 @@ func (r ApiUpdateEquipmentTransceiverRequest) EquipmentTransceiver(equipmentTran
 	r.equipmentTransceiver = &equipmentTransceiver
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEquipmentTransceiverRequest) IfMatch(ifMatch string) ApiUpdateEquipmentTransceiverRequest {
 	r.ifMatch = &ifMatch
@@ -18420,8 +18702,8 @@ UpdateEquipmentTransceiver Update a 'equipment.Transceiver' resource.
 func (a *EquipmentApiService) UpdateEquipmentTransceiver(ctx _context.Context, moid string) ApiUpdateEquipmentTransceiverRequest {
 	return ApiUpdateEquipmentTransceiverRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18536,13 +18818,13 @@ func (a *EquipmentApiService) UpdateEquipmentTransceiverExecute(r ApiUpdateEquip
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

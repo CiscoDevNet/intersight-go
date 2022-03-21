@@ -19,31 +19,30 @@ import (
 // CloudSkuRegionRateCardsResponse - The response body of a HTTP GET request for the 'cloud.SkuRegionRateCards' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'cloud.SkuRegionRateCards' resources.
 type CloudSkuRegionRateCardsResponse struct {
 	CloudSkuRegionRateCardsList *CloudSkuRegionRateCardsList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform        *MoAggregateTransform
+	MoDocumentCount             *MoDocumentCount
+	MoTagSummary                *MoTagSummary
 }
 
 // CloudSkuRegionRateCardsListAsCloudSkuRegionRateCardsResponse is a convenience function that returns CloudSkuRegionRateCardsList wrapped in CloudSkuRegionRateCardsResponse
 func CloudSkuRegionRateCardsListAsCloudSkuRegionRateCardsResponse(v *CloudSkuRegionRateCardsList) CloudSkuRegionRateCardsResponse {
-	return CloudSkuRegionRateCardsResponse{ CloudSkuRegionRateCardsList: v}
+	return CloudSkuRegionRateCardsResponse{CloudSkuRegionRateCardsList: v}
 }
 
 // MoAggregateTransformAsCloudSkuRegionRateCardsResponse is a convenience function that returns MoAggregateTransform wrapped in CloudSkuRegionRateCardsResponse
 func MoAggregateTransformAsCloudSkuRegionRateCardsResponse(v *MoAggregateTransform) CloudSkuRegionRateCardsResponse {
-	return CloudSkuRegionRateCardsResponse{ MoAggregateTransform: v}
+	return CloudSkuRegionRateCardsResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsCloudSkuRegionRateCardsResponse is a convenience function that returns MoDocumentCount wrapped in CloudSkuRegionRateCardsResponse
 func MoDocumentCountAsCloudSkuRegionRateCardsResponse(v *MoDocumentCount) CloudSkuRegionRateCardsResponse {
-	return CloudSkuRegionRateCardsResponse{ MoDocumentCount: v}
+	return CloudSkuRegionRateCardsResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsCloudSkuRegionRateCardsResponse is a convenience function that returns MoTagSummary wrapped in CloudSkuRegionRateCardsResponse
 func MoTagSummaryAsCloudSkuRegionRateCardsResponse(v *MoTagSummary) CloudSkuRegionRateCardsResponse {
-	return CloudSkuRegionRateCardsResponse{ MoTagSummary: v}
+	return CloudSkuRegionRateCardsResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CloudSkuRegionRateCardsResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src CloudSkuRegionRateCardsResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CloudSkuRegionRateCardsResponse) GetActualInstance() (interface{}) {
+func (obj *CloudSkuRegionRateCardsResponse) GetActualInstance() interface{} {
 	if obj.CloudSkuRegionRateCardsList != nil {
 		return obj.CloudSkuRegionRateCardsList
 	}
@@ -184,5 +183,3 @@ func (v *NullableCloudSkuRegionRateCardsResponse) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

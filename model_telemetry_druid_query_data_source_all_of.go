@@ -17,7 +17,7 @@ import (
 
 // TelemetryDruidQueryDataSourceAllOf struct for TelemetryDruidQueryDataSourceAllOf
 type TelemetryDruidQueryDataSourceAllOf struct {
-	Query TelemetryDruidGroupByRequest `json:"query"`
+	Query                TelemetryDruidGroupByRequest `json:"query"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -54,7 +54,7 @@ func (o *TelemetryDruidQueryDataSourceAllOf) GetQuery() TelemetryDruidGroupByReq
 // GetQueryOk returns a tuple with the Query field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidQueryDataSourceAllOf) GetQueryOk() (*TelemetryDruidGroupByRequest, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Query, true
@@ -130,5 +130,3 @@ func (v *NullableTelemetryDruidQueryDataSourceAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

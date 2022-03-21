@@ -18,32 +18,31 @@ import (
 
 // IppoolUniverseResponse - The response body of a HTTP GET request for the 'ippool.Universe' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'ippool.Universe' resources.
 type IppoolUniverseResponse struct {
-	IppoolUniverseList *IppoolUniverseList
+	IppoolUniverseList   *IppoolUniverseList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IppoolUniverseListAsIppoolUniverseResponse is a convenience function that returns IppoolUniverseList wrapped in IppoolUniverseResponse
 func IppoolUniverseListAsIppoolUniverseResponse(v *IppoolUniverseList) IppoolUniverseResponse {
-	return IppoolUniverseResponse{ IppoolUniverseList: v}
+	return IppoolUniverseResponse{IppoolUniverseList: v}
 }
 
 // MoAggregateTransformAsIppoolUniverseResponse is a convenience function that returns MoAggregateTransform wrapped in IppoolUniverseResponse
 func MoAggregateTransformAsIppoolUniverseResponse(v *MoAggregateTransform) IppoolUniverseResponse {
-	return IppoolUniverseResponse{ MoAggregateTransform: v}
+	return IppoolUniverseResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIppoolUniverseResponse is a convenience function that returns MoDocumentCount wrapped in IppoolUniverseResponse
 func MoDocumentCountAsIppoolUniverseResponse(v *MoDocumentCount) IppoolUniverseResponse {
-	return IppoolUniverseResponse{ MoDocumentCount: v}
+	return IppoolUniverseResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIppoolUniverseResponse is a convenience function that returns MoTagSummary wrapped in IppoolUniverseResponse
 func MoTagSummaryAsIppoolUniverseResponse(v *MoTagSummary) IppoolUniverseResponse {
-	return IppoolUniverseResponse{ MoTagSummary: v}
+	return IppoolUniverseResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IppoolUniverseResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IppoolUniverseResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IppoolUniverseResponse) GetActualInstance() (interface{}) {
+func (obj *IppoolUniverseResponse) GetActualInstance() interface{} {
 	if obj.IppoolUniverseList != nil {
 		return obj.IppoolUniverseList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIppoolUniverseResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

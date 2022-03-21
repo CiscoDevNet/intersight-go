@@ -24,7 +24,7 @@ type AssetWorkloadOptimizerNewRelicOptionsAllOf struct {
 	// Your NewRelic account id.
 	AccountId *string `json:"AccountId,omitempty"`
 	// The region associated with the NewRelic account. * `US` - The United States (US) region. * `EU` - The European Union (EU) region.
-	Region *string `json:"Region,omitempty"`
+	Region               *string `json:"Region,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *AssetWorkloadOptimizerNewRelicOptionsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetWorkloadOptimizerNewRelicOptionsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *AssetWorkloadOptimizerNewRelicOptionsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetWorkloadOptimizerNewRelicOptionsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -246,5 +246,3 @@ func (v *NullableAssetWorkloadOptimizerNewRelicOptionsAllOf) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

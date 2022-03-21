@@ -19,19 +19,18 @@ import (
 // AdapterUnitExpanderRelationship - A relationship to the 'adapter.UnitExpander' resource, or the expanded 'adapter.UnitExpander' resource, or the 'null' value.
 type AdapterUnitExpanderRelationship struct {
 	AdapterUnitExpander *AdapterUnitExpander
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 }
 
 // AdapterUnitExpanderAsAdapterUnitExpanderRelationship is a convenience function that returns AdapterUnitExpander wrapped in AdapterUnitExpanderRelationship
 func AdapterUnitExpanderAsAdapterUnitExpanderRelationship(v *AdapterUnitExpander) AdapterUnitExpanderRelationship {
-	return AdapterUnitExpanderRelationship{ AdapterUnitExpander: v}
+	return AdapterUnitExpanderRelationship{AdapterUnitExpander: v}
 }
 
 // MoMoRefAsAdapterUnitExpanderRelationship is a convenience function that returns MoMoRef wrapped in AdapterUnitExpanderRelationship
 func MoMoRefAsAdapterUnitExpanderRelationship(v *MoMoRef) AdapterUnitExpanderRelationship {
-	return AdapterUnitExpanderRelationship{ MoMoRef: v}
+	return AdapterUnitExpanderRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AdapterUnitExpanderRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src AdapterUnitExpanderRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AdapterUnitExpanderRelationship) GetActualInstance() (interface{}) {
+func (obj *AdapterUnitExpanderRelationship) GetActualInstance() interface{} {
 	if obj.AdapterUnitExpander != nil {
 		return obj.AdapterUnitExpander
 	}
@@ -137,5 +136,3 @@ func (v *NullableAdapterUnitExpanderRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

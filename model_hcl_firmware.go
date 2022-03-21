@@ -37,7 +37,7 @@ type HclFirmware struct {
 	// True if the driver is latest recommended driver.
 	LatestDriver *bool `json:"LatestDriver,omitempty"`
 	// True if the firmware is latest recommended firmware.
-	LatestFirmware *bool `json:"LatestFirmware,omitempty"`
+	LatestFirmware       *bool `json:"LatestFirmware,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *HclFirmware) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HclFirmware) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *HclFirmware) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HclFirmware) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -505,5 +505,3 @@ func (v *NullableHclFirmware) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

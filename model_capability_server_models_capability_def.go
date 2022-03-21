@@ -23,10 +23,10 @@ type CapabilityServerModelsCapabilityDef struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Models []string `json:"Models,omitempty"`
+	ObjectType string   `json:"ObjectType"`
+	Models     []string `json:"Models,omitempty"`
 	// Type of the server. Example, BladeM6, RackM5.
-	ServerType *string `json:"ServerType,omitempty"`
+	ServerType           *string `json:"ServerType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *CapabilityServerModelsCapabilityDef) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityServerModelsCapabilityDef) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *CapabilityServerModelsCapabilityDef) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityServerModelsCapabilityDef) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -105,7 +105,7 @@ func (o *CapabilityServerModelsCapabilityDef) SetObjectType(v string) {
 
 // GetModels returns the Models field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilityServerModelsCapabilityDef) GetModels() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -203,8 +203,8 @@ func (o *CapabilityServerModelsCapabilityDef) UnmarshalJSON(bytes []byte) (err e
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Models []string `json:"Models,omitempty"`
+		ObjectType string   `json:"ObjectType"`
+		Models     []string `json:"Models,omitempty"`
 		// Type of the server. Example, BladeM6, RackM5.
 		ServerType *string `json:"ServerType,omitempty"`
 	}
@@ -299,5 +299,3 @@ func (v *NullableCapabilityServerModelsCapabilityDef) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

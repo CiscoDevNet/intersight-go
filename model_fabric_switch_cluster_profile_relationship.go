@@ -19,19 +19,18 @@ import (
 // FabricSwitchClusterProfileRelationship - A relationship to the 'fabric.SwitchClusterProfile' resource, or the expanded 'fabric.SwitchClusterProfile' resource, or the 'null' value.
 type FabricSwitchClusterProfileRelationship struct {
 	FabricSwitchClusterProfile *FabricSwitchClusterProfile
-	MoMoRef *MoMoRef
+	MoMoRef                    *MoMoRef
 }
 
 // FabricSwitchClusterProfileAsFabricSwitchClusterProfileRelationship is a convenience function that returns FabricSwitchClusterProfile wrapped in FabricSwitchClusterProfileRelationship
 func FabricSwitchClusterProfileAsFabricSwitchClusterProfileRelationship(v *FabricSwitchClusterProfile) FabricSwitchClusterProfileRelationship {
-	return FabricSwitchClusterProfileRelationship{ FabricSwitchClusterProfile: v}
+	return FabricSwitchClusterProfileRelationship{FabricSwitchClusterProfile: v}
 }
 
 // MoMoRefAsFabricSwitchClusterProfileRelationship is a convenience function that returns MoMoRef wrapped in FabricSwitchClusterProfileRelationship
 func MoMoRefAsFabricSwitchClusterProfileRelationship(v *MoMoRef) FabricSwitchClusterProfileRelationship {
-	return FabricSwitchClusterProfileRelationship{ MoMoRef: v}
+	return FabricSwitchClusterProfileRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FabricSwitchClusterProfileRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src FabricSwitchClusterProfileRelationship) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *FabricSwitchClusterProfileRelationship) GetActualInstance() (interface{}) {
+func (obj *FabricSwitchClusterProfileRelationship) GetActualInstance() interface{} {
 	if obj.FabricSwitchClusterProfile != nil {
 		return obj.FabricSwitchClusterProfile
 	}
@@ -137,5 +136,3 @@ func (v *NullableFabricSwitchClusterProfileRelationship) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

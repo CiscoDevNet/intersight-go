@@ -20,7 +20,7 @@ type HclHyperflexSoftwareCompatibilityInfoListAllOf struct {
 	// The total number of 'hcl.HyperflexSoftwareCompatibilityInfo' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'hcl.HyperflexSoftwareCompatibilityInfo' resources matching the request.
-	Results []HclHyperflexSoftwareCompatibilityInfo `json:"Results,omitempty"`
+	Results              []HclHyperflexSoftwareCompatibilityInfo `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *HclHyperflexSoftwareCompatibilityInfoListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HclHyperflexSoftwareCompatibilityInfoListAllOf) GetResults() []HclHyperflexSoftwareCompatibilityInfo {
-	if o == nil  {
+	if o == nil {
 		var ret []HclHyperflexSoftwareCompatibilityInfo
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableHclHyperflexSoftwareCompatibilityInfoListAllOf) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -35,14 +35,14 @@ type WorkflowSolutionActionInstanceAllOf struct {
 	// The time when the action was started for execution last time.
 	StartTime *time.Time `json:"StartTime,omitempty"`
 	// State of the solution action instance. * `NotStarted` - Solution action is not yet started and it is in a draft mode. A solution action instance can be deleted in this state. * `Validating` - A validate action has been triggered on the action and until it completes the start action cannot be issued. * `InProgress` - An action is in progress and until that action has reached a final state, another action cannot be started. * `Failed` - The action on the solution failed and can be retried. * `Completed` - The action on the solution completed successfully. * `Stopping` - The stop action is running on the action instance.
-	Status *string `json:"Status,omitempty"`
-	ActionWorkflowInfo *WorkflowWorkflowInfoRelationship `json:"ActionWorkflowInfo,omitempty"`
+	Status                   *string                                       `json:"Status,omitempty"`
+	ActionWorkflowInfo       *WorkflowWorkflowInfoRelationship             `json:"ActionWorkflowInfo,omitempty"`
 	SolutionActionDefinition *WorkflowSolutionActionDefinitionRelationship `json:"SolutionActionDefinition,omitempty"`
-	SolutionDefinition *WorkflowSolutionDefinitionRelationship `json:"SolutionDefinition,omitempty"`
-	SolutionInstance *WorkflowSolutionInstanceRelationship `json:"SolutionInstance,omitempty"`
-	StopWorkflowInfo *WorkflowWorkflowInfoRelationship `json:"StopWorkflowInfo,omitempty"`
-	ValidationWorkflowInfo *WorkflowWorkflowInfoRelationship `json:"ValidationWorkflowInfo,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SolutionDefinition       *WorkflowSolutionDefinitionRelationship       `json:"SolutionDefinition,omitempty"`
+	SolutionInstance         *WorkflowSolutionInstanceRelationship         `json:"SolutionInstance,omitempty"`
+	StopWorkflowInfo         *WorkflowWorkflowInfoRelationship             `json:"StopWorkflowInfo,omitempty"`
+	ValidationWorkflowInfo   *WorkflowWorkflowInfoRelationship             `json:"ValidationWorkflowInfo,omitempty"`
+	AdditionalProperties     map[string]interface{}
 }
 
 type _WorkflowSolutionActionInstanceAllOf WorkflowSolutionActionInstanceAllOf
@@ -87,7 +87,7 @@ func (o *WorkflowSolutionActionInstanceAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowSolutionActionInstanceAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -111,7 +111,7 @@ func (o *WorkflowSolutionActionInstanceAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowSolutionActionInstanceAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -188,7 +188,7 @@ func (o *WorkflowSolutionActionInstanceAllOf) SetEndTime(v time.Time) {
 
 // GetInput returns the Input field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionActionInstanceAllOf) GetInput() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -660,5 +660,3 @@ func (v *NullableWorkflowSolutionActionInstanceAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -22,7 +22,7 @@ type BootVirtualMediaAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The subtype for the selected device type. * `None` - No sub type for virtual media. * `cimc-mapped-dvd` - The virtual media device is mapped to a virtual DVD device. * `cimc-mapped-hdd` - The virtual media device is mapped to a virtual HDD device. * `kvm-mapped-dvd` - A KVM mapped DVD virtual media device. * `kvm-mapped-hdd` - A KVM mapped HDD virtual media device. * `kvm-mapped-fdd` - A KVM mapped FDD virtual media device.
-	Subtype *string `json:"Subtype,omitempty"`
+	Subtype              *string `json:"Subtype,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *BootVirtualMediaAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BootVirtualMediaAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *BootVirtualMediaAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BootVirtualMediaAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -208,5 +208,3 @@ func (v *NullableBootVirtualMediaAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

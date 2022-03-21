@@ -18,32 +18,31 @@ import (
 
 // IppoolIpLeaseResponse - The response body of a HTTP GET request for the 'ippool.IpLease' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'ippool.IpLease' resources.
 type IppoolIpLeaseResponse struct {
-	IppoolIpLeaseList *IppoolIpLeaseList
+	IppoolIpLeaseList    *IppoolIpLeaseList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IppoolIpLeaseListAsIppoolIpLeaseResponse is a convenience function that returns IppoolIpLeaseList wrapped in IppoolIpLeaseResponse
 func IppoolIpLeaseListAsIppoolIpLeaseResponse(v *IppoolIpLeaseList) IppoolIpLeaseResponse {
-	return IppoolIpLeaseResponse{ IppoolIpLeaseList: v}
+	return IppoolIpLeaseResponse{IppoolIpLeaseList: v}
 }
 
 // MoAggregateTransformAsIppoolIpLeaseResponse is a convenience function that returns MoAggregateTransform wrapped in IppoolIpLeaseResponse
 func MoAggregateTransformAsIppoolIpLeaseResponse(v *MoAggregateTransform) IppoolIpLeaseResponse {
-	return IppoolIpLeaseResponse{ MoAggregateTransform: v}
+	return IppoolIpLeaseResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIppoolIpLeaseResponse is a convenience function that returns MoDocumentCount wrapped in IppoolIpLeaseResponse
 func MoDocumentCountAsIppoolIpLeaseResponse(v *MoDocumentCount) IppoolIpLeaseResponse {
-	return IppoolIpLeaseResponse{ MoDocumentCount: v}
+	return IppoolIpLeaseResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIppoolIpLeaseResponse is a convenience function that returns MoTagSummary wrapped in IppoolIpLeaseResponse
 func MoTagSummaryAsIppoolIpLeaseResponse(v *MoTagSummary) IppoolIpLeaseResponse {
-	return IppoolIpLeaseResponse{ MoTagSummary: v}
+	return IppoolIpLeaseResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IppoolIpLeaseResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IppoolIpLeaseResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IppoolIpLeaseResponse) GetActualInstance() (interface{}) {
+func (obj *IppoolIpLeaseResponse) GetActualInstance() interface{} {
 	if obj.IppoolIpLeaseList != nil {
 		return obj.IppoolIpLeaseList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIppoolIpLeaseResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

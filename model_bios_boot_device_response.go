@@ -18,32 +18,31 @@ import (
 
 // BiosBootDeviceResponse - The response body of a HTTP GET request for the 'bios.BootDevice' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'bios.BootDevice' resources.
 type BiosBootDeviceResponse struct {
-	BiosBootDeviceList *BiosBootDeviceList
+	BiosBootDeviceList   *BiosBootDeviceList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // BiosBootDeviceListAsBiosBootDeviceResponse is a convenience function that returns BiosBootDeviceList wrapped in BiosBootDeviceResponse
 func BiosBootDeviceListAsBiosBootDeviceResponse(v *BiosBootDeviceList) BiosBootDeviceResponse {
-	return BiosBootDeviceResponse{ BiosBootDeviceList: v}
+	return BiosBootDeviceResponse{BiosBootDeviceList: v}
 }
 
 // MoAggregateTransformAsBiosBootDeviceResponse is a convenience function that returns MoAggregateTransform wrapped in BiosBootDeviceResponse
 func MoAggregateTransformAsBiosBootDeviceResponse(v *MoAggregateTransform) BiosBootDeviceResponse {
-	return BiosBootDeviceResponse{ MoAggregateTransform: v}
+	return BiosBootDeviceResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsBiosBootDeviceResponse is a convenience function that returns MoDocumentCount wrapped in BiosBootDeviceResponse
 func MoDocumentCountAsBiosBootDeviceResponse(v *MoDocumentCount) BiosBootDeviceResponse {
-	return BiosBootDeviceResponse{ MoDocumentCount: v}
+	return BiosBootDeviceResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsBiosBootDeviceResponse is a convenience function that returns MoTagSummary wrapped in BiosBootDeviceResponse
 func MoTagSummaryAsBiosBootDeviceResponse(v *MoTagSummary) BiosBootDeviceResponse {
-	return BiosBootDeviceResponse{ MoTagSummary: v}
+	return BiosBootDeviceResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BiosBootDeviceResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src BiosBootDeviceResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BiosBootDeviceResponse) GetActualInstance() (interface{}) {
+func (obj *BiosBootDeviceResponse) GetActualInstance() interface{} {
 	if obj.BiosBootDeviceList != nil {
 		return obj.BiosBootDeviceList
 	}
@@ -184,5 +183,3 @@ func (v *NullableBiosBootDeviceResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

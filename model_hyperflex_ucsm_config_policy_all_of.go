@@ -20,14 +20,14 @@ type HyperflexUcsmConfigPolicyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	KvmIpRange NullableHyperflexIpAddrRange `json:"KvmIpRange,omitempty"`
+	ObjectType     string                              `json:"ObjectType"`
+	KvmIpRange     NullableHyperflexIpAddrRange        `json:"KvmIpRange,omitempty"`
 	MacPrefixRange NullableHyperflexMacAddrPrefixRange `json:"MacPrefixRange,omitempty"`
 	// The server firmware bundle version used for server components such as CIMC, adapters, BIOS, etc.
 	ServerFirmwareVersion *string `json:"ServerFirmwareVersion,omitempty"`
 	// An array of relationships to hyperflexClusterProfile resources.
-	ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ClusterProfiles      []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *HyperflexUcsmConfigPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexUcsmConfigPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *HyperflexUcsmConfigPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexUcsmConfigPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -117,7 +117,7 @@ func (o *HyperflexUcsmConfigPolicyAllOf) GetKvmIpRange() HyperflexIpAddrRange {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexUcsmConfigPolicyAllOf) GetKvmIpRangeOk() (*HyperflexIpAddrRange, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.KvmIpRange.Get(), o.KvmIpRange.IsSet()
@@ -136,6 +136,7 @@ func (o *HyperflexUcsmConfigPolicyAllOf) HasKvmIpRange() bool {
 func (o *HyperflexUcsmConfigPolicyAllOf) SetKvmIpRange(v HyperflexIpAddrRange) {
 	o.KvmIpRange.Set(&v)
 }
+
 // SetKvmIpRangeNil sets the value for KvmIpRange to be an explicit nil
 func (o *HyperflexUcsmConfigPolicyAllOf) SetKvmIpRangeNil() {
 	o.KvmIpRange.Set(nil)
@@ -159,7 +160,7 @@ func (o *HyperflexUcsmConfigPolicyAllOf) GetMacPrefixRange() HyperflexMacAddrPre
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexUcsmConfigPolicyAllOf) GetMacPrefixRangeOk() (*HyperflexMacAddrPrefixRange, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MacPrefixRange.Get(), o.MacPrefixRange.IsSet()
@@ -178,6 +179,7 @@ func (o *HyperflexUcsmConfigPolicyAllOf) HasMacPrefixRange() bool {
 func (o *HyperflexUcsmConfigPolicyAllOf) SetMacPrefixRange(v HyperflexMacAddrPrefixRange) {
 	o.MacPrefixRange.Set(&v)
 }
+
 // SetMacPrefixRangeNil sets the value for MacPrefixRange to be an explicit nil
 func (o *HyperflexUcsmConfigPolicyAllOf) SetMacPrefixRangeNil() {
 	o.MacPrefixRange.Set(nil)
@@ -222,7 +224,7 @@ func (o *HyperflexUcsmConfigPolicyAllOf) SetServerFirmwareVersion(v string) {
 
 // GetClusterProfiles returns the ClusterProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexUcsmConfigPolicyAllOf) GetClusterProfiles() []HyperflexClusterProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexClusterProfileRelationship
 		return ret
 	}
@@ -374,5 +376,3 @@ func (v *NullableHyperflexUcsmConfigPolicyAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

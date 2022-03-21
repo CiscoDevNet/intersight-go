@@ -23,7 +23,7 @@ type BootSan struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType string                 `json:"ObjectType"`
 	Bootloader NullableBootBootloader `json:"Bootloader,omitempty"`
 	// The name of the underlying vHBA interface to be used by the SAN boot device.
 	InterfaceName *string `json:"InterfaceName,omitempty"`
@@ -32,7 +32,7 @@ type BootSan struct {
 	// Slot ID of the device. Supported values are ( 1 - 255, \"MLOM\", \"L1\", \"L2\" ).
 	Slot *string `json:"Slot,omitempty"`
 	// The WWPN Address of the underlying fibre channel interface used by the SAN boot device. Value must be in hexadecimal format xx:xx:xx:xx:xx:xx:xx:xx.
-	Wwpn *string `json:"Wwpn,omitempty"`
+	Wwpn                 *string `json:"Wwpn,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *BootSan) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BootSan) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *BootSan) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BootSan) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -128,7 +128,7 @@ func (o *BootSan) GetBootloader() BootBootloader {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BootSan) GetBootloaderOk() (*BootBootloader, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Bootloader.Get(), o.Bootloader.IsSet()
@@ -147,6 +147,7 @@ func (o *BootSan) HasBootloader() bool {
 func (o *BootSan) SetBootloader(v BootBootloader) {
 	o.Bootloader.Set(&v)
 }
+
 // SetBootloaderNil sets the value for Bootloader to be an explicit nil
 func (o *BootSan) SetBootloaderNil() {
 	o.Bootloader.Set(nil)
@@ -329,7 +330,7 @@ func (o *BootSan) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType string                 `json:"ObjectType"`
 		Bootloader NullableBootBootloader `json:"Bootloader,omitempty"`
 		// The name of the underlying vHBA interface to be used by the SAN boot device.
 		InterfaceName *string `json:"InterfaceName,omitempty"`
@@ -437,5 +438,3 @@ func (v *NullableBootSan) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

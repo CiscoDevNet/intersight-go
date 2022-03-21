@@ -21,16 +21,16 @@ type TelemetryDruidTimeSeriesRequestAllOf struct {
 	// Whether to make descending ordered result. Default is false(ascending).
 	Descending *bool `json:"descending,omitempty"`
 	// A JSON Object representing ISO-8601 Intervals. This defines the time ranges to run the query over.
-	Intervals []string `json:"intervals"`
+	Intervals   []string                  `json:"intervals"`
 	Granularity TelemetryDruidGranularity `json:"granularity"`
-	Filter *TelemetryDruidFilter `json:"filter,omitempty"`
+	Filter      *TelemetryDruidFilter     `json:"filter,omitempty"`
 	// Aggregation functions are used to summarize data in buckets. Summarization functions include counting rows, calculating the min/max/sum of metrics and retrieving the first/last value of metrics for each bucket. Additional summarization functions are available with extensions. If no aggregator is provided, the results will be empty for each bucket.
 	Aggregations *[]TelemetryDruidAggregator `json:"aggregations,omitempty"`
 	// Post-aggregations are specifications of processing that should happen on aggregated values as they come out of Apache Druid. If you include a post aggregation as part of a query, make sure to include all aggregators the post-aggregator requires.
 	PostAggregations *[]TelemetryDruidPostAggregator `json:"postAggregations,omitempty"`
 	// An integer that limits the number of results. The default is unlimited.
-	Limit *int32 `json:"limit,omitempty"`
-	Context *TelemetryDruidQueryContext `json:"context,omitempty"`
+	Limit                *int32                      `json:"limit,omitempty"`
+	Context              *TelemetryDruidQueryContext `json:"context,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *TelemetryDruidTimeSeriesRequestAllOf) GetDataSource() TelemetryDruidDat
 // GetDataSourceOk returns a tuple with the DataSource field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidTimeSeriesRequestAllOf) GetDataSourceOk() (*TelemetryDruidDataSource, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DataSource, true
@@ -125,7 +125,7 @@ func (o *TelemetryDruidTimeSeriesRequestAllOf) GetIntervals() []string {
 // GetIntervalsOk returns a tuple with the Intervals field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidTimeSeriesRequestAllOf) GetIntervalsOk() (*[]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Intervals, true
@@ -149,7 +149,7 @@ func (o *TelemetryDruidTimeSeriesRequestAllOf) GetGranularity() TelemetryDruidGr
 // GetGranularityOk returns a tuple with the Granularity field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidTimeSeriesRequestAllOf) GetGranularityOk() (*TelemetryDruidGranularity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Granularity, true
@@ -417,5 +417,3 @@ func (v *NullableTelemetryDruidTimeSeriesRequestAllOf) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

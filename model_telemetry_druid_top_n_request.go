@@ -18,21 +18,21 @@ import (
 // TelemetryDruidTopNRequest TopN queries return a sorted set of results for the values in a given dimension according to some criteria. Conceptually, they can be thought of as an approximate GroupByQuery over a single dimension with an Ordering spec. TopNs are much faster and resource efficient than GroupBys for this use case. These types of queries take a topN query object and return an array of JSON objects where each object represents a value asked for by the topN query. TopNs are approximate in that each data process will rank their top K results and only return those top K results to the Broker. K, by default in Druid, is max(1000, threshold). In practice, this means that if you ask for the top 1000 items ordered, the correctness of the first ~900 items will be 100%, and the ordering of the results after that is not guaranteed. TopNs can be made more accurate by increasing the threshold.
 type TelemetryDruidTopNRequest struct {
 	// null
-	QueryType string `json:"queryType"`
+	QueryType  string                   `json:"queryType"`
 	DataSource TelemetryDruidDataSource `json:"dataSource"`
 	// A JSON Object representing ISO-8601 Intervals. This defines the time ranges to run the query over.
-	Intervals []string `json:"intervals"`
+	Intervals   []string                  `json:"intervals"`
 	Granularity TelemetryDruidGranularity `json:"granularity"`
-	Filter *TelemetryDruidFilter `json:"filter,omitempty"`
+	Filter      *TelemetryDruidFilter     `json:"filter,omitempty"`
 	// Aggregation functions are used to summarize data in buckets. Summarization functions include counting rows, calculating the min/max/sum of metrics and retrieving the first/last value of metrics for each bucket. Additional summarization functions are available with extensions. If no aggregator is provided, the results will be empty for each bucket.
 	Aggregations *[]TelemetryDruidAggregator `json:"aggregations,omitempty"`
 	// Post-aggregations are specifications of processing that should happen on aggregated values as they come out of Apache Druid. If you include a post aggregation as part of a query, make sure to include all aggregators the post-aggregator requires.
 	PostAggregations *[]TelemetryDruidPostAggregator `json:"postAggregations,omitempty"`
-	Dimension TelemetryDruidDimensionSpec `json:"dimension"`
+	Dimension        TelemetryDruidDimensionSpec     `json:"dimension"`
 	// An integer defining the N in the topN (i.e. how many results you want in the top list).
-	Threshold int32 `json:"threshold"`
-	Metric TelemetryDruidTopNMetricSpec `json:"metric"`
-	Context *TelemetryDruidQueryContext `json:"context,omitempty"`
+	Threshold            int32                        `json:"threshold"`
+	Metric               TelemetryDruidTopNMetricSpec `json:"metric"`
+	Context              *TelemetryDruidQueryContext  `json:"context,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *TelemetryDruidTopNRequest) GetQueryType() string {
 // GetQueryTypeOk returns a tuple with the QueryType field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidTopNRequest) GetQueryTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.QueryType, true
@@ -99,7 +99,7 @@ func (o *TelemetryDruidTopNRequest) GetDataSource() TelemetryDruidDataSource {
 // GetDataSourceOk returns a tuple with the DataSource field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidTopNRequest) GetDataSourceOk() (*TelemetryDruidDataSource, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DataSource, true
@@ -123,7 +123,7 @@ func (o *TelemetryDruidTopNRequest) GetIntervals() []string {
 // GetIntervalsOk returns a tuple with the Intervals field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidTopNRequest) GetIntervalsOk() (*[]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Intervals, true
@@ -147,7 +147,7 @@ func (o *TelemetryDruidTopNRequest) GetGranularity() TelemetryDruidGranularity {
 // GetGranularityOk returns a tuple with the Granularity field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidTopNRequest) GetGranularityOk() (*TelemetryDruidGranularity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Granularity, true
@@ -267,7 +267,7 @@ func (o *TelemetryDruidTopNRequest) GetDimension() TelemetryDruidDimensionSpec {
 // GetDimensionOk returns a tuple with the Dimension field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidTopNRequest) GetDimensionOk() (*TelemetryDruidDimensionSpec, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Dimension, true
@@ -291,7 +291,7 @@ func (o *TelemetryDruidTopNRequest) GetThreshold() int32 {
 // GetThresholdOk returns a tuple with the Threshold field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidTopNRequest) GetThresholdOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Threshold, true
@@ -315,7 +315,7 @@ func (o *TelemetryDruidTopNRequest) GetMetric() TelemetryDruidTopNMetricSpec {
 // GetMetricOk returns a tuple with the Metric field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidTopNRequest) GetMetricOk() (*TelemetryDruidTopNMetricSpec, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Metric, true
@@ -463,5 +463,3 @@ func (v *NullableTelemetryDruidTopNRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

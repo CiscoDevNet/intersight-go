@@ -20,7 +20,7 @@ type FirmwareServerConfigurationUtilityDistributableListAllOf struct {
 	// The total number of 'firmware.ServerConfigurationUtilityDistributable' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'firmware.ServerConfigurationUtilityDistributable' resources matching the request.
-	Results []FirmwareServerConfigurationUtilityDistributable `json:"Results,omitempty"`
+	Results              []FirmwareServerConfigurationUtilityDistributable `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *FirmwareServerConfigurationUtilityDistributableListAllOf) SetCount(v in
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareServerConfigurationUtilityDistributableListAllOf) GetResults() []FirmwareServerConfigurationUtilityDistributable {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareServerConfigurationUtilityDistributable
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableFirmwareServerConfigurationUtilityDistributableListAllOf) Unmar
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

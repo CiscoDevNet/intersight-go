@@ -18,20 +18,19 @@ import (
 
 // RecoveryAbstractBackupInfoRelationship - A relationship to the 'recovery.AbstractBackupInfo' resource, or the expanded 'recovery.AbstractBackupInfo' resource, or the 'null' value.
 type RecoveryAbstractBackupInfoRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                    *MoMoRef
 	RecoveryAbstractBackupInfo *RecoveryAbstractBackupInfo
 }
 
 // MoMoRefAsRecoveryAbstractBackupInfoRelationship is a convenience function that returns MoMoRef wrapped in RecoveryAbstractBackupInfoRelationship
 func MoMoRefAsRecoveryAbstractBackupInfoRelationship(v *MoMoRef) RecoveryAbstractBackupInfoRelationship {
-	return RecoveryAbstractBackupInfoRelationship{ MoMoRef: v}
+	return RecoveryAbstractBackupInfoRelationship{MoMoRef: v}
 }
 
 // RecoveryAbstractBackupInfoAsRecoveryAbstractBackupInfoRelationship is a convenience function that returns RecoveryAbstractBackupInfo wrapped in RecoveryAbstractBackupInfoRelationship
 func RecoveryAbstractBackupInfoAsRecoveryAbstractBackupInfoRelationship(v *RecoveryAbstractBackupInfo) RecoveryAbstractBackupInfoRelationship {
-	return RecoveryAbstractBackupInfoRelationship{ RecoveryAbstractBackupInfo: v}
+	return RecoveryAbstractBackupInfoRelationship{RecoveryAbstractBackupInfo: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *RecoveryAbstractBackupInfoRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src RecoveryAbstractBackupInfoRelationship) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *RecoveryAbstractBackupInfoRelationship) GetActualInstance() (interface{}) {
+func (obj *RecoveryAbstractBackupInfoRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableRecoveryAbstractBackupInfoRelationship) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

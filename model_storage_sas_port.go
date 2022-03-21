@@ -33,10 +33,10 @@ type StorageSasPort struct {
 	// The description for the link.
 	LinkDescription *string `json:"LinkDescription,omitempty"`
 	// The link speed negotiated for communication.
-	LinkSpeed *string `json:"LinkSpeed,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	StoragePhysicalDisk *StoragePhysicalDiskRelationship `json:"StoragePhysicalDisk,omitempty"`
+	LinkSpeed            *string                              `json:"LinkSpeed,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	StoragePhysicalDisk  *StoragePhysicalDiskRelationship     `json:"StoragePhysicalDisk,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *StorageSasPort) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageSasPort) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *StorageSasPort) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageSasPort) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -432,10 +432,10 @@ func (o *StorageSasPort) UnmarshalJSON(bytes []byte) (err error) {
 		// The description for the link.
 		LinkDescription *string `json:"LinkDescription,omitempty"`
 		// The link speed negotiated for communication.
-		LinkSpeed *string `json:"LinkSpeed,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-		StoragePhysicalDisk *StoragePhysicalDiskRelationship `json:"StoragePhysicalDisk,omitempty"`
+		LinkSpeed           *string                              `json:"LinkSpeed,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		StoragePhysicalDisk *StoragePhysicalDiskRelationship     `json:"StoragePhysicalDisk,omitempty"`
 	}
 
 	varStorageSasPortWithoutEmbeddedStruct := StorageSasPortWithoutEmbeddedStruct{}
@@ -540,5 +540,3 @@ func (v *NullableStorageSasPort) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

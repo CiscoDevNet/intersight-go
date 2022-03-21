@@ -23,9 +23,9 @@ type ServerProfile struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType          string                            `json:"ObjectType"`
 	ConfigChangeContext NullablePolicyConfigChangeContext `json:"ConfigChangeContext,omitempty"`
-	ConfigChanges NullablePolicyConfigChange `json:"ConfigChanges,omitempty"`
+	ConfigChanges       NullablePolicyConfigChange        `json:"ConfigChanges,omitempty"`
 	// Indicates whether the value of the 'pmcDeployedSecurePassphrase' property has been set.
 	IsPmcDeployedSecurePassphraseSet *bool `json:"IsPmcDeployedSecurePassphraseSet,omitempty"`
 	// Secure passphrase that is already deployed on all the Persistent Memory Modules on the server. This deployed passphrase is required during deploy of server profile if secure passphrase is changed or security is disabled in the attached persistent memory policy.
@@ -35,20 +35,20 @@ type ServerProfile struct {
 	// The UUID address for the server must include UUID prefix xxxxxxxx-xxxx-xxxx along with the UUID suffix of format xxxx-xxxxxxxxxxxx.
 	StaticUuidAddress *string `json:"StaticUuidAddress,omitempty"`
 	// The UUID address that is assigned to the server based on the UUID pool.
-	Uuid *string `json:"Uuid,omitempty"`
-	AssignedServer *ComputePhysicalRelationship `json:"AssignedServer,omitempty"`
-	AssociatedServer *ComputePhysicalRelationship `json:"AssociatedServer,omitempty"`
+	Uuid                 *string                       `json:"Uuid,omitempty"`
+	AssignedServer       *ComputePhysicalRelationship  `json:"AssignedServer,omitempty"`
+	AssociatedServer     *ComputePhysicalRelationship  `json:"AssociatedServer,omitempty"`
 	AssociatedServerPool *ResourcepoolPoolRelationship `json:"AssociatedServerPool,omitempty"`
 	// An array of relationships to serverConfigChangeDetail resources.
 	ConfigChangeDetails []ServerConfigChangeDetailRelationship `json:"ConfigChangeDetails,omitempty"`
-	ConfigResult *ServerConfigResultRelationship `json:"ConfigResult,omitempty"`
-	LeasedServer *ComputePhysicalRelationship `json:"LeasedServer,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	ResourceLease *ResourcepoolLeaseRelationship `json:"ResourceLease,omitempty"`
+	ConfigResult        *ServerConfigResultRelationship        `json:"ConfigResult,omitempty"`
+	LeasedServer        *ComputePhysicalRelationship           `json:"LeasedServer,omitempty"`
+	Organization        *OrganizationOrganizationRelationship  `json:"Organization,omitempty"`
+	ResourceLease       *ResourcepoolLeaseRelationship         `json:"ResourceLease,omitempty"`
 	// An array of relationships to workflowWorkflowInfo resources.
-	RunningWorkflows []WorkflowWorkflowInfoRelationship `json:"RunningWorkflows,omitempty"`
-	ServerPool *ResourcepoolPoolRelationship `json:"ServerPool,omitempty"`
-	UuidLease *UuidpoolUuidLeaseRelationship `json:"UuidLease,omitempty"`
+	RunningWorkflows     []WorkflowWorkflowInfoRelationship `json:"RunningWorkflows,omitempty"`
+	ServerPool           *ResourcepoolPoolRelationship      `json:"ServerPool,omitempty"`
+	UuidLease            *UuidpoolUuidLeaseRelationship     `json:"UuidLease,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -102,7 +102,7 @@ func (o *ServerProfile) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ServerProfile) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -126,7 +126,7 @@ func (o *ServerProfile) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ServerProfile) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -150,7 +150,7 @@ func (o *ServerProfile) GetConfigChangeContext() PolicyConfigChangeContext {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ServerProfile) GetConfigChangeContextOk() (*PolicyConfigChangeContext, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ConfigChangeContext.Get(), o.ConfigChangeContext.IsSet()
@@ -169,6 +169,7 @@ func (o *ServerProfile) HasConfigChangeContext() bool {
 func (o *ServerProfile) SetConfigChangeContext(v PolicyConfigChangeContext) {
 	o.ConfigChangeContext.Set(&v)
 }
+
 // SetConfigChangeContextNil sets the value for ConfigChangeContext to be an explicit nil
 func (o *ServerProfile) SetConfigChangeContextNil() {
 	o.ConfigChangeContext.Set(nil)
@@ -192,7 +193,7 @@ func (o *ServerProfile) GetConfigChanges() PolicyConfigChange {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ServerProfile) GetConfigChangesOk() (*PolicyConfigChange, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ConfigChanges.Get(), o.ConfigChanges.IsSet()
@@ -211,6 +212,7 @@ func (o *ServerProfile) HasConfigChanges() bool {
 func (o *ServerProfile) SetConfigChanges(v PolicyConfigChange) {
 	o.ConfigChanges.Set(&v)
 }
+
 // SetConfigChangesNil sets the value for ConfigChanges to be an explicit nil
 func (o *ServerProfile) SetConfigChangesNil() {
 	o.ConfigChanges.Set(nil)
@@ -479,7 +481,7 @@ func (o *ServerProfile) SetAssociatedServerPool(v ResourcepoolPoolRelationship) 
 
 // GetConfigChangeDetails returns the ConfigChangeDetails field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ServerProfile) GetConfigChangeDetails() []ServerConfigChangeDetailRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ServerConfigChangeDetailRelationship
 		return ret
 	}
@@ -640,7 +642,7 @@ func (o *ServerProfile) SetResourceLease(v ResourcepoolLeaseRelationship) {
 
 // GetRunningWorkflows returns the RunningWorkflows field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ServerProfile) GetRunningWorkflows() []WorkflowWorkflowInfoRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowWorkflowInfoRelationship
 		return ret
 	}
@@ -818,9 +820,9 @@ func (o *ServerProfile) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType          string                            `json:"ObjectType"`
 		ConfigChangeContext NullablePolicyConfigChangeContext `json:"ConfigChangeContext,omitempty"`
-		ConfigChanges NullablePolicyConfigChange `json:"ConfigChanges,omitempty"`
+		ConfigChanges       NullablePolicyConfigChange        `json:"ConfigChanges,omitempty"`
 		// Indicates whether the value of the 'pmcDeployedSecurePassphrase' property has been set.
 		IsPmcDeployedSecurePassphraseSet *bool `json:"IsPmcDeployedSecurePassphraseSet,omitempty"`
 		// Secure passphrase that is already deployed on all the Persistent Memory Modules on the server. This deployed passphrase is required during deploy of server profile if secure passphrase is changed or security is disabled in the attached persistent memory policy.
@@ -830,20 +832,20 @@ func (o *ServerProfile) UnmarshalJSON(bytes []byte) (err error) {
 		// The UUID address for the server must include UUID prefix xxxxxxxx-xxxx-xxxx along with the UUID suffix of format xxxx-xxxxxxxxxxxx.
 		StaticUuidAddress *string `json:"StaticUuidAddress,omitempty"`
 		// The UUID address that is assigned to the server based on the UUID pool.
-		Uuid *string `json:"Uuid,omitempty"`
-		AssignedServer *ComputePhysicalRelationship `json:"AssignedServer,omitempty"`
-		AssociatedServer *ComputePhysicalRelationship `json:"AssociatedServer,omitempty"`
+		Uuid                 *string                       `json:"Uuid,omitempty"`
+		AssignedServer       *ComputePhysicalRelationship  `json:"AssignedServer,omitempty"`
+		AssociatedServer     *ComputePhysicalRelationship  `json:"AssociatedServer,omitempty"`
 		AssociatedServerPool *ResourcepoolPoolRelationship `json:"AssociatedServerPool,omitempty"`
 		// An array of relationships to serverConfigChangeDetail resources.
 		ConfigChangeDetails []ServerConfigChangeDetailRelationship `json:"ConfigChangeDetails,omitempty"`
-		ConfigResult *ServerConfigResultRelationship `json:"ConfigResult,omitempty"`
-		LeasedServer *ComputePhysicalRelationship `json:"LeasedServer,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-		ResourceLease *ResourcepoolLeaseRelationship `json:"ResourceLease,omitempty"`
+		ConfigResult        *ServerConfigResultRelationship        `json:"ConfigResult,omitempty"`
+		LeasedServer        *ComputePhysicalRelationship           `json:"LeasedServer,omitempty"`
+		Organization        *OrganizationOrganizationRelationship  `json:"Organization,omitempty"`
+		ResourceLease       *ResourcepoolLeaseRelationship         `json:"ResourceLease,omitempty"`
 		// An array of relationships to workflowWorkflowInfo resources.
 		RunningWorkflows []WorkflowWorkflowInfoRelationship `json:"RunningWorkflows,omitempty"`
-		ServerPool *ResourcepoolPoolRelationship `json:"ServerPool,omitempty"`
-		UuidLease *UuidpoolUuidLeaseRelationship `json:"UuidLease,omitempty"`
+		ServerPool       *ResourcepoolPoolRelationship      `json:"ServerPool,omitempty"`
+		UuidLease        *UuidpoolUuidLeaseRelationship     `json:"UuidLease,omitempty"`
 	}
 
 	varServerProfileWithoutEmbeddedStruct := ServerProfileWithoutEmbeddedStruct{}
@@ -968,5 +970,3 @@ func (v *NullableServerProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -25,12 +25,12 @@ type ResourcepoolPool struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The resource management type in the pool, it can be either static or dynamic. * `Static` - The resources in the pool will not be changed until user manually update it. * `Dynamic` - The resources in the pool will be updated dynamically based on the condition.
-	PoolType *string `json:"PoolType,omitempty"`
+	PoolType               *string                                    `json:"PoolType,omitempty"`
 	ResourcePoolParameters NullableResourcepoolResourcePoolParameters `json:"ResourcePoolParameters,omitempty"`
 	// The type of the resource present in the pool, example 'server' its combination of RackUnit and Blade. * `None` - The resource cannot consider for Resource Pool. * `Server` - Resource Pool holds the server kind of resources, example - RackServer, Blade.
-	ResourceType *string `json:"ResourceType,omitempty"`
-	Selectors []ResourceSelector `json:"Selectors,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ResourceType         *string                               `json:"ResourceType,omitempty"`
+	Selectors            []ResourceSelector                    `json:"Selectors,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *ResourcepoolPool) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ResourcepoolPool) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *ResourcepoolPool) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ResourcepoolPool) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -162,7 +162,7 @@ func (o *ResourcepoolPool) GetResourcePoolParameters() ResourcepoolResourcePoolP
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ResourcepoolPool) GetResourcePoolParametersOk() (*ResourcepoolResourcePoolParameters, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResourcePoolParameters.Get(), o.ResourcePoolParameters.IsSet()
@@ -181,6 +181,7 @@ func (o *ResourcepoolPool) HasResourcePoolParameters() bool {
 func (o *ResourcepoolPool) SetResourcePoolParameters(v ResourcepoolResourcePoolParameters) {
 	o.ResourcePoolParameters.Set(&v)
 }
+
 // SetResourcePoolParametersNil sets the value for ResourcePoolParameters to be an explicit nil
 func (o *ResourcepoolPool) SetResourcePoolParametersNil() {
 	o.ResourcePoolParameters.Set(nil)
@@ -225,7 +226,7 @@ func (o *ResourcepoolPool) SetResourceType(v string) {
 
 // GetSelectors returns the Selectors field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ResourcepoolPool) GetSelectors() []ResourceSelector {
-	if o == nil  {
+	if o == nil {
 		var ret []ResourceSelector
 		return ret
 	}
@@ -334,11 +335,11 @@ func (o *ResourcepoolPool) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The resource management type in the pool, it can be either static or dynamic. * `Static` - The resources in the pool will not be changed until user manually update it. * `Dynamic` - The resources in the pool will be updated dynamically based on the condition.
-		PoolType *string `json:"PoolType,omitempty"`
+		PoolType               *string                                    `json:"PoolType,omitempty"`
 		ResourcePoolParameters NullableResourcepoolResourcePoolParameters `json:"ResourcePoolParameters,omitempty"`
 		// The type of the resource present in the pool, example 'server' its combination of RackUnit and Blade. * `None` - The resource cannot consider for Resource Pool. * `Server` - Resource Pool holds the server kind of resources, example - RackServer, Blade.
-		ResourceType *string `json:"ResourceType,omitempty"`
-		Selectors []ResourceSelector `json:"Selectors,omitempty"`
+		ResourceType *string                               `json:"ResourceType,omitempty"`
+		Selectors    []ResourceSelector                    `json:"Selectors,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
@@ -438,5 +439,3 @@ func (v *NullableResourcepoolPool) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

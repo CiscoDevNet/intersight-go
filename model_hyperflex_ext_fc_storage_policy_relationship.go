@@ -19,19 +19,18 @@ import (
 // HyperflexExtFcStoragePolicyRelationship - A relationship to the 'hyperflex.ExtFcStoragePolicy' resource, or the expanded 'hyperflex.ExtFcStoragePolicy' resource, or the 'null' value.
 type HyperflexExtFcStoragePolicyRelationship struct {
 	HyperflexExtFcStoragePolicy *HyperflexExtFcStoragePolicy
-	MoMoRef *MoMoRef
+	MoMoRef                     *MoMoRef
 }
 
 // HyperflexExtFcStoragePolicyAsHyperflexExtFcStoragePolicyRelationship is a convenience function that returns HyperflexExtFcStoragePolicy wrapped in HyperflexExtFcStoragePolicyRelationship
 func HyperflexExtFcStoragePolicyAsHyperflexExtFcStoragePolicyRelationship(v *HyperflexExtFcStoragePolicy) HyperflexExtFcStoragePolicyRelationship {
-	return HyperflexExtFcStoragePolicyRelationship{ HyperflexExtFcStoragePolicy: v}
+	return HyperflexExtFcStoragePolicyRelationship{HyperflexExtFcStoragePolicy: v}
 }
 
 // MoMoRefAsHyperflexExtFcStoragePolicyRelationship is a convenience function that returns MoMoRef wrapped in HyperflexExtFcStoragePolicyRelationship
 func MoMoRefAsHyperflexExtFcStoragePolicyRelationship(v *MoMoRef) HyperflexExtFcStoragePolicyRelationship {
-	return HyperflexExtFcStoragePolicyRelationship{ MoMoRef: v}
+	return HyperflexExtFcStoragePolicyRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexExtFcStoragePolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexExtFcStoragePolicyRelationship) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *HyperflexExtFcStoragePolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexExtFcStoragePolicyRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexExtFcStoragePolicy != nil {
 		return obj.HyperflexExtFcStoragePolicy
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexExtFcStoragePolicyRelationship) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

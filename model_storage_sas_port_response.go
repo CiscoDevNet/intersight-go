@@ -19,31 +19,30 @@ import (
 // StorageSasPortResponse - The response body of a HTTP GET request for the 'storage.SasPort' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'storage.SasPort' resources.
 type StorageSasPortResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
-	StorageSasPortList *StorageSasPortList
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
+	StorageSasPortList   *StorageSasPortList
 }
 
 // MoAggregateTransformAsStorageSasPortResponse is a convenience function that returns MoAggregateTransform wrapped in StorageSasPortResponse
 func MoAggregateTransformAsStorageSasPortResponse(v *MoAggregateTransform) StorageSasPortResponse {
-	return StorageSasPortResponse{ MoAggregateTransform: v}
+	return StorageSasPortResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsStorageSasPortResponse is a convenience function that returns MoDocumentCount wrapped in StorageSasPortResponse
 func MoDocumentCountAsStorageSasPortResponse(v *MoDocumentCount) StorageSasPortResponse {
-	return StorageSasPortResponse{ MoDocumentCount: v}
+	return StorageSasPortResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsStorageSasPortResponse is a convenience function that returns MoTagSummary wrapped in StorageSasPortResponse
 func MoTagSummaryAsStorageSasPortResponse(v *MoTagSummary) StorageSasPortResponse {
-	return StorageSasPortResponse{ MoTagSummary: v}
+	return StorageSasPortResponse{MoTagSummary: v}
 }
 
 // StorageSasPortListAsStorageSasPortResponse is a convenience function that returns StorageSasPortList wrapped in StorageSasPortResponse
 func StorageSasPortListAsStorageSasPortResponse(v *StorageSasPortList) StorageSasPortResponse {
-	return StorageSasPortResponse{ StorageSasPortList: v}
+	return StorageSasPortResponse{StorageSasPortList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageSasPortResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src StorageSasPortResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageSasPortResponse) GetActualInstance() (interface{}) {
+func (obj *StorageSasPortResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableStorageSasPortResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,32 +18,31 @@ import (
 
 // SoftwarerepositoryReleaseResponse - The response body of a HTTP GET request for the 'softwarerepository.Release' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'softwarerepository.Release' resources.
 type SoftwarerepositoryReleaseResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform          *MoAggregateTransform
+	MoDocumentCount               *MoDocumentCount
+	MoTagSummary                  *MoTagSummary
 	SoftwarerepositoryReleaseList *SoftwarerepositoryReleaseList
 }
 
 // MoAggregateTransformAsSoftwarerepositoryReleaseResponse is a convenience function that returns MoAggregateTransform wrapped in SoftwarerepositoryReleaseResponse
 func MoAggregateTransformAsSoftwarerepositoryReleaseResponse(v *MoAggregateTransform) SoftwarerepositoryReleaseResponse {
-	return SoftwarerepositoryReleaseResponse{ MoAggregateTransform: v}
+	return SoftwarerepositoryReleaseResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsSoftwarerepositoryReleaseResponse is a convenience function that returns MoDocumentCount wrapped in SoftwarerepositoryReleaseResponse
 func MoDocumentCountAsSoftwarerepositoryReleaseResponse(v *MoDocumentCount) SoftwarerepositoryReleaseResponse {
-	return SoftwarerepositoryReleaseResponse{ MoDocumentCount: v}
+	return SoftwarerepositoryReleaseResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsSoftwarerepositoryReleaseResponse is a convenience function that returns MoTagSummary wrapped in SoftwarerepositoryReleaseResponse
 func MoTagSummaryAsSoftwarerepositoryReleaseResponse(v *MoTagSummary) SoftwarerepositoryReleaseResponse {
-	return SoftwarerepositoryReleaseResponse{ MoTagSummary: v}
+	return SoftwarerepositoryReleaseResponse{MoTagSummary: v}
 }
 
 // SoftwarerepositoryReleaseListAsSoftwarerepositoryReleaseResponse is a convenience function that returns SoftwarerepositoryReleaseList wrapped in SoftwarerepositoryReleaseResponse
 func SoftwarerepositoryReleaseListAsSoftwarerepositoryReleaseResponse(v *SoftwarerepositoryReleaseList) SoftwarerepositoryReleaseResponse {
-	return SoftwarerepositoryReleaseResponse{ SoftwarerepositoryReleaseList: v}
+	return SoftwarerepositoryReleaseResponse{SoftwarerepositoryReleaseList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SoftwarerepositoryReleaseResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src SoftwarerepositoryReleaseResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SoftwarerepositoryReleaseResponse) GetActualInstance() (interface{}) {
+func (obj *SoftwarerepositoryReleaseResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableSoftwarerepositoryReleaseResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

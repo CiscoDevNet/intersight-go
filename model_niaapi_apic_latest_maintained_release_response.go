@@ -18,32 +18,31 @@ import (
 
 // NiaapiApicLatestMaintainedReleaseResponse - The response body of a HTTP GET request for the 'niaapi.ApicLatestMaintainedRelease' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'niaapi.ApicLatestMaintainedRelease' resources.
 type NiaapiApicLatestMaintainedReleaseResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                  *MoAggregateTransform
+	MoDocumentCount                       *MoDocumentCount
+	MoTagSummary                          *MoTagSummary
 	NiaapiApicLatestMaintainedReleaseList *NiaapiApicLatestMaintainedReleaseList
 }
 
 // MoAggregateTransformAsNiaapiApicLatestMaintainedReleaseResponse is a convenience function that returns MoAggregateTransform wrapped in NiaapiApicLatestMaintainedReleaseResponse
 func MoAggregateTransformAsNiaapiApicLatestMaintainedReleaseResponse(v *MoAggregateTransform) NiaapiApicLatestMaintainedReleaseResponse {
-	return NiaapiApicLatestMaintainedReleaseResponse{ MoAggregateTransform: v}
+	return NiaapiApicLatestMaintainedReleaseResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsNiaapiApicLatestMaintainedReleaseResponse is a convenience function that returns MoDocumentCount wrapped in NiaapiApicLatestMaintainedReleaseResponse
 func MoDocumentCountAsNiaapiApicLatestMaintainedReleaseResponse(v *MoDocumentCount) NiaapiApicLatestMaintainedReleaseResponse {
-	return NiaapiApicLatestMaintainedReleaseResponse{ MoDocumentCount: v}
+	return NiaapiApicLatestMaintainedReleaseResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsNiaapiApicLatestMaintainedReleaseResponse is a convenience function that returns MoTagSummary wrapped in NiaapiApicLatestMaintainedReleaseResponse
 func MoTagSummaryAsNiaapiApicLatestMaintainedReleaseResponse(v *MoTagSummary) NiaapiApicLatestMaintainedReleaseResponse {
-	return NiaapiApicLatestMaintainedReleaseResponse{ MoTagSummary: v}
+	return NiaapiApicLatestMaintainedReleaseResponse{MoTagSummary: v}
 }
 
 // NiaapiApicLatestMaintainedReleaseListAsNiaapiApicLatestMaintainedReleaseResponse is a convenience function that returns NiaapiApicLatestMaintainedReleaseList wrapped in NiaapiApicLatestMaintainedReleaseResponse
 func NiaapiApicLatestMaintainedReleaseListAsNiaapiApicLatestMaintainedReleaseResponse(v *NiaapiApicLatestMaintainedReleaseList) NiaapiApicLatestMaintainedReleaseResponse {
-	return NiaapiApicLatestMaintainedReleaseResponse{ NiaapiApicLatestMaintainedReleaseList: v}
+	return NiaapiApicLatestMaintainedReleaseResponse{NiaapiApicLatestMaintainedReleaseList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiaapiApicLatestMaintainedReleaseResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src NiaapiApicLatestMaintainedReleaseResponse) MarshalJSON() ([]byte, erro
 }
 
 // Get the actual instance
-func (obj *NiaapiApicLatestMaintainedReleaseResponse) GetActualInstance() (interface{}) {
+func (obj *NiaapiApicLatestMaintainedReleaseResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableNiaapiApicLatestMaintainedReleaseResponse) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

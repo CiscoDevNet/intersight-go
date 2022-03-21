@@ -49,11 +49,11 @@ type VirtualizationNetworkInterface struct {
 	// Allocation mode for NIC addresses e.g. DHCP or static. * `DHCP` - Dynamic IP address allocation using DHCP protocol. * `STATIC_IP` - Assign fixed / static IPs to resources for use. * `IPAM_CALLOUT` - Use callout scripts to query cloud IP allocation tools to assign network parameters. * `PREALLOCATE_IP` - Allows the cloud infrastructure IP allocation to be dynamically provided before the server boots up.
 	PrivateIpAllocationMode *string `json:"PrivateIpAllocationMode,omitempty"`
 	// Set to true, if public IP should be allocated for the NIC.
-	PublicIpAllocate *bool `json:"PublicIpAllocate,omitempty"`
-	SecurityGroups []string `json:"SecurityGroups,omitempty"`
-	StaticIpAddress []VirtualizationIpAddressInfo `json:"StaticIpAddress,omitempty"`
+	PublicIpAllocate *bool                         `json:"PublicIpAllocate,omitempty"`
+	SecurityGroups   []string                      `json:"SecurityGroups,omitempty"`
+	StaticIpAddress  []VirtualizationIpAddressInfo `json:"StaticIpAddress,omitempty"`
 	// Subnet identifier for the NIC.
-	SubnetId *string `json:"SubnetId,omitempty"`
+	SubnetId             *string `json:"SubnetId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -103,7 +103,7 @@ func (o *VirtualizationNetworkInterface) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationNetworkInterface) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -127,7 +127,7 @@ func (o *VirtualizationNetworkInterface) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationNetworkInterface) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -556,7 +556,7 @@ func (o *VirtualizationNetworkInterface) SetPublicIpAllocate(v bool) {
 
 // GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationNetworkInterface) GetSecurityGroups() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -589,7 +589,7 @@ func (o *VirtualizationNetworkInterface) SetSecurityGroups(v []string) {
 
 // GetStaticIpAddress returns the StaticIpAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationNetworkInterface) GetStaticIpAddress() []VirtualizationIpAddressInfo {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationIpAddressInfo
 		return ret
 	}
@@ -755,9 +755,9 @@ func (o *VirtualizationNetworkInterface) UnmarshalJSON(bytes []byte) (err error)
 		// Allocation mode for NIC addresses e.g. DHCP or static. * `DHCP` - Dynamic IP address allocation using DHCP protocol. * `STATIC_IP` - Assign fixed / static IPs to resources for use. * `IPAM_CALLOUT` - Use callout scripts to query cloud IP allocation tools to assign network parameters. * `PREALLOCATE_IP` - Allows the cloud infrastructure IP allocation to be dynamically provided before the server boots up.
 		PrivateIpAllocationMode *string `json:"PrivateIpAllocationMode,omitempty"`
 		// Set to true, if public IP should be allocated for the NIC.
-		PublicIpAllocate *bool `json:"PublicIpAllocate,omitempty"`
-		SecurityGroups []string `json:"SecurityGroups,omitempty"`
-		StaticIpAddress []VirtualizationIpAddressInfo `json:"StaticIpAddress,omitempty"`
+		PublicIpAllocate *bool                         `json:"PublicIpAllocate,omitempty"`
+		SecurityGroups   []string                      `json:"SecurityGroups,omitempty"`
+		StaticIpAddress  []VirtualizationIpAddressInfo `json:"StaticIpAddress,omitempty"`
 		// Subnet identifier for the NIC.
 		SubnetId *string `json:"SubnetId,omitempty"`
 	}
@@ -880,5 +880,3 @@ func (v *NullableVirtualizationNetworkInterface) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

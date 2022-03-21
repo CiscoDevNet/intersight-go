@@ -23,7 +23,7 @@ type ForecastDefinitionList struct {
 	// The total number of 'forecast.Definition' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'forecast.Definition' resources matching the request.
-	Results []ForecastDefinition `json:"Results,omitempty"`
+	Results              []ForecastDefinition `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *ForecastDefinitionList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ForecastDefinitionList) GetResults() []ForecastDefinition {
-	if o == nil  {
+	if o == nil {
 		var ret []ForecastDefinition
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableForecastDefinitionList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

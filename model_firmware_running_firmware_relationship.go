@@ -19,19 +19,18 @@ import (
 // FirmwareRunningFirmwareRelationship - A relationship to the 'firmware.RunningFirmware' resource, or the expanded 'firmware.RunningFirmware' resource, or the 'null' value.
 type FirmwareRunningFirmwareRelationship struct {
 	FirmwareRunningFirmware *FirmwareRunningFirmware
-	MoMoRef *MoMoRef
+	MoMoRef                 *MoMoRef
 }
 
 // FirmwareRunningFirmwareAsFirmwareRunningFirmwareRelationship is a convenience function that returns FirmwareRunningFirmware wrapped in FirmwareRunningFirmwareRelationship
 func FirmwareRunningFirmwareAsFirmwareRunningFirmwareRelationship(v *FirmwareRunningFirmware) FirmwareRunningFirmwareRelationship {
-	return FirmwareRunningFirmwareRelationship{ FirmwareRunningFirmware: v}
+	return FirmwareRunningFirmwareRelationship{FirmwareRunningFirmware: v}
 }
 
 // MoMoRefAsFirmwareRunningFirmwareRelationship is a convenience function that returns MoMoRef wrapped in FirmwareRunningFirmwareRelationship
 func MoMoRefAsFirmwareRunningFirmwareRelationship(v *MoMoRef) FirmwareRunningFirmwareRelationship {
-	return FirmwareRunningFirmwareRelationship{ MoMoRef: v}
+	return FirmwareRunningFirmwareRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FirmwareRunningFirmwareRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src FirmwareRunningFirmwareRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FirmwareRunningFirmwareRelationship) GetActualInstance() (interface{}) {
+func (obj *FirmwareRunningFirmwareRelationship) GetActualInstance() interface{} {
 	if obj.FirmwareRunningFirmware != nil {
 		return obj.FirmwareRunningFirmware
 	}
@@ -137,5 +136,3 @@ func (v *NullableFirmwareRunningFirmwareRelationship) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

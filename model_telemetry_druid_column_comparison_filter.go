@@ -22,7 +22,7 @@ type TelemetryDruidColumnComparisonFilter struct {
 	// All filters except the \"spatial\" filter support extraction functions. An extraction function is defined by setting the \"extractionFn\" field on a filter. See Extraction function for more details on extraction functions. If specified, the extraction function will be used to transform input values before the filter is applied. The example below shows a selector filter combined with an extraction function. This filter will transform input values according to the values defined in the lookup map; transformed values will then be matched with the string \"bar_1\".
 	ExtractionFn *map[string]interface{} `json:"extractionFn,omitempty"`
 	// A list of DimensionSpecs, making it possible to apply an extraction function if needed.
-	Dimensions []TelemetryDruidDimensionSpec `json:"dimensions"`
+	Dimensions           []TelemetryDruidDimensionSpec `json:"dimensions"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -60,7 +60,7 @@ func (o *TelemetryDruidColumnComparisonFilter) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidColumnComparisonFilter) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -116,7 +116,7 @@ func (o *TelemetryDruidColumnComparisonFilter) GetDimensions() []TelemetryDruidD
 // GetDimensionsOk returns a tuple with the Dimensions field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidColumnComparisonFilter) GetDimensionsOk() (*[]TelemetryDruidDimensionSpec, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Dimensions, true
@@ -200,5 +200,3 @@ func (v *NullableTelemetryDruidColumnComparisonFilter) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

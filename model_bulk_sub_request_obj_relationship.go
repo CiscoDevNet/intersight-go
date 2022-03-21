@@ -19,19 +19,18 @@ import (
 // BulkSubRequestObjRelationship - A relationship to the 'bulk.SubRequestObj' resource, or the expanded 'bulk.SubRequestObj' resource, or the 'null' value.
 type BulkSubRequestObjRelationship struct {
 	BulkSubRequestObj *BulkSubRequestObj
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 }
 
 // BulkSubRequestObjAsBulkSubRequestObjRelationship is a convenience function that returns BulkSubRequestObj wrapped in BulkSubRequestObjRelationship
 func BulkSubRequestObjAsBulkSubRequestObjRelationship(v *BulkSubRequestObj) BulkSubRequestObjRelationship {
-	return BulkSubRequestObjRelationship{ BulkSubRequestObj: v}
+	return BulkSubRequestObjRelationship{BulkSubRequestObj: v}
 }
 
 // MoMoRefAsBulkSubRequestObjRelationship is a convenience function that returns MoMoRef wrapped in BulkSubRequestObjRelationship
 func MoMoRefAsBulkSubRequestObjRelationship(v *MoMoRef) BulkSubRequestObjRelationship {
-	return BulkSubRequestObjRelationship{ MoMoRef: v}
+	return BulkSubRequestObjRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BulkSubRequestObjRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BulkSubRequestObjRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BulkSubRequestObjRelationship) GetActualInstance() (interface{}) {
+func (obj *BulkSubRequestObjRelationship) GetActualInstance() interface{} {
 	if obj.BulkSubRequestObj != nil {
 		return obj.BulkSubRequestObj
 	}
@@ -137,5 +136,3 @@ func (v *NullableBulkSubRequestObjRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

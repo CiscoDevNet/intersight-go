@@ -19,19 +19,18 @@ import (
 // HclOperatingSystemRelationship - A relationship to the 'hcl.OperatingSystem' resource, or the expanded 'hcl.OperatingSystem' resource, or the 'null' value.
 type HclOperatingSystemRelationship struct {
 	HclOperatingSystem *HclOperatingSystem
-	MoMoRef *MoMoRef
+	MoMoRef            *MoMoRef
 }
 
 // HclOperatingSystemAsHclOperatingSystemRelationship is a convenience function that returns HclOperatingSystem wrapped in HclOperatingSystemRelationship
 func HclOperatingSystemAsHclOperatingSystemRelationship(v *HclOperatingSystem) HclOperatingSystemRelationship {
-	return HclOperatingSystemRelationship{ HclOperatingSystem: v}
+	return HclOperatingSystemRelationship{HclOperatingSystem: v}
 }
 
 // MoMoRefAsHclOperatingSystemRelationship is a convenience function that returns MoMoRef wrapped in HclOperatingSystemRelationship
 func MoMoRefAsHclOperatingSystemRelationship(v *MoMoRef) HclOperatingSystemRelationship {
-	return HclOperatingSystemRelationship{ MoMoRef: v}
+	return HclOperatingSystemRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HclOperatingSystemRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HclOperatingSystemRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HclOperatingSystemRelationship) GetActualInstance() (interface{}) {
+func (obj *HclOperatingSystemRelationship) GetActualInstance() interface{} {
 	if obj.HclOperatingSystem != nil {
 		return obj.HclOperatingSystem
 	}
@@ -137,5 +136,3 @@ func (v *NullableHclOperatingSystemRelationship) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

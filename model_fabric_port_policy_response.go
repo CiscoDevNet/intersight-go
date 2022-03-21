@@ -20,30 +20,29 @@ import (
 type FabricPortPolicyResponse struct {
 	FabricPortPolicyList *FabricPortPolicyList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // FabricPortPolicyListAsFabricPortPolicyResponse is a convenience function that returns FabricPortPolicyList wrapped in FabricPortPolicyResponse
 func FabricPortPolicyListAsFabricPortPolicyResponse(v *FabricPortPolicyList) FabricPortPolicyResponse {
-	return FabricPortPolicyResponse{ FabricPortPolicyList: v}
+	return FabricPortPolicyResponse{FabricPortPolicyList: v}
 }
 
 // MoAggregateTransformAsFabricPortPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in FabricPortPolicyResponse
 func MoAggregateTransformAsFabricPortPolicyResponse(v *MoAggregateTransform) FabricPortPolicyResponse {
-	return FabricPortPolicyResponse{ MoAggregateTransform: v}
+	return FabricPortPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsFabricPortPolicyResponse is a convenience function that returns MoDocumentCount wrapped in FabricPortPolicyResponse
 func MoDocumentCountAsFabricPortPolicyResponse(v *MoDocumentCount) FabricPortPolicyResponse {
-	return FabricPortPolicyResponse{ MoDocumentCount: v}
+	return FabricPortPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsFabricPortPolicyResponse is a convenience function that returns MoTagSummary wrapped in FabricPortPolicyResponse
 func MoTagSummaryAsFabricPortPolicyResponse(v *MoTagSummary) FabricPortPolicyResponse {
-	return FabricPortPolicyResponse{ MoTagSummary: v}
+	return FabricPortPolicyResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FabricPortPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src FabricPortPolicyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FabricPortPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *FabricPortPolicyResponse) GetActualInstance() interface{} {
 	if obj.FabricPortPolicyList != nil {
 		return obj.FabricPortPolicyList
 	}
@@ -184,5 +183,3 @@ func (v *NullableFabricPortPolicyResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

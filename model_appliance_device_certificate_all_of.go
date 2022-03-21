@@ -27,20 +27,20 @@ type ApplianceDeviceCertificateAllOf struct {
 	// The expiry datetime of new ca certificate which need to be applied on device connector.
 	CaCertificateExpiryTime *time.Time `json:"CaCertificateExpiryTime,omitempty"`
 	// The date time allocated till cert renewal will be executed. This time used here will be based on cert renewal plan.
-	CertificateRenewalExpiryTime *time.Time `json:"CertificateRenewalExpiryTime,omitempty"`
-	CompletedPhases []ApplianceCertRenewalPhase `json:"CompletedPhases,omitempty"`
+	CertificateRenewalExpiryTime *time.Time                  `json:"CertificateRenewalExpiryTime,omitempty"`
+	CompletedPhases              []ApplianceCertRenewalPhase `json:"CompletedPhases,omitempty"`
 	// The operation configuration MOId.
-	ConfigurationMoId *string `json:"ConfigurationMoId,omitempty"`
-	CurrentPhase NullableApplianceCertRenewalPhase `json:"CurrentPhase,omitempty"`
+	ConfigurationMoId *string                           `json:"ConfigurationMoId,omitempty"`
+	CurrentPhase      NullableApplianceCertRenewalPhase `json:"CurrentPhase,omitempty"`
 	// End date of the certificate renewal.
 	EndTime *time.Time `json:"EndTime,omitempty"`
 	// The last poll time when data collection was successfull. This time is used to collect data after this time in next cycle.
 	LastSuccessPollTime *time.Time `json:"LastSuccessPollTime,omitempty"`
-	Messages []string `json:"Messages,omitempty"`
+	Messages            []string   `json:"Messages,omitempty"`
 	// Start date of the certificate renewal.
 	StartTime *time.Time `json:"StartTime,omitempty"`
 	// The status of ca certificate renewal.
-	Status *string `json:"Status,omitempty"`
+	Status               *string `json:"Status,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *ApplianceDeviceCertificateAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceDeviceCertificateAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *ApplianceDeviceCertificateAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceDeviceCertificateAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -215,7 +215,7 @@ func (o *ApplianceDeviceCertificateAllOf) SetCertificateRenewalExpiryTime(v time
 
 // GetCompletedPhases returns the CompletedPhases field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceDeviceCertificateAllOf) GetCompletedPhases() []ApplianceCertRenewalPhase {
-	if o == nil  {
+	if o == nil {
 		var ret []ApplianceCertRenewalPhase
 		return ret
 	}
@@ -291,7 +291,7 @@ func (o *ApplianceDeviceCertificateAllOf) GetCurrentPhase() ApplianceCertRenewal
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplianceDeviceCertificateAllOf) GetCurrentPhaseOk() (*ApplianceCertRenewalPhase, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CurrentPhase.Get(), o.CurrentPhase.IsSet()
@@ -310,6 +310,7 @@ func (o *ApplianceDeviceCertificateAllOf) HasCurrentPhase() bool {
 func (o *ApplianceDeviceCertificateAllOf) SetCurrentPhase(v ApplianceCertRenewalPhase) {
 	o.CurrentPhase.Set(&v)
 }
+
 // SetCurrentPhaseNil sets the value for CurrentPhase to be an explicit nil
 func (o *ApplianceDeviceCertificateAllOf) SetCurrentPhaseNil() {
 	o.CurrentPhase.Set(nil)
@@ -386,7 +387,7 @@ func (o *ApplianceDeviceCertificateAllOf) SetLastSuccessPollTime(v time.Time) {
 
 // GetMessages returns the Messages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceDeviceCertificateAllOf) GetMessages() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -594,5 +595,3 @@ func (v *NullableApplianceDeviceCertificateAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

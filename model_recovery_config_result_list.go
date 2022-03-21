@@ -23,7 +23,7 @@ type RecoveryConfigResultList struct {
 	// The total number of 'recovery.ConfigResult' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'recovery.ConfigResult' resources matching the request.
-	Results []RecoveryConfigResult `json:"Results,omitempty"`
+	Results              []RecoveryConfigResult `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *RecoveryConfigResultList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RecoveryConfigResultList) GetResults() []RecoveryConfigResult {
-	if o == nil  {
+	if o == nil {
 		var ret []RecoveryConfigResult
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableRecoveryConfigResultList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

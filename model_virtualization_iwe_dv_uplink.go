@@ -23,16 +23,16 @@ type VirtualizationIweDvUplink struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	BondState NullableVirtualizationBondState `json:"BondState,omitempty"`
-	NetInterfaces []string `json:"NetInterfaces,omitempty"`
+	ObjectType    string                          `json:"ObjectType"`
+	BondState     NullableVirtualizationBondState `json:"BondState,omitempty"`
+	NetInterfaces []string                        `json:"NetInterfaces,omitempty"`
 	// The vlans associated with this this cluster wide uplink.
-	Vlans *string `json:"Vlans,omitempty"`
+	Vlans   *string                               `json:"Vlans,omitempty"`
 	Cluster *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
 	// An array of relationships to virtualizationIweHost resources.
 	MemberHosts []VirtualizationIweHostRelationship `json:"MemberHosts,omitempty"`
 	// An array of relationships to virtualizationIweHostInterface resources.
-	MemberUplinks []VirtualizationIweHostInterfaceRelationship `json:"MemberUplinks,omitempty"`
+	MemberUplinks        []VirtualizationIweHostInterfaceRelationship `json:"MemberUplinks,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *VirtualizationIweDvUplink) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweDvUplink) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *VirtualizationIweDvUplink) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweDvUplink) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -122,7 +122,7 @@ func (o *VirtualizationIweDvUplink) GetBondState() VirtualizationBondState {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationIweDvUplink) GetBondStateOk() (*VirtualizationBondState, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BondState.Get(), o.BondState.IsSet()
@@ -141,6 +141,7 @@ func (o *VirtualizationIweDvUplink) HasBondState() bool {
 func (o *VirtualizationIweDvUplink) SetBondState(v VirtualizationBondState) {
 	o.BondState.Set(&v)
 }
+
 // SetBondStateNil sets the value for BondState to be an explicit nil
 func (o *VirtualizationIweDvUplink) SetBondStateNil() {
 	o.BondState.Set(nil)
@@ -153,7 +154,7 @@ func (o *VirtualizationIweDvUplink) UnsetBondState() {
 
 // GetNetInterfaces returns the NetInterfaces field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationIweDvUplink) GetNetInterfaces() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -250,7 +251,7 @@ func (o *VirtualizationIweDvUplink) SetCluster(v VirtualizationIweClusterRelatio
 
 // GetMemberHosts returns the MemberHosts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationIweDvUplink) GetMemberHosts() []VirtualizationIweHostRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationIweHostRelationship
 		return ret
 	}
@@ -283,7 +284,7 @@ func (o *VirtualizationIweDvUplink) SetMemberHosts(v []VirtualizationIweHostRela
 
 // GetMemberUplinks returns the MemberUplinks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationIweDvUplink) GetMemberUplinks() []VirtualizationIweHostInterfaceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationIweHostInterfaceRelationship
 		return ret
 	}
@@ -361,11 +362,11 @@ func (o *VirtualizationIweDvUplink) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		BondState NullableVirtualizationBondState `json:"BondState,omitempty"`
-		NetInterfaces []string `json:"NetInterfaces,omitempty"`
+		ObjectType    string                          `json:"ObjectType"`
+		BondState     NullableVirtualizationBondState `json:"BondState,omitempty"`
+		NetInterfaces []string                        `json:"NetInterfaces,omitempty"`
 		// The vlans associated with this this cluster wide uplink.
-		Vlans *string `json:"Vlans,omitempty"`
+		Vlans   *string                               `json:"Vlans,omitempty"`
 		Cluster *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
 		// An array of relationships to virtualizationIweHost resources.
 		MemberHosts []VirtualizationIweHostRelationship `json:"MemberHosts,omitempty"`
@@ -471,5 +472,3 @@ func (v *NullableVirtualizationIweDvUplink) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

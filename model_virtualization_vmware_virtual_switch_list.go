@@ -23,7 +23,7 @@ type VirtualizationVmwareVirtualSwitchList struct {
 	// The total number of 'virtualization.VmwareVirtualSwitch' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'virtualization.VmwareVirtualSwitch' resources matching the request.
-	Results []VirtualizationVmwareVirtualSwitch `json:"Results,omitempty"`
+	Results              []VirtualizationVmwareVirtualSwitch `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *VirtualizationVmwareVirtualSwitchList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareVirtualSwitchList) GetResults() []VirtualizationVmwareVirtualSwitch {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationVmwareVirtualSwitch
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableVirtualizationVmwareVirtualSwitchList) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

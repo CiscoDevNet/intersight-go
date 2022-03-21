@@ -18,20 +18,19 @@ import (
 
 // StorageDiskGroupRelationship - A relationship to the 'storage.DiskGroup' resource, or the expanded 'storage.DiskGroup' resource, or the 'null' value.
 type StorageDiskGroupRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef          *MoMoRef
 	StorageDiskGroup *StorageDiskGroup
 }
 
 // MoMoRefAsStorageDiskGroupRelationship is a convenience function that returns MoMoRef wrapped in StorageDiskGroupRelationship
 func MoMoRefAsStorageDiskGroupRelationship(v *MoMoRef) StorageDiskGroupRelationship {
-	return StorageDiskGroupRelationship{ MoMoRef: v}
+	return StorageDiskGroupRelationship{MoMoRef: v}
 }
 
 // StorageDiskGroupAsStorageDiskGroupRelationship is a convenience function that returns StorageDiskGroup wrapped in StorageDiskGroupRelationship
 func StorageDiskGroupAsStorageDiskGroupRelationship(v *StorageDiskGroup) StorageDiskGroupRelationship {
-	return StorageDiskGroupRelationship{ StorageDiskGroup: v}
+	return StorageDiskGroupRelationship{StorageDiskGroup: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageDiskGroupRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageDiskGroupRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageDiskGroupRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageDiskGroupRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageDiskGroupRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

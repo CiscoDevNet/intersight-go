@@ -20,8 +20,8 @@ type TelemetryDruidNotFilter struct {
 	// The filter type.
 	Type string `json:"type"`
 	// All filters except the \"spatial\" filter support extraction functions. An extraction function is defined by setting the \"extractionFn\" field on a filter. See Extraction function for more details on extraction functions. If specified, the extraction function will be used to transform input values before the filter is applied. The example below shows a selector filter combined with an extraction function. This filter will transform input values according to the values defined in the lookup map; transformed values will then be matched with the string \"bar_1\".
-	ExtractionFn *map[string]interface{} `json:"extractionFn,omitempty"`
-	Field TelemetryDruidFilter `json:"field"`
+	ExtractionFn         *map[string]interface{} `json:"extractionFn,omitempty"`
+	Field                TelemetryDruidFilter    `json:"field"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -59,7 +59,7 @@ func (o *TelemetryDruidNotFilter) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidNotFilter) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -115,7 +115,7 @@ func (o *TelemetryDruidNotFilter) GetField() TelemetryDruidFilter {
 // GetFieldOk returns a tuple with the Field field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidNotFilter) GetFieldOk() (*TelemetryDruidFilter, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Field, true
@@ -199,5 +199,3 @@ func (v *NullableTelemetryDruidNotFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

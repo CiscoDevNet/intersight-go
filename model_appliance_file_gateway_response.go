@@ -19,31 +19,30 @@ import (
 // ApplianceFileGatewayResponse - The response body of a HTTP GET request for the 'appliance.FileGateway' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'appliance.FileGateway' resources.
 type ApplianceFileGatewayResponse struct {
 	ApplianceFileGatewayList *ApplianceFileGatewayList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform     *MoAggregateTransform
+	MoDocumentCount          *MoDocumentCount
+	MoTagSummary             *MoTagSummary
 }
 
 // ApplianceFileGatewayListAsApplianceFileGatewayResponse is a convenience function that returns ApplianceFileGatewayList wrapped in ApplianceFileGatewayResponse
 func ApplianceFileGatewayListAsApplianceFileGatewayResponse(v *ApplianceFileGatewayList) ApplianceFileGatewayResponse {
-	return ApplianceFileGatewayResponse{ ApplianceFileGatewayList: v}
+	return ApplianceFileGatewayResponse{ApplianceFileGatewayList: v}
 }
 
 // MoAggregateTransformAsApplianceFileGatewayResponse is a convenience function that returns MoAggregateTransform wrapped in ApplianceFileGatewayResponse
 func MoAggregateTransformAsApplianceFileGatewayResponse(v *MoAggregateTransform) ApplianceFileGatewayResponse {
-	return ApplianceFileGatewayResponse{ MoAggregateTransform: v}
+	return ApplianceFileGatewayResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsApplianceFileGatewayResponse is a convenience function that returns MoDocumentCount wrapped in ApplianceFileGatewayResponse
 func MoDocumentCountAsApplianceFileGatewayResponse(v *MoDocumentCount) ApplianceFileGatewayResponse {
-	return ApplianceFileGatewayResponse{ MoDocumentCount: v}
+	return ApplianceFileGatewayResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsApplianceFileGatewayResponse is a convenience function that returns MoTagSummary wrapped in ApplianceFileGatewayResponse
 func MoTagSummaryAsApplianceFileGatewayResponse(v *MoTagSummary) ApplianceFileGatewayResponse {
-	return ApplianceFileGatewayResponse{ MoTagSummary: v}
+	return ApplianceFileGatewayResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ApplianceFileGatewayResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ApplianceFileGatewayResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ApplianceFileGatewayResponse) GetActualInstance() (interface{}) {
+func (obj *ApplianceFileGatewayResponse) GetActualInstance() interface{} {
 	if obj.ApplianceFileGatewayList != nil {
 		return obj.ApplianceFileGatewayList
 	}
@@ -184,5 +183,3 @@ func (v *NullableApplianceFileGatewayResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

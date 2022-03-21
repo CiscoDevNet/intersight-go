@@ -19,19 +19,18 @@ import (
 // ComputePhysicalRelationship - A relationship to the 'compute.Physical' resource, or the expanded 'compute.Physical' resource, or the 'null' value.
 type ComputePhysicalRelationship struct {
 	ComputePhysical *ComputePhysical
-	MoMoRef *MoMoRef
+	MoMoRef         *MoMoRef
 }
 
 // ComputePhysicalAsComputePhysicalRelationship is a convenience function that returns ComputePhysical wrapped in ComputePhysicalRelationship
 func ComputePhysicalAsComputePhysicalRelationship(v *ComputePhysical) ComputePhysicalRelationship {
-	return ComputePhysicalRelationship{ ComputePhysical: v}
+	return ComputePhysicalRelationship{ComputePhysical: v}
 }
 
 // MoMoRefAsComputePhysicalRelationship is a convenience function that returns MoMoRef wrapped in ComputePhysicalRelationship
 func MoMoRefAsComputePhysicalRelationship(v *MoMoRef) ComputePhysicalRelationship {
-	return ComputePhysicalRelationship{ MoMoRef: v}
+	return ComputePhysicalRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ComputePhysicalRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ComputePhysicalRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ComputePhysicalRelationship) GetActualInstance() (interface{}) {
+func (obj *ComputePhysicalRelationship) GetActualInstance() interface{} {
 	if obj.ComputePhysical != nil {
 		return obj.ComputePhysical
 	}
@@ -137,5 +136,3 @@ func (v *NullableComputePhysicalRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

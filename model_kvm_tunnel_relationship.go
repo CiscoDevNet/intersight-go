@@ -19,19 +19,18 @@ import (
 // KvmTunnelRelationship - A relationship to the 'kvm.Tunnel' resource, or the expanded 'kvm.Tunnel' resource, or the 'null' value.
 type KvmTunnelRelationship struct {
 	KvmTunnel *KvmTunnel
-	MoMoRef *MoMoRef
+	MoMoRef   *MoMoRef
 }
 
 // KvmTunnelAsKvmTunnelRelationship is a convenience function that returns KvmTunnel wrapped in KvmTunnelRelationship
 func KvmTunnelAsKvmTunnelRelationship(v *KvmTunnel) KvmTunnelRelationship {
-	return KvmTunnelRelationship{ KvmTunnel: v}
+	return KvmTunnelRelationship{KvmTunnel: v}
 }
 
 // MoMoRefAsKvmTunnelRelationship is a convenience function that returns MoMoRef wrapped in KvmTunnelRelationship
 func MoMoRefAsKvmTunnelRelationship(v *MoMoRef) KvmTunnelRelationship {
-	return KvmTunnelRelationship{ MoMoRef: v}
+	return KvmTunnelRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KvmTunnelRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KvmTunnelRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KvmTunnelRelationship) GetActualInstance() (interface{}) {
+func (obj *KvmTunnelRelationship) GetActualInstance() interface{} {
 	if obj.KvmTunnel != nil {
 		return obj.KvmTunnel
 	}
@@ -137,5 +136,3 @@ func (v *NullableKvmTunnelRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

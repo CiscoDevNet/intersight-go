@@ -23,7 +23,7 @@ type FirmwareUnsupportedVersionUpgradeList struct {
 	// The total number of 'firmware.UnsupportedVersionUpgrade' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'firmware.UnsupportedVersionUpgrade' resources matching the request.
-	Results []FirmwareUnsupportedVersionUpgrade `json:"Results,omitempty"`
+	Results              []FirmwareUnsupportedVersionUpgrade `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *FirmwareUnsupportedVersionUpgradeList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareUnsupportedVersionUpgradeList) GetResults() []FirmwareUnsupportedVersionUpgrade {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareUnsupportedVersionUpgrade
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableFirmwareUnsupportedVersionUpgradeList) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

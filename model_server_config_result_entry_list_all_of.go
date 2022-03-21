@@ -20,7 +20,7 @@ type ServerConfigResultEntryListAllOf struct {
 	// The total number of 'server.ConfigResultEntry' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'server.ConfigResultEntry' resources matching the request.
-	Results []ServerConfigResultEntry `json:"Results,omitempty"`
+	Results              []ServerConfigResultEntry `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *ServerConfigResultEntryListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ServerConfigResultEntryListAllOf) GetResults() []ServerConfigResultEntry {
-	if o == nil  {
+	if o == nil {
 		var ret []ServerConfigResultEntry
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableServerConfigResultEntryListAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

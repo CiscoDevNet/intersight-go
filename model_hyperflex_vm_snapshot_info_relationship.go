@@ -19,19 +19,18 @@ import (
 // HyperflexVmSnapshotInfoRelationship - A relationship to the 'hyperflex.VmSnapshotInfo' resource, or the expanded 'hyperflex.VmSnapshotInfo' resource, or the 'null' value.
 type HyperflexVmSnapshotInfoRelationship struct {
 	HyperflexVmSnapshotInfo *HyperflexVmSnapshotInfo
-	MoMoRef *MoMoRef
+	MoMoRef                 *MoMoRef
 }
 
 // HyperflexVmSnapshotInfoAsHyperflexVmSnapshotInfoRelationship is a convenience function that returns HyperflexVmSnapshotInfo wrapped in HyperflexVmSnapshotInfoRelationship
 func HyperflexVmSnapshotInfoAsHyperflexVmSnapshotInfoRelationship(v *HyperflexVmSnapshotInfo) HyperflexVmSnapshotInfoRelationship {
-	return HyperflexVmSnapshotInfoRelationship{ HyperflexVmSnapshotInfo: v}
+	return HyperflexVmSnapshotInfoRelationship{HyperflexVmSnapshotInfo: v}
 }
 
 // MoMoRefAsHyperflexVmSnapshotInfoRelationship is a convenience function that returns MoMoRef wrapped in HyperflexVmSnapshotInfoRelationship
 func MoMoRefAsHyperflexVmSnapshotInfoRelationship(v *MoMoRef) HyperflexVmSnapshotInfoRelationship {
-	return HyperflexVmSnapshotInfoRelationship{ MoMoRef: v}
+	return HyperflexVmSnapshotInfoRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexVmSnapshotInfoRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexVmSnapshotInfoRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexVmSnapshotInfoRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexVmSnapshotInfoRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexVmSnapshotInfo != nil {
 		return obj.HyperflexVmSnapshotInfo
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexVmSnapshotInfoRelationship) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

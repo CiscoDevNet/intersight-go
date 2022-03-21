@@ -28,8 +28,8 @@ type SoftwarerepositoryLocalMachineAllOf struct {
 	// When the import action in file MO is updated with 'GeneratePreSignedUploadUrl', Intersight shall return a upload Id in this property as part of the PATCH response.
 	UploadId *string `json:"UploadId,omitempty"`
 	// When a file MO is created with 'LocalMachine' as the source, Intersight returns a pre-signed URL in this property as part of the POST response. The user is expected to subsequently upload the file content using this URL. Once the upload is completed, the user is expected to patch the uploader object's transfer state to success.
-	UploadUrl *string `json:"UploadUrl,omitempty"`
-	UploadUrls []string `json:"UploadUrls,omitempty"`
+	UploadUrl            *string  `json:"UploadUrl,omitempty"`
+	UploadUrls           []string `json:"UploadUrls,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *SoftwarerepositoryLocalMachineAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryLocalMachineAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *SoftwarerepositoryLocalMachineAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryLocalMachineAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -236,7 +236,7 @@ func (o *SoftwarerepositoryLocalMachineAllOf) SetUploadUrl(v string) {
 
 // GetUploadUrls returns the UploadUrls field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SoftwarerepositoryLocalMachineAllOf) GetUploadUrls() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -356,5 +356,3 @@ func (v *NullableSoftwarerepositoryLocalMachineAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

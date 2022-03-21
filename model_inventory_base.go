@@ -29,7 +29,7 @@ type InventoryBase struct {
 	// The Distinguished Name unambiguously identifies an object in the system.
 	Dn *string `json:"Dn,omitempty"`
 	// The Relative Name uniquely identifies an object within a given context.
-	Rn *string `json:"Rn,omitempty"`
+	Rn                   *string `json:"Rn,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *InventoryBase) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *InventoryBase) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *InventoryBase) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *InventoryBase) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -337,5 +337,3 @@ func (v *NullableInventoryBase) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

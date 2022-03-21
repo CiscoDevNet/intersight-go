@@ -19,31 +19,30 @@ import (
 // HyperflexHealthCheckDefinitionResponse - The response body of a HTTP GET request for the 'hyperflex.HealthCheckDefinition' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'hyperflex.HealthCheckDefinition' resources.
 type HyperflexHealthCheckDefinitionResponse struct {
 	HyperflexHealthCheckDefinitionList *HyperflexHealthCheckDefinitionList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform               *MoAggregateTransform
+	MoDocumentCount                    *MoDocumentCount
+	MoTagSummary                       *MoTagSummary
 }
 
 // HyperflexHealthCheckDefinitionListAsHyperflexHealthCheckDefinitionResponse is a convenience function that returns HyperflexHealthCheckDefinitionList wrapped in HyperflexHealthCheckDefinitionResponse
 func HyperflexHealthCheckDefinitionListAsHyperflexHealthCheckDefinitionResponse(v *HyperflexHealthCheckDefinitionList) HyperflexHealthCheckDefinitionResponse {
-	return HyperflexHealthCheckDefinitionResponse{ HyperflexHealthCheckDefinitionList: v}
+	return HyperflexHealthCheckDefinitionResponse{HyperflexHealthCheckDefinitionList: v}
 }
 
 // MoAggregateTransformAsHyperflexHealthCheckDefinitionResponse is a convenience function that returns MoAggregateTransform wrapped in HyperflexHealthCheckDefinitionResponse
 func MoAggregateTransformAsHyperflexHealthCheckDefinitionResponse(v *MoAggregateTransform) HyperflexHealthCheckDefinitionResponse {
-	return HyperflexHealthCheckDefinitionResponse{ MoAggregateTransform: v}
+	return HyperflexHealthCheckDefinitionResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsHyperflexHealthCheckDefinitionResponse is a convenience function that returns MoDocumentCount wrapped in HyperflexHealthCheckDefinitionResponse
 func MoDocumentCountAsHyperflexHealthCheckDefinitionResponse(v *MoDocumentCount) HyperflexHealthCheckDefinitionResponse {
-	return HyperflexHealthCheckDefinitionResponse{ MoDocumentCount: v}
+	return HyperflexHealthCheckDefinitionResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsHyperflexHealthCheckDefinitionResponse is a convenience function that returns MoTagSummary wrapped in HyperflexHealthCheckDefinitionResponse
 func MoTagSummaryAsHyperflexHealthCheckDefinitionResponse(v *MoTagSummary) HyperflexHealthCheckDefinitionResponse {
-	return HyperflexHealthCheckDefinitionResponse{ MoTagSummary: v}
+	return HyperflexHealthCheckDefinitionResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexHealthCheckDefinitionResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src HyperflexHealthCheckDefinitionResponse) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *HyperflexHealthCheckDefinitionResponse) GetActualInstance() (interface{}) {
+func (obj *HyperflexHealthCheckDefinitionResponse) GetActualInstance() interface{} {
 	if obj.HyperflexHealthCheckDefinitionList != nil {
 		return obj.HyperflexHealthCheckDefinitionList
 	}
@@ -184,5 +183,3 @@ func (v *NullableHyperflexHealthCheckDefinitionResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

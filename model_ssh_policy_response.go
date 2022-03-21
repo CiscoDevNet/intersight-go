@@ -19,31 +19,30 @@ import (
 // SshPolicyResponse - The response body of a HTTP GET request for the 'ssh.Policy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'ssh.Policy' resources.
 type SshPolicyResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
-	SshPolicyList *SshPolicyList
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
+	SshPolicyList        *SshPolicyList
 }
 
 // MoAggregateTransformAsSshPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in SshPolicyResponse
 func MoAggregateTransformAsSshPolicyResponse(v *MoAggregateTransform) SshPolicyResponse {
-	return SshPolicyResponse{ MoAggregateTransform: v}
+	return SshPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsSshPolicyResponse is a convenience function that returns MoDocumentCount wrapped in SshPolicyResponse
 func MoDocumentCountAsSshPolicyResponse(v *MoDocumentCount) SshPolicyResponse {
-	return SshPolicyResponse{ MoDocumentCount: v}
+	return SshPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsSshPolicyResponse is a convenience function that returns MoTagSummary wrapped in SshPolicyResponse
 func MoTagSummaryAsSshPolicyResponse(v *MoTagSummary) SshPolicyResponse {
-	return SshPolicyResponse{ MoTagSummary: v}
+	return SshPolicyResponse{MoTagSummary: v}
 }
 
 // SshPolicyListAsSshPolicyResponse is a convenience function that returns SshPolicyList wrapped in SshPolicyResponse
 func SshPolicyListAsSshPolicyResponse(v *SshPolicyList) SshPolicyResponse {
-	return SshPolicyResponse{ SshPolicyList: v}
+	return SshPolicyResponse{SshPolicyList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SshPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src SshPolicyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SshPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *SshPolicyResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableSshPolicyResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

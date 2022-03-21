@@ -23,7 +23,7 @@ type WorkflowAnsibleBatchExecutorList struct {
 	// The total number of 'workflow.AnsibleBatchExecutor' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'workflow.AnsibleBatchExecutor' resources matching the request.
-	Results []WorkflowAnsibleBatchExecutor `json:"Results,omitempty"`
+	Results              []WorkflowAnsibleBatchExecutor `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *WorkflowAnsibleBatchExecutorList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowAnsibleBatchExecutorList) GetResults() []WorkflowAnsibleBatchExecutor {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowAnsibleBatchExecutor
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableWorkflowAnsibleBatchExecutorList) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

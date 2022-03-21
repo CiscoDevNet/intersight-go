@@ -20,7 +20,7 @@ type CloudNetworkInterfaceAttachmentAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType   string                           `json:"ObjectType"`
 	AccessConfig NullableCloudNetworkAccessConfig `json:"AccessConfig,omitempty"`
 	// The internally generated identity of this network interface attachment.
 	Identity *string `json:"Identity,omitempty"`
@@ -33,14 +33,14 @@ type CloudNetworkInterfaceAttachmentAllOf struct {
 	// User friendly name of the network to which this network interface attachment belongs.
 	NetworkName *string `json:"NetworkName,omitempty"`
 	// The device index of the network interface attachment in the virtual machine.
-	NicIndex *int64 `json:"NicIndex,omitempty"`
+	NicIndex       *int64                `json:"NicIndex,omitempty"`
 	PrivateAddress []CloudNetworkAddress `json:"PrivateAddress,omitempty"`
-	PublicAddress []CloudNetworkAddress `json:"PublicAddress,omitempty"`
-	SecurityGroups []string `json:"SecurityGroups,omitempty"`
+	PublicAddress  []CloudNetworkAddress `json:"PublicAddress,omitempty"`
+	SecurityGroups []string              `json:"SecurityGroups,omitempty"`
 	// The identity of this network interface attachment's subnet.
 	SubNetworkId *string `json:"SubNetworkId,omitempty"`
 	// User friendly name of this network interface attachment's subnet.
-	SubNetworkName *string `json:"SubNetworkName,omitempty"`
+	SubNetworkName       *string `json:"SubNetworkName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *CloudNetworkInterfaceAttachmentAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudNetworkInterfaceAttachmentAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *CloudNetworkInterfaceAttachmentAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudNetworkInterfaceAttachmentAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -130,7 +130,7 @@ func (o *CloudNetworkInterfaceAttachmentAllOf) GetAccessConfig() CloudNetworkAcc
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudNetworkInterfaceAttachmentAllOf) GetAccessConfigOk() (*CloudNetworkAccessConfig, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AccessConfig.Get(), o.AccessConfig.IsSet()
@@ -149,6 +149,7 @@ func (o *CloudNetworkInterfaceAttachmentAllOf) HasAccessConfig() bool {
 func (o *CloudNetworkInterfaceAttachmentAllOf) SetAccessConfig(v CloudNetworkAccessConfig) {
 	o.AccessConfig.Set(&v)
 }
+
 // SetAccessConfigNil sets the value for AccessConfig to be an explicit nil
 func (o *CloudNetworkInterfaceAttachmentAllOf) SetAccessConfigNil() {
 	o.AccessConfig.Set(nil)
@@ -353,7 +354,7 @@ func (o *CloudNetworkInterfaceAttachmentAllOf) SetNicIndex(v int64) {
 
 // GetPrivateAddress returns the PrivateAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudNetworkInterfaceAttachmentAllOf) GetPrivateAddress() []CloudNetworkAddress {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudNetworkAddress
 		return ret
 	}
@@ -386,7 +387,7 @@ func (o *CloudNetworkInterfaceAttachmentAllOf) SetPrivateAddress(v []CloudNetwor
 
 // GetPublicAddress returns the PublicAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudNetworkInterfaceAttachmentAllOf) GetPublicAddress() []CloudNetworkAddress {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudNetworkAddress
 		return ret
 	}
@@ -419,7 +420,7 @@ func (o *CloudNetworkInterfaceAttachmentAllOf) SetPublicAddress(v []CloudNetwork
 
 // GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudNetworkInterfaceAttachmentAllOf) GetSecurityGroups() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -631,5 +632,3 @@ func (v *NullableCloudNetworkInterfaceAttachmentAllOf) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

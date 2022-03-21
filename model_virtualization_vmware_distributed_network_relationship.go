@@ -18,20 +18,19 @@ import (
 
 // VirtualizationVmwareDistributedNetworkRelationship - A relationship to the 'virtualization.VmwareDistributedNetwork' resource, or the expanded 'virtualization.VmwareDistributedNetwork' resource, or the 'null' value.
 type VirtualizationVmwareDistributedNetworkRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                                *MoMoRef
 	VirtualizationVmwareDistributedNetwork *VirtualizationVmwareDistributedNetwork
 }
 
 // MoMoRefAsVirtualizationVmwareDistributedNetworkRelationship is a convenience function that returns MoMoRef wrapped in VirtualizationVmwareDistributedNetworkRelationship
 func MoMoRefAsVirtualizationVmwareDistributedNetworkRelationship(v *MoMoRef) VirtualizationVmwareDistributedNetworkRelationship {
-	return VirtualizationVmwareDistributedNetworkRelationship{ MoMoRef: v}
+	return VirtualizationVmwareDistributedNetworkRelationship{MoMoRef: v}
 }
 
 // VirtualizationVmwareDistributedNetworkAsVirtualizationVmwareDistributedNetworkRelationship is a convenience function that returns VirtualizationVmwareDistributedNetwork wrapped in VirtualizationVmwareDistributedNetworkRelationship
 func VirtualizationVmwareDistributedNetworkAsVirtualizationVmwareDistributedNetworkRelationship(v *VirtualizationVmwareDistributedNetwork) VirtualizationVmwareDistributedNetworkRelationship {
-	return VirtualizationVmwareDistributedNetworkRelationship{ VirtualizationVmwareDistributedNetwork: v}
+	return VirtualizationVmwareDistributedNetworkRelationship{VirtualizationVmwareDistributedNetwork: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VirtualizationVmwareDistributedNetworkRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src VirtualizationVmwareDistributedNetworkRelationship) MarshalJSON() ([]b
 }
 
 // Get the actual instance
-func (obj *VirtualizationVmwareDistributedNetworkRelationship) GetActualInstance() (interface{}) {
+func (obj *VirtualizationVmwareDistributedNetworkRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableVirtualizationVmwareDistributedNetworkRelationship) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

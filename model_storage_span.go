@@ -23,14 +23,14 @@ type StorageSpan struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Slots []int64 `json:"Slots,omitempty"`
+	ObjectType string  `json:"ObjectType"`
+	Slots      []int64 `json:"Slots,omitempty"`
 	// Unique identifier value of this span.
-	SpanId *int64 `json:"SpanId,omitempty"`
+	SpanId    *int64                        `json:"SpanId,omitempty"`
 	DiskGroup *StorageDiskGroupRelationship `json:"DiskGroup,omitempty"`
 	// An array of relationships to storagePhysicalDisk resources.
-	PhysicalDisks []StoragePhysicalDiskRelationship `json:"PhysicalDisks,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	PhysicalDisks        []StoragePhysicalDiskRelationship    `json:"PhysicalDisks,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *StorageSpan) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageSpan) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *StorageSpan) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageSpan) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -109,7 +109,7 @@ func (o *StorageSpan) SetObjectType(v string) {
 
 // GetSlots returns the Slots field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageSpan) GetSlots() []int64 {
-	if o == nil  {
+	if o == nil {
 		var ret []int64
 		return ret
 	}
@@ -206,7 +206,7 @@ func (o *StorageSpan) SetDiskGroup(v StorageDiskGroupRelationship) {
 
 // GetPhysicalDisks returns the PhysicalDisks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageSpan) GetPhysicalDisks() []StoragePhysicalDiskRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StoragePhysicalDiskRelationship
 		return ret
 	}
@@ -313,13 +313,13 @@ func (o *StorageSpan) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Slots []int64 `json:"Slots,omitempty"`
+		ObjectType string  `json:"ObjectType"`
+		Slots      []int64 `json:"Slots,omitempty"`
 		// Unique identifier value of this span.
-		SpanId *int64 `json:"SpanId,omitempty"`
+		SpanId    *int64                        `json:"SpanId,omitempty"`
 		DiskGroup *StorageDiskGroupRelationship `json:"DiskGroup,omitempty"`
 		// An array of relationships to storagePhysicalDisk resources.
-		PhysicalDisks []StoragePhysicalDiskRelationship `json:"PhysicalDisks,omitempty"`
+		PhysicalDisks    []StoragePhysicalDiskRelationship    `json:"PhysicalDisks,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -419,5 +419,3 @@ func (v *NullableStorageSpan) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

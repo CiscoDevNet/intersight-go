@@ -25,8 +25,8 @@ type FabricPcMember struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Port Channel Identifier for the collection of ports.
-	PcId *int64 `json:"PcId,omitempty"`
-	PortPolicy *FabricPortPolicyRelationship `json:"PortPolicy,omitempty"`
+	PcId                 *int64                        `json:"PcId,omitempty"`
+	PortPolicy           *FabricPortPolicyRelationship `json:"PortPolicy,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *FabricPcMember) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricPcMember) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *FabricPcMember) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricPcMember) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -204,7 +204,7 @@ func (o *FabricPcMember) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Port Channel Identifier for the collection of ports.
-		PcId *int64 `json:"PcId,omitempty"`
+		PcId       *int64                        `json:"PcId,omitempty"`
 		PortPolicy *FabricPortPolicyRelationship `json:"PortPolicy,omitempty"`
 	}
 
@@ -298,5 +298,3 @@ func (v *NullableFabricPcMember) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

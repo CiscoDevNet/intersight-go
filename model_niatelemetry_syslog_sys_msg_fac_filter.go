@@ -39,8 +39,8 @@ type NiatelemetrySyslogSysMsgFacFilter struct {
 	// Name of the APIC site from which this data is being collected.
 	SiteName *string `json:"SiteName,omitempty"`
 	// Parent syslog msg for syslog sys msg facility filter in APIC.
-	SyslogSysMsg *string `json:"SyslogSysMsg,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SyslogSysMsg         *string                              `json:"SyslogSysMsg,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *NiatelemetrySyslogSysMsgFacFilter) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetrySyslogSysMsgFacFilter) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *NiatelemetrySyslogSysMsgFacFilter) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetrySyslogSysMsgFacFilter) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -477,7 +477,7 @@ func (o *NiatelemetrySyslogSysMsgFacFilter) UnmarshalJSON(bytes []byte) (err err
 		// Name of the APIC site from which this data is being collected.
 		SiteName *string `json:"SiteName,omitempty"`
 		// Parent syslog msg for syslog sys msg facility filter in APIC.
-		SyslogSysMsg *string `json:"SyslogSysMsg,omitempty"`
+		SyslogSysMsg     *string                              `json:"SyslogSysMsg,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -585,5 +585,3 @@ func (v *NullableNiatelemetrySyslogSysMsgFacFilter) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

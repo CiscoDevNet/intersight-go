@@ -38,8 +38,8 @@ type MemoryAbstractUnitAllOf struct {
 	// This represents the location of the memory unit on a server.
 	Location *string `json:"Location,omitempty"`
 	// This represents the operational power state of the memory unit on a server.
-	OperPowerState *string `json:"OperPowerState,omitempty"`
-	OperReason []string `json:"OperReason,omitempty"`
+	OperPowerState *string  `json:"OperPowerState,omitempty"`
+	OperReason     []string `json:"OperReason,omitempty"`
 	// This represents the operational state of the memory unit on a server.
 	OperState *string `json:"OperState,omitempty"`
 	// This represents the operability of the memory unit on a server.
@@ -55,7 +55,7 @@ type MemoryAbstractUnitAllOf struct {
 	// This represents the visibility of the memory unit on a server.
 	Visibility *string `json:"Visibility,omitempty"`
 	// This represents the width of the memory unit on a server.
-	Width *string `json:"Width,omitempty"`
+	Width                *string `json:"Width,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -93,7 +93,7 @@ func (o *MemoryAbstractUnitAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MemoryAbstractUnitAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -117,7 +117,7 @@ func (o *MemoryAbstractUnitAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MemoryAbstractUnitAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -418,7 +418,7 @@ func (o *MemoryAbstractUnitAllOf) SetOperPowerState(v string) {
 
 // GetOperReason returns the OperReason field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MemoryAbstractUnitAllOf) GetOperReason() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -846,5 +846,3 @@ func (v *NullableMemoryAbstractUnitAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

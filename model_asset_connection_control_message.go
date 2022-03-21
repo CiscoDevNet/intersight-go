@@ -39,7 +39,7 @@ type AssetConnectionControlMessage struct {
 	// The new identity assigned to a device on ownership change (claim/unclaim).
 	NewIdentity *string `json:"NewIdentity,omitempty"`
 	// The partition the device was last connected to, used to address the control message to the device connector gateway instance holding the devices connection.
-	Partition *int64 `json:"Partition,omitempty"`
+	Partition            *int64 `json:"Partition,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -85,7 +85,7 @@ func (o *AssetConnectionControlMessage) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetConnectionControlMessage) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -109,7 +109,7 @@ func (o *AssetConnectionControlMessage) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetConnectionControlMessage) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -550,5 +550,3 @@ func (v *NullableAssetConnectionControlMessage) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

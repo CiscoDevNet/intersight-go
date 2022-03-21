@@ -23,7 +23,7 @@ type IamAppRegistrationList struct {
 	// The total number of 'iam.AppRegistration' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'iam.AppRegistration' resources matching the request.
-	Results []IamAppRegistration `json:"Results,omitempty"`
+	Results              []IamAppRegistration `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *IamAppRegistrationList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAppRegistrationList) GetResults() []IamAppRegistration {
-	if o == nil  {
+	if o == nil {
 		var ret []IamAppRegistration
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableIamAppRegistrationList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,19 +19,18 @@ import (
 // ManagementEntityRelationship - A relationship to the 'management.Entity' resource, or the expanded 'management.Entity' resource, or the 'null' value.
 type ManagementEntityRelationship struct {
 	ManagementEntity *ManagementEntity
-	MoMoRef *MoMoRef
+	MoMoRef          *MoMoRef
 }
 
 // ManagementEntityAsManagementEntityRelationship is a convenience function that returns ManagementEntity wrapped in ManagementEntityRelationship
 func ManagementEntityAsManagementEntityRelationship(v *ManagementEntity) ManagementEntityRelationship {
-	return ManagementEntityRelationship{ ManagementEntity: v}
+	return ManagementEntityRelationship{ManagementEntity: v}
 }
 
 // MoMoRefAsManagementEntityRelationship is a convenience function that returns MoMoRef wrapped in ManagementEntityRelationship
 func MoMoRefAsManagementEntityRelationship(v *MoMoRef) ManagementEntityRelationship {
-	return ManagementEntityRelationship{ MoMoRef: v}
+	return ManagementEntityRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ManagementEntityRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ManagementEntityRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ManagementEntityRelationship) GetActualInstance() (interface{}) {
+func (obj *ManagementEntityRelationship) GetActualInstance() interface{} {
 	if obj.ManagementEntity != nil {
 		return obj.ManagementEntity
 	}
@@ -137,5 +136,3 @@ func (v *NullableManagementEntityRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

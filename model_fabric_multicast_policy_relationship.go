@@ -19,19 +19,18 @@ import (
 // FabricMulticastPolicyRelationship - A relationship to the 'fabric.MulticastPolicy' resource, or the expanded 'fabric.MulticastPolicy' resource, or the 'null' value.
 type FabricMulticastPolicyRelationship struct {
 	FabricMulticastPolicy *FabricMulticastPolicy
-	MoMoRef *MoMoRef
+	MoMoRef               *MoMoRef
 }
 
 // FabricMulticastPolicyAsFabricMulticastPolicyRelationship is a convenience function that returns FabricMulticastPolicy wrapped in FabricMulticastPolicyRelationship
 func FabricMulticastPolicyAsFabricMulticastPolicyRelationship(v *FabricMulticastPolicy) FabricMulticastPolicyRelationship {
-	return FabricMulticastPolicyRelationship{ FabricMulticastPolicy: v}
+	return FabricMulticastPolicyRelationship{FabricMulticastPolicy: v}
 }
 
 // MoMoRefAsFabricMulticastPolicyRelationship is a convenience function that returns MoMoRef wrapped in FabricMulticastPolicyRelationship
 func MoMoRefAsFabricMulticastPolicyRelationship(v *MoMoRef) FabricMulticastPolicyRelationship {
-	return FabricMulticastPolicyRelationship{ MoMoRef: v}
+	return FabricMulticastPolicyRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FabricMulticastPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src FabricMulticastPolicyRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FabricMulticastPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *FabricMulticastPolicyRelationship) GetActualInstance() interface{} {
 	if obj.FabricMulticastPolicy != nil {
 		return obj.FabricMulticastPolicy
 	}
@@ -137,5 +136,3 @@ func (v *NullableFabricMulticastPolicyRelationship) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

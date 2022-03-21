@@ -19,31 +19,30 @@ import (
 // InventoryDnMoBindingResponse - The response body of a HTTP GET request for the 'inventory.DnMoBinding' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'inventory.DnMoBinding' resources.
 type InventoryDnMoBindingResponse struct {
 	InventoryDnMoBindingList *InventoryDnMoBindingList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform     *MoAggregateTransform
+	MoDocumentCount          *MoDocumentCount
+	MoTagSummary             *MoTagSummary
 }
 
 // InventoryDnMoBindingListAsInventoryDnMoBindingResponse is a convenience function that returns InventoryDnMoBindingList wrapped in InventoryDnMoBindingResponse
 func InventoryDnMoBindingListAsInventoryDnMoBindingResponse(v *InventoryDnMoBindingList) InventoryDnMoBindingResponse {
-	return InventoryDnMoBindingResponse{ InventoryDnMoBindingList: v}
+	return InventoryDnMoBindingResponse{InventoryDnMoBindingList: v}
 }
 
 // MoAggregateTransformAsInventoryDnMoBindingResponse is a convenience function that returns MoAggregateTransform wrapped in InventoryDnMoBindingResponse
 func MoAggregateTransformAsInventoryDnMoBindingResponse(v *MoAggregateTransform) InventoryDnMoBindingResponse {
-	return InventoryDnMoBindingResponse{ MoAggregateTransform: v}
+	return InventoryDnMoBindingResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsInventoryDnMoBindingResponse is a convenience function that returns MoDocumentCount wrapped in InventoryDnMoBindingResponse
 func MoDocumentCountAsInventoryDnMoBindingResponse(v *MoDocumentCount) InventoryDnMoBindingResponse {
-	return InventoryDnMoBindingResponse{ MoDocumentCount: v}
+	return InventoryDnMoBindingResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsInventoryDnMoBindingResponse is a convenience function that returns MoTagSummary wrapped in InventoryDnMoBindingResponse
 func MoTagSummaryAsInventoryDnMoBindingResponse(v *MoTagSummary) InventoryDnMoBindingResponse {
-	return InventoryDnMoBindingResponse{ MoTagSummary: v}
+	return InventoryDnMoBindingResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *InventoryDnMoBindingResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src InventoryDnMoBindingResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *InventoryDnMoBindingResponse) GetActualInstance() (interface{}) {
+func (obj *InventoryDnMoBindingResponse) GetActualInstance() interface{} {
 	if obj.InventoryDnMoBindingList != nil {
 		return obj.InventoryDnMoBindingList
 	}
@@ -184,5 +183,3 @@ func (v *NullableInventoryDnMoBindingResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

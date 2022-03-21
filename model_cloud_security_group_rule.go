@@ -37,15 +37,15 @@ type CloudSecurityGroupRule struct {
 	// Position of security group rule in a security group.
 	Index *int64 `json:"Index,omitempty"`
 	// User-provided name to identify the security group rule.
-	Name *string `json:"Name,omitempty"`
+	Name     *string `json:"Name,omitempty"`
 	PortList []int64 `json:"PortList,omitempty"`
 	// The IP protocol name that's open to network traffic, such as TCP, UDP, etc. * `tcp` - The TCP (Transmission Control Protocol) protocol. * `udp` - The UDP (User Datagram Protocol) protocol. * `icmp` - The ICMP (Internet Control Message Protocol) protocol. * `esp` - The ESP (Encapsulating Security Payload) protocol. * `ah` - The AH (Authentication Header) protocol. * `sctp` - The SCTP (Stream Control Transmission Protocol) protocol. * `all` - All of TCP, UDP, ICMP, ESP, AH and SCTP. * `none` - None of TCP, UDP, ICMP, ESP, AH and SCTP.
-	Protocol *string `json:"Protocol,omitempty"`
+	Protocol   *string  `json:"Protocol,omitempty"`
 	SourceCidr []string `json:"SourceCidr,omitempty"`
 	// Reference to the existing security group, where the security group rule is defined.
 	SourceSecurityGroup *string `json:"SourceSecurityGroup,omitempty"`
 	// The start of port range for the security group rule IP protocol.
-	StartPort *int64 `json:"StartPort,omitempty"`
+	StartPort            *int64 `json:"StartPort,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -87,7 +87,7 @@ func (o *CloudSecurityGroupRule) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudSecurityGroupRule) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -111,7 +111,7 @@ func (o *CloudSecurityGroupRule) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudSecurityGroupRule) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -348,7 +348,7 @@ func (o *CloudSecurityGroupRule) SetName(v string) {
 
 // GetPortList returns the PortList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudSecurityGroupRule) GetPortList() []int64 {
-	if o == nil  {
+	if o == nil {
 		var ret []int64
 		return ret
 	}
@@ -413,7 +413,7 @@ func (o *CloudSecurityGroupRule) SetProtocol(v string) {
 
 // GetSourceCidr returns the SourceCidr field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudSecurityGroupRule) GetSourceCidr() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -587,10 +587,10 @@ func (o *CloudSecurityGroupRule) UnmarshalJSON(bytes []byte) (err error) {
 		// Position of security group rule in a security group.
 		Index *int64 `json:"Index,omitempty"`
 		// User-provided name to identify the security group rule.
-		Name *string `json:"Name,omitempty"`
+		Name     *string `json:"Name,omitempty"`
 		PortList []int64 `json:"PortList,omitempty"`
 		// The IP protocol name that's open to network traffic, such as TCP, UDP, etc. * `tcp` - The TCP (Transmission Control Protocol) protocol. * `udp` - The UDP (User Datagram Protocol) protocol. * `icmp` - The ICMP (Internet Control Message Protocol) protocol. * `esp` - The ESP (Encapsulating Security Payload) protocol. * `ah` - The AH (Authentication Header) protocol. * `sctp` - The SCTP (Stream Control Transmission Protocol) protocol. * `all` - All of TCP, UDP, ICMP, ESP, AH and SCTP. * `none` - None of TCP, UDP, ICMP, ESP, AH and SCTP.
-		Protocol *string `json:"Protocol,omitempty"`
+		Protocol   *string  `json:"Protocol,omitempty"`
 		SourceCidr []string `json:"SourceCidr,omitempty"`
 		// Reference to the existing security group, where the security group rule is defined.
 		SourceSecurityGroup *string `json:"SourceSecurityGroup,omitempty"`
@@ -708,5 +708,3 @@ func (v *NullableCloudSecurityGroupRule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

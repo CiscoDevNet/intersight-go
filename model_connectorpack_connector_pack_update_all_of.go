@@ -26,7 +26,7 @@ type ConnectorpackConnectorPackUpdateAllOf struct {
 	// Name of the connector pack.
 	Name *string `json:"Name,omitempty"`
 	// Version of connector pack to be installed in the next upgrade cycle.
-	NewVersion *string `json:"NewVersion,omitempty"`
+	NewVersion           *string `json:"NewVersion,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *ConnectorpackConnectorPackUpdateAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorpackConnectorPackUpdateAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *ConnectorpackConnectorPackUpdateAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorpackConnectorPackUpdateAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,5 +280,3 @@ func (v *NullableConnectorpackConnectorPackUpdateAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

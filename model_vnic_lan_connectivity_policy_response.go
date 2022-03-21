@@ -18,32 +18,31 @@ import (
 
 // VnicLanConnectivityPolicyResponse - The response body of a HTTP GET request for the 'vnic.LanConnectivityPolicy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'vnic.LanConnectivityPolicy' resources.
 type VnicLanConnectivityPolicyResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform          *MoAggregateTransform
+	MoDocumentCount               *MoDocumentCount
+	MoTagSummary                  *MoTagSummary
 	VnicLanConnectivityPolicyList *VnicLanConnectivityPolicyList
 }
 
 // MoAggregateTransformAsVnicLanConnectivityPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in VnicLanConnectivityPolicyResponse
 func MoAggregateTransformAsVnicLanConnectivityPolicyResponse(v *MoAggregateTransform) VnicLanConnectivityPolicyResponse {
-	return VnicLanConnectivityPolicyResponse{ MoAggregateTransform: v}
+	return VnicLanConnectivityPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsVnicLanConnectivityPolicyResponse is a convenience function that returns MoDocumentCount wrapped in VnicLanConnectivityPolicyResponse
 func MoDocumentCountAsVnicLanConnectivityPolicyResponse(v *MoDocumentCount) VnicLanConnectivityPolicyResponse {
-	return VnicLanConnectivityPolicyResponse{ MoDocumentCount: v}
+	return VnicLanConnectivityPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsVnicLanConnectivityPolicyResponse is a convenience function that returns MoTagSummary wrapped in VnicLanConnectivityPolicyResponse
 func MoTagSummaryAsVnicLanConnectivityPolicyResponse(v *MoTagSummary) VnicLanConnectivityPolicyResponse {
-	return VnicLanConnectivityPolicyResponse{ MoTagSummary: v}
+	return VnicLanConnectivityPolicyResponse{MoTagSummary: v}
 }
 
 // VnicLanConnectivityPolicyListAsVnicLanConnectivityPolicyResponse is a convenience function that returns VnicLanConnectivityPolicyList wrapped in VnicLanConnectivityPolicyResponse
 func VnicLanConnectivityPolicyListAsVnicLanConnectivityPolicyResponse(v *VnicLanConnectivityPolicyList) VnicLanConnectivityPolicyResponse {
-	return VnicLanConnectivityPolicyResponse{ VnicLanConnectivityPolicyList: v}
+	return VnicLanConnectivityPolicyResponse{VnicLanConnectivityPolicyList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VnicLanConnectivityPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src VnicLanConnectivityPolicyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *VnicLanConnectivityPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *VnicLanConnectivityPolicyResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableVnicLanConnectivityPolicyResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

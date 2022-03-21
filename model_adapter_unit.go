@@ -45,11 +45,11 @@ type AdapterUnit struct {
 	// Thermal state of an adapter unit.
 	Thermal *string `json:"Thermal,omitempty"`
 	// Virtual Id of the adapter in the server.
-	Vid *string `json:"Vid,omitempty"`
-	AdapterUnitExpander *AdapterUnitExpanderRelationship `json:"AdapterUnitExpander,omitempty"`
-	ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
-	ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
-	Controller *ManagementControllerRelationship `json:"Controller,omitempty"`
+	Vid                 *string                           `json:"Vid,omitempty"`
+	AdapterUnitExpander *AdapterUnitExpanderRelationship  `json:"AdapterUnitExpander,omitempty"`
+	ComputeBlade        *ComputeBladeRelationship         `json:"ComputeBlade,omitempty"`
+	ComputeRackUnit     *ComputeRackUnitRelationship      `json:"ComputeRackUnit,omitempty"`
+	Controller          *ManagementControllerRelationship `json:"Controller,omitempty"`
 	// An array of relationships to adapterExtEthInterface resources.
 	ExtEthIfs []AdapterExtEthInterfaceRelationship `json:"ExtEthIfs,omitempty"`
 	// An array of relationships to adapterHostEthInterface resources.
@@ -57,9 +57,9 @@ type AdapterUnit struct {
 	// An array of relationships to adapterHostFcInterface resources.
 	HostFcIfs []AdapterHostFcInterfaceRelationship `json:"HostFcIfs,omitempty"`
 	// An array of relationships to adapterHostIscsiInterface resources.
-	HostIscsiIfs []AdapterHostIscsiInterfaceRelationship `json:"HostIscsiIfs,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	HostIscsiIfs         []AdapterHostIscsiInterfaceRelationship `json:"HostIscsiIfs,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship        `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -101,7 +101,7 @@ func (o *AdapterUnit) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AdapterUnit) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -125,7 +125,7 @@ func (o *AdapterUnit) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AdapterUnit) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -618,7 +618,7 @@ func (o *AdapterUnit) SetController(v ManagementControllerRelationship) {
 
 // GetExtEthIfs returns the ExtEthIfs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AdapterUnit) GetExtEthIfs() []AdapterExtEthInterfaceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []AdapterExtEthInterfaceRelationship
 		return ret
 	}
@@ -651,7 +651,7 @@ func (o *AdapterUnit) SetExtEthIfs(v []AdapterExtEthInterfaceRelationship) {
 
 // GetHostEthIfs returns the HostEthIfs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AdapterUnit) GetHostEthIfs() []AdapterHostEthInterfaceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []AdapterHostEthInterfaceRelationship
 		return ret
 	}
@@ -684,7 +684,7 @@ func (o *AdapterUnit) SetHostEthIfs(v []AdapterHostEthInterfaceRelationship) {
 
 // GetHostFcIfs returns the HostFcIfs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AdapterUnit) GetHostFcIfs() []AdapterHostFcInterfaceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []AdapterHostFcInterfaceRelationship
 		return ret
 	}
@@ -717,7 +717,7 @@ func (o *AdapterUnit) SetHostFcIfs(v []AdapterHostFcInterfaceRelationship) {
 
 // GetHostIscsiIfs returns the HostIscsiIfs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AdapterUnit) GetHostIscsiIfs() []AdapterHostIscsiInterfaceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []AdapterHostIscsiInterfaceRelationship
 		return ret
 	}
@@ -926,11 +926,11 @@ func (o *AdapterUnit) UnmarshalJSON(bytes []byte) (err error) {
 		// Thermal state of an adapter unit.
 		Thermal *string `json:"Thermal,omitempty"`
 		// Virtual Id of the adapter in the server.
-		Vid *string `json:"Vid,omitempty"`
-		AdapterUnitExpander *AdapterUnitExpanderRelationship `json:"AdapterUnitExpander,omitempty"`
-		ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
-		ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
-		Controller *ManagementControllerRelationship `json:"Controller,omitempty"`
+		Vid                 *string                           `json:"Vid,omitempty"`
+		AdapterUnitExpander *AdapterUnitExpanderRelationship  `json:"AdapterUnitExpander,omitempty"`
+		ComputeBlade        *ComputeBladeRelationship         `json:"ComputeBlade,omitempty"`
+		ComputeRackUnit     *ComputeRackUnitRelationship      `json:"ComputeRackUnit,omitempty"`
+		Controller          *ManagementControllerRelationship `json:"Controller,omitempty"`
 		// An array of relationships to adapterExtEthInterface resources.
 		ExtEthIfs []AdapterExtEthInterfaceRelationship `json:"ExtEthIfs,omitempty"`
 		// An array of relationships to adapterHostEthInterface resources.
@@ -938,9 +938,9 @@ func (o *AdapterUnit) UnmarshalJSON(bytes []byte) (err error) {
 		// An array of relationships to adapterHostFcInterface resources.
 		HostFcIfs []AdapterHostFcInterfaceRelationship `json:"HostFcIfs,omitempty"`
 		// An array of relationships to adapterHostIscsiInterface resources.
-		HostIscsiIfs []AdapterHostIscsiInterfaceRelationship `json:"HostIscsiIfs,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		HostIscsiIfs        []AdapterHostIscsiInterfaceRelationship `json:"HostIscsiIfs,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship        `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	}
 
 	varAdapterUnitWithoutEmbeddedStruct := AdapterUnitWithoutEmbeddedStruct{}
@@ -1071,5 +1071,3 @@ func (v *NullableAdapterUnit) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,11 +20,11 @@ type HyperflexProtectionInfoAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	VmCurrentProtectionInfo NullableHyperflexSnapshotInfoBrief `json:"VmCurrentProtectionInfo,omitempty"`
-	VmLastSuccessfulProtectionInfo NullableHyperflexSnapshotInfoBrief `json:"VmLastSuccessfulProtectionInfo,omitempty"`
-	VmSpaceUsage NullableHyperflexVmProtectionSpaceUsage `json:"VmSpaceUsage,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ObjectType                     string                                  `json:"ObjectType"`
+	VmCurrentProtectionInfo        NullableHyperflexSnapshotInfoBrief      `json:"VmCurrentProtectionInfo,omitempty"`
+	VmLastSuccessfulProtectionInfo NullableHyperflexSnapshotInfoBrief      `json:"VmLastSuccessfulProtectionInfo,omitempty"`
+	VmSpaceUsage                   NullableHyperflexVmProtectionSpaceUsage `json:"VmSpaceUsage,omitempty"`
+	AdditionalProperties           map[string]interface{}
 }
 
 type _HyperflexProtectionInfoAllOf HyperflexProtectionInfoAllOf
@@ -65,7 +65,7 @@ func (o *HyperflexProtectionInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexProtectionInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *HyperflexProtectionInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexProtectionInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -113,7 +113,7 @@ func (o *HyperflexProtectionInfoAllOf) GetVmCurrentProtectionInfo() HyperflexSna
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexProtectionInfoAllOf) GetVmCurrentProtectionInfoOk() (*HyperflexSnapshotInfoBrief, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VmCurrentProtectionInfo.Get(), o.VmCurrentProtectionInfo.IsSet()
@@ -132,6 +132,7 @@ func (o *HyperflexProtectionInfoAllOf) HasVmCurrentProtectionInfo() bool {
 func (o *HyperflexProtectionInfoAllOf) SetVmCurrentProtectionInfo(v HyperflexSnapshotInfoBrief) {
 	o.VmCurrentProtectionInfo.Set(&v)
 }
+
 // SetVmCurrentProtectionInfoNil sets the value for VmCurrentProtectionInfo to be an explicit nil
 func (o *HyperflexProtectionInfoAllOf) SetVmCurrentProtectionInfoNil() {
 	o.VmCurrentProtectionInfo.Set(nil)
@@ -155,7 +156,7 @@ func (o *HyperflexProtectionInfoAllOf) GetVmLastSuccessfulProtectionInfo() Hyper
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexProtectionInfoAllOf) GetVmLastSuccessfulProtectionInfoOk() (*HyperflexSnapshotInfoBrief, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VmLastSuccessfulProtectionInfo.Get(), o.VmLastSuccessfulProtectionInfo.IsSet()
@@ -174,6 +175,7 @@ func (o *HyperflexProtectionInfoAllOf) HasVmLastSuccessfulProtectionInfo() bool 
 func (o *HyperflexProtectionInfoAllOf) SetVmLastSuccessfulProtectionInfo(v HyperflexSnapshotInfoBrief) {
 	o.VmLastSuccessfulProtectionInfo.Set(&v)
 }
+
 // SetVmLastSuccessfulProtectionInfoNil sets the value for VmLastSuccessfulProtectionInfo to be an explicit nil
 func (o *HyperflexProtectionInfoAllOf) SetVmLastSuccessfulProtectionInfoNil() {
 	o.VmLastSuccessfulProtectionInfo.Set(nil)
@@ -197,7 +199,7 @@ func (o *HyperflexProtectionInfoAllOf) GetVmSpaceUsage() HyperflexVmProtectionSp
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexProtectionInfoAllOf) GetVmSpaceUsageOk() (*HyperflexVmProtectionSpaceUsage, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VmSpaceUsage.Get(), o.VmSpaceUsage.IsSet()
@@ -216,6 +218,7 @@ func (o *HyperflexProtectionInfoAllOf) HasVmSpaceUsage() bool {
 func (o *HyperflexProtectionInfoAllOf) SetVmSpaceUsage(v HyperflexVmProtectionSpaceUsage) {
 	o.VmSpaceUsage.Set(&v)
 }
+
 // SetVmSpaceUsageNil sets the value for VmSpaceUsage to be an explicit nil
 func (o *HyperflexProtectionInfoAllOf) SetVmSpaceUsageNil() {
 	o.VmSpaceUsage.Set(nil)
@@ -307,5 +310,3 @@ func (v *NullableHyperflexProtectionInfoAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

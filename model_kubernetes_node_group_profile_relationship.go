@@ -19,19 +19,18 @@ import (
 // KubernetesNodeGroupProfileRelationship - A relationship to the 'kubernetes.NodeGroupProfile' resource, or the expanded 'kubernetes.NodeGroupProfile' resource, or the 'null' value.
 type KubernetesNodeGroupProfileRelationship struct {
 	KubernetesNodeGroupProfile *KubernetesNodeGroupProfile
-	MoMoRef *MoMoRef
+	MoMoRef                    *MoMoRef
 }
 
 // KubernetesNodeGroupProfileAsKubernetesNodeGroupProfileRelationship is a convenience function that returns KubernetesNodeGroupProfile wrapped in KubernetesNodeGroupProfileRelationship
 func KubernetesNodeGroupProfileAsKubernetesNodeGroupProfileRelationship(v *KubernetesNodeGroupProfile) KubernetesNodeGroupProfileRelationship {
-	return KubernetesNodeGroupProfileRelationship{ KubernetesNodeGroupProfile: v}
+	return KubernetesNodeGroupProfileRelationship{KubernetesNodeGroupProfile: v}
 }
 
 // MoMoRefAsKubernetesNodeGroupProfileRelationship is a convenience function that returns MoMoRef wrapped in KubernetesNodeGroupProfileRelationship
 func MoMoRefAsKubernetesNodeGroupProfileRelationship(v *MoMoRef) KubernetesNodeGroupProfileRelationship {
-	return KubernetesNodeGroupProfileRelationship{ MoMoRef: v}
+	return KubernetesNodeGroupProfileRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesNodeGroupProfileRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesNodeGroupProfileRelationship) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *KubernetesNodeGroupProfileRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesNodeGroupProfileRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesNodeGroupProfile != nil {
 		return obj.KubernetesNodeGroupProfile
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesNodeGroupProfileRelationship) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

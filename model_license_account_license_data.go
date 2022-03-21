@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // LicenseAccountLicenseData License information for an account.
@@ -78,16 +78,16 @@ type LicenseAccountLicenseData struct {
 	// Current sync status for the account.
 	SyncStatus *string `json:"SyncStatus,omitempty"`
 	// Name of the virtual account.
-	VirtualAccount *string `json:"VirtualAccount,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
-	CustomerOp *LicenseCustomerOpRelationship `json:"CustomerOp,omitempty"`
-	IksCustomerOp *LicenseIksCustomerOpRelationship `json:"IksCustomerOp,omitempty"`
+	VirtualAccount  *string                             `json:"VirtualAccount,omitempty"`
+	Account         *IamAccountRelationship             `json:"Account,omitempty"`
+	CustomerOp      *LicenseCustomerOpRelationship      `json:"CustomerOp,omitempty"`
+	IksCustomerOp   *LicenseIksCustomerOpRelationship   `json:"IksCustomerOp,omitempty"`
 	IksLicenseCount *LicenseIksLicenseCountRelationship `json:"IksLicenseCount,omitempty"`
-	IwoCustomerOp *LicenseIwoCustomerOpRelationship `json:"IwoCustomerOp,omitempty"`
+	IwoCustomerOp   *LicenseIwoCustomerOpRelationship   `json:"IwoCustomerOp,omitempty"`
 	IwoLicenseCount *LicenseIwoLicenseCountRelationship `json:"IwoLicenseCount,omitempty"`
 	// An array of relationships to licenseLicenseInfo resources.
-	Licenseinfos []LicenseLicenseInfoRelationship `json:"Licenseinfos,omitempty"`
-	SmartlicenseToken *LicenseSmartlicenseTokenRelationship `json:"SmartlicenseToken,omitempty"`
+	Licenseinfos         []LicenseLicenseInfoRelationship      `json:"Licenseinfos,omitempty"`
+	SmartlicenseToken    *LicenseSmartlicenseTokenRelationship `json:"SmartlicenseToken,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -133,7 +133,7 @@ func (o *LicenseAccountLicenseData) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *LicenseAccountLicenseData) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -157,7 +157,7 @@ func (o *LicenseAccountLicenseData) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *LicenseAccountLicenseData) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -1226,7 +1226,7 @@ func (o *LicenseAccountLicenseData) SetIwoLicenseCount(v LicenseIwoLicenseCountR
 
 // GetLicenseinfos returns the Licenseinfos field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LicenseAccountLicenseData) GetLicenseinfos() []LicenseLicenseInfoRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []LicenseLicenseInfoRelationship
 		return ret
 	}
@@ -1477,15 +1477,15 @@ func (o *LicenseAccountLicenseData) UnmarshalJSON(bytes []byte) (err error) {
 		// Current sync status for the account.
 		SyncStatus *string `json:"SyncStatus,omitempty"`
 		// Name of the virtual account.
-		VirtualAccount *string `json:"VirtualAccount,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
-		CustomerOp *LicenseCustomerOpRelationship `json:"CustomerOp,omitempty"`
-		IksCustomerOp *LicenseIksCustomerOpRelationship `json:"IksCustomerOp,omitempty"`
+		VirtualAccount  *string                             `json:"VirtualAccount,omitempty"`
+		Account         *IamAccountRelationship             `json:"Account,omitempty"`
+		CustomerOp      *LicenseCustomerOpRelationship      `json:"CustomerOp,omitempty"`
+		IksCustomerOp   *LicenseIksCustomerOpRelationship   `json:"IksCustomerOp,omitempty"`
 		IksLicenseCount *LicenseIksLicenseCountRelationship `json:"IksLicenseCount,omitempty"`
-		IwoCustomerOp *LicenseIwoCustomerOpRelationship `json:"IwoCustomerOp,omitempty"`
+		IwoCustomerOp   *LicenseIwoCustomerOpRelationship   `json:"IwoCustomerOp,omitempty"`
 		IwoLicenseCount *LicenseIwoLicenseCountRelationship `json:"IwoLicenseCount,omitempty"`
 		// An array of relationships to licenseLicenseInfo resources.
-		Licenseinfos []LicenseLicenseInfoRelationship `json:"Licenseinfos,omitempty"`
+		Licenseinfos      []LicenseLicenseInfoRelationship      `json:"Licenseinfos,omitempty"`
 		SmartlicenseToken *LicenseSmartlicenseTokenRelationship `json:"SmartlicenseToken,omitempty"`
 	}
 
@@ -1645,5 +1645,3 @@ func (v *NullableLicenseAccountLicenseData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

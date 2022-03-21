@@ -18,20 +18,19 @@ import (
 
 // VirtualizationIweDvUplinkRelationship - A relationship to the 'virtualization.IweDvUplink' resource, or the expanded 'virtualization.IweDvUplink' resource, or the 'null' value.
 type VirtualizationIweDvUplinkRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                   *MoMoRef
 	VirtualizationIweDvUplink *VirtualizationIweDvUplink
 }
 
 // MoMoRefAsVirtualizationIweDvUplinkRelationship is a convenience function that returns MoMoRef wrapped in VirtualizationIweDvUplinkRelationship
 func MoMoRefAsVirtualizationIweDvUplinkRelationship(v *MoMoRef) VirtualizationIweDvUplinkRelationship {
-	return VirtualizationIweDvUplinkRelationship{ MoMoRef: v}
+	return VirtualizationIweDvUplinkRelationship{MoMoRef: v}
 }
 
 // VirtualizationIweDvUplinkAsVirtualizationIweDvUplinkRelationship is a convenience function that returns VirtualizationIweDvUplink wrapped in VirtualizationIweDvUplinkRelationship
 func VirtualizationIweDvUplinkAsVirtualizationIweDvUplinkRelationship(v *VirtualizationIweDvUplink) VirtualizationIweDvUplinkRelationship {
-	return VirtualizationIweDvUplinkRelationship{ VirtualizationIweDvUplink: v}
+	return VirtualizationIweDvUplinkRelationship{VirtualizationIweDvUplink: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VirtualizationIweDvUplinkRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src VirtualizationIweDvUplinkRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *VirtualizationIweDvUplinkRelationship) GetActualInstance() (interface{}) {
+func (obj *VirtualizationIweDvUplinkRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableVirtualizationIweDvUplinkRelationship) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

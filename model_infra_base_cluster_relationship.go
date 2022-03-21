@@ -19,19 +19,18 @@ import (
 // InfraBaseClusterRelationship - A relationship to the 'infra.BaseCluster' resource, or the expanded 'infra.BaseCluster' resource, or the 'null' value.
 type InfraBaseClusterRelationship struct {
 	InfraBaseCluster *InfraBaseCluster
-	MoMoRef *MoMoRef
+	MoMoRef          *MoMoRef
 }
 
 // InfraBaseClusterAsInfraBaseClusterRelationship is a convenience function that returns InfraBaseCluster wrapped in InfraBaseClusterRelationship
 func InfraBaseClusterAsInfraBaseClusterRelationship(v *InfraBaseCluster) InfraBaseClusterRelationship {
-	return InfraBaseClusterRelationship{ InfraBaseCluster: v}
+	return InfraBaseClusterRelationship{InfraBaseCluster: v}
 }
 
 // MoMoRefAsInfraBaseClusterRelationship is a convenience function that returns MoMoRef wrapped in InfraBaseClusterRelationship
 func MoMoRefAsInfraBaseClusterRelationship(v *MoMoRef) InfraBaseClusterRelationship {
-	return InfraBaseClusterRelationship{ MoMoRef: v}
+	return InfraBaseClusterRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *InfraBaseClusterRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src InfraBaseClusterRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *InfraBaseClusterRelationship) GetActualInstance() (interface{}) {
+func (obj *InfraBaseClusterRelationship) GetActualInstance() interface{} {
 	if obj.InfraBaseCluster != nil {
 		return obj.InfraBaseCluster
 	}
@@ -137,5 +136,3 @@ func (v *NullableInfraBaseClusterRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

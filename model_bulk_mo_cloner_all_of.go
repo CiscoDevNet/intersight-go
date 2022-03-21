@@ -20,11 +20,11 @@ type BulkMoClonerAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Responses []BulkRestResult `json:"Responses,omitempty"`
-	Sources []MoBaseMo `json:"Sources,omitempty"`
-	Targets []MoBaseMo `json:"Targets,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ObjectType           string                                `json:"ObjectType"`
+	Responses            []BulkRestResult                      `json:"Responses,omitempty"`
+	Sources              []MoBaseMo                            `json:"Sources,omitempty"`
+	Targets              []MoBaseMo                            `json:"Targets,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *BulkMoClonerAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BulkMoClonerAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *BulkMoClonerAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BulkMoClonerAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -103,7 +103,7 @@ func (o *BulkMoClonerAllOf) SetObjectType(v string) {
 
 // GetResponses returns the Responses field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BulkMoClonerAllOf) GetResponses() []BulkRestResult {
-	if o == nil  {
+	if o == nil {
 		var ret []BulkRestResult
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *BulkMoClonerAllOf) SetResponses(v []BulkRestResult) {
 
 // GetSources returns the Sources field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BulkMoClonerAllOf) GetSources() []MoBaseMo {
-	if o == nil  {
+	if o == nil {
 		var ret []MoBaseMo
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *BulkMoClonerAllOf) SetSources(v []MoBaseMo) {
 
 // GetTargets returns the Targets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BulkMoClonerAllOf) GetTargets() []MoBaseMo {
-	if o == nil  {
+	if o == nil {
 		var ret []MoBaseMo
 		return ret
 	}
@@ -317,5 +317,3 @@ func (v *NullableBulkMoClonerAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -27,9 +27,9 @@ type IamUserPreference struct {
 	// UI preferences of the user.
 	Preference interface{} `json:"Preference,omitempty"`
 	// Unique id of the user used by the identity provider to store the user.
-	UserUniqueIdentifier *string `json:"UserUniqueIdentifier,omitempty"`
-	Idp *IamIdpRelationship `json:"Idp,omitempty"`
-	IdpReference *IamIdpReferenceRelationship `json:"IdpReference,omitempty"`
+	UserUniqueIdentifier *string                      `json:"UserUniqueIdentifier,omitempty"`
+	Idp                  *IamIdpRelationship          `json:"Idp,omitempty"`
+	IdpReference         *IamIdpReferenceRelationship `json:"IdpReference,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *IamUserPreference) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamUserPreference) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *IamUserPreference) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamUserPreference) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -108,7 +108,7 @@ func (o *IamUserPreference) SetObjectType(v string) {
 
 // GetPreference returns the Preference field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamUserPreference) GetPreference() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -280,9 +280,9 @@ func (o *IamUserPreference) UnmarshalJSON(bytes []byte) (err error) {
 		// UI preferences of the user.
 		Preference interface{} `json:"Preference,omitempty"`
 		// Unique id of the user used by the identity provider to store the user.
-		UserUniqueIdentifier *string `json:"UserUniqueIdentifier,omitempty"`
-		Idp *IamIdpRelationship `json:"Idp,omitempty"`
-		IdpReference *IamIdpReferenceRelationship `json:"IdpReference,omitempty"`
+		UserUniqueIdentifier *string                      `json:"UserUniqueIdentifier,omitempty"`
+		Idp                  *IamIdpRelationship          `json:"Idp,omitempty"`
+		IdpReference         *IamIdpReferenceRelationship `json:"IdpReference,omitempty"`
 	}
 
 	varIamUserPreferenceWithoutEmbeddedStruct := IamUserPreferenceWithoutEmbeddedStruct{}
@@ -379,5 +379,3 @@ func (v *NullableIamUserPreference) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

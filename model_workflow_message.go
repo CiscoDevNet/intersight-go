@@ -27,7 +27,7 @@ type WorkflowMessage struct {
 	// An i18n message that can be translated in multiple languages to support internationalization.
 	Message *string `json:"Message,omitempty"`
 	// The severity of the Task or Workflow message warning/error/info etc. * `Info` - The enum represents the log level to be used to convey info message. * `Warning` - The enum represents the log level to be used to convey warning message. * `Debug` - The enum represents the log level to be used to convey debug message. * `Error` - The enum represents the log level to be used to convey error message.
-	Severity *string `json:"Severity,omitempty"`
+	Severity             *string `json:"Severity,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *WorkflowMessage) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowMessage) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *WorkflowMessage) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowMessage) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -304,5 +304,3 @@ func (v *NullableWorkflowMessage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

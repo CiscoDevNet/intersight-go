@@ -18,8 +18,8 @@ import (
 // TelemetryDruidHavingQueryFilter Query filter HavingSpecs allow all Druid query filters to be used in the Having part of the query.
 type TelemetryDruidHavingQueryFilter struct {
 	// The having filter type.
-	Type string `json:"type"`
-	Filter TelemetryDruidFilter `json:"filter"`
+	Type                 string               `json:"type"`
+	Filter               TelemetryDruidFilter `json:"filter"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -57,7 +57,7 @@ func (o *TelemetryDruidHavingQueryFilter) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidHavingQueryFilter) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -81,7 +81,7 @@ func (o *TelemetryDruidHavingQueryFilter) GetFilter() TelemetryDruidFilter {
 // GetFilterOk returns a tuple with the Filter field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidHavingQueryFilter) GetFilterOk() (*TelemetryDruidFilter, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Filter, true
@@ -161,5 +161,3 @@ func (v *NullableTelemetryDruidHavingQueryFilter) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

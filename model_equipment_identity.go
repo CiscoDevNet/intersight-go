@@ -37,8 +37,8 @@ type EquipmentIdentity struct {
 	// The serial number of the equipment.
 	Serial *string `json:"Serial,omitempty"`
 	// The manufacturer of the equipment.
-	Vendor *string `json:"Vendor,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Vendor               *string                              `json:"Vendor,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *EquipmentIdentity) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentIdentity) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *EquipmentIdentity) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentIdentity) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -438,7 +438,7 @@ func (o *EquipmentIdentity) UnmarshalJSON(bytes []byte) (err error) {
 		// The serial number of the equipment.
 		Serial *string `json:"Serial,omitempty"`
 		// The manufacturer of the equipment.
-		Vendor *string `json:"Vendor,omitempty"`
+		Vendor           *string                              `json:"Vendor,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -544,5 +544,3 @@ func (v *NullableEquipmentIdentity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

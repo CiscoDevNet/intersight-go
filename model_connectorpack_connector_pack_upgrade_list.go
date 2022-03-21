@@ -23,7 +23,7 @@ type ConnectorpackConnectorPackUpgradeList struct {
 	// The total number of 'connectorpack.ConnectorPackUpgrade' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'connectorpack.ConnectorPackUpgrade' resources matching the request.
-	Results []ConnectorpackConnectorPackUpgrade `json:"Results,omitempty"`
+	Results              []ConnectorpackConnectorPackUpgrade `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *ConnectorpackConnectorPackUpgradeList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ConnectorpackConnectorPackUpgradeList) GetResults() []ConnectorpackConnectorPackUpgrade {
-	if o == nil  {
+	if o == nil {
 		var ret []ConnectorpackConnectorPackUpgrade
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableConnectorpackConnectorPackUpgradeList) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

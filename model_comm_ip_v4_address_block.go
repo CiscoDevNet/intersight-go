@@ -27,7 +27,7 @@ type CommIpV4AddressBlock struct {
 	// The end address of the IPv4 block.
 	EndAddress *string `json:"EndAddress,omitempty"`
 	// The start address of the IPv4 block.
-	StartAddress *string `json:"StartAddress,omitempty"`
+	StartAddress         *string `json:"StartAddress,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *CommIpV4AddressBlock) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CommIpV4AddressBlock) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *CommIpV4AddressBlock) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CommIpV4AddressBlock) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -300,5 +300,3 @@ func (v *NullableCommIpV4AddressBlock) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

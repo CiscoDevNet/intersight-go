@@ -37,11 +37,11 @@ type StorageFlexUtilVirtualDrive struct {
 	// Size of the Flex Util virtual drive.
 	Size *string `json:"Size,omitempty"`
 	// Virtual drive on the Flex Util controller.
-	VirtualDrive *string `json:"VirtualDrive,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	VirtualDrive              *string                                `json:"VirtualDrive,omitempty"`
+	InventoryDeviceInfo       *InventoryDeviceInfoRelationship       `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice          *AssetDeviceRegistrationRelationship   `json:"RegisteredDevice,omitempty"`
 	StorageFlexUtilController *StorageFlexUtilControllerRelationship `json:"StorageFlexUtilController,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties      map[string]interface{}
 }
 
 type _StorageFlexUtilVirtualDrive StorageFlexUtilVirtualDrive
@@ -82,7 +82,7 @@ func (o *StorageFlexUtilVirtualDrive) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageFlexUtilVirtualDrive) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *StorageFlexUtilVirtualDrive) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageFlexUtilVirtualDrive) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -510,9 +510,9 @@ func (o *StorageFlexUtilVirtualDrive) UnmarshalJSON(bytes []byte) (err error) {
 		// Size of the Flex Util virtual drive.
 		Size *string `json:"Size,omitempty"`
 		// Virtual drive on the Flex Util controller.
-		VirtualDrive *string `json:"VirtualDrive,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		VirtualDrive              *string                                `json:"VirtualDrive,omitempty"`
+		InventoryDeviceInfo       *InventoryDeviceInfoRelationship       `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice          *AssetDeviceRegistrationRelationship   `json:"RegisteredDevice,omitempty"`
 		StorageFlexUtilController *StorageFlexUtilControllerRelationship `json:"StorageFlexUtilController,omitempty"`
 	}
 
@@ -622,5 +622,3 @@ func (v *NullableStorageFlexUtilVirtualDrive) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

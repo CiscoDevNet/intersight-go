@@ -35,16 +35,16 @@ type HyperflexHypervisorHost struct {
 	// The UUID of the controller VM which belongs to this host.
 	ControllerVmUuid *string `json:"ControllerVmUuid,omitempty"`
 	// The version of HyperFlex software running on the controller VM.
-	ControllerVmVersion *string `json:"ControllerVmVersion,omitempty"`
-	DataIp NullableNetworkHyperFlexNetworkAddress `json:"DataIp,omitempty"`
+	ControllerVmVersion *string                                `json:"ControllerVmVersion,omitempty"`
+	DataIp              NullableNetworkHyperFlexNetworkAddress `json:"DataIp,omitempty"`
 	// The status of the HyperFlex host. * `UNKNOWN` - Current status of the HyperFlex host is unknown. * `ONLINE` - The HyperFlex host is online. * `OFFLINE` - The HyperFlex host is offline. * `INMAINTENANCE` - The HyperFlex host is in maintenance mode. * `DEGRADED` - Current status of the HyperFlex virtual machine is degraded.
 	HostStatus *string `json:"HostStatus,omitempty"`
 	// The hypervisor type of the host.
-	Hypervisor *string `json:"Hypervisor,omitempty"`
-	Ip NullableNetworkHyperFlexNetworkAddress `json:"Ip,omitempty"`
+	Hypervisor *string                                `json:"Hypervisor,omitempty"`
+	Ip         NullableNetworkHyperFlexNetworkAddress `json:"Ip,omitempty"`
 	// Flag indicating whether the HyperFlex host is in lockdown mode.
-	Lockdown *bool `json:"Lockdown,omitempty"`
-	MgmtIp NullableNetworkHyperFlexNetworkAddress `json:"MgmtIp,omitempty"`
+	Lockdown *bool                                  `json:"Lockdown,omitempty"`
+	MgmtIp   NullableNetworkHyperFlexNetworkAddress `json:"MgmtIp,omitempty"`
 	// The operation system version of the controller VM.
 	OsVersion *string `json:"OsVersion,omitempty"`
 	// The role of the HyperFlex host. * `UNKNOWN` - The role of the HyperFlex host is unknown. * `STORAGE` - The HyperFlex host's role is storage. * `COMPUTE` - The HyperFlex host's role is compute.
@@ -52,9 +52,9 @@ type HyperflexHypervisorHost struct {
 	// The controller virtual machine template version.
 	TemplateVersion *string `json:"TemplateVersion,omitempty"`
 	// Configured number of virtual CPUs for Controller virtual machine.
-	VirtualCpus *int32 `json:"VirtualCpus,omitempty"`
-	Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
-	Node *HyperflexNodeRelationship `json:"Node,omitempty"`
+	VirtualCpus          *int32                        `json:"VirtualCpus,omitempty"`
+	Cluster              *HyperflexClusterRelationship `json:"Cluster,omitempty"`
+	Node                 *HyperflexNodeRelationship    `json:"Node,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -100,7 +100,7 @@ func (o *HyperflexHypervisorHost) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHypervisorHost) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -124,7 +124,7 @@ func (o *HyperflexHypervisorHost) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHypervisorHost) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -340,7 +340,7 @@ func (o *HyperflexHypervisorHost) GetDataIp() NetworkHyperFlexNetworkAddress {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexHypervisorHost) GetDataIpOk() (*NetworkHyperFlexNetworkAddress, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DataIp.Get(), o.DataIp.IsSet()
@@ -359,6 +359,7 @@ func (o *HyperflexHypervisorHost) HasDataIp() bool {
 func (o *HyperflexHypervisorHost) SetDataIp(v NetworkHyperFlexNetworkAddress) {
 	o.DataIp.Set(&v)
 }
+
 // SetDataIpNil sets the value for DataIp to be an explicit nil
 func (o *HyperflexHypervisorHost) SetDataIpNil() {
 	o.DataIp.Set(nil)
@@ -446,7 +447,7 @@ func (o *HyperflexHypervisorHost) GetIp() NetworkHyperFlexNetworkAddress {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexHypervisorHost) GetIpOk() (*NetworkHyperFlexNetworkAddress, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Ip.Get(), o.Ip.IsSet()
@@ -465,6 +466,7 @@ func (o *HyperflexHypervisorHost) HasIp() bool {
 func (o *HyperflexHypervisorHost) SetIp(v NetworkHyperFlexNetworkAddress) {
 	o.Ip.Set(&v)
 }
+
 // SetIpNil sets the value for Ip to be an explicit nil
 func (o *HyperflexHypervisorHost) SetIpNil() {
 	o.Ip.Set(nil)
@@ -520,7 +522,7 @@ func (o *HyperflexHypervisorHost) GetMgmtIp() NetworkHyperFlexNetworkAddress {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexHypervisorHost) GetMgmtIpOk() (*NetworkHyperFlexNetworkAddress, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MgmtIp.Get(), o.MgmtIp.IsSet()
@@ -539,6 +541,7 @@ func (o *HyperflexHypervisorHost) HasMgmtIp() bool {
 func (o *HyperflexHypervisorHost) SetMgmtIp(v NetworkHyperFlexNetworkAddress) {
 	o.MgmtIp.Set(&v)
 }
+
 // SetMgmtIpNil sets the value for MgmtIp to be an explicit nil
 func (o *HyperflexHypervisorHost) SetMgmtIpNil() {
 	o.MgmtIp.Set(nil)
@@ -836,16 +839,16 @@ func (o *HyperflexHypervisorHost) UnmarshalJSON(bytes []byte) (err error) {
 		// The UUID of the controller VM which belongs to this host.
 		ControllerVmUuid *string `json:"ControllerVmUuid,omitempty"`
 		// The version of HyperFlex software running on the controller VM.
-		ControllerVmVersion *string `json:"ControllerVmVersion,omitempty"`
-		DataIp NullableNetworkHyperFlexNetworkAddress `json:"DataIp,omitempty"`
+		ControllerVmVersion *string                                `json:"ControllerVmVersion,omitempty"`
+		DataIp              NullableNetworkHyperFlexNetworkAddress `json:"DataIp,omitempty"`
 		// The status of the HyperFlex host. * `UNKNOWN` - Current status of the HyperFlex host is unknown. * `ONLINE` - The HyperFlex host is online. * `OFFLINE` - The HyperFlex host is offline. * `INMAINTENANCE` - The HyperFlex host is in maintenance mode. * `DEGRADED` - Current status of the HyperFlex virtual machine is degraded.
 		HostStatus *string `json:"HostStatus,omitempty"`
 		// The hypervisor type of the host.
-		Hypervisor *string `json:"Hypervisor,omitempty"`
-		Ip NullableNetworkHyperFlexNetworkAddress `json:"Ip,omitempty"`
+		Hypervisor *string                                `json:"Hypervisor,omitempty"`
+		Ip         NullableNetworkHyperFlexNetworkAddress `json:"Ip,omitempty"`
 		// Flag indicating whether the HyperFlex host is in lockdown mode.
-		Lockdown *bool `json:"Lockdown,omitempty"`
-		MgmtIp NullableNetworkHyperFlexNetworkAddress `json:"MgmtIp,omitempty"`
+		Lockdown *bool                                  `json:"Lockdown,omitempty"`
+		MgmtIp   NullableNetworkHyperFlexNetworkAddress `json:"MgmtIp,omitempty"`
 		// The operation system version of the controller VM.
 		OsVersion *string `json:"OsVersion,omitempty"`
 		// The role of the HyperFlex host. * `UNKNOWN` - The role of the HyperFlex host is unknown. * `STORAGE` - The HyperFlex host's role is storage. * `COMPUTE` - The HyperFlex host's role is compute.
@@ -853,9 +856,9 @@ func (o *HyperflexHypervisorHost) UnmarshalJSON(bytes []byte) (err error) {
 		// The controller virtual machine template version.
 		TemplateVersion *string `json:"TemplateVersion,omitempty"`
 		// Configured number of virtual CPUs for Controller virtual machine.
-		VirtualCpus *int32 `json:"VirtualCpus,omitempty"`
-		Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
-		Node *HyperflexNodeRelationship `json:"Node,omitempty"`
+		VirtualCpus *int32                        `json:"VirtualCpus,omitempty"`
+		Cluster     *HyperflexClusterRelationship `json:"Cluster,omitempty"`
+		Node        *HyperflexNodeRelationship    `json:"Node,omitempty"`
 	}
 
 	varHyperflexHypervisorHostWithoutEmbeddedStruct := HyperflexHypervisorHostWithoutEmbeddedStruct{}
@@ -980,5 +983,3 @@ func (v *NullableHyperflexHypervisorHost) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

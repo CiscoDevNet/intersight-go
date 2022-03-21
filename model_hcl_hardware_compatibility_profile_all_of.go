@@ -34,8 +34,8 @@ type HclHardwareCompatibilityProfileAllOf struct {
 	// Personality indicating the personality with the which the sever is used in a Hyperflex environment.
 	Personality *string `json:"Personality,omitempty"`
 	// Model of the processor present in the server.
-	ProcessorModel *string `json:"ProcessorModel,omitempty"`
-	Products []HclProduct `json:"Products,omitempty"`
+	ProcessorModel *string      `json:"ProcessorModel,omitempty"`
+	Products       []HclProduct `json:"Products,omitempty"`
 	// Model of the server as returned by UCSM/CIMC XML API.
 	ServerModel *string `json:"ServerModel,omitempty"`
 	// Revision of the server model.
@@ -43,7 +43,7 @@ type HclHardwareCompatibilityProfileAllOf struct {
 	// Version of the UCS software.
 	UcsVersion *string `json:"UcsVersion,omitempty"`
 	// Type of the UCS version indicating whether it is a UCSM release vesion or a IMC release. * `UCSM` - The server is managed by UCS Manager. * `IMC` - The server is standalone managed by CIMC.
-	VersionType *string `json:"VersionType,omitempty"`
+	VersionType          *string `json:"VersionType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -89,7 +89,7 @@ func (o *HclHardwareCompatibilityProfileAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HclHardwareCompatibilityProfileAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -113,7 +113,7 @@ func (o *HclHardwareCompatibilityProfileAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HclHardwareCompatibilityProfileAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -350,7 +350,7 @@ func (o *HclHardwareCompatibilityProfileAllOf) SetProcessorModel(v string) {
 
 // GetProducts returns the Products field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HclHardwareCompatibilityProfileAllOf) GetProducts() []HclProduct {
-	if o == nil  {
+	if o == nil {
 		var ret []HclProduct
 		return ret
 	}
@@ -626,5 +626,3 @@ func (v *NullableHclHardwareCompatibilityProfileAllOf) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

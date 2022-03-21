@@ -31,7 +31,7 @@ type CloudNetworkInstanceAttachmentAllOf struct {
 	// The ID of the instance to which the network interface is attached.
 	InstanceId *string `json:"InstanceId,omitempty"`
 	// The status of the attachment. It is one of attaching, attached, detaching, or detached. * `UnAttached` - Network interface is not attached to a virtual machine. * `Attached` - Network interface is attached to a virtual machine. * `Attaching` - Network interface is being attached to a virtual machine. * `Detaching` - Network interface is being attached to a virtual machine. * `Detached` - Network interface is detached from a virtual machine.
-	State *string `json:"State,omitempty"`
+	State                *string `json:"State,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *CloudNetworkInstanceAttachmentAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudNetworkInstanceAttachmentAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *CloudNetworkInstanceAttachmentAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudNetworkInstanceAttachmentAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -357,5 +357,3 @@ func (v *NullableCloudNetworkInstanceAttachmentAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

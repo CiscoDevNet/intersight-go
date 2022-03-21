@@ -39,7 +39,7 @@ type SnmpUser struct {
 	// Privacy protocol for the user. * `NA` - Privacy protocol is not applicable. * `DES` - DES privacy protocol is used for SNMP user. * `AES` - AES privacy protocol is used for SNMP user.
 	PrivacyType *string `json:"PrivacyType,omitempty"`
 	// Security mechanism used for communication between agent and manager. * `AuthPriv` - The user requires both an authorization password and a privacy password. * `NoAuthNoPriv` - The user does not require an authorization or privacy password. * `AuthNoPriv` - The user requires an authorization password but not a privacy password.
-	SecurityLevel *string `json:"SecurityLevel,omitempty"`
+	SecurityLevel        *string `json:"SecurityLevel,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -93,7 +93,7 @@ func (o *SnmpUser) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SnmpUser) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -117,7 +117,7 @@ func (o *SnmpUser) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SnmpUser) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -558,5 +558,3 @@ func (v *NullableSnmpUser) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

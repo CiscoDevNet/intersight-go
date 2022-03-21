@@ -19,19 +19,18 @@ import (
 // IaasMostRunTasksRelationship - A relationship to the 'iaas.MostRunTasks' resource, or the expanded 'iaas.MostRunTasks' resource, or the 'null' value.
 type IaasMostRunTasksRelationship struct {
 	IaasMostRunTasks *IaasMostRunTasks
-	MoMoRef *MoMoRef
+	MoMoRef          *MoMoRef
 }
 
 // IaasMostRunTasksAsIaasMostRunTasksRelationship is a convenience function that returns IaasMostRunTasks wrapped in IaasMostRunTasksRelationship
 func IaasMostRunTasksAsIaasMostRunTasksRelationship(v *IaasMostRunTasks) IaasMostRunTasksRelationship {
-	return IaasMostRunTasksRelationship{ IaasMostRunTasks: v}
+	return IaasMostRunTasksRelationship{IaasMostRunTasks: v}
 }
 
 // MoMoRefAsIaasMostRunTasksRelationship is a convenience function that returns MoMoRef wrapped in IaasMostRunTasksRelationship
 func MoMoRefAsIaasMostRunTasksRelationship(v *MoMoRef) IaasMostRunTasksRelationship {
-	return IaasMostRunTasksRelationship{ MoMoRef: v}
+	return IaasMostRunTasksRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IaasMostRunTasksRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IaasMostRunTasksRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IaasMostRunTasksRelationship) GetActualInstance() (interface{}) {
+func (obj *IaasMostRunTasksRelationship) GetActualInstance() interface{} {
 	if obj.IaasMostRunTasks != nil {
 		return obj.IaasMostRunTasks
 	}
@@ -137,5 +136,3 @@ func (v *NullableIaasMostRunTasksRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

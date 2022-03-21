@@ -40,15 +40,15 @@ type HyperflexSummaryAllOf struct {
 	// The amount of time the HyperFlex cluster has been offline.
 	Downtime *string `json:"Downtime,omitempty"`
 	// The amount of storage capacity currently not in use, represented in bytes.
-	FreeCapacity *int64 `json:"FreeCapacity,omitempty"`
-	HealingInfo NullableHyperflexStPlatformClusterHealingInfo `json:"HealingInfo,omitempty"`
+	FreeCapacity *int64                                        `json:"FreeCapacity,omitempty"`
+	HealingInfo  NullableHyperflexStPlatformClusterHealingInfo `json:"HealingInfo,omitempty"`
 	// The name of the HyperFlex cluster.
 	Name *string `json:"Name,omitempty"`
 	// The details about the resiliency health of the cluster. Includes information about the cluster healing status and the storage cluster health.
 	ResiliencyDetails interface{} `json:"ResiliencyDetails,omitempty"`
 	// The number of elements in the resiliency details property.
-	ResiliencyDetailsSize *int64 `json:"ResiliencyDetailsSize,omitempty"`
-	ResiliencyInfo NullableHyperflexStPlatformClusterResiliencyInfo `json:"ResiliencyInfo,omitempty"`
+	ResiliencyDetailsSize *int64                                           `json:"ResiliencyDetailsSize,omitempty"`
+	ResiliencyInfo        NullableHyperflexStPlatformClusterResiliencyInfo `json:"ResiliencyInfo,omitempty"`
 	// The space utilization status of the HyperFlex cluster.
 	SpaceStatus *string `json:"SpaceStatus,omitempty"`
 	// The operational state of the HyperFlex cluster.
@@ -60,7 +60,7 @@ type HyperflexSummaryAllOf struct {
 	// The amount of time the HyperFlex cluster has been running since last startup.
 	Uptime *string `json:"Uptime,omitempty"`
 	// The amount of storage capacity in use, represented in bytes.
-	UsedCapacity *int64 `json:"UsedCapacity,omitempty"`
+	UsedCapacity         *int64 `json:"UsedCapacity,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -102,7 +102,7 @@ func (o *HyperflexSummaryAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexSummaryAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -126,7 +126,7 @@ func (o *HyperflexSummaryAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexSummaryAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -470,7 +470,7 @@ func (o *HyperflexSummaryAllOf) GetHealingInfo() HyperflexStPlatformClusterHeali
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexSummaryAllOf) GetHealingInfoOk() (*HyperflexStPlatformClusterHealingInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HealingInfo.Get(), o.HealingInfo.IsSet()
@@ -489,6 +489,7 @@ func (o *HyperflexSummaryAllOf) HasHealingInfo() bool {
 func (o *HyperflexSummaryAllOf) SetHealingInfo(v HyperflexStPlatformClusterHealingInfo) {
 	o.HealingInfo.Set(&v)
 }
+
 // SetHealingInfoNil sets the value for HealingInfo to be an explicit nil
 func (o *HyperflexSummaryAllOf) SetHealingInfoNil() {
 	o.HealingInfo.Set(nil)
@@ -533,7 +534,7 @@ func (o *HyperflexSummaryAllOf) SetName(v string) {
 
 // GetResiliencyDetails returns the ResiliencyDetails field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexSummaryAllOf) GetResiliencyDetails() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -609,7 +610,7 @@ func (o *HyperflexSummaryAllOf) GetResiliencyInfo() HyperflexStPlatformClusterRe
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexSummaryAllOf) GetResiliencyInfoOk() (*HyperflexStPlatformClusterResiliencyInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResiliencyInfo.Get(), o.ResiliencyInfo.IsSet()
@@ -628,6 +629,7 @@ func (o *HyperflexSummaryAllOf) HasResiliencyInfo() bool {
 func (o *HyperflexSummaryAllOf) SetResiliencyInfo(v HyperflexStPlatformClusterResiliencyInfo) {
 	o.ResiliencyInfo.Set(&v)
 }
+
 // SetResiliencyInfoNil sets the value for ResiliencyInfo to be an explicit nil
 func (o *HyperflexSummaryAllOf) SetResiliencyInfoNil() {
 	o.ResiliencyInfo.Set(nil)
@@ -983,5 +985,3 @@ func (v *NullableHyperflexSummaryAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

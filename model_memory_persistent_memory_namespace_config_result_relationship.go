@@ -19,19 +19,18 @@ import (
 // MemoryPersistentMemoryNamespaceConfigResultRelationship - A relationship to the 'memory.PersistentMemoryNamespaceConfigResult' resource, or the expanded 'memory.PersistentMemoryNamespaceConfigResult' resource, or the 'null' value.
 type MemoryPersistentMemoryNamespaceConfigResultRelationship struct {
 	MemoryPersistentMemoryNamespaceConfigResult *MemoryPersistentMemoryNamespaceConfigResult
-	MoMoRef *MoMoRef
+	MoMoRef                                     *MoMoRef
 }
 
 // MemoryPersistentMemoryNamespaceConfigResultAsMemoryPersistentMemoryNamespaceConfigResultRelationship is a convenience function that returns MemoryPersistentMemoryNamespaceConfigResult wrapped in MemoryPersistentMemoryNamespaceConfigResultRelationship
 func MemoryPersistentMemoryNamespaceConfigResultAsMemoryPersistentMemoryNamespaceConfigResultRelationship(v *MemoryPersistentMemoryNamespaceConfigResult) MemoryPersistentMemoryNamespaceConfigResultRelationship {
-	return MemoryPersistentMemoryNamespaceConfigResultRelationship{ MemoryPersistentMemoryNamespaceConfigResult: v}
+	return MemoryPersistentMemoryNamespaceConfigResultRelationship{MemoryPersistentMemoryNamespaceConfigResult: v}
 }
 
 // MoMoRefAsMemoryPersistentMemoryNamespaceConfigResultRelationship is a convenience function that returns MoMoRef wrapped in MemoryPersistentMemoryNamespaceConfigResultRelationship
 func MoMoRefAsMemoryPersistentMemoryNamespaceConfigResultRelationship(v *MoMoRef) MemoryPersistentMemoryNamespaceConfigResultRelationship {
-	return MemoryPersistentMemoryNamespaceConfigResultRelationship{ MoMoRef: v}
+	return MemoryPersistentMemoryNamespaceConfigResultRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MemoryPersistentMemoryNamespaceConfigResultRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src MemoryPersistentMemoryNamespaceConfigResultRelationship) MarshalJSON()
 }
 
 // Get the actual instance
-func (obj *MemoryPersistentMemoryNamespaceConfigResultRelationship) GetActualInstance() (interface{}) {
+func (obj *MemoryPersistentMemoryNamespaceConfigResultRelationship) GetActualInstance() interface{} {
 	if obj.MemoryPersistentMemoryNamespaceConfigResult != nil {
 		return obj.MemoryPersistentMemoryNamespaceConfigResult
 	}
@@ -137,5 +136,3 @@ func (v *NullableMemoryPersistentMemoryNamespaceConfigResultRelationship) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

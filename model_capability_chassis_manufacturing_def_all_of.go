@@ -34,7 +34,7 @@ type CapabilityChassisManufacturingDefAllOf struct {
 	// SKU information for Chassis enclosure.
 	Sku *string `json:"Sku,omitempty"`
 	// VID information for Chassis enclosure.
-	Vid *string `json:"Vid,omitempty"`
+	Vid                  *string `json:"Vid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *CapabilityChassisManufacturingDefAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityChassisManufacturingDefAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *CapabilityChassisManufacturingDefAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityChassisManufacturingDefAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -432,5 +432,3 @@ func (v *NullableCapabilityChassisManufacturingDefAllOf) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

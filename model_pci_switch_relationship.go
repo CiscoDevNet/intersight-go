@@ -18,20 +18,19 @@ import (
 
 // PciSwitchRelationship - A relationship to the 'pci.Switch' resource, or the expanded 'pci.Switch' resource, or the 'null' value.
 type PciSwitchRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef   *MoMoRef
 	PciSwitch *PciSwitch
 }
 
 // MoMoRefAsPciSwitchRelationship is a convenience function that returns MoMoRef wrapped in PciSwitchRelationship
 func MoMoRefAsPciSwitchRelationship(v *MoMoRef) PciSwitchRelationship {
-	return PciSwitchRelationship{ MoMoRef: v}
+	return PciSwitchRelationship{MoMoRef: v}
 }
 
 // PciSwitchAsPciSwitchRelationship is a convenience function that returns PciSwitch wrapped in PciSwitchRelationship
 func PciSwitchAsPciSwitchRelationship(v *PciSwitch) PciSwitchRelationship {
-	return PciSwitchRelationship{ PciSwitch: v}
+	return PciSwitchRelationship{PciSwitch: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *PciSwitchRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src PciSwitchRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *PciSwitchRelationship) GetActualInstance() (interface{}) {
+func (obj *PciSwitchRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullablePciSwitchRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

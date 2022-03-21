@@ -23,11 +23,11 @@ type HyperflexProtectionInfo struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	VmCurrentProtectionInfo NullableHyperflexSnapshotInfoBrief `json:"VmCurrentProtectionInfo,omitempty"`
-	VmLastSuccessfulProtectionInfo NullableHyperflexSnapshotInfoBrief `json:"VmLastSuccessfulProtectionInfo,omitempty"`
-	VmSpaceUsage NullableHyperflexVmProtectionSpaceUsage `json:"VmSpaceUsage,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ObjectType                     string                                  `json:"ObjectType"`
+	VmCurrentProtectionInfo        NullableHyperflexSnapshotInfoBrief      `json:"VmCurrentProtectionInfo,omitempty"`
+	VmLastSuccessfulProtectionInfo NullableHyperflexSnapshotInfoBrief      `json:"VmLastSuccessfulProtectionInfo,omitempty"`
+	VmSpaceUsage                   NullableHyperflexVmProtectionSpaceUsage `json:"VmSpaceUsage,omitempty"`
+	AdditionalProperties           map[string]interface{}
 }
 
 type _HyperflexProtectionInfo HyperflexProtectionInfo
@@ -68,7 +68,7 @@ func (o *HyperflexProtectionInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexProtectionInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *HyperflexProtectionInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexProtectionInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -116,7 +116,7 @@ func (o *HyperflexProtectionInfo) GetVmCurrentProtectionInfo() HyperflexSnapshot
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexProtectionInfo) GetVmCurrentProtectionInfoOk() (*HyperflexSnapshotInfoBrief, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VmCurrentProtectionInfo.Get(), o.VmCurrentProtectionInfo.IsSet()
@@ -135,6 +135,7 @@ func (o *HyperflexProtectionInfo) HasVmCurrentProtectionInfo() bool {
 func (o *HyperflexProtectionInfo) SetVmCurrentProtectionInfo(v HyperflexSnapshotInfoBrief) {
 	o.VmCurrentProtectionInfo.Set(&v)
 }
+
 // SetVmCurrentProtectionInfoNil sets the value for VmCurrentProtectionInfo to be an explicit nil
 func (o *HyperflexProtectionInfo) SetVmCurrentProtectionInfoNil() {
 	o.VmCurrentProtectionInfo.Set(nil)
@@ -158,7 +159,7 @@ func (o *HyperflexProtectionInfo) GetVmLastSuccessfulProtectionInfo() HyperflexS
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexProtectionInfo) GetVmLastSuccessfulProtectionInfoOk() (*HyperflexSnapshotInfoBrief, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VmLastSuccessfulProtectionInfo.Get(), o.VmLastSuccessfulProtectionInfo.IsSet()
@@ -177,6 +178,7 @@ func (o *HyperflexProtectionInfo) HasVmLastSuccessfulProtectionInfo() bool {
 func (o *HyperflexProtectionInfo) SetVmLastSuccessfulProtectionInfo(v HyperflexSnapshotInfoBrief) {
 	o.VmLastSuccessfulProtectionInfo.Set(&v)
 }
+
 // SetVmLastSuccessfulProtectionInfoNil sets the value for VmLastSuccessfulProtectionInfo to be an explicit nil
 func (o *HyperflexProtectionInfo) SetVmLastSuccessfulProtectionInfoNil() {
 	o.VmLastSuccessfulProtectionInfo.Set(nil)
@@ -200,7 +202,7 @@ func (o *HyperflexProtectionInfo) GetVmSpaceUsage() HyperflexVmProtectionSpaceUs
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexProtectionInfo) GetVmSpaceUsageOk() (*HyperflexVmProtectionSpaceUsage, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VmSpaceUsage.Get(), o.VmSpaceUsage.IsSet()
@@ -219,6 +221,7 @@ func (o *HyperflexProtectionInfo) HasVmSpaceUsage() bool {
 func (o *HyperflexProtectionInfo) SetVmSpaceUsage(v HyperflexVmProtectionSpaceUsage) {
 	o.VmSpaceUsage.Set(&v)
 }
+
 // SetVmSpaceUsageNil sets the value for VmSpaceUsage to be an explicit nil
 func (o *HyperflexProtectionInfo) SetVmSpaceUsageNil() {
 	o.VmSpaceUsage.Set(nil)
@@ -267,10 +270,10 @@ func (o *HyperflexProtectionInfo) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		VmCurrentProtectionInfo NullableHyperflexSnapshotInfoBrief `json:"VmCurrentProtectionInfo,omitempty"`
-		VmLastSuccessfulProtectionInfo NullableHyperflexSnapshotInfoBrief `json:"VmLastSuccessfulProtectionInfo,omitempty"`
-		VmSpaceUsage NullableHyperflexVmProtectionSpaceUsage `json:"VmSpaceUsage,omitempty"`
+		ObjectType                     string                                  `json:"ObjectType"`
+		VmCurrentProtectionInfo        NullableHyperflexSnapshotInfoBrief      `json:"VmCurrentProtectionInfo,omitempty"`
+		VmLastSuccessfulProtectionInfo NullableHyperflexSnapshotInfoBrief      `json:"VmLastSuccessfulProtectionInfo,omitempty"`
+		VmSpaceUsage                   NullableHyperflexVmProtectionSpaceUsage `json:"VmSpaceUsage,omitempty"`
 	}
 
 	varHyperflexProtectionInfoWithoutEmbeddedStruct := HyperflexProtectionInfoWithoutEmbeddedStruct{}
@@ -365,5 +368,3 @@ func (v *NullableHyperflexProtectionInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

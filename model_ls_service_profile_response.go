@@ -20,30 +20,29 @@ import (
 type LsServiceProfileResponse struct {
 	LsServiceProfileList *LsServiceProfileList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // LsServiceProfileListAsLsServiceProfileResponse is a convenience function that returns LsServiceProfileList wrapped in LsServiceProfileResponse
 func LsServiceProfileListAsLsServiceProfileResponse(v *LsServiceProfileList) LsServiceProfileResponse {
-	return LsServiceProfileResponse{ LsServiceProfileList: v}
+	return LsServiceProfileResponse{LsServiceProfileList: v}
 }
 
 // MoAggregateTransformAsLsServiceProfileResponse is a convenience function that returns MoAggregateTransform wrapped in LsServiceProfileResponse
 func MoAggregateTransformAsLsServiceProfileResponse(v *MoAggregateTransform) LsServiceProfileResponse {
-	return LsServiceProfileResponse{ MoAggregateTransform: v}
+	return LsServiceProfileResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsLsServiceProfileResponse is a convenience function that returns MoDocumentCount wrapped in LsServiceProfileResponse
 func MoDocumentCountAsLsServiceProfileResponse(v *MoDocumentCount) LsServiceProfileResponse {
-	return LsServiceProfileResponse{ MoDocumentCount: v}
+	return LsServiceProfileResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsLsServiceProfileResponse is a convenience function that returns MoTagSummary wrapped in LsServiceProfileResponse
 func MoTagSummaryAsLsServiceProfileResponse(v *MoTagSummary) LsServiceProfileResponse {
-	return LsServiceProfileResponse{ MoTagSummary: v}
+	return LsServiceProfileResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *LsServiceProfileResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src LsServiceProfileResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *LsServiceProfileResponse) GetActualInstance() (interface{}) {
+func (obj *LsServiceProfileResponse) GetActualInstance() interface{} {
 	if obj.LsServiceProfileList != nil {
 		return obj.LsServiceProfileList
 	}
@@ -184,5 +183,3 @@ func (v *NullableLsServiceProfileResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,31 +19,30 @@ import (
 // VmrcConsoleResponse - The response body of a HTTP GET request for the 'vmrc.Console' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'vmrc.Console' resources.
 type VmrcConsoleResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
-	VmrcConsoleList *VmrcConsoleList
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
+	VmrcConsoleList      *VmrcConsoleList
 }
 
 // MoAggregateTransformAsVmrcConsoleResponse is a convenience function that returns MoAggregateTransform wrapped in VmrcConsoleResponse
 func MoAggregateTransformAsVmrcConsoleResponse(v *MoAggregateTransform) VmrcConsoleResponse {
-	return VmrcConsoleResponse{ MoAggregateTransform: v}
+	return VmrcConsoleResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsVmrcConsoleResponse is a convenience function that returns MoDocumentCount wrapped in VmrcConsoleResponse
 func MoDocumentCountAsVmrcConsoleResponse(v *MoDocumentCount) VmrcConsoleResponse {
-	return VmrcConsoleResponse{ MoDocumentCount: v}
+	return VmrcConsoleResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsVmrcConsoleResponse is a convenience function that returns MoTagSummary wrapped in VmrcConsoleResponse
 func MoTagSummaryAsVmrcConsoleResponse(v *MoTagSummary) VmrcConsoleResponse {
-	return VmrcConsoleResponse{ MoTagSummary: v}
+	return VmrcConsoleResponse{MoTagSummary: v}
 }
 
 // VmrcConsoleListAsVmrcConsoleResponse is a convenience function that returns VmrcConsoleList wrapped in VmrcConsoleResponse
 func VmrcConsoleListAsVmrcConsoleResponse(v *VmrcConsoleList) VmrcConsoleResponse {
-	return VmrcConsoleResponse{ VmrcConsoleList: v}
+	return VmrcConsoleResponse{VmrcConsoleList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VmrcConsoleResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src VmrcConsoleResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *VmrcConsoleResponse) GetActualInstance() (interface{}) {
+func (obj *VmrcConsoleResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableVmrcConsoleResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

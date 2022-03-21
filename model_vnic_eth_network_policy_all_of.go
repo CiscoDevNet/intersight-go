@@ -23,9 +23,9 @@ type VnicEthNetworkPolicyAllOf struct {
 	ObjectType string `json:"ObjectType"`
 	// The platform for which the server profile is applicable. It can either be a server that is operating in standalone mode or which is attached to a Fabric Interconnect managed by Intersight. * `Standalone` - Servers which are operating in standalone mode i.e. not connected to a Fabric Interconnected. * `FIAttached` - Servers which are connected to a Fabric Interconnect that is managed by Intersight.
 	// Deprecated
-	TargetPlatform *string `json:"TargetPlatform,omitempty"`
-	VlanSettings NullableVnicVlanSettings `json:"VlanSettings,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	TargetPlatform       *string                               `json:"TargetPlatform,omitempty"`
+	VlanSettings         NullableVnicVlanSettings              `json:"VlanSettings,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *VnicEthNetworkPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicEthNetworkPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *VnicEthNetworkPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicEthNetworkPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -154,7 +154,7 @@ func (o *VnicEthNetworkPolicyAllOf) GetVlanSettings() VnicVlanSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicEthNetworkPolicyAllOf) GetVlanSettingsOk() (*VnicVlanSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VlanSettings.Get(), o.VlanSettings.IsSet()
@@ -173,6 +173,7 @@ func (o *VnicEthNetworkPolicyAllOf) HasVlanSettings() bool {
 func (o *VnicEthNetworkPolicyAllOf) SetVlanSettings(v VnicVlanSettings) {
 	o.VlanSettings.Set(&v)
 }
+
 // SetVlanSettingsNil sets the value for VlanSettings to be an explicit nil
 func (o *VnicEthNetworkPolicyAllOf) SetVlanSettingsNil() {
 	o.VlanSettings.Set(nil)
@@ -296,5 +297,3 @@ func (v *NullableVnicEthNetworkPolicyAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

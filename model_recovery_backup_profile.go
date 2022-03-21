@@ -25,12 +25,12 @@ type RecoveryBackupProfile struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Enables/Disables the schedule on the endpoint.
-	Enabled *bool `json:"Enabled,omitempty"`
-	BackupConfig *RecoveryBackupConfigPolicyRelationship `json:"BackupConfig,omitempty"`
-	ConfigResult *RecoveryConfigResultRelationship `json:"ConfigResult,omitempty"`
-	DeviceId *AssetDeviceRegistrationRelationship `json:"DeviceId,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	ScheduleConfig *RecoveryScheduleConfigPolicyRelationship `json:"ScheduleConfig,omitempty"`
+	Enabled              *bool                                     `json:"Enabled,omitempty"`
+	BackupConfig         *RecoveryBackupConfigPolicyRelationship   `json:"BackupConfig,omitempty"`
+	ConfigResult         *RecoveryConfigResultRelationship         `json:"ConfigResult,omitempty"`
+	DeviceId             *AssetDeviceRegistrationRelationship      `json:"DeviceId,omitempty"`
+	Organization         *OrganizationOrganizationRelationship     `json:"Organization,omitempty"`
+	ScheduleConfig       *RecoveryScheduleConfigPolicyRelationship `json:"ScheduleConfig,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *RecoveryBackupProfile) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *RecoveryBackupProfile) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *RecoveryBackupProfile) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *RecoveryBackupProfile) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -356,11 +356,11 @@ func (o *RecoveryBackupProfile) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Enables/Disables the schedule on the endpoint.
-		Enabled *bool `json:"Enabled,omitempty"`
-		BackupConfig *RecoveryBackupConfigPolicyRelationship `json:"BackupConfig,omitempty"`
-		ConfigResult *RecoveryConfigResultRelationship `json:"ConfigResult,omitempty"`
-		DeviceId *AssetDeviceRegistrationRelationship `json:"DeviceId,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		Enabled        *bool                                     `json:"Enabled,omitempty"`
+		BackupConfig   *RecoveryBackupConfigPolicyRelationship   `json:"BackupConfig,omitempty"`
+		ConfigResult   *RecoveryConfigResultRelationship         `json:"ConfigResult,omitempty"`
+		DeviceId       *AssetDeviceRegistrationRelationship      `json:"DeviceId,omitempty"`
+		Organization   *OrganizationOrganizationRelationship     `json:"Organization,omitempty"`
 		ScheduleConfig *RecoveryScheduleConfigPolicyRelationship `json:"ScheduleConfig,omitempty"`
 	}
 
@@ -462,5 +462,3 @@ func (v *NullableRecoveryBackupProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

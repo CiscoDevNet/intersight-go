@@ -19,19 +19,18 @@ import (
 // BulkExportedItemRelationship - A relationship to the 'bulk.ExportedItem' resource, or the expanded 'bulk.ExportedItem' resource, or the 'null' value.
 type BulkExportedItemRelationship struct {
 	BulkExportedItem *BulkExportedItem
-	MoMoRef *MoMoRef
+	MoMoRef          *MoMoRef
 }
 
 // BulkExportedItemAsBulkExportedItemRelationship is a convenience function that returns BulkExportedItem wrapped in BulkExportedItemRelationship
 func BulkExportedItemAsBulkExportedItemRelationship(v *BulkExportedItem) BulkExportedItemRelationship {
-	return BulkExportedItemRelationship{ BulkExportedItem: v}
+	return BulkExportedItemRelationship{BulkExportedItem: v}
 }
 
 // MoMoRefAsBulkExportedItemRelationship is a convenience function that returns MoMoRef wrapped in BulkExportedItemRelationship
 func MoMoRefAsBulkExportedItemRelationship(v *MoMoRef) BulkExportedItemRelationship {
-	return BulkExportedItemRelationship{ MoMoRef: v}
+	return BulkExportedItemRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BulkExportedItemRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BulkExportedItemRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BulkExportedItemRelationship) GetActualInstance() (interface{}) {
+func (obj *BulkExportedItemRelationship) GetActualInstance() interface{} {
 	if obj.BulkExportedItem != nil {
 		return obj.BulkExportedItem
 	}
@@ -137,5 +136,3 @@ func (v *NullableBulkExportedItemRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

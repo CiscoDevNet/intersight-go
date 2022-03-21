@@ -25,7 +25,7 @@ type PkixRsaAlgorithm struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The length of the RSA key, expressed in bits, for both public and private keys. * `2048` - A key length of 2048 bits. * `2560` - A key length of 2560 bits. * `3072` - A key length of 3072 bits. * `3584` - A key length of 3584 bits. * `4096` - A key length of 4096 bits.
-	Modulus *int32 `json:"Modulus,omitempty"`
+	Modulus              *int32 `json:"Modulus,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *PkixRsaAlgorithm) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PkixRsaAlgorithm) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *PkixRsaAlgorithm) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PkixRsaAlgorithm) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -263,5 +263,3 @@ func (v *NullablePkixRsaAlgorithm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

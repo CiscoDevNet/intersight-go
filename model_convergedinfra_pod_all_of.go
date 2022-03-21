@@ -22,11 +22,11 @@ type ConvergedinfraPodAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The deployment type for this solution pod. * `FlexPodInfra` - The deployment type for a pod is of Infrastructure. * `FlexPodNG` - The deployment type for a pod is of Nextgen type.
-	DeploymentType *string `json:"DeploymentType,omitempty"`
-	Summary *ConvergedinfraPodSummary `json:"Summary,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	PodResourceGroup *ResourceGroupRelationship `json:"PodResourceGroup,omitempty"`
-	SolutionInstance *WorkflowSolutionInstanceRelationship `json:"SolutionInstance,omitempty"`
+	DeploymentType       *string                               `json:"DeploymentType,omitempty"`
+	Summary              *ConvergedinfraPodSummary             `json:"Summary,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	PodResourceGroup     *ResourceGroupRelationship            `json:"PodResourceGroup,omitempty"`
+	SolutionInstance     *WorkflowSolutionInstanceRelationship `json:"SolutionInstance,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *ConvergedinfraPodAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConvergedinfraPodAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *ConvergedinfraPodAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConvergedinfraPodAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -352,5 +352,3 @@ func (v *NullableConvergedinfraPodAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

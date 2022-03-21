@@ -30,7 +30,7 @@ type MemoryPersistentMemoryLogicalNamespaceAllOf struct {
 	// Socket ID of the region on which this Namespace has to be created or modified. * `1` - The first CPU socket in a server. * `2` - The second CPU socket in a server. * `3` - The third CPU socket in a server. * `4` - The fourth CPU socket in a server.
 	SocketId *int32 `json:"SocketId,omitempty"`
 	// Socket Memory ID of the region on which this Namespace has to be created or modified. * `Not Applicable` - The socket memory ID is not applicable if app-direct persistent memory type is selected in the goal. * `2` - The second socket memory ID within a socket in a server. * `4` - The fourth socket memory ID within a socket in a server. * `6` - The sixth socket memory ID within a socket in a server. * `8` - The eighth socket memory ID within a socket in a server. * `10` - The tenth socket memory ID within a socket in a server. * `12` - The twelfth socket memory ID within a socket in a server.
-	SocketMemoryId *string `json:"SocketMemoryId,omitempty"`
+	SocketMemoryId       *string `json:"SocketMemoryId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *MemoryPersistentMemoryLogicalNamespaceAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryLogicalNamespaceAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -108,7 +108,7 @@ func (o *MemoryPersistentMemoryLogicalNamespaceAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryLogicalNamespaceAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -368,5 +368,3 @@ func (v *NullableMemoryPersistentMemoryLogicalNamespaceAllOf) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -27,7 +27,7 @@ type StorageM2VirtualDriveConfig struct {
 	// Select the M.2 RAID controller slot on which the virtual drive is to be created. Select 'MSTOR-RAID-1' to create virtual drive on the M.2 RAID controller in the first slot or in the MSTOR-RAID slot, 'MSTOR-RAID-2' for second slot, 'MSTOR-RAID-1, MSTOR-RAID-2' for both slots or either slot. * `MSTOR-RAID-1` - Virtual drive  will be created on the M.2 RAID controller in the first slot. * `MSTOR-RAID-2` - Virtual drive  will be created on the M.2 RAID controller in the second slot, if available. * `MSTOR-RAID-1,MSTOR-RAID-2` - Virtual drive  will be created on the M.2 RAID controller in both the slots, if available.
 	ControllerSlot *string `json:"ControllerSlot,omitempty"`
 	// If enabled, this will create a virtual drive on the M.2 RAID controller.
-	Enable *bool `json:"Enable,omitempty"`
+	Enable               *bool `json:"Enable,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *StorageM2VirtualDriveConfig) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageM2VirtualDriveConfig) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *StorageM2VirtualDriveConfig) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageM2VirtualDriveConfig) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -308,5 +308,3 @@ func (v *NullableStorageM2VirtualDriveConfig) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

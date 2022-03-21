@@ -34,9 +34,9 @@ type EquipmentTransceiverAllOf struct {
 	// Switch Identifier that is local to a cluster.
 	SwitchId *string `json:"SwitchId,omitempty"`
 	// The type of the transceiver.
-	Type *string `json:"Type,omitempty"`
-	EtherPhysicalPort *EtherPhysicalPortRelationship `json:"EtherPhysicalPort,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Type                 *string                              `json:"Type,omitempty"`
+	EtherPhysicalPort    *EtherPhysicalPortRelationship       `json:"EtherPhysicalPort,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *EquipmentTransceiverAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentTransceiverAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *EquipmentTransceiverAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentTransceiverAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -506,5 +506,3 @@ func (v *NullableEquipmentTransceiverAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

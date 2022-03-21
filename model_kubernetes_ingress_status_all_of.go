@@ -20,8 +20,8 @@ type KubernetesIngressStatusAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	LoadBalancer NullableKubernetesLoadBalancer `json:"LoadBalancer,omitempty"`
+	ObjectType           string                         `json:"ObjectType"`
+	LoadBalancer         NullableKubernetesLoadBalancer `json:"LoadBalancer,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -63,7 +63,7 @@ func (o *KubernetesIngressStatusAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesIngressStatusAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -87,7 +87,7 @@ func (o *KubernetesIngressStatusAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesIngressStatusAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -111,7 +111,7 @@ func (o *KubernetesIngressStatusAllOf) GetLoadBalancer() KubernetesLoadBalancer 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KubernetesIngressStatusAllOf) GetLoadBalancerOk() (*KubernetesLoadBalancer, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LoadBalancer.Get(), o.LoadBalancer.IsSet()
@@ -130,6 +130,7 @@ func (o *KubernetesIngressStatusAllOf) HasLoadBalancer() bool {
 func (o *KubernetesIngressStatusAllOf) SetLoadBalancer(v KubernetesLoadBalancer) {
 	o.LoadBalancer.Set(&v)
 }
+
 // SetLoadBalancerNil sets the value for LoadBalancer to be an explicit nil
 func (o *KubernetesIngressStatusAllOf) SetLoadBalancerNil() {
 	o.LoadBalancer.Set(nil)
@@ -213,5 +214,3 @@ func (v *NullableKubernetesIngressStatusAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

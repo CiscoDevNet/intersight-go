@@ -19,19 +19,18 @@ import (
 // GraphicsControllerRelationship - A relationship to the 'graphics.Controller' resource, or the expanded 'graphics.Controller' resource, or the 'null' value.
 type GraphicsControllerRelationship struct {
 	GraphicsController *GraphicsController
-	MoMoRef *MoMoRef
+	MoMoRef            *MoMoRef
 }
 
 // GraphicsControllerAsGraphicsControllerRelationship is a convenience function that returns GraphicsController wrapped in GraphicsControllerRelationship
 func GraphicsControllerAsGraphicsControllerRelationship(v *GraphicsController) GraphicsControllerRelationship {
-	return GraphicsControllerRelationship{ GraphicsController: v}
+	return GraphicsControllerRelationship{GraphicsController: v}
 }
 
 // MoMoRefAsGraphicsControllerRelationship is a convenience function that returns MoMoRef wrapped in GraphicsControllerRelationship
 func MoMoRefAsGraphicsControllerRelationship(v *MoMoRef) GraphicsControllerRelationship {
-	return GraphicsControllerRelationship{ MoMoRef: v}
+	return GraphicsControllerRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GraphicsControllerRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src GraphicsControllerRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GraphicsControllerRelationship) GetActualInstance() (interface{}) {
+func (obj *GraphicsControllerRelationship) GetActualInstance() interface{} {
 	if obj.GraphicsController != nil {
 		return obj.GraphicsController
 	}
@@ -137,5 +136,3 @@ func (v *NullableGraphicsControllerRelationship) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

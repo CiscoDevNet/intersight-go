@@ -20,7 +20,7 @@ type FirmwareChassisUpgradeListAllOf struct {
 	// The total number of 'firmware.ChassisUpgrade' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'firmware.ChassisUpgrade' resources matching the request.
-	Results []FirmwareChassisUpgrade `json:"Results,omitempty"`
+	Results              []FirmwareChassisUpgrade `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *FirmwareChassisUpgradeListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareChassisUpgradeListAllOf) GetResults() []FirmwareChassisUpgrade {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareChassisUpgrade
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableFirmwareChassisUpgradeListAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

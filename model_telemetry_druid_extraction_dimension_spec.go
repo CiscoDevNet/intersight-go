@@ -26,7 +26,7 @@ type TelemetryDruidExtractionDimensionSpec struct {
 	// null
 	OutputType string `json:"outputType"`
 	// All filters except the \"spatial\" filter support extraction functions. An extraction function is defined by setting the \"extractionFn\" field on a filter. See Extraction function for more details on extraction functions. If specified, the extraction function will be used to transform input values before the filter is applied. The example below shows a selector filter combined with an extraction function. This filter will transform input values according to the values defined in the lookup map; transformed values will then be matched with the string \"bar_1\".
-	ExtractionFn map[string]interface{} `json:"extractionFn"`
+	ExtractionFn         map[string]interface{} `json:"extractionFn"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *TelemetryDruidExtractionDimensionSpec) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidExtractionDimensionSpec) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -93,7 +93,7 @@ func (o *TelemetryDruidExtractionDimensionSpec) GetDimension() string {
 // GetDimensionOk returns a tuple with the Dimension field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidExtractionDimensionSpec) GetDimensionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Dimension, true
@@ -117,7 +117,7 @@ func (o *TelemetryDruidExtractionDimensionSpec) GetOutputName() string {
 // GetOutputNameOk returns a tuple with the OutputName field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidExtractionDimensionSpec) GetOutputNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.OutputName, true
@@ -141,7 +141,7 @@ func (o *TelemetryDruidExtractionDimensionSpec) GetOutputType() string {
 // GetOutputTypeOk returns a tuple with the OutputType field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidExtractionDimensionSpec) GetOutputTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.OutputType, true
@@ -165,7 +165,7 @@ func (o *TelemetryDruidExtractionDimensionSpec) GetExtractionFn() map[string]int
 // GetExtractionFnOk returns a tuple with the ExtractionFn field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidExtractionDimensionSpec) GetExtractionFnOk() (*map[string]interface{}, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ExtractionFn, true
@@ -257,5 +257,3 @@ func (v *NullableTelemetryDruidExtractionDimensionSpec) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

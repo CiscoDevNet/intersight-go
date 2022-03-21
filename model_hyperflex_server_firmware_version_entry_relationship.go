@@ -19,19 +19,18 @@ import (
 // HyperflexServerFirmwareVersionEntryRelationship - A relationship to the 'hyperflex.ServerFirmwareVersionEntry' resource, or the expanded 'hyperflex.ServerFirmwareVersionEntry' resource, or the 'null' value.
 type HyperflexServerFirmwareVersionEntryRelationship struct {
 	HyperflexServerFirmwareVersionEntry *HyperflexServerFirmwareVersionEntry
-	MoMoRef *MoMoRef
+	MoMoRef                             *MoMoRef
 }
 
 // HyperflexServerFirmwareVersionEntryAsHyperflexServerFirmwareVersionEntryRelationship is a convenience function that returns HyperflexServerFirmwareVersionEntry wrapped in HyperflexServerFirmwareVersionEntryRelationship
 func HyperflexServerFirmwareVersionEntryAsHyperflexServerFirmwareVersionEntryRelationship(v *HyperflexServerFirmwareVersionEntry) HyperflexServerFirmwareVersionEntryRelationship {
-	return HyperflexServerFirmwareVersionEntryRelationship{ HyperflexServerFirmwareVersionEntry: v}
+	return HyperflexServerFirmwareVersionEntryRelationship{HyperflexServerFirmwareVersionEntry: v}
 }
 
 // MoMoRefAsHyperflexServerFirmwareVersionEntryRelationship is a convenience function that returns MoMoRef wrapped in HyperflexServerFirmwareVersionEntryRelationship
 func MoMoRefAsHyperflexServerFirmwareVersionEntryRelationship(v *MoMoRef) HyperflexServerFirmwareVersionEntryRelationship {
-	return HyperflexServerFirmwareVersionEntryRelationship{ MoMoRef: v}
+	return HyperflexServerFirmwareVersionEntryRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexServerFirmwareVersionEntryRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexServerFirmwareVersionEntryRelationship) MarshalJSON() ([]byte
 }
 
 // Get the actual instance
-func (obj *HyperflexServerFirmwareVersionEntryRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexServerFirmwareVersionEntryRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexServerFirmwareVersionEntry != nil {
 		return obj.HyperflexServerFirmwareVersionEntry
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexServerFirmwareVersionEntryRelationship) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

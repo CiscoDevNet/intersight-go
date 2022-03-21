@@ -26,8 +26,8 @@ type IamServiceProviderAllOf struct {
 	// Metadata of the Intersight Service Provider. User downloads the Intersight Service Provider metadata and integrates it with their IdP for authentication.
 	Metadata *string `json:"Metadata,omitempty"`
 	// Name of the Intersight Service Provider.
-	Name *string `json:"Name,omitempty"`
-	System *IamSystemRelationship `json:"System,omitempty"`
+	Name                 *string                `json:"Name,omitempty"`
+	System               *IamSystemRelationship `json:"System,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *IamServiceProviderAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamServiceProviderAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *IamServiceProviderAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamServiceProviderAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -317,5 +317,3 @@ func (v *NullableIamServiceProviderAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

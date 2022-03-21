@@ -18,32 +18,31 @@ import (
 
 // FaultInstanceResponse - The response body of a HTTP GET request for the 'fault.Instance' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'fault.Instance' resources.
 type FaultInstanceResponse struct {
-	FaultInstanceList *FaultInstanceList
+	FaultInstanceList    *FaultInstanceList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // FaultInstanceListAsFaultInstanceResponse is a convenience function that returns FaultInstanceList wrapped in FaultInstanceResponse
 func FaultInstanceListAsFaultInstanceResponse(v *FaultInstanceList) FaultInstanceResponse {
-	return FaultInstanceResponse{ FaultInstanceList: v}
+	return FaultInstanceResponse{FaultInstanceList: v}
 }
 
 // MoAggregateTransformAsFaultInstanceResponse is a convenience function that returns MoAggregateTransform wrapped in FaultInstanceResponse
 func MoAggregateTransformAsFaultInstanceResponse(v *MoAggregateTransform) FaultInstanceResponse {
-	return FaultInstanceResponse{ MoAggregateTransform: v}
+	return FaultInstanceResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsFaultInstanceResponse is a convenience function that returns MoDocumentCount wrapped in FaultInstanceResponse
 func MoDocumentCountAsFaultInstanceResponse(v *MoDocumentCount) FaultInstanceResponse {
-	return FaultInstanceResponse{ MoDocumentCount: v}
+	return FaultInstanceResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsFaultInstanceResponse is a convenience function that returns MoTagSummary wrapped in FaultInstanceResponse
 func MoTagSummaryAsFaultInstanceResponse(v *MoTagSummary) FaultInstanceResponse {
-	return FaultInstanceResponse{ MoTagSummary: v}
+	return FaultInstanceResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FaultInstanceResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src FaultInstanceResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FaultInstanceResponse) GetActualInstance() (interface{}) {
+func (obj *FaultInstanceResponse) GetActualInstance() interface{} {
 	if obj.FaultInstanceList != nil {
 		return obj.FaultInstanceList
 	}
@@ -184,5 +183,3 @@ func (v *NullableFaultInstanceResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

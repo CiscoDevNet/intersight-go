@@ -20,12 +20,12 @@ type FirmwareServerUpgradeImpactAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType   string                    `json:"ObjectType"`
 	ImpactDetail []FirmwareComponentImpact `json:"ImpactDetail,omitempty"`
 	// Name of the server impacted by the upgrade.
 	Name *string `json:"Name,omitempty"`
 	// Details about the server which will be impacted by the upgrade.
-	UserLabel *string `json:"UserLabel,omitempty"`
+	UserLabel            *string `json:"UserLabel,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *FirmwareServerUpgradeImpactAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareServerUpgradeImpactAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *FirmwareServerUpgradeImpactAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareServerUpgradeImpactAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -104,7 +104,7 @@ func (o *FirmwareServerUpgradeImpactAllOf) SetObjectType(v string) {
 
 // GetImpactDetail returns the ImpactDetail field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareServerUpgradeImpactAllOf) GetImpactDetail() []FirmwareComponentImpact {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareComponentImpact
 		return ret
 	}
@@ -280,5 +280,3 @@ func (v *NullableFirmwareServerUpgradeImpactAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

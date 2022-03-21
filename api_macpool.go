@@ -29,10 +29,10 @@ var (
 type MacpoolApiService service
 
 type ApiCreateMacpoolPoolRequest struct {
-	ctx _context.Context
-	ApiService *MacpoolApiService
+	ctx         _context.Context
+	ApiService  *MacpoolApiService
 	macpoolPool *MacpoolPool
-	ifMatch *string
+	ifMatch     *string
 	ifNoneMatch *string
 }
 
@@ -41,11 +41,13 @@ func (r ApiCreateMacpoolPoolRequest) MacpoolPool(macpoolPool MacpoolPool) ApiCre
 	r.macpoolPool = &macpoolPool
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateMacpoolPoolRequest) IfMatch(ifMatch string) ApiCreateMacpoolPoolRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateMacpoolPoolRequest) IfNoneMatch(ifNoneMatch string) ApiCreateMacpoolPoolRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateMacpoolPool Create a 'macpool.Pool' resource.
 func (a *MacpoolApiService) CreateMacpoolPool(ctx _context.Context) ApiCreateMacpoolPoolRequest {
 	return ApiCreateMacpoolPoolRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *MacpoolApiService) CreateMacpoolPoolExecute(r ApiCreateMacpoolPoolReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,10 @@ func (a *MacpoolApiService) CreateMacpoolPoolExecute(r ApiCreateMacpoolPoolReque
 }
 
 type ApiDeleteMacpoolLeaseRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MacpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteMacpoolLeaseRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteMacpoolLeaseExecute(r)
@@ -225,8 +226,8 @@ DeleteMacpoolLease Delete a 'macpool.Lease' resource.
 func (a *MacpoolApiService) DeleteMacpoolLease(ctx _context.Context, moid string) ApiDeleteMacpoolLeaseRequest {
 	return ApiDeleteMacpoolLeaseRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -331,13 +332,13 @@ func (a *MacpoolApiService) DeleteMacpoolLeaseExecute(r ApiDeleteMacpoolLeaseReq
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -345,11 +346,10 @@ func (a *MacpoolApiService) DeleteMacpoolLeaseExecute(r ApiDeleteMacpoolLeaseReq
 }
 
 type ApiDeleteMacpoolPoolRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MacpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteMacpoolPoolRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteMacpoolPoolExecute(r)
@@ -365,8 +365,8 @@ DeleteMacpoolPool Delete a 'macpool.Pool' resource.
 func (a *MacpoolApiService) DeleteMacpoolPool(ctx _context.Context, moid string) ApiDeleteMacpoolPoolRequest {
 	return ApiDeleteMacpoolPoolRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -471,13 +471,13 @@ func (a *MacpoolApiService) DeleteMacpoolPoolExecute(r ApiDeleteMacpoolPoolReque
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -485,11 +485,10 @@ func (a *MacpoolApiService) DeleteMacpoolPoolExecute(r ApiDeleteMacpoolPoolReque
 }
 
 type ApiGetMacpoolIdBlockByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MacpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetMacpoolIdBlockByMoidRequest) Execute() (MacpoolIdBlock, *_nethttp.Response, error) {
 	return r.ApiService.GetMacpoolIdBlockByMoidExecute(r)
@@ -505,8 +504,8 @@ GetMacpoolIdBlockByMoid Read a 'macpool.IdBlock' resource.
 func (a *MacpoolApiService) GetMacpoolIdBlockByMoid(ctx _context.Context, moid string) ApiGetMacpoolIdBlockByMoidRequest {
 	return ApiGetMacpoolIdBlockByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -613,13 +612,13 @@ func (a *MacpoolApiService) GetMacpoolIdBlockByMoidExecute(r ApiGetMacpoolIdBloc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -636,19 +635,19 @@ func (a *MacpoolApiService) GetMacpoolIdBlockByMoidExecute(r ApiGetMacpoolIdBloc
 }
 
 type ApiGetMacpoolIdBlockListRequest struct {
-	ctx _context.Context
-	ApiService *MacpoolApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *MacpoolApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -656,51 +655,61 @@ func (r ApiGetMacpoolIdBlockListRequest) Filter(filter string) ApiGetMacpoolIdBl
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetMacpoolIdBlockListRequest) Orderby(orderby string) ApiGetMacpoolIdBlockListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetMacpoolIdBlockListRequest) Top(top int32) ApiGetMacpoolIdBlockListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetMacpoolIdBlockListRequest) Skip(skip int32) ApiGetMacpoolIdBlockListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetMacpoolIdBlockListRequest) Select_(select_ string) ApiGetMacpoolIdBlockListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetMacpoolIdBlockListRequest) Expand(expand string) ApiGetMacpoolIdBlockListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetMacpoolIdBlockListRequest) Apply(apply string) ApiGetMacpoolIdBlockListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetMacpoolIdBlockListRequest) Count(count bool) ApiGetMacpoolIdBlockListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetMacpoolIdBlockListRequest) Inlinecount(inlinecount string) ApiGetMacpoolIdBlockListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetMacpoolIdBlockListRequest) At(at string) ApiGetMacpoolIdBlockListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetMacpoolIdBlockListRequest) Tags(tags string) ApiGetMacpoolIdBlockListRequest {
 	r.tags = &tags
@@ -720,7 +729,7 @@ GetMacpoolIdBlockList Read a 'macpool.IdBlock' resource.
 func (a *MacpoolApiService) GetMacpoolIdBlockList(ctx _context.Context) ApiGetMacpoolIdBlockListRequest {
 	return ApiGetMacpoolIdBlockListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -859,13 +868,13 @@ func (a *MacpoolApiService) GetMacpoolIdBlockListExecute(r ApiGetMacpoolIdBlockL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -882,11 +891,10 @@ func (a *MacpoolApiService) GetMacpoolIdBlockListExecute(r ApiGetMacpoolIdBlockL
 }
 
 type ApiGetMacpoolLeaseByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MacpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetMacpoolLeaseByMoidRequest) Execute() (MacpoolLease, *_nethttp.Response, error) {
 	return r.ApiService.GetMacpoolLeaseByMoidExecute(r)
@@ -902,8 +910,8 @@ GetMacpoolLeaseByMoid Read a 'macpool.Lease' resource.
 func (a *MacpoolApiService) GetMacpoolLeaseByMoid(ctx _context.Context, moid string) ApiGetMacpoolLeaseByMoidRequest {
 	return ApiGetMacpoolLeaseByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1010,13 +1018,13 @@ func (a *MacpoolApiService) GetMacpoolLeaseByMoidExecute(r ApiGetMacpoolLeaseByM
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1033,19 +1041,19 @@ func (a *MacpoolApiService) GetMacpoolLeaseByMoidExecute(r ApiGetMacpoolLeaseByM
 }
 
 type ApiGetMacpoolLeaseListRequest struct {
-	ctx _context.Context
-	ApiService *MacpoolApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *MacpoolApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1053,51 +1061,61 @@ func (r ApiGetMacpoolLeaseListRequest) Filter(filter string) ApiGetMacpoolLeaseL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetMacpoolLeaseListRequest) Orderby(orderby string) ApiGetMacpoolLeaseListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetMacpoolLeaseListRequest) Top(top int32) ApiGetMacpoolLeaseListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetMacpoolLeaseListRequest) Skip(skip int32) ApiGetMacpoolLeaseListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetMacpoolLeaseListRequest) Select_(select_ string) ApiGetMacpoolLeaseListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetMacpoolLeaseListRequest) Expand(expand string) ApiGetMacpoolLeaseListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetMacpoolLeaseListRequest) Apply(apply string) ApiGetMacpoolLeaseListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetMacpoolLeaseListRequest) Count(count bool) ApiGetMacpoolLeaseListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetMacpoolLeaseListRequest) Inlinecount(inlinecount string) ApiGetMacpoolLeaseListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetMacpoolLeaseListRequest) At(at string) ApiGetMacpoolLeaseListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetMacpoolLeaseListRequest) Tags(tags string) ApiGetMacpoolLeaseListRequest {
 	r.tags = &tags
@@ -1117,7 +1135,7 @@ GetMacpoolLeaseList Read a 'macpool.Lease' resource.
 func (a *MacpoolApiService) GetMacpoolLeaseList(ctx _context.Context) ApiGetMacpoolLeaseListRequest {
 	return ApiGetMacpoolLeaseListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1256,13 +1274,13 @@ func (a *MacpoolApiService) GetMacpoolLeaseListExecute(r ApiGetMacpoolLeaseListR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1279,11 +1297,10 @@ func (a *MacpoolApiService) GetMacpoolLeaseListExecute(r ApiGetMacpoolLeaseListR
 }
 
 type ApiGetMacpoolPoolByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MacpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetMacpoolPoolByMoidRequest) Execute() (MacpoolPool, *_nethttp.Response, error) {
 	return r.ApiService.GetMacpoolPoolByMoidExecute(r)
@@ -1299,8 +1316,8 @@ GetMacpoolPoolByMoid Read a 'macpool.Pool' resource.
 func (a *MacpoolApiService) GetMacpoolPoolByMoid(ctx _context.Context, moid string) ApiGetMacpoolPoolByMoidRequest {
 	return ApiGetMacpoolPoolByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1407,13 +1424,13 @@ func (a *MacpoolApiService) GetMacpoolPoolByMoidExecute(r ApiGetMacpoolPoolByMoi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1430,19 +1447,19 @@ func (a *MacpoolApiService) GetMacpoolPoolByMoidExecute(r ApiGetMacpoolPoolByMoi
 }
 
 type ApiGetMacpoolPoolListRequest struct {
-	ctx _context.Context
-	ApiService *MacpoolApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *MacpoolApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1450,51 +1467,61 @@ func (r ApiGetMacpoolPoolListRequest) Filter(filter string) ApiGetMacpoolPoolLis
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetMacpoolPoolListRequest) Orderby(orderby string) ApiGetMacpoolPoolListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetMacpoolPoolListRequest) Top(top int32) ApiGetMacpoolPoolListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetMacpoolPoolListRequest) Skip(skip int32) ApiGetMacpoolPoolListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetMacpoolPoolListRequest) Select_(select_ string) ApiGetMacpoolPoolListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetMacpoolPoolListRequest) Expand(expand string) ApiGetMacpoolPoolListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetMacpoolPoolListRequest) Apply(apply string) ApiGetMacpoolPoolListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetMacpoolPoolListRequest) Count(count bool) ApiGetMacpoolPoolListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetMacpoolPoolListRequest) Inlinecount(inlinecount string) ApiGetMacpoolPoolListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetMacpoolPoolListRequest) At(at string) ApiGetMacpoolPoolListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetMacpoolPoolListRequest) Tags(tags string) ApiGetMacpoolPoolListRequest {
 	r.tags = &tags
@@ -1514,7 +1541,7 @@ GetMacpoolPoolList Read a 'macpool.Pool' resource.
 func (a *MacpoolApiService) GetMacpoolPoolList(ctx _context.Context) ApiGetMacpoolPoolListRequest {
 	return ApiGetMacpoolPoolListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1653,13 +1680,13 @@ func (a *MacpoolApiService) GetMacpoolPoolListExecute(r ApiGetMacpoolPoolListReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1676,11 +1703,10 @@ func (a *MacpoolApiService) GetMacpoolPoolListExecute(r ApiGetMacpoolPoolListReq
 }
 
 type ApiGetMacpoolPoolMemberByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MacpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetMacpoolPoolMemberByMoidRequest) Execute() (MacpoolPoolMember, *_nethttp.Response, error) {
 	return r.ApiService.GetMacpoolPoolMemberByMoidExecute(r)
@@ -1696,8 +1722,8 @@ GetMacpoolPoolMemberByMoid Read a 'macpool.PoolMember' resource.
 func (a *MacpoolApiService) GetMacpoolPoolMemberByMoid(ctx _context.Context, moid string) ApiGetMacpoolPoolMemberByMoidRequest {
 	return ApiGetMacpoolPoolMemberByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1804,13 +1830,13 @@ func (a *MacpoolApiService) GetMacpoolPoolMemberByMoidExecute(r ApiGetMacpoolPoo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1827,19 +1853,19 @@ func (a *MacpoolApiService) GetMacpoolPoolMemberByMoidExecute(r ApiGetMacpoolPoo
 }
 
 type ApiGetMacpoolPoolMemberListRequest struct {
-	ctx _context.Context
-	ApiService *MacpoolApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *MacpoolApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1847,51 +1873,61 @@ func (r ApiGetMacpoolPoolMemberListRequest) Filter(filter string) ApiGetMacpoolP
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetMacpoolPoolMemberListRequest) Orderby(orderby string) ApiGetMacpoolPoolMemberListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetMacpoolPoolMemberListRequest) Top(top int32) ApiGetMacpoolPoolMemberListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetMacpoolPoolMemberListRequest) Skip(skip int32) ApiGetMacpoolPoolMemberListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetMacpoolPoolMemberListRequest) Select_(select_ string) ApiGetMacpoolPoolMemberListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetMacpoolPoolMemberListRequest) Expand(expand string) ApiGetMacpoolPoolMemberListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetMacpoolPoolMemberListRequest) Apply(apply string) ApiGetMacpoolPoolMemberListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetMacpoolPoolMemberListRequest) Count(count bool) ApiGetMacpoolPoolMemberListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetMacpoolPoolMemberListRequest) Inlinecount(inlinecount string) ApiGetMacpoolPoolMemberListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetMacpoolPoolMemberListRequest) At(at string) ApiGetMacpoolPoolMemberListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetMacpoolPoolMemberListRequest) Tags(tags string) ApiGetMacpoolPoolMemberListRequest {
 	r.tags = &tags
@@ -1911,7 +1947,7 @@ GetMacpoolPoolMemberList Read a 'macpool.PoolMember' resource.
 func (a *MacpoolApiService) GetMacpoolPoolMemberList(ctx _context.Context) ApiGetMacpoolPoolMemberListRequest {
 	return ApiGetMacpoolPoolMemberListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2050,13 +2086,13 @@ func (a *MacpoolApiService) GetMacpoolPoolMemberListExecute(r ApiGetMacpoolPoolM
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2073,11 +2109,10 @@ func (a *MacpoolApiService) GetMacpoolPoolMemberListExecute(r ApiGetMacpoolPoolM
 }
 
 type ApiGetMacpoolUniverseByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MacpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetMacpoolUniverseByMoidRequest) Execute() (MacpoolUniverse, *_nethttp.Response, error) {
 	return r.ApiService.GetMacpoolUniverseByMoidExecute(r)
@@ -2093,8 +2128,8 @@ GetMacpoolUniverseByMoid Read a 'macpool.Universe' resource.
 func (a *MacpoolApiService) GetMacpoolUniverseByMoid(ctx _context.Context, moid string) ApiGetMacpoolUniverseByMoidRequest {
 	return ApiGetMacpoolUniverseByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2201,13 +2236,13 @@ func (a *MacpoolApiService) GetMacpoolUniverseByMoidExecute(r ApiGetMacpoolUnive
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2224,19 +2259,19 @@ func (a *MacpoolApiService) GetMacpoolUniverseByMoidExecute(r ApiGetMacpoolUnive
 }
 
 type ApiGetMacpoolUniverseListRequest struct {
-	ctx _context.Context
-	ApiService *MacpoolApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *MacpoolApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2244,51 +2279,61 @@ func (r ApiGetMacpoolUniverseListRequest) Filter(filter string) ApiGetMacpoolUni
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetMacpoolUniverseListRequest) Orderby(orderby string) ApiGetMacpoolUniverseListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetMacpoolUniverseListRequest) Top(top int32) ApiGetMacpoolUniverseListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetMacpoolUniverseListRequest) Skip(skip int32) ApiGetMacpoolUniverseListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetMacpoolUniverseListRequest) Select_(select_ string) ApiGetMacpoolUniverseListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetMacpoolUniverseListRequest) Expand(expand string) ApiGetMacpoolUniverseListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetMacpoolUniverseListRequest) Apply(apply string) ApiGetMacpoolUniverseListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetMacpoolUniverseListRequest) Count(count bool) ApiGetMacpoolUniverseListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetMacpoolUniverseListRequest) Inlinecount(inlinecount string) ApiGetMacpoolUniverseListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetMacpoolUniverseListRequest) At(at string) ApiGetMacpoolUniverseListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetMacpoolUniverseListRequest) Tags(tags string) ApiGetMacpoolUniverseListRequest {
 	r.tags = &tags
@@ -2308,7 +2353,7 @@ GetMacpoolUniverseList Read a 'macpool.Universe' resource.
 func (a *MacpoolApiService) GetMacpoolUniverseList(ctx _context.Context) ApiGetMacpoolUniverseListRequest {
 	return ApiGetMacpoolUniverseListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2447,13 +2492,13 @@ func (a *MacpoolApiService) GetMacpoolUniverseListExecute(r ApiGetMacpoolUnivers
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2470,11 +2515,11 @@ func (a *MacpoolApiService) GetMacpoolUniverseListExecute(r ApiGetMacpoolUnivers
 }
 
 type ApiPatchMacpoolPoolRequest struct {
-	ctx _context.Context
-	ApiService *MacpoolApiService
-	moid string
+	ctx         _context.Context
+	ApiService  *MacpoolApiService
+	moid        string
 	macpoolPool *MacpoolPool
-	ifMatch *string
+	ifMatch     *string
 }
 
 // The &#39;macpool.Pool&#39; resource to update.
@@ -2482,6 +2527,7 @@ func (r ApiPatchMacpoolPoolRequest) MacpoolPool(macpoolPool MacpoolPool) ApiPatc
 	r.macpoolPool = &macpoolPool
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchMacpoolPoolRequest) IfMatch(ifMatch string) ApiPatchMacpoolPoolRequest {
 	r.ifMatch = &ifMatch
@@ -2502,8 +2548,8 @@ PatchMacpoolPool Update a 'macpool.Pool' resource.
 func (a *MacpoolApiService) PatchMacpoolPool(ctx _context.Context, moid string) ApiPatchMacpoolPoolRequest {
 	return ApiPatchMacpoolPoolRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2618,13 +2664,13 @@ func (a *MacpoolApiService) PatchMacpoolPoolExecute(r ApiPatchMacpoolPoolRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2641,11 +2687,11 @@ func (a *MacpoolApiService) PatchMacpoolPoolExecute(r ApiPatchMacpoolPoolRequest
 }
 
 type ApiUpdateMacpoolPoolRequest struct {
-	ctx _context.Context
-	ApiService *MacpoolApiService
-	moid string
+	ctx         _context.Context
+	ApiService  *MacpoolApiService
+	moid        string
 	macpoolPool *MacpoolPool
-	ifMatch *string
+	ifMatch     *string
 }
 
 // The &#39;macpool.Pool&#39; resource to update.
@@ -2653,6 +2699,7 @@ func (r ApiUpdateMacpoolPoolRequest) MacpoolPool(macpoolPool MacpoolPool) ApiUpd
 	r.macpoolPool = &macpoolPool
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateMacpoolPoolRequest) IfMatch(ifMatch string) ApiUpdateMacpoolPoolRequest {
 	r.ifMatch = &ifMatch
@@ -2673,8 +2720,8 @@ UpdateMacpoolPool Update a 'macpool.Pool' resource.
 func (a *MacpoolApiService) UpdateMacpoolPool(ctx _context.Context, moid string) ApiUpdateMacpoolPoolRequest {
 	return ApiUpdateMacpoolPoolRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2789,13 +2836,13 @@ func (a *MacpoolApiService) UpdateMacpoolPoolExecute(r ApiUpdateMacpoolPoolReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

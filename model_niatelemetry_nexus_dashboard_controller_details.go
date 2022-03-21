@@ -29,9 +29,9 @@ type NiatelemetryNexusDashboardControllerDetails struct {
 	// Name of fabric domain of the controller.
 	SiteName *string `json:"SiteName,omitempty"`
 	// Version of the controller serviced by ND.
-	VersionOfController *string `json:"VersionOfController,omitempty"`
-	NexusDashboard *NiatelemetryNexusDashboardsRelationship `json:"NexusDashboard,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	VersionOfController  *string                                  `json:"VersionOfController,omitempty"`
+	NexusDashboard       *NiatelemetryNexusDashboardsRelationship `json:"NexusDashboard,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship     `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *NiatelemetryNexusDashboardControllerDetails) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNexusDashboardControllerDetails) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *NiatelemetryNexusDashboardControllerDetails) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNexusDashboardControllerDetails) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -318,9 +318,9 @@ func (o *NiatelemetryNexusDashboardControllerDetails) UnmarshalJSON(bytes []byte
 		// Name of fabric domain of the controller.
 		SiteName *string `json:"SiteName,omitempty"`
 		// Version of the controller serviced by ND.
-		VersionOfController *string `json:"VersionOfController,omitempty"`
-		NexusDashboard *NiatelemetryNexusDashboardsRelationship `json:"NexusDashboard,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		VersionOfController *string                                  `json:"VersionOfController,omitempty"`
+		NexusDashboard      *NiatelemetryNexusDashboardsRelationship `json:"NexusDashboard,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship     `json:"RegisteredDevice,omitempty"`
 	}
 
 	varNiatelemetryNexusDashboardControllerDetailsWithoutEmbeddedStruct := NiatelemetryNexusDashboardControllerDetailsWithoutEmbeddedStruct{}
@@ -419,5 +419,3 @@ func (v *NullableNiatelemetryNexusDashboardControllerDetails) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

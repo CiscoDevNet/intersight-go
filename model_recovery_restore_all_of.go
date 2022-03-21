@@ -20,12 +20,12 @@ type RecoveryRestoreAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	ConfigParams NullableRecoveryConfigParams `json:"ConfigParams,omitempty"`
-	BackupInfo *RecoveryAbstractBackupInfoRelationship `json:"BackupInfo,omitempty"`
-	Device *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	Workflow *WorkflowWorkflowInfoRelationship `json:"Workflow,omitempty"`
+	ObjectType           string                                  `json:"ObjectType"`
+	ConfigParams         NullableRecoveryConfigParams            `json:"ConfigParams,omitempty"`
+	BackupInfo           *RecoveryAbstractBackupInfoRelationship `json:"BackupInfo,omitempty"`
+	Device               *AssetDeviceRegistrationRelationship    `json:"Device,omitempty"`
+	Organization         *OrganizationOrganizationRelationship   `json:"Organization,omitempty"`
+	Workflow             *WorkflowWorkflowInfoRelationship       `json:"Workflow,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *RecoveryRestoreAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *RecoveryRestoreAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *RecoveryRestoreAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *RecoveryRestoreAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -115,7 +115,7 @@ func (o *RecoveryRestoreAllOf) GetConfigParams() RecoveryConfigParams {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RecoveryRestoreAllOf) GetConfigParamsOk() (*RecoveryConfigParams, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ConfigParams.Get(), o.ConfigParams.IsSet()
@@ -134,6 +134,7 @@ func (o *RecoveryRestoreAllOf) HasConfigParams() bool {
 func (o *RecoveryRestoreAllOf) SetConfigParams(v RecoveryConfigParams) {
 	o.ConfigParams.Set(&v)
 }
+
 // SetConfigParamsNil sets the value for ConfigParams to be an explicit nil
 func (o *RecoveryRestoreAllOf) SetConfigParamsNil() {
 	o.ConfigParams.Set(nil)
@@ -361,5 +362,3 @@ func (v *NullableRecoveryRestoreAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

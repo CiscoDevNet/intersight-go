@@ -18,20 +18,19 @@ import (
 
 // StorageVirtualDriveExtensionRelationship - A relationship to the 'storage.VirtualDriveExtension' resource, or the expanded 'storage.VirtualDriveExtension' resource, or the 'null' value.
 type StorageVirtualDriveExtensionRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                      *MoMoRef
 	StorageVirtualDriveExtension *StorageVirtualDriveExtension
 }
 
 // MoMoRefAsStorageVirtualDriveExtensionRelationship is a convenience function that returns MoMoRef wrapped in StorageVirtualDriveExtensionRelationship
 func MoMoRefAsStorageVirtualDriveExtensionRelationship(v *MoMoRef) StorageVirtualDriveExtensionRelationship {
-	return StorageVirtualDriveExtensionRelationship{ MoMoRef: v}
+	return StorageVirtualDriveExtensionRelationship{MoMoRef: v}
 }
 
 // StorageVirtualDriveExtensionAsStorageVirtualDriveExtensionRelationship is a convenience function that returns StorageVirtualDriveExtension wrapped in StorageVirtualDriveExtensionRelationship
 func StorageVirtualDriveExtensionAsStorageVirtualDriveExtensionRelationship(v *StorageVirtualDriveExtension) StorageVirtualDriveExtensionRelationship {
-	return StorageVirtualDriveExtensionRelationship{ StorageVirtualDriveExtension: v}
+	return StorageVirtualDriveExtensionRelationship{StorageVirtualDriveExtension: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageVirtualDriveExtensionRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageVirtualDriveExtensionRelationship) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *StorageVirtualDriveExtensionRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageVirtualDriveExtensionRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageVirtualDriveExtensionRelationship) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

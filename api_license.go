@@ -29,11 +29,11 @@ var (
 type LicenseApiService service
 
 type ApiCreateLicenseIksLicenseCountRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
+	ctx                    _context.Context
+	ApiService             *LicenseApiService
 	licenseIksLicenseCount *LicenseIksLicenseCount
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                *string
+	ifNoneMatch            *string
 }
 
 // The &#39;license.IksLicenseCount&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateLicenseIksLicenseCountRequest) LicenseIksLicenseCount(licenseIk
 	r.licenseIksLicenseCount = &licenseIksLicenseCount
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateLicenseIksLicenseCountRequest) IfMatch(ifMatch string) ApiCreateLicenseIksLicenseCountRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateLicenseIksLicenseCountRequest) IfNoneMatch(ifNoneMatch string) ApiCreateLicenseIksLicenseCountRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateLicenseIksLicenseCount Create a 'license.IksLicenseCount' resource.
 func (a *LicenseApiService) CreateLicenseIksLicenseCount(ctx _context.Context) ApiCreateLicenseIksLicenseCountRequest {
 	return ApiCreateLicenseIksLicenseCountRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *LicenseApiService) CreateLicenseIksLicenseCountExecute(r ApiCreateLicen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,11 @@ func (a *LicenseApiService) CreateLicenseIksLicenseCountExecute(r ApiCreateLicen
 }
 
 type ApiCreateLicenseIwoLicenseCountRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
+	ctx                    _context.Context
+	ApiService             *LicenseApiService
 	licenseIwoLicenseCount *LicenseIwoLicenseCount
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                *string
+	ifNoneMatch            *string
 }
 
 // The &#39;license.IwoLicenseCount&#39; resource to create.
@@ -217,11 +219,13 @@ func (r ApiCreateLicenseIwoLicenseCountRequest) LicenseIwoLicenseCount(licenseIw
 	r.licenseIwoLicenseCount = &licenseIwoLicenseCount
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateLicenseIwoLicenseCountRequest) IfMatch(ifMatch string) ApiCreateLicenseIwoLicenseCountRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateLicenseIwoLicenseCountRequest) IfNoneMatch(ifNoneMatch string) ApiCreateLicenseIwoLicenseCountRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateLicenseIwoLicenseCount Create a 'license.IwoLicenseCount' resource.
 func (a *LicenseApiService) CreateLicenseIwoLicenseCount(ctx _context.Context) ApiCreateLicenseIwoLicenseCountRequest {
 	return ApiCreateLicenseIwoLicenseCountRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *LicenseApiService) CreateLicenseIwoLicenseCountExecute(r ApiCreateLicen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,11 +385,11 @@ func (a *LicenseApiService) CreateLicenseIwoLicenseCountExecute(r ApiCreateLicen
 }
 
 type ApiCreateLicenseLicenseInfoRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
+	ctx                _context.Context
+	ApiService         *LicenseApiService
 	licenseLicenseInfo *LicenseLicenseInfo
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch            *string
+	ifNoneMatch        *string
 }
 
 // The &#39;license.LicenseInfo&#39; resource to create.
@@ -393,11 +397,13 @@ func (r ApiCreateLicenseLicenseInfoRequest) LicenseLicenseInfo(licenseLicenseInf
 	r.licenseLicenseInfo = &licenseLicenseInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateLicenseLicenseInfoRequest) IfMatch(ifMatch string) ApiCreateLicenseLicenseInfoRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateLicenseLicenseInfoRequest) IfNoneMatch(ifNoneMatch string) ApiCreateLicenseLicenseInfoRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -417,7 +423,7 @@ CreateLicenseLicenseInfo Create a 'license.LicenseInfo' resource.
 func (a *LicenseApiService) CreateLicenseLicenseInfo(ctx _context.Context) ApiCreateLicenseLicenseInfoRequest {
 	return ApiCreateLicenseLicenseInfoRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -534,13 +540,13 @@ func (a *LicenseApiService) CreateLicenseLicenseInfoExecute(r ApiCreateLicenseLi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -557,11 +563,11 @@ func (a *LicenseApiService) CreateLicenseLicenseInfoExecute(r ApiCreateLicenseLi
 }
 
 type ApiCreateLicenseLicenseReservationOpRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
+	ctx                         _context.Context
+	ApiService                  *LicenseApiService
 	licenseLicenseReservationOp *LicenseLicenseReservationOp
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                     *string
+	ifNoneMatch                 *string
 }
 
 // The &#39;license.LicenseReservationOp&#39; resource to create.
@@ -569,11 +575,13 @@ func (r ApiCreateLicenseLicenseReservationOpRequest) LicenseLicenseReservationOp
 	r.licenseLicenseReservationOp = &licenseLicenseReservationOp
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateLicenseLicenseReservationOpRequest) IfMatch(ifMatch string) ApiCreateLicenseLicenseReservationOpRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateLicenseLicenseReservationOpRequest) IfNoneMatch(ifNoneMatch string) ApiCreateLicenseLicenseReservationOpRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -593,7 +601,7 @@ CreateLicenseLicenseReservationOp Create a 'license.LicenseReservationOp' resour
 func (a *LicenseApiService) CreateLicenseLicenseReservationOp(ctx _context.Context) ApiCreateLicenseLicenseReservationOpRequest {
 	return ApiCreateLicenseLicenseReservationOpRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -710,13 +718,13 @@ func (a *LicenseApiService) CreateLicenseLicenseReservationOpExecute(r ApiCreate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -733,11 +741,10 @@ func (a *LicenseApiService) CreateLicenseLicenseReservationOpExecute(r ApiCreate
 }
 
 type ApiGetLicenseAccountLicenseDataByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *LicenseApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetLicenseAccountLicenseDataByMoidRequest) Execute() (LicenseAccountLicenseData, *_nethttp.Response, error) {
 	return r.ApiService.GetLicenseAccountLicenseDataByMoidExecute(r)
@@ -753,8 +760,8 @@ GetLicenseAccountLicenseDataByMoid Read a 'license.AccountLicenseData' resource.
 func (a *LicenseApiService) GetLicenseAccountLicenseDataByMoid(ctx _context.Context, moid string) ApiGetLicenseAccountLicenseDataByMoidRequest {
 	return ApiGetLicenseAccountLicenseDataByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -861,13 +868,13 @@ func (a *LicenseApiService) GetLicenseAccountLicenseDataByMoidExecute(r ApiGetLi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -884,19 +891,19 @@ func (a *LicenseApiService) GetLicenseAccountLicenseDataByMoidExecute(r ApiGetLi
 }
 
 type ApiGetLicenseAccountLicenseDataListRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *LicenseApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -904,51 +911,61 @@ func (r ApiGetLicenseAccountLicenseDataListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetLicenseAccountLicenseDataListRequest) Orderby(orderby string) ApiGetLicenseAccountLicenseDataListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetLicenseAccountLicenseDataListRequest) Top(top int32) ApiGetLicenseAccountLicenseDataListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetLicenseAccountLicenseDataListRequest) Skip(skip int32) ApiGetLicenseAccountLicenseDataListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetLicenseAccountLicenseDataListRequest) Select_(select_ string) ApiGetLicenseAccountLicenseDataListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetLicenseAccountLicenseDataListRequest) Expand(expand string) ApiGetLicenseAccountLicenseDataListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetLicenseAccountLicenseDataListRequest) Apply(apply string) ApiGetLicenseAccountLicenseDataListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetLicenseAccountLicenseDataListRequest) Count(count bool) ApiGetLicenseAccountLicenseDataListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetLicenseAccountLicenseDataListRequest) Inlinecount(inlinecount string) ApiGetLicenseAccountLicenseDataListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetLicenseAccountLicenseDataListRequest) At(at string) ApiGetLicenseAccountLicenseDataListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetLicenseAccountLicenseDataListRequest) Tags(tags string) ApiGetLicenseAccountLicenseDataListRequest {
 	r.tags = &tags
@@ -968,7 +985,7 @@ GetLicenseAccountLicenseDataList Read a 'license.AccountLicenseData' resource.
 func (a *LicenseApiService) GetLicenseAccountLicenseDataList(ctx _context.Context) ApiGetLicenseAccountLicenseDataListRequest {
 	return ApiGetLicenseAccountLicenseDataListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1107,13 +1124,13 @@ func (a *LicenseApiService) GetLicenseAccountLicenseDataListExecute(r ApiGetLice
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1130,11 +1147,10 @@ func (a *LicenseApiService) GetLicenseAccountLicenseDataListExecute(r ApiGetLice
 }
 
 type ApiGetLicenseCustomerOpByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *LicenseApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetLicenseCustomerOpByMoidRequest) Execute() (LicenseCustomerOp, *_nethttp.Response, error) {
 	return r.ApiService.GetLicenseCustomerOpByMoidExecute(r)
@@ -1150,8 +1166,8 @@ GetLicenseCustomerOpByMoid Read a 'license.CustomerOp' resource.
 func (a *LicenseApiService) GetLicenseCustomerOpByMoid(ctx _context.Context, moid string) ApiGetLicenseCustomerOpByMoidRequest {
 	return ApiGetLicenseCustomerOpByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1258,13 +1274,13 @@ func (a *LicenseApiService) GetLicenseCustomerOpByMoidExecute(r ApiGetLicenseCus
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1281,19 +1297,19 @@ func (a *LicenseApiService) GetLicenseCustomerOpByMoidExecute(r ApiGetLicenseCus
 }
 
 type ApiGetLicenseCustomerOpListRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *LicenseApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1301,51 +1317,61 @@ func (r ApiGetLicenseCustomerOpListRequest) Filter(filter string) ApiGetLicenseC
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetLicenseCustomerOpListRequest) Orderby(orderby string) ApiGetLicenseCustomerOpListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetLicenseCustomerOpListRequest) Top(top int32) ApiGetLicenseCustomerOpListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetLicenseCustomerOpListRequest) Skip(skip int32) ApiGetLicenseCustomerOpListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetLicenseCustomerOpListRequest) Select_(select_ string) ApiGetLicenseCustomerOpListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetLicenseCustomerOpListRequest) Expand(expand string) ApiGetLicenseCustomerOpListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetLicenseCustomerOpListRequest) Apply(apply string) ApiGetLicenseCustomerOpListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetLicenseCustomerOpListRequest) Count(count bool) ApiGetLicenseCustomerOpListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetLicenseCustomerOpListRequest) Inlinecount(inlinecount string) ApiGetLicenseCustomerOpListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetLicenseCustomerOpListRequest) At(at string) ApiGetLicenseCustomerOpListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetLicenseCustomerOpListRequest) Tags(tags string) ApiGetLicenseCustomerOpListRequest {
 	r.tags = &tags
@@ -1365,7 +1391,7 @@ GetLicenseCustomerOpList Read a 'license.CustomerOp' resource.
 func (a *LicenseApiService) GetLicenseCustomerOpList(ctx _context.Context) ApiGetLicenseCustomerOpListRequest {
 	return ApiGetLicenseCustomerOpListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1504,13 +1530,13 @@ func (a *LicenseApiService) GetLicenseCustomerOpListExecute(r ApiGetLicenseCusto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1527,11 +1553,10 @@ func (a *LicenseApiService) GetLicenseCustomerOpListExecute(r ApiGetLicenseCusto
 }
 
 type ApiGetLicenseIksCustomerOpByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *LicenseApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetLicenseIksCustomerOpByMoidRequest) Execute() (LicenseIksCustomerOp, *_nethttp.Response, error) {
 	return r.ApiService.GetLicenseIksCustomerOpByMoidExecute(r)
@@ -1547,8 +1572,8 @@ GetLicenseIksCustomerOpByMoid Read a 'license.IksCustomerOp' resource.
 func (a *LicenseApiService) GetLicenseIksCustomerOpByMoid(ctx _context.Context, moid string) ApiGetLicenseIksCustomerOpByMoidRequest {
 	return ApiGetLicenseIksCustomerOpByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1655,13 +1680,13 @@ func (a *LicenseApiService) GetLicenseIksCustomerOpByMoidExecute(r ApiGetLicense
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1678,19 +1703,19 @@ func (a *LicenseApiService) GetLicenseIksCustomerOpByMoidExecute(r ApiGetLicense
 }
 
 type ApiGetLicenseIksCustomerOpListRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *LicenseApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1698,51 +1723,61 @@ func (r ApiGetLicenseIksCustomerOpListRequest) Filter(filter string) ApiGetLicen
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetLicenseIksCustomerOpListRequest) Orderby(orderby string) ApiGetLicenseIksCustomerOpListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetLicenseIksCustomerOpListRequest) Top(top int32) ApiGetLicenseIksCustomerOpListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetLicenseIksCustomerOpListRequest) Skip(skip int32) ApiGetLicenseIksCustomerOpListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetLicenseIksCustomerOpListRequest) Select_(select_ string) ApiGetLicenseIksCustomerOpListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetLicenseIksCustomerOpListRequest) Expand(expand string) ApiGetLicenseIksCustomerOpListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetLicenseIksCustomerOpListRequest) Apply(apply string) ApiGetLicenseIksCustomerOpListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetLicenseIksCustomerOpListRequest) Count(count bool) ApiGetLicenseIksCustomerOpListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetLicenseIksCustomerOpListRequest) Inlinecount(inlinecount string) ApiGetLicenseIksCustomerOpListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetLicenseIksCustomerOpListRequest) At(at string) ApiGetLicenseIksCustomerOpListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetLicenseIksCustomerOpListRequest) Tags(tags string) ApiGetLicenseIksCustomerOpListRequest {
 	r.tags = &tags
@@ -1762,7 +1797,7 @@ GetLicenseIksCustomerOpList Read a 'license.IksCustomerOp' resource.
 func (a *LicenseApiService) GetLicenseIksCustomerOpList(ctx _context.Context) ApiGetLicenseIksCustomerOpListRequest {
 	return ApiGetLicenseIksCustomerOpListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1901,13 +1936,13 @@ func (a *LicenseApiService) GetLicenseIksCustomerOpListExecute(r ApiGetLicenseIk
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1924,11 +1959,10 @@ func (a *LicenseApiService) GetLicenseIksCustomerOpListExecute(r ApiGetLicenseIk
 }
 
 type ApiGetLicenseIksLicenseCountByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *LicenseApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetLicenseIksLicenseCountByMoidRequest) Execute() (LicenseIksLicenseCount, *_nethttp.Response, error) {
 	return r.ApiService.GetLicenseIksLicenseCountByMoidExecute(r)
@@ -1944,8 +1978,8 @@ GetLicenseIksLicenseCountByMoid Read a 'license.IksLicenseCount' resource.
 func (a *LicenseApiService) GetLicenseIksLicenseCountByMoid(ctx _context.Context, moid string) ApiGetLicenseIksLicenseCountByMoidRequest {
 	return ApiGetLicenseIksLicenseCountByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2052,13 +2086,13 @@ func (a *LicenseApiService) GetLicenseIksLicenseCountByMoidExecute(r ApiGetLicen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2075,19 +2109,19 @@ func (a *LicenseApiService) GetLicenseIksLicenseCountByMoidExecute(r ApiGetLicen
 }
 
 type ApiGetLicenseIksLicenseCountListRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *LicenseApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2095,51 +2129,61 @@ func (r ApiGetLicenseIksLicenseCountListRequest) Filter(filter string) ApiGetLic
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetLicenseIksLicenseCountListRequest) Orderby(orderby string) ApiGetLicenseIksLicenseCountListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetLicenseIksLicenseCountListRequest) Top(top int32) ApiGetLicenseIksLicenseCountListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetLicenseIksLicenseCountListRequest) Skip(skip int32) ApiGetLicenseIksLicenseCountListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetLicenseIksLicenseCountListRequest) Select_(select_ string) ApiGetLicenseIksLicenseCountListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetLicenseIksLicenseCountListRequest) Expand(expand string) ApiGetLicenseIksLicenseCountListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetLicenseIksLicenseCountListRequest) Apply(apply string) ApiGetLicenseIksLicenseCountListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetLicenseIksLicenseCountListRequest) Count(count bool) ApiGetLicenseIksLicenseCountListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetLicenseIksLicenseCountListRequest) Inlinecount(inlinecount string) ApiGetLicenseIksLicenseCountListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetLicenseIksLicenseCountListRequest) At(at string) ApiGetLicenseIksLicenseCountListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetLicenseIksLicenseCountListRequest) Tags(tags string) ApiGetLicenseIksLicenseCountListRequest {
 	r.tags = &tags
@@ -2159,7 +2203,7 @@ GetLicenseIksLicenseCountList Read a 'license.IksLicenseCount' resource.
 func (a *LicenseApiService) GetLicenseIksLicenseCountList(ctx _context.Context) ApiGetLicenseIksLicenseCountListRequest {
 	return ApiGetLicenseIksLicenseCountListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2298,13 +2342,13 @@ func (a *LicenseApiService) GetLicenseIksLicenseCountListExecute(r ApiGetLicense
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2321,11 +2365,10 @@ func (a *LicenseApiService) GetLicenseIksLicenseCountListExecute(r ApiGetLicense
 }
 
 type ApiGetLicenseIwoCustomerOpByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *LicenseApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetLicenseIwoCustomerOpByMoidRequest) Execute() (LicenseIwoCustomerOp, *_nethttp.Response, error) {
 	return r.ApiService.GetLicenseIwoCustomerOpByMoidExecute(r)
@@ -2341,8 +2384,8 @@ GetLicenseIwoCustomerOpByMoid Read a 'license.IwoCustomerOp' resource.
 func (a *LicenseApiService) GetLicenseIwoCustomerOpByMoid(ctx _context.Context, moid string) ApiGetLicenseIwoCustomerOpByMoidRequest {
 	return ApiGetLicenseIwoCustomerOpByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2449,13 +2492,13 @@ func (a *LicenseApiService) GetLicenseIwoCustomerOpByMoidExecute(r ApiGetLicense
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2472,19 +2515,19 @@ func (a *LicenseApiService) GetLicenseIwoCustomerOpByMoidExecute(r ApiGetLicense
 }
 
 type ApiGetLicenseIwoCustomerOpListRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *LicenseApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2492,51 +2535,61 @@ func (r ApiGetLicenseIwoCustomerOpListRequest) Filter(filter string) ApiGetLicen
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetLicenseIwoCustomerOpListRequest) Orderby(orderby string) ApiGetLicenseIwoCustomerOpListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetLicenseIwoCustomerOpListRequest) Top(top int32) ApiGetLicenseIwoCustomerOpListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetLicenseIwoCustomerOpListRequest) Skip(skip int32) ApiGetLicenseIwoCustomerOpListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetLicenseIwoCustomerOpListRequest) Select_(select_ string) ApiGetLicenseIwoCustomerOpListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetLicenseIwoCustomerOpListRequest) Expand(expand string) ApiGetLicenseIwoCustomerOpListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetLicenseIwoCustomerOpListRequest) Apply(apply string) ApiGetLicenseIwoCustomerOpListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetLicenseIwoCustomerOpListRequest) Count(count bool) ApiGetLicenseIwoCustomerOpListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetLicenseIwoCustomerOpListRequest) Inlinecount(inlinecount string) ApiGetLicenseIwoCustomerOpListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetLicenseIwoCustomerOpListRequest) At(at string) ApiGetLicenseIwoCustomerOpListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetLicenseIwoCustomerOpListRequest) Tags(tags string) ApiGetLicenseIwoCustomerOpListRequest {
 	r.tags = &tags
@@ -2556,7 +2609,7 @@ GetLicenseIwoCustomerOpList Read a 'license.IwoCustomerOp' resource.
 func (a *LicenseApiService) GetLicenseIwoCustomerOpList(ctx _context.Context) ApiGetLicenseIwoCustomerOpListRequest {
 	return ApiGetLicenseIwoCustomerOpListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2695,13 +2748,13 @@ func (a *LicenseApiService) GetLicenseIwoCustomerOpListExecute(r ApiGetLicenseIw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2718,11 +2771,10 @@ func (a *LicenseApiService) GetLicenseIwoCustomerOpListExecute(r ApiGetLicenseIw
 }
 
 type ApiGetLicenseIwoLicenseCountByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *LicenseApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetLicenseIwoLicenseCountByMoidRequest) Execute() (LicenseIwoLicenseCount, *_nethttp.Response, error) {
 	return r.ApiService.GetLicenseIwoLicenseCountByMoidExecute(r)
@@ -2738,8 +2790,8 @@ GetLicenseIwoLicenseCountByMoid Read a 'license.IwoLicenseCount' resource.
 func (a *LicenseApiService) GetLicenseIwoLicenseCountByMoid(ctx _context.Context, moid string) ApiGetLicenseIwoLicenseCountByMoidRequest {
 	return ApiGetLicenseIwoLicenseCountByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2846,13 +2898,13 @@ func (a *LicenseApiService) GetLicenseIwoLicenseCountByMoidExecute(r ApiGetLicen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2869,19 +2921,19 @@ func (a *LicenseApiService) GetLicenseIwoLicenseCountByMoidExecute(r ApiGetLicen
 }
 
 type ApiGetLicenseIwoLicenseCountListRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *LicenseApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2889,51 +2941,61 @@ func (r ApiGetLicenseIwoLicenseCountListRequest) Filter(filter string) ApiGetLic
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetLicenseIwoLicenseCountListRequest) Orderby(orderby string) ApiGetLicenseIwoLicenseCountListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetLicenseIwoLicenseCountListRequest) Top(top int32) ApiGetLicenseIwoLicenseCountListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetLicenseIwoLicenseCountListRequest) Skip(skip int32) ApiGetLicenseIwoLicenseCountListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetLicenseIwoLicenseCountListRequest) Select_(select_ string) ApiGetLicenseIwoLicenseCountListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetLicenseIwoLicenseCountListRequest) Expand(expand string) ApiGetLicenseIwoLicenseCountListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetLicenseIwoLicenseCountListRequest) Apply(apply string) ApiGetLicenseIwoLicenseCountListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetLicenseIwoLicenseCountListRequest) Count(count bool) ApiGetLicenseIwoLicenseCountListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetLicenseIwoLicenseCountListRequest) Inlinecount(inlinecount string) ApiGetLicenseIwoLicenseCountListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetLicenseIwoLicenseCountListRequest) At(at string) ApiGetLicenseIwoLicenseCountListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetLicenseIwoLicenseCountListRequest) Tags(tags string) ApiGetLicenseIwoLicenseCountListRequest {
 	r.tags = &tags
@@ -2953,7 +3015,7 @@ GetLicenseIwoLicenseCountList Read a 'license.IwoLicenseCount' resource.
 func (a *LicenseApiService) GetLicenseIwoLicenseCountList(ctx _context.Context) ApiGetLicenseIwoLicenseCountListRequest {
 	return ApiGetLicenseIwoLicenseCountListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3092,13 +3154,13 @@ func (a *LicenseApiService) GetLicenseIwoLicenseCountListExecute(r ApiGetLicense
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3115,11 +3177,10 @@ func (a *LicenseApiService) GetLicenseIwoLicenseCountListExecute(r ApiGetLicense
 }
 
 type ApiGetLicenseLicenseInfoByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *LicenseApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetLicenseLicenseInfoByMoidRequest) Execute() (LicenseLicenseInfo, *_nethttp.Response, error) {
 	return r.ApiService.GetLicenseLicenseInfoByMoidExecute(r)
@@ -3135,8 +3196,8 @@ GetLicenseLicenseInfoByMoid Read a 'license.LicenseInfo' resource.
 func (a *LicenseApiService) GetLicenseLicenseInfoByMoid(ctx _context.Context, moid string) ApiGetLicenseLicenseInfoByMoidRequest {
 	return ApiGetLicenseLicenseInfoByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3243,13 +3304,13 @@ func (a *LicenseApiService) GetLicenseLicenseInfoByMoidExecute(r ApiGetLicenseLi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3266,19 +3327,19 @@ func (a *LicenseApiService) GetLicenseLicenseInfoByMoidExecute(r ApiGetLicenseLi
 }
 
 type ApiGetLicenseLicenseInfoListRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *LicenseApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3286,51 +3347,61 @@ func (r ApiGetLicenseLicenseInfoListRequest) Filter(filter string) ApiGetLicense
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetLicenseLicenseInfoListRequest) Orderby(orderby string) ApiGetLicenseLicenseInfoListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetLicenseLicenseInfoListRequest) Top(top int32) ApiGetLicenseLicenseInfoListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetLicenseLicenseInfoListRequest) Skip(skip int32) ApiGetLicenseLicenseInfoListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetLicenseLicenseInfoListRequest) Select_(select_ string) ApiGetLicenseLicenseInfoListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetLicenseLicenseInfoListRequest) Expand(expand string) ApiGetLicenseLicenseInfoListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetLicenseLicenseInfoListRequest) Apply(apply string) ApiGetLicenseLicenseInfoListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetLicenseLicenseInfoListRequest) Count(count bool) ApiGetLicenseLicenseInfoListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetLicenseLicenseInfoListRequest) Inlinecount(inlinecount string) ApiGetLicenseLicenseInfoListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetLicenseLicenseInfoListRequest) At(at string) ApiGetLicenseLicenseInfoListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetLicenseLicenseInfoListRequest) Tags(tags string) ApiGetLicenseLicenseInfoListRequest {
 	r.tags = &tags
@@ -3350,7 +3421,7 @@ GetLicenseLicenseInfoList Read a 'license.LicenseInfo' resource.
 func (a *LicenseApiService) GetLicenseLicenseInfoList(ctx _context.Context) ApiGetLicenseLicenseInfoListRequest {
 	return ApiGetLicenseLicenseInfoListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3489,13 +3560,13 @@ func (a *LicenseApiService) GetLicenseLicenseInfoListExecute(r ApiGetLicenseLice
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3512,11 +3583,10 @@ func (a *LicenseApiService) GetLicenseLicenseInfoListExecute(r ApiGetLicenseLice
 }
 
 type ApiGetLicenseLicenseReservationOpByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *LicenseApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetLicenseLicenseReservationOpByMoidRequest) Execute() (LicenseLicenseReservationOp, *_nethttp.Response, error) {
 	return r.ApiService.GetLicenseLicenseReservationOpByMoidExecute(r)
@@ -3532,8 +3602,8 @@ GetLicenseLicenseReservationOpByMoid Read a 'license.LicenseReservationOp' resou
 func (a *LicenseApiService) GetLicenseLicenseReservationOpByMoid(ctx _context.Context, moid string) ApiGetLicenseLicenseReservationOpByMoidRequest {
 	return ApiGetLicenseLicenseReservationOpByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3640,13 +3710,13 @@ func (a *LicenseApiService) GetLicenseLicenseReservationOpByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3663,19 +3733,19 @@ func (a *LicenseApiService) GetLicenseLicenseReservationOpByMoidExecute(r ApiGet
 }
 
 type ApiGetLicenseLicenseReservationOpListRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *LicenseApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3683,51 +3753,61 @@ func (r ApiGetLicenseLicenseReservationOpListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetLicenseLicenseReservationOpListRequest) Orderby(orderby string) ApiGetLicenseLicenseReservationOpListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetLicenseLicenseReservationOpListRequest) Top(top int32) ApiGetLicenseLicenseReservationOpListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetLicenseLicenseReservationOpListRequest) Skip(skip int32) ApiGetLicenseLicenseReservationOpListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetLicenseLicenseReservationOpListRequest) Select_(select_ string) ApiGetLicenseLicenseReservationOpListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetLicenseLicenseReservationOpListRequest) Expand(expand string) ApiGetLicenseLicenseReservationOpListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetLicenseLicenseReservationOpListRequest) Apply(apply string) ApiGetLicenseLicenseReservationOpListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetLicenseLicenseReservationOpListRequest) Count(count bool) ApiGetLicenseLicenseReservationOpListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetLicenseLicenseReservationOpListRequest) Inlinecount(inlinecount string) ApiGetLicenseLicenseReservationOpListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetLicenseLicenseReservationOpListRequest) At(at string) ApiGetLicenseLicenseReservationOpListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetLicenseLicenseReservationOpListRequest) Tags(tags string) ApiGetLicenseLicenseReservationOpListRequest {
 	r.tags = &tags
@@ -3747,7 +3827,7 @@ GetLicenseLicenseReservationOpList Read a 'license.LicenseReservationOp' resourc
 func (a *LicenseApiService) GetLicenseLicenseReservationOpList(ctx _context.Context) ApiGetLicenseLicenseReservationOpListRequest {
 	return ApiGetLicenseLicenseReservationOpListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3886,13 +3966,13 @@ func (a *LicenseApiService) GetLicenseLicenseReservationOpListExecute(r ApiGetLi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3909,11 +3989,10 @@ func (a *LicenseApiService) GetLicenseLicenseReservationOpListExecute(r ApiGetLi
 }
 
 type ApiGetLicenseSmartlicenseTokenByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *LicenseApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetLicenseSmartlicenseTokenByMoidRequest) Execute() (LicenseSmartlicenseToken, *_nethttp.Response, error) {
 	return r.ApiService.GetLicenseSmartlicenseTokenByMoidExecute(r)
@@ -3929,8 +4008,8 @@ GetLicenseSmartlicenseTokenByMoid Read a 'license.SmartlicenseToken' resource.
 func (a *LicenseApiService) GetLicenseSmartlicenseTokenByMoid(ctx _context.Context, moid string) ApiGetLicenseSmartlicenseTokenByMoidRequest {
 	return ApiGetLicenseSmartlicenseTokenByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4037,13 +4116,13 @@ func (a *LicenseApiService) GetLicenseSmartlicenseTokenByMoidExecute(r ApiGetLic
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4060,19 +4139,19 @@ func (a *LicenseApiService) GetLicenseSmartlicenseTokenByMoidExecute(r ApiGetLic
 }
 
 type ApiGetLicenseSmartlicenseTokenListRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *LicenseApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4080,51 +4159,61 @@ func (r ApiGetLicenseSmartlicenseTokenListRequest) Filter(filter string) ApiGetL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetLicenseSmartlicenseTokenListRequest) Orderby(orderby string) ApiGetLicenseSmartlicenseTokenListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetLicenseSmartlicenseTokenListRequest) Top(top int32) ApiGetLicenseSmartlicenseTokenListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetLicenseSmartlicenseTokenListRequest) Skip(skip int32) ApiGetLicenseSmartlicenseTokenListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetLicenseSmartlicenseTokenListRequest) Select_(select_ string) ApiGetLicenseSmartlicenseTokenListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetLicenseSmartlicenseTokenListRequest) Expand(expand string) ApiGetLicenseSmartlicenseTokenListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetLicenseSmartlicenseTokenListRequest) Apply(apply string) ApiGetLicenseSmartlicenseTokenListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetLicenseSmartlicenseTokenListRequest) Count(count bool) ApiGetLicenseSmartlicenseTokenListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetLicenseSmartlicenseTokenListRequest) Inlinecount(inlinecount string) ApiGetLicenseSmartlicenseTokenListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetLicenseSmartlicenseTokenListRequest) At(at string) ApiGetLicenseSmartlicenseTokenListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetLicenseSmartlicenseTokenListRequest) Tags(tags string) ApiGetLicenseSmartlicenseTokenListRequest {
 	r.tags = &tags
@@ -4144,7 +4233,7 @@ GetLicenseSmartlicenseTokenList Read a 'license.SmartlicenseToken' resource.
 func (a *LicenseApiService) GetLicenseSmartlicenseTokenList(ctx _context.Context) ApiGetLicenseSmartlicenseTokenListRequest {
 	return ApiGetLicenseSmartlicenseTokenListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4283,13 +4372,13 @@ func (a *LicenseApiService) GetLicenseSmartlicenseTokenListExecute(r ApiGetLicen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4306,11 +4395,11 @@ func (a *LicenseApiService) GetLicenseSmartlicenseTokenListExecute(r ApiGetLicen
 }
 
 type ApiPatchLicenseAccountLicenseDataRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *LicenseApiService
+	moid                      string
 	licenseAccountLicenseData *LicenseAccountLicenseData
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;license.AccountLicenseData&#39; resource to update.
@@ -4318,6 +4407,7 @@ func (r ApiPatchLicenseAccountLicenseDataRequest) LicenseAccountLicenseData(lice
 	r.licenseAccountLicenseData = &licenseAccountLicenseData
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchLicenseAccountLicenseDataRequest) IfMatch(ifMatch string) ApiPatchLicenseAccountLicenseDataRequest {
 	r.ifMatch = &ifMatch
@@ -4338,8 +4428,8 @@ PatchLicenseAccountLicenseData Update a 'license.AccountLicenseData' resource.
 func (a *LicenseApiService) PatchLicenseAccountLicenseData(ctx _context.Context, moid string) ApiPatchLicenseAccountLicenseDataRequest {
 	return ApiPatchLicenseAccountLicenseDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4454,13 +4544,13 @@ func (a *LicenseApiService) PatchLicenseAccountLicenseDataExecute(r ApiPatchLice
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4477,11 +4567,11 @@ func (a *LicenseApiService) PatchLicenseAccountLicenseDataExecute(r ApiPatchLice
 }
 
 type ApiPatchLicenseCustomerOpRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *LicenseApiService
+	moid              string
 	licenseCustomerOp *LicenseCustomerOp
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;license.CustomerOp&#39; resource to update.
@@ -4489,6 +4579,7 @@ func (r ApiPatchLicenseCustomerOpRequest) LicenseCustomerOp(licenseCustomerOp Li
 	r.licenseCustomerOp = &licenseCustomerOp
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchLicenseCustomerOpRequest) IfMatch(ifMatch string) ApiPatchLicenseCustomerOpRequest {
 	r.ifMatch = &ifMatch
@@ -4509,8 +4600,8 @@ PatchLicenseCustomerOp Update a 'license.CustomerOp' resource.
 func (a *LicenseApiService) PatchLicenseCustomerOp(ctx _context.Context, moid string) ApiPatchLicenseCustomerOpRequest {
 	return ApiPatchLicenseCustomerOpRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4625,13 +4716,13 @@ func (a *LicenseApiService) PatchLicenseCustomerOpExecute(r ApiPatchLicenseCusto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4648,11 +4739,11 @@ func (a *LicenseApiService) PatchLicenseCustomerOpExecute(r ApiPatchLicenseCusto
 }
 
 type ApiPatchLicenseIksCustomerOpRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *LicenseApiService
+	moid                 string
 	licenseIksCustomerOp *LicenseIksCustomerOp
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;license.IksCustomerOp&#39; resource to update.
@@ -4660,6 +4751,7 @@ func (r ApiPatchLicenseIksCustomerOpRequest) LicenseIksCustomerOp(licenseIksCust
 	r.licenseIksCustomerOp = &licenseIksCustomerOp
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchLicenseIksCustomerOpRequest) IfMatch(ifMatch string) ApiPatchLicenseIksCustomerOpRequest {
 	r.ifMatch = &ifMatch
@@ -4680,8 +4772,8 @@ PatchLicenseIksCustomerOp Update a 'license.IksCustomerOp' resource.
 func (a *LicenseApiService) PatchLicenseIksCustomerOp(ctx _context.Context, moid string) ApiPatchLicenseIksCustomerOpRequest {
 	return ApiPatchLicenseIksCustomerOpRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4796,13 +4888,13 @@ func (a *LicenseApiService) PatchLicenseIksCustomerOpExecute(r ApiPatchLicenseIk
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4819,11 +4911,11 @@ func (a *LicenseApiService) PatchLicenseIksCustomerOpExecute(r ApiPatchLicenseIk
 }
 
 type ApiPatchLicenseIksLicenseCountRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *LicenseApiService
+	moid                   string
 	licenseIksLicenseCount *LicenseIksLicenseCount
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;license.IksLicenseCount&#39; resource to update.
@@ -4831,6 +4923,7 @@ func (r ApiPatchLicenseIksLicenseCountRequest) LicenseIksLicenseCount(licenseIks
 	r.licenseIksLicenseCount = &licenseIksLicenseCount
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchLicenseIksLicenseCountRequest) IfMatch(ifMatch string) ApiPatchLicenseIksLicenseCountRequest {
 	r.ifMatch = &ifMatch
@@ -4851,8 +4944,8 @@ PatchLicenseIksLicenseCount Update a 'license.IksLicenseCount' resource.
 func (a *LicenseApiService) PatchLicenseIksLicenseCount(ctx _context.Context, moid string) ApiPatchLicenseIksLicenseCountRequest {
 	return ApiPatchLicenseIksLicenseCountRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4967,13 +5060,13 @@ func (a *LicenseApiService) PatchLicenseIksLicenseCountExecute(r ApiPatchLicense
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4990,11 +5083,11 @@ func (a *LicenseApiService) PatchLicenseIksLicenseCountExecute(r ApiPatchLicense
 }
 
 type ApiPatchLicenseIwoCustomerOpRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *LicenseApiService
+	moid                 string
 	licenseIwoCustomerOp *LicenseIwoCustomerOp
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;license.IwoCustomerOp&#39; resource to update.
@@ -5002,6 +5095,7 @@ func (r ApiPatchLicenseIwoCustomerOpRequest) LicenseIwoCustomerOp(licenseIwoCust
 	r.licenseIwoCustomerOp = &licenseIwoCustomerOp
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchLicenseIwoCustomerOpRequest) IfMatch(ifMatch string) ApiPatchLicenseIwoCustomerOpRequest {
 	r.ifMatch = &ifMatch
@@ -5022,8 +5116,8 @@ PatchLicenseIwoCustomerOp Update a 'license.IwoCustomerOp' resource.
 func (a *LicenseApiService) PatchLicenseIwoCustomerOp(ctx _context.Context, moid string) ApiPatchLicenseIwoCustomerOpRequest {
 	return ApiPatchLicenseIwoCustomerOpRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5138,13 +5232,13 @@ func (a *LicenseApiService) PatchLicenseIwoCustomerOpExecute(r ApiPatchLicenseIw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5161,11 +5255,11 @@ func (a *LicenseApiService) PatchLicenseIwoCustomerOpExecute(r ApiPatchLicenseIw
 }
 
 type ApiPatchLicenseIwoLicenseCountRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *LicenseApiService
+	moid                   string
 	licenseIwoLicenseCount *LicenseIwoLicenseCount
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;license.IwoLicenseCount&#39; resource to update.
@@ -5173,6 +5267,7 @@ func (r ApiPatchLicenseIwoLicenseCountRequest) LicenseIwoLicenseCount(licenseIwo
 	r.licenseIwoLicenseCount = &licenseIwoLicenseCount
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchLicenseIwoLicenseCountRequest) IfMatch(ifMatch string) ApiPatchLicenseIwoLicenseCountRequest {
 	r.ifMatch = &ifMatch
@@ -5193,8 +5288,8 @@ PatchLicenseIwoLicenseCount Update a 'license.IwoLicenseCount' resource.
 func (a *LicenseApiService) PatchLicenseIwoLicenseCount(ctx _context.Context, moid string) ApiPatchLicenseIwoLicenseCountRequest {
 	return ApiPatchLicenseIwoLicenseCountRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5309,13 +5404,13 @@ func (a *LicenseApiService) PatchLicenseIwoLicenseCountExecute(r ApiPatchLicense
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5332,11 +5427,11 @@ func (a *LicenseApiService) PatchLicenseIwoLicenseCountExecute(r ApiPatchLicense
 }
 
 type ApiPatchLicenseLicenseInfoRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	moid string
+	ctx                _context.Context
+	ApiService         *LicenseApiService
+	moid               string
 	licenseLicenseInfo *LicenseLicenseInfo
-	ifMatch *string
+	ifMatch            *string
 }
 
 // The &#39;license.LicenseInfo&#39; resource to update.
@@ -5344,6 +5439,7 @@ func (r ApiPatchLicenseLicenseInfoRequest) LicenseLicenseInfo(licenseLicenseInfo
 	r.licenseLicenseInfo = &licenseLicenseInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchLicenseLicenseInfoRequest) IfMatch(ifMatch string) ApiPatchLicenseLicenseInfoRequest {
 	r.ifMatch = &ifMatch
@@ -5364,8 +5460,8 @@ PatchLicenseLicenseInfo Update a 'license.LicenseInfo' resource.
 func (a *LicenseApiService) PatchLicenseLicenseInfo(ctx _context.Context, moid string) ApiPatchLicenseLicenseInfoRequest {
 	return ApiPatchLicenseLicenseInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5480,13 +5576,13 @@ func (a *LicenseApiService) PatchLicenseLicenseInfoExecute(r ApiPatchLicenseLice
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5503,11 +5599,11 @@ func (a *LicenseApiService) PatchLicenseLicenseInfoExecute(r ApiPatchLicenseLice
 }
 
 type ApiPatchLicenseLicenseReservationOpRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *LicenseApiService
+	moid                        string
 	licenseLicenseReservationOp *LicenseLicenseReservationOp
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;license.LicenseReservationOp&#39; resource to update.
@@ -5515,6 +5611,7 @@ func (r ApiPatchLicenseLicenseReservationOpRequest) LicenseLicenseReservationOp(
 	r.licenseLicenseReservationOp = &licenseLicenseReservationOp
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchLicenseLicenseReservationOpRequest) IfMatch(ifMatch string) ApiPatchLicenseLicenseReservationOpRequest {
 	r.ifMatch = &ifMatch
@@ -5535,8 +5632,8 @@ PatchLicenseLicenseReservationOp Update a 'license.LicenseReservationOp' resourc
 func (a *LicenseApiService) PatchLicenseLicenseReservationOp(ctx _context.Context, moid string) ApiPatchLicenseLicenseReservationOpRequest {
 	return ApiPatchLicenseLicenseReservationOpRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5651,13 +5748,13 @@ func (a *LicenseApiService) PatchLicenseLicenseReservationOpExecute(r ApiPatchLi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5674,11 +5771,11 @@ func (a *LicenseApiService) PatchLicenseLicenseReservationOpExecute(r ApiPatchLi
 }
 
 type ApiPatchLicenseSmartlicenseTokenRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *LicenseApiService
+	moid                     string
 	licenseSmartlicenseToken *LicenseSmartlicenseToken
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;license.SmartlicenseToken&#39; resource to update.
@@ -5686,6 +5783,7 @@ func (r ApiPatchLicenseSmartlicenseTokenRequest) LicenseSmartlicenseToken(licens
 	r.licenseSmartlicenseToken = &licenseSmartlicenseToken
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchLicenseSmartlicenseTokenRequest) IfMatch(ifMatch string) ApiPatchLicenseSmartlicenseTokenRequest {
 	r.ifMatch = &ifMatch
@@ -5706,8 +5804,8 @@ PatchLicenseSmartlicenseToken Update a 'license.SmartlicenseToken' resource.
 func (a *LicenseApiService) PatchLicenseSmartlicenseToken(ctx _context.Context, moid string) ApiPatchLicenseSmartlicenseTokenRequest {
 	return ApiPatchLicenseSmartlicenseTokenRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5822,13 +5920,13 @@ func (a *LicenseApiService) PatchLicenseSmartlicenseTokenExecute(r ApiPatchLicen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5845,11 +5943,11 @@ func (a *LicenseApiService) PatchLicenseSmartlicenseTokenExecute(r ApiPatchLicen
 }
 
 type ApiUpdateLicenseAccountLicenseDataRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *LicenseApiService
+	moid                      string
 	licenseAccountLicenseData *LicenseAccountLicenseData
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;license.AccountLicenseData&#39; resource to update.
@@ -5857,6 +5955,7 @@ func (r ApiUpdateLicenseAccountLicenseDataRequest) LicenseAccountLicenseData(lic
 	r.licenseAccountLicenseData = &licenseAccountLicenseData
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateLicenseAccountLicenseDataRequest) IfMatch(ifMatch string) ApiUpdateLicenseAccountLicenseDataRequest {
 	r.ifMatch = &ifMatch
@@ -5877,8 +5976,8 @@ UpdateLicenseAccountLicenseData Update a 'license.AccountLicenseData' resource.
 func (a *LicenseApiService) UpdateLicenseAccountLicenseData(ctx _context.Context, moid string) ApiUpdateLicenseAccountLicenseDataRequest {
 	return ApiUpdateLicenseAccountLicenseDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5993,13 +6092,13 @@ func (a *LicenseApiService) UpdateLicenseAccountLicenseDataExecute(r ApiUpdateLi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6016,11 +6115,11 @@ func (a *LicenseApiService) UpdateLicenseAccountLicenseDataExecute(r ApiUpdateLi
 }
 
 type ApiUpdateLicenseCustomerOpRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *LicenseApiService
+	moid              string
 	licenseCustomerOp *LicenseCustomerOp
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;license.CustomerOp&#39; resource to update.
@@ -6028,6 +6127,7 @@ func (r ApiUpdateLicenseCustomerOpRequest) LicenseCustomerOp(licenseCustomerOp L
 	r.licenseCustomerOp = &licenseCustomerOp
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateLicenseCustomerOpRequest) IfMatch(ifMatch string) ApiUpdateLicenseCustomerOpRequest {
 	r.ifMatch = &ifMatch
@@ -6048,8 +6148,8 @@ UpdateLicenseCustomerOp Update a 'license.CustomerOp' resource.
 func (a *LicenseApiService) UpdateLicenseCustomerOp(ctx _context.Context, moid string) ApiUpdateLicenseCustomerOpRequest {
 	return ApiUpdateLicenseCustomerOpRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6164,13 +6264,13 @@ func (a *LicenseApiService) UpdateLicenseCustomerOpExecute(r ApiUpdateLicenseCus
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6187,11 +6287,11 @@ func (a *LicenseApiService) UpdateLicenseCustomerOpExecute(r ApiUpdateLicenseCus
 }
 
 type ApiUpdateLicenseIksCustomerOpRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *LicenseApiService
+	moid                 string
 	licenseIksCustomerOp *LicenseIksCustomerOp
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;license.IksCustomerOp&#39; resource to update.
@@ -6199,6 +6299,7 @@ func (r ApiUpdateLicenseIksCustomerOpRequest) LicenseIksCustomerOp(licenseIksCus
 	r.licenseIksCustomerOp = &licenseIksCustomerOp
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateLicenseIksCustomerOpRequest) IfMatch(ifMatch string) ApiUpdateLicenseIksCustomerOpRequest {
 	r.ifMatch = &ifMatch
@@ -6219,8 +6320,8 @@ UpdateLicenseIksCustomerOp Update a 'license.IksCustomerOp' resource.
 func (a *LicenseApiService) UpdateLicenseIksCustomerOp(ctx _context.Context, moid string) ApiUpdateLicenseIksCustomerOpRequest {
 	return ApiUpdateLicenseIksCustomerOpRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6335,13 +6436,13 @@ func (a *LicenseApiService) UpdateLicenseIksCustomerOpExecute(r ApiUpdateLicense
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6358,11 +6459,11 @@ func (a *LicenseApiService) UpdateLicenseIksCustomerOpExecute(r ApiUpdateLicense
 }
 
 type ApiUpdateLicenseIksLicenseCountRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *LicenseApiService
+	moid                   string
 	licenseIksLicenseCount *LicenseIksLicenseCount
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;license.IksLicenseCount&#39; resource to update.
@@ -6370,6 +6471,7 @@ func (r ApiUpdateLicenseIksLicenseCountRequest) LicenseIksLicenseCount(licenseIk
 	r.licenseIksLicenseCount = &licenseIksLicenseCount
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateLicenseIksLicenseCountRequest) IfMatch(ifMatch string) ApiUpdateLicenseIksLicenseCountRequest {
 	r.ifMatch = &ifMatch
@@ -6390,8 +6492,8 @@ UpdateLicenseIksLicenseCount Update a 'license.IksLicenseCount' resource.
 func (a *LicenseApiService) UpdateLicenseIksLicenseCount(ctx _context.Context, moid string) ApiUpdateLicenseIksLicenseCountRequest {
 	return ApiUpdateLicenseIksLicenseCountRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6506,13 +6608,13 @@ func (a *LicenseApiService) UpdateLicenseIksLicenseCountExecute(r ApiUpdateLicen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6529,11 +6631,11 @@ func (a *LicenseApiService) UpdateLicenseIksLicenseCountExecute(r ApiUpdateLicen
 }
 
 type ApiUpdateLicenseIwoCustomerOpRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *LicenseApiService
+	moid                 string
 	licenseIwoCustomerOp *LicenseIwoCustomerOp
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;license.IwoCustomerOp&#39; resource to update.
@@ -6541,6 +6643,7 @@ func (r ApiUpdateLicenseIwoCustomerOpRequest) LicenseIwoCustomerOp(licenseIwoCus
 	r.licenseIwoCustomerOp = &licenseIwoCustomerOp
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateLicenseIwoCustomerOpRequest) IfMatch(ifMatch string) ApiUpdateLicenseIwoCustomerOpRequest {
 	r.ifMatch = &ifMatch
@@ -6561,8 +6664,8 @@ UpdateLicenseIwoCustomerOp Update a 'license.IwoCustomerOp' resource.
 func (a *LicenseApiService) UpdateLicenseIwoCustomerOp(ctx _context.Context, moid string) ApiUpdateLicenseIwoCustomerOpRequest {
 	return ApiUpdateLicenseIwoCustomerOpRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6677,13 +6780,13 @@ func (a *LicenseApiService) UpdateLicenseIwoCustomerOpExecute(r ApiUpdateLicense
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6700,11 +6803,11 @@ func (a *LicenseApiService) UpdateLicenseIwoCustomerOpExecute(r ApiUpdateLicense
 }
 
 type ApiUpdateLicenseIwoLicenseCountRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *LicenseApiService
+	moid                   string
 	licenseIwoLicenseCount *LicenseIwoLicenseCount
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;license.IwoLicenseCount&#39; resource to update.
@@ -6712,6 +6815,7 @@ func (r ApiUpdateLicenseIwoLicenseCountRequest) LicenseIwoLicenseCount(licenseIw
 	r.licenseIwoLicenseCount = &licenseIwoLicenseCount
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateLicenseIwoLicenseCountRequest) IfMatch(ifMatch string) ApiUpdateLicenseIwoLicenseCountRequest {
 	r.ifMatch = &ifMatch
@@ -6732,8 +6836,8 @@ UpdateLicenseIwoLicenseCount Update a 'license.IwoLicenseCount' resource.
 func (a *LicenseApiService) UpdateLicenseIwoLicenseCount(ctx _context.Context, moid string) ApiUpdateLicenseIwoLicenseCountRequest {
 	return ApiUpdateLicenseIwoLicenseCountRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6848,13 +6952,13 @@ func (a *LicenseApiService) UpdateLicenseIwoLicenseCountExecute(r ApiUpdateLicen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6871,11 +6975,11 @@ func (a *LicenseApiService) UpdateLicenseIwoLicenseCountExecute(r ApiUpdateLicen
 }
 
 type ApiUpdateLicenseLicenseInfoRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	moid string
+	ctx                _context.Context
+	ApiService         *LicenseApiService
+	moid               string
 	licenseLicenseInfo *LicenseLicenseInfo
-	ifMatch *string
+	ifMatch            *string
 }
 
 // The &#39;license.LicenseInfo&#39; resource to update.
@@ -6883,6 +6987,7 @@ func (r ApiUpdateLicenseLicenseInfoRequest) LicenseLicenseInfo(licenseLicenseInf
 	r.licenseLicenseInfo = &licenseLicenseInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateLicenseLicenseInfoRequest) IfMatch(ifMatch string) ApiUpdateLicenseLicenseInfoRequest {
 	r.ifMatch = &ifMatch
@@ -6903,8 +7008,8 @@ UpdateLicenseLicenseInfo Update a 'license.LicenseInfo' resource.
 func (a *LicenseApiService) UpdateLicenseLicenseInfo(ctx _context.Context, moid string) ApiUpdateLicenseLicenseInfoRequest {
 	return ApiUpdateLicenseLicenseInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7019,13 +7124,13 @@ func (a *LicenseApiService) UpdateLicenseLicenseInfoExecute(r ApiUpdateLicenseLi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7042,11 +7147,11 @@ func (a *LicenseApiService) UpdateLicenseLicenseInfoExecute(r ApiUpdateLicenseLi
 }
 
 type ApiUpdateLicenseLicenseReservationOpRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *LicenseApiService
+	moid                        string
 	licenseLicenseReservationOp *LicenseLicenseReservationOp
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;license.LicenseReservationOp&#39; resource to update.
@@ -7054,6 +7159,7 @@ func (r ApiUpdateLicenseLicenseReservationOpRequest) LicenseLicenseReservationOp
 	r.licenseLicenseReservationOp = &licenseLicenseReservationOp
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateLicenseLicenseReservationOpRequest) IfMatch(ifMatch string) ApiUpdateLicenseLicenseReservationOpRequest {
 	r.ifMatch = &ifMatch
@@ -7074,8 +7180,8 @@ UpdateLicenseLicenseReservationOp Update a 'license.LicenseReservationOp' resour
 func (a *LicenseApiService) UpdateLicenseLicenseReservationOp(ctx _context.Context, moid string) ApiUpdateLicenseLicenseReservationOpRequest {
 	return ApiUpdateLicenseLicenseReservationOpRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7190,13 +7296,13 @@ func (a *LicenseApiService) UpdateLicenseLicenseReservationOpExecute(r ApiUpdate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7213,11 +7319,11 @@ func (a *LicenseApiService) UpdateLicenseLicenseReservationOpExecute(r ApiUpdate
 }
 
 type ApiUpdateLicenseSmartlicenseTokenRequest struct {
-	ctx _context.Context
-	ApiService *LicenseApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *LicenseApiService
+	moid                     string
 	licenseSmartlicenseToken *LicenseSmartlicenseToken
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;license.SmartlicenseToken&#39; resource to update.
@@ -7225,6 +7331,7 @@ func (r ApiUpdateLicenseSmartlicenseTokenRequest) LicenseSmartlicenseToken(licen
 	r.licenseSmartlicenseToken = &licenseSmartlicenseToken
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateLicenseSmartlicenseTokenRequest) IfMatch(ifMatch string) ApiUpdateLicenseSmartlicenseTokenRequest {
 	r.ifMatch = &ifMatch
@@ -7245,8 +7352,8 @@ UpdateLicenseSmartlicenseToken Update a 'license.SmartlicenseToken' resource.
 func (a *LicenseApiService) UpdateLicenseSmartlicenseToken(ctx _context.Context, moid string) ApiUpdateLicenseSmartlicenseTokenRequest {
 	return ApiUpdateLicenseSmartlicenseTokenRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7361,13 +7468,13 @@ func (a *LicenseApiService) UpdateLicenseSmartlicenseTokenExecute(r ApiUpdateLic
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

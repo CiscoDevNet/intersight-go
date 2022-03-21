@@ -20,7 +20,7 @@ type StorageNetAppVolumeSnapshotListAllOf struct {
 	// The total number of 'storage.NetAppVolumeSnapshot' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'storage.NetAppVolumeSnapshot' resources matching the request.
-	Results []StorageNetAppVolumeSnapshot `json:"Results,omitempty"`
+	Results              []StorageNetAppVolumeSnapshot `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *StorageNetAppVolumeSnapshotListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppVolumeSnapshotListAllOf) GetResults() []StorageNetAppVolumeSnapshot {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppVolumeSnapshot
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableStorageNetAppVolumeSnapshotListAllOf) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

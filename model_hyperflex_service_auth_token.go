@@ -31,10 +31,10 @@ type HyperflexServiceAuthToken struct {
 	// Service auth token that has been created by HyperFlex cluster.
 	ServiceAuthToken *string `json:"ServiceAuthToken,omitempty"`
 	// Represents status of ervice auth claim or revocation. * `Unknown` - Unknown claim state of the service auth token. * `Claiming` - The service auth token claim is in progress. * `Claimed` - The service auth token has been successfully claimed. * `FailedToClaim` - Cannot claim the service auth token on the underlying HyperFlex cluster. * `Revoking` - The service auth token revocation is in progress. * `Revoked` - The service auth token revocation has been successfully revoked. * `FailedToRevoke` - Cannot revoke the service auth token on the underlying HyperFlex cluster.
-	Status *string `json:"Status,omitempty"`
-	Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	TokenOwner *MoBaseMoRelationship `json:"TokenOwner,omitempty"`
+	Status               *string                               `json:"Status,omitempty"`
+	Cluster              *HyperflexClusterRelationship         `json:"Cluster,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	TokenOwner           *MoBaseMoRelationship                 `json:"TokenOwner,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *HyperflexServiceAuthToken) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexServiceAuthToken) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *HyperflexServiceAuthToken) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexServiceAuthToken) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -393,10 +393,10 @@ func (o *HyperflexServiceAuthToken) UnmarshalJSON(bytes []byte) (err error) {
 		// Service auth token that has been created by HyperFlex cluster.
 		ServiceAuthToken *string `json:"ServiceAuthToken,omitempty"`
 		// Represents status of ervice auth claim or revocation. * `Unknown` - Unknown claim state of the service auth token. * `Claiming` - The service auth token claim is in progress. * `Claimed` - The service auth token has been successfully claimed. * `FailedToClaim` - Cannot claim the service auth token on the underlying HyperFlex cluster. * `Revoking` - The service auth token revocation is in progress. * `Revoked` - The service auth token revocation has been successfully revoked. * `FailedToRevoke` - Cannot revoke the service auth token on the underlying HyperFlex cluster.
-		Status *string `json:"Status,omitempty"`
-		Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
+		Status       *string                               `json:"Status,omitempty"`
+		Cluster      *HyperflexClusterRelationship         `json:"Cluster,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-		TokenOwner *MoBaseMoRelationship `json:"TokenOwner,omitempty"`
+		TokenOwner   *MoBaseMoRelationship                 `json:"TokenOwner,omitempty"`
 	}
 
 	varHyperflexServiceAuthTokenWithoutEmbeddedStruct := HyperflexServiceAuthTokenWithoutEmbeddedStruct{}
@@ -499,5 +499,3 @@ func (v *NullableHyperflexServiceAuthToken) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

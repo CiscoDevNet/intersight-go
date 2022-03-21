@@ -23,7 +23,7 @@ type NiatelemetrySystemControllerDetailsList struct {
 	// The total number of 'niatelemetry.SystemControllerDetails' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'niatelemetry.SystemControllerDetails' resources matching the request.
-	Results []NiatelemetrySystemControllerDetails `json:"Results,omitempty"`
+	Results              []NiatelemetrySystemControllerDetails `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *NiatelemetrySystemControllerDetailsList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetrySystemControllerDetailsList) GetResults() []NiatelemetrySystemControllerDetails {
-	if o == nil  {
+	if o == nil {
 		var ret []NiatelemetrySystemControllerDetails
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableNiatelemetrySystemControllerDetailsList) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

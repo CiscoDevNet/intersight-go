@@ -27,8 +27,8 @@ type IamLdapProvider struct {
 	// LDAP Server Port for connection establishment.
 	Port *int64 `json:"Port,omitempty"`
 	// LDAP Server Address, can be IP address or hostname.
-	Server *string `json:"Server,omitempty"`
-	LdapPolicy *IamLdapPolicyRelationship `json:"LdapPolicy,omitempty"`
+	Server               *string                    `json:"Server,omitempty"`
+	LdapPolicy           *IamLdapPolicyRelationship `json:"LdapPolicy,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *IamLdapProvider) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamLdapProvider) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *IamLdapProvider) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamLdapProvider) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -247,7 +247,7 @@ func (o *IamLdapProvider) UnmarshalJSON(bytes []byte) (err error) {
 		// LDAP Server Port for connection establishment.
 		Port *int64 `json:"Port,omitempty"`
 		// LDAP Server Address, can be IP address or hostname.
-		Server *string `json:"Server,omitempty"`
+		Server     *string                    `json:"Server,omitempty"`
 		LdapPolicy *IamLdapPolicyRelationship `json:"LdapPolicy,omitempty"`
 	}
 
@@ -343,5 +343,3 @@ func (v *NullableIamLdapProvider) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

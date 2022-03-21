@@ -25,8 +25,8 @@ type PolicyAbstractConfigResultEntry struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ObjectType string `json:"ObjectType"`
 	// The completed time of the task in installer.
-	CompletedTime *string `json:"CompletedTime,omitempty"`
-	Context NullablePolicyConfigResultContext `json:"Context,omitempty"`
+	CompletedTime *string                           `json:"CompletedTime,omitempty"`
+	Context       NullablePolicyConfigResultContext `json:"Context,omitempty"`
 	// Localized message based on the locale setting of the user's context.
 	Message *string `json:"Message,omitempty"`
 	// The identifier of the object that owns the result message. The owner ID is used to correlate a given result entry to a task or entity. For example, a config result entry that describes the result of a workflow task may have the task's instance ID as the owner.
@@ -34,7 +34,7 @@ type PolicyAbstractConfigResultEntry struct {
 	// Values  -- Ok, Ok-with-warning, Errored.
 	State *string `json:"State,omitempty"`
 	// Indicates if the result is reported during the logical model validation/resource allocation phase. or the configuration applying phase. Values -- validation, config.
-	Type *string `json:"Type,omitempty"`
+	Type                 *string `json:"Type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *PolicyAbstractConfigResultEntry) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PolicyAbstractConfigResultEntry) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *PolicyAbstractConfigResultEntry) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PolicyAbstractConfigResultEntry) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -152,7 +152,7 @@ func (o *PolicyAbstractConfigResultEntry) GetContext() PolicyConfigResultContext
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PolicyAbstractConfigResultEntry) GetContextOk() (*PolicyConfigResultContext, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Context.Get(), o.Context.IsSet()
@@ -171,6 +171,7 @@ func (o *PolicyAbstractConfigResultEntry) HasContext() bool {
 func (o *PolicyAbstractConfigResultEntry) SetContext(v PolicyConfigResultContext) {
 	o.Context.Set(&v)
 }
+
 // SetContextNil sets the value for Context to be an explicit nil
 func (o *PolicyAbstractConfigResultEntry) SetContextNil() {
 	o.Context.Set(nil)
@@ -358,8 +359,8 @@ func (o *PolicyAbstractConfigResultEntry) UnmarshalJSON(bytes []byte) (err error
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 		ObjectType string `json:"ObjectType"`
 		// The completed time of the task in installer.
-		CompletedTime *string `json:"CompletedTime,omitempty"`
-		Context NullablePolicyConfigResultContext `json:"Context,omitempty"`
+		CompletedTime *string                           `json:"CompletedTime,omitempty"`
+		Context       NullablePolicyConfigResultContext `json:"Context,omitempty"`
 		// Localized message based on the locale setting of the user's context.
 		Message *string `json:"Message,omitempty"`
 		// The identifier of the object that owns the result message. The owner ID is used to correlate a given result entry to a task or entity. For example, a config result entry that describes the result of a workflow task may have the task's instance ID as the owner.
@@ -468,5 +469,3 @@ func (v *NullablePolicyAbstractConfigResultEntry) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

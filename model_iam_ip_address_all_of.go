@@ -24,8 +24,8 @@ type IamIpAddressAllOf struct {
 	// The Trusted IP range's address. IP address, CIDR range, and IP address range formats are supported. For example '12.13.14.15', '12.13.14.0/24', and '12.13.14.15-12.13.14.200'. Reserved IP ranges '127.0.0.1', '10.0.0.0/8', '172.16.0.0/12', and '192.168.0.0/16' are not allowed.
 	Address *string `json:"Address,omitempty"`
 	// Description of Trusted IP address range.
-	Description *string `json:"Description,omitempty"`
-	IpAccessManagement *IamIpAccessManagementRelationship `json:"IpAccessManagement,omitempty"`
+	Description          *string                            `json:"Description,omitempty"`
+	IpAccessManagement   *IamIpAccessManagementRelationship `json:"IpAccessManagement,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *IamIpAddressAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamIpAddressAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *IamIpAddressAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamIpAddressAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -279,5 +279,3 @@ func (v *NullableIamIpAddressAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

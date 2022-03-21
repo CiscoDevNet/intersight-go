@@ -37,11 +37,11 @@ type IamOAuthTokenAllOf struct {
 	// The last login time for user.
 	LastLoginTime *time.Time `json:"LastLoginTime,omitempty"`
 	// Token identifier. Not the Access Token itself.
-	TokenId *string `json:"TokenId,omitempty"`
-	UserMeta NullableIamClientMeta `json:"UserMeta,omitempty"`
-	AppRegistration *IamAppRegistrationRelationship `json:"AppRegistration,omitempty"`
-	Permission *IamPermissionRelationship `json:"Permission,omitempty"`
-	User *IamUserRelationship `json:"User,omitempty"`
+	TokenId              *string                         `json:"TokenId,omitempty"`
+	UserMeta             NullableIamClientMeta           `json:"UserMeta,omitempty"`
+	AppRegistration      *IamAppRegistrationRelationship `json:"AppRegistration,omitempty"`
+	Permission           *IamPermissionRelationship      `json:"Permission,omitempty"`
+	User                 *IamUserRelationship            `json:"User,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -83,7 +83,7 @@ func (o *IamOAuthTokenAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamOAuthTokenAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -107,7 +107,7 @@ func (o *IamOAuthTokenAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamOAuthTokenAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -387,7 +387,7 @@ func (o *IamOAuthTokenAllOf) GetUserMeta() IamClientMeta {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IamOAuthTokenAllOf) GetUserMetaOk() (*IamClientMeta, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UserMeta.Get(), o.UserMeta.IsSet()
@@ -406,6 +406,7 @@ func (o *IamOAuthTokenAllOf) HasUserMeta() bool {
 func (o *IamOAuthTokenAllOf) SetUserMeta(v IamClientMeta) {
 	o.UserMeta.Set(&v)
 }
+
 // SetUserMetaNil sets the value for UserMeta to be an explicit nil
 func (o *IamOAuthTokenAllOf) SetUserMetaNil() {
 	o.UserMeta.Set(nil)
@@ -629,5 +630,3 @@ func (v *NullableIamOAuthTokenAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,31 +19,30 @@ import (
 // LicenseIwoLicenseCountResponse - The response body of a HTTP GET request for the 'license.IwoLicenseCount' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'license.IwoLicenseCount' resources.
 type LicenseIwoLicenseCountResponse struct {
 	LicenseIwoLicenseCountList *LicenseIwoLicenseCountList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform       *MoAggregateTransform
+	MoDocumentCount            *MoDocumentCount
+	MoTagSummary               *MoTagSummary
 }
 
 // LicenseIwoLicenseCountListAsLicenseIwoLicenseCountResponse is a convenience function that returns LicenseIwoLicenseCountList wrapped in LicenseIwoLicenseCountResponse
 func LicenseIwoLicenseCountListAsLicenseIwoLicenseCountResponse(v *LicenseIwoLicenseCountList) LicenseIwoLicenseCountResponse {
-	return LicenseIwoLicenseCountResponse{ LicenseIwoLicenseCountList: v}
+	return LicenseIwoLicenseCountResponse{LicenseIwoLicenseCountList: v}
 }
 
 // MoAggregateTransformAsLicenseIwoLicenseCountResponse is a convenience function that returns MoAggregateTransform wrapped in LicenseIwoLicenseCountResponse
 func MoAggregateTransformAsLicenseIwoLicenseCountResponse(v *MoAggregateTransform) LicenseIwoLicenseCountResponse {
-	return LicenseIwoLicenseCountResponse{ MoAggregateTransform: v}
+	return LicenseIwoLicenseCountResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsLicenseIwoLicenseCountResponse is a convenience function that returns MoDocumentCount wrapped in LicenseIwoLicenseCountResponse
 func MoDocumentCountAsLicenseIwoLicenseCountResponse(v *MoDocumentCount) LicenseIwoLicenseCountResponse {
-	return LicenseIwoLicenseCountResponse{ MoDocumentCount: v}
+	return LicenseIwoLicenseCountResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsLicenseIwoLicenseCountResponse is a convenience function that returns MoTagSummary wrapped in LicenseIwoLicenseCountResponse
 func MoTagSummaryAsLicenseIwoLicenseCountResponse(v *MoTagSummary) LicenseIwoLicenseCountResponse {
-	return LicenseIwoLicenseCountResponse{ MoTagSummary: v}
+	return LicenseIwoLicenseCountResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *LicenseIwoLicenseCountResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src LicenseIwoLicenseCountResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *LicenseIwoLicenseCountResponse) GetActualInstance() (interface{}) {
+func (obj *LicenseIwoLicenseCountResponse) GetActualInstance() interface{} {
 	if obj.LicenseIwoLicenseCountList != nil {
 		return obj.LicenseIwoLicenseCountList
 	}
@@ -184,5 +183,3 @@ func (v *NullableLicenseIwoLicenseCountResponse) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -30,8 +30,8 @@ type ApplianceExternalSyslogSettingAllOf struct {
 	// Protocol used to connect to external syslog server. * `TCP` - External Syslog messages sent over TCP. * `UDP` - External Syslog messages sent over UDP. * `TLS` - Secure External Syslog messages sent over TLS.
 	Protocol *string `json:"Protocol,omitempty"`
 	// External Syslog Server Address, can be IP address or hostname.
-	Server *string `json:"Server,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	Server               *string                 `json:"Server,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -89,7 +89,7 @@ func (o *ApplianceExternalSyslogSettingAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceExternalSyslogSettingAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -113,7 +113,7 @@ func (o *ApplianceExternalSyslogSettingAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceExternalSyslogSettingAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -409,5 +409,3 @@ func (v *NullableApplianceExternalSyslogSettingAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

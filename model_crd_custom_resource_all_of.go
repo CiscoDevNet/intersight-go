@@ -30,15 +30,15 @@ type CrdCustomResourceAllOf struct {
 	// Namespace to launch the deployment associated with the custom resource.
 	Namespace *string `json:"Namespace,omitempty"`
 	// Port used for public cloud DC.
-	Port *int64 `json:"Port,omitempty"`
+	Port       *int64                            `json:"Port,omitempty"`
 	Properties []CrdCustomResourceConfigProperty `json:"Properties,omitempty"`
 	// Target ID for public cloud DC.
 	TargetId *string `json:"TargetId,omitempty"`
 	// Target Moid for public cloud DC.
 	TargetMoid *string `json:"TargetMoid,omitempty"`
 	// Target type for public cloud DC.
-	TargetType *string `json:"TargetType,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	TargetType           *string                 `json:"TargetType,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *CrdCustomResourceAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CrdCustomResourceAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *CrdCustomResourceAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CrdCustomResourceAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -277,7 +277,7 @@ func (o *CrdCustomResourceAllOf) SetPort(v int64) {
 
 // GetProperties returns the Properties field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CrdCustomResourceAllOf) GetProperties() []CrdCustomResourceConfigProperty {
-	if o == nil  {
+	if o == nil {
 		var ret []CrdCustomResourceConfigProperty
 		return ret
 	}
@@ -545,5 +545,3 @@ func (v *NullableCrdCustomResourceAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

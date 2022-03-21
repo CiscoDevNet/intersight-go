@@ -34,9 +34,9 @@ type VirtualizationVmwareDatacenterAllOf struct {
 	// Count of all virtual machines (VMs) associated with this DC.
 	VmCount *int64 `json:"VmCount,omitempty"`
 	// Count of all virtual machines templates associated with this DC.
-	VmTemplateCount *int64 `json:"VmTemplateCount,omitempty"`
-	HypervisorManager *VirtualizationVmwareVcenterRelationship `json:"HypervisorManager,omitempty"`
-	ParentFolder *VirtualizationVmwareFolderRelationship `json:"ParentFolder,omitempty"`
+	VmTemplateCount      *int64                                   `json:"VmTemplateCount,omitempty"`
+	HypervisorManager    *VirtualizationVmwareVcenterRelationship `json:"HypervisorManager,omitempty"`
+	ParentFolder         *VirtualizationVmwareFolderRelationship  `json:"ParentFolder,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *VirtualizationVmwareDatacenterAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareDatacenterAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *VirtualizationVmwareDatacenterAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareDatacenterAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -506,5 +506,3 @@ func (v *NullableVirtualizationVmwareDatacenterAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

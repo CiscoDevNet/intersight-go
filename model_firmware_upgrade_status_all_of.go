@@ -38,9 +38,9 @@ type FirmwareUpgradeStatusAllOf struct {
 	// Pending reason for the upgrade waiting. * `none` - Upgrade pending reason is none. * `pending for next reboot` - Upgrade pending reason is pending for next reboot.
 	PendingType *string `json:"PendingType,omitempty"`
 	// The error message from the endpoint during the SD card download.
-	SdCardDownloadError *string `json:"SdCardDownloadError,omitempty"`
-	Upgrade *FirmwareUpgradeBaseRelationship `json:"Upgrade,omitempty"`
-	Workflow *WorkflowWorkflowInfoRelationship `json:"Workflow,omitempty"`
+	SdCardDownloadError  *string                           `json:"SdCardDownloadError,omitempty"`
+	Upgrade              *FirmwareUpgradeBaseRelationship  `json:"Upgrade,omitempty"`
+	Workflow             *WorkflowWorkflowInfoRelationship `json:"Workflow,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -94,7 +94,7 @@ func (o *FirmwareUpgradeStatusAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareUpgradeStatusAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -118,7 +118,7 @@ func (o *FirmwareUpgradeStatusAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareUpgradeStatusAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -594,5 +594,3 @@ func (v *NullableFirmwareUpgradeStatusAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

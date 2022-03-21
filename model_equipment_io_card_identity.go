@@ -31,7 +31,7 @@ type EquipmentIoCardIdentity struct {
 	// MO Reference to networkElement MO in inventory service.
 	NetworkElementMoid *string `json:"NetworkElementMoid,omitempty"`
 	// Switch ID to which IOM is connected, ID can be either 1 or 2, equalent to A or B.
-	SwitchId *int64 `json:"SwitchId,omitempty"`
+	SwitchId             *int64 `json:"SwitchId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *EquipmentIoCardIdentity) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentIoCardIdentity) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *EquipmentIoCardIdentity) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentIoCardIdentity) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -382,5 +382,3 @@ func (v *NullableEquipmentIoCardIdentity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

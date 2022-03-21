@@ -30,8 +30,8 @@ type CommAbstractHttpProxyPolicyAllOf struct {
 	// The HTTP Proxy port number. The port number of the HTTP proxy must be between 1 and 65535, inclusive.
 	Port *int64 `json:"Port,omitempty"`
 	// The username for the HTTP Proxy.
-	Username *string `json:"Username,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	Username             *string                               `json:"Username,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *CommAbstractHttpProxyPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CommAbstractHttpProxyPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *CommAbstractHttpProxyPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CommAbstractHttpProxyPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -393,5 +393,3 @@ func (v *NullableCommAbstractHttpProxyPolicyAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

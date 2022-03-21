@@ -25,12 +25,12 @@ type StorageVirtualDriveContainer struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The identifier for this container.
-	ContainerId *int64 `json:"ContainerId,omitempty"`
-	EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	ContainerId         *int64                               `json:"ContainerId,omitempty"`
+	EquipmentChassis    *EquipmentChassisRelationship        `json:"EquipmentChassis,omitempty"`
+	InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to storageVirtualDrive resources.
-	VirtualDrive []StorageVirtualDriveRelationship `json:"VirtualDrive,omitempty"`
+	VirtualDrive         []StorageVirtualDriveRelationship `json:"VirtualDrive,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *StorageVirtualDriveContainer) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageVirtualDriveContainer) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *StorageVirtualDriveContainer) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageVirtualDriveContainer) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -237,7 +237,7 @@ func (o *StorageVirtualDriveContainer) SetRegisteredDevice(v AssetDeviceRegistra
 
 // GetVirtualDrive returns the VirtualDrive field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageVirtualDriveContainer) GetVirtualDrive() []StorageVirtualDriveRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageVirtualDriveRelationship
 		return ret
 	}
@@ -314,10 +314,10 @@ func (o *StorageVirtualDriveContainer) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The identifier for this container.
-		ContainerId *int64 `json:"ContainerId,omitempty"`
-		EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		ContainerId         *int64                               `json:"ContainerId,omitempty"`
+		EquipmentChassis    *EquipmentChassisRelationship        `json:"EquipmentChassis,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 		// An array of relationships to storageVirtualDrive resources.
 		VirtualDrive []StorageVirtualDriveRelationship `json:"VirtualDrive,omitempty"`
 	}
@@ -418,5 +418,3 @@ func (v *NullableStorageVirtualDriveContainer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

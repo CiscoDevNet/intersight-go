@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // IamSession The web session of a user. After a user logs into Intersight, a session object is created. Session object is deleted upon logout, idle timeout, expiry timeout, or manual deletion.
@@ -24,7 +24,7 @@ type IamSession struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType         string                  `json:"ObjectType"`
 	AccountPermissions []IamAccountPermissions `json:"AccountPermissions,omitempty"`
 	// Expiration time for the session.
 	Expiration *time.Time `json:"Expiration,omitempty"`
@@ -37,9 +37,9 @@ type IamSession struct {
 	// The last login time for user.
 	LastLoginTime *time.Time `json:"LastLoginTime,omitempty"`
 	// Session token shared with the user agent which is used to identify the user session when API requests are received to perform authorization.
-	SessionId *string `json:"SessionId,omitempty"`
-	Permission *IamPermissionRelationship `json:"Permission,omitempty"`
-	User *IamUserRelationship `json:"User,omitempty"`
+	SessionId            *string                    `json:"SessionId,omitempty"`
+	Permission           *IamPermissionRelationship `json:"Permission,omitempty"`
+	User                 *IamUserRelationship       `json:"User,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -83,7 +83,7 @@ func (o *IamSession) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamSession) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -107,7 +107,7 @@ func (o *IamSession) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamSession) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -120,7 +120,7 @@ func (o *IamSession) SetObjectType(v string) {
 
 // GetAccountPermissions returns the AccountPermissions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamSession) GetAccountPermissions() []IamAccountPermissions {
-	if o == nil  {
+	if o == nil {
 		var ret []IamAccountPermissions
 		return ret
 	}
@@ -463,7 +463,7 @@ func (o *IamSession) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType         string                  `json:"ObjectType"`
 		AccountPermissions []IamAccountPermissions `json:"AccountPermissions,omitempty"`
 		// Expiration time for the session.
 		Expiration *time.Time `json:"Expiration,omitempty"`
@@ -476,9 +476,9 @@ func (o *IamSession) UnmarshalJSON(bytes []byte) (err error) {
 		// The last login time for user.
 		LastLoginTime *time.Time `json:"LastLoginTime,omitempty"`
 		// Session token shared with the user agent which is used to identify the user session when API requests are received to perform authorization.
-		SessionId *string `json:"SessionId,omitempty"`
+		SessionId  *string                    `json:"SessionId,omitempty"`
 		Permission *IamPermissionRelationship `json:"Permission,omitempty"`
-		User *IamUserRelationship `json:"User,omitempty"`
+		User       *IamUserRelationship       `json:"User,omitempty"`
 	}
 
 	varIamSessionWithoutEmbeddedStruct := IamSessionWithoutEmbeddedStruct{}
@@ -585,5 +585,3 @@ func (v *NullableIamSession) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

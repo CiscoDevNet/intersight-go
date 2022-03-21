@@ -42,9 +42,9 @@ type EtherPortChannelAllOf struct {
 	// This port-channel's configured role (uplink, server, etc.).
 	Role *string `json:"Role,omitempty"`
 	// Switch Identifier that is local to a cluster.
-	SwitchId *string `json:"SwitchId,omitempty"`
-	EquipmentSwitchCard *EquipmentSwitchCardRelationship `json:"EquipmentSwitchCard,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SwitchId             *string                              `json:"SwitchId,omitempty"`
+	EquipmentSwitchCard  *EquipmentSwitchCardRelationship     `json:"EquipmentSwitchCard,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -86,7 +86,7 @@ func (o *EtherPortChannelAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EtherPortChannelAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -110,7 +110,7 @@ func (o *EtherPortChannelAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EtherPortChannelAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -658,5 +658,3 @@ func (v *NullableEtherPortChannelAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

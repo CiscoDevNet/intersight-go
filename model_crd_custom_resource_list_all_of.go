@@ -20,7 +20,7 @@ type CrdCustomResourceListAllOf struct {
 	// The total number of 'crd.CustomResource' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'crd.CustomResource' resources matching the request.
-	Results []CrdCustomResource `json:"Results,omitempty"`
+	Results              []CrdCustomResource `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *CrdCustomResourceListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CrdCustomResourceListAllOf) GetResults() []CrdCustomResource {
-	if o == nil  {
+	if o == nil {
 		var ret []CrdCustomResource
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableCrdCustomResourceListAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

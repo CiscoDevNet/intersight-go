@@ -21,7 +21,7 @@ type TelemetryDruidTimeBoundaryResult struct {
 	// The ISO 8601 timestamp.
 	Timestamp *time.Time `json:"timestamp,omitempty"`
 	// The corresponding timestamps for query. May contain maxTime, minTime, or both (default).
-	Result *map[string]interface{} `json:"result,omitempty"`
+	Result               *map[string]interface{} `json:"result,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -177,5 +177,3 @@ func (v *NullableTelemetryDruidTimeBoundaryResult) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

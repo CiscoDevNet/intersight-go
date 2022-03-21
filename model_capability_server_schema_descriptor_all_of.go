@@ -24,7 +24,7 @@ type CapabilityServerSchemaDescriptorAllOf struct {
 	// Redfish property name for the server.
 	LocatorLedName *string `json:"LocatorLedName,omitempty"`
 	// Redfish version information for the server.
-	RedfishSchema *string `json:"RedfishSchema,omitempty"`
+	RedfishSchema        *string `json:"RedfishSchema,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *CapabilityServerSchemaDescriptorAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityServerSchemaDescriptorAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *CapabilityServerSchemaDescriptorAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityServerSchemaDescriptorAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -242,5 +242,3 @@ func (v *NullableCapabilityServerSchemaDescriptorAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

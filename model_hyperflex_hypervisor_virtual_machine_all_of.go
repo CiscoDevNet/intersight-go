@@ -26,8 +26,8 @@ type HyperflexHypervisorVirtualMachineAllOf struct {
 	// Guest operating system state of the HyperFlex virtual machine.
 	GuestOsState *string `json:"GuestOsState,omitempty"`
 	// Host UUID of the HyperFlex virtual machine.
-	HostUuid *string `json:"HostUuid,omitempty"`
-	Ip NullableNetworkHyperFlexNetworkAddress `json:"Ip,omitempty"`
+	HostUuid *string                                `json:"HostUuid,omitempty"`
+	Ip       NullableNetworkHyperFlexNetworkAddress `json:"Ip,omitempty"`
 	// Directory path where virtual machine is stored.
 	Path *string `json:"Path,omitempty"`
 	// The instance id of platform which a virtual machine is running on.
@@ -39,9 +39,9 @@ type HyperflexHypervisorVirtualMachineAllOf struct {
 	// Flag indicating whether or not this virtual machine is a template. Apply to the ESXi platform only.
 	Template *bool `json:"Template,omitempty"`
 	// The instance UUID of a virtual machine.
-	VmInstanceUuid *string `json:"VmInstanceUuid,omitempty"`
-	Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
-	Host *HyperflexHypervisorHostRelationship `json:"Host,omitempty"`
+	VmInstanceUuid       *string                              `json:"VmInstanceUuid,omitempty"`
+	Cluster              *HyperflexClusterRelationship        `json:"Cluster,omitempty"`
+	Host                 *HyperflexHypervisorHostRelationship `json:"Host,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -83,7 +83,7 @@ func (o *HyperflexHypervisorVirtualMachineAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHypervisorVirtualMachineAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -107,7 +107,7 @@ func (o *HyperflexHypervisorVirtualMachineAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHypervisorVirtualMachineAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -227,7 +227,7 @@ func (o *HyperflexHypervisorVirtualMachineAllOf) GetIp() NetworkHyperFlexNetwork
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexHypervisorVirtualMachineAllOf) GetIpOk() (*NetworkHyperFlexNetworkAddress, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Ip.Get(), o.Ip.IsSet()
@@ -246,6 +246,7 @@ func (o *HyperflexHypervisorVirtualMachineAllOf) HasIp() bool {
 func (o *HyperflexHypervisorVirtualMachineAllOf) SetIp(v NetworkHyperFlexNetworkAddress) {
 	o.Ip.Set(&v)
 }
+
 // SetIpNil sets the value for Ip to be an explicit nil
 func (o *HyperflexHypervisorVirtualMachineAllOf) SetIpNil() {
 	o.Ip.Set(nil)
@@ -629,5 +630,3 @@ func (v *NullableHyperflexHypervisorVirtualMachineAllOf) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

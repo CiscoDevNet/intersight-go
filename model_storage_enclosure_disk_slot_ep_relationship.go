@@ -18,20 +18,19 @@ import (
 
 // StorageEnclosureDiskSlotEpRelationship - A relationship to the 'storage.EnclosureDiskSlotEp' resource, or the expanded 'storage.EnclosureDiskSlotEp' resource, or the 'null' value.
 type StorageEnclosureDiskSlotEpRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                    *MoMoRef
 	StorageEnclosureDiskSlotEp *StorageEnclosureDiskSlotEp
 }
 
 // MoMoRefAsStorageEnclosureDiskSlotEpRelationship is a convenience function that returns MoMoRef wrapped in StorageEnclosureDiskSlotEpRelationship
 func MoMoRefAsStorageEnclosureDiskSlotEpRelationship(v *MoMoRef) StorageEnclosureDiskSlotEpRelationship {
-	return StorageEnclosureDiskSlotEpRelationship{ MoMoRef: v}
+	return StorageEnclosureDiskSlotEpRelationship{MoMoRef: v}
 }
 
 // StorageEnclosureDiskSlotEpAsStorageEnclosureDiskSlotEpRelationship is a convenience function that returns StorageEnclosureDiskSlotEp wrapped in StorageEnclosureDiskSlotEpRelationship
 func StorageEnclosureDiskSlotEpAsStorageEnclosureDiskSlotEpRelationship(v *StorageEnclosureDiskSlotEp) StorageEnclosureDiskSlotEpRelationship {
-	return StorageEnclosureDiskSlotEpRelationship{ StorageEnclosureDiskSlotEp: v}
+	return StorageEnclosureDiskSlotEpRelationship{StorageEnclosureDiskSlotEp: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageEnclosureDiskSlotEpRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageEnclosureDiskSlotEpRelationship) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *StorageEnclosureDiskSlotEpRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageEnclosureDiskSlotEpRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageEnclosureDiskSlotEpRelationship) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

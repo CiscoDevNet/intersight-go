@@ -24,7 +24,7 @@ type IamPermissionAllOf struct {
 	// The informative description about each permission.
 	Description *string `json:"Description,omitempty"`
 	// The name of the permission which has to be granted to user.
-	Name *string `json:"Name,omitempty"`
+	Name    *string                 `json:"Name,omitempty"`
 	Account *IamAccountRelationship `json:"Account,omitempty"`
 	// An array of relationships to iamEndPointRole resources.
 	EndPointRoles []IamEndPointRoleRelationship `json:"EndPointRoles,omitempty"`
@@ -33,12 +33,12 @@ type IamPermissionAllOf struct {
 	// An array of relationships to iamResourceRoles resources.
 	ResourceRoles []IamResourceRolesRelationship `json:"ResourceRoles,omitempty"`
 	// An array of relationships to iamRole resources.
-	Roles []IamRoleRelationship `json:"Roles,omitempty"`
+	Roles         []IamRoleRelationship         `json:"Roles,omitempty"`
 	SessionLimits *IamSessionLimitsRelationship `json:"SessionLimits,omitempty"`
 	// An array of relationships to iamUserGroup resources.
 	UserGroups []IamUserGroupRelationship `json:"UserGroups,omitempty"`
 	// An array of relationships to iamUser resources.
-	Users []IamUserRelationship `json:"Users,omitempty"`
+	Users                []IamUserRelationship `json:"Users,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *IamPermissionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamPermissionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *IamPermissionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamPermissionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -213,7 +213,7 @@ func (o *IamPermissionAllOf) SetAccount(v IamAccountRelationship) {
 
 // GetEndPointRoles returns the EndPointRoles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamPermissionAllOf) GetEndPointRoles() []IamEndPointRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamEndPointRoleRelationship
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *IamPermissionAllOf) SetEndPointRoles(v []IamEndPointRoleRelationship) {
 
 // GetPrivilegeSets returns the PrivilegeSets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamPermissionAllOf) GetPrivilegeSets() []IamPrivilegeSetRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPrivilegeSetRelationship
 		return ret
 	}
@@ -279,7 +279,7 @@ func (o *IamPermissionAllOf) SetPrivilegeSets(v []IamPrivilegeSetRelationship) {
 
 // GetResourceRoles returns the ResourceRoles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamPermissionAllOf) GetResourceRoles() []IamResourceRolesRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamResourceRolesRelationship
 		return ret
 	}
@@ -312,7 +312,7 @@ func (o *IamPermissionAllOf) SetResourceRoles(v []IamResourceRolesRelationship) 
 
 // GetRoles returns the Roles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamPermissionAllOf) GetRoles() []IamRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamRoleRelationship
 		return ret
 	}
@@ -377,7 +377,7 @@ func (o *IamPermissionAllOf) SetSessionLimits(v IamSessionLimitsRelationship) {
 
 // GetUserGroups returns the UserGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamPermissionAllOf) GetUserGroups() []IamUserGroupRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamUserGroupRelationship
 		return ret
 	}
@@ -410,7 +410,7 @@ func (o *IamPermissionAllOf) SetUserGroups(v []IamUserGroupRelationship) {
 
 // GetUsers returns the Users field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamPermissionAllOf) GetUsers() []IamUserRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamUserRelationship
 		return ret
 	}
@@ -550,5 +550,3 @@ func (v *NullableIamPermissionAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

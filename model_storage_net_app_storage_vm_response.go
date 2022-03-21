@@ -18,32 +18,31 @@ import (
 
 // StorageNetAppStorageVmResponse - The response body of a HTTP GET request for the 'storage.NetAppStorageVm' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'storage.NetAppStorageVm' resources.
 type StorageNetAppStorageVmResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform       *MoAggregateTransform
+	MoDocumentCount            *MoDocumentCount
+	MoTagSummary               *MoTagSummary
 	StorageNetAppStorageVmList *StorageNetAppStorageVmList
 }
 
 // MoAggregateTransformAsStorageNetAppStorageVmResponse is a convenience function that returns MoAggregateTransform wrapped in StorageNetAppStorageVmResponse
 func MoAggregateTransformAsStorageNetAppStorageVmResponse(v *MoAggregateTransform) StorageNetAppStorageVmResponse {
-	return StorageNetAppStorageVmResponse{ MoAggregateTransform: v}
+	return StorageNetAppStorageVmResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsStorageNetAppStorageVmResponse is a convenience function that returns MoDocumentCount wrapped in StorageNetAppStorageVmResponse
 func MoDocumentCountAsStorageNetAppStorageVmResponse(v *MoDocumentCount) StorageNetAppStorageVmResponse {
-	return StorageNetAppStorageVmResponse{ MoDocumentCount: v}
+	return StorageNetAppStorageVmResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsStorageNetAppStorageVmResponse is a convenience function that returns MoTagSummary wrapped in StorageNetAppStorageVmResponse
 func MoTagSummaryAsStorageNetAppStorageVmResponse(v *MoTagSummary) StorageNetAppStorageVmResponse {
-	return StorageNetAppStorageVmResponse{ MoTagSummary: v}
+	return StorageNetAppStorageVmResponse{MoTagSummary: v}
 }
 
 // StorageNetAppStorageVmListAsStorageNetAppStorageVmResponse is a convenience function that returns StorageNetAppStorageVmList wrapped in StorageNetAppStorageVmResponse
 func StorageNetAppStorageVmListAsStorageNetAppStorageVmResponse(v *StorageNetAppStorageVmList) StorageNetAppStorageVmResponse {
-	return StorageNetAppStorageVmResponse{ StorageNetAppStorageVmList: v}
+	return StorageNetAppStorageVmResponse{StorageNetAppStorageVmList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageNetAppStorageVmResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src StorageNetAppStorageVmResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageNetAppStorageVmResponse) GetActualInstance() (interface{}) {
+func (obj *StorageNetAppStorageVmResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableStorageNetAppStorageVmResponse) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

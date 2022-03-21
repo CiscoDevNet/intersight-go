@@ -22,8 +22,8 @@ type SoftwareHclMetaAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The type of content that the Json file holds (Incremental or full dump). * `Full` - Indicates that the JSON File does have full content for HCL metadata. * `Incremental` - Indicates that the JSON File does have only the diff of the Hcl meta to be uploaded.
-	ContentType *string `json:"ContentType,omitempty"`
-	Catalog *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
+	ContentType          *string                                `json:"ContentType,omitempty"`
+	Catalog              *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *SoftwareHclMetaAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SoftwareHclMetaAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *SoftwareHclMetaAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SoftwareHclMetaAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -245,5 +245,3 @@ func (v *NullableSoftwareHclMetaAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

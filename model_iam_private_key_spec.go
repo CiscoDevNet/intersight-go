@@ -23,9 +23,9 @@ type IamPrivateKeySpec struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Algorithm NullablePkixKeyGenerationSpec `json:"Algorithm,omitempty"`
-	CertificateRequest *IamCertificateRequestRelationship `json:"CertificateRequest,omitempty"`
+	ObjectType           string                             `json:"ObjectType"`
+	Algorithm            NullablePkixKeyGenerationSpec      `json:"Algorithm,omitempty"`
+	CertificateRequest   *IamCertificateRequestRelationship `json:"CertificateRequest,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *IamPrivateKeySpec) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamPrivateKeySpec) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *IamPrivateKeySpec) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamPrivateKeySpec) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -115,7 +115,7 @@ func (o *IamPrivateKeySpec) GetAlgorithm() PkixKeyGenerationSpec {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IamPrivateKeySpec) GetAlgorithmOk() (*PkixKeyGenerationSpec, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Algorithm.Get(), o.Algorithm.IsSet()
@@ -134,6 +134,7 @@ func (o *IamPrivateKeySpec) HasAlgorithm() bool {
 func (o *IamPrivateKeySpec) SetAlgorithm(v PkixKeyGenerationSpec) {
 	o.Algorithm.Set(&v)
 }
+
 // SetAlgorithmNil sets the value for Algorithm to be an explicit nil
 func (o *IamPrivateKeySpec) SetAlgorithmNil() {
 	o.Algorithm.Set(nil)
@@ -211,8 +212,8 @@ func (o *IamPrivateKeySpec) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Algorithm NullablePkixKeyGenerationSpec `json:"Algorithm,omitempty"`
+		ObjectType         string                             `json:"ObjectType"`
+		Algorithm          NullablePkixKeyGenerationSpec      `json:"Algorithm,omitempty"`
 		CertificateRequest *IamCertificateRequestRelationship `json:"CertificateRequest,omitempty"`
 	}
 
@@ -306,5 +307,3 @@ func (v *NullableIamPrivateKeySpec) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

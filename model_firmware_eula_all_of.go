@@ -24,8 +24,8 @@ type FirmwareEulaAllOf struct {
 	// EULA acceptance status for the account.
 	Accepted *bool `json:"Accepted,omitempty"`
 	// EULA acceptance form content provided by cisco.com.
-	Content *string `json:"Content,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	Content              *string                 `json:"Content,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *FirmwareEulaAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareEulaAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *FirmwareEulaAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareEulaAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -279,5 +279,3 @@ func (v *NullableFirmwareEulaAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

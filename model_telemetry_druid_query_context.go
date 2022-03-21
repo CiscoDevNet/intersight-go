@@ -57,7 +57,7 @@ type TelemetryDruidQueryContext struct {
 	ParallelMergeInitialYieldRows *int32 `json:"parallelMergeInitialYieldRows,omitempty"`
 	// Size of result batches to operate on in ForkJoinPool merge tasks for parallel result merging on the Broker.
 	ParallelMergeSmallBatchRows *int32 `json:"parallelMergeSmallBatchRows,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties        map[string]interface{}
 }
 
 type _TelemetryDruidQueryContext TelemetryDruidQueryContext
@@ -860,5 +860,3 @@ func (v *NullableTelemetryDruidQueryContext) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

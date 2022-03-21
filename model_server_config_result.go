@@ -23,10 +23,10 @@ type ServerConfigResult struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Profile *ServerProfileRelationship `json:"Profile,omitempty"`
+	ObjectType string                     `json:"ObjectType"`
+	Profile    *ServerProfileRelationship `json:"Profile,omitempty"`
 	// An array of relationships to serverConfigResultEntry resources.
-	ResultEntries []ServerConfigResultEntryRelationship `json:"ResultEntries,omitempty"`
+	ResultEntries        []ServerConfigResultEntryRelationship `json:"ResultEntries,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *ServerConfigResult) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ServerConfigResult) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *ServerConfigResult) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ServerConfigResult) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -137,7 +137,7 @@ func (o *ServerConfigResult) SetProfile(v ServerProfileRelationship) {
 
 // GetResultEntries returns the ResultEntries field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ServerConfigResult) GetResultEntries() []ServerConfigResultEntryRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ServerConfigResultEntryRelationship
 		return ret
 	}
@@ -203,8 +203,8 @@ func (o *ServerConfigResult) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Profile *ServerProfileRelationship `json:"Profile,omitempty"`
+		ObjectType string                     `json:"ObjectType"`
+		Profile    *ServerProfileRelationship `json:"Profile,omitempty"`
 		// An array of relationships to serverConfigResultEntry resources.
 		ResultEntries []ServerConfigResultEntryRelationship `json:"ResultEntries,omitempty"`
 	}
@@ -299,5 +299,3 @@ func (v *NullableServerConfigResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,32 +18,31 @@ import (
 
 // AccessPolicyResponse - The response body of a HTTP GET request for the 'access.Policy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'access.Policy' resources.
 type AccessPolicyResponse struct {
-	AccessPolicyList *AccessPolicyList
+	AccessPolicyList     *AccessPolicyList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // AccessPolicyListAsAccessPolicyResponse is a convenience function that returns AccessPolicyList wrapped in AccessPolicyResponse
 func AccessPolicyListAsAccessPolicyResponse(v *AccessPolicyList) AccessPolicyResponse {
-	return AccessPolicyResponse{ AccessPolicyList: v}
+	return AccessPolicyResponse{AccessPolicyList: v}
 }
 
 // MoAggregateTransformAsAccessPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in AccessPolicyResponse
 func MoAggregateTransformAsAccessPolicyResponse(v *MoAggregateTransform) AccessPolicyResponse {
-	return AccessPolicyResponse{ MoAggregateTransform: v}
+	return AccessPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsAccessPolicyResponse is a convenience function that returns MoDocumentCount wrapped in AccessPolicyResponse
 func MoDocumentCountAsAccessPolicyResponse(v *MoDocumentCount) AccessPolicyResponse {
-	return AccessPolicyResponse{ MoDocumentCount: v}
+	return AccessPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsAccessPolicyResponse is a convenience function that returns MoTagSummary wrapped in AccessPolicyResponse
 func MoTagSummaryAsAccessPolicyResponse(v *MoTagSummary) AccessPolicyResponse {
-	return AccessPolicyResponse{ MoTagSummary: v}
+	return AccessPolicyResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AccessPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src AccessPolicyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AccessPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *AccessPolicyResponse) GetActualInstance() interface{} {
 	if obj.AccessPolicyList != nil {
 		return obj.AccessPolicyList
 	}
@@ -184,5 +183,3 @@ func (v *NullableAccessPolicyResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

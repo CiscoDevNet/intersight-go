@@ -29,11 +29,11 @@ var (
 type SearchApiService service
 
 type ApiCreateSearchSuggestItemRequest struct {
-	ctx _context.Context
-	ApiService *SearchApiService
+	ctx               _context.Context
+	ApiService        *SearchApiService
 	searchSuggestItem *SearchSuggestItem
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch           *string
+	ifNoneMatch       *string
 }
 
 // The &#39;search.SuggestItem&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateSearchSuggestItemRequest) SearchSuggestItem(searchSuggestItem S
 	r.searchSuggestItem = &searchSuggestItem
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateSearchSuggestItemRequest) IfMatch(ifMatch string) ApiCreateSearchSuggestItemRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateSearchSuggestItemRequest) IfNoneMatch(ifNoneMatch string) ApiCreateSearchSuggestItemRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateSearchSuggestItem Create a 'search.SuggestItem' resource.
 func (a *SearchApiService) CreateSearchSuggestItem(ctx _context.Context) ApiCreateSearchSuggestItemRequest {
 	return ApiCreateSearchSuggestItemRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *SearchApiService) CreateSearchSuggestItemExecute(r ApiCreateSearchSugge
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,10 @@ func (a *SearchApiService) CreateSearchSuggestItemExecute(r ApiCreateSearchSugge
 }
 
 type ApiGetSearchSearchItemByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SearchApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSearchSearchItemByMoidRequest) Execute() (SearchSearchItem, *_nethttp.Response, error) {
 	return r.ApiService.GetSearchSearchItemByMoidExecute(r)
@@ -225,8 +226,8 @@ GetSearchSearchItemByMoid Read a 'search.SearchItem' resource.
 func (a *SearchApiService) GetSearchSearchItemByMoid(ctx _context.Context, moid string) ApiGetSearchSearchItemByMoidRequest {
 	return ApiGetSearchSearchItemByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -333,13 +334,13 @@ func (a *SearchApiService) GetSearchSearchItemByMoidExecute(r ApiGetSearchSearch
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -356,19 +357,19 @@ func (a *SearchApiService) GetSearchSearchItemByMoidExecute(r ApiGetSearchSearch
 }
 
 type ApiGetSearchSearchItemListRequest struct {
-	ctx _context.Context
-	ApiService *SearchApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SearchApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -376,51 +377,61 @@ func (r ApiGetSearchSearchItemListRequest) Filter(filter string) ApiGetSearchSea
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSearchSearchItemListRequest) Orderby(orderby string) ApiGetSearchSearchItemListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSearchSearchItemListRequest) Top(top int32) ApiGetSearchSearchItemListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSearchSearchItemListRequest) Skip(skip int32) ApiGetSearchSearchItemListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSearchSearchItemListRequest) Select_(select_ string) ApiGetSearchSearchItemListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSearchSearchItemListRequest) Expand(expand string) ApiGetSearchSearchItemListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSearchSearchItemListRequest) Apply(apply string) ApiGetSearchSearchItemListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSearchSearchItemListRequest) Count(count bool) ApiGetSearchSearchItemListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSearchSearchItemListRequest) Inlinecount(inlinecount string) ApiGetSearchSearchItemListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSearchSearchItemListRequest) At(at string) ApiGetSearchSearchItemListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSearchSearchItemListRequest) Tags(tags string) ApiGetSearchSearchItemListRequest {
 	r.tags = &tags
@@ -440,7 +451,7 @@ GetSearchSearchItemList Read a 'search.SearchItem' resource.
 func (a *SearchApiService) GetSearchSearchItemList(ctx _context.Context) ApiGetSearchSearchItemListRequest {
 	return ApiGetSearchSearchItemListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -579,13 +590,13 @@ func (a *SearchApiService) GetSearchSearchItemListExecute(r ApiGetSearchSearchIt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -602,11 +613,10 @@ func (a *SearchApiService) GetSearchSearchItemListExecute(r ApiGetSearchSearchIt
 }
 
 type ApiGetSearchTagItemByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SearchApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSearchTagItemByMoidRequest) Execute() (SearchTagItem, *_nethttp.Response, error) {
 	return r.ApiService.GetSearchTagItemByMoidExecute(r)
@@ -622,8 +632,8 @@ GetSearchTagItemByMoid Read a 'search.TagItem' resource.
 func (a *SearchApiService) GetSearchTagItemByMoid(ctx _context.Context, moid string) ApiGetSearchTagItemByMoidRequest {
 	return ApiGetSearchTagItemByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -730,13 +740,13 @@ func (a *SearchApiService) GetSearchTagItemByMoidExecute(r ApiGetSearchTagItemBy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -753,19 +763,19 @@ func (a *SearchApiService) GetSearchTagItemByMoidExecute(r ApiGetSearchTagItemBy
 }
 
 type ApiGetSearchTagItemListRequest struct {
-	ctx _context.Context
-	ApiService *SearchApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SearchApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -773,51 +783,61 @@ func (r ApiGetSearchTagItemListRequest) Filter(filter string) ApiGetSearchTagIte
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSearchTagItemListRequest) Orderby(orderby string) ApiGetSearchTagItemListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSearchTagItemListRequest) Top(top int32) ApiGetSearchTagItemListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSearchTagItemListRequest) Skip(skip int32) ApiGetSearchTagItemListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSearchTagItemListRequest) Select_(select_ string) ApiGetSearchTagItemListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSearchTagItemListRequest) Expand(expand string) ApiGetSearchTagItemListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSearchTagItemListRequest) Apply(apply string) ApiGetSearchTagItemListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSearchTagItemListRequest) Count(count bool) ApiGetSearchTagItemListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSearchTagItemListRequest) Inlinecount(inlinecount string) ApiGetSearchTagItemListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSearchTagItemListRequest) At(at string) ApiGetSearchTagItemListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSearchTagItemListRequest) Tags(tags string) ApiGetSearchTagItemListRequest {
 	r.tags = &tags
@@ -837,7 +857,7 @@ GetSearchTagItemList Read a 'search.TagItem' resource.
 func (a *SearchApiService) GetSearchTagItemList(ctx _context.Context) ApiGetSearchTagItemListRequest {
 	return ApiGetSearchTagItemListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -976,13 +996,13 @@ func (a *SearchApiService) GetSearchTagItemListExecute(r ApiGetSearchTagItemList
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

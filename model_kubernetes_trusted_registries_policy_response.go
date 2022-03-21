@@ -19,31 +19,30 @@ import (
 // KubernetesTrustedRegistriesPolicyResponse - The response body of a HTTP GET request for the 'kubernetes.TrustedRegistriesPolicy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'kubernetes.TrustedRegistriesPolicy' resources.
 type KubernetesTrustedRegistriesPolicyResponse struct {
 	KubernetesTrustedRegistriesPolicyList *KubernetesTrustedRegistriesPolicyList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                  *MoAggregateTransform
+	MoDocumentCount                       *MoDocumentCount
+	MoTagSummary                          *MoTagSummary
 }
 
 // KubernetesTrustedRegistriesPolicyListAsKubernetesTrustedRegistriesPolicyResponse is a convenience function that returns KubernetesTrustedRegistriesPolicyList wrapped in KubernetesTrustedRegistriesPolicyResponse
 func KubernetesTrustedRegistriesPolicyListAsKubernetesTrustedRegistriesPolicyResponse(v *KubernetesTrustedRegistriesPolicyList) KubernetesTrustedRegistriesPolicyResponse {
-	return KubernetesTrustedRegistriesPolicyResponse{ KubernetesTrustedRegistriesPolicyList: v}
+	return KubernetesTrustedRegistriesPolicyResponse{KubernetesTrustedRegistriesPolicyList: v}
 }
 
 // MoAggregateTransformAsKubernetesTrustedRegistriesPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in KubernetesTrustedRegistriesPolicyResponse
 func MoAggregateTransformAsKubernetesTrustedRegistriesPolicyResponse(v *MoAggregateTransform) KubernetesTrustedRegistriesPolicyResponse {
-	return KubernetesTrustedRegistriesPolicyResponse{ MoAggregateTransform: v}
+	return KubernetesTrustedRegistriesPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsKubernetesTrustedRegistriesPolicyResponse is a convenience function that returns MoDocumentCount wrapped in KubernetesTrustedRegistriesPolicyResponse
 func MoDocumentCountAsKubernetesTrustedRegistriesPolicyResponse(v *MoDocumentCount) KubernetesTrustedRegistriesPolicyResponse {
-	return KubernetesTrustedRegistriesPolicyResponse{ MoDocumentCount: v}
+	return KubernetesTrustedRegistriesPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsKubernetesTrustedRegistriesPolicyResponse is a convenience function that returns MoTagSummary wrapped in KubernetesTrustedRegistriesPolicyResponse
 func MoTagSummaryAsKubernetesTrustedRegistriesPolicyResponse(v *MoTagSummary) KubernetesTrustedRegistriesPolicyResponse {
-	return KubernetesTrustedRegistriesPolicyResponse{ MoTagSummary: v}
+	return KubernetesTrustedRegistriesPolicyResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesTrustedRegistriesPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src KubernetesTrustedRegistriesPolicyResponse) MarshalJSON() ([]byte, erro
 }
 
 // Get the actual instance
-func (obj *KubernetesTrustedRegistriesPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *KubernetesTrustedRegistriesPolicyResponse) GetActualInstance() interface{} {
 	if obj.KubernetesTrustedRegistriesPolicyList != nil {
 		return obj.KubernetesTrustedRegistriesPolicyList
 	}
@@ -184,5 +183,3 @@ func (v *NullableKubernetesTrustedRegistriesPolicyResponse) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

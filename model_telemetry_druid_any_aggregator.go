@@ -22,7 +22,7 @@ type TelemetryDruidAnyAggregator struct {
 	// Output name for the 'any' value.
 	Name string `json:"name"`
 	// Name of the metric column.
-	FieldName string `json:"fieldName"`
+	FieldName            string `json:"fieldName"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -61,7 +61,7 @@ func (o *TelemetryDruidAnyAggregator) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidAnyAggregator) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -85,7 +85,7 @@ func (o *TelemetryDruidAnyAggregator) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidAnyAggregator) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Name, true
@@ -109,7 +109,7 @@ func (o *TelemetryDruidAnyAggregator) GetFieldName() string {
 // GetFieldNameOk returns a tuple with the FieldName field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidAnyAggregator) GetFieldNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.FieldName, true
@@ -193,5 +193,3 @@ func (v *NullableTelemetryDruidAnyAggregator) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -24,9 +24,9 @@ type NiatelemetryNexusDashboardMemoryDetailsAllOf struct {
 	// Name of the node in Nexus Dashboard cluster.
 	DeviceName *string `json:"DeviceName,omitempty"`
 	// Memory capacity of a node in Nexus Dashboard.
-	MemoryCapacity *int64 `json:"MemoryCapacity,omitempty"`
-	NexusDashboard *NiatelemetryNexusDashboardsRelationship `json:"NexusDashboard,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	MemoryCapacity       *int64                                   `json:"MemoryCapacity,omitempty"`
+	NexusDashboard       *NiatelemetryNexusDashboardsRelationship `json:"NexusDashboard,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship     `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *NiatelemetryNexusDashboardMemoryDetailsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNexusDashboardMemoryDetailsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *NiatelemetryNexusDashboardMemoryDetailsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNexusDashboardMemoryDetailsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -316,5 +316,3 @@ func (v *NullableNiatelemetryNexusDashboardMemoryDetailsAllOf) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

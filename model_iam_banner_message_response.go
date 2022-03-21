@@ -20,30 +20,29 @@ import (
 type IamBannerMessageResponse struct {
 	IamBannerMessageList *IamBannerMessageList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IamBannerMessageListAsIamBannerMessageResponse is a convenience function that returns IamBannerMessageList wrapped in IamBannerMessageResponse
 func IamBannerMessageListAsIamBannerMessageResponse(v *IamBannerMessageList) IamBannerMessageResponse {
-	return IamBannerMessageResponse{ IamBannerMessageList: v}
+	return IamBannerMessageResponse{IamBannerMessageList: v}
 }
 
 // MoAggregateTransformAsIamBannerMessageResponse is a convenience function that returns MoAggregateTransform wrapped in IamBannerMessageResponse
 func MoAggregateTransformAsIamBannerMessageResponse(v *MoAggregateTransform) IamBannerMessageResponse {
-	return IamBannerMessageResponse{ MoAggregateTransform: v}
+	return IamBannerMessageResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIamBannerMessageResponse is a convenience function that returns MoDocumentCount wrapped in IamBannerMessageResponse
 func MoDocumentCountAsIamBannerMessageResponse(v *MoDocumentCount) IamBannerMessageResponse {
-	return IamBannerMessageResponse{ MoDocumentCount: v}
+	return IamBannerMessageResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIamBannerMessageResponse is a convenience function that returns MoTagSummary wrapped in IamBannerMessageResponse
 func MoTagSummaryAsIamBannerMessageResponse(v *MoTagSummary) IamBannerMessageResponse {
-	return IamBannerMessageResponse{ MoTagSummary: v}
+	return IamBannerMessageResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamBannerMessageResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IamBannerMessageResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamBannerMessageResponse) GetActualInstance() (interface{}) {
+func (obj *IamBannerMessageResponse) GetActualInstance() interface{} {
 	if obj.IamBannerMessageList != nil {
 		return obj.IamBannerMessageList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIamBannerMessageResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -24,7 +24,7 @@ type AssetDeploymentDeviceInformationAllOf struct {
 	// Application name reported by Cisco Install Base.
 	ApplicationName *string `json:"ApplicationName,omitempty"`
 	// Description of device reported by Cisco Install Base.
-	Description *string `json:"Description,omitempty"`
+	Description        *string                  `json:"Description,omitempty"`
 	DeviceTransactions []AssetDeviceTransaction `json:"DeviceTransactions,omitempty"`
 	// Instance number of the device. example \"917280220\".
 	InstanceId *string `json:"InstanceId,omitempty"`
@@ -41,7 +41,7 @@ type AssetDeploymentDeviceInformationAllOf struct {
 	// Status ID of old Cisco device, which got replaced by the new device. * `0` - A default value to catch cases where device status is not correctly detected. * `10000` - Device is installed successfully. * `1010041` - Device is currently in Return Material Authorization process. * `10005` - Device is replaced successfully with another device. * `10007` - Device is returned succcessfuly. * `10009` - Device is terminated at customer's end.
 	OldDeviceStatusId *int32 `json:"OldDeviceStatusId,omitempty"`
 	// Instance number of the old device, which got replaced by the new device.
-	OldInstanceId *string `json:"OldInstanceId,omitempty"`
+	OldInstanceId        *string `json:"OldInstanceId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -83,7 +83,7 @@ func (o *AssetDeploymentDeviceInformationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeploymentDeviceInformationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -107,7 +107,7 @@ func (o *AssetDeploymentDeviceInformationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeploymentDeviceInformationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -184,7 +184,7 @@ func (o *AssetDeploymentDeviceInformationAllOf) SetDescription(v string) {
 
 // GetDeviceTransactions returns the DeviceTransactions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetDeploymentDeviceInformationAllOf) GetDeviceTransactions() []AssetDeviceTransaction {
-	if o == nil  {
+	if o == nil {
 		var ret []AssetDeviceTransaction
 		return ret
 	}
@@ -584,5 +584,3 @@ func (v *NullableAssetDeploymentDeviceInformationAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

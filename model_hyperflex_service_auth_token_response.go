@@ -19,31 +19,30 @@ import (
 // HyperflexServiceAuthTokenResponse - The response body of a HTTP GET request for the 'hyperflex.ServiceAuthToken' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'hyperflex.ServiceAuthToken' resources.
 type HyperflexServiceAuthTokenResponse struct {
 	HyperflexServiceAuthTokenList *HyperflexServiceAuthTokenList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform          *MoAggregateTransform
+	MoDocumentCount               *MoDocumentCount
+	MoTagSummary                  *MoTagSummary
 }
 
 // HyperflexServiceAuthTokenListAsHyperflexServiceAuthTokenResponse is a convenience function that returns HyperflexServiceAuthTokenList wrapped in HyperflexServiceAuthTokenResponse
 func HyperflexServiceAuthTokenListAsHyperflexServiceAuthTokenResponse(v *HyperflexServiceAuthTokenList) HyperflexServiceAuthTokenResponse {
-	return HyperflexServiceAuthTokenResponse{ HyperflexServiceAuthTokenList: v}
+	return HyperflexServiceAuthTokenResponse{HyperflexServiceAuthTokenList: v}
 }
 
 // MoAggregateTransformAsHyperflexServiceAuthTokenResponse is a convenience function that returns MoAggregateTransform wrapped in HyperflexServiceAuthTokenResponse
 func MoAggregateTransformAsHyperflexServiceAuthTokenResponse(v *MoAggregateTransform) HyperflexServiceAuthTokenResponse {
-	return HyperflexServiceAuthTokenResponse{ MoAggregateTransform: v}
+	return HyperflexServiceAuthTokenResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsHyperflexServiceAuthTokenResponse is a convenience function that returns MoDocumentCount wrapped in HyperflexServiceAuthTokenResponse
 func MoDocumentCountAsHyperflexServiceAuthTokenResponse(v *MoDocumentCount) HyperflexServiceAuthTokenResponse {
-	return HyperflexServiceAuthTokenResponse{ MoDocumentCount: v}
+	return HyperflexServiceAuthTokenResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsHyperflexServiceAuthTokenResponse is a convenience function that returns MoTagSummary wrapped in HyperflexServiceAuthTokenResponse
 func MoTagSummaryAsHyperflexServiceAuthTokenResponse(v *MoTagSummary) HyperflexServiceAuthTokenResponse {
-	return HyperflexServiceAuthTokenResponse{ MoTagSummary: v}
+	return HyperflexServiceAuthTokenResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexServiceAuthTokenResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src HyperflexServiceAuthTokenResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexServiceAuthTokenResponse) GetActualInstance() (interface{}) {
+func (obj *HyperflexServiceAuthTokenResponse) GetActualInstance() interface{} {
 	if obj.HyperflexServiceAuthTokenList != nil {
 		return obj.HyperflexServiceAuthTokenList
 	}
@@ -184,5 +183,3 @@ func (v *NullableHyperflexServiceAuthTokenResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

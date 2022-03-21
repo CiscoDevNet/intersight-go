@@ -26,8 +26,8 @@ type ApplianceDiagSettingAllOf struct {
 	// Status message of the password change operation.
 	Message *string `json:"Message,omitempty"`
 	// Password of the Intersight Appliance's OS diagnostic user account.
-	Password *string `json:"Password,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	Password             *string                 `json:"Password,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *ApplianceDiagSettingAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceDiagSettingAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *ApplianceDiagSettingAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceDiagSettingAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -317,5 +317,3 @@ func (v *NullableApplianceDiagSettingAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

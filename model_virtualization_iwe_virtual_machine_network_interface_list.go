@@ -23,7 +23,7 @@ type VirtualizationIweVirtualMachineNetworkInterfaceList struct {
 	// The total number of 'virtualization.IweVirtualMachineNetworkInterface' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'virtualization.IweVirtualMachineNetworkInterface' resources matching the request.
-	Results []VirtualizationIweVirtualMachineNetworkInterface `json:"Results,omitempty"`
+	Results              []VirtualizationIweVirtualMachineNetworkInterface `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *VirtualizationIweVirtualMachineNetworkInterfaceList) SetCount(v int32) 
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationIweVirtualMachineNetworkInterfaceList) GetResults() []VirtualizationIweVirtualMachineNetworkInterface {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationIweVirtualMachineNetworkInterface
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableVirtualizationIweVirtualMachineNetworkInterfaceList) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

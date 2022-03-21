@@ -29,11 +29,10 @@ var (
 type IaasApiService service
 
 type ApiDeleteIaasUcsdInfoRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IaasApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIaasUcsdInfoRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIaasUcsdInfoExecute(r)
@@ -49,8 +48,8 @@ DeleteIaasUcsdInfo Delete a 'iaas.UcsdInfo' resource.
 func (a *IaasApiService) DeleteIaasUcsdInfo(ctx _context.Context, moid string) ApiDeleteIaasUcsdInfoRequest {
 	return ApiDeleteIaasUcsdInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -155,13 +154,13 @@ func (a *IaasApiService) DeleteIaasUcsdInfoExecute(r ApiDeleteIaasUcsdInfoReques
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -169,11 +168,10 @@ func (a *IaasApiService) DeleteIaasUcsdInfoExecute(r ApiDeleteIaasUcsdInfoReques
 }
 
 type ApiGetIaasConnectorPackByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IaasApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIaasConnectorPackByMoidRequest) Execute() (IaasConnectorPack, *_nethttp.Response, error) {
 	return r.ApiService.GetIaasConnectorPackByMoidExecute(r)
@@ -189,8 +187,8 @@ GetIaasConnectorPackByMoid Read a 'iaas.ConnectorPack' resource.
 func (a *IaasApiService) GetIaasConnectorPackByMoid(ctx _context.Context, moid string) ApiGetIaasConnectorPackByMoidRequest {
 	return ApiGetIaasConnectorPackByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -297,13 +295,13 @@ func (a *IaasApiService) GetIaasConnectorPackByMoidExecute(r ApiGetIaasConnector
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -320,19 +318,19 @@ func (a *IaasApiService) GetIaasConnectorPackByMoidExecute(r ApiGetIaasConnector
 }
 
 type ApiGetIaasConnectorPackListRequest struct {
-	ctx _context.Context
-	ApiService *IaasApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IaasApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -340,51 +338,61 @@ func (r ApiGetIaasConnectorPackListRequest) Filter(filter string) ApiGetIaasConn
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIaasConnectorPackListRequest) Orderby(orderby string) ApiGetIaasConnectorPackListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIaasConnectorPackListRequest) Top(top int32) ApiGetIaasConnectorPackListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIaasConnectorPackListRequest) Skip(skip int32) ApiGetIaasConnectorPackListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIaasConnectorPackListRequest) Select_(select_ string) ApiGetIaasConnectorPackListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIaasConnectorPackListRequest) Expand(expand string) ApiGetIaasConnectorPackListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIaasConnectorPackListRequest) Apply(apply string) ApiGetIaasConnectorPackListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIaasConnectorPackListRequest) Count(count bool) ApiGetIaasConnectorPackListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIaasConnectorPackListRequest) Inlinecount(inlinecount string) ApiGetIaasConnectorPackListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIaasConnectorPackListRequest) At(at string) ApiGetIaasConnectorPackListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIaasConnectorPackListRequest) Tags(tags string) ApiGetIaasConnectorPackListRequest {
 	r.tags = &tags
@@ -404,7 +412,7 @@ GetIaasConnectorPackList Read a 'iaas.ConnectorPack' resource.
 func (a *IaasApiService) GetIaasConnectorPackList(ctx _context.Context) ApiGetIaasConnectorPackListRequest {
 	return ApiGetIaasConnectorPackListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -543,13 +551,13 @@ func (a *IaasApiService) GetIaasConnectorPackListExecute(r ApiGetIaasConnectorPa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -566,11 +574,10 @@ func (a *IaasApiService) GetIaasConnectorPackListExecute(r ApiGetIaasConnectorPa
 }
 
 type ApiGetIaasDeviceStatusByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IaasApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIaasDeviceStatusByMoidRequest) Execute() (IaasDeviceStatus, *_nethttp.Response, error) {
 	return r.ApiService.GetIaasDeviceStatusByMoidExecute(r)
@@ -586,8 +593,8 @@ GetIaasDeviceStatusByMoid Read a 'iaas.DeviceStatus' resource.
 func (a *IaasApiService) GetIaasDeviceStatusByMoid(ctx _context.Context, moid string) ApiGetIaasDeviceStatusByMoidRequest {
 	return ApiGetIaasDeviceStatusByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -694,13 +701,13 @@ func (a *IaasApiService) GetIaasDeviceStatusByMoidExecute(r ApiGetIaasDeviceStat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -717,19 +724,19 @@ func (a *IaasApiService) GetIaasDeviceStatusByMoidExecute(r ApiGetIaasDeviceStat
 }
 
 type ApiGetIaasDeviceStatusListRequest struct {
-	ctx _context.Context
-	ApiService *IaasApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IaasApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -737,51 +744,61 @@ func (r ApiGetIaasDeviceStatusListRequest) Filter(filter string) ApiGetIaasDevic
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIaasDeviceStatusListRequest) Orderby(orderby string) ApiGetIaasDeviceStatusListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIaasDeviceStatusListRequest) Top(top int32) ApiGetIaasDeviceStatusListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIaasDeviceStatusListRequest) Skip(skip int32) ApiGetIaasDeviceStatusListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIaasDeviceStatusListRequest) Select_(select_ string) ApiGetIaasDeviceStatusListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIaasDeviceStatusListRequest) Expand(expand string) ApiGetIaasDeviceStatusListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIaasDeviceStatusListRequest) Apply(apply string) ApiGetIaasDeviceStatusListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIaasDeviceStatusListRequest) Count(count bool) ApiGetIaasDeviceStatusListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIaasDeviceStatusListRequest) Inlinecount(inlinecount string) ApiGetIaasDeviceStatusListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIaasDeviceStatusListRequest) At(at string) ApiGetIaasDeviceStatusListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIaasDeviceStatusListRequest) Tags(tags string) ApiGetIaasDeviceStatusListRequest {
 	r.tags = &tags
@@ -801,7 +818,7 @@ GetIaasDeviceStatusList Read a 'iaas.DeviceStatus' resource.
 func (a *IaasApiService) GetIaasDeviceStatusList(ctx _context.Context) ApiGetIaasDeviceStatusListRequest {
 	return ApiGetIaasDeviceStatusListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -940,13 +957,13 @@ func (a *IaasApiService) GetIaasDeviceStatusListExecute(r ApiGetIaasDeviceStatus
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -963,11 +980,10 @@ func (a *IaasApiService) GetIaasDeviceStatusListExecute(r ApiGetIaasDeviceStatus
 }
 
 type ApiGetIaasDiagnosticMessagesByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IaasApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIaasDiagnosticMessagesByMoidRequest) Execute() (IaasDiagnosticMessages, *_nethttp.Response, error) {
 	return r.ApiService.GetIaasDiagnosticMessagesByMoidExecute(r)
@@ -983,8 +999,8 @@ GetIaasDiagnosticMessagesByMoid Read a 'iaas.DiagnosticMessages' resource.
 func (a *IaasApiService) GetIaasDiagnosticMessagesByMoid(ctx _context.Context, moid string) ApiGetIaasDiagnosticMessagesByMoidRequest {
 	return ApiGetIaasDiagnosticMessagesByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1091,13 +1107,13 @@ func (a *IaasApiService) GetIaasDiagnosticMessagesByMoidExecute(r ApiGetIaasDiag
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1114,19 +1130,19 @@ func (a *IaasApiService) GetIaasDiagnosticMessagesByMoidExecute(r ApiGetIaasDiag
 }
 
 type ApiGetIaasDiagnosticMessagesListRequest struct {
-	ctx _context.Context
-	ApiService *IaasApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IaasApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1134,51 +1150,61 @@ func (r ApiGetIaasDiagnosticMessagesListRequest) Filter(filter string) ApiGetIaa
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIaasDiagnosticMessagesListRequest) Orderby(orderby string) ApiGetIaasDiagnosticMessagesListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIaasDiagnosticMessagesListRequest) Top(top int32) ApiGetIaasDiagnosticMessagesListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIaasDiagnosticMessagesListRequest) Skip(skip int32) ApiGetIaasDiagnosticMessagesListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIaasDiagnosticMessagesListRequest) Select_(select_ string) ApiGetIaasDiagnosticMessagesListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIaasDiagnosticMessagesListRequest) Expand(expand string) ApiGetIaasDiagnosticMessagesListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIaasDiagnosticMessagesListRequest) Apply(apply string) ApiGetIaasDiagnosticMessagesListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIaasDiagnosticMessagesListRequest) Count(count bool) ApiGetIaasDiagnosticMessagesListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIaasDiagnosticMessagesListRequest) Inlinecount(inlinecount string) ApiGetIaasDiagnosticMessagesListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIaasDiagnosticMessagesListRequest) At(at string) ApiGetIaasDiagnosticMessagesListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIaasDiagnosticMessagesListRequest) Tags(tags string) ApiGetIaasDiagnosticMessagesListRequest {
 	r.tags = &tags
@@ -1198,7 +1224,7 @@ GetIaasDiagnosticMessagesList Read a 'iaas.DiagnosticMessages' resource.
 func (a *IaasApiService) GetIaasDiagnosticMessagesList(ctx _context.Context) ApiGetIaasDiagnosticMessagesListRequest {
 	return ApiGetIaasDiagnosticMessagesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1337,13 +1363,13 @@ func (a *IaasApiService) GetIaasDiagnosticMessagesListExecute(r ApiGetIaasDiagno
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1360,11 +1386,10 @@ func (a *IaasApiService) GetIaasDiagnosticMessagesListExecute(r ApiGetIaasDiagno
 }
 
 type ApiGetIaasLicenseInfoByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IaasApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIaasLicenseInfoByMoidRequest) Execute() (IaasLicenseInfo, *_nethttp.Response, error) {
 	return r.ApiService.GetIaasLicenseInfoByMoidExecute(r)
@@ -1380,8 +1405,8 @@ GetIaasLicenseInfoByMoid Read a 'iaas.LicenseInfo' resource.
 func (a *IaasApiService) GetIaasLicenseInfoByMoid(ctx _context.Context, moid string) ApiGetIaasLicenseInfoByMoidRequest {
 	return ApiGetIaasLicenseInfoByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1488,13 +1513,13 @@ func (a *IaasApiService) GetIaasLicenseInfoByMoidExecute(r ApiGetIaasLicenseInfo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1511,19 +1536,19 @@ func (a *IaasApiService) GetIaasLicenseInfoByMoidExecute(r ApiGetIaasLicenseInfo
 }
 
 type ApiGetIaasLicenseInfoListRequest struct {
-	ctx _context.Context
-	ApiService *IaasApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IaasApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1531,51 +1556,61 @@ func (r ApiGetIaasLicenseInfoListRequest) Filter(filter string) ApiGetIaasLicens
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIaasLicenseInfoListRequest) Orderby(orderby string) ApiGetIaasLicenseInfoListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIaasLicenseInfoListRequest) Top(top int32) ApiGetIaasLicenseInfoListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIaasLicenseInfoListRequest) Skip(skip int32) ApiGetIaasLicenseInfoListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIaasLicenseInfoListRequest) Select_(select_ string) ApiGetIaasLicenseInfoListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIaasLicenseInfoListRequest) Expand(expand string) ApiGetIaasLicenseInfoListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIaasLicenseInfoListRequest) Apply(apply string) ApiGetIaasLicenseInfoListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIaasLicenseInfoListRequest) Count(count bool) ApiGetIaasLicenseInfoListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIaasLicenseInfoListRequest) Inlinecount(inlinecount string) ApiGetIaasLicenseInfoListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIaasLicenseInfoListRequest) At(at string) ApiGetIaasLicenseInfoListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIaasLicenseInfoListRequest) Tags(tags string) ApiGetIaasLicenseInfoListRequest {
 	r.tags = &tags
@@ -1595,7 +1630,7 @@ GetIaasLicenseInfoList Read a 'iaas.LicenseInfo' resource.
 func (a *IaasApiService) GetIaasLicenseInfoList(ctx _context.Context) ApiGetIaasLicenseInfoListRequest {
 	return ApiGetIaasLicenseInfoListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1734,13 +1769,13 @@ func (a *IaasApiService) GetIaasLicenseInfoListExecute(r ApiGetIaasLicenseInfoLi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1757,11 +1792,10 @@ func (a *IaasApiService) GetIaasLicenseInfoListExecute(r ApiGetIaasLicenseInfoLi
 }
 
 type ApiGetIaasMostRunTasksByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IaasApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIaasMostRunTasksByMoidRequest) Execute() (IaasMostRunTasks, *_nethttp.Response, error) {
 	return r.ApiService.GetIaasMostRunTasksByMoidExecute(r)
@@ -1777,8 +1811,8 @@ GetIaasMostRunTasksByMoid Read a 'iaas.MostRunTasks' resource.
 func (a *IaasApiService) GetIaasMostRunTasksByMoid(ctx _context.Context, moid string) ApiGetIaasMostRunTasksByMoidRequest {
 	return ApiGetIaasMostRunTasksByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1885,13 +1919,13 @@ func (a *IaasApiService) GetIaasMostRunTasksByMoidExecute(r ApiGetIaasMostRunTas
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1908,19 +1942,19 @@ func (a *IaasApiService) GetIaasMostRunTasksByMoidExecute(r ApiGetIaasMostRunTas
 }
 
 type ApiGetIaasMostRunTasksListRequest struct {
-	ctx _context.Context
-	ApiService *IaasApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IaasApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1928,51 +1962,61 @@ func (r ApiGetIaasMostRunTasksListRequest) Filter(filter string) ApiGetIaasMostR
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIaasMostRunTasksListRequest) Orderby(orderby string) ApiGetIaasMostRunTasksListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIaasMostRunTasksListRequest) Top(top int32) ApiGetIaasMostRunTasksListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIaasMostRunTasksListRequest) Skip(skip int32) ApiGetIaasMostRunTasksListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIaasMostRunTasksListRequest) Select_(select_ string) ApiGetIaasMostRunTasksListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIaasMostRunTasksListRequest) Expand(expand string) ApiGetIaasMostRunTasksListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIaasMostRunTasksListRequest) Apply(apply string) ApiGetIaasMostRunTasksListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIaasMostRunTasksListRequest) Count(count bool) ApiGetIaasMostRunTasksListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIaasMostRunTasksListRequest) Inlinecount(inlinecount string) ApiGetIaasMostRunTasksListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIaasMostRunTasksListRequest) At(at string) ApiGetIaasMostRunTasksListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIaasMostRunTasksListRequest) Tags(tags string) ApiGetIaasMostRunTasksListRequest {
 	r.tags = &tags
@@ -1992,7 +2036,7 @@ GetIaasMostRunTasksList Read a 'iaas.MostRunTasks' resource.
 func (a *IaasApiService) GetIaasMostRunTasksList(ctx _context.Context) ApiGetIaasMostRunTasksListRequest {
 	return ApiGetIaasMostRunTasksListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2131,13 +2175,13 @@ func (a *IaasApiService) GetIaasMostRunTasksListExecute(r ApiGetIaasMostRunTasks
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2154,11 +2198,10 @@ func (a *IaasApiService) GetIaasMostRunTasksListExecute(r ApiGetIaasMostRunTasks
 }
 
 type ApiGetIaasServiceRequestByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IaasApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIaasServiceRequestByMoidRequest) Execute() (IaasServiceRequest, *_nethttp.Response, error) {
 	return r.ApiService.GetIaasServiceRequestByMoidExecute(r)
@@ -2174,8 +2217,8 @@ GetIaasServiceRequestByMoid Read a 'iaas.ServiceRequest' resource.
 func (a *IaasApiService) GetIaasServiceRequestByMoid(ctx _context.Context, moid string) ApiGetIaasServiceRequestByMoidRequest {
 	return ApiGetIaasServiceRequestByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2282,13 +2325,13 @@ func (a *IaasApiService) GetIaasServiceRequestByMoidExecute(r ApiGetIaasServiceR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2305,19 +2348,19 @@ func (a *IaasApiService) GetIaasServiceRequestByMoidExecute(r ApiGetIaasServiceR
 }
 
 type ApiGetIaasServiceRequestListRequest struct {
-	ctx _context.Context
-	ApiService *IaasApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IaasApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2325,51 +2368,61 @@ func (r ApiGetIaasServiceRequestListRequest) Filter(filter string) ApiGetIaasSer
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIaasServiceRequestListRequest) Orderby(orderby string) ApiGetIaasServiceRequestListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIaasServiceRequestListRequest) Top(top int32) ApiGetIaasServiceRequestListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIaasServiceRequestListRequest) Skip(skip int32) ApiGetIaasServiceRequestListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIaasServiceRequestListRequest) Select_(select_ string) ApiGetIaasServiceRequestListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIaasServiceRequestListRequest) Expand(expand string) ApiGetIaasServiceRequestListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIaasServiceRequestListRequest) Apply(apply string) ApiGetIaasServiceRequestListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIaasServiceRequestListRequest) Count(count bool) ApiGetIaasServiceRequestListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIaasServiceRequestListRequest) Inlinecount(inlinecount string) ApiGetIaasServiceRequestListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIaasServiceRequestListRequest) At(at string) ApiGetIaasServiceRequestListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIaasServiceRequestListRequest) Tags(tags string) ApiGetIaasServiceRequestListRequest {
 	r.tags = &tags
@@ -2389,7 +2442,7 @@ GetIaasServiceRequestList Read a 'iaas.ServiceRequest' resource.
 func (a *IaasApiService) GetIaasServiceRequestList(ctx _context.Context) ApiGetIaasServiceRequestListRequest {
 	return ApiGetIaasServiceRequestListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2528,13 +2581,13 @@ func (a *IaasApiService) GetIaasServiceRequestListExecute(r ApiGetIaasServiceReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2551,11 +2604,10 @@ func (a *IaasApiService) GetIaasServiceRequestListExecute(r ApiGetIaasServiceReq
 }
 
 type ApiGetIaasUcsdInfoByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IaasApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIaasUcsdInfoByMoidRequest) Execute() (IaasUcsdInfo, *_nethttp.Response, error) {
 	return r.ApiService.GetIaasUcsdInfoByMoidExecute(r)
@@ -2571,8 +2623,8 @@ GetIaasUcsdInfoByMoid Read a 'iaas.UcsdInfo' resource.
 func (a *IaasApiService) GetIaasUcsdInfoByMoid(ctx _context.Context, moid string) ApiGetIaasUcsdInfoByMoidRequest {
 	return ApiGetIaasUcsdInfoByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2679,13 +2731,13 @@ func (a *IaasApiService) GetIaasUcsdInfoByMoidExecute(r ApiGetIaasUcsdInfoByMoid
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2702,19 +2754,19 @@ func (a *IaasApiService) GetIaasUcsdInfoByMoidExecute(r ApiGetIaasUcsdInfoByMoid
 }
 
 type ApiGetIaasUcsdInfoListRequest struct {
-	ctx _context.Context
-	ApiService *IaasApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IaasApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2722,51 +2774,61 @@ func (r ApiGetIaasUcsdInfoListRequest) Filter(filter string) ApiGetIaasUcsdInfoL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIaasUcsdInfoListRequest) Orderby(orderby string) ApiGetIaasUcsdInfoListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIaasUcsdInfoListRequest) Top(top int32) ApiGetIaasUcsdInfoListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIaasUcsdInfoListRequest) Skip(skip int32) ApiGetIaasUcsdInfoListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIaasUcsdInfoListRequest) Select_(select_ string) ApiGetIaasUcsdInfoListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIaasUcsdInfoListRequest) Expand(expand string) ApiGetIaasUcsdInfoListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIaasUcsdInfoListRequest) Apply(apply string) ApiGetIaasUcsdInfoListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIaasUcsdInfoListRequest) Count(count bool) ApiGetIaasUcsdInfoListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIaasUcsdInfoListRequest) Inlinecount(inlinecount string) ApiGetIaasUcsdInfoListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIaasUcsdInfoListRequest) At(at string) ApiGetIaasUcsdInfoListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIaasUcsdInfoListRequest) Tags(tags string) ApiGetIaasUcsdInfoListRequest {
 	r.tags = &tags
@@ -2786,7 +2848,7 @@ GetIaasUcsdInfoList Read a 'iaas.UcsdInfo' resource.
 func (a *IaasApiService) GetIaasUcsdInfoList(ctx _context.Context) ApiGetIaasUcsdInfoListRequest {
 	return ApiGetIaasUcsdInfoListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2925,13 +2987,13 @@ func (a *IaasApiService) GetIaasUcsdInfoListExecute(r ApiGetIaasUcsdInfoListRequ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2948,11 +3010,10 @@ func (a *IaasApiService) GetIaasUcsdInfoListExecute(r ApiGetIaasUcsdInfoListRequ
 }
 
 type ApiGetIaasUcsdManagedInfraByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IaasApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIaasUcsdManagedInfraByMoidRequest) Execute() (IaasUcsdManagedInfra, *_nethttp.Response, error) {
 	return r.ApiService.GetIaasUcsdManagedInfraByMoidExecute(r)
@@ -2968,8 +3029,8 @@ GetIaasUcsdManagedInfraByMoid Read a 'iaas.UcsdManagedInfra' resource.
 func (a *IaasApiService) GetIaasUcsdManagedInfraByMoid(ctx _context.Context, moid string) ApiGetIaasUcsdManagedInfraByMoidRequest {
 	return ApiGetIaasUcsdManagedInfraByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3076,13 +3137,13 @@ func (a *IaasApiService) GetIaasUcsdManagedInfraByMoidExecute(r ApiGetIaasUcsdMa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3099,19 +3160,19 @@ func (a *IaasApiService) GetIaasUcsdManagedInfraByMoidExecute(r ApiGetIaasUcsdMa
 }
 
 type ApiGetIaasUcsdManagedInfraListRequest struct {
-	ctx _context.Context
-	ApiService *IaasApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IaasApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3119,51 +3180,61 @@ func (r ApiGetIaasUcsdManagedInfraListRequest) Filter(filter string) ApiGetIaasU
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIaasUcsdManagedInfraListRequest) Orderby(orderby string) ApiGetIaasUcsdManagedInfraListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIaasUcsdManagedInfraListRequest) Top(top int32) ApiGetIaasUcsdManagedInfraListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIaasUcsdManagedInfraListRequest) Skip(skip int32) ApiGetIaasUcsdManagedInfraListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIaasUcsdManagedInfraListRequest) Select_(select_ string) ApiGetIaasUcsdManagedInfraListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIaasUcsdManagedInfraListRequest) Expand(expand string) ApiGetIaasUcsdManagedInfraListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIaasUcsdManagedInfraListRequest) Apply(apply string) ApiGetIaasUcsdManagedInfraListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIaasUcsdManagedInfraListRequest) Count(count bool) ApiGetIaasUcsdManagedInfraListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIaasUcsdManagedInfraListRequest) Inlinecount(inlinecount string) ApiGetIaasUcsdManagedInfraListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIaasUcsdManagedInfraListRequest) At(at string) ApiGetIaasUcsdManagedInfraListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIaasUcsdManagedInfraListRequest) Tags(tags string) ApiGetIaasUcsdManagedInfraListRequest {
 	r.tags = &tags
@@ -3183,7 +3254,7 @@ GetIaasUcsdManagedInfraList Read a 'iaas.UcsdManagedInfra' resource.
 func (a *IaasApiService) GetIaasUcsdManagedInfraList(ctx _context.Context) ApiGetIaasUcsdManagedInfraListRequest {
 	return ApiGetIaasUcsdManagedInfraListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3322,13 +3393,13 @@ func (a *IaasApiService) GetIaasUcsdManagedInfraListExecute(r ApiGetIaasUcsdMana
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3345,11 +3416,10 @@ func (a *IaasApiService) GetIaasUcsdManagedInfraListExecute(r ApiGetIaasUcsdMana
 }
 
 type ApiGetIaasUcsdMessagesByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IaasApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIaasUcsdMessagesByMoidRequest) Execute() (IaasUcsdMessages, *_nethttp.Response, error) {
 	return r.ApiService.GetIaasUcsdMessagesByMoidExecute(r)
@@ -3365,8 +3435,8 @@ GetIaasUcsdMessagesByMoid Read a 'iaas.UcsdMessages' resource.
 func (a *IaasApiService) GetIaasUcsdMessagesByMoid(ctx _context.Context, moid string) ApiGetIaasUcsdMessagesByMoidRequest {
 	return ApiGetIaasUcsdMessagesByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3473,13 +3543,13 @@ func (a *IaasApiService) GetIaasUcsdMessagesByMoidExecute(r ApiGetIaasUcsdMessag
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3496,19 +3566,19 @@ func (a *IaasApiService) GetIaasUcsdMessagesByMoidExecute(r ApiGetIaasUcsdMessag
 }
 
 type ApiGetIaasUcsdMessagesListRequest struct {
-	ctx _context.Context
-	ApiService *IaasApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IaasApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3516,51 +3586,61 @@ func (r ApiGetIaasUcsdMessagesListRequest) Filter(filter string) ApiGetIaasUcsdM
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIaasUcsdMessagesListRequest) Orderby(orderby string) ApiGetIaasUcsdMessagesListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIaasUcsdMessagesListRequest) Top(top int32) ApiGetIaasUcsdMessagesListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIaasUcsdMessagesListRequest) Skip(skip int32) ApiGetIaasUcsdMessagesListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIaasUcsdMessagesListRequest) Select_(select_ string) ApiGetIaasUcsdMessagesListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIaasUcsdMessagesListRequest) Expand(expand string) ApiGetIaasUcsdMessagesListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIaasUcsdMessagesListRequest) Apply(apply string) ApiGetIaasUcsdMessagesListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIaasUcsdMessagesListRequest) Count(count bool) ApiGetIaasUcsdMessagesListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIaasUcsdMessagesListRequest) Inlinecount(inlinecount string) ApiGetIaasUcsdMessagesListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIaasUcsdMessagesListRequest) At(at string) ApiGetIaasUcsdMessagesListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIaasUcsdMessagesListRequest) Tags(tags string) ApiGetIaasUcsdMessagesListRequest {
 	r.tags = &tags
@@ -3580,7 +3660,7 @@ GetIaasUcsdMessagesList Read a 'iaas.UcsdMessages' resource.
 func (a *IaasApiService) GetIaasUcsdMessagesList(ctx _context.Context) ApiGetIaasUcsdMessagesListRequest {
 	return ApiGetIaasUcsdMessagesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3719,13 +3799,13 @@ func (a *IaasApiService) GetIaasUcsdMessagesListExecute(r ApiGetIaasUcsdMessages
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3742,11 +3822,11 @@ func (a *IaasApiService) GetIaasUcsdMessagesListExecute(r ApiGetIaasUcsdMessages
 }
 
 type ApiPatchIaasUcsdInfoRequest struct {
-	ctx _context.Context
-	ApiService *IaasApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *IaasApiService
+	moid         string
 	iaasUcsdInfo *IaasUcsdInfo
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;iaas.UcsdInfo&#39; resource to update.
@@ -3754,6 +3834,7 @@ func (r ApiPatchIaasUcsdInfoRequest) IaasUcsdInfo(iaasUcsdInfo IaasUcsdInfo) Api
 	r.iaasUcsdInfo = &iaasUcsdInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIaasUcsdInfoRequest) IfMatch(ifMatch string) ApiPatchIaasUcsdInfoRequest {
 	r.ifMatch = &ifMatch
@@ -3774,8 +3855,8 @@ PatchIaasUcsdInfo Update a 'iaas.UcsdInfo' resource.
 func (a *IaasApiService) PatchIaasUcsdInfo(ctx _context.Context, moid string) ApiPatchIaasUcsdInfoRequest {
 	return ApiPatchIaasUcsdInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3890,13 +3971,13 @@ func (a *IaasApiService) PatchIaasUcsdInfoExecute(r ApiPatchIaasUcsdInfoRequest)
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3913,11 +3994,11 @@ func (a *IaasApiService) PatchIaasUcsdInfoExecute(r ApiPatchIaasUcsdInfoRequest)
 }
 
 type ApiUpdateIaasUcsdInfoRequest struct {
-	ctx _context.Context
-	ApiService *IaasApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *IaasApiService
+	moid         string
 	iaasUcsdInfo *IaasUcsdInfo
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;iaas.UcsdInfo&#39; resource to update.
@@ -3925,6 +4006,7 @@ func (r ApiUpdateIaasUcsdInfoRequest) IaasUcsdInfo(iaasUcsdInfo IaasUcsdInfo) Ap
 	r.iaasUcsdInfo = &iaasUcsdInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIaasUcsdInfoRequest) IfMatch(ifMatch string) ApiUpdateIaasUcsdInfoRequest {
 	r.ifMatch = &ifMatch
@@ -3945,8 +4027,8 @@ UpdateIaasUcsdInfo Update a 'iaas.UcsdInfo' resource.
 func (a *IaasApiService) UpdateIaasUcsdInfo(ctx _context.Context, moid string) ApiUpdateIaasUcsdInfoRequest {
 	return ApiUpdateIaasUcsdInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4061,13 +4143,13 @@ func (a *IaasApiService) UpdateIaasUcsdInfoExecute(r ApiUpdateIaasUcsdInfoReques
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

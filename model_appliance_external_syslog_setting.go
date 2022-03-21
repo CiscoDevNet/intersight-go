@@ -33,8 +33,8 @@ type ApplianceExternalSyslogSetting struct {
 	// Protocol used to connect to external syslog server. * `TCP` - External Syslog messages sent over TCP. * `UDP` - External Syslog messages sent over UDP. * `TLS` - Secure External Syslog messages sent over TLS.
 	Protocol *string `json:"Protocol,omitempty"`
 	// External Syslog Server Address, can be IP address or hostname.
-	Server *string `json:"Server,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	Server               *string                 `json:"Server,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -92,7 +92,7 @@ func (o *ApplianceExternalSyslogSetting) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceExternalSyslogSetting) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -116,7 +116,7 @@ func (o *ApplianceExternalSyslogSetting) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceExternalSyslogSetting) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -376,7 +376,7 @@ func (o *ApplianceExternalSyslogSetting) UnmarshalJSON(bytes []byte) (err error)
 		// Protocol used to connect to external syslog server. * `TCP` - External Syslog messages sent over TCP. * `UDP` - External Syslog messages sent over UDP. * `TLS` - Secure External Syslog messages sent over TLS.
 		Protocol *string `json:"Protocol,omitempty"`
 		// External Syslog Server Address, can be IP address or hostname.
-		Server *string `json:"Server,omitempty"`
+		Server  *string                 `json:"Server,omitempty"`
 		Account *IamAccountRelationship `json:"Account,omitempty"`
 	}
 
@@ -478,5 +478,3 @@ func (v *NullableApplianceExternalSyslogSetting) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,12 +29,12 @@ type StorageNetAppFcInterface struct {
 	// The state of the FC interface. * `down` - An inactive port is listed as Down. * `up` - An active port is listed as Up. * `present` - An active port is listed as present.
 	State *string `json:"State,omitempty"`
 	// Uuid of  NetApp FC Interface.
-	Uuid *string `json:"Uuid,omitempty"`
+	Uuid            *string                        `json:"Uuid,omitempty"`
 	ArrayController *StorageNetAppNodeRelationship `json:"ArrayController,omitempty"`
 	// An array of relationships to storageNetAppFcInterfaceEvent resources.
-	Events []StorageNetAppFcInterfaceEventRelationship `json:"Events,omitempty"`
-	PhysicalPort *StorageNetAppFcPortRelationship `json:"PhysicalPort,omitempty"`
-	Tenant *StorageNetAppStorageVmRelationship `json:"Tenant,omitempty"`
+	Events               []StorageNetAppFcInterfaceEventRelationship `json:"Events,omitempty"`
+	PhysicalPort         *StorageNetAppFcPortRelationship            `json:"PhysicalPort,omitempty"`
+	Tenant               *StorageNetAppStorageVmRelationship         `json:"Tenant,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *StorageNetAppFcInterface) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppFcInterface) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *StorageNetAppFcInterface) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppFcInterface) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -241,7 +241,7 @@ func (o *StorageNetAppFcInterface) SetArrayController(v StorageNetAppNodeRelatio
 
 // GetEvents returns the Events field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppFcInterface) GetEvents() []StorageNetAppFcInterfaceEventRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppFcInterfaceEventRelationship
 		return ret
 	}
@@ -392,12 +392,12 @@ func (o *StorageNetAppFcInterface) UnmarshalJSON(bytes []byte) (err error) {
 		// The state of the FC interface. * `down` - An inactive port is listed as Down. * `up` - An active port is listed as Up. * `present` - An active port is listed as present.
 		State *string `json:"State,omitempty"`
 		// Uuid of  NetApp FC Interface.
-		Uuid *string `json:"Uuid,omitempty"`
+		Uuid            *string                        `json:"Uuid,omitempty"`
 		ArrayController *StorageNetAppNodeRelationship `json:"ArrayController,omitempty"`
 		// An array of relationships to storageNetAppFcInterfaceEvent resources.
-		Events []StorageNetAppFcInterfaceEventRelationship `json:"Events,omitempty"`
-		PhysicalPort *StorageNetAppFcPortRelationship `json:"PhysicalPort,omitempty"`
-		Tenant *StorageNetAppStorageVmRelationship `json:"Tenant,omitempty"`
+		Events       []StorageNetAppFcInterfaceEventRelationship `json:"Events,omitempty"`
+		PhysicalPort *StorageNetAppFcPortRelationship            `json:"PhysicalPort,omitempty"`
+		Tenant       *StorageNetAppStorageVmRelationship         `json:"Tenant,omitempty"`
 	}
 
 	varStorageNetAppFcInterfaceWithoutEmbeddedStruct := StorageNetAppFcInterfaceWithoutEmbeddedStruct{}
@@ -500,5 +500,3 @@ func (v *NullableStorageNetAppFcInterface) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

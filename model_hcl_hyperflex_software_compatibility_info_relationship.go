@@ -19,19 +19,18 @@ import (
 // HclHyperflexSoftwareCompatibilityInfoRelationship - A relationship to the 'hcl.HyperflexSoftwareCompatibilityInfo' resource, or the expanded 'hcl.HyperflexSoftwareCompatibilityInfo' resource, or the 'null' value.
 type HclHyperflexSoftwareCompatibilityInfoRelationship struct {
 	HclHyperflexSoftwareCompatibilityInfo *HclHyperflexSoftwareCompatibilityInfo
-	MoMoRef *MoMoRef
+	MoMoRef                               *MoMoRef
 }
 
 // HclHyperflexSoftwareCompatibilityInfoAsHclHyperflexSoftwareCompatibilityInfoRelationship is a convenience function that returns HclHyperflexSoftwareCompatibilityInfo wrapped in HclHyperflexSoftwareCompatibilityInfoRelationship
 func HclHyperflexSoftwareCompatibilityInfoAsHclHyperflexSoftwareCompatibilityInfoRelationship(v *HclHyperflexSoftwareCompatibilityInfo) HclHyperflexSoftwareCompatibilityInfoRelationship {
-	return HclHyperflexSoftwareCompatibilityInfoRelationship{ HclHyperflexSoftwareCompatibilityInfo: v}
+	return HclHyperflexSoftwareCompatibilityInfoRelationship{HclHyperflexSoftwareCompatibilityInfo: v}
 }
 
 // MoMoRefAsHclHyperflexSoftwareCompatibilityInfoRelationship is a convenience function that returns MoMoRef wrapped in HclHyperflexSoftwareCompatibilityInfoRelationship
 func MoMoRefAsHclHyperflexSoftwareCompatibilityInfoRelationship(v *MoMoRef) HclHyperflexSoftwareCompatibilityInfoRelationship {
-	return HclHyperflexSoftwareCompatibilityInfoRelationship{ MoMoRef: v}
+	return HclHyperflexSoftwareCompatibilityInfoRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HclHyperflexSoftwareCompatibilityInfoRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HclHyperflexSoftwareCompatibilityInfoRelationship) MarshalJSON() ([]by
 }
 
 // Get the actual instance
-func (obj *HclHyperflexSoftwareCompatibilityInfoRelationship) GetActualInstance() (interface{}) {
+func (obj *HclHyperflexSoftwareCompatibilityInfoRelationship) GetActualInstance() interface{} {
 	if obj.HclHyperflexSoftwareCompatibilityInfo != nil {
 		return obj.HclHyperflexSoftwareCompatibilityInfo
 	}
@@ -137,5 +136,3 @@ func (v *NullableHclHyperflexSoftwareCompatibilityInfoRelationship) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

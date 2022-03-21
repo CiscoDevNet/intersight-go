@@ -18,20 +18,19 @@ import (
 
 // NetworkFcZoneInfoRelationship - A relationship to the 'network.FcZoneInfo' resource, or the expanded 'network.FcZoneInfo' resource, or the 'null' value.
 type NetworkFcZoneInfoRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 	NetworkFcZoneInfo *NetworkFcZoneInfo
 }
 
 // MoMoRefAsNetworkFcZoneInfoRelationship is a convenience function that returns MoMoRef wrapped in NetworkFcZoneInfoRelationship
 func MoMoRefAsNetworkFcZoneInfoRelationship(v *MoMoRef) NetworkFcZoneInfoRelationship {
-	return NetworkFcZoneInfoRelationship{ MoMoRef: v}
+	return NetworkFcZoneInfoRelationship{MoMoRef: v}
 }
 
 // NetworkFcZoneInfoAsNetworkFcZoneInfoRelationship is a convenience function that returns NetworkFcZoneInfo wrapped in NetworkFcZoneInfoRelationship
 func NetworkFcZoneInfoAsNetworkFcZoneInfoRelationship(v *NetworkFcZoneInfo) NetworkFcZoneInfoRelationship {
-	return NetworkFcZoneInfoRelationship{ NetworkFcZoneInfo: v}
+	return NetworkFcZoneInfoRelationship{NetworkFcZoneInfo: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NetworkFcZoneInfoRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src NetworkFcZoneInfoRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NetworkFcZoneInfoRelationship) GetActualInstance() (interface{}) {
+func (obj *NetworkFcZoneInfoRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableNetworkFcZoneInfoRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

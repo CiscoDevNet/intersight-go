@@ -19,19 +19,18 @@ import (
 // IamEndPointUserRelationship - A relationship to the 'iam.EndPointUser' resource, or the expanded 'iam.EndPointUser' resource, or the 'null' value.
 type IamEndPointUserRelationship struct {
 	IamEndPointUser *IamEndPointUser
-	MoMoRef *MoMoRef
+	MoMoRef         *MoMoRef
 }
 
 // IamEndPointUserAsIamEndPointUserRelationship is a convenience function that returns IamEndPointUser wrapped in IamEndPointUserRelationship
 func IamEndPointUserAsIamEndPointUserRelationship(v *IamEndPointUser) IamEndPointUserRelationship {
-	return IamEndPointUserRelationship{ IamEndPointUser: v}
+	return IamEndPointUserRelationship{IamEndPointUser: v}
 }
 
 // MoMoRefAsIamEndPointUserRelationship is a convenience function that returns MoMoRef wrapped in IamEndPointUserRelationship
 func MoMoRefAsIamEndPointUserRelationship(v *MoMoRef) IamEndPointUserRelationship {
-	return IamEndPointUserRelationship{ MoMoRef: v}
+	return IamEndPointUserRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamEndPointUserRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamEndPointUserRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamEndPointUserRelationship) GetActualInstance() (interface{}) {
+func (obj *IamEndPointUserRelationship) GetActualInstance() interface{} {
 	if obj.IamEndPointUser != nil {
 		return obj.IamEndPointUser
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamEndPointUserRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

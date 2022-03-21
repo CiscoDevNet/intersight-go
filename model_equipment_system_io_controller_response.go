@@ -19,31 +19,30 @@ import (
 // EquipmentSystemIoControllerResponse - The response body of a HTTP GET request for the 'equipment.SystemIoController' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'equipment.SystemIoController' resources.
 type EquipmentSystemIoControllerResponse struct {
 	EquipmentSystemIoControllerList *EquipmentSystemIoControllerList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform            *MoAggregateTransform
+	MoDocumentCount                 *MoDocumentCount
+	MoTagSummary                    *MoTagSummary
 }
 
 // EquipmentSystemIoControllerListAsEquipmentSystemIoControllerResponse is a convenience function that returns EquipmentSystemIoControllerList wrapped in EquipmentSystemIoControllerResponse
 func EquipmentSystemIoControllerListAsEquipmentSystemIoControllerResponse(v *EquipmentSystemIoControllerList) EquipmentSystemIoControllerResponse {
-	return EquipmentSystemIoControllerResponse{ EquipmentSystemIoControllerList: v}
+	return EquipmentSystemIoControllerResponse{EquipmentSystemIoControllerList: v}
 }
 
 // MoAggregateTransformAsEquipmentSystemIoControllerResponse is a convenience function that returns MoAggregateTransform wrapped in EquipmentSystemIoControllerResponse
 func MoAggregateTransformAsEquipmentSystemIoControllerResponse(v *MoAggregateTransform) EquipmentSystemIoControllerResponse {
-	return EquipmentSystemIoControllerResponse{ MoAggregateTransform: v}
+	return EquipmentSystemIoControllerResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsEquipmentSystemIoControllerResponse is a convenience function that returns MoDocumentCount wrapped in EquipmentSystemIoControllerResponse
 func MoDocumentCountAsEquipmentSystemIoControllerResponse(v *MoDocumentCount) EquipmentSystemIoControllerResponse {
-	return EquipmentSystemIoControllerResponse{ MoDocumentCount: v}
+	return EquipmentSystemIoControllerResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsEquipmentSystemIoControllerResponse is a convenience function that returns MoTagSummary wrapped in EquipmentSystemIoControllerResponse
 func MoTagSummaryAsEquipmentSystemIoControllerResponse(v *MoTagSummary) EquipmentSystemIoControllerResponse {
-	return EquipmentSystemIoControllerResponse{ MoTagSummary: v}
+	return EquipmentSystemIoControllerResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentSystemIoControllerResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src EquipmentSystemIoControllerResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentSystemIoControllerResponse) GetActualInstance() (interface{}) {
+func (obj *EquipmentSystemIoControllerResponse) GetActualInstance() interface{} {
 	if obj.EquipmentSystemIoControllerList != nil {
 		return obj.EquipmentSystemIoControllerList
 	}
@@ -184,5 +183,3 @@ func (v *NullableEquipmentSystemIoControllerResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

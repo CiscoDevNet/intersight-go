@@ -37,9 +37,9 @@ type EquipmentTransceiver struct {
 	// Switch Identifier that is local to a cluster.
 	SwitchId *string `json:"SwitchId,omitempty"`
 	// The type of the transceiver.
-	Type *string `json:"Type,omitempty"`
-	EtherPhysicalPort *EtherPhysicalPortRelationship `json:"EtherPhysicalPort,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Type                 *string                              `json:"Type,omitempty"`
+	EtherPhysicalPort    *EtherPhysicalPortRelationship       `json:"EtherPhysicalPort,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *EquipmentTransceiver) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentTransceiver) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *EquipmentTransceiver) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentTransceiver) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -474,9 +474,9 @@ func (o *EquipmentTransceiver) UnmarshalJSON(bytes []byte) (err error) {
 		// Switch Identifier that is local to a cluster.
 		SwitchId *string `json:"SwitchId,omitempty"`
 		// The type of the transceiver.
-		Type *string `json:"Type,omitempty"`
-		EtherPhysicalPort *EtherPhysicalPortRelationship `json:"EtherPhysicalPort,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		Type              *string                              `json:"Type,omitempty"`
+		EtherPhysicalPort *EtherPhysicalPortRelationship       `json:"EtherPhysicalPort,omitempty"`
+		RegisteredDevice  *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
 	varEquipmentTransceiverWithoutEmbeddedStruct := EquipmentTransceiverWithoutEmbeddedStruct{}
@@ -583,5 +583,3 @@ func (v *NullableEquipmentTransceiver) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

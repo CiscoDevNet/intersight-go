@@ -28,7 +28,7 @@ type VirtualizationVmDiskAllOf struct {
 	// Disk name associated with virtual machine.
 	Name *string `json:"Name,omitempty"`
 	// Type of the Disk (hdd, cdrom). * `hdd` - Allows the virtual machine to mount disk from hard disk drive (hdd) image. * `cdrom` - Allows the virtual machine to mount disk from compact disk (cd) image.
-	Type *string `json:"Type,omitempty"`
+	Type        *string                           `json:"Type,omitempty"`
 	VirtualDisk NullableVirtualizationVdiskConfig `json:"VirtualDisk,omitempty"`
 	// Virtual disk reference name.
 	VirtualDiskReference *string `json:"VirtualDiskReference,omitempty"`
@@ -73,7 +73,7 @@ func (o *VirtualizationVmDiskAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmDiskAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *VirtualizationVmDiskAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmDiskAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -249,7 +249,7 @@ func (o *VirtualizationVmDiskAllOf) GetVirtualDisk() VirtualizationVdiskConfig {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVmDiskAllOf) GetVirtualDiskOk() (*VirtualizationVdiskConfig, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VirtualDisk.Get(), o.VirtualDisk.IsSet()
@@ -268,6 +268,7 @@ func (o *VirtualizationVmDiskAllOf) HasVirtualDisk() bool {
 func (o *VirtualizationVmDiskAllOf) SetVirtualDisk(v VirtualizationVdiskConfig) {
 	o.VirtualDisk.Set(&v)
 }
+
 // SetVirtualDiskNil sets the value for VirtualDisk to be an explicit nil
 func (o *VirtualizationVmDiskAllOf) SetVirtualDiskNil() {
 	o.VirtualDisk.Set(nil)
@@ -403,5 +404,3 @@ func (v *NullableVirtualizationVmDiskAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

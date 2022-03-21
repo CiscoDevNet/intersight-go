@@ -18,20 +18,19 @@ import (
 
 // PortSubGroupRelationship - A relationship to the 'port.SubGroup' resource, or the expanded 'port.SubGroup' resource, or the 'null' value.
 type PortSubGroupRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef      *MoMoRef
 	PortSubGroup *PortSubGroup
 }
 
 // MoMoRefAsPortSubGroupRelationship is a convenience function that returns MoMoRef wrapped in PortSubGroupRelationship
 func MoMoRefAsPortSubGroupRelationship(v *MoMoRef) PortSubGroupRelationship {
-	return PortSubGroupRelationship{ MoMoRef: v}
+	return PortSubGroupRelationship{MoMoRef: v}
 }
 
 // PortSubGroupAsPortSubGroupRelationship is a convenience function that returns PortSubGroup wrapped in PortSubGroupRelationship
 func PortSubGroupAsPortSubGroupRelationship(v *PortSubGroup) PortSubGroupRelationship {
-	return PortSubGroupRelationship{ PortSubGroup: v}
+	return PortSubGroupRelationship{PortSubGroup: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *PortSubGroupRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src PortSubGroupRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *PortSubGroupRelationship) GetActualInstance() (interface{}) {
+func (obj *PortSubGroupRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullablePortSubGroupRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

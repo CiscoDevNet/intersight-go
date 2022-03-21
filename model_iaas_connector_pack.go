@@ -25,7 +25,7 @@ type IaasConnectorPack struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Complete version of the connector pack including build number.
-	CompleteVersion *string `json:"CompleteVersion,omitempty"`
+	CompleteVersion *string  `json:"CompleteVersion,omitempty"`
 	DependencyNames []string `json:"DependencyNames,omitempty"`
 	// Version of the connector pack that is last downloaded successfully to UCSD.
 	DownloadedVersion *string `json:"DownloadedVersion,omitempty"`
@@ -34,8 +34,8 @@ type IaasConnectorPack struct {
 	// State of the connector pack whether it is enabled or disabled.
 	State *string `json:"State,omitempty"`
 	// Version of the connector pack.
-	Version *string `json:"Version,omitempty"`
-	Guid *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
+	Version              *string                   `json:"Version,omitempty"`
+	Guid                 *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *IaasConnectorPack) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IaasConnectorPack) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *IaasConnectorPack) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IaasConnectorPack) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -146,7 +146,7 @@ func (o *IaasConnectorPack) SetCompleteVersion(v string) {
 
 // GetDependencyNames returns the DependencyNames field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IaasConnectorPack) GetDependencyNames() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -389,7 +389,7 @@ func (o *IaasConnectorPack) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Complete version of the connector pack including build number.
-		CompleteVersion *string `json:"CompleteVersion,omitempty"`
+		CompleteVersion *string  `json:"CompleteVersion,omitempty"`
 		DependencyNames []string `json:"DependencyNames,omitempty"`
 		// Version of the connector pack that is last downloaded successfully to UCSD.
 		DownloadedVersion *string `json:"DownloadedVersion,omitempty"`
@@ -398,8 +398,8 @@ func (o *IaasConnectorPack) UnmarshalJSON(bytes []byte) (err error) {
 		// State of the connector pack whether it is enabled or disabled.
 		State *string `json:"State,omitempty"`
 		// Version of the connector pack.
-		Version *string `json:"Version,omitempty"`
-		Guid *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
+		Version *string                   `json:"Version,omitempty"`
+		Guid    *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
 	}
 
 	varIaasConnectorPackWithoutEmbeddedStruct := IaasConnectorPackWithoutEmbeddedStruct{}
@@ -502,5 +502,3 @@ func (v *NullableIaasConnectorPack) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

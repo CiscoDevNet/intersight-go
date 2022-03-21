@@ -24,7 +24,7 @@ type AssetWorkloadOptimizerMicrosoftAzureServicePrincipalOptionsAllOf struct {
 	// Azure has different endpoints for managing Germany subscriptions. Azure cloud type helps in differentiating between regular subscriptions and Germany subscriptions to manage the Azure services for workload optimization. Documentation for germany cloud [link](https://docs.microsoft.com/en-us/azure/germany/germany-manage-subscriptions). * `Global` - Global cloud type for Azure subscription. * `Germany` - Germany cloud type for Azure subscription.
 	AzureCloudType *string `json:"AzureCloudType,omitempty"`
 	// ID of the tenant used while authenticating the managed target.
-	TenantId *string `json:"TenantId,omitempty"`
+	TenantId             *string `json:"TenantId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *AssetWorkloadOptimizerMicrosoftAzureServicePrincipalOptionsAllOf) GetCl
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetWorkloadOptimizerMicrosoftAzureServicePrincipalOptionsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *AssetWorkloadOptimizerMicrosoftAzureServicePrincipalOptionsAllOf) GetOb
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetWorkloadOptimizerMicrosoftAzureServicePrincipalOptionsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -246,5 +246,3 @@ func (v *NullableAssetWorkloadOptimizerMicrosoftAzureServicePrincipalOptionsAllO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

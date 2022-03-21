@@ -20,30 +20,29 @@ import (
 type HyperflexLicenseResponse struct {
 	HyperflexLicenseList *HyperflexLicenseList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // HyperflexLicenseListAsHyperflexLicenseResponse is a convenience function that returns HyperflexLicenseList wrapped in HyperflexLicenseResponse
 func HyperflexLicenseListAsHyperflexLicenseResponse(v *HyperflexLicenseList) HyperflexLicenseResponse {
-	return HyperflexLicenseResponse{ HyperflexLicenseList: v}
+	return HyperflexLicenseResponse{HyperflexLicenseList: v}
 }
 
 // MoAggregateTransformAsHyperflexLicenseResponse is a convenience function that returns MoAggregateTransform wrapped in HyperflexLicenseResponse
 func MoAggregateTransformAsHyperflexLicenseResponse(v *MoAggregateTransform) HyperflexLicenseResponse {
-	return HyperflexLicenseResponse{ MoAggregateTransform: v}
+	return HyperflexLicenseResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsHyperflexLicenseResponse is a convenience function that returns MoDocumentCount wrapped in HyperflexLicenseResponse
 func MoDocumentCountAsHyperflexLicenseResponse(v *MoDocumentCount) HyperflexLicenseResponse {
-	return HyperflexLicenseResponse{ MoDocumentCount: v}
+	return HyperflexLicenseResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsHyperflexLicenseResponse is a convenience function that returns MoTagSummary wrapped in HyperflexLicenseResponse
 func MoTagSummaryAsHyperflexLicenseResponse(v *MoTagSummary) HyperflexLicenseResponse {
-	return HyperflexLicenseResponse{ MoTagSummary: v}
+	return HyperflexLicenseResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexLicenseResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src HyperflexLicenseResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexLicenseResponse) GetActualInstance() (interface{}) {
+func (obj *HyperflexLicenseResponse) GetActualInstance() interface{} {
 	if obj.HyperflexLicenseList != nil {
 		return obj.HyperflexLicenseList
 	}
@@ -184,5 +183,3 @@ func (v *NullableHyperflexLicenseResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

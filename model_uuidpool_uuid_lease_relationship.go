@@ -18,20 +18,19 @@ import (
 
 // UuidpoolUuidLeaseRelationship - A relationship to the 'uuidpool.UuidLease' resource, or the expanded 'uuidpool.UuidLease' resource, or the 'null' value.
 type UuidpoolUuidLeaseRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 	UuidpoolUuidLease *UuidpoolUuidLease
 }
 
 // MoMoRefAsUuidpoolUuidLeaseRelationship is a convenience function that returns MoMoRef wrapped in UuidpoolUuidLeaseRelationship
 func MoMoRefAsUuidpoolUuidLeaseRelationship(v *MoMoRef) UuidpoolUuidLeaseRelationship {
-	return UuidpoolUuidLeaseRelationship{ MoMoRef: v}
+	return UuidpoolUuidLeaseRelationship{MoMoRef: v}
 }
 
 // UuidpoolUuidLeaseAsUuidpoolUuidLeaseRelationship is a convenience function that returns UuidpoolUuidLease wrapped in UuidpoolUuidLeaseRelationship
 func UuidpoolUuidLeaseAsUuidpoolUuidLeaseRelationship(v *UuidpoolUuidLease) UuidpoolUuidLeaseRelationship {
-	return UuidpoolUuidLeaseRelationship{ UuidpoolUuidLease: v}
+	return UuidpoolUuidLeaseRelationship{UuidpoolUuidLease: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UuidpoolUuidLeaseRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src UuidpoolUuidLeaseRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *UuidpoolUuidLeaseRelationship) GetActualInstance() (interface{}) {
+func (obj *UuidpoolUuidLeaseRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableUuidpoolUuidLeaseRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

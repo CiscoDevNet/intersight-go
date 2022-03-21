@@ -29,8 +29,8 @@ type ConnectorScopedInventory struct {
 	// Set of queries to identify objects to be inventoried as part of this scoped inventory action.
 	Queries interface{} `json:"Queries,omitempty"`
 	// Type of the object for which scoped inventory needs to be run.
-	Type *string `json:"Type,omitempty"`
-	Values []string `json:"Values,omitempty"`
+	Type                 *string  `json:"Type,omitempty"`
+	Values               []string `json:"Values,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *ConnectorScopedInventory) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorScopedInventory) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *ConnectorScopedInventory) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorScopedInventory) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -137,7 +137,7 @@ func (o *ConnectorScopedInventory) SetNamingProperty(v string) {
 
 // GetQueries returns the Queries field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ConnectorScopedInventory) GetQueries() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -202,7 +202,7 @@ func (o *ConnectorScopedInventory) SetType(v string) {
 
 // GetValues returns the Values field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ConnectorScopedInventory) GetValues() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -280,7 +280,7 @@ func (o *ConnectorScopedInventory) UnmarshalJSON(bytes []byte) (err error) {
 		// Set of queries to identify objects to be inventoried as part of this scoped inventory action.
 		Queries interface{} `json:"Queries,omitempty"`
 		// Type of the object for which scoped inventory needs to be run.
-		Type *string `json:"Type,omitempty"`
+		Type   *string  `json:"Type,omitempty"`
 		Values []string `json:"Values,omitempty"`
 	}
 
@@ -378,5 +378,3 @@ func (v *NullableConnectorScopedInventory) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

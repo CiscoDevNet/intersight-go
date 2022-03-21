@@ -18,8 +18,8 @@ import (
 // TelemetryDruidQueryDataSource This is used for nested groupBys and is only currently supported for groupBys.
 type TelemetryDruidQueryDataSource struct {
 	// The type of data source.
-	Type string `json:"type"`
-	Query TelemetryDruidGroupByRequest `json:"query"`
+	Type                 string                       `json:"type"`
+	Query                TelemetryDruidGroupByRequest `json:"query"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -57,7 +57,7 @@ func (o *TelemetryDruidQueryDataSource) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidQueryDataSource) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -81,7 +81,7 @@ func (o *TelemetryDruidQueryDataSource) GetQuery() TelemetryDruidGroupByRequest 
 // GetQueryOk returns a tuple with the Query field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidQueryDataSource) GetQueryOk() (*TelemetryDruidGroupByRequest, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Query, true
@@ -161,5 +161,3 @@ func (v *NullableTelemetryDruidQueryDataSource) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

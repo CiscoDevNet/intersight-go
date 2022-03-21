@@ -29,11 +29,11 @@ var (
 type InventoryApiService service
 
 type ApiCreateInventoryRequestRequest struct {
-	ctx _context.Context
-	ApiService *InventoryApiService
+	ctx              _context.Context
+	ApiService       *InventoryApiService
 	inventoryRequest *InventoryRequest
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch          *string
+	ifNoneMatch      *string
 }
 
 // The &#39;inventory.Request&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateInventoryRequestRequest) InventoryRequest(inventoryRequest Inve
 	r.inventoryRequest = &inventoryRequest
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateInventoryRequestRequest) IfMatch(ifMatch string) ApiCreateInventoryRequestRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateInventoryRequestRequest) IfNoneMatch(ifNoneMatch string) ApiCreateInventoryRequestRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateInventoryRequest Create a 'inventory.Request' resource.
 func (a *InventoryApiService) CreateInventoryRequest(ctx _context.Context) ApiCreateInventoryRequestRequest {
 	return ApiCreateInventoryRequestRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *InventoryApiService) CreateInventoryRequestExecute(r ApiCreateInventory
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,10 @@ func (a *InventoryApiService) CreateInventoryRequestExecute(r ApiCreateInventory
 }
 
 type ApiGetInventoryDeviceInfoByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *InventoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetInventoryDeviceInfoByMoidRequest) Execute() (InventoryDeviceInfo, *_nethttp.Response, error) {
 	return r.ApiService.GetInventoryDeviceInfoByMoidExecute(r)
@@ -225,8 +226,8 @@ GetInventoryDeviceInfoByMoid Read a 'inventory.DeviceInfo' resource.
 func (a *InventoryApiService) GetInventoryDeviceInfoByMoid(ctx _context.Context, moid string) ApiGetInventoryDeviceInfoByMoidRequest {
 	return ApiGetInventoryDeviceInfoByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -333,13 +334,13 @@ func (a *InventoryApiService) GetInventoryDeviceInfoByMoidExecute(r ApiGetInvent
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -356,19 +357,19 @@ func (a *InventoryApiService) GetInventoryDeviceInfoByMoidExecute(r ApiGetInvent
 }
 
 type ApiGetInventoryDeviceInfoListRequest struct {
-	ctx _context.Context
-	ApiService *InventoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *InventoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -376,51 +377,61 @@ func (r ApiGetInventoryDeviceInfoListRequest) Filter(filter string) ApiGetInvent
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetInventoryDeviceInfoListRequest) Orderby(orderby string) ApiGetInventoryDeviceInfoListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetInventoryDeviceInfoListRequest) Top(top int32) ApiGetInventoryDeviceInfoListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetInventoryDeviceInfoListRequest) Skip(skip int32) ApiGetInventoryDeviceInfoListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetInventoryDeviceInfoListRequest) Select_(select_ string) ApiGetInventoryDeviceInfoListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetInventoryDeviceInfoListRequest) Expand(expand string) ApiGetInventoryDeviceInfoListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetInventoryDeviceInfoListRequest) Apply(apply string) ApiGetInventoryDeviceInfoListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetInventoryDeviceInfoListRequest) Count(count bool) ApiGetInventoryDeviceInfoListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetInventoryDeviceInfoListRequest) Inlinecount(inlinecount string) ApiGetInventoryDeviceInfoListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetInventoryDeviceInfoListRequest) At(at string) ApiGetInventoryDeviceInfoListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetInventoryDeviceInfoListRequest) Tags(tags string) ApiGetInventoryDeviceInfoListRequest {
 	r.tags = &tags
@@ -440,7 +451,7 @@ GetInventoryDeviceInfoList Read a 'inventory.DeviceInfo' resource.
 func (a *InventoryApiService) GetInventoryDeviceInfoList(ctx _context.Context) ApiGetInventoryDeviceInfoListRequest {
 	return ApiGetInventoryDeviceInfoListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -579,13 +590,13 @@ func (a *InventoryApiService) GetInventoryDeviceInfoListExecute(r ApiGetInventor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -602,11 +613,10 @@ func (a *InventoryApiService) GetInventoryDeviceInfoListExecute(r ApiGetInventor
 }
 
 type ApiGetInventoryDnMoBindingByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *InventoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetInventoryDnMoBindingByMoidRequest) Execute() (InventoryDnMoBinding, *_nethttp.Response, error) {
 	return r.ApiService.GetInventoryDnMoBindingByMoidExecute(r)
@@ -622,8 +632,8 @@ GetInventoryDnMoBindingByMoid Read a 'inventory.DnMoBinding' resource.
 func (a *InventoryApiService) GetInventoryDnMoBindingByMoid(ctx _context.Context, moid string) ApiGetInventoryDnMoBindingByMoidRequest {
 	return ApiGetInventoryDnMoBindingByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -730,13 +740,13 @@ func (a *InventoryApiService) GetInventoryDnMoBindingByMoidExecute(r ApiGetInven
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -753,19 +763,19 @@ func (a *InventoryApiService) GetInventoryDnMoBindingByMoidExecute(r ApiGetInven
 }
 
 type ApiGetInventoryDnMoBindingListRequest struct {
-	ctx _context.Context
-	ApiService *InventoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *InventoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -773,51 +783,61 @@ func (r ApiGetInventoryDnMoBindingListRequest) Filter(filter string) ApiGetInven
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetInventoryDnMoBindingListRequest) Orderby(orderby string) ApiGetInventoryDnMoBindingListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetInventoryDnMoBindingListRequest) Top(top int32) ApiGetInventoryDnMoBindingListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetInventoryDnMoBindingListRequest) Skip(skip int32) ApiGetInventoryDnMoBindingListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetInventoryDnMoBindingListRequest) Select_(select_ string) ApiGetInventoryDnMoBindingListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetInventoryDnMoBindingListRequest) Expand(expand string) ApiGetInventoryDnMoBindingListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetInventoryDnMoBindingListRequest) Apply(apply string) ApiGetInventoryDnMoBindingListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetInventoryDnMoBindingListRequest) Count(count bool) ApiGetInventoryDnMoBindingListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetInventoryDnMoBindingListRequest) Inlinecount(inlinecount string) ApiGetInventoryDnMoBindingListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetInventoryDnMoBindingListRequest) At(at string) ApiGetInventoryDnMoBindingListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetInventoryDnMoBindingListRequest) Tags(tags string) ApiGetInventoryDnMoBindingListRequest {
 	r.tags = &tags
@@ -837,7 +857,7 @@ GetInventoryDnMoBindingList Read a 'inventory.DnMoBinding' resource.
 func (a *InventoryApiService) GetInventoryDnMoBindingList(ctx _context.Context) ApiGetInventoryDnMoBindingListRequest {
 	return ApiGetInventoryDnMoBindingListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -976,13 +996,13 @@ func (a *InventoryApiService) GetInventoryDnMoBindingListExecute(r ApiGetInvento
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -999,11 +1019,10 @@ func (a *InventoryApiService) GetInventoryDnMoBindingListExecute(r ApiGetInvento
 }
 
 type ApiGetInventoryGenericInventoryByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *InventoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetInventoryGenericInventoryByMoidRequest) Execute() (InventoryGenericInventory, *_nethttp.Response, error) {
 	return r.ApiService.GetInventoryGenericInventoryByMoidExecute(r)
@@ -1019,8 +1038,8 @@ GetInventoryGenericInventoryByMoid Read a 'inventory.GenericInventory' resource.
 func (a *InventoryApiService) GetInventoryGenericInventoryByMoid(ctx _context.Context, moid string) ApiGetInventoryGenericInventoryByMoidRequest {
 	return ApiGetInventoryGenericInventoryByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1127,13 +1146,13 @@ func (a *InventoryApiService) GetInventoryGenericInventoryByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1150,11 +1169,10 @@ func (a *InventoryApiService) GetInventoryGenericInventoryByMoidExecute(r ApiGet
 }
 
 type ApiGetInventoryGenericInventoryHolderByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *InventoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetInventoryGenericInventoryHolderByMoidRequest) Execute() (InventoryGenericInventoryHolder, *_nethttp.Response, error) {
 	return r.ApiService.GetInventoryGenericInventoryHolderByMoidExecute(r)
@@ -1170,8 +1188,8 @@ GetInventoryGenericInventoryHolderByMoid Read a 'inventory.GenericInventoryHolde
 func (a *InventoryApiService) GetInventoryGenericInventoryHolderByMoid(ctx _context.Context, moid string) ApiGetInventoryGenericInventoryHolderByMoidRequest {
 	return ApiGetInventoryGenericInventoryHolderByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1278,13 +1296,13 @@ func (a *InventoryApiService) GetInventoryGenericInventoryHolderByMoidExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1301,19 +1319,19 @@ func (a *InventoryApiService) GetInventoryGenericInventoryHolderByMoidExecute(r 
 }
 
 type ApiGetInventoryGenericInventoryHolderListRequest struct {
-	ctx _context.Context
-	ApiService *InventoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *InventoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1321,51 +1339,61 @@ func (r ApiGetInventoryGenericInventoryHolderListRequest) Filter(filter string) 
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetInventoryGenericInventoryHolderListRequest) Orderby(orderby string) ApiGetInventoryGenericInventoryHolderListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetInventoryGenericInventoryHolderListRequest) Top(top int32) ApiGetInventoryGenericInventoryHolderListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetInventoryGenericInventoryHolderListRequest) Skip(skip int32) ApiGetInventoryGenericInventoryHolderListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetInventoryGenericInventoryHolderListRequest) Select_(select_ string) ApiGetInventoryGenericInventoryHolderListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetInventoryGenericInventoryHolderListRequest) Expand(expand string) ApiGetInventoryGenericInventoryHolderListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetInventoryGenericInventoryHolderListRequest) Apply(apply string) ApiGetInventoryGenericInventoryHolderListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetInventoryGenericInventoryHolderListRequest) Count(count bool) ApiGetInventoryGenericInventoryHolderListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetInventoryGenericInventoryHolderListRequest) Inlinecount(inlinecount string) ApiGetInventoryGenericInventoryHolderListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetInventoryGenericInventoryHolderListRequest) At(at string) ApiGetInventoryGenericInventoryHolderListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetInventoryGenericInventoryHolderListRequest) Tags(tags string) ApiGetInventoryGenericInventoryHolderListRequest {
 	r.tags = &tags
@@ -1385,7 +1413,7 @@ GetInventoryGenericInventoryHolderList Read a 'inventory.GenericInventoryHolder'
 func (a *InventoryApiService) GetInventoryGenericInventoryHolderList(ctx _context.Context) ApiGetInventoryGenericInventoryHolderListRequest {
 	return ApiGetInventoryGenericInventoryHolderListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1524,13 +1552,13 @@ func (a *InventoryApiService) GetInventoryGenericInventoryHolderListExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1547,19 +1575,19 @@ func (a *InventoryApiService) GetInventoryGenericInventoryHolderListExecute(r Ap
 }
 
 type ApiGetInventoryGenericInventoryListRequest struct {
-	ctx _context.Context
-	ApiService *InventoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *InventoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1567,51 +1595,61 @@ func (r ApiGetInventoryGenericInventoryListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetInventoryGenericInventoryListRequest) Orderby(orderby string) ApiGetInventoryGenericInventoryListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetInventoryGenericInventoryListRequest) Top(top int32) ApiGetInventoryGenericInventoryListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetInventoryGenericInventoryListRequest) Skip(skip int32) ApiGetInventoryGenericInventoryListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetInventoryGenericInventoryListRequest) Select_(select_ string) ApiGetInventoryGenericInventoryListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetInventoryGenericInventoryListRequest) Expand(expand string) ApiGetInventoryGenericInventoryListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetInventoryGenericInventoryListRequest) Apply(apply string) ApiGetInventoryGenericInventoryListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetInventoryGenericInventoryListRequest) Count(count bool) ApiGetInventoryGenericInventoryListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetInventoryGenericInventoryListRequest) Inlinecount(inlinecount string) ApiGetInventoryGenericInventoryListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetInventoryGenericInventoryListRequest) At(at string) ApiGetInventoryGenericInventoryListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetInventoryGenericInventoryListRequest) Tags(tags string) ApiGetInventoryGenericInventoryListRequest {
 	r.tags = &tags
@@ -1631,7 +1669,7 @@ GetInventoryGenericInventoryList Read a 'inventory.GenericInventory' resource.
 func (a *InventoryApiService) GetInventoryGenericInventoryList(ctx _context.Context) ApiGetInventoryGenericInventoryListRequest {
 	return ApiGetInventoryGenericInventoryListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1770,13 +1808,13 @@ func (a *InventoryApiService) GetInventoryGenericInventoryListExecute(r ApiGetIn
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1793,11 +1831,11 @@ func (a *InventoryApiService) GetInventoryGenericInventoryListExecute(r ApiGetIn
 }
 
 type ApiPatchInventoryGenericInventoryRequest struct {
-	ctx _context.Context
-	ApiService *InventoryApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *InventoryApiService
+	moid                      string
 	inventoryGenericInventory *InventoryGenericInventory
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;inventory.GenericInventory&#39; resource to update.
@@ -1805,6 +1843,7 @@ func (r ApiPatchInventoryGenericInventoryRequest) InventoryGenericInventory(inve
 	r.inventoryGenericInventory = &inventoryGenericInventory
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchInventoryGenericInventoryRequest) IfMatch(ifMatch string) ApiPatchInventoryGenericInventoryRequest {
 	r.ifMatch = &ifMatch
@@ -1825,8 +1864,8 @@ PatchInventoryGenericInventory Update a 'inventory.GenericInventory' resource.
 func (a *InventoryApiService) PatchInventoryGenericInventory(ctx _context.Context, moid string) ApiPatchInventoryGenericInventoryRequest {
 	return ApiPatchInventoryGenericInventoryRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1941,13 +1980,13 @@ func (a *InventoryApiService) PatchInventoryGenericInventoryExecute(r ApiPatchIn
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1964,11 +2003,11 @@ func (a *InventoryApiService) PatchInventoryGenericInventoryExecute(r ApiPatchIn
 }
 
 type ApiPatchInventoryGenericInventoryHolderRequest struct {
-	ctx _context.Context
-	ApiService *InventoryApiService
-	moid string
+	ctx                             _context.Context
+	ApiService                      *InventoryApiService
+	moid                            string
 	inventoryGenericInventoryHolder *InventoryGenericInventoryHolder
-	ifMatch *string
+	ifMatch                         *string
 }
 
 // The &#39;inventory.GenericInventoryHolder&#39; resource to update.
@@ -1976,6 +2015,7 @@ func (r ApiPatchInventoryGenericInventoryHolderRequest) InventoryGenericInventor
 	r.inventoryGenericInventoryHolder = &inventoryGenericInventoryHolder
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchInventoryGenericInventoryHolderRequest) IfMatch(ifMatch string) ApiPatchInventoryGenericInventoryHolderRequest {
 	r.ifMatch = &ifMatch
@@ -1996,8 +2036,8 @@ PatchInventoryGenericInventoryHolder Update a 'inventory.GenericInventoryHolder'
 func (a *InventoryApiService) PatchInventoryGenericInventoryHolder(ctx _context.Context, moid string) ApiPatchInventoryGenericInventoryHolderRequest {
 	return ApiPatchInventoryGenericInventoryHolderRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2112,13 +2152,13 @@ func (a *InventoryApiService) PatchInventoryGenericInventoryHolderExecute(r ApiP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2135,11 +2175,11 @@ func (a *InventoryApiService) PatchInventoryGenericInventoryHolderExecute(r ApiP
 }
 
 type ApiUpdateInventoryGenericInventoryRequest struct {
-	ctx _context.Context
-	ApiService *InventoryApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *InventoryApiService
+	moid                      string
 	inventoryGenericInventory *InventoryGenericInventory
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;inventory.GenericInventory&#39; resource to update.
@@ -2147,6 +2187,7 @@ func (r ApiUpdateInventoryGenericInventoryRequest) InventoryGenericInventory(inv
 	r.inventoryGenericInventory = &inventoryGenericInventory
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateInventoryGenericInventoryRequest) IfMatch(ifMatch string) ApiUpdateInventoryGenericInventoryRequest {
 	r.ifMatch = &ifMatch
@@ -2167,8 +2208,8 @@ UpdateInventoryGenericInventory Update a 'inventory.GenericInventory' resource.
 func (a *InventoryApiService) UpdateInventoryGenericInventory(ctx _context.Context, moid string) ApiUpdateInventoryGenericInventoryRequest {
 	return ApiUpdateInventoryGenericInventoryRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2283,13 +2324,13 @@ func (a *InventoryApiService) UpdateInventoryGenericInventoryExecute(r ApiUpdate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2306,11 +2347,11 @@ func (a *InventoryApiService) UpdateInventoryGenericInventoryExecute(r ApiUpdate
 }
 
 type ApiUpdateInventoryGenericInventoryHolderRequest struct {
-	ctx _context.Context
-	ApiService *InventoryApiService
-	moid string
+	ctx                             _context.Context
+	ApiService                      *InventoryApiService
+	moid                            string
 	inventoryGenericInventoryHolder *InventoryGenericInventoryHolder
-	ifMatch *string
+	ifMatch                         *string
 }
 
 // The &#39;inventory.GenericInventoryHolder&#39; resource to update.
@@ -2318,6 +2359,7 @@ func (r ApiUpdateInventoryGenericInventoryHolderRequest) InventoryGenericInvento
 	r.inventoryGenericInventoryHolder = &inventoryGenericInventoryHolder
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateInventoryGenericInventoryHolderRequest) IfMatch(ifMatch string) ApiUpdateInventoryGenericInventoryHolderRequest {
 	r.ifMatch = &ifMatch
@@ -2338,8 +2380,8 @@ UpdateInventoryGenericInventoryHolder Update a 'inventory.GenericInventoryHolder
 func (a *InventoryApiService) UpdateInventoryGenericInventoryHolder(ctx _context.Context, moid string) ApiUpdateInventoryGenericInventoryHolderRequest {
 	return ApiUpdateInventoryGenericInventoryHolderRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2454,13 +2496,13 @@ func (a *InventoryApiService) UpdateInventoryGenericInventoryHolderExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

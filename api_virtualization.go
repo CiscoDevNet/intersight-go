@@ -29,11 +29,11 @@ var (
 type VirtualizationApiService service
 
 type ApiCreateVirtualizationCiscoHypervisorManagerRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
+	ctx                                  _context.Context
+	ApiService                           *VirtualizationApiService
 	virtualizationCiscoHypervisorManager *VirtualizationCiscoHypervisorManager
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                              *string
+	ifNoneMatch                          *string
 }
 
 // The &#39;virtualization.CiscoHypervisorManager&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateVirtualizationCiscoHypervisorManagerRequest) VirtualizationCisc
 	r.virtualizationCiscoHypervisorManager = &virtualizationCiscoHypervisorManager
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVirtualizationCiscoHypervisorManagerRequest) IfMatch(ifMatch string) ApiCreateVirtualizationCiscoHypervisorManagerRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVirtualizationCiscoHypervisorManagerRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVirtualizationCiscoHypervisorManagerRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateVirtualizationCiscoHypervisorManager Create a 'virtualization.CiscoHypervi
 func (a *VirtualizationApiService) CreateVirtualizationCiscoHypervisorManager(ctx _context.Context) ApiCreateVirtualizationCiscoHypervisorManagerRequest {
 	return ApiCreateVirtualizationCiscoHypervisorManagerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *VirtualizationApiService) CreateVirtualizationCiscoHypervisorManagerExe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,11 @@ func (a *VirtualizationApiService) CreateVirtualizationCiscoHypervisorManagerExe
 }
 
 type ApiCreateVirtualizationEsxiConsoleRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
+	ctx                       _context.Context
+	ApiService                *VirtualizationApiService
 	virtualizationEsxiConsole *VirtualizationEsxiConsole
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                   *string
+	ifNoneMatch               *string
 }
 
 // The &#39;virtualization.EsxiConsole&#39; resource to create.
@@ -217,11 +219,13 @@ func (r ApiCreateVirtualizationEsxiConsoleRequest) VirtualizationEsxiConsole(vir
 	r.virtualizationEsxiConsole = &virtualizationEsxiConsole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVirtualizationEsxiConsoleRequest) IfMatch(ifMatch string) ApiCreateVirtualizationEsxiConsoleRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVirtualizationEsxiConsoleRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVirtualizationEsxiConsoleRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateVirtualizationEsxiConsole Create a 'virtualization.EsxiConsole' resource.
 func (a *VirtualizationApiService) CreateVirtualizationEsxiConsole(ctx _context.Context) ApiCreateVirtualizationEsxiConsoleRequest {
 	return ApiCreateVirtualizationEsxiConsoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *VirtualizationApiService) CreateVirtualizationEsxiConsoleExecute(r ApiC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,11 +385,11 @@ func (a *VirtualizationApiService) CreateVirtualizationEsxiConsoleExecute(r ApiC
 }
 
 type ApiCreateVirtualizationIweDatacenterRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
+	ctx                         _context.Context
+	ApiService                  *VirtualizationApiService
 	virtualizationIweDatacenter *VirtualizationIweDatacenter
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                     *string
+	ifNoneMatch                 *string
 }
 
 // The &#39;virtualization.IweDatacenter&#39; resource to create.
@@ -393,11 +397,13 @@ func (r ApiCreateVirtualizationIweDatacenterRequest) VirtualizationIweDatacenter
 	r.virtualizationIweDatacenter = &virtualizationIweDatacenter
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVirtualizationIweDatacenterRequest) IfMatch(ifMatch string) ApiCreateVirtualizationIweDatacenterRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVirtualizationIweDatacenterRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVirtualizationIweDatacenterRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -417,7 +423,7 @@ CreateVirtualizationIweDatacenter Create a 'virtualization.IweDatacenter' resour
 func (a *VirtualizationApiService) CreateVirtualizationIweDatacenter(ctx _context.Context) ApiCreateVirtualizationIweDatacenterRequest {
 	return ApiCreateVirtualizationIweDatacenterRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -534,13 +540,13 @@ func (a *VirtualizationApiService) CreateVirtualizationIweDatacenterExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -557,11 +563,11 @@ func (a *VirtualizationApiService) CreateVirtualizationIweDatacenterExecute(r Ap
 }
 
 type ApiCreateVirtualizationVirtualDiskRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
+	ctx                       _context.Context
+	ApiService                *VirtualizationApiService
 	virtualizationVirtualDisk *VirtualizationVirtualDisk
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                   *string
+	ifNoneMatch               *string
 }
 
 // The &#39;virtualization.VirtualDisk&#39; resource to create.
@@ -569,11 +575,13 @@ func (r ApiCreateVirtualizationVirtualDiskRequest) VirtualizationVirtualDisk(vir
 	r.virtualizationVirtualDisk = &virtualizationVirtualDisk
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVirtualizationVirtualDiskRequest) IfMatch(ifMatch string) ApiCreateVirtualizationVirtualDiskRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVirtualizationVirtualDiskRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVirtualizationVirtualDiskRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -593,7 +601,7 @@ CreateVirtualizationVirtualDisk Create a 'virtualization.VirtualDisk' resource.
 func (a *VirtualizationApiService) CreateVirtualizationVirtualDisk(ctx _context.Context) ApiCreateVirtualizationVirtualDiskRequest {
 	return ApiCreateVirtualizationVirtualDiskRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -710,13 +718,13 @@ func (a *VirtualizationApiService) CreateVirtualizationVirtualDiskExecute(r ApiC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -733,11 +741,11 @@ func (a *VirtualizationApiService) CreateVirtualizationVirtualDiskExecute(r ApiC
 }
 
 type ApiCreateVirtualizationVirtualMachineRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
+	ctx                          _context.Context
+	ApiService                   *VirtualizationApiService
 	virtualizationVirtualMachine *VirtualizationVirtualMachine
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                      *string
+	ifNoneMatch                  *string
 }
 
 // The &#39;virtualization.VirtualMachine&#39; resource to create.
@@ -745,11 +753,13 @@ func (r ApiCreateVirtualizationVirtualMachineRequest) VirtualizationVirtualMachi
 	r.virtualizationVirtualMachine = &virtualizationVirtualMachine
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVirtualizationVirtualMachineRequest) IfMatch(ifMatch string) ApiCreateVirtualizationVirtualMachineRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVirtualizationVirtualMachineRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVirtualizationVirtualMachineRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -769,7 +779,7 @@ CreateVirtualizationVirtualMachine Create a 'virtualization.VirtualMachine' reso
 func (a *VirtualizationApiService) CreateVirtualizationVirtualMachine(ctx _context.Context) ApiCreateVirtualizationVirtualMachineRequest {
 	return ApiCreateVirtualizationVirtualMachineRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -886,13 +896,13 @@ func (a *VirtualizationApiService) CreateVirtualizationVirtualMachineExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -909,11 +919,11 @@ func (a *VirtualizationApiService) CreateVirtualizationVirtualMachineExecute(r A
 }
 
 type ApiCreateVirtualizationVirtualNetworkRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
+	ctx                          _context.Context
+	ApiService                   *VirtualizationApiService
 	virtualizationVirtualNetwork *VirtualizationVirtualNetwork
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                      *string
+	ifNoneMatch                  *string
 }
 
 // The &#39;virtualization.VirtualNetwork&#39; resource to create.
@@ -921,11 +931,13 @@ func (r ApiCreateVirtualizationVirtualNetworkRequest) VirtualizationVirtualNetwo
 	r.virtualizationVirtualNetwork = &virtualizationVirtualNetwork
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateVirtualizationVirtualNetworkRequest) IfMatch(ifMatch string) ApiCreateVirtualizationVirtualNetworkRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateVirtualizationVirtualNetworkRequest) IfNoneMatch(ifNoneMatch string) ApiCreateVirtualizationVirtualNetworkRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -945,7 +957,7 @@ CreateVirtualizationVirtualNetwork Create a 'virtualization.VirtualNetwork' reso
 func (a *VirtualizationApiService) CreateVirtualizationVirtualNetwork(ctx _context.Context) ApiCreateVirtualizationVirtualNetworkRequest {
 	return ApiCreateVirtualizationVirtualNetworkRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1062,13 +1074,13 @@ func (a *VirtualizationApiService) CreateVirtualizationVirtualNetworkExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1085,11 +1097,10 @@ func (a *VirtualizationApiService) CreateVirtualizationVirtualNetworkExecute(r A
 }
 
 type ApiDeleteVirtualizationIweClusterRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVirtualizationIweClusterRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVirtualizationIweClusterExecute(r)
@@ -1105,8 +1116,8 @@ DeleteVirtualizationIweCluster Delete a 'virtualization.IweCluster' resource.
 func (a *VirtualizationApiService) DeleteVirtualizationIweCluster(ctx _context.Context, moid string) ApiDeleteVirtualizationIweClusterRequest {
 	return ApiDeleteVirtualizationIweClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1211,13 +1222,13 @@ func (a *VirtualizationApiService) DeleteVirtualizationIweClusterExecute(r ApiDe
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1225,11 +1236,10 @@ func (a *VirtualizationApiService) DeleteVirtualizationIweClusterExecute(r ApiDe
 }
 
 type ApiDeleteVirtualizationIweDatacenterRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVirtualizationIweDatacenterRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVirtualizationIweDatacenterExecute(r)
@@ -1245,8 +1255,8 @@ DeleteVirtualizationIweDatacenter Delete a 'virtualization.IweDatacenter' resour
 func (a *VirtualizationApiService) DeleteVirtualizationIweDatacenter(ctx _context.Context, moid string) ApiDeleteVirtualizationIweDatacenterRequest {
 	return ApiDeleteVirtualizationIweDatacenterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1351,13 +1361,13 @@ func (a *VirtualizationApiService) DeleteVirtualizationIweDatacenterExecute(r Ap
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1365,11 +1375,10 @@ func (a *VirtualizationApiService) DeleteVirtualizationIweDatacenterExecute(r Ap
 }
 
 type ApiDeleteVirtualizationIweVirtualMachineNetworkInterfaceRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVirtualizationIweVirtualMachineNetworkInterfaceRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVirtualizationIweVirtualMachineNetworkInterfaceExecute(r)
@@ -1385,8 +1394,8 @@ DeleteVirtualizationIweVirtualMachineNetworkInterface Delete a 'virtualization.I
 func (a *VirtualizationApiService) DeleteVirtualizationIweVirtualMachineNetworkInterface(ctx _context.Context, moid string) ApiDeleteVirtualizationIweVirtualMachineNetworkInterfaceRequest {
 	return ApiDeleteVirtualizationIweVirtualMachineNetworkInterfaceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1491,13 +1500,13 @@ func (a *VirtualizationApiService) DeleteVirtualizationIweVirtualMachineNetworkI
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1505,11 +1514,10 @@ func (a *VirtualizationApiService) DeleteVirtualizationIweVirtualMachineNetworkI
 }
 
 type ApiDeleteVirtualizationVirtualDiskRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVirtualizationVirtualDiskRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVirtualizationVirtualDiskExecute(r)
@@ -1525,8 +1533,8 @@ DeleteVirtualizationVirtualDisk Delete a 'virtualization.VirtualDisk' resource.
 func (a *VirtualizationApiService) DeleteVirtualizationVirtualDisk(ctx _context.Context, moid string) ApiDeleteVirtualizationVirtualDiskRequest {
 	return ApiDeleteVirtualizationVirtualDiskRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1631,13 +1639,13 @@ func (a *VirtualizationApiService) DeleteVirtualizationVirtualDiskExecute(r ApiD
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1645,11 +1653,10 @@ func (a *VirtualizationApiService) DeleteVirtualizationVirtualDiskExecute(r ApiD
 }
 
 type ApiDeleteVirtualizationVirtualMachineRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVirtualizationVirtualMachineRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVirtualizationVirtualMachineExecute(r)
@@ -1665,8 +1672,8 @@ DeleteVirtualizationVirtualMachine Delete a 'virtualization.VirtualMachine' reso
 func (a *VirtualizationApiService) DeleteVirtualizationVirtualMachine(ctx _context.Context, moid string) ApiDeleteVirtualizationVirtualMachineRequest {
 	return ApiDeleteVirtualizationVirtualMachineRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1771,13 +1778,13 @@ func (a *VirtualizationApiService) DeleteVirtualizationVirtualMachineExecute(r A
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1785,11 +1792,10 @@ func (a *VirtualizationApiService) DeleteVirtualizationVirtualMachineExecute(r A
 }
 
 type ApiDeleteVirtualizationVirtualNetworkRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteVirtualizationVirtualNetworkRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteVirtualizationVirtualNetworkExecute(r)
@@ -1805,8 +1811,8 @@ DeleteVirtualizationVirtualNetwork Delete a 'virtualization.VirtualNetwork' reso
 func (a *VirtualizationApiService) DeleteVirtualizationVirtualNetwork(ctx _context.Context, moid string) ApiDeleteVirtualizationVirtualNetworkRequest {
 	return ApiDeleteVirtualizationVirtualNetworkRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1911,13 +1917,13 @@ func (a *VirtualizationApiService) DeleteVirtualizationVirtualNetworkExecute(r A
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1925,11 +1931,10 @@ func (a *VirtualizationApiService) DeleteVirtualizationVirtualNetworkExecute(r A
 }
 
 type ApiGetVirtualizationCiscoHypervisorManagerByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationCiscoHypervisorManagerByMoidRequest) Execute() (VirtualizationCiscoHypervisorManager, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationCiscoHypervisorManagerByMoidExecute(r)
@@ -1945,8 +1950,8 @@ GetVirtualizationCiscoHypervisorManagerByMoid Read a 'virtualization.CiscoHyperv
 func (a *VirtualizationApiService) GetVirtualizationCiscoHypervisorManagerByMoid(ctx _context.Context, moid string) ApiGetVirtualizationCiscoHypervisorManagerByMoidRequest {
 	return ApiGetVirtualizationCiscoHypervisorManagerByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2053,13 +2058,13 @@ func (a *VirtualizationApiService) GetVirtualizationCiscoHypervisorManagerByMoid
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2076,19 +2081,19 @@ func (a *VirtualizationApiService) GetVirtualizationCiscoHypervisorManagerByMoid
 }
 
 type ApiGetVirtualizationCiscoHypervisorManagerListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2096,51 +2101,61 @@ func (r ApiGetVirtualizationCiscoHypervisorManagerListRequest) Filter(filter str
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationCiscoHypervisorManagerListRequest) Orderby(orderby string) ApiGetVirtualizationCiscoHypervisorManagerListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationCiscoHypervisorManagerListRequest) Top(top int32) ApiGetVirtualizationCiscoHypervisorManagerListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationCiscoHypervisorManagerListRequest) Skip(skip int32) ApiGetVirtualizationCiscoHypervisorManagerListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationCiscoHypervisorManagerListRequest) Select_(select_ string) ApiGetVirtualizationCiscoHypervisorManagerListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationCiscoHypervisorManagerListRequest) Expand(expand string) ApiGetVirtualizationCiscoHypervisorManagerListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationCiscoHypervisorManagerListRequest) Apply(apply string) ApiGetVirtualizationCiscoHypervisorManagerListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationCiscoHypervisorManagerListRequest) Count(count bool) ApiGetVirtualizationCiscoHypervisorManagerListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationCiscoHypervisorManagerListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationCiscoHypervisorManagerListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationCiscoHypervisorManagerListRequest) At(at string) ApiGetVirtualizationCiscoHypervisorManagerListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationCiscoHypervisorManagerListRequest) Tags(tags string) ApiGetVirtualizationCiscoHypervisorManagerListRequest {
 	r.tags = &tags
@@ -2160,7 +2175,7 @@ GetVirtualizationCiscoHypervisorManagerList Read a 'virtualization.CiscoHypervis
 func (a *VirtualizationApiService) GetVirtualizationCiscoHypervisorManagerList(ctx _context.Context) ApiGetVirtualizationCiscoHypervisorManagerListRequest {
 	return ApiGetVirtualizationCiscoHypervisorManagerListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2299,13 +2314,13 @@ func (a *VirtualizationApiService) GetVirtualizationCiscoHypervisorManagerListEx
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2322,11 +2337,10 @@ func (a *VirtualizationApiService) GetVirtualizationCiscoHypervisorManagerListEx
 }
 
 type ApiGetVirtualizationEsxiConsoleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationEsxiConsoleByMoidRequest) Execute() (VirtualizationEsxiConsole, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationEsxiConsoleByMoidExecute(r)
@@ -2342,8 +2356,8 @@ GetVirtualizationEsxiConsoleByMoid Read a 'virtualization.EsxiConsole' resource.
 func (a *VirtualizationApiService) GetVirtualizationEsxiConsoleByMoid(ctx _context.Context, moid string) ApiGetVirtualizationEsxiConsoleByMoidRequest {
 	return ApiGetVirtualizationEsxiConsoleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2450,13 +2464,13 @@ func (a *VirtualizationApiService) GetVirtualizationEsxiConsoleByMoidExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2473,19 +2487,19 @@ func (a *VirtualizationApiService) GetVirtualizationEsxiConsoleByMoidExecute(r A
 }
 
 type ApiGetVirtualizationEsxiConsoleListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2493,51 +2507,61 @@ func (r ApiGetVirtualizationEsxiConsoleListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationEsxiConsoleListRequest) Orderby(orderby string) ApiGetVirtualizationEsxiConsoleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationEsxiConsoleListRequest) Top(top int32) ApiGetVirtualizationEsxiConsoleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationEsxiConsoleListRequest) Skip(skip int32) ApiGetVirtualizationEsxiConsoleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationEsxiConsoleListRequest) Select_(select_ string) ApiGetVirtualizationEsxiConsoleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationEsxiConsoleListRequest) Expand(expand string) ApiGetVirtualizationEsxiConsoleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationEsxiConsoleListRequest) Apply(apply string) ApiGetVirtualizationEsxiConsoleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationEsxiConsoleListRequest) Count(count bool) ApiGetVirtualizationEsxiConsoleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationEsxiConsoleListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationEsxiConsoleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationEsxiConsoleListRequest) At(at string) ApiGetVirtualizationEsxiConsoleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationEsxiConsoleListRequest) Tags(tags string) ApiGetVirtualizationEsxiConsoleListRequest {
 	r.tags = &tags
@@ -2557,7 +2581,7 @@ GetVirtualizationEsxiConsoleList Read a 'virtualization.EsxiConsole' resource.
 func (a *VirtualizationApiService) GetVirtualizationEsxiConsoleList(ctx _context.Context) ApiGetVirtualizationEsxiConsoleListRequest {
 	return ApiGetVirtualizationEsxiConsoleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2696,13 +2720,13 @@ func (a *VirtualizationApiService) GetVirtualizationEsxiConsoleListExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2719,11 +2743,10 @@ func (a *VirtualizationApiService) GetVirtualizationEsxiConsoleListExecute(r Api
 }
 
 type ApiGetVirtualizationHostByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationHostByMoidRequest) Execute() (VirtualizationHost, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationHostByMoidExecute(r)
@@ -2739,8 +2762,8 @@ GetVirtualizationHostByMoid Read a 'virtualization.Host' resource.
 func (a *VirtualizationApiService) GetVirtualizationHostByMoid(ctx _context.Context, moid string) ApiGetVirtualizationHostByMoidRequest {
 	return ApiGetVirtualizationHostByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2847,13 +2870,13 @@ func (a *VirtualizationApiService) GetVirtualizationHostByMoidExecute(r ApiGetVi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2870,19 +2893,19 @@ func (a *VirtualizationApiService) GetVirtualizationHostByMoidExecute(r ApiGetVi
 }
 
 type ApiGetVirtualizationHostListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2890,51 +2913,61 @@ func (r ApiGetVirtualizationHostListRequest) Filter(filter string) ApiGetVirtual
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationHostListRequest) Orderby(orderby string) ApiGetVirtualizationHostListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationHostListRequest) Top(top int32) ApiGetVirtualizationHostListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationHostListRequest) Skip(skip int32) ApiGetVirtualizationHostListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationHostListRequest) Select_(select_ string) ApiGetVirtualizationHostListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationHostListRequest) Expand(expand string) ApiGetVirtualizationHostListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationHostListRequest) Apply(apply string) ApiGetVirtualizationHostListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationHostListRequest) Count(count bool) ApiGetVirtualizationHostListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationHostListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationHostListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationHostListRequest) At(at string) ApiGetVirtualizationHostListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationHostListRequest) Tags(tags string) ApiGetVirtualizationHostListRequest {
 	r.tags = &tags
@@ -2954,7 +2987,7 @@ GetVirtualizationHostList Read a 'virtualization.Host' resource.
 func (a *VirtualizationApiService) GetVirtualizationHostList(ctx _context.Context) ApiGetVirtualizationHostListRequest {
 	return ApiGetVirtualizationHostListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3093,13 +3126,13 @@ func (a *VirtualizationApiService) GetVirtualizationHostListExecute(r ApiGetVirt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3116,11 +3149,10 @@ func (a *VirtualizationApiService) GetVirtualizationHostListExecute(r ApiGetVirt
 }
 
 type ApiGetVirtualizationIweClusterByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationIweClusterByMoidRequest) Execute() (VirtualizationIweCluster, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationIweClusterByMoidExecute(r)
@@ -3136,8 +3168,8 @@ GetVirtualizationIweClusterByMoid Read a 'virtualization.IweCluster' resource.
 func (a *VirtualizationApiService) GetVirtualizationIweClusterByMoid(ctx _context.Context, moid string) ApiGetVirtualizationIweClusterByMoidRequest {
 	return ApiGetVirtualizationIweClusterByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3244,13 +3276,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweClusterByMoidExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3267,19 +3299,19 @@ func (a *VirtualizationApiService) GetVirtualizationIweClusterByMoidExecute(r Ap
 }
 
 type ApiGetVirtualizationIweClusterListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3287,51 +3319,61 @@ func (r ApiGetVirtualizationIweClusterListRequest) Filter(filter string) ApiGetV
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationIweClusterListRequest) Orderby(orderby string) ApiGetVirtualizationIweClusterListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationIweClusterListRequest) Top(top int32) ApiGetVirtualizationIweClusterListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationIweClusterListRequest) Skip(skip int32) ApiGetVirtualizationIweClusterListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationIweClusterListRequest) Select_(select_ string) ApiGetVirtualizationIweClusterListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationIweClusterListRequest) Expand(expand string) ApiGetVirtualizationIweClusterListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationIweClusterListRequest) Apply(apply string) ApiGetVirtualizationIweClusterListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationIweClusterListRequest) Count(count bool) ApiGetVirtualizationIweClusterListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationIweClusterListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationIweClusterListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationIweClusterListRequest) At(at string) ApiGetVirtualizationIweClusterListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationIweClusterListRequest) Tags(tags string) ApiGetVirtualizationIweClusterListRequest {
 	r.tags = &tags
@@ -3351,7 +3393,7 @@ GetVirtualizationIweClusterList Read a 'virtualization.IweCluster' resource.
 func (a *VirtualizationApiService) GetVirtualizationIweClusterList(ctx _context.Context) ApiGetVirtualizationIweClusterListRequest {
 	return ApiGetVirtualizationIweClusterListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3490,13 +3532,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweClusterListExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3513,11 +3555,10 @@ func (a *VirtualizationApiService) GetVirtualizationIweClusterListExecute(r ApiG
 }
 
 type ApiGetVirtualizationIweDatacenterByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationIweDatacenterByMoidRequest) Execute() (VirtualizationIweDatacenter, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationIweDatacenterByMoidExecute(r)
@@ -3533,8 +3574,8 @@ GetVirtualizationIweDatacenterByMoid Read a 'virtualization.IweDatacenter' resou
 func (a *VirtualizationApiService) GetVirtualizationIweDatacenterByMoid(ctx _context.Context, moid string) ApiGetVirtualizationIweDatacenterByMoidRequest {
 	return ApiGetVirtualizationIweDatacenterByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3641,13 +3682,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweDatacenterByMoidExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3664,19 +3705,19 @@ func (a *VirtualizationApiService) GetVirtualizationIweDatacenterByMoidExecute(r
 }
 
 type ApiGetVirtualizationIweDatacenterListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3684,51 +3725,61 @@ func (r ApiGetVirtualizationIweDatacenterListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationIweDatacenterListRequest) Orderby(orderby string) ApiGetVirtualizationIweDatacenterListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationIweDatacenterListRequest) Top(top int32) ApiGetVirtualizationIweDatacenterListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationIweDatacenterListRequest) Skip(skip int32) ApiGetVirtualizationIweDatacenterListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationIweDatacenterListRequest) Select_(select_ string) ApiGetVirtualizationIweDatacenterListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationIweDatacenterListRequest) Expand(expand string) ApiGetVirtualizationIweDatacenterListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationIweDatacenterListRequest) Apply(apply string) ApiGetVirtualizationIweDatacenterListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationIweDatacenterListRequest) Count(count bool) ApiGetVirtualizationIweDatacenterListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationIweDatacenterListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationIweDatacenterListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationIweDatacenterListRequest) At(at string) ApiGetVirtualizationIweDatacenterListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationIweDatacenterListRequest) Tags(tags string) ApiGetVirtualizationIweDatacenterListRequest {
 	r.tags = &tags
@@ -3748,7 +3799,7 @@ GetVirtualizationIweDatacenterList Read a 'virtualization.IweDatacenter' resourc
 func (a *VirtualizationApiService) GetVirtualizationIweDatacenterList(ctx _context.Context) ApiGetVirtualizationIweDatacenterListRequest {
 	return ApiGetVirtualizationIweDatacenterListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3887,13 +3938,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweDatacenterListExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3910,11 +3961,10 @@ func (a *VirtualizationApiService) GetVirtualizationIweDatacenterListExecute(r A
 }
 
 type ApiGetVirtualizationIweDvUplinkByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationIweDvUplinkByMoidRequest) Execute() (VirtualizationIweDvUplink, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationIweDvUplinkByMoidExecute(r)
@@ -3930,8 +3980,8 @@ GetVirtualizationIweDvUplinkByMoid Read a 'virtualization.IweDvUplink' resource.
 func (a *VirtualizationApiService) GetVirtualizationIweDvUplinkByMoid(ctx _context.Context, moid string) ApiGetVirtualizationIweDvUplinkByMoidRequest {
 	return ApiGetVirtualizationIweDvUplinkByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4038,13 +4088,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweDvUplinkByMoidExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4061,19 +4111,19 @@ func (a *VirtualizationApiService) GetVirtualizationIweDvUplinkByMoidExecute(r A
 }
 
 type ApiGetVirtualizationIweDvUplinkListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4081,51 +4131,61 @@ func (r ApiGetVirtualizationIweDvUplinkListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationIweDvUplinkListRequest) Orderby(orderby string) ApiGetVirtualizationIweDvUplinkListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationIweDvUplinkListRequest) Top(top int32) ApiGetVirtualizationIweDvUplinkListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationIweDvUplinkListRequest) Skip(skip int32) ApiGetVirtualizationIweDvUplinkListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationIweDvUplinkListRequest) Select_(select_ string) ApiGetVirtualizationIweDvUplinkListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationIweDvUplinkListRequest) Expand(expand string) ApiGetVirtualizationIweDvUplinkListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationIweDvUplinkListRequest) Apply(apply string) ApiGetVirtualizationIweDvUplinkListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationIweDvUplinkListRequest) Count(count bool) ApiGetVirtualizationIweDvUplinkListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationIweDvUplinkListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationIweDvUplinkListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationIweDvUplinkListRequest) At(at string) ApiGetVirtualizationIweDvUplinkListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationIweDvUplinkListRequest) Tags(tags string) ApiGetVirtualizationIweDvUplinkListRequest {
 	r.tags = &tags
@@ -4145,7 +4205,7 @@ GetVirtualizationIweDvUplinkList Read a 'virtualization.IweDvUplink' resource.
 func (a *VirtualizationApiService) GetVirtualizationIweDvUplinkList(ctx _context.Context) ApiGetVirtualizationIweDvUplinkListRequest {
 	return ApiGetVirtualizationIweDvUplinkListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4284,13 +4344,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweDvUplinkListExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4307,11 +4367,10 @@ func (a *VirtualizationApiService) GetVirtualizationIweDvUplinkListExecute(r Api
 }
 
 type ApiGetVirtualizationIweDvswitchByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationIweDvswitchByMoidRequest) Execute() (VirtualizationIweDvswitch, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationIweDvswitchByMoidExecute(r)
@@ -4327,8 +4386,8 @@ GetVirtualizationIweDvswitchByMoid Read a 'virtualization.IweDvswitch' resource.
 func (a *VirtualizationApiService) GetVirtualizationIweDvswitchByMoid(ctx _context.Context, moid string) ApiGetVirtualizationIweDvswitchByMoidRequest {
 	return ApiGetVirtualizationIweDvswitchByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4435,13 +4494,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweDvswitchByMoidExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4458,19 +4517,19 @@ func (a *VirtualizationApiService) GetVirtualizationIweDvswitchByMoidExecute(r A
 }
 
 type ApiGetVirtualizationIweDvswitchListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4478,51 +4537,61 @@ func (r ApiGetVirtualizationIweDvswitchListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationIweDvswitchListRequest) Orderby(orderby string) ApiGetVirtualizationIweDvswitchListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationIweDvswitchListRequest) Top(top int32) ApiGetVirtualizationIweDvswitchListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationIweDvswitchListRequest) Skip(skip int32) ApiGetVirtualizationIweDvswitchListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationIweDvswitchListRequest) Select_(select_ string) ApiGetVirtualizationIweDvswitchListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationIweDvswitchListRequest) Expand(expand string) ApiGetVirtualizationIweDvswitchListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationIweDvswitchListRequest) Apply(apply string) ApiGetVirtualizationIweDvswitchListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationIweDvswitchListRequest) Count(count bool) ApiGetVirtualizationIweDvswitchListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationIweDvswitchListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationIweDvswitchListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationIweDvswitchListRequest) At(at string) ApiGetVirtualizationIweDvswitchListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationIweDvswitchListRequest) Tags(tags string) ApiGetVirtualizationIweDvswitchListRequest {
 	r.tags = &tags
@@ -4542,7 +4611,7 @@ GetVirtualizationIweDvswitchList Read a 'virtualization.IweDvswitch' resource.
 func (a *VirtualizationApiService) GetVirtualizationIweDvswitchList(ctx _context.Context) ApiGetVirtualizationIweDvswitchListRequest {
 	return ApiGetVirtualizationIweDvswitchListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4681,13 +4750,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweDvswitchListExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4704,11 +4773,10 @@ func (a *VirtualizationApiService) GetVirtualizationIweDvswitchListExecute(r Api
 }
 
 type ApiGetVirtualizationIweHostByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationIweHostByMoidRequest) Execute() (VirtualizationIweHost, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationIweHostByMoidExecute(r)
@@ -4724,8 +4792,8 @@ GetVirtualizationIweHostByMoid Read a 'virtualization.IweHost' resource.
 func (a *VirtualizationApiService) GetVirtualizationIweHostByMoid(ctx _context.Context, moid string) ApiGetVirtualizationIweHostByMoidRequest {
 	return ApiGetVirtualizationIweHostByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4832,13 +4900,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweHostByMoidExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4855,11 +4923,10 @@ func (a *VirtualizationApiService) GetVirtualizationIweHostByMoidExecute(r ApiGe
 }
 
 type ApiGetVirtualizationIweHostInterfaceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationIweHostInterfaceByMoidRequest) Execute() (VirtualizationIweHostInterface, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationIweHostInterfaceByMoidExecute(r)
@@ -4875,8 +4942,8 @@ GetVirtualizationIweHostInterfaceByMoid Read a 'virtualization.IweHostInterface'
 func (a *VirtualizationApiService) GetVirtualizationIweHostInterfaceByMoid(ctx _context.Context, moid string) ApiGetVirtualizationIweHostInterfaceByMoidRequest {
 	return ApiGetVirtualizationIweHostInterfaceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4983,13 +5050,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweHostInterfaceByMoidExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5006,19 +5073,19 @@ func (a *VirtualizationApiService) GetVirtualizationIweHostInterfaceByMoidExecut
 }
 
 type ApiGetVirtualizationIweHostInterfaceListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5026,51 +5093,61 @@ func (r ApiGetVirtualizationIweHostInterfaceListRequest) Filter(filter string) A
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationIweHostInterfaceListRequest) Orderby(orderby string) ApiGetVirtualizationIweHostInterfaceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationIweHostInterfaceListRequest) Top(top int32) ApiGetVirtualizationIweHostInterfaceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationIweHostInterfaceListRequest) Skip(skip int32) ApiGetVirtualizationIweHostInterfaceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationIweHostInterfaceListRequest) Select_(select_ string) ApiGetVirtualizationIweHostInterfaceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationIweHostInterfaceListRequest) Expand(expand string) ApiGetVirtualizationIweHostInterfaceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationIweHostInterfaceListRequest) Apply(apply string) ApiGetVirtualizationIweHostInterfaceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationIweHostInterfaceListRequest) Count(count bool) ApiGetVirtualizationIweHostInterfaceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationIweHostInterfaceListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationIweHostInterfaceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationIweHostInterfaceListRequest) At(at string) ApiGetVirtualizationIweHostInterfaceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationIweHostInterfaceListRequest) Tags(tags string) ApiGetVirtualizationIweHostInterfaceListRequest {
 	r.tags = &tags
@@ -5090,7 +5167,7 @@ GetVirtualizationIweHostInterfaceList Read a 'virtualization.IweHostInterface' r
 func (a *VirtualizationApiService) GetVirtualizationIweHostInterfaceList(ctx _context.Context) ApiGetVirtualizationIweHostInterfaceListRequest {
 	return ApiGetVirtualizationIweHostInterfaceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5229,13 +5306,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweHostInterfaceListExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5252,19 +5329,19 @@ func (a *VirtualizationApiService) GetVirtualizationIweHostInterfaceListExecute(
 }
 
 type ApiGetVirtualizationIweHostListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5272,51 +5349,61 @@ func (r ApiGetVirtualizationIweHostListRequest) Filter(filter string) ApiGetVirt
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationIweHostListRequest) Orderby(orderby string) ApiGetVirtualizationIweHostListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationIweHostListRequest) Top(top int32) ApiGetVirtualizationIweHostListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationIweHostListRequest) Skip(skip int32) ApiGetVirtualizationIweHostListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationIweHostListRequest) Select_(select_ string) ApiGetVirtualizationIweHostListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationIweHostListRequest) Expand(expand string) ApiGetVirtualizationIweHostListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationIweHostListRequest) Apply(apply string) ApiGetVirtualizationIweHostListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationIweHostListRequest) Count(count bool) ApiGetVirtualizationIweHostListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationIweHostListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationIweHostListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationIweHostListRequest) At(at string) ApiGetVirtualizationIweHostListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationIweHostListRequest) Tags(tags string) ApiGetVirtualizationIweHostListRequest {
 	r.tags = &tags
@@ -5336,7 +5423,7 @@ GetVirtualizationIweHostList Read a 'virtualization.IweHost' resource.
 func (a *VirtualizationApiService) GetVirtualizationIweHostList(ctx _context.Context) ApiGetVirtualizationIweHostListRequest {
 	return ApiGetVirtualizationIweHostListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5475,13 +5562,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweHostListExecute(r ApiGetV
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5498,11 +5585,10 @@ func (a *VirtualizationApiService) GetVirtualizationIweHostListExecute(r ApiGetV
 }
 
 type ApiGetVirtualizationIweHostVswitchByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationIweHostVswitchByMoidRequest) Execute() (VirtualizationIweHostVswitch, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationIweHostVswitchByMoidExecute(r)
@@ -5518,8 +5604,8 @@ GetVirtualizationIweHostVswitchByMoid Read a 'virtualization.IweHostVswitch' res
 func (a *VirtualizationApiService) GetVirtualizationIweHostVswitchByMoid(ctx _context.Context, moid string) ApiGetVirtualizationIweHostVswitchByMoidRequest {
 	return ApiGetVirtualizationIweHostVswitchByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5626,13 +5712,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweHostVswitchByMoidExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5649,19 +5735,19 @@ func (a *VirtualizationApiService) GetVirtualizationIweHostVswitchByMoidExecute(
 }
 
 type ApiGetVirtualizationIweHostVswitchListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5669,51 +5755,61 @@ func (r ApiGetVirtualizationIweHostVswitchListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationIweHostVswitchListRequest) Orderby(orderby string) ApiGetVirtualizationIweHostVswitchListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationIweHostVswitchListRequest) Top(top int32) ApiGetVirtualizationIweHostVswitchListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationIweHostVswitchListRequest) Skip(skip int32) ApiGetVirtualizationIweHostVswitchListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationIweHostVswitchListRequest) Select_(select_ string) ApiGetVirtualizationIweHostVswitchListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationIweHostVswitchListRequest) Expand(expand string) ApiGetVirtualizationIweHostVswitchListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationIweHostVswitchListRequest) Apply(apply string) ApiGetVirtualizationIweHostVswitchListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationIweHostVswitchListRequest) Count(count bool) ApiGetVirtualizationIweHostVswitchListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationIweHostVswitchListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationIweHostVswitchListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationIweHostVswitchListRequest) At(at string) ApiGetVirtualizationIweHostVswitchListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationIweHostVswitchListRequest) Tags(tags string) ApiGetVirtualizationIweHostVswitchListRequest {
 	r.tags = &tags
@@ -5733,7 +5829,7 @@ GetVirtualizationIweHostVswitchList Read a 'virtualization.IweHostVswitch' resou
 func (a *VirtualizationApiService) GetVirtualizationIweHostVswitchList(ctx _context.Context) ApiGetVirtualizationIweHostVswitchListRequest {
 	return ApiGetVirtualizationIweHostVswitchListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5872,13 +5968,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweHostVswitchListExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5895,11 +5991,10 @@ func (a *VirtualizationApiService) GetVirtualizationIweHostVswitchListExecute(r 
 }
 
 type ApiGetVirtualizationIweNetworkByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationIweNetworkByMoidRequest) Execute() (VirtualizationIweNetwork, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationIweNetworkByMoidExecute(r)
@@ -5915,8 +6010,8 @@ GetVirtualizationIweNetworkByMoid Read a 'virtualization.IweNetwork' resource.
 func (a *VirtualizationApiService) GetVirtualizationIweNetworkByMoid(ctx _context.Context, moid string) ApiGetVirtualizationIweNetworkByMoidRequest {
 	return ApiGetVirtualizationIweNetworkByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6023,13 +6118,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweNetworkByMoidExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6046,19 +6141,19 @@ func (a *VirtualizationApiService) GetVirtualizationIweNetworkByMoidExecute(r Ap
 }
 
 type ApiGetVirtualizationIweNetworkListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -6066,51 +6161,61 @@ func (r ApiGetVirtualizationIweNetworkListRequest) Filter(filter string) ApiGetV
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationIweNetworkListRequest) Orderby(orderby string) ApiGetVirtualizationIweNetworkListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationIweNetworkListRequest) Top(top int32) ApiGetVirtualizationIweNetworkListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationIweNetworkListRequest) Skip(skip int32) ApiGetVirtualizationIweNetworkListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationIweNetworkListRequest) Select_(select_ string) ApiGetVirtualizationIweNetworkListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationIweNetworkListRequest) Expand(expand string) ApiGetVirtualizationIweNetworkListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationIweNetworkListRequest) Apply(apply string) ApiGetVirtualizationIweNetworkListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationIweNetworkListRequest) Count(count bool) ApiGetVirtualizationIweNetworkListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationIweNetworkListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationIweNetworkListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationIweNetworkListRequest) At(at string) ApiGetVirtualizationIweNetworkListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationIweNetworkListRequest) Tags(tags string) ApiGetVirtualizationIweNetworkListRequest {
 	r.tags = &tags
@@ -6130,7 +6235,7 @@ GetVirtualizationIweNetworkList Read a 'virtualization.IweNetwork' resource.
 func (a *VirtualizationApiService) GetVirtualizationIweNetworkList(ctx _context.Context) ApiGetVirtualizationIweNetworkListRequest {
 	return ApiGetVirtualizationIweNetworkListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6269,13 +6374,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweNetworkListExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6292,11 +6397,10 @@ func (a *VirtualizationApiService) GetVirtualizationIweNetworkListExecute(r ApiG
 }
 
 type ApiGetVirtualizationIweVirtualDiskByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationIweVirtualDiskByMoidRequest) Execute() (VirtualizationIweVirtualDisk, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationIweVirtualDiskByMoidExecute(r)
@@ -6312,8 +6416,8 @@ GetVirtualizationIweVirtualDiskByMoid Read a 'virtualization.IweVirtualDisk' res
 func (a *VirtualizationApiService) GetVirtualizationIweVirtualDiskByMoid(ctx _context.Context, moid string) ApiGetVirtualizationIweVirtualDiskByMoidRequest {
 	return ApiGetVirtualizationIweVirtualDiskByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6420,13 +6524,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweVirtualDiskByMoidExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6443,19 +6547,19 @@ func (a *VirtualizationApiService) GetVirtualizationIweVirtualDiskByMoidExecute(
 }
 
 type ApiGetVirtualizationIweVirtualDiskListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -6463,51 +6567,61 @@ func (r ApiGetVirtualizationIweVirtualDiskListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationIweVirtualDiskListRequest) Orderby(orderby string) ApiGetVirtualizationIweVirtualDiskListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationIweVirtualDiskListRequest) Top(top int32) ApiGetVirtualizationIweVirtualDiskListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationIweVirtualDiskListRequest) Skip(skip int32) ApiGetVirtualizationIweVirtualDiskListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationIweVirtualDiskListRequest) Select_(select_ string) ApiGetVirtualizationIweVirtualDiskListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationIweVirtualDiskListRequest) Expand(expand string) ApiGetVirtualizationIweVirtualDiskListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationIweVirtualDiskListRequest) Apply(apply string) ApiGetVirtualizationIweVirtualDiskListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationIweVirtualDiskListRequest) Count(count bool) ApiGetVirtualizationIweVirtualDiskListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationIweVirtualDiskListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationIweVirtualDiskListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationIweVirtualDiskListRequest) At(at string) ApiGetVirtualizationIweVirtualDiskListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationIweVirtualDiskListRequest) Tags(tags string) ApiGetVirtualizationIweVirtualDiskListRequest {
 	r.tags = &tags
@@ -6527,7 +6641,7 @@ GetVirtualizationIweVirtualDiskList Read a 'virtualization.IweVirtualDisk' resou
 func (a *VirtualizationApiService) GetVirtualizationIweVirtualDiskList(ctx _context.Context) ApiGetVirtualizationIweVirtualDiskListRequest {
 	return ApiGetVirtualizationIweVirtualDiskListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6666,13 +6780,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweVirtualDiskListExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6689,11 +6803,10 @@ func (a *VirtualizationApiService) GetVirtualizationIweVirtualDiskListExecute(r 
 }
 
 type ApiGetVirtualizationIweVirtualMachineByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationIweVirtualMachineByMoidRequest) Execute() (VirtualizationIweVirtualMachine, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationIweVirtualMachineByMoidExecute(r)
@@ -6709,8 +6822,8 @@ GetVirtualizationIweVirtualMachineByMoid Read a 'virtualization.IweVirtualMachin
 func (a *VirtualizationApiService) GetVirtualizationIweVirtualMachineByMoid(ctx _context.Context, moid string) ApiGetVirtualizationIweVirtualMachineByMoidRequest {
 	return ApiGetVirtualizationIweVirtualMachineByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6817,13 +6930,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweVirtualMachineByMoidExecu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6840,19 +6953,19 @@ func (a *VirtualizationApiService) GetVirtualizationIweVirtualMachineByMoidExecu
 }
 
 type ApiGetVirtualizationIweVirtualMachineListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -6860,51 +6973,61 @@ func (r ApiGetVirtualizationIweVirtualMachineListRequest) Filter(filter string) 
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationIweVirtualMachineListRequest) Orderby(orderby string) ApiGetVirtualizationIweVirtualMachineListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationIweVirtualMachineListRequest) Top(top int32) ApiGetVirtualizationIweVirtualMachineListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationIweVirtualMachineListRequest) Skip(skip int32) ApiGetVirtualizationIweVirtualMachineListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationIweVirtualMachineListRequest) Select_(select_ string) ApiGetVirtualizationIweVirtualMachineListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationIweVirtualMachineListRequest) Expand(expand string) ApiGetVirtualizationIweVirtualMachineListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationIweVirtualMachineListRequest) Apply(apply string) ApiGetVirtualizationIweVirtualMachineListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationIweVirtualMachineListRequest) Count(count bool) ApiGetVirtualizationIweVirtualMachineListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationIweVirtualMachineListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationIweVirtualMachineListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationIweVirtualMachineListRequest) At(at string) ApiGetVirtualizationIweVirtualMachineListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationIweVirtualMachineListRequest) Tags(tags string) ApiGetVirtualizationIweVirtualMachineListRequest {
 	r.tags = &tags
@@ -6924,7 +7047,7 @@ GetVirtualizationIweVirtualMachineList Read a 'virtualization.IweVirtualMachine'
 func (a *VirtualizationApiService) GetVirtualizationIweVirtualMachineList(ctx _context.Context) ApiGetVirtualizationIweVirtualMachineListRequest {
 	return ApiGetVirtualizationIweVirtualMachineListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7063,13 +7186,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweVirtualMachineListExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7086,11 +7209,10 @@ func (a *VirtualizationApiService) GetVirtualizationIweVirtualMachineListExecute
 }
 
 type ApiGetVirtualizationIweVirtualMachineNetworkInterfaceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationIweVirtualMachineNetworkInterfaceByMoidRequest) Execute() (VirtualizationIweVirtualMachineNetworkInterface, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationIweVirtualMachineNetworkInterfaceByMoidExecute(r)
@@ -7106,8 +7228,8 @@ GetVirtualizationIweVirtualMachineNetworkInterfaceByMoid Read a 'virtualization.
 func (a *VirtualizationApiService) GetVirtualizationIweVirtualMachineNetworkInterfaceByMoid(ctx _context.Context, moid string) ApiGetVirtualizationIweVirtualMachineNetworkInterfaceByMoidRequest {
 	return ApiGetVirtualizationIweVirtualMachineNetworkInterfaceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7214,13 +7336,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweVirtualMachineNetworkInte
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7237,19 +7359,19 @@ func (a *VirtualizationApiService) GetVirtualizationIweVirtualMachineNetworkInte
 }
 
 type ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7257,51 +7379,61 @@ func (r ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest) Filter
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest) Orderby(orderby string) ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest) Top(top int32) ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest) Skip(skip int32) ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest) Select_(select_ string) ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest) Expand(expand string) ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest) Apply(apply string) ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest) Count(count bool) ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest) At(at string) ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest) Tags(tags string) ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest {
 	r.tags = &tags
@@ -7321,7 +7453,7 @@ GetVirtualizationIweVirtualMachineNetworkInterfaceList Read a 'virtualization.Iw
 func (a *VirtualizationApiService) GetVirtualizationIweVirtualMachineNetworkInterfaceList(ctx _context.Context) ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest {
 	return ApiGetVirtualizationIweVirtualMachineNetworkInterfaceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7460,13 +7592,13 @@ func (a *VirtualizationApiService) GetVirtualizationIweVirtualMachineNetworkInte
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7483,11 +7615,10 @@ func (a *VirtualizationApiService) GetVirtualizationIweVirtualMachineNetworkInte
 }
 
 type ApiGetVirtualizationVirtualDiskByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVirtualDiskByMoidRequest) Execute() (VirtualizationVirtualDisk, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVirtualDiskByMoidExecute(r)
@@ -7503,8 +7634,8 @@ GetVirtualizationVirtualDiskByMoid Read a 'virtualization.VirtualDisk' resource.
 func (a *VirtualizationApiService) GetVirtualizationVirtualDiskByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVirtualDiskByMoidRequest {
 	return ApiGetVirtualizationVirtualDiskByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7611,13 +7742,13 @@ func (a *VirtualizationApiService) GetVirtualizationVirtualDiskByMoidExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7634,19 +7765,19 @@ func (a *VirtualizationApiService) GetVirtualizationVirtualDiskByMoidExecute(r A
 }
 
 type ApiGetVirtualizationVirtualDiskListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7654,51 +7785,61 @@ func (r ApiGetVirtualizationVirtualDiskListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVirtualDiskListRequest) Orderby(orderby string) ApiGetVirtualizationVirtualDiskListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVirtualDiskListRequest) Top(top int32) ApiGetVirtualizationVirtualDiskListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVirtualDiskListRequest) Skip(skip int32) ApiGetVirtualizationVirtualDiskListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVirtualDiskListRequest) Select_(select_ string) ApiGetVirtualizationVirtualDiskListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVirtualDiskListRequest) Expand(expand string) ApiGetVirtualizationVirtualDiskListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVirtualDiskListRequest) Apply(apply string) ApiGetVirtualizationVirtualDiskListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVirtualDiskListRequest) Count(count bool) ApiGetVirtualizationVirtualDiskListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVirtualDiskListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVirtualDiskListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVirtualDiskListRequest) At(at string) ApiGetVirtualizationVirtualDiskListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVirtualDiskListRequest) Tags(tags string) ApiGetVirtualizationVirtualDiskListRequest {
 	r.tags = &tags
@@ -7718,7 +7859,7 @@ GetVirtualizationVirtualDiskList Read a 'virtualization.VirtualDisk' resource.
 func (a *VirtualizationApiService) GetVirtualizationVirtualDiskList(ctx _context.Context) ApiGetVirtualizationVirtualDiskListRequest {
 	return ApiGetVirtualizationVirtualDiskListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7857,13 +7998,13 @@ func (a *VirtualizationApiService) GetVirtualizationVirtualDiskListExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7880,11 +8021,10 @@ func (a *VirtualizationApiService) GetVirtualizationVirtualDiskListExecute(r Api
 }
 
 type ApiGetVirtualizationVirtualMachineByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVirtualMachineByMoidRequest) Execute() (VirtualizationVirtualMachine, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVirtualMachineByMoidExecute(r)
@@ -7900,8 +8040,8 @@ GetVirtualizationVirtualMachineByMoid Read a 'virtualization.VirtualMachine' res
 func (a *VirtualizationApiService) GetVirtualizationVirtualMachineByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVirtualMachineByMoidRequest {
 	return ApiGetVirtualizationVirtualMachineByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8008,13 +8148,13 @@ func (a *VirtualizationApiService) GetVirtualizationVirtualMachineByMoidExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8031,19 +8171,19 @@ func (a *VirtualizationApiService) GetVirtualizationVirtualMachineByMoidExecute(
 }
 
 type ApiGetVirtualizationVirtualMachineListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8051,51 +8191,61 @@ func (r ApiGetVirtualizationVirtualMachineListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVirtualMachineListRequest) Orderby(orderby string) ApiGetVirtualizationVirtualMachineListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVirtualMachineListRequest) Top(top int32) ApiGetVirtualizationVirtualMachineListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVirtualMachineListRequest) Skip(skip int32) ApiGetVirtualizationVirtualMachineListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVirtualMachineListRequest) Select_(select_ string) ApiGetVirtualizationVirtualMachineListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVirtualMachineListRequest) Expand(expand string) ApiGetVirtualizationVirtualMachineListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVirtualMachineListRequest) Apply(apply string) ApiGetVirtualizationVirtualMachineListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVirtualMachineListRequest) Count(count bool) ApiGetVirtualizationVirtualMachineListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVirtualMachineListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVirtualMachineListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVirtualMachineListRequest) At(at string) ApiGetVirtualizationVirtualMachineListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVirtualMachineListRequest) Tags(tags string) ApiGetVirtualizationVirtualMachineListRequest {
 	r.tags = &tags
@@ -8115,7 +8265,7 @@ GetVirtualizationVirtualMachineList Read a 'virtualization.VirtualMachine' resou
 func (a *VirtualizationApiService) GetVirtualizationVirtualMachineList(ctx _context.Context) ApiGetVirtualizationVirtualMachineListRequest {
 	return ApiGetVirtualizationVirtualMachineListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8254,13 +8404,13 @@ func (a *VirtualizationApiService) GetVirtualizationVirtualMachineListExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8277,11 +8427,10 @@ func (a *VirtualizationApiService) GetVirtualizationVirtualMachineListExecute(r 
 }
 
 type ApiGetVirtualizationVirtualNetworkByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVirtualNetworkByMoidRequest) Execute() (VirtualizationVirtualNetwork, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVirtualNetworkByMoidExecute(r)
@@ -8297,8 +8446,8 @@ GetVirtualizationVirtualNetworkByMoid Read a 'virtualization.VirtualNetwork' res
 func (a *VirtualizationApiService) GetVirtualizationVirtualNetworkByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVirtualNetworkByMoidRequest {
 	return ApiGetVirtualizationVirtualNetworkByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8405,13 +8554,13 @@ func (a *VirtualizationApiService) GetVirtualizationVirtualNetworkByMoidExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8428,19 +8577,19 @@ func (a *VirtualizationApiService) GetVirtualizationVirtualNetworkByMoidExecute(
 }
 
 type ApiGetVirtualizationVirtualNetworkListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8448,51 +8597,61 @@ func (r ApiGetVirtualizationVirtualNetworkListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVirtualNetworkListRequest) Orderby(orderby string) ApiGetVirtualizationVirtualNetworkListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVirtualNetworkListRequest) Top(top int32) ApiGetVirtualizationVirtualNetworkListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVirtualNetworkListRequest) Skip(skip int32) ApiGetVirtualizationVirtualNetworkListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVirtualNetworkListRequest) Select_(select_ string) ApiGetVirtualizationVirtualNetworkListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVirtualNetworkListRequest) Expand(expand string) ApiGetVirtualizationVirtualNetworkListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVirtualNetworkListRequest) Apply(apply string) ApiGetVirtualizationVirtualNetworkListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVirtualNetworkListRequest) Count(count bool) ApiGetVirtualizationVirtualNetworkListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVirtualNetworkListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVirtualNetworkListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVirtualNetworkListRequest) At(at string) ApiGetVirtualizationVirtualNetworkListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVirtualNetworkListRequest) Tags(tags string) ApiGetVirtualizationVirtualNetworkListRequest {
 	r.tags = &tags
@@ -8512,7 +8671,7 @@ GetVirtualizationVirtualNetworkList Read a 'virtualization.VirtualNetwork' resou
 func (a *VirtualizationApiService) GetVirtualizationVirtualNetworkList(ctx _context.Context) ApiGetVirtualizationVirtualNetworkListRequest {
 	return ApiGetVirtualizationVirtualNetworkListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8651,13 +8810,13 @@ func (a *VirtualizationApiService) GetVirtualizationVirtualNetworkListExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8674,11 +8833,10 @@ func (a *VirtualizationApiService) GetVirtualizationVirtualNetworkListExecute(r 
 }
 
 type ApiGetVirtualizationVmwareClusterByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVmwareClusterByMoidRequest) Execute() (VirtualizationVmwareCluster, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVmwareClusterByMoidExecute(r)
@@ -8694,8 +8852,8 @@ GetVirtualizationVmwareClusterByMoid Read a 'virtualization.VmwareCluster' resou
 func (a *VirtualizationApiService) GetVirtualizationVmwareClusterByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVmwareClusterByMoidRequest {
 	return ApiGetVirtualizationVmwareClusterByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8802,13 +8960,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareClusterByMoidExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8825,19 +8983,19 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareClusterByMoidExecute(r
 }
 
 type ApiGetVirtualizationVmwareClusterListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8845,51 +9003,61 @@ func (r ApiGetVirtualizationVmwareClusterListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVmwareClusterListRequest) Orderby(orderby string) ApiGetVirtualizationVmwareClusterListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVmwareClusterListRequest) Top(top int32) ApiGetVirtualizationVmwareClusterListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVmwareClusterListRequest) Skip(skip int32) ApiGetVirtualizationVmwareClusterListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVmwareClusterListRequest) Select_(select_ string) ApiGetVirtualizationVmwareClusterListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVmwareClusterListRequest) Expand(expand string) ApiGetVirtualizationVmwareClusterListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVmwareClusterListRequest) Apply(apply string) ApiGetVirtualizationVmwareClusterListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVmwareClusterListRequest) Count(count bool) ApiGetVirtualizationVmwareClusterListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVmwareClusterListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVmwareClusterListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVmwareClusterListRequest) At(at string) ApiGetVirtualizationVmwareClusterListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVmwareClusterListRequest) Tags(tags string) ApiGetVirtualizationVmwareClusterListRequest {
 	r.tags = &tags
@@ -8909,7 +9077,7 @@ GetVirtualizationVmwareClusterList Read a 'virtualization.VmwareCluster' resourc
 func (a *VirtualizationApiService) GetVirtualizationVmwareClusterList(ctx _context.Context) ApiGetVirtualizationVmwareClusterListRequest {
 	return ApiGetVirtualizationVmwareClusterListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9048,13 +9216,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareClusterListExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9071,11 +9239,10 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareClusterListExecute(r A
 }
 
 type ApiGetVirtualizationVmwareDatacenterByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVmwareDatacenterByMoidRequest) Execute() (VirtualizationVmwareDatacenter, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVmwareDatacenterByMoidExecute(r)
@@ -9091,8 +9258,8 @@ GetVirtualizationVmwareDatacenterByMoid Read a 'virtualization.VmwareDatacenter'
 func (a *VirtualizationApiService) GetVirtualizationVmwareDatacenterByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVmwareDatacenterByMoidRequest {
 	return ApiGetVirtualizationVmwareDatacenterByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9199,13 +9366,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDatacenterByMoidExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9222,19 +9389,19 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDatacenterByMoidExecut
 }
 
 type ApiGetVirtualizationVmwareDatacenterListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9242,51 +9409,61 @@ func (r ApiGetVirtualizationVmwareDatacenterListRequest) Filter(filter string) A
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVmwareDatacenterListRequest) Orderby(orderby string) ApiGetVirtualizationVmwareDatacenterListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVmwareDatacenterListRequest) Top(top int32) ApiGetVirtualizationVmwareDatacenterListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVmwareDatacenterListRequest) Skip(skip int32) ApiGetVirtualizationVmwareDatacenterListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVmwareDatacenterListRequest) Select_(select_ string) ApiGetVirtualizationVmwareDatacenterListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVmwareDatacenterListRequest) Expand(expand string) ApiGetVirtualizationVmwareDatacenterListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVmwareDatacenterListRequest) Apply(apply string) ApiGetVirtualizationVmwareDatacenterListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVmwareDatacenterListRequest) Count(count bool) ApiGetVirtualizationVmwareDatacenterListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVmwareDatacenterListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVmwareDatacenterListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVmwareDatacenterListRequest) At(at string) ApiGetVirtualizationVmwareDatacenterListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVmwareDatacenterListRequest) Tags(tags string) ApiGetVirtualizationVmwareDatacenterListRequest {
 	r.tags = &tags
@@ -9306,7 +9483,7 @@ GetVirtualizationVmwareDatacenterList Read a 'virtualization.VmwareDatacenter' r
 func (a *VirtualizationApiService) GetVirtualizationVmwareDatacenterList(ctx _context.Context) ApiGetVirtualizationVmwareDatacenterListRequest {
 	return ApiGetVirtualizationVmwareDatacenterListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9445,13 +9622,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDatacenterListExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9468,11 +9645,10 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDatacenterListExecute(
 }
 
 type ApiGetVirtualizationVmwareDatastoreByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVmwareDatastoreByMoidRequest) Execute() (VirtualizationVmwareDatastore, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVmwareDatastoreByMoidExecute(r)
@@ -9488,8 +9664,8 @@ GetVirtualizationVmwareDatastoreByMoid Read a 'virtualization.VmwareDatastore' r
 func (a *VirtualizationApiService) GetVirtualizationVmwareDatastoreByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVmwareDatastoreByMoidRequest {
 	return ApiGetVirtualizationVmwareDatastoreByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9596,13 +9772,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDatastoreByMoidExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9619,11 +9795,10 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDatastoreByMoidExecute
 }
 
 type ApiGetVirtualizationVmwareDatastoreClusterByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVmwareDatastoreClusterByMoidRequest) Execute() (VirtualizationVmwareDatastoreCluster, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVmwareDatastoreClusterByMoidExecute(r)
@@ -9639,8 +9814,8 @@ GetVirtualizationVmwareDatastoreClusterByMoid Read a 'virtualization.VmwareDatas
 func (a *VirtualizationApiService) GetVirtualizationVmwareDatastoreClusterByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVmwareDatastoreClusterByMoidRequest {
 	return ApiGetVirtualizationVmwareDatastoreClusterByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9747,13 +9922,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDatastoreClusterByMoid
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9770,19 +9945,19 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDatastoreClusterByMoid
 }
 
 type ApiGetVirtualizationVmwareDatastoreClusterListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9790,51 +9965,61 @@ func (r ApiGetVirtualizationVmwareDatastoreClusterListRequest) Filter(filter str
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVmwareDatastoreClusterListRequest) Orderby(orderby string) ApiGetVirtualizationVmwareDatastoreClusterListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVmwareDatastoreClusterListRequest) Top(top int32) ApiGetVirtualizationVmwareDatastoreClusterListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVmwareDatastoreClusterListRequest) Skip(skip int32) ApiGetVirtualizationVmwareDatastoreClusterListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVmwareDatastoreClusterListRequest) Select_(select_ string) ApiGetVirtualizationVmwareDatastoreClusterListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVmwareDatastoreClusterListRequest) Expand(expand string) ApiGetVirtualizationVmwareDatastoreClusterListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVmwareDatastoreClusterListRequest) Apply(apply string) ApiGetVirtualizationVmwareDatastoreClusterListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVmwareDatastoreClusterListRequest) Count(count bool) ApiGetVirtualizationVmwareDatastoreClusterListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVmwareDatastoreClusterListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVmwareDatastoreClusterListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVmwareDatastoreClusterListRequest) At(at string) ApiGetVirtualizationVmwareDatastoreClusterListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVmwareDatastoreClusterListRequest) Tags(tags string) ApiGetVirtualizationVmwareDatastoreClusterListRequest {
 	r.tags = &tags
@@ -9854,7 +10039,7 @@ GetVirtualizationVmwareDatastoreClusterList Read a 'virtualization.VmwareDatasto
 func (a *VirtualizationApiService) GetVirtualizationVmwareDatastoreClusterList(ctx _context.Context) ApiGetVirtualizationVmwareDatastoreClusterListRequest {
 	return ApiGetVirtualizationVmwareDatastoreClusterListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9993,13 +10178,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDatastoreClusterListEx
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10016,19 +10201,19 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDatastoreClusterListEx
 }
 
 type ApiGetVirtualizationVmwareDatastoreListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10036,51 +10221,61 @@ func (r ApiGetVirtualizationVmwareDatastoreListRequest) Filter(filter string) Ap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVmwareDatastoreListRequest) Orderby(orderby string) ApiGetVirtualizationVmwareDatastoreListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVmwareDatastoreListRequest) Top(top int32) ApiGetVirtualizationVmwareDatastoreListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVmwareDatastoreListRequest) Skip(skip int32) ApiGetVirtualizationVmwareDatastoreListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVmwareDatastoreListRequest) Select_(select_ string) ApiGetVirtualizationVmwareDatastoreListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVmwareDatastoreListRequest) Expand(expand string) ApiGetVirtualizationVmwareDatastoreListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVmwareDatastoreListRequest) Apply(apply string) ApiGetVirtualizationVmwareDatastoreListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVmwareDatastoreListRequest) Count(count bool) ApiGetVirtualizationVmwareDatastoreListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVmwareDatastoreListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVmwareDatastoreListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVmwareDatastoreListRequest) At(at string) ApiGetVirtualizationVmwareDatastoreListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVmwareDatastoreListRequest) Tags(tags string) ApiGetVirtualizationVmwareDatastoreListRequest {
 	r.tags = &tags
@@ -10100,7 +10295,7 @@ GetVirtualizationVmwareDatastoreList Read a 'virtualization.VmwareDatastore' res
 func (a *VirtualizationApiService) GetVirtualizationVmwareDatastoreList(ctx _context.Context) ApiGetVirtualizationVmwareDatastoreListRequest {
 	return ApiGetVirtualizationVmwareDatastoreListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10239,13 +10434,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDatastoreListExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10262,11 +10457,10 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDatastoreListExecute(r
 }
 
 type ApiGetVirtualizationVmwareDistributedNetworkByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVmwareDistributedNetworkByMoidRequest) Execute() (VirtualizationVmwareDistributedNetwork, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVmwareDistributedNetworkByMoidExecute(r)
@@ -10282,8 +10476,8 @@ GetVirtualizationVmwareDistributedNetworkByMoid Read a 'virtualization.VmwareDis
 func (a *VirtualizationApiService) GetVirtualizationVmwareDistributedNetworkByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVmwareDistributedNetworkByMoidRequest {
 	return ApiGetVirtualizationVmwareDistributedNetworkByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10390,13 +10584,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDistributedNetworkByMo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10413,19 +10607,19 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDistributedNetworkByMo
 }
 
 type ApiGetVirtualizationVmwareDistributedNetworkListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10433,51 +10627,61 @@ func (r ApiGetVirtualizationVmwareDistributedNetworkListRequest) Filter(filter s
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVmwareDistributedNetworkListRequest) Orderby(orderby string) ApiGetVirtualizationVmwareDistributedNetworkListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVmwareDistributedNetworkListRequest) Top(top int32) ApiGetVirtualizationVmwareDistributedNetworkListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVmwareDistributedNetworkListRequest) Skip(skip int32) ApiGetVirtualizationVmwareDistributedNetworkListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVmwareDistributedNetworkListRequest) Select_(select_ string) ApiGetVirtualizationVmwareDistributedNetworkListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVmwareDistributedNetworkListRequest) Expand(expand string) ApiGetVirtualizationVmwareDistributedNetworkListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVmwareDistributedNetworkListRequest) Apply(apply string) ApiGetVirtualizationVmwareDistributedNetworkListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVmwareDistributedNetworkListRequest) Count(count bool) ApiGetVirtualizationVmwareDistributedNetworkListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVmwareDistributedNetworkListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVmwareDistributedNetworkListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVmwareDistributedNetworkListRequest) At(at string) ApiGetVirtualizationVmwareDistributedNetworkListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVmwareDistributedNetworkListRequest) Tags(tags string) ApiGetVirtualizationVmwareDistributedNetworkListRequest {
 	r.tags = &tags
@@ -10497,7 +10701,7 @@ GetVirtualizationVmwareDistributedNetworkList Read a 'virtualization.VmwareDistr
 func (a *VirtualizationApiService) GetVirtualizationVmwareDistributedNetworkList(ctx _context.Context) ApiGetVirtualizationVmwareDistributedNetworkListRequest {
 	return ApiGetVirtualizationVmwareDistributedNetworkListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10636,13 +10840,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDistributedNetworkList
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10659,11 +10863,10 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDistributedNetworkList
 }
 
 type ApiGetVirtualizationVmwareDistributedSwitchByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVmwareDistributedSwitchByMoidRequest) Execute() (VirtualizationVmwareDistributedSwitch, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVmwareDistributedSwitchByMoidExecute(r)
@@ -10679,8 +10882,8 @@ GetVirtualizationVmwareDistributedSwitchByMoid Read a 'virtualization.VmwareDist
 func (a *VirtualizationApiService) GetVirtualizationVmwareDistributedSwitchByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVmwareDistributedSwitchByMoidRequest {
 	return ApiGetVirtualizationVmwareDistributedSwitchByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10787,13 +10990,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDistributedSwitchByMoi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10810,19 +11013,19 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDistributedSwitchByMoi
 }
 
 type ApiGetVirtualizationVmwareDistributedSwitchListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10830,51 +11033,61 @@ func (r ApiGetVirtualizationVmwareDistributedSwitchListRequest) Filter(filter st
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVmwareDistributedSwitchListRequest) Orderby(orderby string) ApiGetVirtualizationVmwareDistributedSwitchListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVmwareDistributedSwitchListRequest) Top(top int32) ApiGetVirtualizationVmwareDistributedSwitchListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVmwareDistributedSwitchListRequest) Skip(skip int32) ApiGetVirtualizationVmwareDistributedSwitchListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVmwareDistributedSwitchListRequest) Select_(select_ string) ApiGetVirtualizationVmwareDistributedSwitchListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVmwareDistributedSwitchListRequest) Expand(expand string) ApiGetVirtualizationVmwareDistributedSwitchListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVmwareDistributedSwitchListRequest) Apply(apply string) ApiGetVirtualizationVmwareDistributedSwitchListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVmwareDistributedSwitchListRequest) Count(count bool) ApiGetVirtualizationVmwareDistributedSwitchListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVmwareDistributedSwitchListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVmwareDistributedSwitchListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVmwareDistributedSwitchListRequest) At(at string) ApiGetVirtualizationVmwareDistributedSwitchListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVmwareDistributedSwitchListRequest) Tags(tags string) ApiGetVirtualizationVmwareDistributedSwitchListRequest {
 	r.tags = &tags
@@ -10894,7 +11107,7 @@ GetVirtualizationVmwareDistributedSwitchList Read a 'virtualization.VmwareDistri
 func (a *VirtualizationApiService) GetVirtualizationVmwareDistributedSwitchList(ctx _context.Context) ApiGetVirtualizationVmwareDistributedSwitchListRequest {
 	return ApiGetVirtualizationVmwareDistributedSwitchListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11033,13 +11246,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDistributedSwitchListE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11056,11 +11269,10 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareDistributedSwitchListE
 }
 
 type ApiGetVirtualizationVmwareFolderByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVmwareFolderByMoidRequest) Execute() (VirtualizationVmwareFolder, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVmwareFolderByMoidExecute(r)
@@ -11076,8 +11288,8 @@ GetVirtualizationVmwareFolderByMoid Read a 'virtualization.VmwareFolder' resourc
 func (a *VirtualizationApiService) GetVirtualizationVmwareFolderByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVmwareFolderByMoidRequest {
 	return ApiGetVirtualizationVmwareFolderByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11184,13 +11396,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareFolderByMoidExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11207,19 +11419,19 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareFolderByMoidExecute(r 
 }
 
 type ApiGetVirtualizationVmwareFolderListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11227,51 +11439,61 @@ func (r ApiGetVirtualizationVmwareFolderListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVmwareFolderListRequest) Orderby(orderby string) ApiGetVirtualizationVmwareFolderListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVmwareFolderListRequest) Top(top int32) ApiGetVirtualizationVmwareFolderListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVmwareFolderListRequest) Skip(skip int32) ApiGetVirtualizationVmwareFolderListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVmwareFolderListRequest) Select_(select_ string) ApiGetVirtualizationVmwareFolderListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVmwareFolderListRequest) Expand(expand string) ApiGetVirtualizationVmwareFolderListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVmwareFolderListRequest) Apply(apply string) ApiGetVirtualizationVmwareFolderListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVmwareFolderListRequest) Count(count bool) ApiGetVirtualizationVmwareFolderListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVmwareFolderListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVmwareFolderListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVmwareFolderListRequest) At(at string) ApiGetVirtualizationVmwareFolderListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVmwareFolderListRequest) Tags(tags string) ApiGetVirtualizationVmwareFolderListRequest {
 	r.tags = &tags
@@ -11291,7 +11513,7 @@ GetVirtualizationVmwareFolderList Read a 'virtualization.VmwareFolder' resource.
 func (a *VirtualizationApiService) GetVirtualizationVmwareFolderList(ctx _context.Context) ApiGetVirtualizationVmwareFolderListRequest {
 	return ApiGetVirtualizationVmwareFolderListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11430,13 +11652,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareFolderListExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11453,11 +11675,10 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareFolderListExecute(r Ap
 }
 
 type ApiGetVirtualizationVmwareHostByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVmwareHostByMoidRequest) Execute() (VirtualizationVmwareHost, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVmwareHostByMoidExecute(r)
@@ -11473,8 +11694,8 @@ GetVirtualizationVmwareHostByMoid Read a 'virtualization.VmwareHost' resource.
 func (a *VirtualizationApiService) GetVirtualizationVmwareHostByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVmwareHostByMoidRequest {
 	return ApiGetVirtualizationVmwareHostByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11581,13 +11802,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareHostByMoidExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11604,19 +11825,19 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareHostByMoidExecute(r Ap
 }
 
 type ApiGetVirtualizationVmwareHostListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11624,51 +11845,61 @@ func (r ApiGetVirtualizationVmwareHostListRequest) Filter(filter string) ApiGetV
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVmwareHostListRequest) Orderby(orderby string) ApiGetVirtualizationVmwareHostListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVmwareHostListRequest) Top(top int32) ApiGetVirtualizationVmwareHostListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVmwareHostListRequest) Skip(skip int32) ApiGetVirtualizationVmwareHostListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVmwareHostListRequest) Select_(select_ string) ApiGetVirtualizationVmwareHostListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVmwareHostListRequest) Expand(expand string) ApiGetVirtualizationVmwareHostListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVmwareHostListRequest) Apply(apply string) ApiGetVirtualizationVmwareHostListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVmwareHostListRequest) Count(count bool) ApiGetVirtualizationVmwareHostListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVmwareHostListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVmwareHostListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVmwareHostListRequest) At(at string) ApiGetVirtualizationVmwareHostListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVmwareHostListRequest) Tags(tags string) ApiGetVirtualizationVmwareHostListRequest {
 	r.tags = &tags
@@ -11688,7 +11919,7 @@ GetVirtualizationVmwareHostList Read a 'virtualization.VmwareHost' resource.
 func (a *VirtualizationApiService) GetVirtualizationVmwareHostList(ctx _context.Context) ApiGetVirtualizationVmwareHostListRequest {
 	return ApiGetVirtualizationVmwareHostListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11827,13 +12058,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareHostListExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11850,11 +12081,10 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareHostListExecute(r ApiG
 }
 
 type ApiGetVirtualizationVmwareKernelNetworkByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVmwareKernelNetworkByMoidRequest) Execute() (VirtualizationVmwareKernelNetwork, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVmwareKernelNetworkByMoidExecute(r)
@@ -11870,8 +12100,8 @@ GetVirtualizationVmwareKernelNetworkByMoid Read a 'virtualization.VmwareKernelNe
 func (a *VirtualizationApiService) GetVirtualizationVmwareKernelNetworkByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVmwareKernelNetworkByMoidRequest {
 	return ApiGetVirtualizationVmwareKernelNetworkByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11978,13 +12208,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareKernelNetworkByMoidExe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12001,19 +12231,19 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareKernelNetworkByMoidExe
 }
 
 type ApiGetVirtualizationVmwareKernelNetworkListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12021,51 +12251,61 @@ func (r ApiGetVirtualizationVmwareKernelNetworkListRequest) Filter(filter string
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVmwareKernelNetworkListRequest) Orderby(orderby string) ApiGetVirtualizationVmwareKernelNetworkListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVmwareKernelNetworkListRequest) Top(top int32) ApiGetVirtualizationVmwareKernelNetworkListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVmwareKernelNetworkListRequest) Skip(skip int32) ApiGetVirtualizationVmwareKernelNetworkListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVmwareKernelNetworkListRequest) Select_(select_ string) ApiGetVirtualizationVmwareKernelNetworkListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVmwareKernelNetworkListRequest) Expand(expand string) ApiGetVirtualizationVmwareKernelNetworkListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVmwareKernelNetworkListRequest) Apply(apply string) ApiGetVirtualizationVmwareKernelNetworkListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVmwareKernelNetworkListRequest) Count(count bool) ApiGetVirtualizationVmwareKernelNetworkListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVmwareKernelNetworkListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVmwareKernelNetworkListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVmwareKernelNetworkListRequest) At(at string) ApiGetVirtualizationVmwareKernelNetworkListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVmwareKernelNetworkListRequest) Tags(tags string) ApiGetVirtualizationVmwareKernelNetworkListRequest {
 	r.tags = &tags
@@ -12085,7 +12325,7 @@ GetVirtualizationVmwareKernelNetworkList Read a 'virtualization.VmwareKernelNetw
 func (a *VirtualizationApiService) GetVirtualizationVmwareKernelNetworkList(ctx _context.Context) ApiGetVirtualizationVmwareKernelNetworkListRequest {
 	return ApiGetVirtualizationVmwareKernelNetworkListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12224,13 +12464,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareKernelNetworkListExecu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12247,11 +12487,10 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareKernelNetworkListExecu
 }
 
 type ApiGetVirtualizationVmwareNetworkByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVmwareNetworkByMoidRequest) Execute() (VirtualizationVmwareNetwork, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVmwareNetworkByMoidExecute(r)
@@ -12267,8 +12506,8 @@ GetVirtualizationVmwareNetworkByMoid Read a 'virtualization.VmwareNetwork' resou
 func (a *VirtualizationApiService) GetVirtualizationVmwareNetworkByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVmwareNetworkByMoidRequest {
 	return ApiGetVirtualizationVmwareNetworkByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12375,13 +12614,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareNetworkByMoidExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12398,19 +12637,19 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareNetworkByMoidExecute(r
 }
 
 type ApiGetVirtualizationVmwareNetworkListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12418,51 +12657,61 @@ func (r ApiGetVirtualizationVmwareNetworkListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVmwareNetworkListRequest) Orderby(orderby string) ApiGetVirtualizationVmwareNetworkListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVmwareNetworkListRequest) Top(top int32) ApiGetVirtualizationVmwareNetworkListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVmwareNetworkListRequest) Skip(skip int32) ApiGetVirtualizationVmwareNetworkListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVmwareNetworkListRequest) Select_(select_ string) ApiGetVirtualizationVmwareNetworkListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVmwareNetworkListRequest) Expand(expand string) ApiGetVirtualizationVmwareNetworkListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVmwareNetworkListRequest) Apply(apply string) ApiGetVirtualizationVmwareNetworkListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVmwareNetworkListRequest) Count(count bool) ApiGetVirtualizationVmwareNetworkListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVmwareNetworkListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVmwareNetworkListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVmwareNetworkListRequest) At(at string) ApiGetVirtualizationVmwareNetworkListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVmwareNetworkListRequest) Tags(tags string) ApiGetVirtualizationVmwareNetworkListRequest {
 	r.tags = &tags
@@ -12482,7 +12731,7 @@ GetVirtualizationVmwareNetworkList Read a 'virtualization.VmwareNetwork' resourc
 func (a *VirtualizationApiService) GetVirtualizationVmwareNetworkList(ctx _context.Context) ApiGetVirtualizationVmwareNetworkListRequest {
 	return ApiGetVirtualizationVmwareNetworkListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12621,13 +12870,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareNetworkListExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12644,11 +12893,10 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareNetworkListExecute(r A
 }
 
 type ApiGetVirtualizationVmwarePhysicalNetworkInterfaceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVmwarePhysicalNetworkInterfaceByMoidRequest) Execute() (VirtualizationVmwarePhysicalNetworkInterface, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVmwarePhysicalNetworkInterfaceByMoidExecute(r)
@@ -12664,8 +12912,8 @@ GetVirtualizationVmwarePhysicalNetworkInterfaceByMoid Read a 'virtualization.Vmw
 func (a *VirtualizationApiService) GetVirtualizationVmwarePhysicalNetworkInterfaceByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVmwarePhysicalNetworkInterfaceByMoidRequest {
 	return ApiGetVirtualizationVmwarePhysicalNetworkInterfaceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12772,13 +13020,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwarePhysicalNetworkInterfa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12795,19 +13043,19 @@ func (a *VirtualizationApiService) GetVirtualizationVmwarePhysicalNetworkInterfa
 }
 
 type ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12815,51 +13063,61 @@ func (r ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest) Filter(fi
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest) Orderby(orderby string) ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest) Top(top int32) ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest) Skip(skip int32) ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest) Select_(select_ string) ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest) Expand(expand string) ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest) Apply(apply string) ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest) Count(count bool) ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest) At(at string) ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest) Tags(tags string) ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest {
 	r.tags = &tags
@@ -12879,7 +13137,7 @@ GetVirtualizationVmwarePhysicalNetworkInterfaceList Read a 'virtualization.Vmwar
 func (a *VirtualizationApiService) GetVirtualizationVmwarePhysicalNetworkInterfaceList(ctx _context.Context) ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest {
 	return ApiGetVirtualizationVmwarePhysicalNetworkInterfaceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13018,13 +13276,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwarePhysicalNetworkInterfa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13041,11 +13299,10 @@ func (a *VirtualizationApiService) GetVirtualizationVmwarePhysicalNetworkInterfa
 }
 
 type ApiGetVirtualizationVmwareUplinkPortByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVmwareUplinkPortByMoidRequest) Execute() (VirtualizationVmwareUplinkPort, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVmwareUplinkPortByMoidExecute(r)
@@ -13061,8 +13318,8 @@ GetVirtualizationVmwareUplinkPortByMoid Read a 'virtualization.VmwareUplinkPort'
 func (a *VirtualizationApiService) GetVirtualizationVmwareUplinkPortByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVmwareUplinkPortByMoidRequest {
 	return ApiGetVirtualizationVmwareUplinkPortByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13169,13 +13426,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareUplinkPortByMoidExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13192,19 +13449,19 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareUplinkPortByMoidExecut
 }
 
 type ApiGetVirtualizationVmwareUplinkPortListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13212,51 +13469,61 @@ func (r ApiGetVirtualizationVmwareUplinkPortListRequest) Filter(filter string) A
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVmwareUplinkPortListRequest) Orderby(orderby string) ApiGetVirtualizationVmwareUplinkPortListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVmwareUplinkPortListRequest) Top(top int32) ApiGetVirtualizationVmwareUplinkPortListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVmwareUplinkPortListRequest) Skip(skip int32) ApiGetVirtualizationVmwareUplinkPortListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVmwareUplinkPortListRequest) Select_(select_ string) ApiGetVirtualizationVmwareUplinkPortListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVmwareUplinkPortListRequest) Expand(expand string) ApiGetVirtualizationVmwareUplinkPortListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVmwareUplinkPortListRequest) Apply(apply string) ApiGetVirtualizationVmwareUplinkPortListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVmwareUplinkPortListRequest) Count(count bool) ApiGetVirtualizationVmwareUplinkPortListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVmwareUplinkPortListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVmwareUplinkPortListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVmwareUplinkPortListRequest) At(at string) ApiGetVirtualizationVmwareUplinkPortListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVmwareUplinkPortListRequest) Tags(tags string) ApiGetVirtualizationVmwareUplinkPortListRequest {
 	r.tags = &tags
@@ -13276,7 +13543,7 @@ GetVirtualizationVmwareUplinkPortList Read a 'virtualization.VmwareUplinkPort' r
 func (a *VirtualizationApiService) GetVirtualizationVmwareUplinkPortList(ctx _context.Context) ApiGetVirtualizationVmwareUplinkPortListRequest {
 	return ApiGetVirtualizationVmwareUplinkPortListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13415,13 +13682,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareUplinkPortListExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13438,11 +13705,10 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareUplinkPortListExecute(
 }
 
 type ApiGetVirtualizationVmwareVcenterByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVmwareVcenterByMoidRequest) Execute() (VirtualizationVmwareVcenter, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVmwareVcenterByMoidExecute(r)
@@ -13458,8 +13724,8 @@ GetVirtualizationVmwareVcenterByMoid Read a 'virtualization.VmwareVcenter' resou
 func (a *VirtualizationApiService) GetVirtualizationVmwareVcenterByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVmwareVcenterByMoidRequest {
 	return ApiGetVirtualizationVmwareVcenterByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13566,13 +13832,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVcenterByMoidExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13589,19 +13855,19 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVcenterByMoidExecute(r
 }
 
 type ApiGetVirtualizationVmwareVcenterListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13609,51 +13875,61 @@ func (r ApiGetVirtualizationVmwareVcenterListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVmwareVcenterListRequest) Orderby(orderby string) ApiGetVirtualizationVmwareVcenterListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVmwareVcenterListRequest) Top(top int32) ApiGetVirtualizationVmwareVcenterListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVmwareVcenterListRequest) Skip(skip int32) ApiGetVirtualizationVmwareVcenterListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVmwareVcenterListRequest) Select_(select_ string) ApiGetVirtualizationVmwareVcenterListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVmwareVcenterListRequest) Expand(expand string) ApiGetVirtualizationVmwareVcenterListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVmwareVcenterListRequest) Apply(apply string) ApiGetVirtualizationVmwareVcenterListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVmwareVcenterListRequest) Count(count bool) ApiGetVirtualizationVmwareVcenterListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVmwareVcenterListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVmwareVcenterListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVmwareVcenterListRequest) At(at string) ApiGetVirtualizationVmwareVcenterListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVmwareVcenterListRequest) Tags(tags string) ApiGetVirtualizationVmwareVcenterListRequest {
 	r.tags = &tags
@@ -13673,7 +13949,7 @@ GetVirtualizationVmwareVcenterList Read a 'virtualization.VmwareVcenter' resourc
 func (a *VirtualizationApiService) GetVirtualizationVmwareVcenterList(ctx _context.Context) ApiGetVirtualizationVmwareVcenterListRequest {
 	return ApiGetVirtualizationVmwareVcenterListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13812,13 +14088,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVcenterListExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13835,11 +14111,10 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVcenterListExecute(r A
 }
 
 type ApiGetVirtualizationVmwareVirtualDiskByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVmwareVirtualDiskByMoidRequest) Execute() (VirtualizationVmwareVirtualDisk, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVmwareVirtualDiskByMoidExecute(r)
@@ -13855,8 +14130,8 @@ GetVirtualizationVmwareVirtualDiskByMoid Read a 'virtualization.VmwareVirtualDis
 func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualDiskByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVmwareVirtualDiskByMoidRequest {
 	return ApiGetVirtualizationVmwareVirtualDiskByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13963,13 +14238,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualDiskByMoidExecu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13986,19 +14261,19 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualDiskByMoidExecu
 }
 
 type ApiGetVirtualizationVmwareVirtualDiskListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -14006,51 +14281,61 @@ func (r ApiGetVirtualizationVmwareVirtualDiskListRequest) Filter(filter string) 
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVmwareVirtualDiskListRequest) Orderby(orderby string) ApiGetVirtualizationVmwareVirtualDiskListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVmwareVirtualDiskListRequest) Top(top int32) ApiGetVirtualizationVmwareVirtualDiskListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVmwareVirtualDiskListRequest) Skip(skip int32) ApiGetVirtualizationVmwareVirtualDiskListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVmwareVirtualDiskListRequest) Select_(select_ string) ApiGetVirtualizationVmwareVirtualDiskListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVmwareVirtualDiskListRequest) Expand(expand string) ApiGetVirtualizationVmwareVirtualDiskListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVmwareVirtualDiskListRequest) Apply(apply string) ApiGetVirtualizationVmwareVirtualDiskListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVmwareVirtualDiskListRequest) Count(count bool) ApiGetVirtualizationVmwareVirtualDiskListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVmwareVirtualDiskListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVmwareVirtualDiskListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVmwareVirtualDiskListRequest) At(at string) ApiGetVirtualizationVmwareVirtualDiskListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVmwareVirtualDiskListRequest) Tags(tags string) ApiGetVirtualizationVmwareVirtualDiskListRequest {
 	r.tags = &tags
@@ -14070,7 +14355,7 @@ GetVirtualizationVmwareVirtualDiskList Read a 'virtualization.VmwareVirtualDisk'
 func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualDiskList(ctx _context.Context) ApiGetVirtualizationVmwareVirtualDiskListRequest {
 	return ApiGetVirtualizationVmwareVirtualDiskListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14209,13 +14494,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualDiskListExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14232,11 +14517,10 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualDiskListExecute
 }
 
 type ApiGetVirtualizationVmwareVirtualMachineByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVmwareVirtualMachineByMoidRequest) Execute() (VirtualizationVmwareVirtualMachine, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVmwareVirtualMachineByMoidExecute(r)
@@ -14252,8 +14536,8 @@ GetVirtualizationVmwareVirtualMachineByMoid Read a 'virtualization.VmwareVirtual
 func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualMachineByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVmwareVirtualMachineByMoidRequest {
 	return ApiGetVirtualizationVmwareVirtualMachineByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14360,13 +14644,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualMachineByMoidEx
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14383,19 +14667,19 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualMachineByMoidEx
 }
 
 type ApiGetVirtualizationVmwareVirtualMachineListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -14403,51 +14687,61 @@ func (r ApiGetVirtualizationVmwareVirtualMachineListRequest) Filter(filter strin
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVmwareVirtualMachineListRequest) Orderby(orderby string) ApiGetVirtualizationVmwareVirtualMachineListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVmwareVirtualMachineListRequest) Top(top int32) ApiGetVirtualizationVmwareVirtualMachineListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVmwareVirtualMachineListRequest) Skip(skip int32) ApiGetVirtualizationVmwareVirtualMachineListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVmwareVirtualMachineListRequest) Select_(select_ string) ApiGetVirtualizationVmwareVirtualMachineListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVmwareVirtualMachineListRequest) Expand(expand string) ApiGetVirtualizationVmwareVirtualMachineListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVmwareVirtualMachineListRequest) Apply(apply string) ApiGetVirtualizationVmwareVirtualMachineListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVmwareVirtualMachineListRequest) Count(count bool) ApiGetVirtualizationVmwareVirtualMachineListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVmwareVirtualMachineListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVmwareVirtualMachineListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVmwareVirtualMachineListRequest) At(at string) ApiGetVirtualizationVmwareVirtualMachineListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVmwareVirtualMachineListRequest) Tags(tags string) ApiGetVirtualizationVmwareVirtualMachineListRequest {
 	r.tags = &tags
@@ -14467,7 +14761,7 @@ GetVirtualizationVmwareVirtualMachineList Read a 'virtualization.VmwareVirtualMa
 func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualMachineList(ctx _context.Context) ApiGetVirtualizationVmwareVirtualMachineListRequest {
 	return ApiGetVirtualizationVmwareVirtualMachineListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14606,13 +14900,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualMachineListExec
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14629,11 +14923,10 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualMachineListExec
 }
 
 type ApiGetVirtualizationVmwareVirtualMachineSnapshotByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVmwareVirtualMachineSnapshotByMoidRequest) Execute() (VirtualizationVmwareVirtualMachineSnapshot, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVmwareVirtualMachineSnapshotByMoidExecute(r)
@@ -14649,8 +14942,8 @@ GetVirtualizationVmwareVirtualMachineSnapshotByMoid Read a 'virtualization.Vmwar
 func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualMachineSnapshotByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVmwareVirtualMachineSnapshotByMoidRequest {
 	return ApiGetVirtualizationVmwareVirtualMachineSnapshotByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14757,13 +15050,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualMachineSnapshot
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14780,19 +15073,19 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualMachineSnapshot
 }
 
 type ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -14800,51 +15093,61 @@ func (r ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest) Filter(filt
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest) Orderby(orderby string) ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest) Top(top int32) ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest) Skip(skip int32) ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest) Select_(select_ string) ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest) Expand(expand string) ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest) Apply(apply string) ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest) Count(count bool) ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest) At(at string) ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest) Tags(tags string) ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest {
 	r.tags = &tags
@@ -14864,7 +15167,7 @@ GetVirtualizationVmwareVirtualMachineSnapshotList Read a 'virtualization.VmwareV
 func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualMachineSnapshotList(ctx _context.Context) ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest {
 	return ApiGetVirtualizationVmwareVirtualMachineSnapshotListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15003,13 +15306,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualMachineSnapshot
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15026,11 +15329,10 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualMachineSnapshot
 }
 
 type ApiGetVirtualizationVmwareVirtualNetworkInterfaceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVmwareVirtualNetworkInterfaceByMoidRequest) Execute() (VirtualizationVmwareVirtualNetworkInterface, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVmwareVirtualNetworkInterfaceByMoidExecute(r)
@@ -15046,8 +15348,8 @@ GetVirtualizationVmwareVirtualNetworkInterfaceByMoid Read a 'virtualization.Vmwa
 func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualNetworkInterfaceByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVmwareVirtualNetworkInterfaceByMoidRequest {
 	return ApiGetVirtualizationVmwareVirtualNetworkInterfaceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15154,13 +15456,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualNetworkInterfac
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15177,19 +15479,19 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualNetworkInterfac
 }
 
 type ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15197,51 +15499,61 @@ func (r ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest) Filter(fil
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest) Orderby(orderby string) ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest) Top(top int32) ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest) Skip(skip int32) ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest) Select_(select_ string) ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest) Expand(expand string) ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest) Apply(apply string) ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest) Count(count bool) ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest) At(at string) ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest) Tags(tags string) ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest {
 	r.tags = &tags
@@ -15261,7 +15573,7 @@ GetVirtualizationVmwareVirtualNetworkInterfaceList Read a 'virtualization.Vmware
 func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualNetworkInterfaceList(ctx _context.Context) ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest {
 	return ApiGetVirtualizationVmwareVirtualNetworkInterfaceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15400,13 +15712,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualNetworkInterfac
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15423,11 +15735,10 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualNetworkInterfac
 }
 
 type ApiGetVirtualizationVmwareVirtualSwitchByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *VirtualizationApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetVirtualizationVmwareVirtualSwitchByMoidRequest) Execute() (VirtualizationVmwareVirtualSwitch, *_nethttp.Response, error) {
 	return r.ApiService.GetVirtualizationVmwareVirtualSwitchByMoidExecute(r)
@@ -15443,8 +15754,8 @@ GetVirtualizationVmwareVirtualSwitchByMoid Read a 'virtualization.VmwareVirtualS
 func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualSwitchByMoid(ctx _context.Context, moid string) ApiGetVirtualizationVmwareVirtualSwitchByMoidRequest {
 	return ApiGetVirtualizationVmwareVirtualSwitchByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15551,13 +15862,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualSwitchByMoidExe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15574,19 +15885,19 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualSwitchByMoidExe
 }
 
 type ApiGetVirtualizationVmwareVirtualSwitchListRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *VirtualizationApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15594,51 +15905,61 @@ func (r ApiGetVirtualizationVmwareVirtualSwitchListRequest) Filter(filter string
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetVirtualizationVmwareVirtualSwitchListRequest) Orderby(orderby string) ApiGetVirtualizationVmwareVirtualSwitchListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetVirtualizationVmwareVirtualSwitchListRequest) Top(top int32) ApiGetVirtualizationVmwareVirtualSwitchListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetVirtualizationVmwareVirtualSwitchListRequest) Skip(skip int32) ApiGetVirtualizationVmwareVirtualSwitchListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetVirtualizationVmwareVirtualSwitchListRequest) Select_(select_ string) ApiGetVirtualizationVmwareVirtualSwitchListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetVirtualizationVmwareVirtualSwitchListRequest) Expand(expand string) ApiGetVirtualizationVmwareVirtualSwitchListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetVirtualizationVmwareVirtualSwitchListRequest) Apply(apply string) ApiGetVirtualizationVmwareVirtualSwitchListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetVirtualizationVmwareVirtualSwitchListRequest) Count(count bool) ApiGetVirtualizationVmwareVirtualSwitchListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetVirtualizationVmwareVirtualSwitchListRequest) Inlinecount(inlinecount string) ApiGetVirtualizationVmwareVirtualSwitchListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetVirtualizationVmwareVirtualSwitchListRequest) At(at string) ApiGetVirtualizationVmwareVirtualSwitchListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetVirtualizationVmwareVirtualSwitchListRequest) Tags(tags string) ApiGetVirtualizationVmwareVirtualSwitchListRequest {
 	r.tags = &tags
@@ -15658,7 +15979,7 @@ GetVirtualizationVmwareVirtualSwitchList Read a 'virtualization.VmwareVirtualSwi
 func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualSwitchList(ctx _context.Context) ApiGetVirtualizationVmwareVirtualSwitchListRequest {
 	return ApiGetVirtualizationVmwareVirtualSwitchListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15797,13 +16118,13 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualSwitchListExecu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15820,11 +16141,11 @@ func (a *VirtualizationApiService) GetVirtualizationVmwareVirtualSwitchListExecu
 }
 
 type ApiPatchVirtualizationCiscoHypervisorManagerRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                                  _context.Context
+	ApiService                           *VirtualizationApiService
+	moid                                 string
 	virtualizationCiscoHypervisorManager *VirtualizationCiscoHypervisorManager
-	ifMatch *string
+	ifMatch                              *string
 }
 
 // The &#39;virtualization.CiscoHypervisorManager&#39; resource to update.
@@ -15832,6 +16153,7 @@ func (r ApiPatchVirtualizationCiscoHypervisorManagerRequest) VirtualizationCisco
 	r.virtualizationCiscoHypervisorManager = &virtualizationCiscoHypervisorManager
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationCiscoHypervisorManagerRequest) IfMatch(ifMatch string) ApiPatchVirtualizationCiscoHypervisorManagerRequest {
 	r.ifMatch = &ifMatch
@@ -15852,8 +16174,8 @@ PatchVirtualizationCiscoHypervisorManager Update a 'virtualization.CiscoHypervis
 func (a *VirtualizationApiService) PatchVirtualizationCiscoHypervisorManager(ctx _context.Context, moid string) ApiPatchVirtualizationCiscoHypervisorManagerRequest {
 	return ApiPatchVirtualizationCiscoHypervisorManagerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15968,13 +16290,13 @@ func (a *VirtualizationApiService) PatchVirtualizationCiscoHypervisorManagerExec
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15991,11 +16313,11 @@ func (a *VirtualizationApiService) PatchVirtualizationCiscoHypervisorManagerExec
 }
 
 type ApiPatchVirtualizationEsxiConsoleRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *VirtualizationApiService
+	moid                      string
 	virtualizationEsxiConsole *VirtualizationEsxiConsole
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;virtualization.EsxiConsole&#39; resource to update.
@@ -16003,6 +16325,7 @@ func (r ApiPatchVirtualizationEsxiConsoleRequest) VirtualizationEsxiConsole(virt
 	r.virtualizationEsxiConsole = &virtualizationEsxiConsole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationEsxiConsoleRequest) IfMatch(ifMatch string) ApiPatchVirtualizationEsxiConsoleRequest {
 	r.ifMatch = &ifMatch
@@ -16023,8 +16346,8 @@ PatchVirtualizationEsxiConsole Update a 'virtualization.EsxiConsole' resource.
 func (a *VirtualizationApiService) PatchVirtualizationEsxiConsole(ctx _context.Context, moid string) ApiPatchVirtualizationEsxiConsoleRequest {
 	return ApiPatchVirtualizationEsxiConsoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16139,13 +16462,13 @@ func (a *VirtualizationApiService) PatchVirtualizationEsxiConsoleExecute(r ApiPa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16162,11 +16485,11 @@ func (a *VirtualizationApiService) PatchVirtualizationEsxiConsoleExecute(r ApiPa
 }
 
 type ApiPatchVirtualizationHostRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                _context.Context
+	ApiService         *VirtualizationApiService
+	moid               string
 	virtualizationHost *VirtualizationHost
-	ifMatch *string
+	ifMatch            *string
 }
 
 // The &#39;virtualization.Host&#39; resource to update.
@@ -16174,6 +16497,7 @@ func (r ApiPatchVirtualizationHostRequest) VirtualizationHost(virtualizationHost
 	r.virtualizationHost = &virtualizationHost
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationHostRequest) IfMatch(ifMatch string) ApiPatchVirtualizationHostRequest {
 	r.ifMatch = &ifMatch
@@ -16194,8 +16518,8 @@ PatchVirtualizationHost Update a 'virtualization.Host' resource.
 func (a *VirtualizationApiService) PatchVirtualizationHost(ctx _context.Context, moid string) ApiPatchVirtualizationHostRequest {
 	return ApiPatchVirtualizationHostRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16310,13 +16634,13 @@ func (a *VirtualizationApiService) PatchVirtualizationHostExecute(r ApiPatchVirt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16333,11 +16657,11 @@ func (a *VirtualizationApiService) PatchVirtualizationHostExecute(r ApiPatchVirt
 }
 
 type ApiPatchVirtualizationIweClusterRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *VirtualizationApiService
+	moid                     string
 	virtualizationIweCluster *VirtualizationIweCluster
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;virtualization.IweCluster&#39; resource to update.
@@ -16345,6 +16669,7 @@ func (r ApiPatchVirtualizationIweClusterRequest) VirtualizationIweCluster(virtua
 	r.virtualizationIweCluster = &virtualizationIweCluster
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationIweClusterRequest) IfMatch(ifMatch string) ApiPatchVirtualizationIweClusterRequest {
 	r.ifMatch = &ifMatch
@@ -16365,8 +16690,8 @@ PatchVirtualizationIweCluster Update a 'virtualization.IweCluster' resource.
 func (a *VirtualizationApiService) PatchVirtualizationIweCluster(ctx _context.Context, moid string) ApiPatchVirtualizationIweClusterRequest {
 	return ApiPatchVirtualizationIweClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16481,13 +16806,13 @@ func (a *VirtualizationApiService) PatchVirtualizationIweClusterExecute(r ApiPat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16504,11 +16829,11 @@ func (a *VirtualizationApiService) PatchVirtualizationIweClusterExecute(r ApiPat
 }
 
 type ApiPatchVirtualizationIweDatacenterRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *VirtualizationApiService
+	moid                        string
 	virtualizationIweDatacenter *VirtualizationIweDatacenter
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;virtualization.IweDatacenter&#39; resource to update.
@@ -16516,6 +16841,7 @@ func (r ApiPatchVirtualizationIweDatacenterRequest) VirtualizationIweDatacenter(
 	r.virtualizationIweDatacenter = &virtualizationIweDatacenter
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationIweDatacenterRequest) IfMatch(ifMatch string) ApiPatchVirtualizationIweDatacenterRequest {
 	r.ifMatch = &ifMatch
@@ -16536,8 +16862,8 @@ PatchVirtualizationIweDatacenter Update a 'virtualization.IweDatacenter' resourc
 func (a *VirtualizationApiService) PatchVirtualizationIweDatacenter(ctx _context.Context, moid string) ApiPatchVirtualizationIweDatacenterRequest {
 	return ApiPatchVirtualizationIweDatacenterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16652,13 +16978,13 @@ func (a *VirtualizationApiService) PatchVirtualizationIweDatacenterExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16675,11 +17001,11 @@ func (a *VirtualizationApiService) PatchVirtualizationIweDatacenterExecute(r Api
 }
 
 type ApiPatchVirtualizationIweHostRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *VirtualizationApiService
+	moid                  string
 	virtualizationIweHost *VirtualizationIweHost
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;virtualization.IweHost&#39; resource to update.
@@ -16687,6 +17013,7 @@ func (r ApiPatchVirtualizationIweHostRequest) VirtualizationIweHost(virtualizati
 	r.virtualizationIweHost = &virtualizationIweHost
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationIweHostRequest) IfMatch(ifMatch string) ApiPatchVirtualizationIweHostRequest {
 	r.ifMatch = &ifMatch
@@ -16707,8 +17034,8 @@ PatchVirtualizationIweHost Update a 'virtualization.IweHost' resource.
 func (a *VirtualizationApiService) PatchVirtualizationIweHost(ctx _context.Context, moid string) ApiPatchVirtualizationIweHostRequest {
 	return ApiPatchVirtualizationIweHostRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16823,13 +17150,13 @@ func (a *VirtualizationApiService) PatchVirtualizationIweHostExecute(r ApiPatchV
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16846,11 +17173,11 @@ func (a *VirtualizationApiService) PatchVirtualizationIweHostExecute(r ApiPatchV
 }
 
 type ApiPatchVirtualizationIweNetworkRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *VirtualizationApiService
+	moid                     string
 	virtualizationIweNetwork *VirtualizationIweNetwork
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;virtualization.IweNetwork&#39; resource to update.
@@ -16858,6 +17185,7 @@ func (r ApiPatchVirtualizationIweNetworkRequest) VirtualizationIweNetwork(virtua
 	r.virtualizationIweNetwork = &virtualizationIweNetwork
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationIweNetworkRequest) IfMatch(ifMatch string) ApiPatchVirtualizationIweNetworkRequest {
 	r.ifMatch = &ifMatch
@@ -16878,8 +17206,8 @@ PatchVirtualizationIweNetwork Update a 'virtualization.IweNetwork' resource.
 func (a *VirtualizationApiService) PatchVirtualizationIweNetwork(ctx _context.Context, moid string) ApiPatchVirtualizationIweNetworkRequest {
 	return ApiPatchVirtualizationIweNetworkRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16994,13 +17322,13 @@ func (a *VirtualizationApiService) PatchVirtualizationIweNetworkExecute(r ApiPat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17017,11 +17345,11 @@ func (a *VirtualizationApiService) PatchVirtualizationIweNetworkExecute(r ApiPat
 }
 
 type ApiPatchVirtualizationIweVirtualDiskRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *VirtualizationApiService
+	moid                         string
 	virtualizationIweVirtualDisk *VirtualizationIweVirtualDisk
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;virtualization.IweVirtualDisk&#39; resource to update.
@@ -17029,6 +17357,7 @@ func (r ApiPatchVirtualizationIweVirtualDiskRequest) VirtualizationIweVirtualDis
 	r.virtualizationIweVirtualDisk = &virtualizationIweVirtualDisk
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationIweVirtualDiskRequest) IfMatch(ifMatch string) ApiPatchVirtualizationIweVirtualDiskRequest {
 	r.ifMatch = &ifMatch
@@ -17049,8 +17378,8 @@ PatchVirtualizationIweVirtualDisk Update a 'virtualization.IweVirtualDisk' resou
 func (a *VirtualizationApiService) PatchVirtualizationIweVirtualDisk(ctx _context.Context, moid string) ApiPatchVirtualizationIweVirtualDiskRequest {
 	return ApiPatchVirtualizationIweVirtualDiskRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17165,13 +17494,13 @@ func (a *VirtualizationApiService) PatchVirtualizationIweVirtualDiskExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17188,11 +17517,11 @@ func (a *VirtualizationApiService) PatchVirtualizationIweVirtualDiskExecute(r Ap
 }
 
 type ApiPatchVirtualizationIweVirtualMachineRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                             _context.Context
+	ApiService                      *VirtualizationApiService
+	moid                            string
 	virtualizationIweVirtualMachine *VirtualizationIweVirtualMachine
-	ifMatch *string
+	ifMatch                         *string
 }
 
 // The &#39;virtualization.IweVirtualMachine&#39; resource to update.
@@ -17200,6 +17529,7 @@ func (r ApiPatchVirtualizationIweVirtualMachineRequest) VirtualizationIweVirtual
 	r.virtualizationIweVirtualMachine = &virtualizationIweVirtualMachine
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationIweVirtualMachineRequest) IfMatch(ifMatch string) ApiPatchVirtualizationIweVirtualMachineRequest {
 	r.ifMatch = &ifMatch
@@ -17220,8 +17550,8 @@ PatchVirtualizationIweVirtualMachine Update a 'virtualization.IweVirtualMachine'
 func (a *VirtualizationApiService) PatchVirtualizationIweVirtualMachine(ctx _context.Context, moid string) ApiPatchVirtualizationIweVirtualMachineRequest {
 	return ApiPatchVirtualizationIweVirtualMachineRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17336,13 +17666,13 @@ func (a *VirtualizationApiService) PatchVirtualizationIweVirtualMachineExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17359,11 +17689,11 @@ func (a *VirtualizationApiService) PatchVirtualizationIweVirtualMachineExecute(r
 }
 
 type ApiPatchVirtualizationVirtualDiskRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *VirtualizationApiService
+	moid                      string
 	virtualizationVirtualDisk *VirtualizationVirtualDisk
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;virtualization.VirtualDisk&#39; resource to update.
@@ -17371,6 +17701,7 @@ func (r ApiPatchVirtualizationVirtualDiskRequest) VirtualizationVirtualDisk(virt
 	r.virtualizationVirtualDisk = &virtualizationVirtualDisk
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVirtualDiskRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVirtualDiskRequest {
 	r.ifMatch = &ifMatch
@@ -17391,8 +17722,8 @@ PatchVirtualizationVirtualDisk Update a 'virtualization.VirtualDisk' resource.
 func (a *VirtualizationApiService) PatchVirtualizationVirtualDisk(ctx _context.Context, moid string) ApiPatchVirtualizationVirtualDiskRequest {
 	return ApiPatchVirtualizationVirtualDiskRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17507,13 +17838,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVirtualDiskExecute(r ApiPa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17530,11 +17861,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVirtualDiskExecute(r ApiPa
 }
 
 type ApiPatchVirtualizationVirtualMachineRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *VirtualizationApiService
+	moid                         string
 	virtualizationVirtualMachine *VirtualizationVirtualMachine
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;virtualization.VirtualMachine&#39; resource to update.
@@ -17542,6 +17873,7 @@ func (r ApiPatchVirtualizationVirtualMachineRequest) VirtualizationVirtualMachin
 	r.virtualizationVirtualMachine = &virtualizationVirtualMachine
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVirtualMachineRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVirtualMachineRequest {
 	r.ifMatch = &ifMatch
@@ -17562,8 +17894,8 @@ PatchVirtualizationVirtualMachine Update a 'virtualization.VirtualMachine' resou
 func (a *VirtualizationApiService) PatchVirtualizationVirtualMachine(ctx _context.Context, moid string) ApiPatchVirtualizationVirtualMachineRequest {
 	return ApiPatchVirtualizationVirtualMachineRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17678,13 +18010,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVirtualMachineExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17701,11 +18033,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVirtualMachineExecute(r Ap
 }
 
 type ApiPatchVirtualizationVirtualNetworkRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *VirtualizationApiService
+	moid                         string
 	virtualizationVirtualNetwork *VirtualizationVirtualNetwork
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;virtualization.VirtualNetwork&#39; resource to update.
@@ -17713,6 +18045,7 @@ func (r ApiPatchVirtualizationVirtualNetworkRequest) VirtualizationVirtualNetwor
 	r.virtualizationVirtualNetwork = &virtualizationVirtualNetwork
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVirtualNetworkRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVirtualNetworkRequest {
 	r.ifMatch = &ifMatch
@@ -17733,8 +18066,8 @@ PatchVirtualizationVirtualNetwork Update a 'virtualization.VirtualNetwork' resou
 func (a *VirtualizationApiService) PatchVirtualizationVirtualNetwork(ctx _context.Context, moid string) ApiPatchVirtualizationVirtualNetworkRequest {
 	return ApiPatchVirtualizationVirtualNetworkRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17849,13 +18182,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVirtualNetworkExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17872,11 +18205,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVirtualNetworkExecute(r Ap
 }
 
 type ApiPatchVirtualizationVmwareClusterRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *VirtualizationApiService
+	moid                        string
 	virtualizationVmwareCluster *VirtualizationVmwareCluster
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;virtualization.VmwareCluster&#39; resource to update.
@@ -17884,6 +18217,7 @@ func (r ApiPatchVirtualizationVmwareClusterRequest) VirtualizationVmwareCluster(
 	r.virtualizationVmwareCluster = &virtualizationVmwareCluster
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVmwareClusterRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVmwareClusterRequest {
 	r.ifMatch = &ifMatch
@@ -17904,8 +18238,8 @@ PatchVirtualizationVmwareCluster Update a 'virtualization.VmwareCluster' resourc
 func (a *VirtualizationApiService) PatchVirtualizationVmwareCluster(ctx _context.Context, moid string) ApiPatchVirtualizationVmwareClusterRequest {
 	return ApiPatchVirtualizationVmwareClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18020,13 +18354,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareClusterExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18043,11 +18377,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareClusterExecute(r Api
 }
 
 type ApiPatchVirtualizationVmwareDatacenterRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *VirtualizationApiService
+	moid                           string
 	virtualizationVmwareDatacenter *VirtualizationVmwareDatacenter
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;virtualization.VmwareDatacenter&#39; resource to update.
@@ -18055,6 +18389,7 @@ func (r ApiPatchVirtualizationVmwareDatacenterRequest) VirtualizationVmwareDatac
 	r.virtualizationVmwareDatacenter = &virtualizationVmwareDatacenter
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVmwareDatacenterRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVmwareDatacenterRequest {
 	r.ifMatch = &ifMatch
@@ -18075,8 +18410,8 @@ PatchVirtualizationVmwareDatacenter Update a 'virtualization.VmwareDatacenter' r
 func (a *VirtualizationApiService) PatchVirtualizationVmwareDatacenter(ctx _context.Context, moid string) ApiPatchVirtualizationVmwareDatacenterRequest {
 	return ApiPatchVirtualizationVmwareDatacenterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18191,13 +18526,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareDatacenterExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18214,11 +18549,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareDatacenterExecute(r 
 }
 
 type ApiPatchVirtualizationVmwareDatastoreRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *VirtualizationApiService
+	moid                          string
 	virtualizationVmwareDatastore *VirtualizationVmwareDatastore
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;virtualization.VmwareDatastore&#39; resource to update.
@@ -18226,6 +18561,7 @@ func (r ApiPatchVirtualizationVmwareDatastoreRequest) VirtualizationVmwareDatast
 	r.virtualizationVmwareDatastore = &virtualizationVmwareDatastore
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVmwareDatastoreRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVmwareDatastoreRequest {
 	r.ifMatch = &ifMatch
@@ -18246,8 +18582,8 @@ PatchVirtualizationVmwareDatastore Update a 'virtualization.VmwareDatastore' res
 func (a *VirtualizationApiService) PatchVirtualizationVmwareDatastore(ctx _context.Context, moid string) ApiPatchVirtualizationVmwareDatastoreRequest {
 	return ApiPatchVirtualizationVmwareDatastoreRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18362,13 +18698,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareDatastoreExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18385,11 +18721,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareDatastoreExecute(r A
 }
 
 type ApiPatchVirtualizationVmwareDatastoreClusterRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                                  _context.Context
+	ApiService                           *VirtualizationApiService
+	moid                                 string
 	virtualizationVmwareDatastoreCluster *VirtualizationVmwareDatastoreCluster
-	ifMatch *string
+	ifMatch                              *string
 }
 
 // The &#39;virtualization.VmwareDatastoreCluster&#39; resource to update.
@@ -18397,6 +18733,7 @@ func (r ApiPatchVirtualizationVmwareDatastoreClusterRequest) VirtualizationVmwar
 	r.virtualizationVmwareDatastoreCluster = &virtualizationVmwareDatastoreCluster
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVmwareDatastoreClusterRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVmwareDatastoreClusterRequest {
 	r.ifMatch = &ifMatch
@@ -18417,8 +18754,8 @@ PatchVirtualizationVmwareDatastoreCluster Update a 'virtualization.VmwareDatasto
 func (a *VirtualizationApiService) PatchVirtualizationVmwareDatastoreCluster(ctx _context.Context, moid string) ApiPatchVirtualizationVmwareDatastoreClusterRequest {
 	return ApiPatchVirtualizationVmwareDatastoreClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18533,13 +18870,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareDatastoreClusterExec
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18556,11 +18893,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareDatastoreClusterExec
 }
 
 type ApiPatchVirtualizationVmwareDistributedNetworkRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                                    _context.Context
+	ApiService                             *VirtualizationApiService
+	moid                                   string
 	virtualizationVmwareDistributedNetwork *VirtualizationVmwareDistributedNetwork
-	ifMatch *string
+	ifMatch                                *string
 }
 
 // The &#39;virtualization.VmwareDistributedNetwork&#39; resource to update.
@@ -18568,6 +18905,7 @@ func (r ApiPatchVirtualizationVmwareDistributedNetworkRequest) VirtualizationVmw
 	r.virtualizationVmwareDistributedNetwork = &virtualizationVmwareDistributedNetwork
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVmwareDistributedNetworkRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVmwareDistributedNetworkRequest {
 	r.ifMatch = &ifMatch
@@ -18588,8 +18926,8 @@ PatchVirtualizationVmwareDistributedNetwork Update a 'virtualization.VmwareDistr
 func (a *VirtualizationApiService) PatchVirtualizationVmwareDistributedNetwork(ctx _context.Context, moid string) ApiPatchVirtualizationVmwareDistributedNetworkRequest {
 	return ApiPatchVirtualizationVmwareDistributedNetworkRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18704,13 +19042,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareDistributedNetworkEx
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18727,11 +19065,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareDistributedNetworkEx
 }
 
 type ApiPatchVirtualizationVmwareDistributedSwitchRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                                   _context.Context
+	ApiService                            *VirtualizationApiService
+	moid                                  string
 	virtualizationVmwareDistributedSwitch *VirtualizationVmwareDistributedSwitch
-	ifMatch *string
+	ifMatch                               *string
 }
 
 // The &#39;virtualization.VmwareDistributedSwitch&#39; resource to update.
@@ -18739,6 +19077,7 @@ func (r ApiPatchVirtualizationVmwareDistributedSwitchRequest) VirtualizationVmwa
 	r.virtualizationVmwareDistributedSwitch = &virtualizationVmwareDistributedSwitch
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVmwareDistributedSwitchRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVmwareDistributedSwitchRequest {
 	r.ifMatch = &ifMatch
@@ -18759,8 +19098,8 @@ PatchVirtualizationVmwareDistributedSwitch Update a 'virtualization.VmwareDistri
 func (a *VirtualizationApiService) PatchVirtualizationVmwareDistributedSwitch(ctx _context.Context, moid string) ApiPatchVirtualizationVmwareDistributedSwitchRequest {
 	return ApiPatchVirtualizationVmwareDistributedSwitchRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18875,13 +19214,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareDistributedSwitchExe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18898,11 +19237,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareDistributedSwitchExe
 }
 
 type ApiPatchVirtualizationVmwareFolderRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *VirtualizationApiService
+	moid                       string
 	virtualizationVmwareFolder *VirtualizationVmwareFolder
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;virtualization.VmwareFolder&#39; resource to update.
@@ -18910,6 +19249,7 @@ func (r ApiPatchVirtualizationVmwareFolderRequest) VirtualizationVmwareFolder(vi
 	r.virtualizationVmwareFolder = &virtualizationVmwareFolder
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVmwareFolderRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVmwareFolderRequest {
 	r.ifMatch = &ifMatch
@@ -18930,8 +19270,8 @@ PatchVirtualizationVmwareFolder Update a 'virtualization.VmwareFolder' resource.
 func (a *VirtualizationApiService) PatchVirtualizationVmwareFolder(ctx _context.Context, moid string) ApiPatchVirtualizationVmwareFolderRequest {
 	return ApiPatchVirtualizationVmwareFolderRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19046,13 +19386,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareFolderExecute(r ApiP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19069,11 +19409,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareFolderExecute(r ApiP
 }
 
 type ApiPatchVirtualizationVmwareHostRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *VirtualizationApiService
+	moid                     string
 	virtualizationVmwareHost *VirtualizationVmwareHost
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;virtualization.VmwareHost&#39; resource to update.
@@ -19081,6 +19421,7 @@ func (r ApiPatchVirtualizationVmwareHostRequest) VirtualizationVmwareHost(virtua
 	r.virtualizationVmwareHost = &virtualizationVmwareHost
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVmwareHostRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVmwareHostRequest {
 	r.ifMatch = &ifMatch
@@ -19101,8 +19442,8 @@ PatchVirtualizationVmwareHost Update a 'virtualization.VmwareHost' resource.
 func (a *VirtualizationApiService) PatchVirtualizationVmwareHost(ctx _context.Context, moid string) ApiPatchVirtualizationVmwareHostRequest {
 	return ApiPatchVirtualizationVmwareHostRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19217,13 +19558,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareHostExecute(r ApiPat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19240,11 +19581,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareHostExecute(r ApiPat
 }
 
 type ApiPatchVirtualizationVmwareKernelNetworkRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                               _context.Context
+	ApiService                        *VirtualizationApiService
+	moid                              string
 	virtualizationVmwareKernelNetwork *VirtualizationVmwareKernelNetwork
-	ifMatch *string
+	ifMatch                           *string
 }
 
 // The &#39;virtualization.VmwareKernelNetwork&#39; resource to update.
@@ -19252,6 +19593,7 @@ func (r ApiPatchVirtualizationVmwareKernelNetworkRequest) VirtualizationVmwareKe
 	r.virtualizationVmwareKernelNetwork = &virtualizationVmwareKernelNetwork
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVmwareKernelNetworkRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVmwareKernelNetworkRequest {
 	r.ifMatch = &ifMatch
@@ -19272,8 +19614,8 @@ PatchVirtualizationVmwareKernelNetwork Update a 'virtualization.VmwareKernelNetw
 func (a *VirtualizationApiService) PatchVirtualizationVmwareKernelNetwork(ctx _context.Context, moid string) ApiPatchVirtualizationVmwareKernelNetworkRequest {
 	return ApiPatchVirtualizationVmwareKernelNetworkRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19388,13 +19730,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareKernelNetworkExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19411,11 +19753,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareKernelNetworkExecute
 }
 
 type ApiPatchVirtualizationVmwareNetworkRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *VirtualizationApiService
+	moid                        string
 	virtualizationVmwareNetwork *VirtualizationVmwareNetwork
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;virtualization.VmwareNetwork&#39; resource to update.
@@ -19423,6 +19765,7 @@ func (r ApiPatchVirtualizationVmwareNetworkRequest) VirtualizationVmwareNetwork(
 	r.virtualizationVmwareNetwork = &virtualizationVmwareNetwork
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVmwareNetworkRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVmwareNetworkRequest {
 	r.ifMatch = &ifMatch
@@ -19443,8 +19786,8 @@ PatchVirtualizationVmwareNetwork Update a 'virtualization.VmwareNetwork' resourc
 func (a *VirtualizationApiService) PatchVirtualizationVmwareNetwork(ctx _context.Context, moid string) ApiPatchVirtualizationVmwareNetworkRequest {
 	return ApiPatchVirtualizationVmwareNetworkRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19559,13 +19902,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareNetworkExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19582,11 +19925,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareNetworkExecute(r Api
 }
 
 type ApiPatchVirtualizationVmwarePhysicalNetworkInterfaceRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                                          _context.Context
+	ApiService                                   *VirtualizationApiService
+	moid                                         string
 	virtualizationVmwarePhysicalNetworkInterface *VirtualizationVmwarePhysicalNetworkInterface
-	ifMatch *string
+	ifMatch                                      *string
 }
 
 // The &#39;virtualization.VmwarePhysicalNetworkInterface&#39; resource to update.
@@ -19594,6 +19937,7 @@ func (r ApiPatchVirtualizationVmwarePhysicalNetworkInterfaceRequest) Virtualizat
 	r.virtualizationVmwarePhysicalNetworkInterface = &virtualizationVmwarePhysicalNetworkInterface
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVmwarePhysicalNetworkInterfaceRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVmwarePhysicalNetworkInterfaceRequest {
 	r.ifMatch = &ifMatch
@@ -19614,8 +19958,8 @@ PatchVirtualizationVmwarePhysicalNetworkInterface Update a 'virtualization.Vmwar
 func (a *VirtualizationApiService) PatchVirtualizationVmwarePhysicalNetworkInterface(ctx _context.Context, moid string) ApiPatchVirtualizationVmwarePhysicalNetworkInterfaceRequest {
 	return ApiPatchVirtualizationVmwarePhysicalNetworkInterfaceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19730,13 +20074,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwarePhysicalNetworkInter
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19753,11 +20097,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwarePhysicalNetworkInter
 }
 
 type ApiPatchVirtualizationVmwareUplinkPortRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *VirtualizationApiService
+	moid                           string
 	virtualizationVmwareUplinkPort *VirtualizationVmwareUplinkPort
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;virtualization.VmwareUplinkPort&#39; resource to update.
@@ -19765,6 +20109,7 @@ func (r ApiPatchVirtualizationVmwareUplinkPortRequest) VirtualizationVmwareUplin
 	r.virtualizationVmwareUplinkPort = &virtualizationVmwareUplinkPort
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVmwareUplinkPortRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVmwareUplinkPortRequest {
 	r.ifMatch = &ifMatch
@@ -19785,8 +20130,8 @@ PatchVirtualizationVmwareUplinkPort Update a 'virtualization.VmwareUplinkPort' r
 func (a *VirtualizationApiService) PatchVirtualizationVmwareUplinkPort(ctx _context.Context, moid string) ApiPatchVirtualizationVmwareUplinkPortRequest {
 	return ApiPatchVirtualizationVmwareUplinkPortRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19901,13 +20246,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareUplinkPortExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19924,11 +20269,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareUplinkPortExecute(r 
 }
 
 type ApiPatchVirtualizationVmwareVirtualDiskRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                             _context.Context
+	ApiService                      *VirtualizationApiService
+	moid                            string
 	virtualizationVmwareVirtualDisk *VirtualizationVmwareVirtualDisk
-	ifMatch *string
+	ifMatch                         *string
 }
 
 // The &#39;virtualization.VmwareVirtualDisk&#39; resource to update.
@@ -19936,6 +20281,7 @@ func (r ApiPatchVirtualizationVmwareVirtualDiskRequest) VirtualizationVmwareVirt
 	r.virtualizationVmwareVirtualDisk = &virtualizationVmwareVirtualDisk
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVmwareVirtualDiskRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVmwareVirtualDiskRequest {
 	r.ifMatch = &ifMatch
@@ -19956,8 +20302,8 @@ PatchVirtualizationVmwareVirtualDisk Update a 'virtualization.VmwareVirtualDisk'
 func (a *VirtualizationApiService) PatchVirtualizationVmwareVirtualDisk(ctx _context.Context, moid string) ApiPatchVirtualizationVmwareVirtualDiskRequest {
 	return ApiPatchVirtualizationVmwareVirtualDiskRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20072,13 +20418,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareVirtualDiskExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20095,11 +20441,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareVirtualDiskExecute(r
 }
 
 type ApiPatchVirtualizationVmwareVirtualMachineRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                                _context.Context
+	ApiService                         *VirtualizationApiService
+	moid                               string
 	virtualizationVmwareVirtualMachine *VirtualizationVmwareVirtualMachine
-	ifMatch *string
+	ifMatch                            *string
 }
 
 // The &#39;virtualization.VmwareVirtualMachine&#39; resource to update.
@@ -20107,6 +20453,7 @@ func (r ApiPatchVirtualizationVmwareVirtualMachineRequest) VirtualizationVmwareV
 	r.virtualizationVmwareVirtualMachine = &virtualizationVmwareVirtualMachine
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVmwareVirtualMachineRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVmwareVirtualMachineRequest {
 	r.ifMatch = &ifMatch
@@ -20127,8 +20474,8 @@ PatchVirtualizationVmwareVirtualMachine Update a 'virtualization.VmwareVirtualMa
 func (a *VirtualizationApiService) PatchVirtualizationVmwareVirtualMachine(ctx _context.Context, moid string) ApiPatchVirtualizationVmwareVirtualMachineRequest {
 	return ApiPatchVirtualizationVmwareVirtualMachineRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20243,13 +20590,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareVirtualMachineExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20266,11 +20613,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareVirtualMachineExecut
 }
 
 type ApiPatchVirtualizationVmwareVirtualMachineSnapshotRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                                        _context.Context
+	ApiService                                 *VirtualizationApiService
+	moid                                       string
 	virtualizationVmwareVirtualMachineSnapshot *VirtualizationVmwareVirtualMachineSnapshot
-	ifMatch *string
+	ifMatch                                    *string
 }
 
 // The &#39;virtualization.VmwareVirtualMachineSnapshot&#39; resource to update.
@@ -20278,6 +20625,7 @@ func (r ApiPatchVirtualizationVmwareVirtualMachineSnapshotRequest) Virtualizatio
 	r.virtualizationVmwareVirtualMachineSnapshot = &virtualizationVmwareVirtualMachineSnapshot
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVmwareVirtualMachineSnapshotRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVmwareVirtualMachineSnapshotRequest {
 	r.ifMatch = &ifMatch
@@ -20298,8 +20646,8 @@ PatchVirtualizationVmwareVirtualMachineSnapshot Update a 'virtualization.VmwareV
 func (a *VirtualizationApiService) PatchVirtualizationVmwareVirtualMachineSnapshot(ctx _context.Context, moid string) ApiPatchVirtualizationVmwareVirtualMachineSnapshotRequest {
 	return ApiPatchVirtualizationVmwareVirtualMachineSnapshotRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20414,13 +20762,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareVirtualMachineSnapsh
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20437,11 +20785,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareVirtualMachineSnapsh
 }
 
 type ApiPatchVirtualizationVmwareVirtualNetworkInterfaceRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                                         _context.Context
+	ApiService                                  *VirtualizationApiService
+	moid                                        string
 	virtualizationVmwareVirtualNetworkInterface *VirtualizationVmwareVirtualNetworkInterface
-	ifMatch *string
+	ifMatch                                     *string
 }
 
 // The &#39;virtualization.VmwareVirtualNetworkInterface&#39; resource to update.
@@ -20449,6 +20797,7 @@ func (r ApiPatchVirtualizationVmwareVirtualNetworkInterfaceRequest) Virtualizati
 	r.virtualizationVmwareVirtualNetworkInterface = &virtualizationVmwareVirtualNetworkInterface
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVmwareVirtualNetworkInterfaceRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVmwareVirtualNetworkInterfaceRequest {
 	r.ifMatch = &ifMatch
@@ -20469,8 +20818,8 @@ PatchVirtualizationVmwareVirtualNetworkInterface Update a 'virtualization.Vmware
 func (a *VirtualizationApiService) PatchVirtualizationVmwareVirtualNetworkInterface(ctx _context.Context, moid string) ApiPatchVirtualizationVmwareVirtualNetworkInterfaceRequest {
 	return ApiPatchVirtualizationVmwareVirtualNetworkInterfaceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20585,13 +20934,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareVirtualNetworkInterf
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20608,11 +20957,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareVirtualNetworkInterf
 }
 
 type ApiPatchVirtualizationVmwareVirtualSwitchRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                               _context.Context
+	ApiService                        *VirtualizationApiService
+	moid                              string
 	virtualizationVmwareVirtualSwitch *VirtualizationVmwareVirtualSwitch
-	ifMatch *string
+	ifMatch                           *string
 }
 
 // The &#39;virtualization.VmwareVirtualSwitch&#39; resource to update.
@@ -20620,6 +20969,7 @@ func (r ApiPatchVirtualizationVmwareVirtualSwitchRequest) VirtualizationVmwareVi
 	r.virtualizationVmwareVirtualSwitch = &virtualizationVmwareVirtualSwitch
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchVirtualizationVmwareVirtualSwitchRequest) IfMatch(ifMatch string) ApiPatchVirtualizationVmwareVirtualSwitchRequest {
 	r.ifMatch = &ifMatch
@@ -20640,8 +20990,8 @@ PatchVirtualizationVmwareVirtualSwitch Update a 'virtualization.VmwareVirtualSwi
 func (a *VirtualizationApiService) PatchVirtualizationVmwareVirtualSwitch(ctx _context.Context, moid string) ApiPatchVirtualizationVmwareVirtualSwitchRequest {
 	return ApiPatchVirtualizationVmwareVirtualSwitchRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20756,13 +21106,13 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareVirtualSwitchExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20779,11 +21129,11 @@ func (a *VirtualizationApiService) PatchVirtualizationVmwareVirtualSwitchExecute
 }
 
 type ApiUpdateVirtualizationCiscoHypervisorManagerRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                                  _context.Context
+	ApiService                           *VirtualizationApiService
+	moid                                 string
 	virtualizationCiscoHypervisorManager *VirtualizationCiscoHypervisorManager
-	ifMatch *string
+	ifMatch                              *string
 }
 
 // The &#39;virtualization.CiscoHypervisorManager&#39; resource to update.
@@ -20791,6 +21141,7 @@ func (r ApiUpdateVirtualizationCiscoHypervisorManagerRequest) VirtualizationCisc
 	r.virtualizationCiscoHypervisorManager = &virtualizationCiscoHypervisorManager
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationCiscoHypervisorManagerRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationCiscoHypervisorManagerRequest {
 	r.ifMatch = &ifMatch
@@ -20811,8 +21162,8 @@ UpdateVirtualizationCiscoHypervisorManager Update a 'virtualization.CiscoHypervi
 func (a *VirtualizationApiService) UpdateVirtualizationCiscoHypervisorManager(ctx _context.Context, moid string) ApiUpdateVirtualizationCiscoHypervisorManagerRequest {
 	return ApiUpdateVirtualizationCiscoHypervisorManagerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20927,13 +21278,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationCiscoHypervisorManagerExe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20950,11 +21301,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationCiscoHypervisorManagerExe
 }
 
 type ApiUpdateVirtualizationEsxiConsoleRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *VirtualizationApiService
+	moid                      string
 	virtualizationEsxiConsole *VirtualizationEsxiConsole
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;virtualization.EsxiConsole&#39; resource to update.
@@ -20962,6 +21313,7 @@ func (r ApiUpdateVirtualizationEsxiConsoleRequest) VirtualizationEsxiConsole(vir
 	r.virtualizationEsxiConsole = &virtualizationEsxiConsole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationEsxiConsoleRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationEsxiConsoleRequest {
 	r.ifMatch = &ifMatch
@@ -20982,8 +21334,8 @@ UpdateVirtualizationEsxiConsole Update a 'virtualization.EsxiConsole' resource.
 func (a *VirtualizationApiService) UpdateVirtualizationEsxiConsole(ctx _context.Context, moid string) ApiUpdateVirtualizationEsxiConsoleRequest {
 	return ApiUpdateVirtualizationEsxiConsoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21098,13 +21450,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationEsxiConsoleExecute(r ApiU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21121,11 +21473,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationEsxiConsoleExecute(r ApiU
 }
 
 type ApiUpdateVirtualizationHostRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                _context.Context
+	ApiService         *VirtualizationApiService
+	moid               string
 	virtualizationHost *VirtualizationHost
-	ifMatch *string
+	ifMatch            *string
 }
 
 // The &#39;virtualization.Host&#39; resource to update.
@@ -21133,6 +21485,7 @@ func (r ApiUpdateVirtualizationHostRequest) VirtualizationHost(virtualizationHos
 	r.virtualizationHost = &virtualizationHost
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationHostRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationHostRequest {
 	r.ifMatch = &ifMatch
@@ -21153,8 +21506,8 @@ UpdateVirtualizationHost Update a 'virtualization.Host' resource.
 func (a *VirtualizationApiService) UpdateVirtualizationHost(ctx _context.Context, moid string) ApiUpdateVirtualizationHostRequest {
 	return ApiUpdateVirtualizationHostRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21269,13 +21622,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationHostExecute(r ApiUpdateVi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21292,11 +21645,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationHostExecute(r ApiUpdateVi
 }
 
 type ApiUpdateVirtualizationIweClusterRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *VirtualizationApiService
+	moid                     string
 	virtualizationIweCluster *VirtualizationIweCluster
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;virtualization.IweCluster&#39; resource to update.
@@ -21304,6 +21657,7 @@ func (r ApiUpdateVirtualizationIweClusterRequest) VirtualizationIweCluster(virtu
 	r.virtualizationIweCluster = &virtualizationIweCluster
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationIweClusterRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationIweClusterRequest {
 	r.ifMatch = &ifMatch
@@ -21324,8 +21678,8 @@ UpdateVirtualizationIweCluster Update a 'virtualization.IweCluster' resource.
 func (a *VirtualizationApiService) UpdateVirtualizationIweCluster(ctx _context.Context, moid string) ApiUpdateVirtualizationIweClusterRequest {
 	return ApiUpdateVirtualizationIweClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21440,13 +21794,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationIweClusterExecute(r ApiUp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21463,11 +21817,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationIweClusterExecute(r ApiUp
 }
 
 type ApiUpdateVirtualizationIweDatacenterRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *VirtualizationApiService
+	moid                        string
 	virtualizationIweDatacenter *VirtualizationIweDatacenter
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;virtualization.IweDatacenter&#39; resource to update.
@@ -21475,6 +21829,7 @@ func (r ApiUpdateVirtualizationIweDatacenterRequest) VirtualizationIweDatacenter
 	r.virtualizationIweDatacenter = &virtualizationIweDatacenter
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationIweDatacenterRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationIweDatacenterRequest {
 	r.ifMatch = &ifMatch
@@ -21495,8 +21850,8 @@ UpdateVirtualizationIweDatacenter Update a 'virtualization.IweDatacenter' resour
 func (a *VirtualizationApiService) UpdateVirtualizationIweDatacenter(ctx _context.Context, moid string) ApiUpdateVirtualizationIweDatacenterRequest {
 	return ApiUpdateVirtualizationIweDatacenterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21611,13 +21966,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationIweDatacenterExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21634,11 +21989,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationIweDatacenterExecute(r Ap
 }
 
 type ApiUpdateVirtualizationIweHostRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *VirtualizationApiService
+	moid                  string
 	virtualizationIweHost *VirtualizationIweHost
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;virtualization.IweHost&#39; resource to update.
@@ -21646,6 +22001,7 @@ func (r ApiUpdateVirtualizationIweHostRequest) VirtualizationIweHost(virtualizat
 	r.virtualizationIweHost = &virtualizationIweHost
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationIweHostRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationIweHostRequest {
 	r.ifMatch = &ifMatch
@@ -21666,8 +22022,8 @@ UpdateVirtualizationIweHost Update a 'virtualization.IweHost' resource.
 func (a *VirtualizationApiService) UpdateVirtualizationIweHost(ctx _context.Context, moid string) ApiUpdateVirtualizationIweHostRequest {
 	return ApiUpdateVirtualizationIweHostRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21782,13 +22138,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationIweHostExecute(r ApiUpdat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21805,11 +22161,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationIweHostExecute(r ApiUpdat
 }
 
 type ApiUpdateVirtualizationIweNetworkRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *VirtualizationApiService
+	moid                     string
 	virtualizationIweNetwork *VirtualizationIweNetwork
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;virtualization.IweNetwork&#39; resource to update.
@@ -21817,6 +22173,7 @@ func (r ApiUpdateVirtualizationIweNetworkRequest) VirtualizationIweNetwork(virtu
 	r.virtualizationIweNetwork = &virtualizationIweNetwork
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationIweNetworkRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationIweNetworkRequest {
 	r.ifMatch = &ifMatch
@@ -21837,8 +22194,8 @@ UpdateVirtualizationIweNetwork Update a 'virtualization.IweNetwork' resource.
 func (a *VirtualizationApiService) UpdateVirtualizationIweNetwork(ctx _context.Context, moid string) ApiUpdateVirtualizationIweNetworkRequest {
 	return ApiUpdateVirtualizationIweNetworkRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21953,13 +22310,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationIweNetworkExecute(r ApiUp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21976,11 +22333,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationIweNetworkExecute(r ApiUp
 }
 
 type ApiUpdateVirtualizationIweVirtualDiskRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *VirtualizationApiService
+	moid                         string
 	virtualizationIweVirtualDisk *VirtualizationIweVirtualDisk
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;virtualization.IweVirtualDisk&#39; resource to update.
@@ -21988,6 +22345,7 @@ func (r ApiUpdateVirtualizationIweVirtualDiskRequest) VirtualizationIweVirtualDi
 	r.virtualizationIweVirtualDisk = &virtualizationIweVirtualDisk
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationIweVirtualDiskRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationIweVirtualDiskRequest {
 	r.ifMatch = &ifMatch
@@ -22008,8 +22366,8 @@ UpdateVirtualizationIweVirtualDisk Update a 'virtualization.IweVirtualDisk' reso
 func (a *VirtualizationApiService) UpdateVirtualizationIweVirtualDisk(ctx _context.Context, moid string) ApiUpdateVirtualizationIweVirtualDiskRequest {
 	return ApiUpdateVirtualizationIweVirtualDiskRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22124,13 +22482,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationIweVirtualDiskExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22147,11 +22505,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationIweVirtualDiskExecute(r A
 }
 
 type ApiUpdateVirtualizationIweVirtualMachineRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                             _context.Context
+	ApiService                      *VirtualizationApiService
+	moid                            string
 	virtualizationIweVirtualMachine *VirtualizationIweVirtualMachine
-	ifMatch *string
+	ifMatch                         *string
 }
 
 // The &#39;virtualization.IweVirtualMachine&#39; resource to update.
@@ -22159,6 +22517,7 @@ func (r ApiUpdateVirtualizationIweVirtualMachineRequest) VirtualizationIweVirtua
 	r.virtualizationIweVirtualMachine = &virtualizationIweVirtualMachine
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationIweVirtualMachineRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationIweVirtualMachineRequest {
 	r.ifMatch = &ifMatch
@@ -22179,8 +22538,8 @@ UpdateVirtualizationIweVirtualMachine Update a 'virtualization.IweVirtualMachine
 func (a *VirtualizationApiService) UpdateVirtualizationIweVirtualMachine(ctx _context.Context, moid string) ApiUpdateVirtualizationIweVirtualMachineRequest {
 	return ApiUpdateVirtualizationIweVirtualMachineRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22295,13 +22654,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationIweVirtualMachineExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22318,11 +22677,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationIweVirtualMachineExecute(
 }
 
 type ApiUpdateVirtualizationVirtualDiskRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *VirtualizationApiService
+	moid                      string
 	virtualizationVirtualDisk *VirtualizationVirtualDisk
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;virtualization.VirtualDisk&#39; resource to update.
@@ -22330,6 +22689,7 @@ func (r ApiUpdateVirtualizationVirtualDiskRequest) VirtualizationVirtualDisk(vir
 	r.virtualizationVirtualDisk = &virtualizationVirtualDisk
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVirtualDiskRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVirtualDiskRequest {
 	r.ifMatch = &ifMatch
@@ -22350,8 +22710,8 @@ UpdateVirtualizationVirtualDisk Update a 'virtualization.VirtualDisk' resource.
 func (a *VirtualizationApiService) UpdateVirtualizationVirtualDisk(ctx _context.Context, moid string) ApiUpdateVirtualizationVirtualDiskRequest {
 	return ApiUpdateVirtualizationVirtualDiskRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22466,13 +22826,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVirtualDiskExecute(r ApiU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22489,11 +22849,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVirtualDiskExecute(r ApiU
 }
 
 type ApiUpdateVirtualizationVirtualMachineRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *VirtualizationApiService
+	moid                         string
 	virtualizationVirtualMachine *VirtualizationVirtualMachine
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;virtualization.VirtualMachine&#39; resource to update.
@@ -22501,6 +22861,7 @@ func (r ApiUpdateVirtualizationVirtualMachineRequest) VirtualizationVirtualMachi
 	r.virtualizationVirtualMachine = &virtualizationVirtualMachine
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVirtualMachineRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVirtualMachineRequest {
 	r.ifMatch = &ifMatch
@@ -22521,8 +22882,8 @@ UpdateVirtualizationVirtualMachine Update a 'virtualization.VirtualMachine' reso
 func (a *VirtualizationApiService) UpdateVirtualizationVirtualMachine(ctx _context.Context, moid string) ApiUpdateVirtualizationVirtualMachineRequest {
 	return ApiUpdateVirtualizationVirtualMachineRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22637,13 +22998,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVirtualMachineExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22660,11 +23021,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVirtualMachineExecute(r A
 }
 
 type ApiUpdateVirtualizationVirtualNetworkRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *VirtualizationApiService
+	moid                         string
 	virtualizationVirtualNetwork *VirtualizationVirtualNetwork
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;virtualization.VirtualNetwork&#39; resource to update.
@@ -22672,6 +23033,7 @@ func (r ApiUpdateVirtualizationVirtualNetworkRequest) VirtualizationVirtualNetwo
 	r.virtualizationVirtualNetwork = &virtualizationVirtualNetwork
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVirtualNetworkRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVirtualNetworkRequest {
 	r.ifMatch = &ifMatch
@@ -22692,8 +23054,8 @@ UpdateVirtualizationVirtualNetwork Update a 'virtualization.VirtualNetwork' reso
 func (a *VirtualizationApiService) UpdateVirtualizationVirtualNetwork(ctx _context.Context, moid string) ApiUpdateVirtualizationVirtualNetworkRequest {
 	return ApiUpdateVirtualizationVirtualNetworkRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22808,13 +23170,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVirtualNetworkExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22831,11 +23193,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVirtualNetworkExecute(r A
 }
 
 type ApiUpdateVirtualizationVmwareClusterRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *VirtualizationApiService
+	moid                        string
 	virtualizationVmwareCluster *VirtualizationVmwareCluster
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;virtualization.VmwareCluster&#39; resource to update.
@@ -22843,6 +23205,7 @@ func (r ApiUpdateVirtualizationVmwareClusterRequest) VirtualizationVmwareCluster
 	r.virtualizationVmwareCluster = &virtualizationVmwareCluster
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVmwareClusterRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVmwareClusterRequest {
 	r.ifMatch = &ifMatch
@@ -22863,8 +23226,8 @@ UpdateVirtualizationVmwareCluster Update a 'virtualization.VmwareCluster' resour
 func (a *VirtualizationApiService) UpdateVirtualizationVmwareCluster(ctx _context.Context, moid string) ApiUpdateVirtualizationVmwareClusterRequest {
 	return ApiUpdateVirtualizationVmwareClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22979,13 +23342,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareClusterExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23002,11 +23365,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareClusterExecute(r Ap
 }
 
 type ApiUpdateVirtualizationVmwareDatacenterRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *VirtualizationApiService
+	moid                           string
 	virtualizationVmwareDatacenter *VirtualizationVmwareDatacenter
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;virtualization.VmwareDatacenter&#39; resource to update.
@@ -23014,6 +23377,7 @@ func (r ApiUpdateVirtualizationVmwareDatacenterRequest) VirtualizationVmwareData
 	r.virtualizationVmwareDatacenter = &virtualizationVmwareDatacenter
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVmwareDatacenterRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVmwareDatacenterRequest {
 	r.ifMatch = &ifMatch
@@ -23034,8 +23398,8 @@ UpdateVirtualizationVmwareDatacenter Update a 'virtualization.VmwareDatacenter' 
 func (a *VirtualizationApiService) UpdateVirtualizationVmwareDatacenter(ctx _context.Context, moid string) ApiUpdateVirtualizationVmwareDatacenterRequest {
 	return ApiUpdateVirtualizationVmwareDatacenterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23150,13 +23514,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareDatacenterExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23173,11 +23537,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareDatacenterExecute(r
 }
 
 type ApiUpdateVirtualizationVmwareDatastoreRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *VirtualizationApiService
+	moid                          string
 	virtualizationVmwareDatastore *VirtualizationVmwareDatastore
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;virtualization.VmwareDatastore&#39; resource to update.
@@ -23185,6 +23549,7 @@ func (r ApiUpdateVirtualizationVmwareDatastoreRequest) VirtualizationVmwareDatas
 	r.virtualizationVmwareDatastore = &virtualizationVmwareDatastore
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVmwareDatastoreRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVmwareDatastoreRequest {
 	r.ifMatch = &ifMatch
@@ -23205,8 +23570,8 @@ UpdateVirtualizationVmwareDatastore Update a 'virtualization.VmwareDatastore' re
 func (a *VirtualizationApiService) UpdateVirtualizationVmwareDatastore(ctx _context.Context, moid string) ApiUpdateVirtualizationVmwareDatastoreRequest {
 	return ApiUpdateVirtualizationVmwareDatastoreRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23321,13 +23686,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareDatastoreExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23344,11 +23709,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareDatastoreExecute(r 
 }
 
 type ApiUpdateVirtualizationVmwareDatastoreClusterRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                                  _context.Context
+	ApiService                           *VirtualizationApiService
+	moid                                 string
 	virtualizationVmwareDatastoreCluster *VirtualizationVmwareDatastoreCluster
-	ifMatch *string
+	ifMatch                              *string
 }
 
 // The &#39;virtualization.VmwareDatastoreCluster&#39; resource to update.
@@ -23356,6 +23721,7 @@ func (r ApiUpdateVirtualizationVmwareDatastoreClusterRequest) VirtualizationVmwa
 	r.virtualizationVmwareDatastoreCluster = &virtualizationVmwareDatastoreCluster
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVmwareDatastoreClusterRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVmwareDatastoreClusterRequest {
 	r.ifMatch = &ifMatch
@@ -23376,8 +23742,8 @@ UpdateVirtualizationVmwareDatastoreCluster Update a 'virtualization.VmwareDatast
 func (a *VirtualizationApiService) UpdateVirtualizationVmwareDatastoreCluster(ctx _context.Context, moid string) ApiUpdateVirtualizationVmwareDatastoreClusterRequest {
 	return ApiUpdateVirtualizationVmwareDatastoreClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23492,13 +23858,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareDatastoreClusterExe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23515,11 +23881,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareDatastoreClusterExe
 }
 
 type ApiUpdateVirtualizationVmwareDistributedNetworkRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                                    _context.Context
+	ApiService                             *VirtualizationApiService
+	moid                                   string
 	virtualizationVmwareDistributedNetwork *VirtualizationVmwareDistributedNetwork
-	ifMatch *string
+	ifMatch                                *string
 }
 
 // The &#39;virtualization.VmwareDistributedNetwork&#39; resource to update.
@@ -23527,6 +23893,7 @@ func (r ApiUpdateVirtualizationVmwareDistributedNetworkRequest) VirtualizationVm
 	r.virtualizationVmwareDistributedNetwork = &virtualizationVmwareDistributedNetwork
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVmwareDistributedNetworkRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVmwareDistributedNetworkRequest {
 	r.ifMatch = &ifMatch
@@ -23547,8 +23914,8 @@ UpdateVirtualizationVmwareDistributedNetwork Update a 'virtualization.VmwareDist
 func (a *VirtualizationApiService) UpdateVirtualizationVmwareDistributedNetwork(ctx _context.Context, moid string) ApiUpdateVirtualizationVmwareDistributedNetworkRequest {
 	return ApiUpdateVirtualizationVmwareDistributedNetworkRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23663,13 +24030,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareDistributedNetworkE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23686,11 +24053,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareDistributedNetworkE
 }
 
 type ApiUpdateVirtualizationVmwareDistributedSwitchRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                                   _context.Context
+	ApiService                            *VirtualizationApiService
+	moid                                  string
 	virtualizationVmwareDistributedSwitch *VirtualizationVmwareDistributedSwitch
-	ifMatch *string
+	ifMatch                               *string
 }
 
 // The &#39;virtualization.VmwareDistributedSwitch&#39; resource to update.
@@ -23698,6 +24065,7 @@ func (r ApiUpdateVirtualizationVmwareDistributedSwitchRequest) VirtualizationVmw
 	r.virtualizationVmwareDistributedSwitch = &virtualizationVmwareDistributedSwitch
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVmwareDistributedSwitchRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVmwareDistributedSwitchRequest {
 	r.ifMatch = &ifMatch
@@ -23718,8 +24086,8 @@ UpdateVirtualizationVmwareDistributedSwitch Update a 'virtualization.VmwareDistr
 func (a *VirtualizationApiService) UpdateVirtualizationVmwareDistributedSwitch(ctx _context.Context, moid string) ApiUpdateVirtualizationVmwareDistributedSwitchRequest {
 	return ApiUpdateVirtualizationVmwareDistributedSwitchRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23834,13 +24202,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareDistributedSwitchEx
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23857,11 +24225,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareDistributedSwitchEx
 }
 
 type ApiUpdateVirtualizationVmwareFolderRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *VirtualizationApiService
+	moid                       string
 	virtualizationVmwareFolder *VirtualizationVmwareFolder
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;virtualization.VmwareFolder&#39; resource to update.
@@ -23869,6 +24237,7 @@ func (r ApiUpdateVirtualizationVmwareFolderRequest) VirtualizationVmwareFolder(v
 	r.virtualizationVmwareFolder = &virtualizationVmwareFolder
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVmwareFolderRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVmwareFolderRequest {
 	r.ifMatch = &ifMatch
@@ -23889,8 +24258,8 @@ UpdateVirtualizationVmwareFolder Update a 'virtualization.VmwareFolder' resource
 func (a *VirtualizationApiService) UpdateVirtualizationVmwareFolder(ctx _context.Context, moid string) ApiUpdateVirtualizationVmwareFolderRequest {
 	return ApiUpdateVirtualizationVmwareFolderRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24005,13 +24374,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareFolderExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24028,11 +24397,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareFolderExecute(r Api
 }
 
 type ApiUpdateVirtualizationVmwareHostRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *VirtualizationApiService
+	moid                     string
 	virtualizationVmwareHost *VirtualizationVmwareHost
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;virtualization.VmwareHost&#39; resource to update.
@@ -24040,6 +24409,7 @@ func (r ApiUpdateVirtualizationVmwareHostRequest) VirtualizationVmwareHost(virtu
 	r.virtualizationVmwareHost = &virtualizationVmwareHost
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVmwareHostRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVmwareHostRequest {
 	r.ifMatch = &ifMatch
@@ -24060,8 +24430,8 @@ UpdateVirtualizationVmwareHost Update a 'virtualization.VmwareHost' resource.
 func (a *VirtualizationApiService) UpdateVirtualizationVmwareHost(ctx _context.Context, moid string) ApiUpdateVirtualizationVmwareHostRequest {
 	return ApiUpdateVirtualizationVmwareHostRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24176,13 +24546,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareHostExecute(r ApiUp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24199,11 +24569,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareHostExecute(r ApiUp
 }
 
 type ApiUpdateVirtualizationVmwareKernelNetworkRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                               _context.Context
+	ApiService                        *VirtualizationApiService
+	moid                              string
 	virtualizationVmwareKernelNetwork *VirtualizationVmwareKernelNetwork
-	ifMatch *string
+	ifMatch                           *string
 }
 
 // The &#39;virtualization.VmwareKernelNetwork&#39; resource to update.
@@ -24211,6 +24581,7 @@ func (r ApiUpdateVirtualizationVmwareKernelNetworkRequest) VirtualizationVmwareK
 	r.virtualizationVmwareKernelNetwork = &virtualizationVmwareKernelNetwork
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVmwareKernelNetworkRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVmwareKernelNetworkRequest {
 	r.ifMatch = &ifMatch
@@ -24231,8 +24602,8 @@ UpdateVirtualizationVmwareKernelNetwork Update a 'virtualization.VmwareKernelNet
 func (a *VirtualizationApiService) UpdateVirtualizationVmwareKernelNetwork(ctx _context.Context, moid string) ApiUpdateVirtualizationVmwareKernelNetworkRequest {
 	return ApiUpdateVirtualizationVmwareKernelNetworkRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24347,13 +24718,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareKernelNetworkExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24370,11 +24741,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareKernelNetworkExecut
 }
 
 type ApiUpdateVirtualizationVmwareNetworkRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *VirtualizationApiService
+	moid                        string
 	virtualizationVmwareNetwork *VirtualizationVmwareNetwork
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;virtualization.VmwareNetwork&#39; resource to update.
@@ -24382,6 +24753,7 @@ func (r ApiUpdateVirtualizationVmwareNetworkRequest) VirtualizationVmwareNetwork
 	r.virtualizationVmwareNetwork = &virtualizationVmwareNetwork
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVmwareNetworkRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVmwareNetworkRequest {
 	r.ifMatch = &ifMatch
@@ -24402,8 +24774,8 @@ UpdateVirtualizationVmwareNetwork Update a 'virtualization.VmwareNetwork' resour
 func (a *VirtualizationApiService) UpdateVirtualizationVmwareNetwork(ctx _context.Context, moid string) ApiUpdateVirtualizationVmwareNetworkRequest {
 	return ApiUpdateVirtualizationVmwareNetworkRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24518,13 +24890,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareNetworkExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24541,11 +24913,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareNetworkExecute(r Ap
 }
 
 type ApiUpdateVirtualizationVmwarePhysicalNetworkInterfaceRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                                          _context.Context
+	ApiService                                   *VirtualizationApiService
+	moid                                         string
 	virtualizationVmwarePhysicalNetworkInterface *VirtualizationVmwarePhysicalNetworkInterface
-	ifMatch *string
+	ifMatch                                      *string
 }
 
 // The &#39;virtualization.VmwarePhysicalNetworkInterface&#39; resource to update.
@@ -24553,6 +24925,7 @@ func (r ApiUpdateVirtualizationVmwarePhysicalNetworkInterfaceRequest) Virtualiza
 	r.virtualizationVmwarePhysicalNetworkInterface = &virtualizationVmwarePhysicalNetworkInterface
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVmwarePhysicalNetworkInterfaceRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVmwarePhysicalNetworkInterfaceRequest {
 	r.ifMatch = &ifMatch
@@ -24573,8 +24946,8 @@ UpdateVirtualizationVmwarePhysicalNetworkInterface Update a 'virtualization.Vmwa
 func (a *VirtualizationApiService) UpdateVirtualizationVmwarePhysicalNetworkInterface(ctx _context.Context, moid string) ApiUpdateVirtualizationVmwarePhysicalNetworkInterfaceRequest {
 	return ApiUpdateVirtualizationVmwarePhysicalNetworkInterfaceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24689,13 +25062,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwarePhysicalNetworkInte
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24712,11 +25085,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwarePhysicalNetworkInte
 }
 
 type ApiUpdateVirtualizationVmwareUplinkPortRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *VirtualizationApiService
+	moid                           string
 	virtualizationVmwareUplinkPort *VirtualizationVmwareUplinkPort
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;virtualization.VmwareUplinkPort&#39; resource to update.
@@ -24724,6 +25097,7 @@ func (r ApiUpdateVirtualizationVmwareUplinkPortRequest) VirtualizationVmwareUpli
 	r.virtualizationVmwareUplinkPort = &virtualizationVmwareUplinkPort
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVmwareUplinkPortRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVmwareUplinkPortRequest {
 	r.ifMatch = &ifMatch
@@ -24744,8 +25118,8 @@ UpdateVirtualizationVmwareUplinkPort Update a 'virtualization.VmwareUplinkPort' 
 func (a *VirtualizationApiService) UpdateVirtualizationVmwareUplinkPort(ctx _context.Context, moid string) ApiUpdateVirtualizationVmwareUplinkPortRequest {
 	return ApiUpdateVirtualizationVmwareUplinkPortRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24860,13 +25234,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareUplinkPortExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24883,11 +25257,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareUplinkPortExecute(r
 }
 
 type ApiUpdateVirtualizationVmwareVirtualDiskRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                             _context.Context
+	ApiService                      *VirtualizationApiService
+	moid                            string
 	virtualizationVmwareVirtualDisk *VirtualizationVmwareVirtualDisk
-	ifMatch *string
+	ifMatch                         *string
 }
 
 // The &#39;virtualization.VmwareVirtualDisk&#39; resource to update.
@@ -24895,6 +25269,7 @@ func (r ApiUpdateVirtualizationVmwareVirtualDiskRequest) VirtualizationVmwareVir
 	r.virtualizationVmwareVirtualDisk = &virtualizationVmwareVirtualDisk
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVmwareVirtualDiskRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVmwareVirtualDiskRequest {
 	r.ifMatch = &ifMatch
@@ -24915,8 +25290,8 @@ UpdateVirtualizationVmwareVirtualDisk Update a 'virtualization.VmwareVirtualDisk
 func (a *VirtualizationApiService) UpdateVirtualizationVmwareVirtualDisk(ctx _context.Context, moid string) ApiUpdateVirtualizationVmwareVirtualDiskRequest {
 	return ApiUpdateVirtualizationVmwareVirtualDiskRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25031,13 +25406,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareVirtualDiskExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25054,11 +25429,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareVirtualDiskExecute(
 }
 
 type ApiUpdateVirtualizationVmwareVirtualMachineRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                                _context.Context
+	ApiService                         *VirtualizationApiService
+	moid                               string
 	virtualizationVmwareVirtualMachine *VirtualizationVmwareVirtualMachine
-	ifMatch *string
+	ifMatch                            *string
 }
 
 // The &#39;virtualization.VmwareVirtualMachine&#39; resource to update.
@@ -25066,6 +25441,7 @@ func (r ApiUpdateVirtualizationVmwareVirtualMachineRequest) VirtualizationVmware
 	r.virtualizationVmwareVirtualMachine = &virtualizationVmwareVirtualMachine
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVmwareVirtualMachineRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVmwareVirtualMachineRequest {
 	r.ifMatch = &ifMatch
@@ -25086,8 +25462,8 @@ UpdateVirtualizationVmwareVirtualMachine Update a 'virtualization.VmwareVirtualM
 func (a *VirtualizationApiService) UpdateVirtualizationVmwareVirtualMachine(ctx _context.Context, moid string) ApiUpdateVirtualizationVmwareVirtualMachineRequest {
 	return ApiUpdateVirtualizationVmwareVirtualMachineRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25202,13 +25578,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareVirtualMachineExecu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25225,11 +25601,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareVirtualMachineExecu
 }
 
 type ApiUpdateVirtualizationVmwareVirtualMachineSnapshotRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                                        _context.Context
+	ApiService                                 *VirtualizationApiService
+	moid                                       string
 	virtualizationVmwareVirtualMachineSnapshot *VirtualizationVmwareVirtualMachineSnapshot
-	ifMatch *string
+	ifMatch                                    *string
 }
 
 // The &#39;virtualization.VmwareVirtualMachineSnapshot&#39; resource to update.
@@ -25237,6 +25613,7 @@ func (r ApiUpdateVirtualizationVmwareVirtualMachineSnapshotRequest) Virtualizati
 	r.virtualizationVmwareVirtualMachineSnapshot = &virtualizationVmwareVirtualMachineSnapshot
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVmwareVirtualMachineSnapshotRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVmwareVirtualMachineSnapshotRequest {
 	r.ifMatch = &ifMatch
@@ -25257,8 +25634,8 @@ UpdateVirtualizationVmwareVirtualMachineSnapshot Update a 'virtualization.Vmware
 func (a *VirtualizationApiService) UpdateVirtualizationVmwareVirtualMachineSnapshot(ctx _context.Context, moid string) ApiUpdateVirtualizationVmwareVirtualMachineSnapshotRequest {
 	return ApiUpdateVirtualizationVmwareVirtualMachineSnapshotRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25373,13 +25750,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareVirtualMachineSnaps
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25396,11 +25773,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareVirtualMachineSnaps
 }
 
 type ApiUpdateVirtualizationVmwareVirtualNetworkInterfaceRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                                         _context.Context
+	ApiService                                  *VirtualizationApiService
+	moid                                        string
 	virtualizationVmwareVirtualNetworkInterface *VirtualizationVmwareVirtualNetworkInterface
-	ifMatch *string
+	ifMatch                                     *string
 }
 
 // The &#39;virtualization.VmwareVirtualNetworkInterface&#39; resource to update.
@@ -25408,6 +25785,7 @@ func (r ApiUpdateVirtualizationVmwareVirtualNetworkInterfaceRequest) Virtualizat
 	r.virtualizationVmwareVirtualNetworkInterface = &virtualizationVmwareVirtualNetworkInterface
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVmwareVirtualNetworkInterfaceRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVmwareVirtualNetworkInterfaceRequest {
 	r.ifMatch = &ifMatch
@@ -25428,8 +25806,8 @@ UpdateVirtualizationVmwareVirtualNetworkInterface Update a 'virtualization.Vmwar
 func (a *VirtualizationApiService) UpdateVirtualizationVmwareVirtualNetworkInterface(ctx _context.Context, moid string) ApiUpdateVirtualizationVmwareVirtualNetworkInterfaceRequest {
 	return ApiUpdateVirtualizationVmwareVirtualNetworkInterfaceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25544,13 +25922,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareVirtualNetworkInter
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25567,11 +25945,11 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareVirtualNetworkInter
 }
 
 type ApiUpdateVirtualizationVmwareVirtualSwitchRequest struct {
-	ctx _context.Context
-	ApiService *VirtualizationApiService
-	moid string
+	ctx                               _context.Context
+	ApiService                        *VirtualizationApiService
+	moid                              string
 	virtualizationVmwareVirtualSwitch *VirtualizationVmwareVirtualSwitch
-	ifMatch *string
+	ifMatch                           *string
 }
 
 // The &#39;virtualization.VmwareVirtualSwitch&#39; resource to update.
@@ -25579,6 +25957,7 @@ func (r ApiUpdateVirtualizationVmwareVirtualSwitchRequest) VirtualizationVmwareV
 	r.virtualizationVmwareVirtualSwitch = &virtualizationVmwareVirtualSwitch
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateVirtualizationVmwareVirtualSwitchRequest) IfMatch(ifMatch string) ApiUpdateVirtualizationVmwareVirtualSwitchRequest {
 	r.ifMatch = &ifMatch
@@ -25599,8 +25978,8 @@ UpdateVirtualizationVmwareVirtualSwitch Update a 'virtualization.VmwareVirtualSw
 func (a *VirtualizationApiService) UpdateVirtualizationVmwareVirtualSwitch(ctx _context.Context, moid string) ApiUpdateVirtualizationVmwareVirtualSwitchRequest {
 	return ApiUpdateVirtualizationVmwareVirtualSwitchRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25715,13 +26094,13 @@ func (a *VirtualizationApiService) UpdateVirtualizationVmwareVirtualSwitchExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

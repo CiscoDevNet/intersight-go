@@ -19,19 +19,18 @@ import (
 // CloudAwsOrganizationalUnitRelationship - A relationship to the 'cloud.AwsOrganizationalUnit' resource, or the expanded 'cloud.AwsOrganizationalUnit' resource, or the 'null' value.
 type CloudAwsOrganizationalUnitRelationship struct {
 	CloudAwsOrganizationalUnit *CloudAwsOrganizationalUnit
-	MoMoRef *MoMoRef
+	MoMoRef                    *MoMoRef
 }
 
 // CloudAwsOrganizationalUnitAsCloudAwsOrganizationalUnitRelationship is a convenience function that returns CloudAwsOrganizationalUnit wrapped in CloudAwsOrganizationalUnitRelationship
 func CloudAwsOrganizationalUnitAsCloudAwsOrganizationalUnitRelationship(v *CloudAwsOrganizationalUnit) CloudAwsOrganizationalUnitRelationship {
-	return CloudAwsOrganizationalUnitRelationship{ CloudAwsOrganizationalUnit: v}
+	return CloudAwsOrganizationalUnitRelationship{CloudAwsOrganizationalUnit: v}
 }
 
 // MoMoRefAsCloudAwsOrganizationalUnitRelationship is a convenience function that returns MoMoRef wrapped in CloudAwsOrganizationalUnitRelationship
 func MoMoRefAsCloudAwsOrganizationalUnitRelationship(v *MoMoRef) CloudAwsOrganizationalUnitRelationship {
-	return CloudAwsOrganizationalUnitRelationship{ MoMoRef: v}
+	return CloudAwsOrganizationalUnitRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CloudAwsOrganizationalUnitRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src CloudAwsOrganizationalUnitRelationship) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *CloudAwsOrganizationalUnitRelationship) GetActualInstance() (interface{}) {
+func (obj *CloudAwsOrganizationalUnitRelationship) GetActualInstance() interface{} {
 	if obj.CloudAwsOrganizationalUnit != nil {
 		return obj.CloudAwsOrganizationalUnit
 	}
@@ -137,5 +136,3 @@ func (v *NullableCloudAwsOrganizationalUnitRelationship) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

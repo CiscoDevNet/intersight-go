@@ -27,9 +27,9 @@ type EquipmentChassisOperation struct {
 	// User configured state of the locator LED for the Chassis. * `None` - No operation action for the Locator Led of an equipment. * `TurnOn` - Turn on the Locator Led of an equipment. * `TurnOff` - Turn off the Locator Led of an equipment.
 	AdminLocatorLedAction *string `json:"AdminLocatorLedAction,omitempty"`
 	// The configured state of these settings in the target chassis. The value is any one of Applied, Applying, Failed. Applied - This state denotes that the settings are applied successfully in the target chassis. Applying - This state denotes that the settings are being applied in the target chassis. Failed - This state denotes that the settings could not be applied in the target chassis. * `None` - Nil value when no action has been triggered by the user. * `Applied` - User configured settings are in applied state. * `Applying` - User settings are being applied on the target server. * `Failed` - User configured settings could not be applied.
-	ConfigState *string `json:"ConfigState,omitempty"`
-	Chassis *EquipmentChassisRelationship `json:"Chassis,omitempty"`
-	DeviceRegistration *AssetDeviceRegistrationRelationship `json:"DeviceRegistration,omitempty"`
+	ConfigState          *string                              `json:"ConfigState,omitempty"`
+	Chassis              *EquipmentChassisRelationship        `json:"Chassis,omitempty"`
+	DeviceRegistration   *AssetDeviceRegistrationRelationship `json:"DeviceRegistration,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *EquipmentChassisOperation) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentChassisOperation) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *EquipmentChassisOperation) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentChassisOperation) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -283,8 +283,8 @@ func (o *EquipmentChassisOperation) UnmarshalJSON(bytes []byte) (err error) {
 		// User configured state of the locator LED for the Chassis. * `None` - No operation action for the Locator Led of an equipment. * `TurnOn` - Turn on the Locator Led of an equipment. * `TurnOff` - Turn off the Locator Led of an equipment.
 		AdminLocatorLedAction *string `json:"AdminLocatorLedAction,omitempty"`
 		// The configured state of these settings in the target chassis. The value is any one of Applied, Applying, Failed. Applied - This state denotes that the settings are applied successfully in the target chassis. Applying - This state denotes that the settings are being applied in the target chassis. Failed - This state denotes that the settings could not be applied in the target chassis. * `None` - Nil value when no action has been triggered by the user. * `Applied` - User configured settings are in applied state. * `Applying` - User settings are being applied on the target server. * `Failed` - User configured settings could not be applied.
-		ConfigState *string `json:"ConfigState,omitempty"`
-		Chassis *EquipmentChassisRelationship `json:"Chassis,omitempty"`
+		ConfigState        *string                              `json:"ConfigState,omitempty"`
+		Chassis            *EquipmentChassisRelationship        `json:"Chassis,omitempty"`
 		DeviceRegistration *AssetDeviceRegistrationRelationship `json:"DeviceRegistration,omitempty"`
 	}
 
@@ -382,5 +382,3 @@ func (v *NullableEquipmentChassisOperation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,11 +20,11 @@ type AssetTerraformIntegrationTerraformCloudOptionsAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType          string   `json:"ObjectType"`
 	DefaultManagedHosts []string `json:"DefaultManagedHosts,omitempty"`
 	// Default organization for Terraform Cloud platform type.
 	DefaultTerraformOrganization *string `json:"DefaultTerraformOrganization,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties         map[string]interface{}
 }
 
 type _AssetTerraformIntegrationTerraformCloudOptionsAllOf AssetTerraformIntegrationTerraformCloudOptionsAllOf
@@ -65,7 +65,7 @@ func (o *AssetTerraformIntegrationTerraformCloudOptionsAllOf) GetClassId() strin
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetTerraformIntegrationTerraformCloudOptionsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *AssetTerraformIntegrationTerraformCloudOptionsAllOf) GetObjectType() st
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetTerraformIntegrationTerraformCloudOptionsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -102,7 +102,7 @@ func (o *AssetTerraformIntegrationTerraformCloudOptionsAllOf) SetObjectType(v st
 
 // GetDefaultManagedHosts returns the DefaultManagedHosts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetTerraformIntegrationTerraformCloudOptionsAllOf) GetDefaultManagedHosts() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -242,5 +242,3 @@ func (v *NullableAssetTerraformIntegrationTerraformCloudOptionsAllOf) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

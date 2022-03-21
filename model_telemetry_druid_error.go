@@ -22,7 +22,7 @@ type TelemetryDruidError struct {
 	// A free-form message with more information about the error. May be null.
 	ErrorMessage *string `json:"errorMessage,omitempty"`
 	// The class of the exception that caused this error. May be null.
-	ErrorClass interface{} `json:"errorClass,omitempty"`
+	ErrorClass           interface{} `json:"errorClass,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -111,7 +111,7 @@ func (o *TelemetryDruidError) SetErrorMessage(v string) {
 
 // GetErrorClass returns the ErrorClass field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TelemetryDruidError) GetErrorClass() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -215,5 +215,3 @@ func (v *NullableTelemetryDruidError) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

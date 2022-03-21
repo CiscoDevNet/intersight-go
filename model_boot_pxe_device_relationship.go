@@ -19,19 +19,18 @@ import (
 // BootPxeDeviceRelationship - A relationship to the 'boot.PxeDevice' resource, or the expanded 'boot.PxeDevice' resource, or the 'null' value.
 type BootPxeDeviceRelationship struct {
 	BootPxeDevice *BootPxeDevice
-	MoMoRef *MoMoRef
+	MoMoRef       *MoMoRef
 }
 
 // BootPxeDeviceAsBootPxeDeviceRelationship is a convenience function that returns BootPxeDevice wrapped in BootPxeDeviceRelationship
 func BootPxeDeviceAsBootPxeDeviceRelationship(v *BootPxeDevice) BootPxeDeviceRelationship {
-	return BootPxeDeviceRelationship{ BootPxeDevice: v}
+	return BootPxeDeviceRelationship{BootPxeDevice: v}
 }
 
 // MoMoRefAsBootPxeDeviceRelationship is a convenience function that returns MoMoRef wrapped in BootPxeDeviceRelationship
 func MoMoRefAsBootPxeDeviceRelationship(v *MoMoRef) BootPxeDeviceRelationship {
-	return BootPxeDeviceRelationship{ MoMoRef: v}
+	return BootPxeDeviceRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BootPxeDeviceRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BootPxeDeviceRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BootPxeDeviceRelationship) GetActualInstance() (interface{}) {
+func (obj *BootPxeDeviceRelationship) GetActualInstance() interface{} {
 	if obj.BootPxeDevice != nil {
 		return obj.BootPxeDevice
 	}
@@ -137,5 +136,3 @@ func (v *NullableBootPxeDeviceRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

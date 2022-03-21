@@ -19,19 +19,18 @@ import (
 // CloudAwsSubnetRelationship - A relationship to the 'cloud.AwsSubnet' resource, or the expanded 'cloud.AwsSubnet' resource, or the 'null' value.
 type CloudAwsSubnetRelationship struct {
 	CloudAwsSubnet *CloudAwsSubnet
-	MoMoRef *MoMoRef
+	MoMoRef        *MoMoRef
 }
 
 // CloudAwsSubnetAsCloudAwsSubnetRelationship is a convenience function that returns CloudAwsSubnet wrapped in CloudAwsSubnetRelationship
 func CloudAwsSubnetAsCloudAwsSubnetRelationship(v *CloudAwsSubnet) CloudAwsSubnetRelationship {
-	return CloudAwsSubnetRelationship{ CloudAwsSubnet: v}
+	return CloudAwsSubnetRelationship{CloudAwsSubnet: v}
 }
 
 // MoMoRefAsCloudAwsSubnetRelationship is a convenience function that returns MoMoRef wrapped in CloudAwsSubnetRelationship
 func MoMoRefAsCloudAwsSubnetRelationship(v *MoMoRef) CloudAwsSubnetRelationship {
-	return CloudAwsSubnetRelationship{ MoMoRef: v}
+	return CloudAwsSubnetRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CloudAwsSubnetRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src CloudAwsSubnetRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CloudAwsSubnetRelationship) GetActualInstance() (interface{}) {
+func (obj *CloudAwsSubnetRelationship) GetActualInstance() interface{} {
 	if obj.CloudAwsSubnet != nil {
 		return obj.CloudAwsSubnet
 	}
@@ -137,5 +136,3 @@ func (v *NullableCloudAwsSubnetRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

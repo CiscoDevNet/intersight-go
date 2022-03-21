@@ -28,8 +28,8 @@ type FabricMulticastPolicyAllOf struct {
 	// Administrative state of the IGMP Querier for this VLAN. * `Disabled` - Admin configured Disabled State. * `Enabled` - Admin configured Enabled State.
 	QuerierState *string `json:"QuerierState,omitempty"`
 	// Administrative state of the IGMP Snooping for this VLAN. * `Enabled` - Admin configured Enabled State. * `Disabled` - Admin configured Disabled State.
-	SnoopingState *string `json:"SnoopingState,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	SnoopingState        *string                               `json:"SnoopingState,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *FabricMulticastPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricMulticastPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *FabricMulticastPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricMulticastPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -363,5 +363,3 @@ func (v *NullableFabricMulticastPolicyAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

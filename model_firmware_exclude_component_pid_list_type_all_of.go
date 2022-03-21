@@ -20,10 +20,10 @@ type FirmwareExcludeComponentPidListTypeAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	ExcludeLocalDiskList []string `json:"ExcludeLocalDiskList,omitempty"`
+	ObjectType                   string   `json:"ObjectType"`
+	ExcludeLocalDiskList         []string `json:"ExcludeLocalDiskList,omitempty"`
 	ExcludeStorageControllerList []string `json:"ExcludeStorageControllerList,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties         map[string]interface{}
 }
 
 type _FirmwareExcludeComponentPidListTypeAllOf FirmwareExcludeComponentPidListTypeAllOf
@@ -64,7 +64,7 @@ func (o *FirmwareExcludeComponentPidListTypeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareExcludeComponentPidListTypeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -88,7 +88,7 @@ func (o *FirmwareExcludeComponentPidListTypeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareExcludeComponentPidListTypeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -101,7 +101,7 @@ func (o *FirmwareExcludeComponentPidListTypeAllOf) SetObjectType(v string) {
 
 // GetExcludeLocalDiskList returns the ExcludeLocalDiskList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareExcludeComponentPidListTypeAllOf) GetExcludeLocalDiskList() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *FirmwareExcludeComponentPidListTypeAllOf) SetExcludeLocalDiskList(v []s
 
 // GetExcludeStorageControllerList returns the ExcludeStorageControllerList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareExcludeComponentPidListTypeAllOf) GetExcludeStorageControllerList() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -242,5 +242,3 @@ func (v *NullableFirmwareExcludeComponentPidListTypeAllOf) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

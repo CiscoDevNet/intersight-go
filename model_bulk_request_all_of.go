@@ -22,19 +22,19 @@ type BulkRequestAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The action to be taken when an error occurs during processing of the request. * `Stop` - Stop the processing of the request after the first error. * `Proceed` - Proceed with the processing of the request even when an error occurs.
-	ActionOnError *string `json:"ActionOnError,omitempty"`
-	Actions []string `json:"Actions,omitempty"`
+	ActionOnError *string  `json:"ActionOnError,omitempty"`
+	Actions       []string `json:"Actions,omitempty"`
 	// The timestamp when the request processing completed.
-	CompletionTime *string `json:"CompletionTime,omitempty"`
-	Headers []BulkHttpHeader `json:"Headers,omitempty"`
+	CompletionTime *string          `json:"CompletionTime,omitempty"`
+	Headers        []BulkHttpHeader `json:"Headers,omitempty"`
 	// The number of sub requests received in this request.
 	NumSubRequests *int64 `json:"NumSubRequests,omitempty"`
 	// The moid of the organization under which this request was issued.
 	OrgMoid *string `json:"OrgMoid,omitempty"`
 	// The timestamp when the request was received.
-	RequestReceivedTime *string `json:"RequestReceivedTime,omitempty"`
-	Requests []BulkSubRequest `json:"Requests,omitempty"`
-	Results []BulkApiResult `json:"Results,omitempty"`
+	RequestReceivedTime *string          `json:"RequestReceivedTime,omitempty"`
+	Requests            []BulkSubRequest `json:"Requests,omitempty"`
+	Results             []BulkApiResult  `json:"Results,omitempty"`
 	// Skip the already present objects.
 	SkipDuplicates *bool `json:"SkipDuplicates,omitempty"`
 	// The processing status of the Request. * `NotStarted` - Indicates that the request processing has not begun yet. * `ObjPresenceCheckInProgress` - Indicates that the object presence check is in progress for this request. * `ObjPresenceCheckComplete` - Indicates that the object presence check is complete. * `ExecutionInProgress` - Indicates that the request processing is in progress. * `Completed` - Indicates that the request processing has been completed successfully. * `Failed` - Indicates that the processing of this request failed.
@@ -50,9 +50,9 @@ type BulkRequestAllOf struct {
 	// An array of relationships to bulkSubRequestObj resources.
 	AsyncResults []BulkSubRequestObjRelationship `json:"AsyncResults,omitempty"`
 	// An array of relationships to bulkSubRequestObj resources.
-	AsyncResultsFailed []BulkSubRequestObjRelationship `json:"AsyncResultsFailed,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
+	AsyncResultsFailed   []BulkSubRequestObjRelationship       `json:"AsyncResultsFailed,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	WorkflowInfo         *WorkflowWorkflowInfoRelationship     `json:"WorkflowInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -102,7 +102,7 @@ func (o *BulkRequestAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BulkRequestAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -126,7 +126,7 @@ func (o *BulkRequestAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BulkRequestAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -171,7 +171,7 @@ func (o *BulkRequestAllOf) SetActionOnError(v string) {
 
 // GetActions returns the Actions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BulkRequestAllOf) GetActions() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -236,7 +236,7 @@ func (o *BulkRequestAllOf) SetCompletionTime(v string) {
 
 // GetHeaders returns the Headers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BulkRequestAllOf) GetHeaders() []BulkHttpHeader {
-	if o == nil  {
+	if o == nil {
 		var ret []BulkHttpHeader
 		return ret
 	}
@@ -365,7 +365,7 @@ func (o *BulkRequestAllOf) SetRequestReceivedTime(v string) {
 
 // GetRequests returns the Requests field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BulkRequestAllOf) GetRequests() []BulkSubRequest {
-	if o == nil  {
+	if o == nil {
 		var ret []BulkSubRequest
 		return ret
 	}
@@ -398,7 +398,7 @@ func (o *BulkRequestAllOf) SetRequests(v []BulkSubRequest) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BulkRequestAllOf) GetResults() []BulkApiResult {
-	if o == nil  {
+	if o == nil {
 		var ret []BulkApiResult
 		return ret
 	}
@@ -597,7 +597,7 @@ func (o *BulkRequestAllOf) SetVerb(v string) {
 
 // GetAsyncResults returns the AsyncResults field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BulkRequestAllOf) GetAsyncResults() []BulkSubRequestObjRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []BulkSubRequestObjRelationship
 		return ret
 	}
@@ -630,7 +630,7 @@ func (o *BulkRequestAllOf) SetAsyncResults(v []BulkSubRequestObjRelationship) {
 
 // GetAsyncResultsFailed returns the AsyncResultsFailed field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BulkRequestAllOf) GetAsyncResultsFailed() []BulkSubRequestObjRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []BulkSubRequestObjRelationship
 		return ret
 	}
@@ -866,5 +866,3 @@ func (v *NullableBulkRequestAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

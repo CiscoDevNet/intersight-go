@@ -18,32 +18,31 @@ import (
 
 // NiatelemetryApicAppPluginDetailsResponse - The response body of a HTTP GET request for the 'niatelemetry.ApicAppPluginDetails' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'niatelemetry.ApicAppPluginDetails' resources.
 type NiatelemetryApicAppPluginDetailsResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                 *MoAggregateTransform
+	MoDocumentCount                      *MoDocumentCount
+	MoTagSummary                         *MoTagSummary
 	NiatelemetryApicAppPluginDetailsList *NiatelemetryApicAppPluginDetailsList
 }
 
 // MoAggregateTransformAsNiatelemetryApicAppPluginDetailsResponse is a convenience function that returns MoAggregateTransform wrapped in NiatelemetryApicAppPluginDetailsResponse
 func MoAggregateTransformAsNiatelemetryApicAppPluginDetailsResponse(v *MoAggregateTransform) NiatelemetryApicAppPluginDetailsResponse {
-	return NiatelemetryApicAppPluginDetailsResponse{ MoAggregateTransform: v}
+	return NiatelemetryApicAppPluginDetailsResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsNiatelemetryApicAppPluginDetailsResponse is a convenience function that returns MoDocumentCount wrapped in NiatelemetryApicAppPluginDetailsResponse
 func MoDocumentCountAsNiatelemetryApicAppPluginDetailsResponse(v *MoDocumentCount) NiatelemetryApicAppPluginDetailsResponse {
-	return NiatelemetryApicAppPluginDetailsResponse{ MoDocumentCount: v}
+	return NiatelemetryApicAppPluginDetailsResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsNiatelemetryApicAppPluginDetailsResponse is a convenience function that returns MoTagSummary wrapped in NiatelemetryApicAppPluginDetailsResponse
 func MoTagSummaryAsNiatelemetryApicAppPluginDetailsResponse(v *MoTagSummary) NiatelemetryApicAppPluginDetailsResponse {
-	return NiatelemetryApicAppPluginDetailsResponse{ MoTagSummary: v}
+	return NiatelemetryApicAppPluginDetailsResponse{MoTagSummary: v}
 }
 
 // NiatelemetryApicAppPluginDetailsListAsNiatelemetryApicAppPluginDetailsResponse is a convenience function that returns NiatelemetryApicAppPluginDetailsList wrapped in NiatelemetryApicAppPluginDetailsResponse
 func NiatelemetryApicAppPluginDetailsListAsNiatelemetryApicAppPluginDetailsResponse(v *NiatelemetryApicAppPluginDetailsList) NiatelemetryApicAppPluginDetailsResponse {
-	return NiatelemetryApicAppPluginDetailsResponse{ NiatelemetryApicAppPluginDetailsList: v}
+	return NiatelemetryApicAppPluginDetailsResponse{NiatelemetryApicAppPluginDetailsList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiatelemetryApicAppPluginDetailsResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src NiatelemetryApicAppPluginDetailsResponse) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *NiatelemetryApicAppPluginDetailsResponse) GetActualInstance() (interface{}) {
+func (obj *NiatelemetryApicAppPluginDetailsResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableNiatelemetryApicAppPluginDetailsResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

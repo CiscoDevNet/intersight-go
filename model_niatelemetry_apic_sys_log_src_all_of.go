@@ -34,8 +34,8 @@ type NiatelemetryApicSysLogSrcAllOf struct {
 	// List of Syslog remote destination for SyslogSrc in APIC.
 	SyslogRemoteDest *string `json:"SyslogRemoteDest,omitempty"`
 	// Syslog destination grp for SysLogSrc in APIC.
-	SyslogRsDestGrp *string `json:"SyslogRsDestGrp,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SyslogRsDestGrp      *string                              `json:"SyslogRsDestGrp,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *NiatelemetryApicSysLogSrcAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryApicSysLogSrcAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *NiatelemetryApicSysLogSrcAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryApicSysLogSrcAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -469,5 +469,3 @@ func (v *NullableNiatelemetryApicSysLogSrcAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

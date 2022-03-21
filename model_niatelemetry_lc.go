@@ -49,8 +49,8 @@ type NiatelemetryLc struct {
 	// The Site name represents an APIC cluster. Service Engine can onboard multiple APIC clusters / sites.
 	SiteName *string `json:"SiteName,omitempty"`
 	// VID for the line card in the inventory.
-	Vid *string `json:"Vid,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Vid                  *string                              `json:"Vid,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -92,7 +92,7 @@ func (o *NiatelemetryLc) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryLc) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -116,7 +116,7 @@ func (o *NiatelemetryLc) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryLc) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -672,7 +672,7 @@ func (o *NiatelemetryLc) UnmarshalJSON(bytes []byte) (err error) {
 		// The Site name represents an APIC cluster. Service Engine can onboard multiple APIC clusters / sites.
 		SiteName *string `json:"SiteName,omitempty"`
 		// VID for the line card in the inventory.
-		Vid *string `json:"Vid,omitempty"`
+		Vid              *string                              `json:"Vid,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -790,5 +790,3 @@ func (v *NullableNiatelemetryLc) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

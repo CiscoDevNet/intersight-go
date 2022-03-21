@@ -41,8 +41,8 @@ type NiatelemetryPodSnmpPolicies struct {
 	// List of Dn of the SNMP Trap Fwd Server in APIC.
 	SnmpTrapFwdServer *string `json:"SnmpTrapFwdServer,omitempty"`
 	// List of Dn of the SNMP user in APIC.
-	SnmpUser *string `json:"SnmpUser,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SnmpUser             *string                              `json:"SnmpUser,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *NiatelemetryPodSnmpPolicies) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryPodSnmpPolicies) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -108,7 +108,7 @@ func (o *NiatelemetryPodSnmpPolicies) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryPodSnmpPolicies) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -516,7 +516,7 @@ func (o *NiatelemetryPodSnmpPolicies) UnmarshalJSON(bytes []byte) (err error) {
 		// List of Dn of the SNMP Trap Fwd Server in APIC.
 		SnmpTrapFwdServer *string `json:"SnmpTrapFwdServer,omitempty"`
 		// List of Dn of the SNMP user in APIC.
-		SnmpUser *string `json:"SnmpUser,omitempty"`
+		SnmpUser         *string                              `json:"SnmpUser,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -626,5 +626,3 @@ func (v *NullableNiatelemetryPodSnmpPolicies) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

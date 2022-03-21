@@ -41,7 +41,7 @@ type VirtualizationVmwareVirtualDisk struct {
 	// Unique identifier of the LUN accessed by the raw disk mapping (RDM).
 	LunUuid *string `json:"LunUuid,omitempty"`
 	// Serial ID of the storage device.
-	Serial *string `json:"Serial,omitempty"`
+	Serial *string                                `json:"Serial,omitempty"`
 	Shares NullableVirtualizationVmwareSharesInfo `json:"Shares,omitempty"`
 	// Sharing mode of the virtual disk. * `sharingNone` - The virtual disk is not shared. * `sharingMultiWriter` - The virtual disk is shared between multiple virtual machines.
 	Sharing *string `json:"Sharing,omitempty"`
@@ -58,9 +58,9 @@ type VirtualizationVmwareVirtualDisk struct {
 	// Path of the virtual disk.
 	VirtualDiskPath *string `json:"VirtualDiskPath,omitempty"`
 	// Identity of the virtual machine where the virtual disk is created.
-	VmIdentity *string `json:"VmIdentity,omitempty"`
-	Datastore *VirtualizationVmwareDatastoreRelationship `json:"Datastore,omitempty"`
-	VirtualMachine *VirtualizationVmwareVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
+	VmIdentity           *string                                         `json:"VmIdentity,omitempty"`
+	Datastore            *VirtualizationVmwareDatastoreRelationship      `json:"Datastore,omitempty"`
+	VirtualMachine       *VirtualizationVmwareVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -122,7 +122,7 @@ func (o *VirtualizationVmwareVirtualDisk) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVirtualDisk) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -146,7 +146,7 @@ func (o *VirtualizationVmwareVirtualDisk) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVirtualDisk) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -458,7 +458,7 @@ func (o *VirtualizationVmwareVirtualDisk) GetShares() VirtualizationVmwareShares
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVmwareVirtualDisk) GetSharesOk() (*VirtualizationVmwareSharesInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Shares.Get(), o.Shares.IsSet()
@@ -477,6 +477,7 @@ func (o *VirtualizationVmwareVirtualDisk) HasShares() bool {
 func (o *VirtualizationVmwareVirtualDisk) SetShares(v VirtualizationVmwareSharesInfo) {
 	o.Shares.Set(&v)
 }
+
 // SetSharesNil sets the value for Shares to be an explicit nil
 func (o *VirtualizationVmwareVirtualDisk) SetSharesNil() {
 	o.Shares.Set(nil)
@@ -914,7 +915,7 @@ func (o *VirtualizationVmwareVirtualDisk) UnmarshalJSON(bytes []byte) (err error
 		// Unique identifier of the LUN accessed by the raw disk mapping (RDM).
 		LunUuid *string `json:"LunUuid,omitempty"`
 		// Serial ID of the storage device.
-		Serial *string `json:"Serial,omitempty"`
+		Serial *string                                `json:"Serial,omitempty"`
 		Shares NullableVirtualizationVmwareSharesInfo `json:"Shares,omitempty"`
 		// Sharing mode of the virtual disk. * `sharingNone` - The virtual disk is not shared. * `sharingMultiWriter` - The virtual disk is shared between multiple virtual machines.
 		Sharing *string `json:"Sharing,omitempty"`
@@ -931,8 +932,8 @@ func (o *VirtualizationVmwareVirtualDisk) UnmarshalJSON(bytes []byte) (err error
 		// Path of the virtual disk.
 		VirtualDiskPath *string `json:"VirtualDiskPath,omitempty"`
 		// Identity of the virtual machine where the virtual disk is created.
-		VmIdentity *string `json:"VmIdentity,omitempty"`
-		Datastore *VirtualizationVmwareDatastoreRelationship `json:"Datastore,omitempty"`
+		VmIdentity     *string                                         `json:"VmIdentity,omitempty"`
+		Datastore      *VirtualizationVmwareDatastoreRelationship      `json:"Datastore,omitempty"`
 		VirtualMachine *VirtualizationVmwareVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
 	}
 
@@ -1062,5 +1063,3 @@ func (v *NullableVirtualizationVmwareVirtualDisk) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

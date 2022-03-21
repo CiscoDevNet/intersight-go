@@ -20,7 +20,7 @@ type HyperflexBackupClusterListAllOf struct {
 	// The total number of 'hyperflex.BackupCluster' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'hyperflex.BackupCluster' resources matching the request.
-	Results []HyperflexBackupCluster `json:"Results,omitempty"`
+	Results              []HyperflexBackupCluster `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *HyperflexBackupClusterListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexBackupClusterListAllOf) GetResults() []HyperflexBackupCluster {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexBackupCluster
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableHyperflexBackupClusterListAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

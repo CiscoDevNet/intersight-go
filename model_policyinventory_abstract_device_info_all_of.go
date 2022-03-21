@@ -26,13 +26,13 @@ type PolicyinventoryAbstractDeviceInfoAllOf struct {
 	// Control action of server profile config context.
 	ControlAction *string `json:"ControlAction,omitempty"`
 	// Error state of server profile config context.
-	ErrorState *string `json:"ErrorState,omitempty"`
-	JobInfo []PolicyinventoryJobInfo `json:"JobInfo,omitempty"`
+	ErrorState *string                  `json:"ErrorState,omitempty"`
+	JobInfo    []PolicyinventoryJobInfo `json:"JobInfo,omitempty"`
 	// Operational state of server profile config context.
 	OperState *string `json:"OperState,omitempty"`
 	// Server profile MO ID of the server.
-	ProfileMoId *string `json:"ProfileMoId,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	ProfileMoId          *string                              `json:"ProfileMoId,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *PolicyinventoryAbstractDeviceInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PolicyinventoryAbstractDeviceInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *PolicyinventoryAbstractDeviceInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PolicyinventoryAbstractDeviceInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -207,7 +207,7 @@ func (o *PolicyinventoryAbstractDeviceInfoAllOf) SetErrorState(v string) {
 
 // GetJobInfo returns the JobInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PolicyinventoryAbstractDeviceInfoAllOf) GetJobInfo() []PolicyinventoryJobInfo {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyinventoryJobInfo
 		return ret
 	}
@@ -431,5 +431,3 @@ func (v *NullablePolicyinventoryAbstractDeviceInfoAllOf) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

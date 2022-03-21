@@ -19,31 +19,30 @@ import (
 // AssetSubscriptionAccountResponse - The response body of a HTTP GET request for the 'asset.SubscriptionAccount' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'asset.SubscriptionAccount' resources.
 type AssetSubscriptionAccountResponse struct {
 	AssetSubscriptionAccountList *AssetSubscriptionAccountList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform         *MoAggregateTransform
+	MoDocumentCount              *MoDocumentCount
+	MoTagSummary                 *MoTagSummary
 }
 
 // AssetSubscriptionAccountListAsAssetSubscriptionAccountResponse is a convenience function that returns AssetSubscriptionAccountList wrapped in AssetSubscriptionAccountResponse
 func AssetSubscriptionAccountListAsAssetSubscriptionAccountResponse(v *AssetSubscriptionAccountList) AssetSubscriptionAccountResponse {
-	return AssetSubscriptionAccountResponse{ AssetSubscriptionAccountList: v}
+	return AssetSubscriptionAccountResponse{AssetSubscriptionAccountList: v}
 }
 
 // MoAggregateTransformAsAssetSubscriptionAccountResponse is a convenience function that returns MoAggregateTransform wrapped in AssetSubscriptionAccountResponse
 func MoAggregateTransformAsAssetSubscriptionAccountResponse(v *MoAggregateTransform) AssetSubscriptionAccountResponse {
-	return AssetSubscriptionAccountResponse{ MoAggregateTransform: v}
+	return AssetSubscriptionAccountResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsAssetSubscriptionAccountResponse is a convenience function that returns MoDocumentCount wrapped in AssetSubscriptionAccountResponse
 func MoDocumentCountAsAssetSubscriptionAccountResponse(v *MoDocumentCount) AssetSubscriptionAccountResponse {
-	return AssetSubscriptionAccountResponse{ MoDocumentCount: v}
+	return AssetSubscriptionAccountResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsAssetSubscriptionAccountResponse is a convenience function that returns MoTagSummary wrapped in AssetSubscriptionAccountResponse
 func MoTagSummaryAsAssetSubscriptionAccountResponse(v *MoTagSummary) AssetSubscriptionAccountResponse {
-	return AssetSubscriptionAccountResponse{ MoTagSummary: v}
+	return AssetSubscriptionAccountResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AssetSubscriptionAccountResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src AssetSubscriptionAccountResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AssetSubscriptionAccountResponse) GetActualInstance() (interface{}) {
+func (obj *AssetSubscriptionAccountResponse) GetActualInstance() interface{} {
 	if obj.AssetSubscriptionAccountList != nil {
 		return obj.AssetSubscriptionAccountList
 	}
@@ -184,5 +183,3 @@ func (v *NullableAssetSubscriptionAccountResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

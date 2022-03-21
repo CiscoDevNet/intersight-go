@@ -20,7 +20,7 @@ type IamLocalUserPasswordPolicyListAllOf struct {
 	// The total number of 'iam.LocalUserPasswordPolicy' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'iam.LocalUserPasswordPolicy' resources matching the request.
-	Results []IamLocalUserPasswordPolicy `json:"Results,omitempty"`
+	Results              []IamLocalUserPasswordPolicy `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *IamLocalUserPasswordPolicyListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamLocalUserPasswordPolicyListAllOf) GetResults() []IamLocalUserPasswordPolicy {
-	if o == nil  {
+	if o == nil {
 		var ret []IamLocalUserPasswordPolicy
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableIamLocalUserPasswordPolicyListAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

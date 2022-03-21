@@ -27,8 +27,8 @@ type I18nMessage struct {
 	// The default (en-US) localized message. Default localized message will be stored and directly retrieved when the user's locale setting is en-US.
 	Message *string `json:"Message,omitempty"`
 	// The unique message identitifer used to lookup text templates in a multi-language message catalog.
-	MessageId *string `json:"MessageId,omitempty"`
-	MessageParams []I18nMessageParam `json:"MessageParams,omitempty"`
+	MessageId            *string            `json:"MessageId,omitempty"`
+	MessageParams        []I18nMessageParam `json:"MessageParams,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *I18nMessage) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *I18nMessage) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *I18nMessage) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *I18nMessage) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -171,7 +171,7 @@ func (o *I18nMessage) SetMessageId(v string) {
 
 // GetMessageParams returns the MessageParams field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *I18nMessage) GetMessageParams() []I18nMessageParam {
-	if o == nil  {
+	if o == nil {
 		var ret []I18nMessageParam
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *I18nMessage) UnmarshalJSON(bytes []byte) (err error) {
 		// The default (en-US) localized message. Default localized message will be stored and directly retrieved when the user's locale setting is en-US.
 		Message *string `json:"Message,omitempty"`
 		// The unique message identitifer used to lookup text templates in a multi-language message catalog.
-		MessageId *string `json:"MessageId,omitempty"`
+		MessageId     *string            `json:"MessageId,omitempty"`
 		MessageParams []I18nMessageParam `json:"MessageParams,omitempty"`
 	}
 
@@ -340,5 +340,3 @@ func (v *NullableI18nMessage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

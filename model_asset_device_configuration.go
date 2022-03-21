@@ -29,8 +29,8 @@ type AssetDeviceConfiguration struct {
 	// The log level of the device connector service.
 	LogLevel *string `json:"LogLevel,omitempty"`
 	// Specifies whether Tunneled vKVM is enabled on the device connector.
-	TunneledKvm *bool `json:"TunneledKvm,omitempty"`
-	Device *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
+	TunneledKvm          *bool                                `json:"TunneledKvm,omitempty"`
+	Device               *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *AssetDeviceConfiguration) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeviceConfiguration) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *AssetDeviceConfiguration) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeviceConfiguration) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -282,8 +282,8 @@ func (o *AssetDeviceConfiguration) UnmarshalJSON(bytes []byte) (err error) {
 		// The log level of the device connector service.
 		LogLevel *string `json:"LogLevel,omitempty"`
 		// Specifies whether Tunneled vKVM is enabled on the device connector.
-		TunneledKvm *bool `json:"TunneledKvm,omitempty"`
-		Device *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
+		TunneledKvm *bool                                `json:"TunneledKvm,omitempty"`
+		Device      *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
 	}
 
 	varAssetDeviceConfigurationWithoutEmbeddedStruct := AssetDeviceConfigurationWithoutEmbeddedStruct{}
@@ -380,5 +380,3 @@ func (v *NullableAssetDeviceConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

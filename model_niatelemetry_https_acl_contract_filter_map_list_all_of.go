@@ -20,7 +20,7 @@ type NiatelemetryHttpsAclContractFilterMapListAllOf struct {
 	// The total number of 'niatelemetry.HttpsAclContractFilterMap' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'niatelemetry.HttpsAclContractFilterMap' resources matching the request.
-	Results []NiatelemetryHttpsAclContractFilterMap `json:"Results,omitempty"`
+	Results              []NiatelemetryHttpsAclContractFilterMap `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *NiatelemetryHttpsAclContractFilterMapListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetryHttpsAclContractFilterMapListAllOf) GetResults() []NiatelemetryHttpsAclContractFilterMap {
-	if o == nil  {
+	if o == nil {
 		var ret []NiatelemetryHttpsAclContractFilterMap
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableNiatelemetryHttpsAclContractFilterMapListAllOf) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

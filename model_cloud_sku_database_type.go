@@ -31,7 +31,7 @@ type CloudSkuDatabaseType struct {
 	// The licensing option for the database. For e.g. license required or not.
 	LicenseModel *string `json:"LicenseModel,omitempty"`
 	// Network performance of this instance type.
-	NetworkPerformance *string `json:"NetworkPerformance,omitempty"`
+	NetworkPerformance   *string `json:"NetworkPerformance,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *CloudSkuDatabaseType) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudSkuDatabaseType) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *CloudSkuDatabaseType) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudSkuDatabaseType) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -388,5 +388,3 @@ func (v *NullableCloudSkuDatabaseType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

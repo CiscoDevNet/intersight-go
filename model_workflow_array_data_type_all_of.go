@@ -20,12 +20,12 @@ type WorkflowArrayDataTypeAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType    string                    `json:"ObjectType"`
 	ArrayItemType NullableWorkflowArrayItem `json:"ArrayItemType,omitempty"`
 	// Specify the maximum value of the array.
 	Max *int64 `json:"Max,omitempty"`
 	// Specify the minimum value of the array.
-	Min *int64 `json:"Min,omitempty"`
+	Min                  *int64 `json:"Min,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *WorkflowArrayDataTypeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowArrayDataTypeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *WorkflowArrayDataTypeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowArrayDataTypeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -115,7 +115,7 @@ func (o *WorkflowArrayDataTypeAllOf) GetArrayItemType() WorkflowArrayItem {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowArrayDataTypeAllOf) GetArrayItemTypeOk() (*WorkflowArrayItem, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ArrayItemType.Get(), o.ArrayItemType.IsSet()
@@ -134,6 +134,7 @@ func (o *WorkflowArrayDataTypeAllOf) HasArrayItemType() bool {
 func (o *WorkflowArrayDataTypeAllOf) SetArrayItemType(v WorkflowArrayItem) {
 	o.ArrayItemType.Set(&v)
 }
+
 // SetArrayItemTypeNil sets the value for ArrayItemType to be an explicit nil
 func (o *WorkflowArrayDataTypeAllOf) SetArrayItemTypeNil() {
 	o.ArrayItemType.Set(nil)
@@ -289,5 +290,3 @@ func (v *NullableWorkflowArrayDataTypeAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

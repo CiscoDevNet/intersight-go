@@ -26,7 +26,7 @@ type ContentTextParameterAllOf struct {
 	// Set to true of the next value to capture resides on the same text line of current match. By default textFSM engine gets the next text line on finding the first match.
 	IsNextCaptureOnSameLine *bool `json:"IsNextCaptureOnSameLine,omitempty"`
 	// Regular expression of the line containing the data to be extracted from text content.
-	RegexLine *string `json:"RegexLine,omitempty"`
+	RegexLine            *string `json:"RegexLine,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *ContentTextParameterAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ContentTextParameterAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *ContentTextParameterAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ContentTextParameterAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -288,5 +288,3 @@ func (v *NullableContentTextParameterAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

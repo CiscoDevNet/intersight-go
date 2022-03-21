@@ -19,19 +19,18 @@ import (
 // BiosSystemBootOrderRelationship - A relationship to the 'bios.SystemBootOrder' resource, or the expanded 'bios.SystemBootOrder' resource, or the 'null' value.
 type BiosSystemBootOrderRelationship struct {
 	BiosSystemBootOrder *BiosSystemBootOrder
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 }
 
 // BiosSystemBootOrderAsBiosSystemBootOrderRelationship is a convenience function that returns BiosSystemBootOrder wrapped in BiosSystemBootOrderRelationship
 func BiosSystemBootOrderAsBiosSystemBootOrderRelationship(v *BiosSystemBootOrder) BiosSystemBootOrderRelationship {
-	return BiosSystemBootOrderRelationship{ BiosSystemBootOrder: v}
+	return BiosSystemBootOrderRelationship{BiosSystemBootOrder: v}
 }
 
 // MoMoRefAsBiosSystemBootOrderRelationship is a convenience function that returns MoMoRef wrapped in BiosSystemBootOrderRelationship
 func MoMoRefAsBiosSystemBootOrderRelationship(v *MoMoRef) BiosSystemBootOrderRelationship {
-	return BiosSystemBootOrderRelationship{ MoMoRef: v}
+	return BiosSystemBootOrderRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BiosSystemBootOrderRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BiosSystemBootOrderRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BiosSystemBootOrderRelationship) GetActualInstance() (interface{}) {
+func (obj *BiosSystemBootOrderRelationship) GetActualInstance() interface{} {
 	if obj.BiosSystemBootOrder != nil {
 		return obj.BiosSystemBootOrder
 	}
@@ -137,5 +136,3 @@ func (v *NullableBiosSystemBootOrderRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

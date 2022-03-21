@@ -20,11 +20,11 @@ type NotificationSubscriptionAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
-	Actions []NotificationAction `json:"Actions,omitempty"`
+	ObjectType string                          `json:"ObjectType"`
+	Actions    []NotificationAction            `json:"Actions,omitempty"`
 	Conditions []NotificationAbstractCondition `json:"Conditions,omitempty"`
 	// Subscription can be switched on/off with out necessity to change the subscription settings: notification methods, conditions etc. Ex.: Subscription MO can be configured, but switched off.
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled              *bool `json:"Enabled,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *NotificationSubscriptionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscriptionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *NotificationSubscriptionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscriptionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -103,7 +103,7 @@ func (o *NotificationSubscriptionAllOf) SetObjectType(v string) {
 
 // GetActions returns the Actions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NotificationSubscriptionAllOf) GetActions() []NotificationAction {
-	if o == nil  {
+	if o == nil {
 		var ret []NotificationAction
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *NotificationSubscriptionAllOf) SetActions(v []NotificationAction) {
 
 // GetConditions returns the Conditions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NotificationSubscriptionAllOf) GetConditions() []NotificationAbstractCondition {
-	if o == nil  {
+	if o == nil {
 		var ret []NotificationAbstractCondition
 		return ret
 	}
@@ -280,5 +280,3 @@ func (v *NullableNotificationSubscriptionAllOf) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

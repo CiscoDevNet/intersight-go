@@ -24,7 +24,7 @@ type VirtualizationVmwareResourceConsumptionAllOf struct {
 	// The amount of CPU consumed in Hz.
 	CpuConsumed *int64 `json:"CpuConsumed,omitempty"`
 	// Memory consumed by this host in bytes.
-	MemoryConsumed *int64 `json:"MemoryConsumed,omitempty"`
+	MemoryConsumed       *int64 `json:"MemoryConsumed,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *VirtualizationVmwareResourceConsumptionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareResourceConsumptionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *VirtualizationVmwareResourceConsumptionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareResourceConsumptionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -242,5 +242,3 @@ func (v *NullableVirtualizationVmwareResourceConsumptionAllOf) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

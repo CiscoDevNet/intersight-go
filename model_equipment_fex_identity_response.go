@@ -19,31 +19,30 @@ import (
 // EquipmentFexIdentityResponse - The response body of a HTTP GET request for the 'equipment.FexIdentity' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'equipment.FexIdentity' resources.
 type EquipmentFexIdentityResponse struct {
 	EquipmentFexIdentityList *EquipmentFexIdentityList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform     *MoAggregateTransform
+	MoDocumentCount          *MoDocumentCount
+	MoTagSummary             *MoTagSummary
 }
 
 // EquipmentFexIdentityListAsEquipmentFexIdentityResponse is a convenience function that returns EquipmentFexIdentityList wrapped in EquipmentFexIdentityResponse
 func EquipmentFexIdentityListAsEquipmentFexIdentityResponse(v *EquipmentFexIdentityList) EquipmentFexIdentityResponse {
-	return EquipmentFexIdentityResponse{ EquipmentFexIdentityList: v}
+	return EquipmentFexIdentityResponse{EquipmentFexIdentityList: v}
 }
 
 // MoAggregateTransformAsEquipmentFexIdentityResponse is a convenience function that returns MoAggregateTransform wrapped in EquipmentFexIdentityResponse
 func MoAggregateTransformAsEquipmentFexIdentityResponse(v *MoAggregateTransform) EquipmentFexIdentityResponse {
-	return EquipmentFexIdentityResponse{ MoAggregateTransform: v}
+	return EquipmentFexIdentityResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsEquipmentFexIdentityResponse is a convenience function that returns MoDocumentCount wrapped in EquipmentFexIdentityResponse
 func MoDocumentCountAsEquipmentFexIdentityResponse(v *MoDocumentCount) EquipmentFexIdentityResponse {
-	return EquipmentFexIdentityResponse{ MoDocumentCount: v}
+	return EquipmentFexIdentityResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsEquipmentFexIdentityResponse is a convenience function that returns MoTagSummary wrapped in EquipmentFexIdentityResponse
 func MoTagSummaryAsEquipmentFexIdentityResponse(v *MoTagSummary) EquipmentFexIdentityResponse {
-	return EquipmentFexIdentityResponse{ MoTagSummary: v}
+	return EquipmentFexIdentityResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentFexIdentityResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src EquipmentFexIdentityResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentFexIdentityResponse) GetActualInstance() (interface{}) {
+func (obj *EquipmentFexIdentityResponse) GetActualInstance() interface{} {
 	if obj.EquipmentFexIdentityList != nil {
 		return obj.EquipmentFexIdentityList
 	}
@@ -184,5 +183,3 @@ func (v *NullableEquipmentFexIdentityResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

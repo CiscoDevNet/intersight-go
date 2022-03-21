@@ -22,8 +22,8 @@ type KubernetesAddonConfigurationAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Addon install strategy to determine whether an addon is installed if not present. * `None` - Unspecified install strategy. * `NoAction` - No install action performed. * `InstallOnly` - Only install in green field. No action in case of failure or removal. * `Always` - Attempt install if chart is not already installed.
-	InstallStrategy *string `json:"InstallStrategy,omitempty"`
-	OverrideSets []KubernetesKeyValue `json:"OverrideSets,omitempty"`
+	InstallStrategy *string              `json:"InstallStrategy,omitempty"`
+	OverrideSets    []KubernetesKeyValue `json:"OverrideSets,omitempty"`
 	// Properties that can be overridden for an addon.
 	Overrides *string `json:"Overrides,omitempty"`
 	// Name for the helm release.
@@ -31,7 +31,7 @@ type KubernetesAddonConfigurationAllOf struct {
 	// Namespace for the helm release.
 	ReleaseNamespace *string `json:"ReleaseNamespace,omitempty"`
 	// Addon upgrade strategy to determine whether an addon configuration is overwritten on upgrade. * `None` - Unspecified upgrade strategy. * `NoAction` - This choice enables No upgrades to be performed. * `UpgradeOnly` - Attempt upgrade if chart or overrides options change, no action on upgrade failure. * `ReinstallOnFailure` - Attempt upgrade first. Remove and install on upgrade failure. * `AlwaysReinstall` - Always remove older release and reinstall.
-	UpgradeStrategy *string `json:"UpgradeStrategy,omitempty"`
+	UpgradeStrategy      *string `json:"UpgradeStrategy,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *KubernetesAddonConfigurationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAddonConfigurationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *KubernetesAddonConfigurationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAddonConfigurationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -150,7 +150,7 @@ func (o *KubernetesAddonConfigurationAllOf) SetInstallStrategy(v string) {
 
 // GetOverrideSets returns the OverrideSets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesAddonConfigurationAllOf) GetOverrideSets() []KubernetesKeyValue {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesKeyValue
 		return ret
 	}
@@ -402,5 +402,3 @@ func (v *NullableKubernetesAddonConfigurationAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

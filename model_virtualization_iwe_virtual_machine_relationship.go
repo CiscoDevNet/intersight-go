@@ -18,20 +18,19 @@ import (
 
 // VirtualizationIweVirtualMachineRelationship - A relationship to the 'virtualization.IweVirtualMachine' resource, or the expanded 'virtualization.IweVirtualMachine' resource, or the 'null' value.
 type VirtualizationIweVirtualMachineRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                         *MoMoRef
 	VirtualizationIweVirtualMachine *VirtualizationIweVirtualMachine
 }
 
 // MoMoRefAsVirtualizationIweVirtualMachineRelationship is a convenience function that returns MoMoRef wrapped in VirtualizationIweVirtualMachineRelationship
 func MoMoRefAsVirtualizationIweVirtualMachineRelationship(v *MoMoRef) VirtualizationIweVirtualMachineRelationship {
-	return VirtualizationIweVirtualMachineRelationship{ MoMoRef: v}
+	return VirtualizationIweVirtualMachineRelationship{MoMoRef: v}
 }
 
 // VirtualizationIweVirtualMachineAsVirtualizationIweVirtualMachineRelationship is a convenience function that returns VirtualizationIweVirtualMachine wrapped in VirtualizationIweVirtualMachineRelationship
 func VirtualizationIweVirtualMachineAsVirtualizationIweVirtualMachineRelationship(v *VirtualizationIweVirtualMachine) VirtualizationIweVirtualMachineRelationship {
-	return VirtualizationIweVirtualMachineRelationship{ VirtualizationIweVirtualMachine: v}
+	return VirtualizationIweVirtualMachineRelationship{VirtualizationIweVirtualMachine: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VirtualizationIweVirtualMachineRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src VirtualizationIweVirtualMachineRelationship) MarshalJSON() ([]byte, er
 }
 
 // Get the actual instance
-func (obj *VirtualizationIweVirtualMachineRelationship) GetActualInstance() (interface{}) {
+func (obj *VirtualizationIweVirtualMachineRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableVirtualizationIweVirtualMachineRelationship) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

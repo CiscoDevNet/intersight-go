@@ -29,11 +29,11 @@ var (
 type WorkflowApiService service
 
 type ApiCreateWorkflowAnsibleBatchExecutorRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
+	ctx                          _context.Context
+	ApiService                   *WorkflowApiService
 	workflowAnsibleBatchExecutor *WorkflowAnsibleBatchExecutor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                      *string
+	ifNoneMatch                  *string
 }
 
 // The &#39;workflow.AnsibleBatchExecutor&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateWorkflowAnsibleBatchExecutorRequest) WorkflowAnsibleBatchExecut
 	r.workflowAnsibleBatchExecutor = &workflowAnsibleBatchExecutor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateWorkflowAnsibleBatchExecutorRequest) IfMatch(ifMatch string) ApiCreateWorkflowAnsibleBatchExecutorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateWorkflowAnsibleBatchExecutorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateWorkflowAnsibleBatchExecutorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateWorkflowAnsibleBatchExecutor Create a 'workflow.AnsibleBatchExecutor' reso
 func (a *WorkflowApiService) CreateWorkflowAnsibleBatchExecutor(ctx _context.Context) ApiCreateWorkflowAnsibleBatchExecutorRequest {
 	return ApiCreateWorkflowAnsibleBatchExecutorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *WorkflowApiService) CreateWorkflowAnsibleBatchExecutorExecute(r ApiCrea
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,11 @@ func (a *WorkflowApiService) CreateWorkflowAnsibleBatchExecutorExecute(r ApiCrea
 }
 
 type ApiCreateWorkflowBatchApiExecutorRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
+	ctx                      _context.Context
+	ApiService               *WorkflowApiService
 	workflowBatchApiExecutor *WorkflowBatchApiExecutor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                  *string
+	ifNoneMatch              *string
 }
 
 // The &#39;workflow.BatchApiExecutor&#39; resource to create.
@@ -217,11 +219,13 @@ func (r ApiCreateWorkflowBatchApiExecutorRequest) WorkflowBatchApiExecutor(workf
 	r.workflowBatchApiExecutor = &workflowBatchApiExecutor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateWorkflowBatchApiExecutorRequest) IfMatch(ifMatch string) ApiCreateWorkflowBatchApiExecutorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateWorkflowBatchApiExecutorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateWorkflowBatchApiExecutorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateWorkflowBatchApiExecutor Create a 'workflow.BatchApiExecutor' resource.
 func (a *WorkflowApiService) CreateWorkflowBatchApiExecutor(ctx _context.Context) ApiCreateWorkflowBatchApiExecutorRequest {
 	return ApiCreateWorkflowBatchApiExecutorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *WorkflowApiService) CreateWorkflowBatchApiExecutorExecute(r ApiCreateWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,11 +385,11 @@ func (a *WorkflowApiService) CreateWorkflowBatchApiExecutorExecute(r ApiCreateWo
 }
 
 type ApiCreateWorkflowCustomDataTypeDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
+	ctx                              _context.Context
+	ApiService                       *WorkflowApiService
 	workflowCustomDataTypeDefinition *WorkflowCustomDataTypeDefinition
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                          *string
+	ifNoneMatch                      *string
 }
 
 // The &#39;workflow.CustomDataTypeDefinition&#39; resource to create.
@@ -393,11 +397,13 @@ func (r ApiCreateWorkflowCustomDataTypeDefinitionRequest) WorkflowCustomDataType
 	r.workflowCustomDataTypeDefinition = &workflowCustomDataTypeDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateWorkflowCustomDataTypeDefinitionRequest) IfMatch(ifMatch string) ApiCreateWorkflowCustomDataTypeDefinitionRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateWorkflowCustomDataTypeDefinitionRequest) IfNoneMatch(ifNoneMatch string) ApiCreateWorkflowCustomDataTypeDefinitionRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -417,7 +423,7 @@ CreateWorkflowCustomDataTypeDefinition Create a 'workflow.CustomDataTypeDefiniti
 func (a *WorkflowApiService) CreateWorkflowCustomDataTypeDefinition(ctx _context.Context) ApiCreateWorkflowCustomDataTypeDefinitionRequest {
 	return ApiCreateWorkflowCustomDataTypeDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -534,13 +540,13 @@ func (a *WorkflowApiService) CreateWorkflowCustomDataTypeDefinitionExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -557,11 +563,11 @@ func (a *WorkflowApiService) CreateWorkflowCustomDataTypeDefinitionExecute(r Api
 }
 
 type ApiCreateWorkflowErrorResponseHandlerRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
+	ctx                          _context.Context
+	ApiService                   *WorkflowApiService
 	workflowErrorResponseHandler *WorkflowErrorResponseHandler
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                      *string
+	ifNoneMatch                  *string
 }
 
 // The &#39;workflow.ErrorResponseHandler&#39; resource to create.
@@ -569,11 +575,13 @@ func (r ApiCreateWorkflowErrorResponseHandlerRequest) WorkflowErrorResponseHandl
 	r.workflowErrorResponseHandler = &workflowErrorResponseHandler
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateWorkflowErrorResponseHandlerRequest) IfMatch(ifMatch string) ApiCreateWorkflowErrorResponseHandlerRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateWorkflowErrorResponseHandlerRequest) IfNoneMatch(ifNoneMatch string) ApiCreateWorkflowErrorResponseHandlerRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -593,7 +601,7 @@ CreateWorkflowErrorResponseHandler Create a 'workflow.ErrorResponseHandler' reso
 func (a *WorkflowApiService) CreateWorkflowErrorResponseHandler(ctx _context.Context) ApiCreateWorkflowErrorResponseHandlerRequest {
 	return ApiCreateWorkflowErrorResponseHandlerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -710,13 +718,13 @@ func (a *WorkflowApiService) CreateWorkflowErrorResponseHandlerExecute(r ApiCrea
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -733,11 +741,11 @@ func (a *WorkflowApiService) CreateWorkflowErrorResponseHandlerExecute(r ApiCrea
 }
 
 type ApiCreateWorkflowRollbackWorkflowRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
+	ctx                      _context.Context
+	ApiService               *WorkflowApiService
 	workflowRollbackWorkflow *WorkflowRollbackWorkflow
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                  *string
+	ifNoneMatch              *string
 }
 
 // The &#39;workflow.RollbackWorkflow&#39; resource to create.
@@ -745,11 +753,13 @@ func (r ApiCreateWorkflowRollbackWorkflowRequest) WorkflowRollbackWorkflow(workf
 	r.workflowRollbackWorkflow = &workflowRollbackWorkflow
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateWorkflowRollbackWorkflowRequest) IfMatch(ifMatch string) ApiCreateWorkflowRollbackWorkflowRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateWorkflowRollbackWorkflowRequest) IfNoneMatch(ifNoneMatch string) ApiCreateWorkflowRollbackWorkflowRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -769,7 +779,7 @@ CreateWorkflowRollbackWorkflow Create a 'workflow.RollbackWorkflow' resource.
 func (a *WorkflowApiService) CreateWorkflowRollbackWorkflow(ctx _context.Context) ApiCreateWorkflowRollbackWorkflowRequest {
 	return ApiCreateWorkflowRollbackWorkflowRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -886,13 +896,13 @@ func (a *WorkflowApiService) CreateWorkflowRollbackWorkflowExecute(r ApiCreateWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -909,11 +919,11 @@ func (a *WorkflowApiService) CreateWorkflowRollbackWorkflowExecute(r ApiCreateWo
 }
 
 type ApiCreateWorkflowSolutionActionDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
+	ctx                              _context.Context
+	ApiService                       *WorkflowApiService
 	workflowSolutionActionDefinition *WorkflowSolutionActionDefinition
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                          *string
+	ifNoneMatch                      *string
 }
 
 // The &#39;workflow.SolutionActionDefinition&#39; resource to create.
@@ -921,11 +931,13 @@ func (r ApiCreateWorkflowSolutionActionDefinitionRequest) WorkflowSolutionAction
 	r.workflowSolutionActionDefinition = &workflowSolutionActionDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateWorkflowSolutionActionDefinitionRequest) IfMatch(ifMatch string) ApiCreateWorkflowSolutionActionDefinitionRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateWorkflowSolutionActionDefinitionRequest) IfNoneMatch(ifNoneMatch string) ApiCreateWorkflowSolutionActionDefinitionRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -945,7 +957,7 @@ CreateWorkflowSolutionActionDefinition Create a 'workflow.SolutionActionDefiniti
 func (a *WorkflowApiService) CreateWorkflowSolutionActionDefinition(ctx _context.Context) ApiCreateWorkflowSolutionActionDefinitionRequest {
 	return ApiCreateWorkflowSolutionActionDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1062,13 +1074,13 @@ func (a *WorkflowApiService) CreateWorkflowSolutionActionDefinitionExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1085,11 +1097,11 @@ func (a *WorkflowApiService) CreateWorkflowSolutionActionDefinitionExecute(r Api
 }
 
 type ApiCreateWorkflowSolutionActionInstanceRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
+	ctx                            _context.Context
+	ApiService                     *WorkflowApiService
 	workflowSolutionActionInstance *WorkflowSolutionActionInstance
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                        *string
+	ifNoneMatch                    *string
 }
 
 // The &#39;workflow.SolutionActionInstance&#39; resource to create.
@@ -1097,11 +1109,13 @@ func (r ApiCreateWorkflowSolutionActionInstanceRequest) WorkflowSolutionActionIn
 	r.workflowSolutionActionInstance = &workflowSolutionActionInstance
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateWorkflowSolutionActionInstanceRequest) IfMatch(ifMatch string) ApiCreateWorkflowSolutionActionInstanceRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateWorkflowSolutionActionInstanceRequest) IfNoneMatch(ifNoneMatch string) ApiCreateWorkflowSolutionActionInstanceRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1121,7 +1135,7 @@ CreateWorkflowSolutionActionInstance Create a 'workflow.SolutionActionInstance' 
 func (a *WorkflowApiService) CreateWorkflowSolutionActionInstance(ctx _context.Context) ApiCreateWorkflowSolutionActionInstanceRequest {
 	return ApiCreateWorkflowSolutionActionInstanceRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1238,13 +1252,13 @@ func (a *WorkflowApiService) CreateWorkflowSolutionActionInstanceExecute(r ApiCr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1261,11 +1275,11 @@ func (a *WorkflowApiService) CreateWorkflowSolutionActionInstanceExecute(r ApiCr
 }
 
 type ApiCreateWorkflowSolutionDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
+	ctx                        _context.Context
+	ApiService                 *WorkflowApiService
 	workflowSolutionDefinition *WorkflowSolutionDefinition
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                    *string
+	ifNoneMatch                *string
 }
 
 // The &#39;workflow.SolutionDefinition&#39; resource to create.
@@ -1273,11 +1287,13 @@ func (r ApiCreateWorkflowSolutionDefinitionRequest) WorkflowSolutionDefinition(w
 	r.workflowSolutionDefinition = &workflowSolutionDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateWorkflowSolutionDefinitionRequest) IfMatch(ifMatch string) ApiCreateWorkflowSolutionDefinitionRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateWorkflowSolutionDefinitionRequest) IfNoneMatch(ifNoneMatch string) ApiCreateWorkflowSolutionDefinitionRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1297,7 +1313,7 @@ CreateWorkflowSolutionDefinition Create a 'workflow.SolutionDefinition' resource
 func (a *WorkflowApiService) CreateWorkflowSolutionDefinition(ctx _context.Context) ApiCreateWorkflowSolutionDefinitionRequest {
 	return ApiCreateWorkflowSolutionDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1414,13 +1430,13 @@ func (a *WorkflowApiService) CreateWorkflowSolutionDefinitionExecute(r ApiCreate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1437,11 +1453,11 @@ func (a *WorkflowApiService) CreateWorkflowSolutionDefinitionExecute(r ApiCreate
 }
 
 type ApiCreateWorkflowSolutionInstanceRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
+	ctx                      _context.Context
+	ApiService               *WorkflowApiService
 	workflowSolutionInstance *WorkflowSolutionInstance
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                  *string
+	ifNoneMatch              *string
 }
 
 // The &#39;workflow.SolutionInstance&#39; resource to create.
@@ -1449,11 +1465,13 @@ func (r ApiCreateWorkflowSolutionInstanceRequest) WorkflowSolutionInstance(workf
 	r.workflowSolutionInstance = &workflowSolutionInstance
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateWorkflowSolutionInstanceRequest) IfMatch(ifMatch string) ApiCreateWorkflowSolutionInstanceRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateWorkflowSolutionInstanceRequest) IfNoneMatch(ifNoneMatch string) ApiCreateWorkflowSolutionInstanceRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1473,7 +1491,7 @@ CreateWorkflowSolutionInstance Create a 'workflow.SolutionInstance' resource.
 func (a *WorkflowApiService) CreateWorkflowSolutionInstance(ctx _context.Context) ApiCreateWorkflowSolutionInstanceRequest {
 	return ApiCreateWorkflowSolutionInstanceRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1590,13 +1608,13 @@ func (a *WorkflowApiService) CreateWorkflowSolutionInstanceExecute(r ApiCreateWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1613,11 +1631,11 @@ func (a *WorkflowApiService) CreateWorkflowSolutionInstanceExecute(r ApiCreateWo
 }
 
 type ApiCreateWorkflowSolutionOutputRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
+	ctx                    _context.Context
+	ApiService             *WorkflowApiService
 	workflowSolutionOutput *WorkflowSolutionOutput
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                *string
+	ifNoneMatch            *string
 }
 
 // The &#39;workflow.SolutionOutput&#39; resource to create.
@@ -1625,11 +1643,13 @@ func (r ApiCreateWorkflowSolutionOutputRequest) WorkflowSolutionOutput(workflowS
 	r.workflowSolutionOutput = &workflowSolutionOutput
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateWorkflowSolutionOutputRequest) IfMatch(ifMatch string) ApiCreateWorkflowSolutionOutputRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateWorkflowSolutionOutputRequest) IfNoneMatch(ifNoneMatch string) ApiCreateWorkflowSolutionOutputRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1649,7 +1669,7 @@ CreateWorkflowSolutionOutput Create a 'workflow.SolutionOutput' resource.
 func (a *WorkflowApiService) CreateWorkflowSolutionOutput(ctx _context.Context) ApiCreateWorkflowSolutionOutputRequest {
 	return ApiCreateWorkflowSolutionOutputRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1766,13 +1786,13 @@ func (a *WorkflowApiService) CreateWorkflowSolutionOutputExecute(r ApiCreateWork
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1789,11 +1809,11 @@ func (a *WorkflowApiService) CreateWorkflowSolutionOutputExecute(r ApiCreateWork
 }
 
 type ApiCreateWorkflowSshBatchExecutorRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
+	ctx                      _context.Context
+	ApiService               *WorkflowApiService
 	workflowSshBatchExecutor *WorkflowSshBatchExecutor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                  *string
+	ifNoneMatch              *string
 }
 
 // The &#39;workflow.SshBatchExecutor&#39; resource to create.
@@ -1801,11 +1821,13 @@ func (r ApiCreateWorkflowSshBatchExecutorRequest) WorkflowSshBatchExecutor(workf
 	r.workflowSshBatchExecutor = &workflowSshBatchExecutor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateWorkflowSshBatchExecutorRequest) IfMatch(ifMatch string) ApiCreateWorkflowSshBatchExecutorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateWorkflowSshBatchExecutorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateWorkflowSshBatchExecutorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1825,7 +1847,7 @@ CreateWorkflowSshBatchExecutor Create a 'workflow.SshBatchExecutor' resource.
 func (a *WorkflowApiService) CreateWorkflowSshBatchExecutor(ctx _context.Context) ApiCreateWorkflowSshBatchExecutorRequest {
 	return ApiCreateWorkflowSshBatchExecutorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1942,13 +1964,13 @@ func (a *WorkflowApiService) CreateWorkflowSshBatchExecutorExecute(r ApiCreateWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1965,11 +1987,11 @@ func (a *WorkflowApiService) CreateWorkflowSshBatchExecutorExecute(r ApiCreateWo
 }
 
 type ApiCreateWorkflowTaskDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
+	ctx                    _context.Context
+	ApiService             *WorkflowApiService
 	workflowTaskDefinition *WorkflowTaskDefinition
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                *string
+	ifNoneMatch            *string
 }
 
 // The &#39;workflow.TaskDefinition&#39; resource to create.
@@ -1977,11 +1999,13 @@ func (r ApiCreateWorkflowTaskDefinitionRequest) WorkflowTaskDefinition(workflowT
 	r.workflowTaskDefinition = &workflowTaskDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateWorkflowTaskDefinitionRequest) IfMatch(ifMatch string) ApiCreateWorkflowTaskDefinitionRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateWorkflowTaskDefinitionRequest) IfNoneMatch(ifNoneMatch string) ApiCreateWorkflowTaskDefinitionRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2001,7 +2025,7 @@ CreateWorkflowTaskDefinition Create a 'workflow.TaskDefinition' resource.
 func (a *WorkflowApiService) CreateWorkflowTaskDefinition(ctx _context.Context) ApiCreateWorkflowTaskDefinitionRequest {
 	return ApiCreateWorkflowTaskDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2118,13 +2142,13 @@ func (a *WorkflowApiService) CreateWorkflowTaskDefinitionExecute(r ApiCreateWork
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2141,11 +2165,11 @@ func (a *WorkflowApiService) CreateWorkflowTaskDefinitionExecute(r ApiCreateWork
 }
 
 type ApiCreateWorkflowTaskNotificationRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
+	ctx                      _context.Context
+	ApiService               *WorkflowApiService
 	workflowTaskNotification *WorkflowTaskNotification
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                  *string
+	ifNoneMatch              *string
 }
 
 // The &#39;workflow.TaskNotification&#39; resource to create.
@@ -2153,11 +2177,13 @@ func (r ApiCreateWorkflowTaskNotificationRequest) WorkflowTaskNotification(workf
 	r.workflowTaskNotification = &workflowTaskNotification
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateWorkflowTaskNotificationRequest) IfMatch(ifMatch string) ApiCreateWorkflowTaskNotificationRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateWorkflowTaskNotificationRequest) IfNoneMatch(ifNoneMatch string) ApiCreateWorkflowTaskNotificationRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2177,7 +2203,7 @@ CreateWorkflowTaskNotification Create a 'workflow.TaskNotification' resource.
 func (a *WorkflowApiService) CreateWorkflowTaskNotification(ctx _context.Context) ApiCreateWorkflowTaskNotificationRequest {
 	return ApiCreateWorkflowTaskNotificationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2294,13 +2320,13 @@ func (a *WorkflowApiService) CreateWorkflowTaskNotificationExecute(r ApiCreateWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2317,11 +2343,11 @@ func (a *WorkflowApiService) CreateWorkflowTaskNotificationExecute(r ApiCreateWo
 }
 
 type ApiCreateWorkflowTemplateEvaluationRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
+	ctx                        _context.Context
+	ApiService                 *WorkflowApiService
 	workflowTemplateEvaluation *WorkflowTemplateEvaluation
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                    *string
+	ifNoneMatch                *string
 }
 
 // The &#39;workflow.TemplateEvaluation&#39; resource to create.
@@ -2329,11 +2355,13 @@ func (r ApiCreateWorkflowTemplateEvaluationRequest) WorkflowTemplateEvaluation(w
 	r.workflowTemplateEvaluation = &workflowTemplateEvaluation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateWorkflowTemplateEvaluationRequest) IfMatch(ifMatch string) ApiCreateWorkflowTemplateEvaluationRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateWorkflowTemplateEvaluationRequest) IfNoneMatch(ifNoneMatch string) ApiCreateWorkflowTemplateEvaluationRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2353,7 +2381,7 @@ CreateWorkflowTemplateEvaluation Create a 'workflow.TemplateEvaluation' resource
 func (a *WorkflowApiService) CreateWorkflowTemplateEvaluation(ctx _context.Context) ApiCreateWorkflowTemplateEvaluationRequest {
 	return ApiCreateWorkflowTemplateEvaluationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2470,13 +2498,13 @@ func (a *WorkflowApiService) CreateWorkflowTemplateEvaluationExecute(r ApiCreate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2493,11 +2521,11 @@ func (a *WorkflowApiService) CreateWorkflowTemplateEvaluationExecute(r ApiCreate
 }
 
 type ApiCreateWorkflowWorkflowDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
+	ctx                        _context.Context
+	ApiService                 *WorkflowApiService
 	workflowWorkflowDefinition *WorkflowWorkflowDefinition
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                    *string
+	ifNoneMatch                *string
 }
 
 // The &#39;workflow.WorkflowDefinition&#39; resource to create.
@@ -2505,11 +2533,13 @@ func (r ApiCreateWorkflowWorkflowDefinitionRequest) WorkflowWorkflowDefinition(w
 	r.workflowWorkflowDefinition = &workflowWorkflowDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateWorkflowWorkflowDefinitionRequest) IfMatch(ifMatch string) ApiCreateWorkflowWorkflowDefinitionRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateWorkflowWorkflowDefinitionRequest) IfNoneMatch(ifNoneMatch string) ApiCreateWorkflowWorkflowDefinitionRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2529,7 +2559,7 @@ CreateWorkflowWorkflowDefinition Create a 'workflow.WorkflowDefinition' resource
 func (a *WorkflowApiService) CreateWorkflowWorkflowDefinition(ctx _context.Context) ApiCreateWorkflowWorkflowDefinitionRequest {
 	return ApiCreateWorkflowWorkflowDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2646,13 +2676,13 @@ func (a *WorkflowApiService) CreateWorkflowWorkflowDefinitionExecute(r ApiCreate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2669,11 +2699,11 @@ func (a *WorkflowApiService) CreateWorkflowWorkflowDefinitionExecute(r ApiCreate
 }
 
 type ApiCreateWorkflowWorkflowInfoRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
+	ctx                  _context.Context
+	ApiService           *WorkflowApiService
 	workflowWorkflowInfo *WorkflowWorkflowInfo
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch              *string
+	ifNoneMatch          *string
 }
 
 // The &#39;workflow.WorkflowInfo&#39; resource to create.
@@ -2681,11 +2711,13 @@ func (r ApiCreateWorkflowWorkflowInfoRequest) WorkflowWorkflowInfo(workflowWorkf
 	r.workflowWorkflowInfo = &workflowWorkflowInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateWorkflowWorkflowInfoRequest) IfMatch(ifMatch string) ApiCreateWorkflowWorkflowInfoRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateWorkflowWorkflowInfoRequest) IfNoneMatch(ifNoneMatch string) ApiCreateWorkflowWorkflowInfoRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2705,7 +2737,7 @@ CreateWorkflowWorkflowInfo Create a 'workflow.WorkflowInfo' resource.
 func (a *WorkflowApiService) CreateWorkflowWorkflowInfo(ctx _context.Context) ApiCreateWorkflowWorkflowInfoRequest {
 	return ApiCreateWorkflowWorkflowInfoRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2822,13 +2854,13 @@ func (a *WorkflowApiService) CreateWorkflowWorkflowInfoExecute(r ApiCreateWorkfl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2845,11 +2877,11 @@ func (a *WorkflowApiService) CreateWorkflowWorkflowInfoExecute(r ApiCreateWorkfl
 }
 
 type ApiCreateWorkflowWorkflowNotificationRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
+	ctx                          _context.Context
+	ApiService                   *WorkflowApiService
 	workflowWorkflowNotification *WorkflowWorkflowNotification
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                      *string
+	ifNoneMatch                  *string
 }
 
 // The &#39;workflow.WorkflowNotification&#39; resource to create.
@@ -2857,11 +2889,13 @@ func (r ApiCreateWorkflowWorkflowNotificationRequest) WorkflowWorkflowNotificati
 	r.workflowWorkflowNotification = &workflowWorkflowNotification
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateWorkflowWorkflowNotificationRequest) IfMatch(ifMatch string) ApiCreateWorkflowWorkflowNotificationRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateWorkflowWorkflowNotificationRequest) IfNoneMatch(ifNoneMatch string) ApiCreateWorkflowWorkflowNotificationRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2881,7 +2915,7 @@ CreateWorkflowWorkflowNotification Create a 'workflow.WorkflowNotification' reso
 func (a *WorkflowApiService) CreateWorkflowWorkflowNotification(ctx _context.Context) ApiCreateWorkflowWorkflowNotificationRequest {
 	return ApiCreateWorkflowWorkflowNotificationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2998,13 +3032,13 @@ func (a *WorkflowApiService) CreateWorkflowWorkflowNotificationExecute(r ApiCrea
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3021,11 +3055,10 @@ func (a *WorkflowApiService) CreateWorkflowWorkflowNotificationExecute(r ApiCrea
 }
 
 type ApiDeleteWorkflowAnsibleBatchExecutorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteWorkflowAnsibleBatchExecutorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteWorkflowAnsibleBatchExecutorExecute(r)
@@ -3041,8 +3074,8 @@ DeleteWorkflowAnsibleBatchExecutor Delete a 'workflow.AnsibleBatchExecutor' reso
 func (a *WorkflowApiService) DeleteWorkflowAnsibleBatchExecutor(ctx _context.Context, moid string) ApiDeleteWorkflowAnsibleBatchExecutorRequest {
 	return ApiDeleteWorkflowAnsibleBatchExecutorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3147,13 +3180,13 @@ func (a *WorkflowApiService) DeleteWorkflowAnsibleBatchExecutorExecute(r ApiDele
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -3161,11 +3194,10 @@ func (a *WorkflowApiService) DeleteWorkflowAnsibleBatchExecutorExecute(r ApiDele
 }
 
 type ApiDeleteWorkflowBatchApiExecutorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteWorkflowBatchApiExecutorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteWorkflowBatchApiExecutorExecute(r)
@@ -3181,8 +3213,8 @@ DeleteWorkflowBatchApiExecutor Delete a 'workflow.BatchApiExecutor' resource.
 func (a *WorkflowApiService) DeleteWorkflowBatchApiExecutor(ctx _context.Context, moid string) ApiDeleteWorkflowBatchApiExecutorRequest {
 	return ApiDeleteWorkflowBatchApiExecutorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3287,13 +3319,13 @@ func (a *WorkflowApiService) DeleteWorkflowBatchApiExecutorExecute(r ApiDeleteWo
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -3301,11 +3333,10 @@ func (a *WorkflowApiService) DeleteWorkflowBatchApiExecutorExecute(r ApiDeleteWo
 }
 
 type ApiDeleteWorkflowCustomDataTypeDefinitionRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteWorkflowCustomDataTypeDefinitionRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteWorkflowCustomDataTypeDefinitionExecute(r)
@@ -3321,8 +3352,8 @@ DeleteWorkflowCustomDataTypeDefinition Delete a 'workflow.CustomDataTypeDefiniti
 func (a *WorkflowApiService) DeleteWorkflowCustomDataTypeDefinition(ctx _context.Context, moid string) ApiDeleteWorkflowCustomDataTypeDefinitionRequest {
 	return ApiDeleteWorkflowCustomDataTypeDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3427,13 +3458,13 @@ func (a *WorkflowApiService) DeleteWorkflowCustomDataTypeDefinitionExecute(r Api
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -3441,11 +3472,10 @@ func (a *WorkflowApiService) DeleteWorkflowCustomDataTypeDefinitionExecute(r Api
 }
 
 type ApiDeleteWorkflowErrorResponseHandlerRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteWorkflowErrorResponseHandlerRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteWorkflowErrorResponseHandlerExecute(r)
@@ -3461,8 +3491,8 @@ DeleteWorkflowErrorResponseHandler Delete a 'workflow.ErrorResponseHandler' reso
 func (a *WorkflowApiService) DeleteWorkflowErrorResponseHandler(ctx _context.Context, moid string) ApiDeleteWorkflowErrorResponseHandlerRequest {
 	return ApiDeleteWorkflowErrorResponseHandlerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3567,13 +3597,13 @@ func (a *WorkflowApiService) DeleteWorkflowErrorResponseHandlerExecute(r ApiDele
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -3581,11 +3611,10 @@ func (a *WorkflowApiService) DeleteWorkflowErrorResponseHandlerExecute(r ApiDele
 }
 
 type ApiDeleteWorkflowRollbackWorkflowRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteWorkflowRollbackWorkflowRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteWorkflowRollbackWorkflowExecute(r)
@@ -3601,8 +3630,8 @@ DeleteWorkflowRollbackWorkflow Delete a 'workflow.RollbackWorkflow' resource.
 func (a *WorkflowApiService) DeleteWorkflowRollbackWorkflow(ctx _context.Context, moid string) ApiDeleteWorkflowRollbackWorkflowRequest {
 	return ApiDeleteWorkflowRollbackWorkflowRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3707,13 +3736,13 @@ func (a *WorkflowApiService) DeleteWorkflowRollbackWorkflowExecute(r ApiDeleteWo
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -3721,11 +3750,10 @@ func (a *WorkflowApiService) DeleteWorkflowRollbackWorkflowExecute(r ApiDeleteWo
 }
 
 type ApiDeleteWorkflowSolutionActionDefinitionRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteWorkflowSolutionActionDefinitionRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteWorkflowSolutionActionDefinitionExecute(r)
@@ -3741,8 +3769,8 @@ DeleteWorkflowSolutionActionDefinition Delete a 'workflow.SolutionActionDefiniti
 func (a *WorkflowApiService) DeleteWorkflowSolutionActionDefinition(ctx _context.Context, moid string) ApiDeleteWorkflowSolutionActionDefinitionRequest {
 	return ApiDeleteWorkflowSolutionActionDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3847,13 +3875,13 @@ func (a *WorkflowApiService) DeleteWorkflowSolutionActionDefinitionExecute(r Api
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -3861,11 +3889,10 @@ func (a *WorkflowApiService) DeleteWorkflowSolutionActionDefinitionExecute(r Api
 }
 
 type ApiDeleteWorkflowSolutionActionInstanceRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteWorkflowSolutionActionInstanceRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteWorkflowSolutionActionInstanceExecute(r)
@@ -3881,8 +3908,8 @@ DeleteWorkflowSolutionActionInstance Delete a 'workflow.SolutionActionInstance' 
 func (a *WorkflowApiService) DeleteWorkflowSolutionActionInstance(ctx _context.Context, moid string) ApiDeleteWorkflowSolutionActionInstanceRequest {
 	return ApiDeleteWorkflowSolutionActionInstanceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3987,13 +4014,13 @@ func (a *WorkflowApiService) DeleteWorkflowSolutionActionInstanceExecute(r ApiDe
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4001,11 +4028,10 @@ func (a *WorkflowApiService) DeleteWorkflowSolutionActionInstanceExecute(r ApiDe
 }
 
 type ApiDeleteWorkflowSolutionDefinitionRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteWorkflowSolutionDefinitionRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteWorkflowSolutionDefinitionExecute(r)
@@ -4021,8 +4047,8 @@ DeleteWorkflowSolutionDefinition Delete a 'workflow.SolutionDefinition' resource
 func (a *WorkflowApiService) DeleteWorkflowSolutionDefinition(ctx _context.Context, moid string) ApiDeleteWorkflowSolutionDefinitionRequest {
 	return ApiDeleteWorkflowSolutionDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4127,13 +4153,13 @@ func (a *WorkflowApiService) DeleteWorkflowSolutionDefinitionExecute(r ApiDelete
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4141,11 +4167,10 @@ func (a *WorkflowApiService) DeleteWorkflowSolutionDefinitionExecute(r ApiDelete
 }
 
 type ApiDeleteWorkflowSolutionInstanceRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteWorkflowSolutionInstanceRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteWorkflowSolutionInstanceExecute(r)
@@ -4161,8 +4186,8 @@ DeleteWorkflowSolutionInstance Delete a 'workflow.SolutionInstance' resource.
 func (a *WorkflowApiService) DeleteWorkflowSolutionInstance(ctx _context.Context, moid string) ApiDeleteWorkflowSolutionInstanceRequest {
 	return ApiDeleteWorkflowSolutionInstanceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4267,13 +4292,13 @@ func (a *WorkflowApiService) DeleteWorkflowSolutionInstanceExecute(r ApiDeleteWo
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4281,11 +4306,10 @@ func (a *WorkflowApiService) DeleteWorkflowSolutionInstanceExecute(r ApiDeleteWo
 }
 
 type ApiDeleteWorkflowSolutionOutputRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteWorkflowSolutionOutputRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteWorkflowSolutionOutputExecute(r)
@@ -4301,8 +4325,8 @@ DeleteWorkflowSolutionOutput Delete a 'workflow.SolutionOutput' resource.
 func (a *WorkflowApiService) DeleteWorkflowSolutionOutput(ctx _context.Context, moid string) ApiDeleteWorkflowSolutionOutputRequest {
 	return ApiDeleteWorkflowSolutionOutputRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4407,13 +4431,13 @@ func (a *WorkflowApiService) DeleteWorkflowSolutionOutputExecute(r ApiDeleteWork
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4421,11 +4445,10 @@ func (a *WorkflowApiService) DeleteWorkflowSolutionOutputExecute(r ApiDeleteWork
 }
 
 type ApiDeleteWorkflowSshBatchExecutorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteWorkflowSshBatchExecutorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteWorkflowSshBatchExecutorExecute(r)
@@ -4441,8 +4464,8 @@ DeleteWorkflowSshBatchExecutor Delete a 'workflow.SshBatchExecutor' resource.
 func (a *WorkflowApiService) DeleteWorkflowSshBatchExecutor(ctx _context.Context, moid string) ApiDeleteWorkflowSshBatchExecutorRequest {
 	return ApiDeleteWorkflowSshBatchExecutorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4547,13 +4570,13 @@ func (a *WorkflowApiService) DeleteWorkflowSshBatchExecutorExecute(r ApiDeleteWo
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4561,11 +4584,10 @@ func (a *WorkflowApiService) DeleteWorkflowSshBatchExecutorExecute(r ApiDeleteWo
 }
 
 type ApiDeleteWorkflowTaskDefinitionRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteWorkflowTaskDefinitionRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteWorkflowTaskDefinitionExecute(r)
@@ -4581,8 +4603,8 @@ DeleteWorkflowTaskDefinition Delete a 'workflow.TaskDefinition' resource.
 func (a *WorkflowApiService) DeleteWorkflowTaskDefinition(ctx _context.Context, moid string) ApiDeleteWorkflowTaskDefinitionRequest {
 	return ApiDeleteWorkflowTaskDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4687,13 +4709,13 @@ func (a *WorkflowApiService) DeleteWorkflowTaskDefinitionExecute(r ApiDeleteWork
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4701,11 +4723,10 @@ func (a *WorkflowApiService) DeleteWorkflowTaskDefinitionExecute(r ApiDeleteWork
 }
 
 type ApiDeleteWorkflowWorkflowDefinitionRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteWorkflowWorkflowDefinitionRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteWorkflowWorkflowDefinitionExecute(r)
@@ -4721,8 +4742,8 @@ DeleteWorkflowWorkflowDefinition Delete a 'workflow.WorkflowDefinition' resource
 func (a *WorkflowApiService) DeleteWorkflowWorkflowDefinition(ctx _context.Context, moid string) ApiDeleteWorkflowWorkflowDefinitionRequest {
 	return ApiDeleteWorkflowWorkflowDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4827,13 +4848,13 @@ func (a *WorkflowApiService) DeleteWorkflowWorkflowDefinitionExecute(r ApiDelete
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4841,11 +4862,10 @@ func (a *WorkflowApiService) DeleteWorkflowWorkflowDefinitionExecute(r ApiDelete
 }
 
 type ApiDeleteWorkflowWorkflowInfoRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteWorkflowWorkflowInfoRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteWorkflowWorkflowInfoExecute(r)
@@ -4861,8 +4881,8 @@ DeleteWorkflowWorkflowInfo Delete a 'workflow.WorkflowInfo' resource.
 func (a *WorkflowApiService) DeleteWorkflowWorkflowInfo(ctx _context.Context, moid string) ApiDeleteWorkflowWorkflowInfoRequest {
 	return ApiDeleteWorkflowWorkflowInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4967,13 +4987,13 @@ func (a *WorkflowApiService) DeleteWorkflowWorkflowInfoExecute(r ApiDeleteWorkfl
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4981,11 +5001,10 @@ func (a *WorkflowApiService) DeleteWorkflowWorkflowInfoExecute(r ApiDeleteWorkfl
 }
 
 type ApiGetWorkflowAnsibleBatchExecutorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowAnsibleBatchExecutorByMoidRequest) Execute() (WorkflowAnsibleBatchExecutor, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowAnsibleBatchExecutorByMoidExecute(r)
@@ -5001,8 +5020,8 @@ GetWorkflowAnsibleBatchExecutorByMoid Read a 'workflow.AnsibleBatchExecutor' res
 func (a *WorkflowApiService) GetWorkflowAnsibleBatchExecutorByMoid(ctx _context.Context, moid string) ApiGetWorkflowAnsibleBatchExecutorByMoidRequest {
 	return ApiGetWorkflowAnsibleBatchExecutorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5109,13 +5128,13 @@ func (a *WorkflowApiService) GetWorkflowAnsibleBatchExecutorByMoidExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5132,19 +5151,19 @@ func (a *WorkflowApiService) GetWorkflowAnsibleBatchExecutorByMoidExecute(r ApiG
 }
 
 type ApiGetWorkflowAnsibleBatchExecutorListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5152,51 +5171,61 @@ func (r ApiGetWorkflowAnsibleBatchExecutorListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowAnsibleBatchExecutorListRequest) Orderby(orderby string) ApiGetWorkflowAnsibleBatchExecutorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowAnsibleBatchExecutorListRequest) Top(top int32) ApiGetWorkflowAnsibleBatchExecutorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowAnsibleBatchExecutorListRequest) Skip(skip int32) ApiGetWorkflowAnsibleBatchExecutorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowAnsibleBatchExecutorListRequest) Select_(select_ string) ApiGetWorkflowAnsibleBatchExecutorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowAnsibleBatchExecutorListRequest) Expand(expand string) ApiGetWorkflowAnsibleBatchExecutorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowAnsibleBatchExecutorListRequest) Apply(apply string) ApiGetWorkflowAnsibleBatchExecutorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowAnsibleBatchExecutorListRequest) Count(count bool) ApiGetWorkflowAnsibleBatchExecutorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowAnsibleBatchExecutorListRequest) Inlinecount(inlinecount string) ApiGetWorkflowAnsibleBatchExecutorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowAnsibleBatchExecutorListRequest) At(at string) ApiGetWorkflowAnsibleBatchExecutorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowAnsibleBatchExecutorListRequest) Tags(tags string) ApiGetWorkflowAnsibleBatchExecutorListRequest {
 	r.tags = &tags
@@ -5216,7 +5245,7 @@ GetWorkflowAnsibleBatchExecutorList Read a 'workflow.AnsibleBatchExecutor' resou
 func (a *WorkflowApiService) GetWorkflowAnsibleBatchExecutorList(ctx _context.Context) ApiGetWorkflowAnsibleBatchExecutorListRequest {
 	return ApiGetWorkflowAnsibleBatchExecutorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5355,13 +5384,13 @@ func (a *WorkflowApiService) GetWorkflowAnsibleBatchExecutorListExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5378,11 +5407,10 @@ func (a *WorkflowApiService) GetWorkflowAnsibleBatchExecutorListExecute(r ApiGet
 }
 
 type ApiGetWorkflowBatchApiExecutorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowBatchApiExecutorByMoidRequest) Execute() (WorkflowBatchApiExecutor, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowBatchApiExecutorByMoidExecute(r)
@@ -5398,8 +5426,8 @@ GetWorkflowBatchApiExecutorByMoid Read a 'workflow.BatchApiExecutor' resource.
 func (a *WorkflowApiService) GetWorkflowBatchApiExecutorByMoid(ctx _context.Context, moid string) ApiGetWorkflowBatchApiExecutorByMoidRequest {
 	return ApiGetWorkflowBatchApiExecutorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5506,13 +5534,13 @@ func (a *WorkflowApiService) GetWorkflowBatchApiExecutorByMoidExecute(r ApiGetWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5529,19 +5557,19 @@ func (a *WorkflowApiService) GetWorkflowBatchApiExecutorByMoidExecute(r ApiGetWo
 }
 
 type ApiGetWorkflowBatchApiExecutorListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5549,51 +5577,61 @@ func (r ApiGetWorkflowBatchApiExecutorListRequest) Filter(filter string) ApiGetW
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowBatchApiExecutorListRequest) Orderby(orderby string) ApiGetWorkflowBatchApiExecutorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowBatchApiExecutorListRequest) Top(top int32) ApiGetWorkflowBatchApiExecutorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowBatchApiExecutorListRequest) Skip(skip int32) ApiGetWorkflowBatchApiExecutorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowBatchApiExecutorListRequest) Select_(select_ string) ApiGetWorkflowBatchApiExecutorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowBatchApiExecutorListRequest) Expand(expand string) ApiGetWorkflowBatchApiExecutorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowBatchApiExecutorListRequest) Apply(apply string) ApiGetWorkflowBatchApiExecutorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowBatchApiExecutorListRequest) Count(count bool) ApiGetWorkflowBatchApiExecutorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowBatchApiExecutorListRequest) Inlinecount(inlinecount string) ApiGetWorkflowBatchApiExecutorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowBatchApiExecutorListRequest) At(at string) ApiGetWorkflowBatchApiExecutorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowBatchApiExecutorListRequest) Tags(tags string) ApiGetWorkflowBatchApiExecutorListRequest {
 	r.tags = &tags
@@ -5613,7 +5651,7 @@ GetWorkflowBatchApiExecutorList Read a 'workflow.BatchApiExecutor' resource.
 func (a *WorkflowApiService) GetWorkflowBatchApiExecutorList(ctx _context.Context) ApiGetWorkflowBatchApiExecutorListRequest {
 	return ApiGetWorkflowBatchApiExecutorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5752,13 +5790,13 @@ func (a *WorkflowApiService) GetWorkflowBatchApiExecutorListExecute(r ApiGetWork
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5775,11 +5813,10 @@ func (a *WorkflowApiService) GetWorkflowBatchApiExecutorListExecute(r ApiGetWork
 }
 
 type ApiGetWorkflowBuildTaskMetaByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowBuildTaskMetaByMoidRequest) Execute() (WorkflowBuildTaskMeta, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowBuildTaskMetaByMoidExecute(r)
@@ -5795,8 +5832,8 @@ GetWorkflowBuildTaskMetaByMoid Read a 'workflow.BuildTaskMeta' resource.
 func (a *WorkflowApiService) GetWorkflowBuildTaskMetaByMoid(ctx _context.Context, moid string) ApiGetWorkflowBuildTaskMetaByMoidRequest {
 	return ApiGetWorkflowBuildTaskMetaByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5903,13 +5940,13 @@ func (a *WorkflowApiService) GetWorkflowBuildTaskMetaByMoidExecute(r ApiGetWorkf
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5926,19 +5963,19 @@ func (a *WorkflowApiService) GetWorkflowBuildTaskMetaByMoidExecute(r ApiGetWorkf
 }
 
 type ApiGetWorkflowBuildTaskMetaListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5946,51 +5983,61 @@ func (r ApiGetWorkflowBuildTaskMetaListRequest) Filter(filter string) ApiGetWork
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowBuildTaskMetaListRequest) Orderby(orderby string) ApiGetWorkflowBuildTaskMetaListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowBuildTaskMetaListRequest) Top(top int32) ApiGetWorkflowBuildTaskMetaListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowBuildTaskMetaListRequest) Skip(skip int32) ApiGetWorkflowBuildTaskMetaListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowBuildTaskMetaListRequest) Select_(select_ string) ApiGetWorkflowBuildTaskMetaListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowBuildTaskMetaListRequest) Expand(expand string) ApiGetWorkflowBuildTaskMetaListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowBuildTaskMetaListRequest) Apply(apply string) ApiGetWorkflowBuildTaskMetaListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowBuildTaskMetaListRequest) Count(count bool) ApiGetWorkflowBuildTaskMetaListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowBuildTaskMetaListRequest) Inlinecount(inlinecount string) ApiGetWorkflowBuildTaskMetaListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowBuildTaskMetaListRequest) At(at string) ApiGetWorkflowBuildTaskMetaListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowBuildTaskMetaListRequest) Tags(tags string) ApiGetWorkflowBuildTaskMetaListRequest {
 	r.tags = &tags
@@ -6010,7 +6057,7 @@ GetWorkflowBuildTaskMetaList Read a 'workflow.BuildTaskMeta' resource.
 func (a *WorkflowApiService) GetWorkflowBuildTaskMetaList(ctx _context.Context) ApiGetWorkflowBuildTaskMetaListRequest {
 	return ApiGetWorkflowBuildTaskMetaListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6149,13 +6196,13 @@ func (a *WorkflowApiService) GetWorkflowBuildTaskMetaListExecute(r ApiGetWorkflo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6172,11 +6219,10 @@ func (a *WorkflowApiService) GetWorkflowBuildTaskMetaListExecute(r ApiGetWorkflo
 }
 
 type ApiGetWorkflowBuildTaskMetaOwnerByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowBuildTaskMetaOwnerByMoidRequest) Execute() (WorkflowBuildTaskMetaOwner, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowBuildTaskMetaOwnerByMoidExecute(r)
@@ -6192,8 +6238,8 @@ GetWorkflowBuildTaskMetaOwnerByMoid Read a 'workflow.BuildTaskMetaOwner' resourc
 func (a *WorkflowApiService) GetWorkflowBuildTaskMetaOwnerByMoid(ctx _context.Context, moid string) ApiGetWorkflowBuildTaskMetaOwnerByMoidRequest {
 	return ApiGetWorkflowBuildTaskMetaOwnerByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6300,13 +6346,13 @@ func (a *WorkflowApiService) GetWorkflowBuildTaskMetaOwnerByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6323,19 +6369,19 @@ func (a *WorkflowApiService) GetWorkflowBuildTaskMetaOwnerByMoidExecute(r ApiGet
 }
 
 type ApiGetWorkflowBuildTaskMetaOwnerListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -6343,51 +6389,61 @@ func (r ApiGetWorkflowBuildTaskMetaOwnerListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowBuildTaskMetaOwnerListRequest) Orderby(orderby string) ApiGetWorkflowBuildTaskMetaOwnerListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowBuildTaskMetaOwnerListRequest) Top(top int32) ApiGetWorkflowBuildTaskMetaOwnerListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowBuildTaskMetaOwnerListRequest) Skip(skip int32) ApiGetWorkflowBuildTaskMetaOwnerListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowBuildTaskMetaOwnerListRequest) Select_(select_ string) ApiGetWorkflowBuildTaskMetaOwnerListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowBuildTaskMetaOwnerListRequest) Expand(expand string) ApiGetWorkflowBuildTaskMetaOwnerListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowBuildTaskMetaOwnerListRequest) Apply(apply string) ApiGetWorkflowBuildTaskMetaOwnerListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowBuildTaskMetaOwnerListRequest) Count(count bool) ApiGetWorkflowBuildTaskMetaOwnerListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowBuildTaskMetaOwnerListRequest) Inlinecount(inlinecount string) ApiGetWorkflowBuildTaskMetaOwnerListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowBuildTaskMetaOwnerListRequest) At(at string) ApiGetWorkflowBuildTaskMetaOwnerListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowBuildTaskMetaOwnerListRequest) Tags(tags string) ApiGetWorkflowBuildTaskMetaOwnerListRequest {
 	r.tags = &tags
@@ -6407,7 +6463,7 @@ GetWorkflowBuildTaskMetaOwnerList Read a 'workflow.BuildTaskMetaOwner' resource.
 func (a *WorkflowApiService) GetWorkflowBuildTaskMetaOwnerList(ctx _context.Context) ApiGetWorkflowBuildTaskMetaOwnerListRequest {
 	return ApiGetWorkflowBuildTaskMetaOwnerListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6546,13 +6602,13 @@ func (a *WorkflowApiService) GetWorkflowBuildTaskMetaOwnerListExecute(r ApiGetWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6569,11 +6625,10 @@ func (a *WorkflowApiService) GetWorkflowBuildTaskMetaOwnerListExecute(r ApiGetWo
 }
 
 type ApiGetWorkflowCatalogByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowCatalogByMoidRequest) Execute() (WorkflowCatalog, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowCatalogByMoidExecute(r)
@@ -6589,8 +6644,8 @@ GetWorkflowCatalogByMoid Read a 'workflow.Catalog' resource.
 func (a *WorkflowApiService) GetWorkflowCatalogByMoid(ctx _context.Context, moid string) ApiGetWorkflowCatalogByMoidRequest {
 	return ApiGetWorkflowCatalogByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6697,13 +6752,13 @@ func (a *WorkflowApiService) GetWorkflowCatalogByMoidExecute(r ApiGetWorkflowCat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6720,19 +6775,19 @@ func (a *WorkflowApiService) GetWorkflowCatalogByMoidExecute(r ApiGetWorkflowCat
 }
 
 type ApiGetWorkflowCatalogListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -6740,51 +6795,61 @@ func (r ApiGetWorkflowCatalogListRequest) Filter(filter string) ApiGetWorkflowCa
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowCatalogListRequest) Orderby(orderby string) ApiGetWorkflowCatalogListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowCatalogListRequest) Top(top int32) ApiGetWorkflowCatalogListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowCatalogListRequest) Skip(skip int32) ApiGetWorkflowCatalogListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowCatalogListRequest) Select_(select_ string) ApiGetWorkflowCatalogListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowCatalogListRequest) Expand(expand string) ApiGetWorkflowCatalogListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowCatalogListRequest) Apply(apply string) ApiGetWorkflowCatalogListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowCatalogListRequest) Count(count bool) ApiGetWorkflowCatalogListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowCatalogListRequest) Inlinecount(inlinecount string) ApiGetWorkflowCatalogListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowCatalogListRequest) At(at string) ApiGetWorkflowCatalogListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowCatalogListRequest) Tags(tags string) ApiGetWorkflowCatalogListRequest {
 	r.tags = &tags
@@ -6804,7 +6869,7 @@ GetWorkflowCatalogList Read a 'workflow.Catalog' resource.
 func (a *WorkflowApiService) GetWorkflowCatalogList(ctx _context.Context) ApiGetWorkflowCatalogListRequest {
 	return ApiGetWorkflowCatalogListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6943,13 +7008,13 @@ func (a *WorkflowApiService) GetWorkflowCatalogListExecute(r ApiGetWorkflowCatal
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6966,11 +7031,10 @@ func (a *WorkflowApiService) GetWorkflowCatalogListExecute(r ApiGetWorkflowCatal
 }
 
 type ApiGetWorkflowCustomDataTypeDefinitionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowCustomDataTypeDefinitionByMoidRequest) Execute() (WorkflowCustomDataTypeDefinition, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowCustomDataTypeDefinitionByMoidExecute(r)
@@ -6986,8 +7050,8 @@ GetWorkflowCustomDataTypeDefinitionByMoid Read a 'workflow.CustomDataTypeDefinit
 func (a *WorkflowApiService) GetWorkflowCustomDataTypeDefinitionByMoid(ctx _context.Context, moid string) ApiGetWorkflowCustomDataTypeDefinitionByMoidRequest {
 	return ApiGetWorkflowCustomDataTypeDefinitionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7094,13 +7158,13 @@ func (a *WorkflowApiService) GetWorkflowCustomDataTypeDefinitionByMoidExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7117,19 +7181,19 @@ func (a *WorkflowApiService) GetWorkflowCustomDataTypeDefinitionByMoidExecute(r 
 }
 
 type ApiGetWorkflowCustomDataTypeDefinitionListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7137,51 +7201,61 @@ func (r ApiGetWorkflowCustomDataTypeDefinitionListRequest) Filter(filter string)
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowCustomDataTypeDefinitionListRequest) Orderby(orderby string) ApiGetWorkflowCustomDataTypeDefinitionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowCustomDataTypeDefinitionListRequest) Top(top int32) ApiGetWorkflowCustomDataTypeDefinitionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowCustomDataTypeDefinitionListRequest) Skip(skip int32) ApiGetWorkflowCustomDataTypeDefinitionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowCustomDataTypeDefinitionListRequest) Select_(select_ string) ApiGetWorkflowCustomDataTypeDefinitionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowCustomDataTypeDefinitionListRequest) Expand(expand string) ApiGetWorkflowCustomDataTypeDefinitionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowCustomDataTypeDefinitionListRequest) Apply(apply string) ApiGetWorkflowCustomDataTypeDefinitionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowCustomDataTypeDefinitionListRequest) Count(count bool) ApiGetWorkflowCustomDataTypeDefinitionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowCustomDataTypeDefinitionListRequest) Inlinecount(inlinecount string) ApiGetWorkflowCustomDataTypeDefinitionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowCustomDataTypeDefinitionListRequest) At(at string) ApiGetWorkflowCustomDataTypeDefinitionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowCustomDataTypeDefinitionListRequest) Tags(tags string) ApiGetWorkflowCustomDataTypeDefinitionListRequest {
 	r.tags = &tags
@@ -7201,7 +7275,7 @@ GetWorkflowCustomDataTypeDefinitionList Read a 'workflow.CustomDataTypeDefinitio
 func (a *WorkflowApiService) GetWorkflowCustomDataTypeDefinitionList(ctx _context.Context) ApiGetWorkflowCustomDataTypeDefinitionListRequest {
 	return ApiGetWorkflowCustomDataTypeDefinitionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7340,13 +7414,13 @@ func (a *WorkflowApiService) GetWorkflowCustomDataTypeDefinitionListExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7363,11 +7437,10 @@ func (a *WorkflowApiService) GetWorkflowCustomDataTypeDefinitionListExecute(r Ap
 }
 
 type ApiGetWorkflowErrorResponseHandlerByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowErrorResponseHandlerByMoidRequest) Execute() (WorkflowErrorResponseHandler, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowErrorResponseHandlerByMoidExecute(r)
@@ -7383,8 +7456,8 @@ GetWorkflowErrorResponseHandlerByMoid Read a 'workflow.ErrorResponseHandler' res
 func (a *WorkflowApiService) GetWorkflowErrorResponseHandlerByMoid(ctx _context.Context, moid string) ApiGetWorkflowErrorResponseHandlerByMoidRequest {
 	return ApiGetWorkflowErrorResponseHandlerByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7491,13 +7564,13 @@ func (a *WorkflowApiService) GetWorkflowErrorResponseHandlerByMoidExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7514,19 +7587,19 @@ func (a *WorkflowApiService) GetWorkflowErrorResponseHandlerByMoidExecute(r ApiG
 }
 
 type ApiGetWorkflowErrorResponseHandlerListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7534,51 +7607,61 @@ func (r ApiGetWorkflowErrorResponseHandlerListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowErrorResponseHandlerListRequest) Orderby(orderby string) ApiGetWorkflowErrorResponseHandlerListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowErrorResponseHandlerListRequest) Top(top int32) ApiGetWorkflowErrorResponseHandlerListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowErrorResponseHandlerListRequest) Skip(skip int32) ApiGetWorkflowErrorResponseHandlerListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowErrorResponseHandlerListRequest) Select_(select_ string) ApiGetWorkflowErrorResponseHandlerListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowErrorResponseHandlerListRequest) Expand(expand string) ApiGetWorkflowErrorResponseHandlerListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowErrorResponseHandlerListRequest) Apply(apply string) ApiGetWorkflowErrorResponseHandlerListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowErrorResponseHandlerListRequest) Count(count bool) ApiGetWorkflowErrorResponseHandlerListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowErrorResponseHandlerListRequest) Inlinecount(inlinecount string) ApiGetWorkflowErrorResponseHandlerListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowErrorResponseHandlerListRequest) At(at string) ApiGetWorkflowErrorResponseHandlerListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowErrorResponseHandlerListRequest) Tags(tags string) ApiGetWorkflowErrorResponseHandlerListRequest {
 	r.tags = &tags
@@ -7598,7 +7681,7 @@ GetWorkflowErrorResponseHandlerList Read a 'workflow.ErrorResponseHandler' resou
 func (a *WorkflowApiService) GetWorkflowErrorResponseHandlerList(ctx _context.Context) ApiGetWorkflowErrorResponseHandlerListRequest {
 	return ApiGetWorkflowErrorResponseHandlerListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7737,13 +7820,13 @@ func (a *WorkflowApiService) GetWorkflowErrorResponseHandlerListExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7760,11 +7843,10 @@ func (a *WorkflowApiService) GetWorkflowErrorResponseHandlerListExecute(r ApiGet
 }
 
 type ApiGetWorkflowPendingDynamicWorkflowInfoByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowPendingDynamicWorkflowInfoByMoidRequest) Execute() (WorkflowPendingDynamicWorkflowInfo, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowPendingDynamicWorkflowInfoByMoidExecute(r)
@@ -7780,8 +7862,8 @@ GetWorkflowPendingDynamicWorkflowInfoByMoid Read a 'workflow.PendingDynamicWorkf
 func (a *WorkflowApiService) GetWorkflowPendingDynamicWorkflowInfoByMoid(ctx _context.Context, moid string) ApiGetWorkflowPendingDynamicWorkflowInfoByMoidRequest {
 	return ApiGetWorkflowPendingDynamicWorkflowInfoByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7888,13 +7970,13 @@ func (a *WorkflowApiService) GetWorkflowPendingDynamicWorkflowInfoByMoidExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7911,19 +7993,19 @@ func (a *WorkflowApiService) GetWorkflowPendingDynamicWorkflowInfoByMoidExecute(
 }
 
 type ApiGetWorkflowPendingDynamicWorkflowInfoListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7931,51 +8013,61 @@ func (r ApiGetWorkflowPendingDynamicWorkflowInfoListRequest) Filter(filter strin
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowPendingDynamicWorkflowInfoListRequest) Orderby(orderby string) ApiGetWorkflowPendingDynamicWorkflowInfoListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowPendingDynamicWorkflowInfoListRequest) Top(top int32) ApiGetWorkflowPendingDynamicWorkflowInfoListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowPendingDynamicWorkflowInfoListRequest) Skip(skip int32) ApiGetWorkflowPendingDynamicWorkflowInfoListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowPendingDynamicWorkflowInfoListRequest) Select_(select_ string) ApiGetWorkflowPendingDynamicWorkflowInfoListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowPendingDynamicWorkflowInfoListRequest) Expand(expand string) ApiGetWorkflowPendingDynamicWorkflowInfoListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowPendingDynamicWorkflowInfoListRequest) Apply(apply string) ApiGetWorkflowPendingDynamicWorkflowInfoListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowPendingDynamicWorkflowInfoListRequest) Count(count bool) ApiGetWorkflowPendingDynamicWorkflowInfoListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowPendingDynamicWorkflowInfoListRequest) Inlinecount(inlinecount string) ApiGetWorkflowPendingDynamicWorkflowInfoListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowPendingDynamicWorkflowInfoListRequest) At(at string) ApiGetWorkflowPendingDynamicWorkflowInfoListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowPendingDynamicWorkflowInfoListRequest) Tags(tags string) ApiGetWorkflowPendingDynamicWorkflowInfoListRequest {
 	r.tags = &tags
@@ -7995,7 +8087,7 @@ GetWorkflowPendingDynamicWorkflowInfoList Read a 'workflow.PendingDynamicWorkflo
 func (a *WorkflowApiService) GetWorkflowPendingDynamicWorkflowInfoList(ctx _context.Context) ApiGetWorkflowPendingDynamicWorkflowInfoListRequest {
 	return ApiGetWorkflowPendingDynamicWorkflowInfoListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8134,13 +8226,13 @@ func (a *WorkflowApiService) GetWorkflowPendingDynamicWorkflowInfoListExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8157,11 +8249,10 @@ func (a *WorkflowApiService) GetWorkflowPendingDynamicWorkflowInfoListExecute(r 
 }
 
 type ApiGetWorkflowRollbackWorkflowByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowRollbackWorkflowByMoidRequest) Execute() (WorkflowRollbackWorkflow, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowRollbackWorkflowByMoidExecute(r)
@@ -8177,8 +8268,8 @@ GetWorkflowRollbackWorkflowByMoid Read a 'workflow.RollbackWorkflow' resource.
 func (a *WorkflowApiService) GetWorkflowRollbackWorkflowByMoid(ctx _context.Context, moid string) ApiGetWorkflowRollbackWorkflowByMoidRequest {
 	return ApiGetWorkflowRollbackWorkflowByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8285,13 +8376,13 @@ func (a *WorkflowApiService) GetWorkflowRollbackWorkflowByMoidExecute(r ApiGetWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8308,19 +8399,19 @@ func (a *WorkflowApiService) GetWorkflowRollbackWorkflowByMoidExecute(r ApiGetWo
 }
 
 type ApiGetWorkflowRollbackWorkflowListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8328,51 +8419,61 @@ func (r ApiGetWorkflowRollbackWorkflowListRequest) Filter(filter string) ApiGetW
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowRollbackWorkflowListRequest) Orderby(orderby string) ApiGetWorkflowRollbackWorkflowListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowRollbackWorkflowListRequest) Top(top int32) ApiGetWorkflowRollbackWorkflowListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowRollbackWorkflowListRequest) Skip(skip int32) ApiGetWorkflowRollbackWorkflowListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowRollbackWorkflowListRequest) Select_(select_ string) ApiGetWorkflowRollbackWorkflowListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowRollbackWorkflowListRequest) Expand(expand string) ApiGetWorkflowRollbackWorkflowListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowRollbackWorkflowListRequest) Apply(apply string) ApiGetWorkflowRollbackWorkflowListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowRollbackWorkflowListRequest) Count(count bool) ApiGetWorkflowRollbackWorkflowListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowRollbackWorkflowListRequest) Inlinecount(inlinecount string) ApiGetWorkflowRollbackWorkflowListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowRollbackWorkflowListRequest) At(at string) ApiGetWorkflowRollbackWorkflowListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowRollbackWorkflowListRequest) Tags(tags string) ApiGetWorkflowRollbackWorkflowListRequest {
 	r.tags = &tags
@@ -8392,7 +8493,7 @@ GetWorkflowRollbackWorkflowList Read a 'workflow.RollbackWorkflow' resource.
 func (a *WorkflowApiService) GetWorkflowRollbackWorkflowList(ctx _context.Context) ApiGetWorkflowRollbackWorkflowListRequest {
 	return ApiGetWorkflowRollbackWorkflowListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8531,13 +8632,13 @@ func (a *WorkflowApiService) GetWorkflowRollbackWorkflowListExecute(r ApiGetWork
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8554,11 +8655,10 @@ func (a *WorkflowApiService) GetWorkflowRollbackWorkflowListExecute(r ApiGetWork
 }
 
 type ApiGetWorkflowSolutionActionDefinitionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowSolutionActionDefinitionByMoidRequest) Execute() (WorkflowSolutionActionDefinition, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowSolutionActionDefinitionByMoidExecute(r)
@@ -8574,8 +8674,8 @@ GetWorkflowSolutionActionDefinitionByMoid Read a 'workflow.SolutionActionDefinit
 func (a *WorkflowApiService) GetWorkflowSolutionActionDefinitionByMoid(ctx _context.Context, moid string) ApiGetWorkflowSolutionActionDefinitionByMoidRequest {
 	return ApiGetWorkflowSolutionActionDefinitionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8682,13 +8782,13 @@ func (a *WorkflowApiService) GetWorkflowSolutionActionDefinitionByMoidExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8705,19 +8805,19 @@ func (a *WorkflowApiService) GetWorkflowSolutionActionDefinitionByMoidExecute(r 
 }
 
 type ApiGetWorkflowSolutionActionDefinitionListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8725,51 +8825,61 @@ func (r ApiGetWorkflowSolutionActionDefinitionListRequest) Filter(filter string)
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowSolutionActionDefinitionListRequest) Orderby(orderby string) ApiGetWorkflowSolutionActionDefinitionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowSolutionActionDefinitionListRequest) Top(top int32) ApiGetWorkflowSolutionActionDefinitionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowSolutionActionDefinitionListRequest) Skip(skip int32) ApiGetWorkflowSolutionActionDefinitionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowSolutionActionDefinitionListRequest) Select_(select_ string) ApiGetWorkflowSolutionActionDefinitionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowSolutionActionDefinitionListRequest) Expand(expand string) ApiGetWorkflowSolutionActionDefinitionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowSolutionActionDefinitionListRequest) Apply(apply string) ApiGetWorkflowSolutionActionDefinitionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowSolutionActionDefinitionListRequest) Count(count bool) ApiGetWorkflowSolutionActionDefinitionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowSolutionActionDefinitionListRequest) Inlinecount(inlinecount string) ApiGetWorkflowSolutionActionDefinitionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowSolutionActionDefinitionListRequest) At(at string) ApiGetWorkflowSolutionActionDefinitionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowSolutionActionDefinitionListRequest) Tags(tags string) ApiGetWorkflowSolutionActionDefinitionListRequest {
 	r.tags = &tags
@@ -8789,7 +8899,7 @@ GetWorkflowSolutionActionDefinitionList Read a 'workflow.SolutionActionDefinitio
 func (a *WorkflowApiService) GetWorkflowSolutionActionDefinitionList(ctx _context.Context) ApiGetWorkflowSolutionActionDefinitionListRequest {
 	return ApiGetWorkflowSolutionActionDefinitionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8928,13 +9038,13 @@ func (a *WorkflowApiService) GetWorkflowSolutionActionDefinitionListExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8951,11 +9061,10 @@ func (a *WorkflowApiService) GetWorkflowSolutionActionDefinitionListExecute(r Ap
 }
 
 type ApiGetWorkflowSolutionActionInstanceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowSolutionActionInstanceByMoidRequest) Execute() (WorkflowSolutionActionInstance, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowSolutionActionInstanceByMoidExecute(r)
@@ -8971,8 +9080,8 @@ GetWorkflowSolutionActionInstanceByMoid Read a 'workflow.SolutionActionInstance'
 func (a *WorkflowApiService) GetWorkflowSolutionActionInstanceByMoid(ctx _context.Context, moid string) ApiGetWorkflowSolutionActionInstanceByMoidRequest {
 	return ApiGetWorkflowSolutionActionInstanceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9079,13 +9188,13 @@ func (a *WorkflowApiService) GetWorkflowSolutionActionInstanceByMoidExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9102,19 +9211,19 @@ func (a *WorkflowApiService) GetWorkflowSolutionActionInstanceByMoidExecute(r Ap
 }
 
 type ApiGetWorkflowSolutionActionInstanceListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9122,51 +9231,61 @@ func (r ApiGetWorkflowSolutionActionInstanceListRequest) Filter(filter string) A
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowSolutionActionInstanceListRequest) Orderby(orderby string) ApiGetWorkflowSolutionActionInstanceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowSolutionActionInstanceListRequest) Top(top int32) ApiGetWorkflowSolutionActionInstanceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowSolutionActionInstanceListRequest) Skip(skip int32) ApiGetWorkflowSolutionActionInstanceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowSolutionActionInstanceListRequest) Select_(select_ string) ApiGetWorkflowSolutionActionInstanceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowSolutionActionInstanceListRequest) Expand(expand string) ApiGetWorkflowSolutionActionInstanceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowSolutionActionInstanceListRequest) Apply(apply string) ApiGetWorkflowSolutionActionInstanceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowSolutionActionInstanceListRequest) Count(count bool) ApiGetWorkflowSolutionActionInstanceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowSolutionActionInstanceListRequest) Inlinecount(inlinecount string) ApiGetWorkflowSolutionActionInstanceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowSolutionActionInstanceListRequest) At(at string) ApiGetWorkflowSolutionActionInstanceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowSolutionActionInstanceListRequest) Tags(tags string) ApiGetWorkflowSolutionActionInstanceListRequest {
 	r.tags = &tags
@@ -9186,7 +9305,7 @@ GetWorkflowSolutionActionInstanceList Read a 'workflow.SolutionActionInstance' r
 func (a *WorkflowApiService) GetWorkflowSolutionActionInstanceList(ctx _context.Context) ApiGetWorkflowSolutionActionInstanceListRequest {
 	return ApiGetWorkflowSolutionActionInstanceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9325,13 +9444,13 @@ func (a *WorkflowApiService) GetWorkflowSolutionActionInstanceListExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9348,11 +9467,10 @@ func (a *WorkflowApiService) GetWorkflowSolutionActionInstanceListExecute(r ApiG
 }
 
 type ApiGetWorkflowSolutionDefinitionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowSolutionDefinitionByMoidRequest) Execute() (WorkflowSolutionDefinition, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowSolutionDefinitionByMoidExecute(r)
@@ -9368,8 +9486,8 @@ GetWorkflowSolutionDefinitionByMoid Read a 'workflow.SolutionDefinition' resourc
 func (a *WorkflowApiService) GetWorkflowSolutionDefinitionByMoid(ctx _context.Context, moid string) ApiGetWorkflowSolutionDefinitionByMoidRequest {
 	return ApiGetWorkflowSolutionDefinitionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9476,13 +9594,13 @@ func (a *WorkflowApiService) GetWorkflowSolutionDefinitionByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9499,19 +9617,19 @@ func (a *WorkflowApiService) GetWorkflowSolutionDefinitionByMoidExecute(r ApiGet
 }
 
 type ApiGetWorkflowSolutionDefinitionListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9519,51 +9637,61 @@ func (r ApiGetWorkflowSolutionDefinitionListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowSolutionDefinitionListRequest) Orderby(orderby string) ApiGetWorkflowSolutionDefinitionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowSolutionDefinitionListRequest) Top(top int32) ApiGetWorkflowSolutionDefinitionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowSolutionDefinitionListRequest) Skip(skip int32) ApiGetWorkflowSolutionDefinitionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowSolutionDefinitionListRequest) Select_(select_ string) ApiGetWorkflowSolutionDefinitionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowSolutionDefinitionListRequest) Expand(expand string) ApiGetWorkflowSolutionDefinitionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowSolutionDefinitionListRequest) Apply(apply string) ApiGetWorkflowSolutionDefinitionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowSolutionDefinitionListRequest) Count(count bool) ApiGetWorkflowSolutionDefinitionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowSolutionDefinitionListRequest) Inlinecount(inlinecount string) ApiGetWorkflowSolutionDefinitionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowSolutionDefinitionListRequest) At(at string) ApiGetWorkflowSolutionDefinitionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowSolutionDefinitionListRequest) Tags(tags string) ApiGetWorkflowSolutionDefinitionListRequest {
 	r.tags = &tags
@@ -9583,7 +9711,7 @@ GetWorkflowSolutionDefinitionList Read a 'workflow.SolutionDefinition' resource.
 func (a *WorkflowApiService) GetWorkflowSolutionDefinitionList(ctx _context.Context) ApiGetWorkflowSolutionDefinitionListRequest {
 	return ApiGetWorkflowSolutionDefinitionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9722,13 +9850,13 @@ func (a *WorkflowApiService) GetWorkflowSolutionDefinitionListExecute(r ApiGetWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9745,11 +9873,10 @@ func (a *WorkflowApiService) GetWorkflowSolutionDefinitionListExecute(r ApiGetWo
 }
 
 type ApiGetWorkflowSolutionInstanceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowSolutionInstanceByMoidRequest) Execute() (WorkflowSolutionInstance, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowSolutionInstanceByMoidExecute(r)
@@ -9765,8 +9892,8 @@ GetWorkflowSolutionInstanceByMoid Read a 'workflow.SolutionInstance' resource.
 func (a *WorkflowApiService) GetWorkflowSolutionInstanceByMoid(ctx _context.Context, moid string) ApiGetWorkflowSolutionInstanceByMoidRequest {
 	return ApiGetWorkflowSolutionInstanceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9873,13 +10000,13 @@ func (a *WorkflowApiService) GetWorkflowSolutionInstanceByMoidExecute(r ApiGetWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9896,19 +10023,19 @@ func (a *WorkflowApiService) GetWorkflowSolutionInstanceByMoidExecute(r ApiGetWo
 }
 
 type ApiGetWorkflowSolutionInstanceListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9916,51 +10043,61 @@ func (r ApiGetWorkflowSolutionInstanceListRequest) Filter(filter string) ApiGetW
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowSolutionInstanceListRequest) Orderby(orderby string) ApiGetWorkflowSolutionInstanceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowSolutionInstanceListRequest) Top(top int32) ApiGetWorkflowSolutionInstanceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowSolutionInstanceListRequest) Skip(skip int32) ApiGetWorkflowSolutionInstanceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowSolutionInstanceListRequest) Select_(select_ string) ApiGetWorkflowSolutionInstanceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowSolutionInstanceListRequest) Expand(expand string) ApiGetWorkflowSolutionInstanceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowSolutionInstanceListRequest) Apply(apply string) ApiGetWorkflowSolutionInstanceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowSolutionInstanceListRequest) Count(count bool) ApiGetWorkflowSolutionInstanceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowSolutionInstanceListRequest) Inlinecount(inlinecount string) ApiGetWorkflowSolutionInstanceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowSolutionInstanceListRequest) At(at string) ApiGetWorkflowSolutionInstanceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowSolutionInstanceListRequest) Tags(tags string) ApiGetWorkflowSolutionInstanceListRequest {
 	r.tags = &tags
@@ -9980,7 +10117,7 @@ GetWorkflowSolutionInstanceList Read a 'workflow.SolutionInstance' resource.
 func (a *WorkflowApiService) GetWorkflowSolutionInstanceList(ctx _context.Context) ApiGetWorkflowSolutionInstanceListRequest {
 	return ApiGetWorkflowSolutionInstanceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10119,13 +10256,13 @@ func (a *WorkflowApiService) GetWorkflowSolutionInstanceListExecute(r ApiGetWork
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10142,11 +10279,10 @@ func (a *WorkflowApiService) GetWorkflowSolutionInstanceListExecute(r ApiGetWork
 }
 
 type ApiGetWorkflowSolutionOutputByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowSolutionOutputByMoidRequest) Execute() (WorkflowSolutionOutput, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowSolutionOutputByMoidExecute(r)
@@ -10162,8 +10298,8 @@ GetWorkflowSolutionOutputByMoid Read a 'workflow.SolutionOutput' resource.
 func (a *WorkflowApiService) GetWorkflowSolutionOutputByMoid(ctx _context.Context, moid string) ApiGetWorkflowSolutionOutputByMoidRequest {
 	return ApiGetWorkflowSolutionOutputByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10270,13 +10406,13 @@ func (a *WorkflowApiService) GetWorkflowSolutionOutputByMoidExecute(r ApiGetWork
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10293,19 +10429,19 @@ func (a *WorkflowApiService) GetWorkflowSolutionOutputByMoidExecute(r ApiGetWork
 }
 
 type ApiGetWorkflowSolutionOutputListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10313,51 +10449,61 @@ func (r ApiGetWorkflowSolutionOutputListRequest) Filter(filter string) ApiGetWor
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowSolutionOutputListRequest) Orderby(orderby string) ApiGetWorkflowSolutionOutputListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowSolutionOutputListRequest) Top(top int32) ApiGetWorkflowSolutionOutputListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowSolutionOutputListRequest) Skip(skip int32) ApiGetWorkflowSolutionOutputListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowSolutionOutputListRequest) Select_(select_ string) ApiGetWorkflowSolutionOutputListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowSolutionOutputListRequest) Expand(expand string) ApiGetWorkflowSolutionOutputListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowSolutionOutputListRequest) Apply(apply string) ApiGetWorkflowSolutionOutputListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowSolutionOutputListRequest) Count(count bool) ApiGetWorkflowSolutionOutputListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowSolutionOutputListRequest) Inlinecount(inlinecount string) ApiGetWorkflowSolutionOutputListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowSolutionOutputListRequest) At(at string) ApiGetWorkflowSolutionOutputListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowSolutionOutputListRequest) Tags(tags string) ApiGetWorkflowSolutionOutputListRequest {
 	r.tags = &tags
@@ -10377,7 +10523,7 @@ GetWorkflowSolutionOutputList Read a 'workflow.SolutionOutput' resource.
 func (a *WorkflowApiService) GetWorkflowSolutionOutputList(ctx _context.Context) ApiGetWorkflowSolutionOutputListRequest {
 	return ApiGetWorkflowSolutionOutputListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10516,13 +10662,13 @@ func (a *WorkflowApiService) GetWorkflowSolutionOutputListExecute(r ApiGetWorkfl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10539,11 +10685,10 @@ func (a *WorkflowApiService) GetWorkflowSolutionOutputListExecute(r ApiGetWorkfl
 }
 
 type ApiGetWorkflowSshBatchExecutorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowSshBatchExecutorByMoidRequest) Execute() (WorkflowSshBatchExecutor, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowSshBatchExecutorByMoidExecute(r)
@@ -10559,8 +10704,8 @@ GetWorkflowSshBatchExecutorByMoid Read a 'workflow.SshBatchExecutor' resource.
 func (a *WorkflowApiService) GetWorkflowSshBatchExecutorByMoid(ctx _context.Context, moid string) ApiGetWorkflowSshBatchExecutorByMoidRequest {
 	return ApiGetWorkflowSshBatchExecutorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10667,13 +10812,13 @@ func (a *WorkflowApiService) GetWorkflowSshBatchExecutorByMoidExecute(r ApiGetWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10690,19 +10835,19 @@ func (a *WorkflowApiService) GetWorkflowSshBatchExecutorByMoidExecute(r ApiGetWo
 }
 
 type ApiGetWorkflowSshBatchExecutorListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10710,51 +10855,61 @@ func (r ApiGetWorkflowSshBatchExecutorListRequest) Filter(filter string) ApiGetW
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowSshBatchExecutorListRequest) Orderby(orderby string) ApiGetWorkflowSshBatchExecutorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowSshBatchExecutorListRequest) Top(top int32) ApiGetWorkflowSshBatchExecutorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowSshBatchExecutorListRequest) Skip(skip int32) ApiGetWorkflowSshBatchExecutorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowSshBatchExecutorListRequest) Select_(select_ string) ApiGetWorkflowSshBatchExecutorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowSshBatchExecutorListRequest) Expand(expand string) ApiGetWorkflowSshBatchExecutorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowSshBatchExecutorListRequest) Apply(apply string) ApiGetWorkflowSshBatchExecutorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowSshBatchExecutorListRequest) Count(count bool) ApiGetWorkflowSshBatchExecutorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowSshBatchExecutorListRequest) Inlinecount(inlinecount string) ApiGetWorkflowSshBatchExecutorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowSshBatchExecutorListRequest) At(at string) ApiGetWorkflowSshBatchExecutorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowSshBatchExecutorListRequest) Tags(tags string) ApiGetWorkflowSshBatchExecutorListRequest {
 	r.tags = &tags
@@ -10774,7 +10929,7 @@ GetWorkflowSshBatchExecutorList Read a 'workflow.SshBatchExecutor' resource.
 func (a *WorkflowApiService) GetWorkflowSshBatchExecutorList(ctx _context.Context) ApiGetWorkflowSshBatchExecutorListRequest {
 	return ApiGetWorkflowSshBatchExecutorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10913,13 +11068,13 @@ func (a *WorkflowApiService) GetWorkflowSshBatchExecutorListExecute(r ApiGetWork
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10936,11 +11091,10 @@ func (a *WorkflowApiService) GetWorkflowSshBatchExecutorListExecute(r ApiGetWork
 }
 
 type ApiGetWorkflowTaskDebugLogByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowTaskDebugLogByMoidRequest) Execute() (WorkflowTaskDebugLog, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowTaskDebugLogByMoidExecute(r)
@@ -10956,8 +11110,8 @@ GetWorkflowTaskDebugLogByMoid Read a 'workflow.TaskDebugLog' resource.
 func (a *WorkflowApiService) GetWorkflowTaskDebugLogByMoid(ctx _context.Context, moid string) ApiGetWorkflowTaskDebugLogByMoidRequest {
 	return ApiGetWorkflowTaskDebugLogByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11064,13 +11218,13 @@ func (a *WorkflowApiService) GetWorkflowTaskDebugLogByMoidExecute(r ApiGetWorkfl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11087,19 +11241,19 @@ func (a *WorkflowApiService) GetWorkflowTaskDebugLogByMoidExecute(r ApiGetWorkfl
 }
 
 type ApiGetWorkflowTaskDebugLogListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11107,51 +11261,61 @@ func (r ApiGetWorkflowTaskDebugLogListRequest) Filter(filter string) ApiGetWorkf
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowTaskDebugLogListRequest) Orderby(orderby string) ApiGetWorkflowTaskDebugLogListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowTaskDebugLogListRequest) Top(top int32) ApiGetWorkflowTaskDebugLogListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowTaskDebugLogListRequest) Skip(skip int32) ApiGetWorkflowTaskDebugLogListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowTaskDebugLogListRequest) Select_(select_ string) ApiGetWorkflowTaskDebugLogListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowTaskDebugLogListRequest) Expand(expand string) ApiGetWorkflowTaskDebugLogListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowTaskDebugLogListRequest) Apply(apply string) ApiGetWorkflowTaskDebugLogListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowTaskDebugLogListRequest) Count(count bool) ApiGetWorkflowTaskDebugLogListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowTaskDebugLogListRequest) Inlinecount(inlinecount string) ApiGetWorkflowTaskDebugLogListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowTaskDebugLogListRequest) At(at string) ApiGetWorkflowTaskDebugLogListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowTaskDebugLogListRequest) Tags(tags string) ApiGetWorkflowTaskDebugLogListRequest {
 	r.tags = &tags
@@ -11171,7 +11335,7 @@ GetWorkflowTaskDebugLogList Read a 'workflow.TaskDebugLog' resource.
 func (a *WorkflowApiService) GetWorkflowTaskDebugLogList(ctx _context.Context) ApiGetWorkflowTaskDebugLogListRequest {
 	return ApiGetWorkflowTaskDebugLogListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11310,13 +11474,13 @@ func (a *WorkflowApiService) GetWorkflowTaskDebugLogListExecute(r ApiGetWorkflow
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11333,11 +11497,10 @@ func (a *WorkflowApiService) GetWorkflowTaskDebugLogListExecute(r ApiGetWorkflow
 }
 
 type ApiGetWorkflowTaskDefinitionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowTaskDefinitionByMoidRequest) Execute() (WorkflowTaskDefinition, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowTaskDefinitionByMoidExecute(r)
@@ -11353,8 +11516,8 @@ GetWorkflowTaskDefinitionByMoid Read a 'workflow.TaskDefinition' resource.
 func (a *WorkflowApiService) GetWorkflowTaskDefinitionByMoid(ctx _context.Context, moid string) ApiGetWorkflowTaskDefinitionByMoidRequest {
 	return ApiGetWorkflowTaskDefinitionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11461,13 +11624,13 @@ func (a *WorkflowApiService) GetWorkflowTaskDefinitionByMoidExecute(r ApiGetWork
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11484,19 +11647,19 @@ func (a *WorkflowApiService) GetWorkflowTaskDefinitionByMoidExecute(r ApiGetWork
 }
 
 type ApiGetWorkflowTaskDefinitionListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11504,51 +11667,61 @@ func (r ApiGetWorkflowTaskDefinitionListRequest) Filter(filter string) ApiGetWor
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowTaskDefinitionListRequest) Orderby(orderby string) ApiGetWorkflowTaskDefinitionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowTaskDefinitionListRequest) Top(top int32) ApiGetWorkflowTaskDefinitionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowTaskDefinitionListRequest) Skip(skip int32) ApiGetWorkflowTaskDefinitionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowTaskDefinitionListRequest) Select_(select_ string) ApiGetWorkflowTaskDefinitionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowTaskDefinitionListRequest) Expand(expand string) ApiGetWorkflowTaskDefinitionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowTaskDefinitionListRequest) Apply(apply string) ApiGetWorkflowTaskDefinitionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowTaskDefinitionListRequest) Count(count bool) ApiGetWorkflowTaskDefinitionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowTaskDefinitionListRequest) Inlinecount(inlinecount string) ApiGetWorkflowTaskDefinitionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowTaskDefinitionListRequest) At(at string) ApiGetWorkflowTaskDefinitionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowTaskDefinitionListRequest) Tags(tags string) ApiGetWorkflowTaskDefinitionListRequest {
 	r.tags = &tags
@@ -11568,7 +11741,7 @@ GetWorkflowTaskDefinitionList Read a 'workflow.TaskDefinition' resource.
 func (a *WorkflowApiService) GetWorkflowTaskDefinitionList(ctx _context.Context) ApiGetWorkflowTaskDefinitionListRequest {
 	return ApiGetWorkflowTaskDefinitionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11707,13 +11880,13 @@ func (a *WorkflowApiService) GetWorkflowTaskDefinitionListExecute(r ApiGetWorkfl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11730,11 +11903,10 @@ func (a *WorkflowApiService) GetWorkflowTaskDefinitionListExecute(r ApiGetWorkfl
 }
 
 type ApiGetWorkflowTaskInfoByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowTaskInfoByMoidRequest) Execute() (WorkflowTaskInfo, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowTaskInfoByMoidExecute(r)
@@ -11750,8 +11922,8 @@ GetWorkflowTaskInfoByMoid Read a 'workflow.TaskInfo' resource.
 func (a *WorkflowApiService) GetWorkflowTaskInfoByMoid(ctx _context.Context, moid string) ApiGetWorkflowTaskInfoByMoidRequest {
 	return ApiGetWorkflowTaskInfoByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11858,13 +12030,13 @@ func (a *WorkflowApiService) GetWorkflowTaskInfoByMoidExecute(r ApiGetWorkflowTa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11881,19 +12053,19 @@ func (a *WorkflowApiService) GetWorkflowTaskInfoByMoidExecute(r ApiGetWorkflowTa
 }
 
 type ApiGetWorkflowTaskInfoListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11901,51 +12073,61 @@ func (r ApiGetWorkflowTaskInfoListRequest) Filter(filter string) ApiGetWorkflowT
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowTaskInfoListRequest) Orderby(orderby string) ApiGetWorkflowTaskInfoListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowTaskInfoListRequest) Top(top int32) ApiGetWorkflowTaskInfoListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowTaskInfoListRequest) Skip(skip int32) ApiGetWorkflowTaskInfoListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowTaskInfoListRequest) Select_(select_ string) ApiGetWorkflowTaskInfoListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowTaskInfoListRequest) Expand(expand string) ApiGetWorkflowTaskInfoListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowTaskInfoListRequest) Apply(apply string) ApiGetWorkflowTaskInfoListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowTaskInfoListRequest) Count(count bool) ApiGetWorkflowTaskInfoListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowTaskInfoListRequest) Inlinecount(inlinecount string) ApiGetWorkflowTaskInfoListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowTaskInfoListRequest) At(at string) ApiGetWorkflowTaskInfoListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowTaskInfoListRequest) Tags(tags string) ApiGetWorkflowTaskInfoListRequest {
 	r.tags = &tags
@@ -11965,7 +12147,7 @@ GetWorkflowTaskInfoList Read a 'workflow.TaskInfo' resource.
 func (a *WorkflowApiService) GetWorkflowTaskInfoList(ctx _context.Context) ApiGetWorkflowTaskInfoListRequest {
 	return ApiGetWorkflowTaskInfoListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12104,13 +12286,13 @@ func (a *WorkflowApiService) GetWorkflowTaskInfoListExecute(r ApiGetWorkflowTask
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12127,11 +12309,10 @@ func (a *WorkflowApiService) GetWorkflowTaskInfoListExecute(r ApiGetWorkflowTask
 }
 
 type ApiGetWorkflowTaskMetadataByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowTaskMetadataByMoidRequest) Execute() (WorkflowTaskMetadata, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowTaskMetadataByMoidExecute(r)
@@ -12147,8 +12328,8 @@ GetWorkflowTaskMetadataByMoid Read a 'workflow.TaskMetadata' resource.
 func (a *WorkflowApiService) GetWorkflowTaskMetadataByMoid(ctx _context.Context, moid string) ApiGetWorkflowTaskMetadataByMoidRequest {
 	return ApiGetWorkflowTaskMetadataByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12255,13 +12436,13 @@ func (a *WorkflowApiService) GetWorkflowTaskMetadataByMoidExecute(r ApiGetWorkfl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12278,19 +12459,19 @@ func (a *WorkflowApiService) GetWorkflowTaskMetadataByMoidExecute(r ApiGetWorkfl
 }
 
 type ApiGetWorkflowTaskMetadataListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12298,51 +12479,61 @@ func (r ApiGetWorkflowTaskMetadataListRequest) Filter(filter string) ApiGetWorkf
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowTaskMetadataListRequest) Orderby(orderby string) ApiGetWorkflowTaskMetadataListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowTaskMetadataListRequest) Top(top int32) ApiGetWorkflowTaskMetadataListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowTaskMetadataListRequest) Skip(skip int32) ApiGetWorkflowTaskMetadataListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowTaskMetadataListRequest) Select_(select_ string) ApiGetWorkflowTaskMetadataListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowTaskMetadataListRequest) Expand(expand string) ApiGetWorkflowTaskMetadataListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowTaskMetadataListRequest) Apply(apply string) ApiGetWorkflowTaskMetadataListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowTaskMetadataListRequest) Count(count bool) ApiGetWorkflowTaskMetadataListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowTaskMetadataListRequest) Inlinecount(inlinecount string) ApiGetWorkflowTaskMetadataListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowTaskMetadataListRequest) At(at string) ApiGetWorkflowTaskMetadataListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowTaskMetadataListRequest) Tags(tags string) ApiGetWorkflowTaskMetadataListRequest {
 	r.tags = &tags
@@ -12362,7 +12553,7 @@ GetWorkflowTaskMetadataList Read a 'workflow.TaskMetadata' resource.
 func (a *WorkflowApiService) GetWorkflowTaskMetadataList(ctx _context.Context) ApiGetWorkflowTaskMetadataListRequest {
 	return ApiGetWorkflowTaskMetadataListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12501,13 +12692,13 @@ func (a *WorkflowApiService) GetWorkflowTaskMetadataListExecute(r ApiGetWorkflow
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12524,11 +12715,10 @@ func (a *WorkflowApiService) GetWorkflowTaskMetadataListExecute(r ApiGetWorkflow
 }
 
 type ApiGetWorkflowTemplateFunctionMetaByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowTemplateFunctionMetaByMoidRequest) Execute() (WorkflowTemplateFunctionMeta, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowTemplateFunctionMetaByMoidExecute(r)
@@ -12544,8 +12734,8 @@ GetWorkflowTemplateFunctionMetaByMoid Read a 'workflow.TemplateFunctionMeta' res
 func (a *WorkflowApiService) GetWorkflowTemplateFunctionMetaByMoid(ctx _context.Context, moid string) ApiGetWorkflowTemplateFunctionMetaByMoidRequest {
 	return ApiGetWorkflowTemplateFunctionMetaByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12652,13 +12842,13 @@ func (a *WorkflowApiService) GetWorkflowTemplateFunctionMetaByMoidExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12675,19 +12865,19 @@ func (a *WorkflowApiService) GetWorkflowTemplateFunctionMetaByMoidExecute(r ApiG
 }
 
 type ApiGetWorkflowTemplateFunctionMetaListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12695,51 +12885,61 @@ func (r ApiGetWorkflowTemplateFunctionMetaListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowTemplateFunctionMetaListRequest) Orderby(orderby string) ApiGetWorkflowTemplateFunctionMetaListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowTemplateFunctionMetaListRequest) Top(top int32) ApiGetWorkflowTemplateFunctionMetaListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowTemplateFunctionMetaListRequest) Skip(skip int32) ApiGetWorkflowTemplateFunctionMetaListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowTemplateFunctionMetaListRequest) Select_(select_ string) ApiGetWorkflowTemplateFunctionMetaListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowTemplateFunctionMetaListRequest) Expand(expand string) ApiGetWorkflowTemplateFunctionMetaListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowTemplateFunctionMetaListRequest) Apply(apply string) ApiGetWorkflowTemplateFunctionMetaListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowTemplateFunctionMetaListRequest) Count(count bool) ApiGetWorkflowTemplateFunctionMetaListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowTemplateFunctionMetaListRequest) Inlinecount(inlinecount string) ApiGetWorkflowTemplateFunctionMetaListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowTemplateFunctionMetaListRequest) At(at string) ApiGetWorkflowTemplateFunctionMetaListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowTemplateFunctionMetaListRequest) Tags(tags string) ApiGetWorkflowTemplateFunctionMetaListRequest {
 	r.tags = &tags
@@ -12759,7 +12959,7 @@ GetWorkflowTemplateFunctionMetaList Read a 'workflow.TemplateFunctionMeta' resou
 func (a *WorkflowApiService) GetWorkflowTemplateFunctionMetaList(ctx _context.Context) ApiGetWorkflowTemplateFunctionMetaListRequest {
 	return ApiGetWorkflowTemplateFunctionMetaListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12898,13 +13098,13 @@ func (a *WorkflowApiService) GetWorkflowTemplateFunctionMetaListExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12921,11 +13121,10 @@ func (a *WorkflowApiService) GetWorkflowTemplateFunctionMetaListExecute(r ApiGet
 }
 
 type ApiGetWorkflowWorkflowDefinitionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowWorkflowDefinitionByMoidRequest) Execute() (WorkflowWorkflowDefinition, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowWorkflowDefinitionByMoidExecute(r)
@@ -12941,8 +13140,8 @@ GetWorkflowWorkflowDefinitionByMoid Read a 'workflow.WorkflowDefinition' resourc
 func (a *WorkflowApiService) GetWorkflowWorkflowDefinitionByMoid(ctx _context.Context, moid string) ApiGetWorkflowWorkflowDefinitionByMoidRequest {
 	return ApiGetWorkflowWorkflowDefinitionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13049,13 +13248,13 @@ func (a *WorkflowApiService) GetWorkflowWorkflowDefinitionByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13072,19 +13271,19 @@ func (a *WorkflowApiService) GetWorkflowWorkflowDefinitionByMoidExecute(r ApiGet
 }
 
 type ApiGetWorkflowWorkflowDefinitionListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13092,51 +13291,61 @@ func (r ApiGetWorkflowWorkflowDefinitionListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowWorkflowDefinitionListRequest) Orderby(orderby string) ApiGetWorkflowWorkflowDefinitionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowWorkflowDefinitionListRequest) Top(top int32) ApiGetWorkflowWorkflowDefinitionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowWorkflowDefinitionListRequest) Skip(skip int32) ApiGetWorkflowWorkflowDefinitionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowWorkflowDefinitionListRequest) Select_(select_ string) ApiGetWorkflowWorkflowDefinitionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowWorkflowDefinitionListRequest) Expand(expand string) ApiGetWorkflowWorkflowDefinitionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowWorkflowDefinitionListRequest) Apply(apply string) ApiGetWorkflowWorkflowDefinitionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowWorkflowDefinitionListRequest) Count(count bool) ApiGetWorkflowWorkflowDefinitionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowWorkflowDefinitionListRequest) Inlinecount(inlinecount string) ApiGetWorkflowWorkflowDefinitionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowWorkflowDefinitionListRequest) At(at string) ApiGetWorkflowWorkflowDefinitionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowWorkflowDefinitionListRequest) Tags(tags string) ApiGetWorkflowWorkflowDefinitionListRequest {
 	r.tags = &tags
@@ -13156,7 +13365,7 @@ GetWorkflowWorkflowDefinitionList Read a 'workflow.WorkflowDefinition' resource.
 func (a *WorkflowApiService) GetWorkflowWorkflowDefinitionList(ctx _context.Context) ApiGetWorkflowWorkflowDefinitionListRequest {
 	return ApiGetWorkflowWorkflowDefinitionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13295,13 +13504,13 @@ func (a *WorkflowApiService) GetWorkflowWorkflowDefinitionListExecute(r ApiGetWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13318,11 +13527,10 @@ func (a *WorkflowApiService) GetWorkflowWorkflowDefinitionListExecute(r ApiGetWo
 }
 
 type ApiGetWorkflowWorkflowInfoByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowWorkflowInfoByMoidRequest) Execute() (WorkflowWorkflowInfo, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowWorkflowInfoByMoidExecute(r)
@@ -13338,8 +13546,8 @@ GetWorkflowWorkflowInfoByMoid Read a 'workflow.WorkflowInfo' resource.
 func (a *WorkflowApiService) GetWorkflowWorkflowInfoByMoid(ctx _context.Context, moid string) ApiGetWorkflowWorkflowInfoByMoidRequest {
 	return ApiGetWorkflowWorkflowInfoByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13446,13 +13654,13 @@ func (a *WorkflowApiService) GetWorkflowWorkflowInfoByMoidExecute(r ApiGetWorkfl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13469,19 +13677,19 @@ func (a *WorkflowApiService) GetWorkflowWorkflowInfoByMoidExecute(r ApiGetWorkfl
 }
 
 type ApiGetWorkflowWorkflowInfoListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13489,51 +13697,61 @@ func (r ApiGetWorkflowWorkflowInfoListRequest) Filter(filter string) ApiGetWorkf
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowWorkflowInfoListRequest) Orderby(orderby string) ApiGetWorkflowWorkflowInfoListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowWorkflowInfoListRequest) Top(top int32) ApiGetWorkflowWorkflowInfoListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowWorkflowInfoListRequest) Skip(skip int32) ApiGetWorkflowWorkflowInfoListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowWorkflowInfoListRequest) Select_(select_ string) ApiGetWorkflowWorkflowInfoListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowWorkflowInfoListRequest) Expand(expand string) ApiGetWorkflowWorkflowInfoListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowWorkflowInfoListRequest) Apply(apply string) ApiGetWorkflowWorkflowInfoListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowWorkflowInfoListRequest) Count(count bool) ApiGetWorkflowWorkflowInfoListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowWorkflowInfoListRequest) Inlinecount(inlinecount string) ApiGetWorkflowWorkflowInfoListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowWorkflowInfoListRequest) At(at string) ApiGetWorkflowWorkflowInfoListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowWorkflowInfoListRequest) Tags(tags string) ApiGetWorkflowWorkflowInfoListRequest {
 	r.tags = &tags
@@ -13553,7 +13771,7 @@ GetWorkflowWorkflowInfoList Read a 'workflow.WorkflowInfo' resource.
 func (a *WorkflowApiService) GetWorkflowWorkflowInfoList(ctx _context.Context) ApiGetWorkflowWorkflowInfoListRequest {
 	return ApiGetWorkflowWorkflowInfoListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13692,13 +13910,13 @@ func (a *WorkflowApiService) GetWorkflowWorkflowInfoListExecute(r ApiGetWorkflow
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13715,11 +13933,10 @@ func (a *WorkflowApiService) GetWorkflowWorkflowInfoListExecute(r ApiGetWorkflow
 }
 
 type ApiGetWorkflowWorkflowMetaByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowWorkflowMetaByMoidRequest) Execute() (WorkflowWorkflowMeta, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowWorkflowMetaByMoidExecute(r)
@@ -13737,8 +13954,8 @@ Deprecated
 func (a *WorkflowApiService) GetWorkflowWorkflowMetaByMoid(ctx _context.Context, moid string) ApiGetWorkflowWorkflowMetaByMoidRequest {
 	return ApiGetWorkflowWorkflowMetaByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13846,13 +14063,13 @@ func (a *WorkflowApiService) GetWorkflowWorkflowMetaByMoidExecute(r ApiGetWorkfl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13869,19 +14086,19 @@ func (a *WorkflowApiService) GetWorkflowWorkflowMetaByMoidExecute(r ApiGetWorkfl
 }
 
 type ApiGetWorkflowWorkflowMetaListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13889,51 +14106,61 @@ func (r ApiGetWorkflowWorkflowMetaListRequest) Filter(filter string) ApiGetWorkf
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowWorkflowMetaListRequest) Orderby(orderby string) ApiGetWorkflowWorkflowMetaListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowWorkflowMetaListRequest) Top(top int32) ApiGetWorkflowWorkflowMetaListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowWorkflowMetaListRequest) Skip(skip int32) ApiGetWorkflowWorkflowMetaListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowWorkflowMetaListRequest) Select_(select_ string) ApiGetWorkflowWorkflowMetaListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowWorkflowMetaListRequest) Expand(expand string) ApiGetWorkflowWorkflowMetaListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowWorkflowMetaListRequest) Apply(apply string) ApiGetWorkflowWorkflowMetaListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowWorkflowMetaListRequest) Count(count bool) ApiGetWorkflowWorkflowMetaListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowWorkflowMetaListRequest) Inlinecount(inlinecount string) ApiGetWorkflowWorkflowMetaListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowWorkflowMetaListRequest) At(at string) ApiGetWorkflowWorkflowMetaListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowWorkflowMetaListRequest) Tags(tags string) ApiGetWorkflowWorkflowMetaListRequest {
 	r.tags = &tags
@@ -13955,7 +14182,7 @@ Deprecated
 func (a *WorkflowApiService) GetWorkflowWorkflowMetaList(ctx _context.Context) ApiGetWorkflowWorkflowMetaListRequest {
 	return ApiGetWorkflowWorkflowMetaListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14095,13 +14322,13 @@ func (a *WorkflowApiService) GetWorkflowWorkflowMetaListExecute(r ApiGetWorkflow
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14118,11 +14345,10 @@ func (a *WorkflowApiService) GetWorkflowWorkflowMetaListExecute(r ApiGetWorkflow
 }
 
 type ApiGetWorkflowWorkflowMetadataByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *WorkflowApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetWorkflowWorkflowMetadataByMoidRequest) Execute() (WorkflowWorkflowMetadata, *_nethttp.Response, error) {
 	return r.ApiService.GetWorkflowWorkflowMetadataByMoidExecute(r)
@@ -14138,8 +14364,8 @@ GetWorkflowWorkflowMetadataByMoid Read a 'workflow.WorkflowMetadata' resource.
 func (a *WorkflowApiService) GetWorkflowWorkflowMetadataByMoid(ctx _context.Context, moid string) ApiGetWorkflowWorkflowMetadataByMoidRequest {
 	return ApiGetWorkflowWorkflowMetadataByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14246,13 +14472,13 @@ func (a *WorkflowApiService) GetWorkflowWorkflowMetadataByMoidExecute(r ApiGetWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14269,19 +14495,19 @@ func (a *WorkflowApiService) GetWorkflowWorkflowMetadataByMoidExecute(r ApiGetWo
 }
 
 type ApiGetWorkflowWorkflowMetadataListRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *WorkflowApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -14289,51 +14515,61 @@ func (r ApiGetWorkflowWorkflowMetadataListRequest) Filter(filter string) ApiGetW
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetWorkflowWorkflowMetadataListRequest) Orderby(orderby string) ApiGetWorkflowWorkflowMetadataListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetWorkflowWorkflowMetadataListRequest) Top(top int32) ApiGetWorkflowWorkflowMetadataListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetWorkflowWorkflowMetadataListRequest) Skip(skip int32) ApiGetWorkflowWorkflowMetadataListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetWorkflowWorkflowMetadataListRequest) Select_(select_ string) ApiGetWorkflowWorkflowMetadataListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetWorkflowWorkflowMetadataListRequest) Expand(expand string) ApiGetWorkflowWorkflowMetadataListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetWorkflowWorkflowMetadataListRequest) Apply(apply string) ApiGetWorkflowWorkflowMetadataListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetWorkflowWorkflowMetadataListRequest) Count(count bool) ApiGetWorkflowWorkflowMetadataListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetWorkflowWorkflowMetadataListRequest) Inlinecount(inlinecount string) ApiGetWorkflowWorkflowMetadataListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetWorkflowWorkflowMetadataListRequest) At(at string) ApiGetWorkflowWorkflowMetadataListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetWorkflowWorkflowMetadataListRequest) Tags(tags string) ApiGetWorkflowWorkflowMetadataListRequest {
 	r.tags = &tags
@@ -14353,7 +14589,7 @@ GetWorkflowWorkflowMetadataList Read a 'workflow.WorkflowMetadata' resource.
 func (a *WorkflowApiService) GetWorkflowWorkflowMetadataList(ctx _context.Context) ApiGetWorkflowWorkflowMetadataListRequest {
 	return ApiGetWorkflowWorkflowMetadataListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14492,13 +14728,13 @@ func (a *WorkflowApiService) GetWorkflowWorkflowMetadataListExecute(r ApiGetWork
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14515,11 +14751,11 @@ func (a *WorkflowApiService) GetWorkflowWorkflowMetadataListExecute(r ApiGetWork
 }
 
 type ApiPatchWorkflowAnsibleBatchExecutorRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *WorkflowApiService
+	moid                         string
 	workflowAnsibleBatchExecutor *WorkflowAnsibleBatchExecutor
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;workflow.AnsibleBatchExecutor&#39; resource to update.
@@ -14527,6 +14763,7 @@ func (r ApiPatchWorkflowAnsibleBatchExecutorRequest) WorkflowAnsibleBatchExecuto
 	r.workflowAnsibleBatchExecutor = &workflowAnsibleBatchExecutor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchWorkflowAnsibleBatchExecutorRequest) IfMatch(ifMatch string) ApiPatchWorkflowAnsibleBatchExecutorRequest {
 	r.ifMatch = &ifMatch
@@ -14547,8 +14784,8 @@ PatchWorkflowAnsibleBatchExecutor Update a 'workflow.AnsibleBatchExecutor' resou
 func (a *WorkflowApiService) PatchWorkflowAnsibleBatchExecutor(ctx _context.Context, moid string) ApiPatchWorkflowAnsibleBatchExecutorRequest {
 	return ApiPatchWorkflowAnsibleBatchExecutorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14663,13 +14900,13 @@ func (a *WorkflowApiService) PatchWorkflowAnsibleBatchExecutorExecute(r ApiPatch
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14686,11 +14923,11 @@ func (a *WorkflowApiService) PatchWorkflowAnsibleBatchExecutorExecute(r ApiPatch
 }
 
 type ApiPatchWorkflowBatchApiExecutorRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *WorkflowApiService
+	moid                     string
 	workflowBatchApiExecutor *WorkflowBatchApiExecutor
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;workflow.BatchApiExecutor&#39; resource to update.
@@ -14698,6 +14935,7 @@ func (r ApiPatchWorkflowBatchApiExecutorRequest) WorkflowBatchApiExecutor(workfl
 	r.workflowBatchApiExecutor = &workflowBatchApiExecutor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchWorkflowBatchApiExecutorRequest) IfMatch(ifMatch string) ApiPatchWorkflowBatchApiExecutorRequest {
 	r.ifMatch = &ifMatch
@@ -14718,8 +14956,8 @@ PatchWorkflowBatchApiExecutor Update a 'workflow.BatchApiExecutor' resource.
 func (a *WorkflowApiService) PatchWorkflowBatchApiExecutor(ctx _context.Context, moid string) ApiPatchWorkflowBatchApiExecutorRequest {
 	return ApiPatchWorkflowBatchApiExecutorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14834,13 +15072,13 @@ func (a *WorkflowApiService) PatchWorkflowBatchApiExecutorExecute(r ApiPatchWork
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14857,11 +15095,11 @@ func (a *WorkflowApiService) PatchWorkflowBatchApiExecutorExecute(r ApiPatchWork
 }
 
 type ApiPatchWorkflowCustomDataTypeDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                              _context.Context
+	ApiService                       *WorkflowApiService
+	moid                             string
 	workflowCustomDataTypeDefinition *WorkflowCustomDataTypeDefinition
-	ifMatch *string
+	ifMatch                          *string
 }
 
 // The &#39;workflow.CustomDataTypeDefinition&#39; resource to update.
@@ -14869,6 +15107,7 @@ func (r ApiPatchWorkflowCustomDataTypeDefinitionRequest) WorkflowCustomDataTypeD
 	r.workflowCustomDataTypeDefinition = &workflowCustomDataTypeDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchWorkflowCustomDataTypeDefinitionRequest) IfMatch(ifMatch string) ApiPatchWorkflowCustomDataTypeDefinitionRequest {
 	r.ifMatch = &ifMatch
@@ -14889,8 +15128,8 @@ PatchWorkflowCustomDataTypeDefinition Update a 'workflow.CustomDataTypeDefinitio
 func (a *WorkflowApiService) PatchWorkflowCustomDataTypeDefinition(ctx _context.Context, moid string) ApiPatchWorkflowCustomDataTypeDefinitionRequest {
 	return ApiPatchWorkflowCustomDataTypeDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15005,13 +15244,13 @@ func (a *WorkflowApiService) PatchWorkflowCustomDataTypeDefinitionExecute(r ApiP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15028,11 +15267,11 @@ func (a *WorkflowApiService) PatchWorkflowCustomDataTypeDefinitionExecute(r ApiP
 }
 
 type ApiPatchWorkflowErrorResponseHandlerRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *WorkflowApiService
+	moid                         string
 	workflowErrorResponseHandler *WorkflowErrorResponseHandler
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;workflow.ErrorResponseHandler&#39; resource to update.
@@ -15040,6 +15279,7 @@ func (r ApiPatchWorkflowErrorResponseHandlerRequest) WorkflowErrorResponseHandle
 	r.workflowErrorResponseHandler = &workflowErrorResponseHandler
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchWorkflowErrorResponseHandlerRequest) IfMatch(ifMatch string) ApiPatchWorkflowErrorResponseHandlerRequest {
 	r.ifMatch = &ifMatch
@@ -15060,8 +15300,8 @@ PatchWorkflowErrorResponseHandler Update a 'workflow.ErrorResponseHandler' resou
 func (a *WorkflowApiService) PatchWorkflowErrorResponseHandler(ctx _context.Context, moid string) ApiPatchWorkflowErrorResponseHandlerRequest {
 	return ApiPatchWorkflowErrorResponseHandlerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15176,13 +15416,13 @@ func (a *WorkflowApiService) PatchWorkflowErrorResponseHandlerExecute(r ApiPatch
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15199,11 +15439,11 @@ func (a *WorkflowApiService) PatchWorkflowErrorResponseHandlerExecute(r ApiPatch
 }
 
 type ApiPatchWorkflowRollbackWorkflowRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *WorkflowApiService
+	moid                     string
 	workflowRollbackWorkflow *WorkflowRollbackWorkflow
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;workflow.RollbackWorkflow&#39; resource to update.
@@ -15211,6 +15451,7 @@ func (r ApiPatchWorkflowRollbackWorkflowRequest) WorkflowRollbackWorkflow(workfl
 	r.workflowRollbackWorkflow = &workflowRollbackWorkflow
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchWorkflowRollbackWorkflowRequest) IfMatch(ifMatch string) ApiPatchWorkflowRollbackWorkflowRequest {
 	r.ifMatch = &ifMatch
@@ -15231,8 +15472,8 @@ PatchWorkflowRollbackWorkflow Update a 'workflow.RollbackWorkflow' resource.
 func (a *WorkflowApiService) PatchWorkflowRollbackWorkflow(ctx _context.Context, moid string) ApiPatchWorkflowRollbackWorkflowRequest {
 	return ApiPatchWorkflowRollbackWorkflowRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15347,13 +15588,13 @@ func (a *WorkflowApiService) PatchWorkflowRollbackWorkflowExecute(r ApiPatchWork
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15370,11 +15611,11 @@ func (a *WorkflowApiService) PatchWorkflowRollbackWorkflowExecute(r ApiPatchWork
 }
 
 type ApiPatchWorkflowSolutionActionDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                              _context.Context
+	ApiService                       *WorkflowApiService
+	moid                             string
 	workflowSolutionActionDefinition *WorkflowSolutionActionDefinition
-	ifMatch *string
+	ifMatch                          *string
 }
 
 // The &#39;workflow.SolutionActionDefinition&#39; resource to update.
@@ -15382,6 +15623,7 @@ func (r ApiPatchWorkflowSolutionActionDefinitionRequest) WorkflowSolutionActionD
 	r.workflowSolutionActionDefinition = &workflowSolutionActionDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchWorkflowSolutionActionDefinitionRequest) IfMatch(ifMatch string) ApiPatchWorkflowSolutionActionDefinitionRequest {
 	r.ifMatch = &ifMatch
@@ -15402,8 +15644,8 @@ PatchWorkflowSolutionActionDefinition Update a 'workflow.SolutionActionDefinitio
 func (a *WorkflowApiService) PatchWorkflowSolutionActionDefinition(ctx _context.Context, moid string) ApiPatchWorkflowSolutionActionDefinitionRequest {
 	return ApiPatchWorkflowSolutionActionDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15518,13 +15760,13 @@ func (a *WorkflowApiService) PatchWorkflowSolutionActionDefinitionExecute(r ApiP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15541,11 +15783,11 @@ func (a *WorkflowApiService) PatchWorkflowSolutionActionDefinitionExecute(r ApiP
 }
 
 type ApiPatchWorkflowSolutionActionInstanceRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *WorkflowApiService
+	moid                           string
 	workflowSolutionActionInstance *WorkflowSolutionActionInstance
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;workflow.SolutionActionInstance&#39; resource to update.
@@ -15553,6 +15795,7 @@ func (r ApiPatchWorkflowSolutionActionInstanceRequest) WorkflowSolutionActionIns
 	r.workflowSolutionActionInstance = &workflowSolutionActionInstance
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchWorkflowSolutionActionInstanceRequest) IfMatch(ifMatch string) ApiPatchWorkflowSolutionActionInstanceRequest {
 	r.ifMatch = &ifMatch
@@ -15573,8 +15816,8 @@ PatchWorkflowSolutionActionInstance Update a 'workflow.SolutionActionInstance' r
 func (a *WorkflowApiService) PatchWorkflowSolutionActionInstance(ctx _context.Context, moid string) ApiPatchWorkflowSolutionActionInstanceRequest {
 	return ApiPatchWorkflowSolutionActionInstanceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15689,13 +15932,13 @@ func (a *WorkflowApiService) PatchWorkflowSolutionActionInstanceExecute(r ApiPat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15712,11 +15955,11 @@ func (a *WorkflowApiService) PatchWorkflowSolutionActionInstanceExecute(r ApiPat
 }
 
 type ApiPatchWorkflowSolutionDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *WorkflowApiService
+	moid                       string
 	workflowSolutionDefinition *WorkflowSolutionDefinition
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;workflow.SolutionDefinition&#39; resource to update.
@@ -15724,6 +15967,7 @@ func (r ApiPatchWorkflowSolutionDefinitionRequest) WorkflowSolutionDefinition(wo
 	r.workflowSolutionDefinition = &workflowSolutionDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchWorkflowSolutionDefinitionRequest) IfMatch(ifMatch string) ApiPatchWorkflowSolutionDefinitionRequest {
 	r.ifMatch = &ifMatch
@@ -15744,8 +15988,8 @@ PatchWorkflowSolutionDefinition Update a 'workflow.SolutionDefinition' resource.
 func (a *WorkflowApiService) PatchWorkflowSolutionDefinition(ctx _context.Context, moid string) ApiPatchWorkflowSolutionDefinitionRequest {
 	return ApiPatchWorkflowSolutionDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15860,13 +16104,13 @@ func (a *WorkflowApiService) PatchWorkflowSolutionDefinitionExecute(r ApiPatchWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15883,11 +16127,11 @@ func (a *WorkflowApiService) PatchWorkflowSolutionDefinitionExecute(r ApiPatchWo
 }
 
 type ApiPatchWorkflowSolutionInstanceRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *WorkflowApiService
+	moid                     string
 	workflowSolutionInstance *WorkflowSolutionInstance
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;workflow.SolutionInstance&#39; resource to update.
@@ -15895,6 +16139,7 @@ func (r ApiPatchWorkflowSolutionInstanceRequest) WorkflowSolutionInstance(workfl
 	r.workflowSolutionInstance = &workflowSolutionInstance
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchWorkflowSolutionInstanceRequest) IfMatch(ifMatch string) ApiPatchWorkflowSolutionInstanceRequest {
 	r.ifMatch = &ifMatch
@@ -15915,8 +16160,8 @@ PatchWorkflowSolutionInstance Update a 'workflow.SolutionInstance' resource.
 func (a *WorkflowApiService) PatchWorkflowSolutionInstance(ctx _context.Context, moid string) ApiPatchWorkflowSolutionInstanceRequest {
 	return ApiPatchWorkflowSolutionInstanceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16031,13 +16276,13 @@ func (a *WorkflowApiService) PatchWorkflowSolutionInstanceExecute(r ApiPatchWork
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16054,11 +16299,11 @@ func (a *WorkflowApiService) PatchWorkflowSolutionInstanceExecute(r ApiPatchWork
 }
 
 type ApiPatchWorkflowSolutionOutputRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *WorkflowApiService
+	moid                   string
 	workflowSolutionOutput *WorkflowSolutionOutput
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;workflow.SolutionOutput&#39; resource to update.
@@ -16066,6 +16311,7 @@ func (r ApiPatchWorkflowSolutionOutputRequest) WorkflowSolutionOutput(workflowSo
 	r.workflowSolutionOutput = &workflowSolutionOutput
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchWorkflowSolutionOutputRequest) IfMatch(ifMatch string) ApiPatchWorkflowSolutionOutputRequest {
 	r.ifMatch = &ifMatch
@@ -16086,8 +16332,8 @@ PatchWorkflowSolutionOutput Update a 'workflow.SolutionOutput' resource.
 func (a *WorkflowApiService) PatchWorkflowSolutionOutput(ctx _context.Context, moid string) ApiPatchWorkflowSolutionOutputRequest {
 	return ApiPatchWorkflowSolutionOutputRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16202,13 +16448,13 @@ func (a *WorkflowApiService) PatchWorkflowSolutionOutputExecute(r ApiPatchWorkfl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16225,11 +16471,11 @@ func (a *WorkflowApiService) PatchWorkflowSolutionOutputExecute(r ApiPatchWorkfl
 }
 
 type ApiPatchWorkflowSshBatchExecutorRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *WorkflowApiService
+	moid                     string
 	workflowSshBatchExecutor *WorkflowSshBatchExecutor
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;workflow.SshBatchExecutor&#39; resource to update.
@@ -16237,6 +16483,7 @@ func (r ApiPatchWorkflowSshBatchExecutorRequest) WorkflowSshBatchExecutor(workfl
 	r.workflowSshBatchExecutor = &workflowSshBatchExecutor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchWorkflowSshBatchExecutorRequest) IfMatch(ifMatch string) ApiPatchWorkflowSshBatchExecutorRequest {
 	r.ifMatch = &ifMatch
@@ -16257,8 +16504,8 @@ PatchWorkflowSshBatchExecutor Update a 'workflow.SshBatchExecutor' resource.
 func (a *WorkflowApiService) PatchWorkflowSshBatchExecutor(ctx _context.Context, moid string) ApiPatchWorkflowSshBatchExecutorRequest {
 	return ApiPatchWorkflowSshBatchExecutorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16373,13 +16620,13 @@ func (a *WorkflowApiService) PatchWorkflowSshBatchExecutorExecute(r ApiPatchWork
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16396,11 +16643,11 @@ func (a *WorkflowApiService) PatchWorkflowSshBatchExecutorExecute(r ApiPatchWork
 }
 
 type ApiPatchWorkflowTaskDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *WorkflowApiService
+	moid                   string
 	workflowTaskDefinition *WorkflowTaskDefinition
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;workflow.TaskDefinition&#39; resource to update.
@@ -16408,6 +16655,7 @@ func (r ApiPatchWorkflowTaskDefinitionRequest) WorkflowTaskDefinition(workflowTa
 	r.workflowTaskDefinition = &workflowTaskDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchWorkflowTaskDefinitionRequest) IfMatch(ifMatch string) ApiPatchWorkflowTaskDefinitionRequest {
 	r.ifMatch = &ifMatch
@@ -16428,8 +16676,8 @@ PatchWorkflowTaskDefinition Update a 'workflow.TaskDefinition' resource.
 func (a *WorkflowApiService) PatchWorkflowTaskDefinition(ctx _context.Context, moid string) ApiPatchWorkflowTaskDefinitionRequest {
 	return ApiPatchWorkflowTaskDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16544,13 +16792,13 @@ func (a *WorkflowApiService) PatchWorkflowTaskDefinitionExecute(r ApiPatchWorkfl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16567,11 +16815,11 @@ func (a *WorkflowApiService) PatchWorkflowTaskDefinitionExecute(r ApiPatchWorkfl
 }
 
 type ApiPatchWorkflowTaskInfoRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *WorkflowApiService
+	moid             string
 	workflowTaskInfo *WorkflowTaskInfo
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;workflow.TaskInfo&#39; resource to update.
@@ -16579,6 +16827,7 @@ func (r ApiPatchWorkflowTaskInfoRequest) WorkflowTaskInfo(workflowTaskInfo Workf
 	r.workflowTaskInfo = &workflowTaskInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchWorkflowTaskInfoRequest) IfMatch(ifMatch string) ApiPatchWorkflowTaskInfoRequest {
 	r.ifMatch = &ifMatch
@@ -16599,8 +16848,8 @@ PatchWorkflowTaskInfo Update a 'workflow.TaskInfo' resource.
 func (a *WorkflowApiService) PatchWorkflowTaskInfo(ctx _context.Context, moid string) ApiPatchWorkflowTaskInfoRequest {
 	return ApiPatchWorkflowTaskInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16715,13 +16964,13 @@ func (a *WorkflowApiService) PatchWorkflowTaskInfoExecute(r ApiPatchWorkflowTask
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16738,11 +16987,11 @@ func (a *WorkflowApiService) PatchWorkflowTaskInfoExecute(r ApiPatchWorkflowTask
 }
 
 type ApiPatchWorkflowWorkflowDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *WorkflowApiService
+	moid                       string
 	workflowWorkflowDefinition *WorkflowWorkflowDefinition
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;workflow.WorkflowDefinition&#39; resource to update.
@@ -16750,6 +16999,7 @@ func (r ApiPatchWorkflowWorkflowDefinitionRequest) WorkflowWorkflowDefinition(wo
 	r.workflowWorkflowDefinition = &workflowWorkflowDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchWorkflowWorkflowDefinitionRequest) IfMatch(ifMatch string) ApiPatchWorkflowWorkflowDefinitionRequest {
 	r.ifMatch = &ifMatch
@@ -16770,8 +17020,8 @@ PatchWorkflowWorkflowDefinition Update a 'workflow.WorkflowDefinition' resource.
 func (a *WorkflowApiService) PatchWorkflowWorkflowDefinition(ctx _context.Context, moid string) ApiPatchWorkflowWorkflowDefinitionRequest {
 	return ApiPatchWorkflowWorkflowDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16886,13 +17136,13 @@ func (a *WorkflowApiService) PatchWorkflowWorkflowDefinitionExecute(r ApiPatchWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16909,11 +17159,11 @@ func (a *WorkflowApiService) PatchWorkflowWorkflowDefinitionExecute(r ApiPatchWo
 }
 
 type ApiPatchWorkflowWorkflowInfoRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *WorkflowApiService
+	moid                 string
 	workflowWorkflowInfo *WorkflowWorkflowInfo
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;workflow.WorkflowInfo&#39; resource to update.
@@ -16921,6 +17171,7 @@ func (r ApiPatchWorkflowWorkflowInfoRequest) WorkflowWorkflowInfo(workflowWorkfl
 	r.workflowWorkflowInfo = &workflowWorkflowInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchWorkflowWorkflowInfoRequest) IfMatch(ifMatch string) ApiPatchWorkflowWorkflowInfoRequest {
 	r.ifMatch = &ifMatch
@@ -16941,8 +17192,8 @@ PatchWorkflowWorkflowInfo Update a 'workflow.WorkflowInfo' resource.
 func (a *WorkflowApiService) PatchWorkflowWorkflowInfo(ctx _context.Context, moid string) ApiPatchWorkflowWorkflowInfoRequest {
 	return ApiPatchWorkflowWorkflowInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17057,13 +17308,13 @@ func (a *WorkflowApiService) PatchWorkflowWorkflowInfoExecute(r ApiPatchWorkflow
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17080,11 +17331,11 @@ func (a *WorkflowApiService) PatchWorkflowWorkflowInfoExecute(r ApiPatchWorkflow
 }
 
 type ApiUpdateWorkflowAnsibleBatchExecutorRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *WorkflowApiService
+	moid                         string
 	workflowAnsibleBatchExecutor *WorkflowAnsibleBatchExecutor
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;workflow.AnsibleBatchExecutor&#39; resource to update.
@@ -17092,6 +17343,7 @@ func (r ApiUpdateWorkflowAnsibleBatchExecutorRequest) WorkflowAnsibleBatchExecut
 	r.workflowAnsibleBatchExecutor = &workflowAnsibleBatchExecutor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateWorkflowAnsibleBatchExecutorRequest) IfMatch(ifMatch string) ApiUpdateWorkflowAnsibleBatchExecutorRequest {
 	r.ifMatch = &ifMatch
@@ -17112,8 +17364,8 @@ UpdateWorkflowAnsibleBatchExecutor Update a 'workflow.AnsibleBatchExecutor' reso
 func (a *WorkflowApiService) UpdateWorkflowAnsibleBatchExecutor(ctx _context.Context, moid string) ApiUpdateWorkflowAnsibleBatchExecutorRequest {
 	return ApiUpdateWorkflowAnsibleBatchExecutorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17228,13 +17480,13 @@ func (a *WorkflowApiService) UpdateWorkflowAnsibleBatchExecutorExecute(r ApiUpda
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17251,11 +17503,11 @@ func (a *WorkflowApiService) UpdateWorkflowAnsibleBatchExecutorExecute(r ApiUpda
 }
 
 type ApiUpdateWorkflowBatchApiExecutorRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *WorkflowApiService
+	moid                     string
 	workflowBatchApiExecutor *WorkflowBatchApiExecutor
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;workflow.BatchApiExecutor&#39; resource to update.
@@ -17263,6 +17515,7 @@ func (r ApiUpdateWorkflowBatchApiExecutorRequest) WorkflowBatchApiExecutor(workf
 	r.workflowBatchApiExecutor = &workflowBatchApiExecutor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateWorkflowBatchApiExecutorRequest) IfMatch(ifMatch string) ApiUpdateWorkflowBatchApiExecutorRequest {
 	r.ifMatch = &ifMatch
@@ -17283,8 +17536,8 @@ UpdateWorkflowBatchApiExecutor Update a 'workflow.BatchApiExecutor' resource.
 func (a *WorkflowApiService) UpdateWorkflowBatchApiExecutor(ctx _context.Context, moid string) ApiUpdateWorkflowBatchApiExecutorRequest {
 	return ApiUpdateWorkflowBatchApiExecutorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17399,13 +17652,13 @@ func (a *WorkflowApiService) UpdateWorkflowBatchApiExecutorExecute(r ApiUpdateWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17422,11 +17675,11 @@ func (a *WorkflowApiService) UpdateWorkflowBatchApiExecutorExecute(r ApiUpdateWo
 }
 
 type ApiUpdateWorkflowCustomDataTypeDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                              _context.Context
+	ApiService                       *WorkflowApiService
+	moid                             string
 	workflowCustomDataTypeDefinition *WorkflowCustomDataTypeDefinition
-	ifMatch *string
+	ifMatch                          *string
 }
 
 // The &#39;workflow.CustomDataTypeDefinition&#39; resource to update.
@@ -17434,6 +17687,7 @@ func (r ApiUpdateWorkflowCustomDataTypeDefinitionRequest) WorkflowCustomDataType
 	r.workflowCustomDataTypeDefinition = &workflowCustomDataTypeDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateWorkflowCustomDataTypeDefinitionRequest) IfMatch(ifMatch string) ApiUpdateWorkflowCustomDataTypeDefinitionRequest {
 	r.ifMatch = &ifMatch
@@ -17454,8 +17708,8 @@ UpdateWorkflowCustomDataTypeDefinition Update a 'workflow.CustomDataTypeDefiniti
 func (a *WorkflowApiService) UpdateWorkflowCustomDataTypeDefinition(ctx _context.Context, moid string) ApiUpdateWorkflowCustomDataTypeDefinitionRequest {
 	return ApiUpdateWorkflowCustomDataTypeDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17570,13 +17824,13 @@ func (a *WorkflowApiService) UpdateWorkflowCustomDataTypeDefinitionExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17593,11 +17847,11 @@ func (a *WorkflowApiService) UpdateWorkflowCustomDataTypeDefinitionExecute(r Api
 }
 
 type ApiUpdateWorkflowErrorResponseHandlerRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *WorkflowApiService
+	moid                         string
 	workflowErrorResponseHandler *WorkflowErrorResponseHandler
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;workflow.ErrorResponseHandler&#39; resource to update.
@@ -17605,6 +17859,7 @@ func (r ApiUpdateWorkflowErrorResponseHandlerRequest) WorkflowErrorResponseHandl
 	r.workflowErrorResponseHandler = &workflowErrorResponseHandler
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateWorkflowErrorResponseHandlerRequest) IfMatch(ifMatch string) ApiUpdateWorkflowErrorResponseHandlerRequest {
 	r.ifMatch = &ifMatch
@@ -17625,8 +17880,8 @@ UpdateWorkflowErrorResponseHandler Update a 'workflow.ErrorResponseHandler' reso
 func (a *WorkflowApiService) UpdateWorkflowErrorResponseHandler(ctx _context.Context, moid string) ApiUpdateWorkflowErrorResponseHandlerRequest {
 	return ApiUpdateWorkflowErrorResponseHandlerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17741,13 +17996,13 @@ func (a *WorkflowApiService) UpdateWorkflowErrorResponseHandlerExecute(r ApiUpda
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17764,11 +18019,11 @@ func (a *WorkflowApiService) UpdateWorkflowErrorResponseHandlerExecute(r ApiUpda
 }
 
 type ApiUpdateWorkflowRollbackWorkflowRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *WorkflowApiService
+	moid                     string
 	workflowRollbackWorkflow *WorkflowRollbackWorkflow
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;workflow.RollbackWorkflow&#39; resource to update.
@@ -17776,6 +18031,7 @@ func (r ApiUpdateWorkflowRollbackWorkflowRequest) WorkflowRollbackWorkflow(workf
 	r.workflowRollbackWorkflow = &workflowRollbackWorkflow
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateWorkflowRollbackWorkflowRequest) IfMatch(ifMatch string) ApiUpdateWorkflowRollbackWorkflowRequest {
 	r.ifMatch = &ifMatch
@@ -17796,8 +18052,8 @@ UpdateWorkflowRollbackWorkflow Update a 'workflow.RollbackWorkflow' resource.
 func (a *WorkflowApiService) UpdateWorkflowRollbackWorkflow(ctx _context.Context, moid string) ApiUpdateWorkflowRollbackWorkflowRequest {
 	return ApiUpdateWorkflowRollbackWorkflowRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17912,13 +18168,13 @@ func (a *WorkflowApiService) UpdateWorkflowRollbackWorkflowExecute(r ApiUpdateWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17935,11 +18191,11 @@ func (a *WorkflowApiService) UpdateWorkflowRollbackWorkflowExecute(r ApiUpdateWo
 }
 
 type ApiUpdateWorkflowSolutionActionDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                              _context.Context
+	ApiService                       *WorkflowApiService
+	moid                             string
 	workflowSolutionActionDefinition *WorkflowSolutionActionDefinition
-	ifMatch *string
+	ifMatch                          *string
 }
 
 // The &#39;workflow.SolutionActionDefinition&#39; resource to update.
@@ -17947,6 +18203,7 @@ func (r ApiUpdateWorkflowSolutionActionDefinitionRequest) WorkflowSolutionAction
 	r.workflowSolutionActionDefinition = &workflowSolutionActionDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateWorkflowSolutionActionDefinitionRequest) IfMatch(ifMatch string) ApiUpdateWorkflowSolutionActionDefinitionRequest {
 	r.ifMatch = &ifMatch
@@ -17967,8 +18224,8 @@ UpdateWorkflowSolutionActionDefinition Update a 'workflow.SolutionActionDefiniti
 func (a *WorkflowApiService) UpdateWorkflowSolutionActionDefinition(ctx _context.Context, moid string) ApiUpdateWorkflowSolutionActionDefinitionRequest {
 	return ApiUpdateWorkflowSolutionActionDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18083,13 +18340,13 @@ func (a *WorkflowApiService) UpdateWorkflowSolutionActionDefinitionExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18106,11 +18363,11 @@ func (a *WorkflowApiService) UpdateWorkflowSolutionActionDefinitionExecute(r Api
 }
 
 type ApiUpdateWorkflowSolutionActionInstanceRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *WorkflowApiService
+	moid                           string
 	workflowSolutionActionInstance *WorkflowSolutionActionInstance
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;workflow.SolutionActionInstance&#39; resource to update.
@@ -18118,6 +18375,7 @@ func (r ApiUpdateWorkflowSolutionActionInstanceRequest) WorkflowSolutionActionIn
 	r.workflowSolutionActionInstance = &workflowSolutionActionInstance
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateWorkflowSolutionActionInstanceRequest) IfMatch(ifMatch string) ApiUpdateWorkflowSolutionActionInstanceRequest {
 	r.ifMatch = &ifMatch
@@ -18138,8 +18396,8 @@ UpdateWorkflowSolutionActionInstance Update a 'workflow.SolutionActionInstance' 
 func (a *WorkflowApiService) UpdateWorkflowSolutionActionInstance(ctx _context.Context, moid string) ApiUpdateWorkflowSolutionActionInstanceRequest {
 	return ApiUpdateWorkflowSolutionActionInstanceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18254,13 +18512,13 @@ func (a *WorkflowApiService) UpdateWorkflowSolutionActionInstanceExecute(r ApiUp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18277,11 +18535,11 @@ func (a *WorkflowApiService) UpdateWorkflowSolutionActionInstanceExecute(r ApiUp
 }
 
 type ApiUpdateWorkflowSolutionDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *WorkflowApiService
+	moid                       string
 	workflowSolutionDefinition *WorkflowSolutionDefinition
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;workflow.SolutionDefinition&#39; resource to update.
@@ -18289,6 +18547,7 @@ func (r ApiUpdateWorkflowSolutionDefinitionRequest) WorkflowSolutionDefinition(w
 	r.workflowSolutionDefinition = &workflowSolutionDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateWorkflowSolutionDefinitionRequest) IfMatch(ifMatch string) ApiUpdateWorkflowSolutionDefinitionRequest {
 	r.ifMatch = &ifMatch
@@ -18309,8 +18568,8 @@ UpdateWorkflowSolutionDefinition Update a 'workflow.SolutionDefinition' resource
 func (a *WorkflowApiService) UpdateWorkflowSolutionDefinition(ctx _context.Context, moid string) ApiUpdateWorkflowSolutionDefinitionRequest {
 	return ApiUpdateWorkflowSolutionDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18425,13 +18684,13 @@ func (a *WorkflowApiService) UpdateWorkflowSolutionDefinitionExecute(r ApiUpdate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18448,11 +18707,11 @@ func (a *WorkflowApiService) UpdateWorkflowSolutionDefinitionExecute(r ApiUpdate
 }
 
 type ApiUpdateWorkflowSolutionInstanceRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *WorkflowApiService
+	moid                     string
 	workflowSolutionInstance *WorkflowSolutionInstance
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;workflow.SolutionInstance&#39; resource to update.
@@ -18460,6 +18719,7 @@ func (r ApiUpdateWorkflowSolutionInstanceRequest) WorkflowSolutionInstance(workf
 	r.workflowSolutionInstance = &workflowSolutionInstance
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateWorkflowSolutionInstanceRequest) IfMatch(ifMatch string) ApiUpdateWorkflowSolutionInstanceRequest {
 	r.ifMatch = &ifMatch
@@ -18480,8 +18740,8 @@ UpdateWorkflowSolutionInstance Update a 'workflow.SolutionInstance' resource.
 func (a *WorkflowApiService) UpdateWorkflowSolutionInstance(ctx _context.Context, moid string) ApiUpdateWorkflowSolutionInstanceRequest {
 	return ApiUpdateWorkflowSolutionInstanceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18596,13 +18856,13 @@ func (a *WorkflowApiService) UpdateWorkflowSolutionInstanceExecute(r ApiUpdateWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18619,11 +18879,11 @@ func (a *WorkflowApiService) UpdateWorkflowSolutionInstanceExecute(r ApiUpdateWo
 }
 
 type ApiUpdateWorkflowSolutionOutputRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *WorkflowApiService
+	moid                   string
 	workflowSolutionOutput *WorkflowSolutionOutput
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;workflow.SolutionOutput&#39; resource to update.
@@ -18631,6 +18891,7 @@ func (r ApiUpdateWorkflowSolutionOutputRequest) WorkflowSolutionOutput(workflowS
 	r.workflowSolutionOutput = &workflowSolutionOutput
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateWorkflowSolutionOutputRequest) IfMatch(ifMatch string) ApiUpdateWorkflowSolutionOutputRequest {
 	r.ifMatch = &ifMatch
@@ -18651,8 +18912,8 @@ UpdateWorkflowSolutionOutput Update a 'workflow.SolutionOutput' resource.
 func (a *WorkflowApiService) UpdateWorkflowSolutionOutput(ctx _context.Context, moid string) ApiUpdateWorkflowSolutionOutputRequest {
 	return ApiUpdateWorkflowSolutionOutputRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18767,13 +19028,13 @@ func (a *WorkflowApiService) UpdateWorkflowSolutionOutputExecute(r ApiUpdateWork
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18790,11 +19051,11 @@ func (a *WorkflowApiService) UpdateWorkflowSolutionOutputExecute(r ApiUpdateWork
 }
 
 type ApiUpdateWorkflowSshBatchExecutorRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *WorkflowApiService
+	moid                     string
 	workflowSshBatchExecutor *WorkflowSshBatchExecutor
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;workflow.SshBatchExecutor&#39; resource to update.
@@ -18802,6 +19063,7 @@ func (r ApiUpdateWorkflowSshBatchExecutorRequest) WorkflowSshBatchExecutor(workf
 	r.workflowSshBatchExecutor = &workflowSshBatchExecutor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateWorkflowSshBatchExecutorRequest) IfMatch(ifMatch string) ApiUpdateWorkflowSshBatchExecutorRequest {
 	r.ifMatch = &ifMatch
@@ -18822,8 +19084,8 @@ UpdateWorkflowSshBatchExecutor Update a 'workflow.SshBatchExecutor' resource.
 func (a *WorkflowApiService) UpdateWorkflowSshBatchExecutor(ctx _context.Context, moid string) ApiUpdateWorkflowSshBatchExecutorRequest {
 	return ApiUpdateWorkflowSshBatchExecutorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18938,13 +19200,13 @@ func (a *WorkflowApiService) UpdateWorkflowSshBatchExecutorExecute(r ApiUpdateWo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18961,11 +19223,11 @@ func (a *WorkflowApiService) UpdateWorkflowSshBatchExecutorExecute(r ApiUpdateWo
 }
 
 type ApiUpdateWorkflowTaskDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *WorkflowApiService
+	moid                   string
 	workflowTaskDefinition *WorkflowTaskDefinition
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;workflow.TaskDefinition&#39; resource to update.
@@ -18973,6 +19235,7 @@ func (r ApiUpdateWorkflowTaskDefinitionRequest) WorkflowTaskDefinition(workflowT
 	r.workflowTaskDefinition = &workflowTaskDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateWorkflowTaskDefinitionRequest) IfMatch(ifMatch string) ApiUpdateWorkflowTaskDefinitionRequest {
 	r.ifMatch = &ifMatch
@@ -18993,8 +19256,8 @@ UpdateWorkflowTaskDefinition Update a 'workflow.TaskDefinition' resource.
 func (a *WorkflowApiService) UpdateWorkflowTaskDefinition(ctx _context.Context, moid string) ApiUpdateWorkflowTaskDefinitionRequest {
 	return ApiUpdateWorkflowTaskDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19109,13 +19372,13 @@ func (a *WorkflowApiService) UpdateWorkflowTaskDefinitionExecute(r ApiUpdateWork
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19132,11 +19395,11 @@ func (a *WorkflowApiService) UpdateWorkflowTaskDefinitionExecute(r ApiUpdateWork
 }
 
 type ApiUpdateWorkflowTaskInfoRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *WorkflowApiService
+	moid             string
 	workflowTaskInfo *WorkflowTaskInfo
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;workflow.TaskInfo&#39; resource to update.
@@ -19144,6 +19407,7 @@ func (r ApiUpdateWorkflowTaskInfoRequest) WorkflowTaskInfo(workflowTaskInfo Work
 	r.workflowTaskInfo = &workflowTaskInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateWorkflowTaskInfoRequest) IfMatch(ifMatch string) ApiUpdateWorkflowTaskInfoRequest {
 	r.ifMatch = &ifMatch
@@ -19164,8 +19428,8 @@ UpdateWorkflowTaskInfo Update a 'workflow.TaskInfo' resource.
 func (a *WorkflowApiService) UpdateWorkflowTaskInfo(ctx _context.Context, moid string) ApiUpdateWorkflowTaskInfoRequest {
 	return ApiUpdateWorkflowTaskInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19280,13 +19544,13 @@ func (a *WorkflowApiService) UpdateWorkflowTaskInfoExecute(r ApiUpdateWorkflowTa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19303,11 +19567,11 @@ func (a *WorkflowApiService) UpdateWorkflowTaskInfoExecute(r ApiUpdateWorkflowTa
 }
 
 type ApiUpdateWorkflowWorkflowDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *WorkflowApiService
+	moid                       string
 	workflowWorkflowDefinition *WorkflowWorkflowDefinition
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;workflow.WorkflowDefinition&#39; resource to update.
@@ -19315,6 +19579,7 @@ func (r ApiUpdateWorkflowWorkflowDefinitionRequest) WorkflowWorkflowDefinition(w
 	r.workflowWorkflowDefinition = &workflowWorkflowDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateWorkflowWorkflowDefinitionRequest) IfMatch(ifMatch string) ApiUpdateWorkflowWorkflowDefinitionRequest {
 	r.ifMatch = &ifMatch
@@ -19335,8 +19600,8 @@ UpdateWorkflowWorkflowDefinition Update a 'workflow.WorkflowDefinition' resource
 func (a *WorkflowApiService) UpdateWorkflowWorkflowDefinition(ctx _context.Context, moid string) ApiUpdateWorkflowWorkflowDefinitionRequest {
 	return ApiUpdateWorkflowWorkflowDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19451,13 +19716,13 @@ func (a *WorkflowApiService) UpdateWorkflowWorkflowDefinitionExecute(r ApiUpdate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19474,11 +19739,11 @@ func (a *WorkflowApiService) UpdateWorkflowWorkflowDefinitionExecute(r ApiUpdate
 }
 
 type ApiUpdateWorkflowWorkflowInfoRequest struct {
-	ctx _context.Context
-	ApiService *WorkflowApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *WorkflowApiService
+	moid                 string
 	workflowWorkflowInfo *WorkflowWorkflowInfo
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;workflow.WorkflowInfo&#39; resource to update.
@@ -19486,6 +19751,7 @@ func (r ApiUpdateWorkflowWorkflowInfoRequest) WorkflowWorkflowInfo(workflowWorkf
 	r.workflowWorkflowInfo = &workflowWorkflowInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateWorkflowWorkflowInfoRequest) IfMatch(ifMatch string) ApiUpdateWorkflowWorkflowInfoRequest {
 	r.ifMatch = &ifMatch
@@ -19506,8 +19772,8 @@ UpdateWorkflowWorkflowInfo Update a 'workflow.WorkflowInfo' resource.
 func (a *WorkflowApiService) UpdateWorkflowWorkflowInfo(ctx _context.Context, moid string) ApiUpdateWorkflowWorkflowInfoRequest {
 	return ApiUpdateWorkflowWorkflowInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19622,13 +19888,13 @@ func (a *WorkflowApiService) UpdateWorkflowWorkflowInfoExecute(r ApiUpdateWorkfl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

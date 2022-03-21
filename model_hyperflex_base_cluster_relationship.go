@@ -19,19 +19,18 @@ import (
 // HyperflexBaseClusterRelationship - A relationship to the 'hyperflex.BaseCluster' resource, or the expanded 'hyperflex.BaseCluster' resource, or the 'null' value.
 type HyperflexBaseClusterRelationship struct {
 	HyperflexBaseCluster *HyperflexBaseCluster
-	MoMoRef *MoMoRef
+	MoMoRef              *MoMoRef
 }
 
 // HyperflexBaseClusterAsHyperflexBaseClusterRelationship is a convenience function that returns HyperflexBaseCluster wrapped in HyperflexBaseClusterRelationship
 func HyperflexBaseClusterAsHyperflexBaseClusterRelationship(v *HyperflexBaseCluster) HyperflexBaseClusterRelationship {
-	return HyperflexBaseClusterRelationship{ HyperflexBaseCluster: v}
+	return HyperflexBaseClusterRelationship{HyperflexBaseCluster: v}
 }
 
 // MoMoRefAsHyperflexBaseClusterRelationship is a convenience function that returns MoMoRef wrapped in HyperflexBaseClusterRelationship
 func MoMoRefAsHyperflexBaseClusterRelationship(v *MoMoRef) HyperflexBaseClusterRelationship {
-	return HyperflexBaseClusterRelationship{ MoMoRef: v}
+	return HyperflexBaseClusterRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexBaseClusterRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexBaseClusterRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexBaseClusterRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexBaseClusterRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexBaseCluster != nil {
 		return obj.HyperflexBaseCluster
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexBaseClusterRelationship) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

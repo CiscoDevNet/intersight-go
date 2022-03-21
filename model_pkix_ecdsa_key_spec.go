@@ -25,7 +25,7 @@ type PkixEcdsaKeySpec struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// A specific set of Elliptic Curve parameters, as recommended by NIST in FIPS 186-4. * `P256` - P256 returns a Curve which implements P-256, as defined in FIPS 186-4, section D.2.3. * `P224` - P224 returns a Curve which implements P-224, as defined in FIPS 186-4, section D.2.2. * `P384` - P384 returns a Curve which implements P-384, as defined in FIPS 186-4, section D.2.4. * `P521` - P521 returns a Curve which implements P-521, as defined in FIPS 186-4, section D.2.5.
-	Curve *string `json:"Curve,omitempty"`
+	Curve                *string `json:"Curve,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *PkixEcdsaKeySpec) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PkixEcdsaKeySpec) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *PkixEcdsaKeySpec) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PkixEcdsaKeySpec) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -263,5 +263,3 @@ func (v *NullablePkixEcdsaKeySpec) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

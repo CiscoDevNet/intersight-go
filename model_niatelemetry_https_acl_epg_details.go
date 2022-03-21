@@ -33,8 +33,8 @@ type NiatelemetryHttpsAclEpgDetails struct {
 	// Version of record being pushed. This determines what was the API version for data available from the device.
 	RecordVersion *string `json:"RecordVersion,omitempty"`
 	// Name of the APIC site from which this data is being collected.
-	SiteName *string `json:"SiteName,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SiteName             *string                              `json:"SiteName,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *NiatelemetryHttpsAclEpgDetails) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryHttpsAclEpgDetails) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *NiatelemetryHttpsAclEpgDetails) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryHttpsAclEpgDetails) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -360,7 +360,7 @@ func (o *NiatelemetryHttpsAclEpgDetails) UnmarshalJSON(bytes []byte) (err error)
 		// Version of record being pushed. This determines what was the API version for data available from the device.
 		RecordVersion *string `json:"RecordVersion,omitempty"`
 		// Name of the APIC site from which this data is being collected.
-		SiteName *string `json:"SiteName,omitempty"`
+		SiteName         *string                              `json:"SiteName,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -462,5 +462,3 @@ func (v *NullableNiatelemetryHttpsAclEpgDetails) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

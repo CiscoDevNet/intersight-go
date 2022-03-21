@@ -23,11 +23,11 @@ type IamCertificate struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType  string                  `json:"ObjectType"`
 	Certificate NullableX509Certificate `json:"Certificate,omitempty"`
 	// Status of the certificate. * `PendingValidation` - The certificate has not been validated. * `Valid` - The certificate is valid. * `Invalid` - Ther certificate is invalid.
-	Status *string `json:"Status,omitempty"`
-	CertificateRequest *IamCertificateRequestRelationship `json:"CertificateRequest,omitempty"`
+	Status               *string                            `json:"Status,omitempty"`
+	CertificateRequest   *IamCertificateRequestRelationship `json:"CertificateRequest,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *IamCertificate) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamCertificate) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *IamCertificate) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamCertificate) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -117,7 +117,7 @@ func (o *IamCertificate) GetCertificate() X509Certificate {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IamCertificate) GetCertificateOk() (*X509Certificate, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Certificate.Get(), o.Certificate.IsSet()
@@ -136,6 +136,7 @@ func (o *IamCertificate) HasCertificate() bool {
 func (o *IamCertificate) SetCertificate(v X509Certificate) {
 	o.Certificate.Set(&v)
 }
+
 // SetCertificateNil sets the value for Certificate to be an explicit nil
 func (o *IamCertificate) SetCertificateNil() {
 	o.Certificate.Set(nil)
@@ -248,10 +249,10 @@ func (o *IamCertificate) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType  string                  `json:"ObjectType"`
 		Certificate NullableX509Certificate `json:"Certificate,omitempty"`
 		// Status of the certificate. * `PendingValidation` - The certificate has not been validated. * `Valid` - The certificate is valid. * `Invalid` - Ther certificate is invalid.
-		Status *string `json:"Status,omitempty"`
+		Status             *string                            `json:"Status,omitempty"`
 		CertificateRequest *IamCertificateRequestRelationship `json:"CertificateRequest,omitempty"`
 	}
 
@@ -347,5 +348,3 @@ func (v *NullableIamCertificate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

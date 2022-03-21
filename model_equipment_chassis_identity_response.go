@@ -19,31 +19,30 @@ import (
 // EquipmentChassisIdentityResponse - The response body of a HTTP GET request for the 'equipment.ChassisIdentity' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'equipment.ChassisIdentity' resources.
 type EquipmentChassisIdentityResponse struct {
 	EquipmentChassisIdentityList *EquipmentChassisIdentityList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform         *MoAggregateTransform
+	MoDocumentCount              *MoDocumentCount
+	MoTagSummary                 *MoTagSummary
 }
 
 // EquipmentChassisIdentityListAsEquipmentChassisIdentityResponse is a convenience function that returns EquipmentChassisIdentityList wrapped in EquipmentChassisIdentityResponse
 func EquipmentChassisIdentityListAsEquipmentChassisIdentityResponse(v *EquipmentChassisIdentityList) EquipmentChassisIdentityResponse {
-	return EquipmentChassisIdentityResponse{ EquipmentChassisIdentityList: v}
+	return EquipmentChassisIdentityResponse{EquipmentChassisIdentityList: v}
 }
 
 // MoAggregateTransformAsEquipmentChassisIdentityResponse is a convenience function that returns MoAggregateTransform wrapped in EquipmentChassisIdentityResponse
 func MoAggregateTransformAsEquipmentChassisIdentityResponse(v *MoAggregateTransform) EquipmentChassisIdentityResponse {
-	return EquipmentChassisIdentityResponse{ MoAggregateTransform: v}
+	return EquipmentChassisIdentityResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsEquipmentChassisIdentityResponse is a convenience function that returns MoDocumentCount wrapped in EquipmentChassisIdentityResponse
 func MoDocumentCountAsEquipmentChassisIdentityResponse(v *MoDocumentCount) EquipmentChassisIdentityResponse {
-	return EquipmentChassisIdentityResponse{ MoDocumentCount: v}
+	return EquipmentChassisIdentityResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsEquipmentChassisIdentityResponse is a convenience function that returns MoTagSummary wrapped in EquipmentChassisIdentityResponse
 func MoTagSummaryAsEquipmentChassisIdentityResponse(v *MoTagSummary) EquipmentChassisIdentityResponse {
-	return EquipmentChassisIdentityResponse{ MoTagSummary: v}
+	return EquipmentChassisIdentityResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentChassisIdentityResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src EquipmentChassisIdentityResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentChassisIdentityResponse) GetActualInstance() (interface{}) {
+func (obj *EquipmentChassisIdentityResponse) GetActualInstance() interface{} {
 	if obj.EquipmentChassisIdentityList != nil {
 		return obj.EquipmentChassisIdentityList
 	}
@@ -184,5 +183,3 @@ func (v *NullableEquipmentChassisIdentityResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

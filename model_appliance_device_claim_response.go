@@ -19,31 +19,30 @@ import (
 // ApplianceDeviceClaimResponse - The response body of a HTTP GET request for the 'appliance.DeviceClaim' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'appliance.DeviceClaim' resources.
 type ApplianceDeviceClaimResponse struct {
 	ApplianceDeviceClaimList *ApplianceDeviceClaimList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform     *MoAggregateTransform
+	MoDocumentCount          *MoDocumentCount
+	MoTagSummary             *MoTagSummary
 }
 
 // ApplianceDeviceClaimListAsApplianceDeviceClaimResponse is a convenience function that returns ApplianceDeviceClaimList wrapped in ApplianceDeviceClaimResponse
 func ApplianceDeviceClaimListAsApplianceDeviceClaimResponse(v *ApplianceDeviceClaimList) ApplianceDeviceClaimResponse {
-	return ApplianceDeviceClaimResponse{ ApplianceDeviceClaimList: v}
+	return ApplianceDeviceClaimResponse{ApplianceDeviceClaimList: v}
 }
 
 // MoAggregateTransformAsApplianceDeviceClaimResponse is a convenience function that returns MoAggregateTransform wrapped in ApplianceDeviceClaimResponse
 func MoAggregateTransformAsApplianceDeviceClaimResponse(v *MoAggregateTransform) ApplianceDeviceClaimResponse {
-	return ApplianceDeviceClaimResponse{ MoAggregateTransform: v}
+	return ApplianceDeviceClaimResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsApplianceDeviceClaimResponse is a convenience function that returns MoDocumentCount wrapped in ApplianceDeviceClaimResponse
 func MoDocumentCountAsApplianceDeviceClaimResponse(v *MoDocumentCount) ApplianceDeviceClaimResponse {
-	return ApplianceDeviceClaimResponse{ MoDocumentCount: v}
+	return ApplianceDeviceClaimResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsApplianceDeviceClaimResponse is a convenience function that returns MoTagSummary wrapped in ApplianceDeviceClaimResponse
 func MoTagSummaryAsApplianceDeviceClaimResponse(v *MoTagSummary) ApplianceDeviceClaimResponse {
-	return ApplianceDeviceClaimResponse{ MoTagSummary: v}
+	return ApplianceDeviceClaimResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ApplianceDeviceClaimResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ApplianceDeviceClaimResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ApplianceDeviceClaimResponse) GetActualInstance() (interface{}) {
+func (obj *ApplianceDeviceClaimResponse) GetActualInstance() interface{} {
 	if obj.ApplianceDeviceClaimList != nil {
 		return obj.ApplianceDeviceClaimList
 	}
@@ -184,5 +183,3 @@ func (v *NullableApplianceDeviceClaimResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

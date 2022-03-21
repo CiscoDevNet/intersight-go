@@ -20,11 +20,11 @@ type NiaapiVersionRegexAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Apic NullableNiaapiVersionRegexPlatform `json:"Apic,omitempty"`
-	Dcnm NullableNiaapiVersionRegexPlatform `json:"Dcnm,omitempty"`
+	ObjectType string                             `json:"ObjectType"`
+	Apic       NullableNiaapiVersionRegexPlatform `json:"Apic,omitempty"`
+	Dcnm       NullableNiaapiVersionRegexPlatform `json:"Dcnm,omitempty"`
 	// Version number for the Version Regex data, also used as identity.
-	Version *string `json:"Version,omitempty"`
+	Version              *string `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *NiaapiVersionRegexAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiVersionRegexAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *NiaapiVersionRegexAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiVersionRegexAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -114,7 +114,7 @@ func (o *NiaapiVersionRegexAllOf) GetApic() NiaapiVersionRegexPlatform {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiaapiVersionRegexAllOf) GetApicOk() (*NiaapiVersionRegexPlatform, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Apic.Get(), o.Apic.IsSet()
@@ -133,6 +133,7 @@ func (o *NiaapiVersionRegexAllOf) HasApic() bool {
 func (o *NiaapiVersionRegexAllOf) SetApic(v NiaapiVersionRegexPlatform) {
 	o.Apic.Set(&v)
 }
+
 // SetApicNil sets the value for Apic to be an explicit nil
 func (o *NiaapiVersionRegexAllOf) SetApicNil() {
 	o.Apic.Set(nil)
@@ -156,7 +157,7 @@ func (o *NiaapiVersionRegexAllOf) GetDcnm() NiaapiVersionRegexPlatform {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiaapiVersionRegexAllOf) GetDcnmOk() (*NiaapiVersionRegexPlatform, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Dcnm.Get(), o.Dcnm.IsSet()
@@ -175,6 +176,7 @@ func (o *NiaapiVersionRegexAllOf) HasDcnm() bool {
 func (o *NiaapiVersionRegexAllOf) SetDcnm(v NiaapiVersionRegexPlatform) {
 	o.Dcnm.Set(&v)
 }
+
 // SetDcnmNil sets the value for Dcnm to be an explicit nil
 func (o *NiaapiVersionRegexAllOf) SetDcnmNil() {
 	o.Dcnm.Set(nil)
@@ -298,5 +300,3 @@ func (v *NullableNiaapiVersionRegexAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

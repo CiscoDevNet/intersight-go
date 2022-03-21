@@ -35,7 +35,7 @@ type VirtualizationDiskStatus struct {
 	// Name of the Volume associated with virtual machine disk.
 	VolumeName *string `json:"VolumeName,omitempty"`
 	// Name of the Volume Vendor associated with virtual machine disk.
-	VolumeVendor *string `json:"VolumeVendor,omitempty"`
+	VolumeVendor         *string `json:"VolumeVendor,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *VirtualizationDiskStatus) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationDiskStatus) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *VirtualizationDiskStatus) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationDiskStatus) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -464,5 +464,3 @@ func (v *NullableVirtualizationDiskStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

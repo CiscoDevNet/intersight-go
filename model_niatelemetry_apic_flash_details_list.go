@@ -23,7 +23,7 @@ type NiatelemetryApicFlashDetailsList struct {
 	// The total number of 'niatelemetry.ApicFlashDetails' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'niatelemetry.ApicFlashDetails' resources matching the request.
-	Results []NiatelemetryApicFlashDetails `json:"Results,omitempty"`
+	Results              []NiatelemetryApicFlashDetails `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *NiatelemetryApicFlashDetailsList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetryApicFlashDetailsList) GetResults() []NiatelemetryApicFlashDetails {
-	if o == nil  {
+	if o == nil {
 		var ret []NiatelemetryApicFlashDetails
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableNiatelemetryApicFlashDetailsList) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

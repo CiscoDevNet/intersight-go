@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // StorageHyperFlexStorageContainer A Storage Container (Datastore) entity.
@@ -44,9 +44,9 @@ type StorageHyperFlexStorageContainer struct {
 	// UUID of the Datastore/Storage Containter.
 	Uuid *string `json:"Uuid,omitempty"`
 	// Number of Volumes associated with the Storage Container.
-	VolumeCount *int64 `json:"VolumeCount,omitempty"`
-	Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	VolumeCount          *int64                               `json:"VolumeCount,omitempty"`
+	Cluster              *HyperflexClusterRelationship        `json:"Cluster,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -88,7 +88,7 @@ func (o *StorageHyperFlexStorageContainer) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageHyperFlexStorageContainer) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *StorageHyperFlexStorageContainer) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageHyperFlexStorageContainer) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -592,8 +592,8 @@ func (o *StorageHyperFlexStorageContainer) UnmarshalJSON(bytes []byte) (err erro
 		// UUID of the Datastore/Storage Containter.
 		Uuid *string `json:"Uuid,omitempty"`
 		// Number of Volumes associated with the Storage Container.
-		VolumeCount *int64 `json:"VolumeCount,omitempty"`
-		Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
+		VolumeCount      *int64                               `json:"VolumeCount,omitempty"`
+		Cluster          *HyperflexClusterRelationship        `json:"Cluster,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -707,5 +707,3 @@ func (v *NullableStorageHyperFlexStorageContainer) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -26,16 +26,16 @@ type HyperflexSoftwareVersionPolicyAllOf struct {
 	// Desired  hypervisor version to apply for all the nodes on the HyperFlex cluster.
 	HypervisorVersion *string `json:"HypervisorVersion,omitempty"`
 	// Desired server firmware version to apply on the HyperFlex Cluster.
-	ServerFirmwareVersion *string `json:"ServerFirmwareVersion,omitempty"`
+	ServerFirmwareVersion  *string                              `json:"ServerFirmwareVersion,omitempty"`
 	ServerFirmwareVersions []HyperflexServerFirmwareVersionInfo `json:"ServerFirmwareVersions,omitempty"`
-	UpgradeTypes []string `json:"UpgradeTypes,omitempty"`
+	UpgradeTypes           []string                             `json:"UpgradeTypes,omitempty"`
 	// An array of relationships to hyperflexClusterProfile resources.
-	ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-	HxdpVersionInfo *SoftwareHyperflexDistributableRelationship `json:"HxdpVersionInfo,omitempty"`
-	HypervisorVersionInfo *SoftwareHyperflexDistributableRelationship `json:"HypervisorVersionInfo,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	ServerFirmwareVersionInfo *FirmwareDistributableRelationship `json:"ServerFirmwareVersionInfo,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ClusterProfiles           []HyperflexClusterProfileRelationship       `json:"ClusterProfiles,omitempty"`
+	HxdpVersionInfo           *SoftwareHyperflexDistributableRelationship `json:"HxdpVersionInfo,omitempty"`
+	HypervisorVersionInfo     *SoftwareHyperflexDistributableRelationship `json:"HypervisorVersionInfo,omitempty"`
+	Organization              *OrganizationOrganizationRelationship       `json:"Organization,omitempty"`
+	ServerFirmwareVersionInfo *FirmwareDistributableRelationship          `json:"ServerFirmwareVersionInfo,omitempty"`
+	AdditionalProperties      map[string]interface{}
 }
 
 type _HyperflexSoftwareVersionPolicyAllOf HyperflexSoftwareVersionPolicyAllOf
@@ -76,7 +76,7 @@ func (o *HyperflexSoftwareVersionPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexSoftwareVersionPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *HyperflexSoftwareVersionPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexSoftwareVersionPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -209,7 +209,7 @@ func (o *HyperflexSoftwareVersionPolicyAllOf) SetServerFirmwareVersion(v string)
 
 // GetServerFirmwareVersions returns the ServerFirmwareVersions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexSoftwareVersionPolicyAllOf) GetServerFirmwareVersions() []HyperflexServerFirmwareVersionInfo {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexServerFirmwareVersionInfo
 		return ret
 	}
@@ -242,7 +242,7 @@ func (o *HyperflexSoftwareVersionPolicyAllOf) SetServerFirmwareVersions(v []Hype
 
 // GetUpgradeTypes returns the UpgradeTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexSoftwareVersionPolicyAllOf) GetUpgradeTypes() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -275,7 +275,7 @@ func (o *HyperflexSoftwareVersionPolicyAllOf) SetUpgradeTypes(v []string) {
 
 // GetClusterProfiles returns the ClusterProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexSoftwareVersionPolicyAllOf) GetClusterProfiles() []HyperflexClusterProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexClusterProfileRelationship
 		return ret
 	}
@@ -543,5 +543,3 @@ func (v *NullableHyperflexSoftwareVersionPolicyAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

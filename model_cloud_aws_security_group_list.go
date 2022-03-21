@@ -23,7 +23,7 @@ type CloudAwsSecurityGroupList struct {
 	// The total number of 'cloud.AwsSecurityGroup' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'cloud.AwsSecurityGroup' resources matching the request.
-	Results []CloudAwsSecurityGroup `json:"Results,omitempty"`
+	Results              []CloudAwsSecurityGroup `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *CloudAwsSecurityGroupList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudAwsSecurityGroupList) GetResults() []CloudAwsSecurityGroup {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudAwsSecurityGroup
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableCloudAwsSecurityGroupList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

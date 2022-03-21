@@ -23,13 +23,13 @@ type WorkflowPrimitiveDataProperty struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Constraints NullableWorkflowConstraints `json:"Constraints,omitempty"`
+	ObjectType        string                        `json:"ObjectType"`
+	Constraints       NullableWorkflowConstraints   `json:"Constraints,omitempty"`
 	InventorySelector []WorkflowMoReferenceProperty `json:"InventorySelector,omitempty"`
 	// Intersight supports secure properties as task input/output. The values of these properties are encrypted and stored in Intersight. This flag marks the property to be secure when it is set to true.
 	Secure *bool `json:"Secure,omitempty"`
 	// Specify the enum type for primitive data type. * `string` - Enum to specify a string data type. * `integer` - Enum to specify an integer32 data type. * `float` - Enum to specify a float64 data type. * `boolean` - Enum to specify a boolean data type. * `json` - Enum to specify a json data type. * `enum` - Enum to specify a enum data type which is a list of pre-defined strings.
-	Type *string `json:"Type,omitempty"`
+	Type                 *string `json:"Type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *WorkflowPrimitiveDataProperty) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowPrimitiveDataProperty) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *WorkflowPrimitiveDataProperty) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowPrimitiveDataProperty) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -123,7 +123,7 @@ func (o *WorkflowPrimitiveDataProperty) GetConstraints() WorkflowConstraints {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowPrimitiveDataProperty) GetConstraintsOk() (*WorkflowConstraints, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Constraints.Get(), o.Constraints.IsSet()
@@ -142,6 +142,7 @@ func (o *WorkflowPrimitiveDataProperty) HasConstraints() bool {
 func (o *WorkflowPrimitiveDataProperty) SetConstraints(v WorkflowConstraints) {
 	o.Constraints.Set(&v)
 }
+
 // SetConstraintsNil sets the value for Constraints to be an explicit nil
 func (o *WorkflowPrimitiveDataProperty) SetConstraintsNil() {
 	o.Constraints.Set(nil)
@@ -154,7 +155,7 @@ func (o *WorkflowPrimitiveDataProperty) UnsetConstraints() {
 
 // GetInventorySelector returns the InventorySelector field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowPrimitiveDataProperty) GetInventorySelector() []WorkflowMoReferenceProperty {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowMoReferenceProperty
 		return ret
 	}
@@ -290,8 +291,8 @@ func (o *WorkflowPrimitiveDataProperty) UnmarshalJSON(bytes []byte) (err error) 
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Constraints NullableWorkflowConstraints `json:"Constraints,omitempty"`
+		ObjectType        string                        `json:"ObjectType"`
+		Constraints       NullableWorkflowConstraints   `json:"Constraints,omitempty"`
 		InventorySelector []WorkflowMoReferenceProperty `json:"InventorySelector,omitempty"`
 		// Intersight supports secure properties as task input/output. The values of these properties are encrypted and stored in Intersight. This flag marks the property to be secure when it is set to true.
 		Secure *bool `json:"Secure,omitempty"`
@@ -393,5 +394,3 @@ func (v *NullableWorkflowPrimitiveDataProperty) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -22,11 +22,11 @@ type MacpoolPoolMemberAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// MAC Address of this pool member.
-	MacAddress *string `json:"MacAddress,omitempty"`
-	AssignedToEntity *MoBaseMoRelationship `json:"AssignedToEntity,omitempty"`
-	BlockHead *MacpoolIdBlockRelationship `json:"BlockHead,omitempty"`
-	Peer *MacpoolLeaseRelationship `json:"Peer,omitempty"`
-	Pool *MacpoolPoolRelationship `json:"Pool,omitempty"`
+	MacAddress           *string                     `json:"MacAddress,omitempty"`
+	AssignedToEntity     *MoBaseMoRelationship       `json:"AssignedToEntity,omitempty"`
+	BlockHead            *MacpoolIdBlockRelationship `json:"BlockHead,omitempty"`
+	Peer                 *MacpoolLeaseRelationship   `json:"Peer,omitempty"`
+	Pool                 *MacpoolPoolRelationship    `json:"Pool,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *MacpoolPoolMemberAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MacpoolPoolMemberAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *MacpoolPoolMemberAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MacpoolPoolMemberAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -352,5 +352,3 @@ func (v *NullableMacpoolPoolMemberAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

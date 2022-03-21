@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // IamUser The Intersight account user.
@@ -48,16 +48,16 @@ type IamUser struct {
 	// An array of relationships to iamApiKey resources.
 	ApiKeys []IamApiKeyRelationship `json:"ApiKeys,omitempty"`
 	// An array of relationships to iamAppRegistration resources.
-	AppRegistrations []IamAppRegistrationRelationship `json:"AppRegistrations,omitempty"`
-	Idp *IamIdpRelationship `json:"Idp,omitempty"`
-	Idpreference *IamIdpReferenceRelationship `json:"Idpreference,omitempty"`
+	AppRegistrations  []IamAppRegistrationRelationship  `json:"AppRegistrations,omitempty"`
+	Idp               *IamIdpRelationship               `json:"Idp,omitempty"`
+	Idpreference      *IamIdpReferenceRelationship      `json:"Idpreference,omitempty"`
 	LocalUserPassword *IamLocalUserPasswordRelationship `json:"LocalUserPassword,omitempty"`
 	// An array of relationships to iamOAuthToken resources.
 	OauthTokens []IamOAuthTokenRelationship `json:"OauthTokens,omitempty"`
 	// An array of relationships to iamPermission resources.
 	Permissions []IamPermissionRelationship `json:"Permissions,omitempty"`
 	// An array of relationships to iamSession resources.
-	Sessions []IamSessionRelationship `json:"Sessions,omitempty"`
+	Sessions             []IamSessionRelationship `json:"Sessions,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -99,7 +99,7 @@ func (o *IamUser) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamUser) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -123,7 +123,7 @@ func (o *IamUser) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamUser) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -456,7 +456,7 @@ func (o *IamUser) SetUserUniqueIdentifier(v string) {
 
 // GetApiKeys returns the ApiKeys field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamUser) GetApiKeys() []IamApiKeyRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamApiKeyRelationship
 		return ret
 	}
@@ -489,7 +489,7 @@ func (o *IamUser) SetApiKeys(v []IamApiKeyRelationship) {
 
 // GetAppRegistrations returns the AppRegistrations field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamUser) GetAppRegistrations() []IamAppRegistrationRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamAppRegistrationRelationship
 		return ret
 	}
@@ -618,7 +618,7 @@ func (o *IamUser) SetLocalUserPassword(v IamLocalUserPasswordRelationship) {
 
 // GetOauthTokens returns the OauthTokens field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamUser) GetOauthTokens() []IamOAuthTokenRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamOAuthTokenRelationship
 		return ret
 	}
@@ -651,7 +651,7 @@ func (o *IamUser) SetOauthTokens(v []IamOAuthTokenRelationship) {
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamUser) GetPermissions() []IamPermissionRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPermissionRelationship
 		return ret
 	}
@@ -684,7 +684,7 @@ func (o *IamUser) SetPermissions(v []IamPermissionRelationship) {
 
 // GetSessions returns the Sessions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamUser) GetSessions() []IamSessionRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamSessionRelationship
 		return ret
 	}
@@ -822,9 +822,9 @@ func (o *IamUser) UnmarshalJSON(bytes []byte) (err error) {
 		// An array of relationships to iamApiKey resources.
 		ApiKeys []IamApiKeyRelationship `json:"ApiKeys,omitempty"`
 		// An array of relationships to iamAppRegistration resources.
-		AppRegistrations []IamAppRegistrationRelationship `json:"AppRegistrations,omitempty"`
-		Idp *IamIdpRelationship `json:"Idp,omitempty"`
-		Idpreference *IamIdpReferenceRelationship `json:"Idpreference,omitempty"`
+		AppRegistrations  []IamAppRegistrationRelationship  `json:"AppRegistrations,omitempty"`
+		Idp               *IamIdpRelationship               `json:"Idp,omitempty"`
+		Idpreference      *IamIdpReferenceRelationship      `json:"Idpreference,omitempty"`
 		LocalUserPassword *IamLocalUserPasswordRelationship `json:"LocalUserPassword,omitempty"`
 		// An array of relationships to iamOAuthToken resources.
 		OauthTokens []IamOAuthTokenRelationship `json:"OauthTokens,omitempty"`
@@ -956,5 +956,3 @@ func (v *NullableIamUser) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,19 +19,18 @@ import (
 // EquipmentPhysicalIdentityRelationship - A relationship to the 'equipment.PhysicalIdentity' resource, or the expanded 'equipment.PhysicalIdentity' resource, or the 'null' value.
 type EquipmentPhysicalIdentityRelationship struct {
 	EquipmentPhysicalIdentity *EquipmentPhysicalIdentity
-	MoMoRef *MoMoRef
+	MoMoRef                   *MoMoRef
 }
 
 // EquipmentPhysicalIdentityAsEquipmentPhysicalIdentityRelationship is a convenience function that returns EquipmentPhysicalIdentity wrapped in EquipmentPhysicalIdentityRelationship
 func EquipmentPhysicalIdentityAsEquipmentPhysicalIdentityRelationship(v *EquipmentPhysicalIdentity) EquipmentPhysicalIdentityRelationship {
-	return EquipmentPhysicalIdentityRelationship{ EquipmentPhysicalIdentity: v}
+	return EquipmentPhysicalIdentityRelationship{EquipmentPhysicalIdentity: v}
 }
 
 // MoMoRefAsEquipmentPhysicalIdentityRelationship is a convenience function that returns MoMoRef wrapped in EquipmentPhysicalIdentityRelationship
 func MoMoRefAsEquipmentPhysicalIdentityRelationship(v *MoMoRef) EquipmentPhysicalIdentityRelationship {
-	return EquipmentPhysicalIdentityRelationship{ MoMoRef: v}
+	return EquipmentPhysicalIdentityRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentPhysicalIdentityRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src EquipmentPhysicalIdentityRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentPhysicalIdentityRelationship) GetActualInstance() (interface{}) {
+func (obj *EquipmentPhysicalIdentityRelationship) GetActualInstance() interface{} {
 	if obj.EquipmentPhysicalIdentity != nil {
 		return obj.EquipmentPhysicalIdentity
 	}
@@ -137,5 +136,3 @@ func (v *NullableEquipmentPhysicalIdentityRelationship) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

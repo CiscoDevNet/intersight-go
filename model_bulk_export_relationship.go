@@ -19,19 +19,18 @@ import (
 // BulkExportRelationship - A relationship to the 'bulk.Export' resource, or the expanded 'bulk.Export' resource, or the 'null' value.
 type BulkExportRelationship struct {
 	BulkExport *BulkExport
-	MoMoRef *MoMoRef
+	MoMoRef    *MoMoRef
 }
 
 // BulkExportAsBulkExportRelationship is a convenience function that returns BulkExport wrapped in BulkExportRelationship
 func BulkExportAsBulkExportRelationship(v *BulkExport) BulkExportRelationship {
-	return BulkExportRelationship{ BulkExport: v}
+	return BulkExportRelationship{BulkExport: v}
 }
 
 // MoMoRefAsBulkExportRelationship is a convenience function that returns MoMoRef wrapped in BulkExportRelationship
 func MoMoRefAsBulkExportRelationship(v *MoMoRef) BulkExportRelationship {
-	return BulkExportRelationship{ MoMoRef: v}
+	return BulkExportRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BulkExportRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BulkExportRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BulkExportRelationship) GetActualInstance() (interface{}) {
+func (obj *BulkExportRelationship) GetActualInstance() interface{} {
 	if obj.BulkExport != nil {
 		return obj.BulkExport
 	}
@@ -137,5 +136,3 @@ func (v *NullableBulkExportRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

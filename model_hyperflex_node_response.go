@@ -18,32 +18,31 @@ import (
 
 // HyperflexNodeResponse - The response body of a HTTP GET request for the 'hyperflex.Node' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'hyperflex.Node' resources.
 type HyperflexNodeResponse struct {
-	HyperflexNodeList *HyperflexNodeList
+	HyperflexNodeList    *HyperflexNodeList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // HyperflexNodeListAsHyperflexNodeResponse is a convenience function that returns HyperflexNodeList wrapped in HyperflexNodeResponse
 func HyperflexNodeListAsHyperflexNodeResponse(v *HyperflexNodeList) HyperflexNodeResponse {
-	return HyperflexNodeResponse{ HyperflexNodeList: v}
+	return HyperflexNodeResponse{HyperflexNodeList: v}
 }
 
 // MoAggregateTransformAsHyperflexNodeResponse is a convenience function that returns MoAggregateTransform wrapped in HyperflexNodeResponse
 func MoAggregateTransformAsHyperflexNodeResponse(v *MoAggregateTransform) HyperflexNodeResponse {
-	return HyperflexNodeResponse{ MoAggregateTransform: v}
+	return HyperflexNodeResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsHyperflexNodeResponse is a convenience function that returns MoDocumentCount wrapped in HyperflexNodeResponse
 func MoDocumentCountAsHyperflexNodeResponse(v *MoDocumentCount) HyperflexNodeResponse {
-	return HyperflexNodeResponse{ MoDocumentCount: v}
+	return HyperflexNodeResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsHyperflexNodeResponse is a convenience function that returns MoTagSummary wrapped in HyperflexNodeResponse
 func MoTagSummaryAsHyperflexNodeResponse(v *MoTagSummary) HyperflexNodeResponse {
-	return HyperflexNodeResponse{ MoTagSummary: v}
+	return HyperflexNodeResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexNodeResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src HyperflexNodeResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexNodeResponse) GetActualInstance() (interface{}) {
+func (obj *HyperflexNodeResponse) GetActualInstance() interface{} {
 	if obj.HyperflexNodeList != nil {
 		return obj.HyperflexNodeList
 	}
@@ -184,5 +183,3 @@ func (v *NullableHyperflexNodeResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

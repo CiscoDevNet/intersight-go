@@ -19,19 +19,18 @@ import (
 // FabricConfigResultRelationship - A relationship to the 'fabric.ConfigResult' resource, or the expanded 'fabric.ConfigResult' resource, or the 'null' value.
 type FabricConfigResultRelationship struct {
 	FabricConfigResult *FabricConfigResult
-	MoMoRef *MoMoRef
+	MoMoRef            *MoMoRef
 }
 
 // FabricConfigResultAsFabricConfigResultRelationship is a convenience function that returns FabricConfigResult wrapped in FabricConfigResultRelationship
 func FabricConfigResultAsFabricConfigResultRelationship(v *FabricConfigResult) FabricConfigResultRelationship {
-	return FabricConfigResultRelationship{ FabricConfigResult: v}
+	return FabricConfigResultRelationship{FabricConfigResult: v}
 }
 
 // MoMoRefAsFabricConfigResultRelationship is a convenience function that returns MoMoRef wrapped in FabricConfigResultRelationship
 func MoMoRefAsFabricConfigResultRelationship(v *MoMoRef) FabricConfigResultRelationship {
-	return FabricConfigResultRelationship{ MoMoRef: v}
+	return FabricConfigResultRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FabricConfigResultRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src FabricConfigResultRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FabricConfigResultRelationship) GetActualInstance() (interface{}) {
+func (obj *FabricConfigResultRelationship) GetActualInstance() interface{} {
 	if obj.FabricConfigResult != nil {
 		return obj.FabricConfigResult
 	}
@@ -137,5 +136,3 @@ func (v *NullableFabricConfigResultRelationship) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

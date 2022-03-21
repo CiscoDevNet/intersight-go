@@ -46,11 +46,11 @@ type IaasUcsdInfoAllOf struct {
 	ConnectorPack []IaasConnectorPackRelationship `json:"ConnectorPack,omitempty"`
 	// An array of relationships to iaasDeviceStatus resources.
 	DeviceStatus []IaasDeviceStatusRelationship `json:"DeviceStatus,omitempty"`
-	LicenseInfo *IaasLicenseInfoRelationship `json:"LicenseInfo,omitempty"`
+	LicenseInfo  *IaasLicenseInfoRelationship   `json:"LicenseInfo,omitempty"`
 	// An array of relationships to iaasMostRunTasks resources.
-	MostRunTasks []IaasMostRunTasksRelationship `json:"MostRunTasks,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	UcsdManagedInfra *IaasUcsdManagedInfraRelationship `json:"UcsdManagedInfra,omitempty"`
+	MostRunTasks         []IaasMostRunTasksRelationship       `json:"MostRunTasks,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	UcsdManagedInfra     *IaasUcsdManagedInfraRelationship    `json:"UcsdManagedInfra,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -92,7 +92,7 @@ func (o *IaasUcsdInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IaasUcsdInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -116,7 +116,7 @@ func (o *IaasUcsdInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IaasUcsdInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -449,7 +449,7 @@ func (o *IaasUcsdInfoAllOf) SetStatus(v string) {
 
 // GetConnectorPack returns the ConnectorPack field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IaasUcsdInfoAllOf) GetConnectorPack() []IaasConnectorPackRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IaasConnectorPackRelationship
 		return ret
 	}
@@ -482,7 +482,7 @@ func (o *IaasUcsdInfoAllOf) SetConnectorPack(v []IaasConnectorPackRelationship) 
 
 // GetDeviceStatus returns the DeviceStatus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IaasUcsdInfoAllOf) GetDeviceStatus() []IaasDeviceStatusRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IaasDeviceStatusRelationship
 		return ret
 	}
@@ -547,7 +547,7 @@ func (o *IaasUcsdInfoAllOf) SetLicenseInfo(v IaasLicenseInfoRelationship) {
 
 // GetMostRunTasks returns the MostRunTasks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IaasUcsdInfoAllOf) GetMostRunTasks() []IaasMostRunTasksRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IaasMostRunTasksRelationship
 		return ret
 	}
@@ -775,5 +775,3 @@ func (v *NullableIaasUcsdInfoAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

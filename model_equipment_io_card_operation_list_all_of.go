@@ -20,7 +20,7 @@ type EquipmentIoCardOperationListAllOf struct {
 	// The total number of 'equipment.IoCardOperation' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'equipment.IoCardOperation' resources matching the request.
-	Results []EquipmentIoCardOperation `json:"Results,omitempty"`
+	Results              []EquipmentIoCardOperation `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *EquipmentIoCardOperationListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentIoCardOperationListAllOf) GetResults() []EquipmentIoCardOperation {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentIoCardOperation
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableEquipmentIoCardOperationListAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

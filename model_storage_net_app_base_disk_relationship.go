@@ -18,20 +18,19 @@ import (
 
 // StorageNetAppBaseDiskRelationship - A relationship to the 'storage.NetAppBaseDisk' resource, or the expanded 'storage.NetAppBaseDisk' resource, or the 'null' value.
 type StorageNetAppBaseDiskRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef               *MoMoRef
 	StorageNetAppBaseDisk *StorageNetAppBaseDisk
 }
 
 // MoMoRefAsStorageNetAppBaseDiskRelationship is a convenience function that returns MoMoRef wrapped in StorageNetAppBaseDiskRelationship
 func MoMoRefAsStorageNetAppBaseDiskRelationship(v *MoMoRef) StorageNetAppBaseDiskRelationship {
-	return StorageNetAppBaseDiskRelationship{ MoMoRef: v}
+	return StorageNetAppBaseDiskRelationship{MoMoRef: v}
 }
 
 // StorageNetAppBaseDiskAsStorageNetAppBaseDiskRelationship is a convenience function that returns StorageNetAppBaseDisk wrapped in StorageNetAppBaseDiskRelationship
 func StorageNetAppBaseDiskAsStorageNetAppBaseDiskRelationship(v *StorageNetAppBaseDisk) StorageNetAppBaseDiskRelationship {
-	return StorageNetAppBaseDiskRelationship{ StorageNetAppBaseDisk: v}
+	return StorageNetAppBaseDiskRelationship{StorageNetAppBaseDisk: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageNetAppBaseDiskRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageNetAppBaseDiskRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageNetAppBaseDiskRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageNetAppBaseDiskRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageNetAppBaseDiskRelationship) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

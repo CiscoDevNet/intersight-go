@@ -18,20 +18,19 @@ import (
 
 // ServerConfigResultRelationship - A relationship to the 'server.ConfigResult' resource, or the expanded 'server.ConfigResult' resource, or the 'null' value.
 type ServerConfigResultRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef            *MoMoRef
 	ServerConfigResult *ServerConfigResult
 }
 
 // MoMoRefAsServerConfigResultRelationship is a convenience function that returns MoMoRef wrapped in ServerConfigResultRelationship
 func MoMoRefAsServerConfigResultRelationship(v *MoMoRef) ServerConfigResultRelationship {
-	return ServerConfigResultRelationship{ MoMoRef: v}
+	return ServerConfigResultRelationship{MoMoRef: v}
 }
 
 // ServerConfigResultAsServerConfigResultRelationship is a convenience function that returns ServerConfigResult wrapped in ServerConfigResultRelationship
 func ServerConfigResultAsServerConfigResultRelationship(v *ServerConfigResult) ServerConfigResultRelationship {
-	return ServerConfigResultRelationship{ ServerConfigResult: v}
+	return ServerConfigResultRelationship{ServerConfigResult: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ServerConfigResultRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ServerConfigResultRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ServerConfigResultRelationship) GetActualInstance() (interface{}) {
+func (obj *ServerConfigResultRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableServerConfigResultRelationship) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

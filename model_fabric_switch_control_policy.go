@@ -27,14 +27,14 @@ type FabricSwitchControlPolicy struct {
 	// Enable or Disable Ethernet End Host Switching Mode. * `end-host` - In end-host mode, the fabric interconnects appear to the upstream devices as end hosts with multiple links.In this mode, the switch does not run Spanning Tree Protocol and avoids loops by following a set of rules for traffic forwarding.In case of ethernet switching mode - Ethernet end-host mode is also known as Ethernet host virtualizer. * `switch` - In switch mode, the switch runs Spanning Tree Protocol to avoid loops, and broadcast and multicast packets are handled in the traditional way.This is the traditional switch mode.
 	EthernetSwitchingMode *string `json:"EthernetSwitchingMode,omitempty"`
 	// Enable or Disable FC End Host Switching Mode. * `end-host` - In end-host mode, the fabric interconnects appear to the upstream devices as end hosts with multiple links.In this mode, the switch does not run Spanning Tree Protocol and avoids loops by following a set of rules for traffic forwarding.In case of ethernet switching mode - Ethernet end-host mode is also known as Ethernet host virtualizer. * `switch` - In switch mode, the switch runs Spanning Tree Protocol to avoid loops, and broadcast and multicast packets are handled in the traditional way.This is the traditional switch mode.
-	FcSwitchingMode *string `json:"FcSwitchingMode,omitempty"`
-	MacAgingSettings NullableFabricMacAgingSettings `json:"MacAgingSettings,omitempty"`
-	UdldSettings NullableFabricUdldGlobalSettings `json:"UdldSettings,omitempty"`
+	FcSwitchingMode  *string                          `json:"FcSwitchingMode,omitempty"`
+	MacAgingSettings NullableFabricMacAgingSettings   `json:"MacAgingSettings,omitempty"`
+	UdldSettings     NullableFabricUdldGlobalSettings `json:"UdldSettings,omitempty"`
 	// To enable or disable the VLAN port count optimization.
-	VlanPortOptimizationEnabled *bool `json:"VlanPortOptimizationEnabled,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	VlanPortOptimizationEnabled *bool                                 `json:"VlanPortOptimizationEnabled,omitempty"`
+	Organization                *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to fabricSwitchProfile resources.
-	Profiles []FabricSwitchProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []FabricSwitchProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -88,7 +88,7 @@ func (o *FabricSwitchControlPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricSwitchControlPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *FabricSwitchControlPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricSwitchControlPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -200,7 +200,7 @@ func (o *FabricSwitchControlPolicy) GetMacAgingSettings() FabricMacAgingSettings
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FabricSwitchControlPolicy) GetMacAgingSettingsOk() (*FabricMacAgingSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MacAgingSettings.Get(), o.MacAgingSettings.IsSet()
@@ -219,6 +219,7 @@ func (o *FabricSwitchControlPolicy) HasMacAgingSettings() bool {
 func (o *FabricSwitchControlPolicy) SetMacAgingSettings(v FabricMacAgingSettings) {
 	o.MacAgingSettings.Set(&v)
 }
+
 // SetMacAgingSettingsNil sets the value for MacAgingSettings to be an explicit nil
 func (o *FabricSwitchControlPolicy) SetMacAgingSettingsNil() {
 	o.MacAgingSettings.Set(nil)
@@ -242,7 +243,7 @@ func (o *FabricSwitchControlPolicy) GetUdldSettings() FabricUdldGlobalSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FabricSwitchControlPolicy) GetUdldSettingsOk() (*FabricUdldGlobalSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UdldSettings.Get(), o.UdldSettings.IsSet()
@@ -261,6 +262,7 @@ func (o *FabricSwitchControlPolicy) HasUdldSettings() bool {
 func (o *FabricSwitchControlPolicy) SetUdldSettings(v FabricUdldGlobalSettings) {
 	o.UdldSettings.Set(&v)
 }
+
 // SetUdldSettingsNil sets the value for UdldSettings to be an explicit nil
 func (o *FabricSwitchControlPolicy) SetUdldSettingsNil() {
 	o.UdldSettings.Set(nil)
@@ -337,7 +339,7 @@ func (o *FabricSwitchControlPolicy) SetOrganization(v OrganizationOrganizationRe
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FabricSwitchControlPolicy) GetProfiles() []FabricSwitchProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FabricSwitchProfileRelationship
 		return ret
 	}
@@ -422,12 +424,12 @@ func (o *FabricSwitchControlPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// Enable or Disable Ethernet End Host Switching Mode. * `end-host` - In end-host mode, the fabric interconnects appear to the upstream devices as end hosts with multiple links.In this mode, the switch does not run Spanning Tree Protocol and avoids loops by following a set of rules for traffic forwarding.In case of ethernet switching mode - Ethernet end-host mode is also known as Ethernet host virtualizer. * `switch` - In switch mode, the switch runs Spanning Tree Protocol to avoid loops, and broadcast and multicast packets are handled in the traditional way.This is the traditional switch mode.
 		EthernetSwitchingMode *string `json:"EthernetSwitchingMode,omitempty"`
 		// Enable or Disable FC End Host Switching Mode. * `end-host` - In end-host mode, the fabric interconnects appear to the upstream devices as end hosts with multiple links.In this mode, the switch does not run Spanning Tree Protocol and avoids loops by following a set of rules for traffic forwarding.In case of ethernet switching mode - Ethernet end-host mode is also known as Ethernet host virtualizer. * `switch` - In switch mode, the switch runs Spanning Tree Protocol to avoid loops, and broadcast and multicast packets are handled in the traditional way.This is the traditional switch mode.
-		FcSwitchingMode *string `json:"FcSwitchingMode,omitempty"`
-		MacAgingSettings NullableFabricMacAgingSettings `json:"MacAgingSettings,omitempty"`
-		UdldSettings NullableFabricUdldGlobalSettings `json:"UdldSettings,omitempty"`
+		FcSwitchingMode  *string                          `json:"FcSwitchingMode,omitempty"`
+		MacAgingSettings NullableFabricMacAgingSettings   `json:"MacAgingSettings,omitempty"`
+		UdldSettings     NullableFabricUdldGlobalSettings `json:"UdldSettings,omitempty"`
 		// To enable or disable the VLAN port count optimization.
-		VlanPortOptimizationEnabled *bool `json:"VlanPortOptimizationEnabled,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		VlanPortOptimizationEnabled *bool                                 `json:"VlanPortOptimizationEnabled,omitempty"`
+		Organization                *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 		// An array of relationships to fabricSwitchProfile resources.
 		Profiles []FabricSwitchProfileRelationship `json:"Profiles,omitempty"`
 	}
@@ -532,5 +534,3 @@ func (v *NullableFabricSwitchControlPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

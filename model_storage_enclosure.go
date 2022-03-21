@@ -35,18 +35,18 @@ type StorageEnclosure struct {
 	// This represent the server-ID that houses the storage enclosure.
 	ServerId *int64 `json:"ServerId,omitempty"`
 	// This represent the type of storage enclosure.
-	Type *string `json:"Type,omitempty"`
-	ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
+	Type            *string                      `json:"Type,omitempty"`
+	ComputeBlade    *ComputeBladeRelationship    `json:"ComputeBlade,omitempty"`
 	ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
 	// An array of relationships to storageEnclosureDiskSlotEp resources.
 	EnclosureDiskSlots []StorageEnclosureDiskSlotEpRelationship `json:"EnclosureDiskSlots,omitempty"`
 	// An array of relationships to storageEnclosureDisk resources.
-	EnclosureDisks []StorageEnclosureDiskRelationship `json:"EnclosureDisks,omitempty"`
-	EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+	EnclosureDisks      []StorageEnclosureDiskRelationship `json:"EnclosureDisks,omitempty"`
+	EquipmentChassis    *EquipmentChassisRelationship      `json:"EquipmentChassis,omitempty"`
+	InventoryDeviceInfo *InventoryDeviceInfoRelationship   `json:"InventoryDeviceInfo,omitempty"`
 	// An array of relationships to storagePhysicalDisk resources.
-	PhysicalDisks []StoragePhysicalDiskRelationship `json:"PhysicalDisks,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	PhysicalDisks        []StoragePhysicalDiskRelationship    `json:"PhysicalDisks,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -88,7 +88,7 @@ func (o *StorageEnclosure) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageEnclosure) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *StorageEnclosure) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageEnclosure) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -381,7 +381,7 @@ func (o *StorageEnclosure) SetComputeRackUnit(v ComputeRackUnitRelationship) {
 
 // GetEnclosureDiskSlots returns the EnclosureDiskSlots field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageEnclosure) GetEnclosureDiskSlots() []StorageEnclosureDiskSlotEpRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageEnclosureDiskSlotEpRelationship
 		return ret
 	}
@@ -414,7 +414,7 @@ func (o *StorageEnclosure) SetEnclosureDiskSlots(v []StorageEnclosureDiskSlotEpR
 
 // GetEnclosureDisks returns the EnclosureDisks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageEnclosure) GetEnclosureDisks() []StorageEnclosureDiskRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageEnclosureDiskRelationship
 		return ret
 	}
@@ -511,7 +511,7 @@ func (o *StorageEnclosure) SetInventoryDeviceInfo(v InventoryDeviceInfoRelations
 
 // GetPhysicalDisks returns the PhysicalDisks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageEnclosure) GetPhysicalDisks() []StoragePhysicalDiskRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StoragePhysicalDiskRelationship
 		return ret
 	}
@@ -657,17 +657,17 @@ func (o *StorageEnclosure) UnmarshalJSON(bytes []byte) (err error) {
 		// This represent the server-ID that houses the storage enclosure.
 		ServerId *int64 `json:"ServerId,omitempty"`
 		// This represent the type of storage enclosure.
-		Type *string `json:"Type,omitempty"`
-		ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
+		Type            *string                      `json:"Type,omitempty"`
+		ComputeBlade    *ComputeBladeRelationship    `json:"ComputeBlade,omitempty"`
 		ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
 		// An array of relationships to storageEnclosureDiskSlotEp resources.
 		EnclosureDiskSlots []StorageEnclosureDiskSlotEpRelationship `json:"EnclosureDiskSlots,omitempty"`
 		// An array of relationships to storageEnclosureDisk resources.
-		EnclosureDisks []StorageEnclosureDiskRelationship `json:"EnclosureDisks,omitempty"`
-		EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+		EnclosureDisks      []StorageEnclosureDiskRelationship `json:"EnclosureDisks,omitempty"`
+		EquipmentChassis    *EquipmentChassisRelationship      `json:"EquipmentChassis,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship   `json:"InventoryDeviceInfo,omitempty"`
 		// An array of relationships to storagePhysicalDisk resources.
-		PhysicalDisks []StoragePhysicalDiskRelationship `json:"PhysicalDisks,omitempty"`
+		PhysicalDisks    []StoragePhysicalDiskRelationship    `json:"PhysicalDisks,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -785,5 +785,3 @@ func (v *NullableStorageEnclosure) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

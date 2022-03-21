@@ -19,31 +19,30 @@ import (
 // EquipmentLocatorLedResponse - The response body of a HTTP GET request for the 'equipment.LocatorLed' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'equipment.LocatorLed' resources.
 type EquipmentLocatorLedResponse struct {
 	EquipmentLocatorLedList *EquipmentLocatorLedList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform    *MoAggregateTransform
+	MoDocumentCount         *MoDocumentCount
+	MoTagSummary            *MoTagSummary
 }
 
 // EquipmentLocatorLedListAsEquipmentLocatorLedResponse is a convenience function that returns EquipmentLocatorLedList wrapped in EquipmentLocatorLedResponse
 func EquipmentLocatorLedListAsEquipmentLocatorLedResponse(v *EquipmentLocatorLedList) EquipmentLocatorLedResponse {
-	return EquipmentLocatorLedResponse{ EquipmentLocatorLedList: v}
+	return EquipmentLocatorLedResponse{EquipmentLocatorLedList: v}
 }
 
 // MoAggregateTransformAsEquipmentLocatorLedResponse is a convenience function that returns MoAggregateTransform wrapped in EquipmentLocatorLedResponse
 func MoAggregateTransformAsEquipmentLocatorLedResponse(v *MoAggregateTransform) EquipmentLocatorLedResponse {
-	return EquipmentLocatorLedResponse{ MoAggregateTransform: v}
+	return EquipmentLocatorLedResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsEquipmentLocatorLedResponse is a convenience function that returns MoDocumentCount wrapped in EquipmentLocatorLedResponse
 func MoDocumentCountAsEquipmentLocatorLedResponse(v *MoDocumentCount) EquipmentLocatorLedResponse {
-	return EquipmentLocatorLedResponse{ MoDocumentCount: v}
+	return EquipmentLocatorLedResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsEquipmentLocatorLedResponse is a convenience function that returns MoTagSummary wrapped in EquipmentLocatorLedResponse
 func MoTagSummaryAsEquipmentLocatorLedResponse(v *MoTagSummary) EquipmentLocatorLedResponse {
-	return EquipmentLocatorLedResponse{ MoTagSummary: v}
+	return EquipmentLocatorLedResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentLocatorLedResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src EquipmentLocatorLedResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentLocatorLedResponse) GetActualInstance() (interface{}) {
+func (obj *EquipmentLocatorLedResponse) GetActualInstance() interface{} {
 	if obj.EquipmentLocatorLedList != nil {
 		return obj.EquipmentLocatorLedList
 	}
@@ -184,5 +183,3 @@ func (v *NullableEquipmentLocatorLedResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

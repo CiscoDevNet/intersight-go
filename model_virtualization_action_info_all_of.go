@@ -26,7 +26,7 @@ type VirtualizationActionInfoAllOf struct {
 	// Name of the Action performed on a resource like Virtual Machine, Disk etc.
 	Name *string `json:"Name,omitempty"`
 	// Status of the Action like InProgress, Success, Failure etc. * `None` - A place holder for the default value. * `InProgress` - Previous action triggered on the resource is still running. * `Success` - Previous action triggered on the resource has completed successfully. * `Failure` - Previous action triggered on the resource has failed.
-	Status *string `json:"Status,omitempty"`
+	Status               *string `json:"Status,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *VirtualizationActionInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationActionInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *VirtualizationActionInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationActionInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,5 +280,3 @@ func (v *NullableVirtualizationActionInfoAllOf) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

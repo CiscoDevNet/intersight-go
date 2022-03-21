@@ -29,11 +29,11 @@ var (
 type FabricApiService service
 
 type ApiCreateFabricAppliancePcRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                   _context.Context
+	ApiService            *FabricApiService
 	fabricAppliancePcRole *FabricAppliancePcRole
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;fabric.AppliancePcRole&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateFabricAppliancePcRoleRequest) FabricAppliancePcRole(fabricAppli
 	r.fabricAppliancePcRole = &fabricAppliancePcRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricAppliancePcRoleRequest) IfMatch(ifMatch string) ApiCreateFabricAppliancePcRoleRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricAppliancePcRoleRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricAppliancePcRoleRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateFabricAppliancePcRole Create a 'fabric.AppliancePcRole' resource.
 func (a *FabricApiService) CreateFabricAppliancePcRole(ctx _context.Context) ApiCreateFabricAppliancePcRoleRequest {
 	return ApiCreateFabricAppliancePcRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *FabricApiService) CreateFabricAppliancePcRoleExecute(r ApiCreateFabricA
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,11 @@ func (a *FabricApiService) CreateFabricAppliancePcRoleExecute(r ApiCreateFabricA
 }
 
 type ApiCreateFabricApplianceRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                 _context.Context
+	ApiService          *FabricApiService
 	fabricApplianceRole *FabricApplianceRole
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch             *string
+	ifNoneMatch         *string
 }
 
 // The &#39;fabric.ApplianceRole&#39; resource to create.
@@ -217,11 +219,13 @@ func (r ApiCreateFabricApplianceRoleRequest) FabricApplianceRole(fabricAppliance
 	r.fabricApplianceRole = &fabricApplianceRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricApplianceRoleRequest) IfMatch(ifMatch string) ApiCreateFabricApplianceRoleRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricApplianceRoleRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricApplianceRoleRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateFabricApplianceRole Create a 'fabric.ApplianceRole' resource.
 func (a *FabricApiService) CreateFabricApplianceRole(ctx _context.Context) ApiCreateFabricApplianceRoleRequest {
 	return ApiCreateFabricApplianceRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *FabricApiService) CreateFabricApplianceRoleExecute(r ApiCreateFabricApp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,11 +385,11 @@ func (a *FabricApiService) CreateFabricApplianceRoleExecute(r ApiCreateFabricApp
 }
 
 type ApiCreateFabricEstimateImpactRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                  _context.Context
+	ApiService           *FabricApiService
 	fabricEstimateImpact *FabricEstimateImpact
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch              *string
+	ifNoneMatch          *string
 }
 
 // The &#39;fabric.EstimateImpact&#39; resource to create.
@@ -393,11 +397,13 @@ func (r ApiCreateFabricEstimateImpactRequest) FabricEstimateImpact(fabricEstimat
 	r.fabricEstimateImpact = &fabricEstimateImpact
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricEstimateImpactRequest) IfMatch(ifMatch string) ApiCreateFabricEstimateImpactRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricEstimateImpactRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricEstimateImpactRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -417,7 +423,7 @@ CreateFabricEstimateImpact Create a 'fabric.EstimateImpact' resource.
 func (a *FabricApiService) CreateFabricEstimateImpact(ctx _context.Context) ApiCreateFabricEstimateImpactRequest {
 	return ApiCreateFabricEstimateImpactRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -534,13 +540,13 @@ func (a *FabricApiService) CreateFabricEstimateImpactExecute(r ApiCreateFabricEs
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -557,11 +563,11 @@ func (a *FabricApiService) CreateFabricEstimateImpactExecute(r ApiCreateFabricEs
 }
 
 type ApiCreateFabricEthNetworkControlPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                           _context.Context
+	ApiService                    *FabricApiService
 	fabricEthNetworkControlPolicy *FabricEthNetworkControlPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                       *string
+	ifNoneMatch                   *string
 }
 
 // The &#39;fabric.EthNetworkControlPolicy&#39; resource to create.
@@ -569,11 +575,13 @@ func (r ApiCreateFabricEthNetworkControlPolicyRequest) FabricEthNetworkControlPo
 	r.fabricEthNetworkControlPolicy = &fabricEthNetworkControlPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricEthNetworkControlPolicyRequest) IfMatch(ifMatch string) ApiCreateFabricEthNetworkControlPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricEthNetworkControlPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricEthNetworkControlPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -593,7 +601,7 @@ CreateFabricEthNetworkControlPolicy Create a 'fabric.EthNetworkControlPolicy' re
 func (a *FabricApiService) CreateFabricEthNetworkControlPolicy(ctx _context.Context) ApiCreateFabricEthNetworkControlPolicyRequest {
 	return ApiCreateFabricEthNetworkControlPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -710,13 +718,13 @@ func (a *FabricApiService) CreateFabricEthNetworkControlPolicyExecute(r ApiCreat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -733,11 +741,11 @@ func (a *FabricApiService) CreateFabricEthNetworkControlPolicyExecute(r ApiCreat
 }
 
 type ApiCreateFabricEthNetworkGroupPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                         _context.Context
+	ApiService                  *FabricApiService
 	fabricEthNetworkGroupPolicy *FabricEthNetworkGroupPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                     *string
+	ifNoneMatch                 *string
 }
 
 // The &#39;fabric.EthNetworkGroupPolicy&#39; resource to create.
@@ -745,11 +753,13 @@ func (r ApiCreateFabricEthNetworkGroupPolicyRequest) FabricEthNetworkGroupPolicy
 	r.fabricEthNetworkGroupPolicy = &fabricEthNetworkGroupPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricEthNetworkGroupPolicyRequest) IfMatch(ifMatch string) ApiCreateFabricEthNetworkGroupPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricEthNetworkGroupPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricEthNetworkGroupPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -769,7 +779,7 @@ CreateFabricEthNetworkGroupPolicy Create a 'fabric.EthNetworkGroupPolicy' resour
 func (a *FabricApiService) CreateFabricEthNetworkGroupPolicy(ctx _context.Context) ApiCreateFabricEthNetworkGroupPolicyRequest {
 	return ApiCreateFabricEthNetworkGroupPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -886,13 +896,13 @@ func (a *FabricApiService) CreateFabricEthNetworkGroupPolicyExecute(r ApiCreateF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -909,11 +919,11 @@ func (a *FabricApiService) CreateFabricEthNetworkGroupPolicyExecute(r ApiCreateF
 }
 
 type ApiCreateFabricEthNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                    _context.Context
+	ApiService             *FabricApiService
 	fabricEthNetworkPolicy *FabricEthNetworkPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                *string
+	ifNoneMatch            *string
 }
 
 // The &#39;fabric.EthNetworkPolicy&#39; resource to create.
@@ -921,11 +931,13 @@ func (r ApiCreateFabricEthNetworkPolicyRequest) FabricEthNetworkPolicy(fabricEth
 	r.fabricEthNetworkPolicy = &fabricEthNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricEthNetworkPolicyRequest) IfMatch(ifMatch string) ApiCreateFabricEthNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricEthNetworkPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricEthNetworkPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -945,7 +957,7 @@ CreateFabricEthNetworkPolicy Create a 'fabric.EthNetworkPolicy' resource.
 func (a *FabricApiService) CreateFabricEthNetworkPolicy(ctx _context.Context) ApiCreateFabricEthNetworkPolicyRequest {
 	return ApiCreateFabricEthNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1062,13 +1074,13 @@ func (a *FabricApiService) CreateFabricEthNetworkPolicyExecute(r ApiCreateFabric
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1085,11 +1097,11 @@ func (a *FabricApiService) CreateFabricEthNetworkPolicyExecute(r ApiCreateFabric
 }
 
 type ApiCreateFabricFcNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                   _context.Context
+	ApiService            *FabricApiService
 	fabricFcNetworkPolicy *FabricFcNetworkPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;fabric.FcNetworkPolicy&#39; resource to create.
@@ -1097,11 +1109,13 @@ func (r ApiCreateFabricFcNetworkPolicyRequest) FabricFcNetworkPolicy(fabricFcNet
 	r.fabricFcNetworkPolicy = &fabricFcNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricFcNetworkPolicyRequest) IfMatch(ifMatch string) ApiCreateFabricFcNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricFcNetworkPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricFcNetworkPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1121,7 +1135,7 @@ CreateFabricFcNetworkPolicy Create a 'fabric.FcNetworkPolicy' resource.
 func (a *FabricApiService) CreateFabricFcNetworkPolicy(ctx _context.Context) ApiCreateFabricFcNetworkPolicyRequest {
 	return ApiCreateFabricFcNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1238,13 +1252,13 @@ func (a *FabricApiService) CreateFabricFcNetworkPolicyExecute(r ApiCreateFabricF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1261,11 +1275,11 @@ func (a *FabricApiService) CreateFabricFcNetworkPolicyExecute(r ApiCreateFabricF
 }
 
 type ApiCreateFabricFcStorageRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                 _context.Context
+	ApiService          *FabricApiService
 	fabricFcStorageRole *FabricFcStorageRole
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch             *string
+	ifNoneMatch         *string
 }
 
 // The &#39;fabric.FcStorageRole&#39; resource to create.
@@ -1273,11 +1287,13 @@ func (r ApiCreateFabricFcStorageRoleRequest) FabricFcStorageRole(fabricFcStorage
 	r.fabricFcStorageRole = &fabricFcStorageRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricFcStorageRoleRequest) IfMatch(ifMatch string) ApiCreateFabricFcStorageRoleRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricFcStorageRoleRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricFcStorageRoleRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1297,7 +1313,7 @@ CreateFabricFcStorageRole Create a 'fabric.FcStorageRole' resource.
 func (a *FabricApiService) CreateFabricFcStorageRole(ctx _context.Context) ApiCreateFabricFcStorageRoleRequest {
 	return ApiCreateFabricFcStorageRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1414,13 +1430,13 @@ func (a *FabricApiService) CreateFabricFcStorageRoleExecute(r ApiCreateFabricFcS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1437,11 +1453,11 @@ func (a *FabricApiService) CreateFabricFcStorageRoleExecute(r ApiCreateFabricFcS
 }
 
 type ApiCreateFabricFcUplinkPcRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                  _context.Context
+	ApiService           *FabricApiService
 	fabricFcUplinkPcRole *FabricFcUplinkPcRole
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch              *string
+	ifNoneMatch          *string
 }
 
 // The &#39;fabric.FcUplinkPcRole&#39; resource to create.
@@ -1449,11 +1465,13 @@ func (r ApiCreateFabricFcUplinkPcRoleRequest) FabricFcUplinkPcRole(fabricFcUplin
 	r.fabricFcUplinkPcRole = &fabricFcUplinkPcRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricFcUplinkPcRoleRequest) IfMatch(ifMatch string) ApiCreateFabricFcUplinkPcRoleRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricFcUplinkPcRoleRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricFcUplinkPcRoleRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1473,7 +1491,7 @@ CreateFabricFcUplinkPcRole Create a 'fabric.FcUplinkPcRole' resource.
 func (a *FabricApiService) CreateFabricFcUplinkPcRole(ctx _context.Context) ApiCreateFabricFcUplinkPcRoleRequest {
 	return ApiCreateFabricFcUplinkPcRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1590,13 +1608,13 @@ func (a *FabricApiService) CreateFabricFcUplinkPcRoleExecute(r ApiCreateFabricFc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1613,11 +1631,11 @@ func (a *FabricApiService) CreateFabricFcUplinkPcRoleExecute(r ApiCreateFabricFc
 }
 
 type ApiCreateFabricFcUplinkRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                _context.Context
+	ApiService         *FabricApiService
 	fabricFcUplinkRole *FabricFcUplinkRole
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch            *string
+	ifNoneMatch        *string
 }
 
 // The &#39;fabric.FcUplinkRole&#39; resource to create.
@@ -1625,11 +1643,13 @@ func (r ApiCreateFabricFcUplinkRoleRequest) FabricFcUplinkRole(fabricFcUplinkRol
 	r.fabricFcUplinkRole = &fabricFcUplinkRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricFcUplinkRoleRequest) IfMatch(ifMatch string) ApiCreateFabricFcUplinkRoleRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricFcUplinkRoleRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricFcUplinkRoleRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1649,7 +1669,7 @@ CreateFabricFcUplinkRole Create a 'fabric.FcUplinkRole' resource.
 func (a *FabricApiService) CreateFabricFcUplinkRole(ctx _context.Context) ApiCreateFabricFcUplinkRoleRequest {
 	return ApiCreateFabricFcUplinkRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1766,13 +1786,13 @@ func (a *FabricApiService) CreateFabricFcUplinkRoleExecute(r ApiCreateFabricFcUp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1789,11 +1809,11 @@ func (a *FabricApiService) CreateFabricFcUplinkRoleExecute(r ApiCreateFabricFcUp
 }
 
 type ApiCreateFabricFcoeUplinkPcRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                    _context.Context
+	ApiService             *FabricApiService
 	fabricFcoeUplinkPcRole *FabricFcoeUplinkPcRole
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                *string
+	ifNoneMatch            *string
 }
 
 // The &#39;fabric.FcoeUplinkPcRole&#39; resource to create.
@@ -1801,11 +1821,13 @@ func (r ApiCreateFabricFcoeUplinkPcRoleRequest) FabricFcoeUplinkPcRole(fabricFco
 	r.fabricFcoeUplinkPcRole = &fabricFcoeUplinkPcRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricFcoeUplinkPcRoleRequest) IfMatch(ifMatch string) ApiCreateFabricFcoeUplinkPcRoleRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricFcoeUplinkPcRoleRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricFcoeUplinkPcRoleRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1825,7 +1847,7 @@ CreateFabricFcoeUplinkPcRole Create a 'fabric.FcoeUplinkPcRole' resource.
 func (a *FabricApiService) CreateFabricFcoeUplinkPcRole(ctx _context.Context) ApiCreateFabricFcoeUplinkPcRoleRequest {
 	return ApiCreateFabricFcoeUplinkPcRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1942,13 +1964,13 @@ func (a *FabricApiService) CreateFabricFcoeUplinkPcRoleExecute(r ApiCreateFabric
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1965,11 +1987,11 @@ func (a *FabricApiService) CreateFabricFcoeUplinkPcRoleExecute(r ApiCreateFabric
 }
 
 type ApiCreateFabricFcoeUplinkRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                  _context.Context
+	ApiService           *FabricApiService
 	fabricFcoeUplinkRole *FabricFcoeUplinkRole
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch              *string
+	ifNoneMatch          *string
 }
 
 // The &#39;fabric.FcoeUplinkRole&#39; resource to create.
@@ -1977,11 +1999,13 @@ func (r ApiCreateFabricFcoeUplinkRoleRequest) FabricFcoeUplinkRole(fabricFcoeUpl
 	r.fabricFcoeUplinkRole = &fabricFcoeUplinkRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricFcoeUplinkRoleRequest) IfMatch(ifMatch string) ApiCreateFabricFcoeUplinkRoleRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricFcoeUplinkRoleRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricFcoeUplinkRoleRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2001,7 +2025,7 @@ CreateFabricFcoeUplinkRole Create a 'fabric.FcoeUplinkRole' resource.
 func (a *FabricApiService) CreateFabricFcoeUplinkRole(ctx _context.Context) ApiCreateFabricFcoeUplinkRoleRequest {
 	return ApiCreateFabricFcoeUplinkRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2118,13 +2142,13 @@ func (a *FabricApiService) CreateFabricFcoeUplinkRoleExecute(r ApiCreateFabricFc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2141,11 +2165,11 @@ func (a *FabricApiService) CreateFabricFcoeUplinkRoleExecute(r ApiCreateFabricFc
 }
 
 type ApiCreateFabricFlowControlPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                     _context.Context
+	ApiService              *FabricApiService
 	fabricFlowControlPolicy *FabricFlowControlPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                 *string
+	ifNoneMatch             *string
 }
 
 // The &#39;fabric.FlowControlPolicy&#39; resource to create.
@@ -2153,11 +2177,13 @@ func (r ApiCreateFabricFlowControlPolicyRequest) FabricFlowControlPolicy(fabricF
 	r.fabricFlowControlPolicy = &fabricFlowControlPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricFlowControlPolicyRequest) IfMatch(ifMatch string) ApiCreateFabricFlowControlPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricFlowControlPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricFlowControlPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2177,7 +2203,7 @@ CreateFabricFlowControlPolicy Create a 'fabric.FlowControlPolicy' resource.
 func (a *FabricApiService) CreateFabricFlowControlPolicy(ctx _context.Context) ApiCreateFabricFlowControlPolicyRequest {
 	return ApiCreateFabricFlowControlPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2294,13 +2320,13 @@ func (a *FabricApiService) CreateFabricFlowControlPolicyExecute(r ApiCreateFabri
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2317,11 +2343,11 @@ func (a *FabricApiService) CreateFabricFlowControlPolicyExecute(r ApiCreateFabri
 }
 
 type ApiCreateFabricLinkAggregationPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                         _context.Context
+	ApiService                  *FabricApiService
 	fabricLinkAggregationPolicy *FabricLinkAggregationPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                     *string
+	ifNoneMatch                 *string
 }
 
 // The &#39;fabric.LinkAggregationPolicy&#39; resource to create.
@@ -2329,11 +2355,13 @@ func (r ApiCreateFabricLinkAggregationPolicyRequest) FabricLinkAggregationPolicy
 	r.fabricLinkAggregationPolicy = &fabricLinkAggregationPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricLinkAggregationPolicyRequest) IfMatch(ifMatch string) ApiCreateFabricLinkAggregationPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricLinkAggregationPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricLinkAggregationPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2353,7 +2381,7 @@ CreateFabricLinkAggregationPolicy Create a 'fabric.LinkAggregationPolicy' resour
 func (a *FabricApiService) CreateFabricLinkAggregationPolicy(ctx _context.Context) ApiCreateFabricLinkAggregationPolicyRequest {
 	return ApiCreateFabricLinkAggregationPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2470,13 +2498,13 @@ func (a *FabricApiService) CreateFabricLinkAggregationPolicyExecute(r ApiCreateF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2493,11 +2521,11 @@ func (a *FabricApiService) CreateFabricLinkAggregationPolicyExecute(r ApiCreateF
 }
 
 type ApiCreateFabricLinkControlPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                     _context.Context
+	ApiService              *FabricApiService
 	fabricLinkControlPolicy *FabricLinkControlPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                 *string
+	ifNoneMatch             *string
 }
 
 // The &#39;fabric.LinkControlPolicy&#39; resource to create.
@@ -2505,11 +2533,13 @@ func (r ApiCreateFabricLinkControlPolicyRequest) FabricLinkControlPolicy(fabricL
 	r.fabricLinkControlPolicy = &fabricLinkControlPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricLinkControlPolicyRequest) IfMatch(ifMatch string) ApiCreateFabricLinkControlPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricLinkControlPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricLinkControlPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2529,7 +2559,7 @@ CreateFabricLinkControlPolicy Create a 'fabric.LinkControlPolicy' resource.
 func (a *FabricApiService) CreateFabricLinkControlPolicy(ctx _context.Context) ApiCreateFabricLinkControlPolicyRequest {
 	return ApiCreateFabricLinkControlPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2646,13 +2676,13 @@ func (a *FabricApiService) CreateFabricLinkControlPolicyExecute(r ApiCreateFabri
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2669,11 +2699,11 @@ func (a *FabricApiService) CreateFabricLinkControlPolicyExecute(r ApiCreateFabri
 }
 
 type ApiCreateFabricMulticastPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                   _context.Context
+	ApiService            *FabricApiService
 	fabricMulticastPolicy *FabricMulticastPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;fabric.MulticastPolicy&#39; resource to create.
@@ -2681,11 +2711,13 @@ func (r ApiCreateFabricMulticastPolicyRequest) FabricMulticastPolicy(fabricMulti
 	r.fabricMulticastPolicy = &fabricMulticastPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricMulticastPolicyRequest) IfMatch(ifMatch string) ApiCreateFabricMulticastPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricMulticastPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricMulticastPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2705,7 +2737,7 @@ CreateFabricMulticastPolicy Create a 'fabric.MulticastPolicy' resource.
 func (a *FabricApiService) CreateFabricMulticastPolicy(ctx _context.Context) ApiCreateFabricMulticastPolicyRequest {
 	return ApiCreateFabricMulticastPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2822,13 +2854,13 @@ func (a *FabricApiService) CreateFabricMulticastPolicyExecute(r ApiCreateFabricM
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2845,11 +2877,11 @@ func (a *FabricApiService) CreateFabricMulticastPolicyExecute(r ApiCreateFabricM
 }
 
 type ApiCreateFabricPcOperationRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx               _context.Context
+	ApiService        *FabricApiService
 	fabricPcOperation *FabricPcOperation
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch           *string
+	ifNoneMatch       *string
 }
 
 // The &#39;fabric.PcOperation&#39; resource to create.
@@ -2857,11 +2889,13 @@ func (r ApiCreateFabricPcOperationRequest) FabricPcOperation(fabricPcOperation F
 	r.fabricPcOperation = &fabricPcOperation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricPcOperationRequest) IfMatch(ifMatch string) ApiCreateFabricPcOperationRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricPcOperationRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricPcOperationRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2881,7 +2915,7 @@ CreateFabricPcOperation Create a 'fabric.PcOperation' resource.
 func (a *FabricApiService) CreateFabricPcOperation(ctx _context.Context) ApiCreateFabricPcOperationRequest {
 	return ApiCreateFabricPcOperationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2998,13 +3032,13 @@ func (a *FabricApiService) CreateFabricPcOperationExecute(r ApiCreateFabricPcOpe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3021,11 +3055,11 @@ func (a *FabricApiService) CreateFabricPcOperationExecute(r ApiCreateFabricPcOpe
 }
 
 type ApiCreateFabricPortModeRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx            _context.Context
+	ApiService     *FabricApiService
 	fabricPortMode *FabricPortMode
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch        *string
+	ifNoneMatch    *string
 }
 
 // The &#39;fabric.PortMode&#39; resource to create.
@@ -3033,11 +3067,13 @@ func (r ApiCreateFabricPortModeRequest) FabricPortMode(fabricPortMode FabricPort
 	r.fabricPortMode = &fabricPortMode
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricPortModeRequest) IfMatch(ifMatch string) ApiCreateFabricPortModeRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricPortModeRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricPortModeRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3057,7 +3093,7 @@ CreateFabricPortMode Create a 'fabric.PortMode' resource.
 func (a *FabricApiService) CreateFabricPortMode(ctx _context.Context) ApiCreateFabricPortModeRequest {
 	return ApiCreateFabricPortModeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3174,13 +3210,13 @@ func (a *FabricApiService) CreateFabricPortModeExecute(r ApiCreateFabricPortMode
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3197,11 +3233,11 @@ func (a *FabricApiService) CreateFabricPortModeExecute(r ApiCreateFabricPortMode
 }
 
 type ApiCreateFabricPortOperationRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                 _context.Context
+	ApiService          *FabricApiService
 	fabricPortOperation *FabricPortOperation
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch             *string
+	ifNoneMatch         *string
 }
 
 // The &#39;fabric.PortOperation&#39; resource to create.
@@ -3209,11 +3245,13 @@ func (r ApiCreateFabricPortOperationRequest) FabricPortOperation(fabricPortOpera
 	r.fabricPortOperation = &fabricPortOperation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricPortOperationRequest) IfMatch(ifMatch string) ApiCreateFabricPortOperationRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricPortOperationRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricPortOperationRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3233,7 +3271,7 @@ CreateFabricPortOperation Create a 'fabric.PortOperation' resource.
 func (a *FabricApiService) CreateFabricPortOperation(ctx _context.Context) ApiCreateFabricPortOperationRequest {
 	return ApiCreateFabricPortOperationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3350,13 +3388,13 @@ func (a *FabricApiService) CreateFabricPortOperationExecute(r ApiCreateFabricPor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3373,11 +3411,11 @@ func (a *FabricApiService) CreateFabricPortOperationExecute(r ApiCreateFabricPor
 }
 
 type ApiCreateFabricPortPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx              _context.Context
+	ApiService       *FabricApiService
 	fabricPortPolicy *FabricPortPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch          *string
+	ifNoneMatch      *string
 }
 
 // The &#39;fabric.PortPolicy&#39; resource to create.
@@ -3385,11 +3423,13 @@ func (r ApiCreateFabricPortPolicyRequest) FabricPortPolicy(fabricPortPolicy Fabr
 	r.fabricPortPolicy = &fabricPortPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricPortPolicyRequest) IfMatch(ifMatch string) ApiCreateFabricPortPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricPortPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricPortPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3409,7 +3449,7 @@ CreateFabricPortPolicy Create a 'fabric.PortPolicy' resource.
 func (a *FabricApiService) CreateFabricPortPolicy(ctx _context.Context) ApiCreateFabricPortPolicyRequest {
 	return ApiCreateFabricPortPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3526,13 +3566,13 @@ func (a *FabricApiService) CreateFabricPortPolicyExecute(r ApiCreateFabricPortPo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3549,11 +3589,11 @@ func (a *FabricApiService) CreateFabricPortPolicyExecute(r ApiCreateFabricPortPo
 }
 
 type ApiCreateFabricServerRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx              _context.Context
+	ApiService       *FabricApiService
 	fabricServerRole *FabricServerRole
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch          *string
+	ifNoneMatch      *string
 }
 
 // The &#39;fabric.ServerRole&#39; resource to create.
@@ -3561,11 +3601,13 @@ func (r ApiCreateFabricServerRoleRequest) FabricServerRole(fabricServerRole Fabr
 	r.fabricServerRole = &fabricServerRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricServerRoleRequest) IfMatch(ifMatch string) ApiCreateFabricServerRoleRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricServerRoleRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricServerRoleRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3585,7 +3627,7 @@ CreateFabricServerRole Create a 'fabric.ServerRole' resource.
 func (a *FabricApiService) CreateFabricServerRole(ctx _context.Context) ApiCreateFabricServerRoleRequest {
 	return ApiCreateFabricServerRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3702,13 +3744,13 @@ func (a *FabricApiService) CreateFabricServerRoleExecute(r ApiCreateFabricServer
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3725,11 +3767,11 @@ func (a *FabricApiService) CreateFabricServerRoleExecute(r ApiCreateFabricServer
 }
 
 type ApiCreateFabricSwitchClusterProfileRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                        _context.Context
+	ApiService                 *FabricApiService
 	fabricSwitchClusterProfile *FabricSwitchClusterProfile
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                    *string
+	ifNoneMatch                *string
 }
 
 // The &#39;fabric.SwitchClusterProfile&#39; resource to create.
@@ -3737,11 +3779,13 @@ func (r ApiCreateFabricSwitchClusterProfileRequest) FabricSwitchClusterProfile(f
 	r.fabricSwitchClusterProfile = &fabricSwitchClusterProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricSwitchClusterProfileRequest) IfMatch(ifMatch string) ApiCreateFabricSwitchClusterProfileRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricSwitchClusterProfileRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricSwitchClusterProfileRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3761,7 +3805,7 @@ CreateFabricSwitchClusterProfile Create a 'fabric.SwitchClusterProfile' resource
 func (a *FabricApiService) CreateFabricSwitchClusterProfile(ctx _context.Context) ApiCreateFabricSwitchClusterProfileRequest {
 	return ApiCreateFabricSwitchClusterProfileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3878,13 +3922,13 @@ func (a *FabricApiService) CreateFabricSwitchClusterProfileExecute(r ApiCreateFa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3901,11 +3945,11 @@ func (a *FabricApiService) CreateFabricSwitchClusterProfileExecute(r ApiCreateFa
 }
 
 type ApiCreateFabricSwitchControlPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                       _context.Context
+	ApiService                *FabricApiService
 	fabricSwitchControlPolicy *FabricSwitchControlPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                   *string
+	ifNoneMatch               *string
 }
 
 // The &#39;fabric.SwitchControlPolicy&#39; resource to create.
@@ -3913,11 +3957,13 @@ func (r ApiCreateFabricSwitchControlPolicyRequest) FabricSwitchControlPolicy(fab
 	r.fabricSwitchControlPolicy = &fabricSwitchControlPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricSwitchControlPolicyRequest) IfMatch(ifMatch string) ApiCreateFabricSwitchControlPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricSwitchControlPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricSwitchControlPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3937,7 +3983,7 @@ CreateFabricSwitchControlPolicy Create a 'fabric.SwitchControlPolicy' resource.
 func (a *FabricApiService) CreateFabricSwitchControlPolicy(ctx _context.Context) ApiCreateFabricSwitchControlPolicyRequest {
 	return ApiCreateFabricSwitchControlPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4054,13 +4100,13 @@ func (a *FabricApiService) CreateFabricSwitchControlPolicyExecute(r ApiCreateFab
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4077,11 +4123,11 @@ func (a *FabricApiService) CreateFabricSwitchControlPolicyExecute(r ApiCreateFab
 }
 
 type ApiCreateFabricSwitchProfileRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                 _context.Context
+	ApiService          *FabricApiService
 	fabricSwitchProfile *FabricSwitchProfile
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch             *string
+	ifNoneMatch         *string
 }
 
 // The &#39;fabric.SwitchProfile&#39; resource to create.
@@ -4089,11 +4135,13 @@ func (r ApiCreateFabricSwitchProfileRequest) FabricSwitchProfile(fabricSwitchPro
 	r.fabricSwitchProfile = &fabricSwitchProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricSwitchProfileRequest) IfMatch(ifMatch string) ApiCreateFabricSwitchProfileRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricSwitchProfileRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricSwitchProfileRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -4113,7 +4161,7 @@ CreateFabricSwitchProfile Create a 'fabric.SwitchProfile' resource.
 func (a *FabricApiService) CreateFabricSwitchProfile(ctx _context.Context) ApiCreateFabricSwitchProfileRequest {
 	return ApiCreateFabricSwitchProfileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4230,13 +4278,13 @@ func (a *FabricApiService) CreateFabricSwitchProfileExecute(r ApiCreateFabricSwi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4253,11 +4301,11 @@ func (a *FabricApiService) CreateFabricSwitchProfileExecute(r ApiCreateFabricSwi
 }
 
 type ApiCreateFabricSystemQosPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                   _context.Context
+	ApiService            *FabricApiService
 	fabricSystemQosPolicy *FabricSystemQosPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;fabric.SystemQosPolicy&#39; resource to create.
@@ -4265,11 +4313,13 @@ func (r ApiCreateFabricSystemQosPolicyRequest) FabricSystemQosPolicy(fabricSyste
 	r.fabricSystemQosPolicy = &fabricSystemQosPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricSystemQosPolicyRequest) IfMatch(ifMatch string) ApiCreateFabricSystemQosPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricSystemQosPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricSystemQosPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -4289,7 +4339,7 @@ CreateFabricSystemQosPolicy Create a 'fabric.SystemQosPolicy' resource.
 func (a *FabricApiService) CreateFabricSystemQosPolicy(ctx _context.Context) ApiCreateFabricSystemQosPolicyRequest {
 	return ApiCreateFabricSystemQosPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4406,13 +4456,13 @@ func (a *FabricApiService) CreateFabricSystemQosPolicyExecute(r ApiCreateFabricS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4429,11 +4479,11 @@ func (a *FabricApiService) CreateFabricSystemQosPolicyExecute(r ApiCreateFabricS
 }
 
 type ApiCreateFabricUplinkPcRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx                _context.Context
+	ApiService         *FabricApiService
 	fabricUplinkPcRole *FabricUplinkPcRole
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch            *string
+	ifNoneMatch        *string
 }
 
 // The &#39;fabric.UplinkPcRole&#39; resource to create.
@@ -4441,11 +4491,13 @@ func (r ApiCreateFabricUplinkPcRoleRequest) FabricUplinkPcRole(fabricUplinkPcRol
 	r.fabricUplinkPcRole = &fabricUplinkPcRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricUplinkPcRoleRequest) IfMatch(ifMatch string) ApiCreateFabricUplinkPcRoleRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricUplinkPcRoleRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricUplinkPcRoleRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -4465,7 +4517,7 @@ CreateFabricUplinkPcRole Create a 'fabric.UplinkPcRole' resource.
 func (a *FabricApiService) CreateFabricUplinkPcRole(ctx _context.Context) ApiCreateFabricUplinkPcRoleRequest {
 	return ApiCreateFabricUplinkPcRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4582,13 +4634,13 @@ func (a *FabricApiService) CreateFabricUplinkPcRoleExecute(r ApiCreateFabricUpli
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4605,11 +4657,11 @@ func (a *FabricApiService) CreateFabricUplinkPcRoleExecute(r ApiCreateFabricUpli
 }
 
 type ApiCreateFabricUplinkRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
+	ctx              _context.Context
+	ApiService       *FabricApiService
 	fabricUplinkRole *FabricUplinkRole
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch          *string
+	ifNoneMatch      *string
 }
 
 // The &#39;fabric.UplinkRole&#39; resource to create.
@@ -4617,11 +4669,13 @@ func (r ApiCreateFabricUplinkRoleRequest) FabricUplinkRole(fabricUplinkRole Fabr
 	r.fabricUplinkRole = &fabricUplinkRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricUplinkRoleRequest) IfMatch(ifMatch string) ApiCreateFabricUplinkRoleRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricUplinkRoleRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricUplinkRoleRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -4641,7 +4695,7 @@ CreateFabricUplinkRole Create a 'fabric.UplinkRole' resource.
 func (a *FabricApiService) CreateFabricUplinkRole(ctx _context.Context) ApiCreateFabricUplinkRoleRequest {
 	return ApiCreateFabricUplinkRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4758,13 +4812,13 @@ func (a *FabricApiService) CreateFabricUplinkRoleExecute(r ApiCreateFabricUplink
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4781,10 +4835,10 @@ func (a *FabricApiService) CreateFabricUplinkRoleExecute(r ApiCreateFabricUplink
 }
 
 type ApiCreateFabricVlanRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	fabricVlan *FabricVlan
-	ifMatch *string
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	fabricVlan  *FabricVlan
+	ifMatch     *string
 	ifNoneMatch *string
 }
 
@@ -4793,11 +4847,13 @@ func (r ApiCreateFabricVlanRequest) FabricVlan(fabricVlan FabricVlan) ApiCreateF
 	r.fabricVlan = &fabricVlan
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricVlanRequest) IfMatch(ifMatch string) ApiCreateFabricVlanRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricVlanRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricVlanRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -4817,7 +4873,7 @@ CreateFabricVlan Create a 'fabric.Vlan' resource.
 func (a *FabricApiService) CreateFabricVlan(ctx _context.Context) ApiCreateFabricVlanRequest {
 	return ApiCreateFabricVlanRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4934,13 +4990,13 @@ func (a *FabricApiService) CreateFabricVlanExecute(r ApiCreateFabricVlanRequest)
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4957,10 +5013,10 @@ func (a *FabricApiService) CreateFabricVlanExecute(r ApiCreateFabricVlanRequest)
 }
 
 type ApiCreateFabricVsanRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	fabricVsan *FabricVsan
-	ifMatch *string
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	fabricVsan  *FabricVsan
+	ifMatch     *string
 	ifNoneMatch *string
 }
 
@@ -4969,11 +5025,13 @@ func (r ApiCreateFabricVsanRequest) FabricVsan(fabricVsan FabricVsan) ApiCreateF
 	r.fabricVsan = &fabricVsan
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFabricVsanRequest) IfMatch(ifMatch string) ApiCreateFabricVsanRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFabricVsanRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFabricVsanRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -4993,7 +5051,7 @@ CreateFabricVsan Create a 'fabric.Vsan' resource.
 func (a *FabricApiService) CreateFabricVsan(ctx _context.Context) ApiCreateFabricVsanRequest {
 	return ApiCreateFabricVsanRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5110,13 +5168,13 @@ func (a *FabricApiService) CreateFabricVsanExecute(r ApiCreateFabricVsanRequest)
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5133,11 +5191,10 @@ func (a *FabricApiService) CreateFabricVsanExecute(r ApiCreateFabricVsanRequest)
 }
 
 type ApiDeleteFabricAppliancePcRoleRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricAppliancePcRoleRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricAppliancePcRoleExecute(r)
@@ -5153,8 +5210,8 @@ DeleteFabricAppliancePcRole Delete a 'fabric.AppliancePcRole' resource.
 func (a *FabricApiService) DeleteFabricAppliancePcRole(ctx _context.Context, moid string) ApiDeleteFabricAppliancePcRoleRequest {
 	return ApiDeleteFabricAppliancePcRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5259,13 +5316,13 @@ func (a *FabricApiService) DeleteFabricAppliancePcRoleExecute(r ApiDeleteFabricA
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5273,11 +5330,10 @@ func (a *FabricApiService) DeleteFabricAppliancePcRoleExecute(r ApiDeleteFabricA
 }
 
 type ApiDeleteFabricApplianceRoleRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricApplianceRoleRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricApplianceRoleExecute(r)
@@ -5293,8 +5349,8 @@ DeleteFabricApplianceRole Delete a 'fabric.ApplianceRole' resource.
 func (a *FabricApiService) DeleteFabricApplianceRole(ctx _context.Context, moid string) ApiDeleteFabricApplianceRoleRequest {
 	return ApiDeleteFabricApplianceRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5399,13 +5455,13 @@ func (a *FabricApiService) DeleteFabricApplianceRoleExecute(r ApiDeleteFabricApp
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5413,11 +5469,10 @@ func (a *FabricApiService) DeleteFabricApplianceRoleExecute(r ApiDeleteFabricApp
 }
 
 type ApiDeleteFabricEthNetworkControlPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricEthNetworkControlPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricEthNetworkControlPolicyExecute(r)
@@ -5433,8 +5488,8 @@ DeleteFabricEthNetworkControlPolicy Delete a 'fabric.EthNetworkControlPolicy' re
 func (a *FabricApiService) DeleteFabricEthNetworkControlPolicy(ctx _context.Context, moid string) ApiDeleteFabricEthNetworkControlPolicyRequest {
 	return ApiDeleteFabricEthNetworkControlPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5539,13 +5594,13 @@ func (a *FabricApiService) DeleteFabricEthNetworkControlPolicyExecute(r ApiDelet
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5553,11 +5608,10 @@ func (a *FabricApiService) DeleteFabricEthNetworkControlPolicyExecute(r ApiDelet
 }
 
 type ApiDeleteFabricEthNetworkGroupPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricEthNetworkGroupPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricEthNetworkGroupPolicyExecute(r)
@@ -5573,8 +5627,8 @@ DeleteFabricEthNetworkGroupPolicy Delete a 'fabric.EthNetworkGroupPolicy' resour
 func (a *FabricApiService) DeleteFabricEthNetworkGroupPolicy(ctx _context.Context, moid string) ApiDeleteFabricEthNetworkGroupPolicyRequest {
 	return ApiDeleteFabricEthNetworkGroupPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5679,13 +5733,13 @@ func (a *FabricApiService) DeleteFabricEthNetworkGroupPolicyExecute(r ApiDeleteF
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5693,11 +5747,10 @@ func (a *FabricApiService) DeleteFabricEthNetworkGroupPolicyExecute(r ApiDeleteF
 }
 
 type ApiDeleteFabricEthNetworkPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricEthNetworkPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricEthNetworkPolicyExecute(r)
@@ -5713,8 +5766,8 @@ DeleteFabricEthNetworkPolicy Delete a 'fabric.EthNetworkPolicy' resource.
 func (a *FabricApiService) DeleteFabricEthNetworkPolicy(ctx _context.Context, moid string) ApiDeleteFabricEthNetworkPolicyRequest {
 	return ApiDeleteFabricEthNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5819,13 +5872,13 @@ func (a *FabricApiService) DeleteFabricEthNetworkPolicyExecute(r ApiDeleteFabric
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5833,11 +5886,10 @@ func (a *FabricApiService) DeleteFabricEthNetworkPolicyExecute(r ApiDeleteFabric
 }
 
 type ApiDeleteFabricFcNetworkPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricFcNetworkPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricFcNetworkPolicyExecute(r)
@@ -5853,8 +5905,8 @@ DeleteFabricFcNetworkPolicy Delete a 'fabric.FcNetworkPolicy' resource.
 func (a *FabricApiService) DeleteFabricFcNetworkPolicy(ctx _context.Context, moid string) ApiDeleteFabricFcNetworkPolicyRequest {
 	return ApiDeleteFabricFcNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5959,13 +6011,13 @@ func (a *FabricApiService) DeleteFabricFcNetworkPolicyExecute(r ApiDeleteFabricF
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5973,11 +6025,10 @@ func (a *FabricApiService) DeleteFabricFcNetworkPolicyExecute(r ApiDeleteFabricF
 }
 
 type ApiDeleteFabricFcStorageRoleRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricFcStorageRoleRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricFcStorageRoleExecute(r)
@@ -5993,8 +6044,8 @@ DeleteFabricFcStorageRole Delete a 'fabric.FcStorageRole' resource.
 func (a *FabricApiService) DeleteFabricFcStorageRole(ctx _context.Context, moid string) ApiDeleteFabricFcStorageRoleRequest {
 	return ApiDeleteFabricFcStorageRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6099,13 +6150,13 @@ func (a *FabricApiService) DeleteFabricFcStorageRoleExecute(r ApiDeleteFabricFcS
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6113,11 +6164,10 @@ func (a *FabricApiService) DeleteFabricFcStorageRoleExecute(r ApiDeleteFabricFcS
 }
 
 type ApiDeleteFabricFcUplinkPcRoleRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricFcUplinkPcRoleRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricFcUplinkPcRoleExecute(r)
@@ -6133,8 +6183,8 @@ DeleteFabricFcUplinkPcRole Delete a 'fabric.FcUplinkPcRole' resource.
 func (a *FabricApiService) DeleteFabricFcUplinkPcRole(ctx _context.Context, moid string) ApiDeleteFabricFcUplinkPcRoleRequest {
 	return ApiDeleteFabricFcUplinkPcRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6239,13 +6289,13 @@ func (a *FabricApiService) DeleteFabricFcUplinkPcRoleExecute(r ApiDeleteFabricFc
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6253,11 +6303,10 @@ func (a *FabricApiService) DeleteFabricFcUplinkPcRoleExecute(r ApiDeleteFabricFc
 }
 
 type ApiDeleteFabricFcUplinkRoleRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricFcUplinkRoleRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricFcUplinkRoleExecute(r)
@@ -6273,8 +6322,8 @@ DeleteFabricFcUplinkRole Delete a 'fabric.FcUplinkRole' resource.
 func (a *FabricApiService) DeleteFabricFcUplinkRole(ctx _context.Context, moid string) ApiDeleteFabricFcUplinkRoleRequest {
 	return ApiDeleteFabricFcUplinkRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6379,13 +6428,13 @@ func (a *FabricApiService) DeleteFabricFcUplinkRoleExecute(r ApiDeleteFabricFcUp
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6393,11 +6442,10 @@ func (a *FabricApiService) DeleteFabricFcUplinkRoleExecute(r ApiDeleteFabricFcUp
 }
 
 type ApiDeleteFabricFcoeUplinkPcRoleRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricFcoeUplinkPcRoleRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricFcoeUplinkPcRoleExecute(r)
@@ -6413,8 +6461,8 @@ DeleteFabricFcoeUplinkPcRole Delete a 'fabric.FcoeUplinkPcRole' resource.
 func (a *FabricApiService) DeleteFabricFcoeUplinkPcRole(ctx _context.Context, moid string) ApiDeleteFabricFcoeUplinkPcRoleRequest {
 	return ApiDeleteFabricFcoeUplinkPcRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6519,13 +6567,13 @@ func (a *FabricApiService) DeleteFabricFcoeUplinkPcRoleExecute(r ApiDeleteFabric
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6533,11 +6581,10 @@ func (a *FabricApiService) DeleteFabricFcoeUplinkPcRoleExecute(r ApiDeleteFabric
 }
 
 type ApiDeleteFabricFcoeUplinkRoleRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricFcoeUplinkRoleRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricFcoeUplinkRoleExecute(r)
@@ -6553,8 +6600,8 @@ DeleteFabricFcoeUplinkRole Delete a 'fabric.FcoeUplinkRole' resource.
 func (a *FabricApiService) DeleteFabricFcoeUplinkRole(ctx _context.Context, moid string) ApiDeleteFabricFcoeUplinkRoleRequest {
 	return ApiDeleteFabricFcoeUplinkRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6659,13 +6706,13 @@ func (a *FabricApiService) DeleteFabricFcoeUplinkRoleExecute(r ApiDeleteFabricFc
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6673,11 +6720,10 @@ func (a *FabricApiService) DeleteFabricFcoeUplinkRoleExecute(r ApiDeleteFabricFc
 }
 
 type ApiDeleteFabricFlowControlPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricFlowControlPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricFlowControlPolicyExecute(r)
@@ -6693,8 +6739,8 @@ DeleteFabricFlowControlPolicy Delete a 'fabric.FlowControlPolicy' resource.
 func (a *FabricApiService) DeleteFabricFlowControlPolicy(ctx _context.Context, moid string) ApiDeleteFabricFlowControlPolicyRequest {
 	return ApiDeleteFabricFlowControlPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6799,13 +6845,13 @@ func (a *FabricApiService) DeleteFabricFlowControlPolicyExecute(r ApiDeleteFabri
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6813,11 +6859,10 @@ func (a *FabricApiService) DeleteFabricFlowControlPolicyExecute(r ApiDeleteFabri
 }
 
 type ApiDeleteFabricLinkAggregationPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricLinkAggregationPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricLinkAggregationPolicyExecute(r)
@@ -6833,8 +6878,8 @@ DeleteFabricLinkAggregationPolicy Delete a 'fabric.LinkAggregationPolicy' resour
 func (a *FabricApiService) DeleteFabricLinkAggregationPolicy(ctx _context.Context, moid string) ApiDeleteFabricLinkAggregationPolicyRequest {
 	return ApiDeleteFabricLinkAggregationPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6939,13 +6984,13 @@ func (a *FabricApiService) DeleteFabricLinkAggregationPolicyExecute(r ApiDeleteF
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6953,11 +6998,10 @@ func (a *FabricApiService) DeleteFabricLinkAggregationPolicyExecute(r ApiDeleteF
 }
 
 type ApiDeleteFabricLinkControlPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricLinkControlPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricLinkControlPolicyExecute(r)
@@ -6973,8 +7017,8 @@ DeleteFabricLinkControlPolicy Delete a 'fabric.LinkControlPolicy' resource.
 func (a *FabricApiService) DeleteFabricLinkControlPolicy(ctx _context.Context, moid string) ApiDeleteFabricLinkControlPolicyRequest {
 	return ApiDeleteFabricLinkControlPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7079,13 +7123,13 @@ func (a *FabricApiService) DeleteFabricLinkControlPolicyExecute(r ApiDeleteFabri
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7093,11 +7137,10 @@ func (a *FabricApiService) DeleteFabricLinkControlPolicyExecute(r ApiDeleteFabri
 }
 
 type ApiDeleteFabricMulticastPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricMulticastPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricMulticastPolicyExecute(r)
@@ -7113,8 +7156,8 @@ DeleteFabricMulticastPolicy Delete a 'fabric.MulticastPolicy' resource.
 func (a *FabricApiService) DeleteFabricMulticastPolicy(ctx _context.Context, moid string) ApiDeleteFabricMulticastPolicyRequest {
 	return ApiDeleteFabricMulticastPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7219,13 +7262,13 @@ func (a *FabricApiService) DeleteFabricMulticastPolicyExecute(r ApiDeleteFabricM
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7233,11 +7276,10 @@ func (a *FabricApiService) DeleteFabricMulticastPolicyExecute(r ApiDeleteFabricM
 }
 
 type ApiDeleteFabricPcOperationRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricPcOperationRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricPcOperationExecute(r)
@@ -7253,8 +7295,8 @@ DeleteFabricPcOperation Delete a 'fabric.PcOperation' resource.
 func (a *FabricApiService) DeleteFabricPcOperation(ctx _context.Context, moid string) ApiDeleteFabricPcOperationRequest {
 	return ApiDeleteFabricPcOperationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7359,13 +7401,13 @@ func (a *FabricApiService) DeleteFabricPcOperationExecute(r ApiDeleteFabricPcOpe
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7373,11 +7415,10 @@ func (a *FabricApiService) DeleteFabricPcOperationExecute(r ApiDeleteFabricPcOpe
 }
 
 type ApiDeleteFabricPortModeRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricPortModeRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricPortModeExecute(r)
@@ -7393,8 +7434,8 @@ DeleteFabricPortMode Delete a 'fabric.PortMode' resource.
 func (a *FabricApiService) DeleteFabricPortMode(ctx _context.Context, moid string) ApiDeleteFabricPortModeRequest {
 	return ApiDeleteFabricPortModeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7499,13 +7540,13 @@ func (a *FabricApiService) DeleteFabricPortModeExecute(r ApiDeleteFabricPortMode
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7513,11 +7554,10 @@ func (a *FabricApiService) DeleteFabricPortModeExecute(r ApiDeleteFabricPortMode
 }
 
 type ApiDeleteFabricPortOperationRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricPortOperationRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricPortOperationExecute(r)
@@ -7533,8 +7573,8 @@ DeleteFabricPortOperation Delete a 'fabric.PortOperation' resource.
 func (a *FabricApiService) DeleteFabricPortOperation(ctx _context.Context, moid string) ApiDeleteFabricPortOperationRequest {
 	return ApiDeleteFabricPortOperationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7639,13 +7679,13 @@ func (a *FabricApiService) DeleteFabricPortOperationExecute(r ApiDeleteFabricPor
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7653,11 +7693,10 @@ func (a *FabricApiService) DeleteFabricPortOperationExecute(r ApiDeleteFabricPor
 }
 
 type ApiDeleteFabricPortPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricPortPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricPortPolicyExecute(r)
@@ -7673,8 +7712,8 @@ DeleteFabricPortPolicy Delete a 'fabric.PortPolicy' resource.
 func (a *FabricApiService) DeleteFabricPortPolicy(ctx _context.Context, moid string) ApiDeleteFabricPortPolicyRequest {
 	return ApiDeleteFabricPortPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7779,13 +7818,13 @@ func (a *FabricApiService) DeleteFabricPortPolicyExecute(r ApiDeleteFabricPortPo
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7793,11 +7832,10 @@ func (a *FabricApiService) DeleteFabricPortPolicyExecute(r ApiDeleteFabricPortPo
 }
 
 type ApiDeleteFabricServerRoleRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricServerRoleRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricServerRoleExecute(r)
@@ -7813,8 +7851,8 @@ DeleteFabricServerRole Delete a 'fabric.ServerRole' resource.
 func (a *FabricApiService) DeleteFabricServerRole(ctx _context.Context, moid string) ApiDeleteFabricServerRoleRequest {
 	return ApiDeleteFabricServerRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7919,13 +7957,13 @@ func (a *FabricApiService) DeleteFabricServerRoleExecute(r ApiDeleteFabricServer
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7933,11 +7971,10 @@ func (a *FabricApiService) DeleteFabricServerRoleExecute(r ApiDeleteFabricServer
 }
 
 type ApiDeleteFabricSwitchClusterProfileRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricSwitchClusterProfileRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricSwitchClusterProfileExecute(r)
@@ -7953,8 +7990,8 @@ DeleteFabricSwitchClusterProfile Delete a 'fabric.SwitchClusterProfile' resource
 func (a *FabricApiService) DeleteFabricSwitchClusterProfile(ctx _context.Context, moid string) ApiDeleteFabricSwitchClusterProfileRequest {
 	return ApiDeleteFabricSwitchClusterProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8059,13 +8096,13 @@ func (a *FabricApiService) DeleteFabricSwitchClusterProfileExecute(r ApiDeleteFa
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -8073,11 +8110,10 @@ func (a *FabricApiService) DeleteFabricSwitchClusterProfileExecute(r ApiDeleteFa
 }
 
 type ApiDeleteFabricSwitchControlPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricSwitchControlPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricSwitchControlPolicyExecute(r)
@@ -8093,8 +8129,8 @@ DeleteFabricSwitchControlPolicy Delete a 'fabric.SwitchControlPolicy' resource.
 func (a *FabricApiService) DeleteFabricSwitchControlPolicy(ctx _context.Context, moid string) ApiDeleteFabricSwitchControlPolicyRequest {
 	return ApiDeleteFabricSwitchControlPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8199,13 +8235,13 @@ func (a *FabricApiService) DeleteFabricSwitchControlPolicyExecute(r ApiDeleteFab
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -8213,11 +8249,10 @@ func (a *FabricApiService) DeleteFabricSwitchControlPolicyExecute(r ApiDeleteFab
 }
 
 type ApiDeleteFabricSwitchProfileRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricSwitchProfileRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricSwitchProfileExecute(r)
@@ -8233,8 +8268,8 @@ DeleteFabricSwitchProfile Delete a 'fabric.SwitchProfile' resource.
 func (a *FabricApiService) DeleteFabricSwitchProfile(ctx _context.Context, moid string) ApiDeleteFabricSwitchProfileRequest {
 	return ApiDeleteFabricSwitchProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8339,13 +8374,13 @@ func (a *FabricApiService) DeleteFabricSwitchProfileExecute(r ApiDeleteFabricSwi
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -8353,11 +8388,10 @@ func (a *FabricApiService) DeleteFabricSwitchProfileExecute(r ApiDeleteFabricSwi
 }
 
 type ApiDeleteFabricSystemQosPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricSystemQosPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricSystemQosPolicyExecute(r)
@@ -8373,8 +8407,8 @@ DeleteFabricSystemQosPolicy Delete a 'fabric.SystemQosPolicy' resource.
 func (a *FabricApiService) DeleteFabricSystemQosPolicy(ctx _context.Context, moid string) ApiDeleteFabricSystemQosPolicyRequest {
 	return ApiDeleteFabricSystemQosPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8479,13 +8513,13 @@ func (a *FabricApiService) DeleteFabricSystemQosPolicyExecute(r ApiDeleteFabricS
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -8493,11 +8527,10 @@ func (a *FabricApiService) DeleteFabricSystemQosPolicyExecute(r ApiDeleteFabricS
 }
 
 type ApiDeleteFabricUplinkPcRoleRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricUplinkPcRoleRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricUplinkPcRoleExecute(r)
@@ -8513,8 +8546,8 @@ DeleteFabricUplinkPcRole Delete a 'fabric.UplinkPcRole' resource.
 func (a *FabricApiService) DeleteFabricUplinkPcRole(ctx _context.Context, moid string) ApiDeleteFabricUplinkPcRoleRequest {
 	return ApiDeleteFabricUplinkPcRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8619,13 +8652,13 @@ func (a *FabricApiService) DeleteFabricUplinkPcRoleExecute(r ApiDeleteFabricUpli
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -8633,11 +8666,10 @@ func (a *FabricApiService) DeleteFabricUplinkPcRoleExecute(r ApiDeleteFabricUpli
 }
 
 type ApiDeleteFabricUplinkRoleRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricUplinkRoleRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricUplinkRoleExecute(r)
@@ -8653,8 +8685,8 @@ DeleteFabricUplinkRole Delete a 'fabric.UplinkRole' resource.
 func (a *FabricApiService) DeleteFabricUplinkRole(ctx _context.Context, moid string) ApiDeleteFabricUplinkRoleRequest {
 	return ApiDeleteFabricUplinkRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8759,13 +8791,13 @@ func (a *FabricApiService) DeleteFabricUplinkRoleExecute(r ApiDeleteFabricUplink
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -8773,11 +8805,10 @@ func (a *FabricApiService) DeleteFabricUplinkRoleExecute(r ApiDeleteFabricUplink
 }
 
 type ApiDeleteFabricVlanRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricVlanRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricVlanExecute(r)
@@ -8793,8 +8824,8 @@ DeleteFabricVlan Delete a 'fabric.Vlan' resource.
 func (a *FabricApiService) DeleteFabricVlan(ctx _context.Context, moid string) ApiDeleteFabricVlanRequest {
 	return ApiDeleteFabricVlanRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8899,13 +8930,13 @@ func (a *FabricApiService) DeleteFabricVlanExecute(r ApiDeleteFabricVlanRequest)
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -8913,11 +8944,10 @@ func (a *FabricApiService) DeleteFabricVlanExecute(r ApiDeleteFabricVlanRequest)
 }
 
 type ApiDeleteFabricVsanRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFabricVsanRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFabricVsanExecute(r)
@@ -8933,8 +8963,8 @@ DeleteFabricVsan Delete a 'fabric.Vsan' resource.
 func (a *FabricApiService) DeleteFabricVsan(ctx _context.Context, moid string) ApiDeleteFabricVsanRequest {
 	return ApiDeleteFabricVsanRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9039,13 +9069,13 @@ func (a *FabricApiService) DeleteFabricVsanExecute(r ApiDeleteFabricVsanRequest)
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -9053,11 +9083,10 @@ func (a *FabricApiService) DeleteFabricVsanExecute(r ApiDeleteFabricVsanRequest)
 }
 
 type ApiGetFabricAppliancePcRoleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricAppliancePcRoleByMoidRequest) Execute() (FabricAppliancePcRole, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricAppliancePcRoleByMoidExecute(r)
@@ -9073,8 +9102,8 @@ GetFabricAppliancePcRoleByMoid Read a 'fabric.AppliancePcRole' resource.
 func (a *FabricApiService) GetFabricAppliancePcRoleByMoid(ctx _context.Context, moid string) ApiGetFabricAppliancePcRoleByMoidRequest {
 	return ApiGetFabricAppliancePcRoleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9181,13 +9210,13 @@ func (a *FabricApiService) GetFabricAppliancePcRoleByMoidExecute(r ApiGetFabricA
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9204,19 +9233,19 @@ func (a *FabricApiService) GetFabricAppliancePcRoleByMoidExecute(r ApiGetFabricA
 }
 
 type ApiGetFabricAppliancePcRoleListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9224,51 +9253,61 @@ func (r ApiGetFabricAppliancePcRoleListRequest) Filter(filter string) ApiGetFabr
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricAppliancePcRoleListRequest) Orderby(orderby string) ApiGetFabricAppliancePcRoleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricAppliancePcRoleListRequest) Top(top int32) ApiGetFabricAppliancePcRoleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricAppliancePcRoleListRequest) Skip(skip int32) ApiGetFabricAppliancePcRoleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricAppliancePcRoleListRequest) Select_(select_ string) ApiGetFabricAppliancePcRoleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricAppliancePcRoleListRequest) Expand(expand string) ApiGetFabricAppliancePcRoleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricAppliancePcRoleListRequest) Apply(apply string) ApiGetFabricAppliancePcRoleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricAppliancePcRoleListRequest) Count(count bool) ApiGetFabricAppliancePcRoleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricAppliancePcRoleListRequest) Inlinecount(inlinecount string) ApiGetFabricAppliancePcRoleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricAppliancePcRoleListRequest) At(at string) ApiGetFabricAppliancePcRoleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricAppliancePcRoleListRequest) Tags(tags string) ApiGetFabricAppliancePcRoleListRequest {
 	r.tags = &tags
@@ -9288,7 +9327,7 @@ GetFabricAppliancePcRoleList Read a 'fabric.AppliancePcRole' resource.
 func (a *FabricApiService) GetFabricAppliancePcRoleList(ctx _context.Context) ApiGetFabricAppliancePcRoleListRequest {
 	return ApiGetFabricAppliancePcRoleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9427,13 +9466,13 @@ func (a *FabricApiService) GetFabricAppliancePcRoleListExecute(r ApiGetFabricApp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9450,11 +9489,10 @@ func (a *FabricApiService) GetFabricAppliancePcRoleListExecute(r ApiGetFabricApp
 }
 
 type ApiGetFabricApplianceRoleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricApplianceRoleByMoidRequest) Execute() (FabricApplianceRole, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricApplianceRoleByMoidExecute(r)
@@ -9470,8 +9508,8 @@ GetFabricApplianceRoleByMoid Read a 'fabric.ApplianceRole' resource.
 func (a *FabricApiService) GetFabricApplianceRoleByMoid(ctx _context.Context, moid string) ApiGetFabricApplianceRoleByMoidRequest {
 	return ApiGetFabricApplianceRoleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9578,13 +9616,13 @@ func (a *FabricApiService) GetFabricApplianceRoleByMoidExecute(r ApiGetFabricApp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9601,19 +9639,19 @@ func (a *FabricApiService) GetFabricApplianceRoleByMoidExecute(r ApiGetFabricApp
 }
 
 type ApiGetFabricApplianceRoleListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9621,51 +9659,61 @@ func (r ApiGetFabricApplianceRoleListRequest) Filter(filter string) ApiGetFabric
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricApplianceRoleListRequest) Orderby(orderby string) ApiGetFabricApplianceRoleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricApplianceRoleListRequest) Top(top int32) ApiGetFabricApplianceRoleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricApplianceRoleListRequest) Skip(skip int32) ApiGetFabricApplianceRoleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricApplianceRoleListRequest) Select_(select_ string) ApiGetFabricApplianceRoleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricApplianceRoleListRequest) Expand(expand string) ApiGetFabricApplianceRoleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricApplianceRoleListRequest) Apply(apply string) ApiGetFabricApplianceRoleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricApplianceRoleListRequest) Count(count bool) ApiGetFabricApplianceRoleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricApplianceRoleListRequest) Inlinecount(inlinecount string) ApiGetFabricApplianceRoleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricApplianceRoleListRequest) At(at string) ApiGetFabricApplianceRoleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricApplianceRoleListRequest) Tags(tags string) ApiGetFabricApplianceRoleListRequest {
 	r.tags = &tags
@@ -9685,7 +9733,7 @@ GetFabricApplianceRoleList Read a 'fabric.ApplianceRole' resource.
 func (a *FabricApiService) GetFabricApplianceRoleList(ctx _context.Context) ApiGetFabricApplianceRoleListRequest {
 	return ApiGetFabricApplianceRoleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9824,13 +9872,13 @@ func (a *FabricApiService) GetFabricApplianceRoleListExecute(r ApiGetFabricAppli
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9847,11 +9895,10 @@ func (a *FabricApiService) GetFabricApplianceRoleListExecute(r ApiGetFabricAppli
 }
 
 type ApiGetFabricConfigChangeDetailByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricConfigChangeDetailByMoidRequest) Execute() (FabricConfigChangeDetail, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricConfigChangeDetailByMoidExecute(r)
@@ -9867,8 +9914,8 @@ GetFabricConfigChangeDetailByMoid Read a 'fabric.ConfigChangeDetail' resource.
 func (a *FabricApiService) GetFabricConfigChangeDetailByMoid(ctx _context.Context, moid string) ApiGetFabricConfigChangeDetailByMoidRequest {
 	return ApiGetFabricConfigChangeDetailByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9975,13 +10022,13 @@ func (a *FabricApiService) GetFabricConfigChangeDetailByMoidExecute(r ApiGetFabr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9998,19 +10045,19 @@ func (a *FabricApiService) GetFabricConfigChangeDetailByMoidExecute(r ApiGetFabr
 }
 
 type ApiGetFabricConfigChangeDetailListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10018,51 +10065,61 @@ func (r ApiGetFabricConfigChangeDetailListRequest) Filter(filter string) ApiGetF
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricConfigChangeDetailListRequest) Orderby(orderby string) ApiGetFabricConfigChangeDetailListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricConfigChangeDetailListRequest) Top(top int32) ApiGetFabricConfigChangeDetailListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricConfigChangeDetailListRequest) Skip(skip int32) ApiGetFabricConfigChangeDetailListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricConfigChangeDetailListRequest) Select_(select_ string) ApiGetFabricConfigChangeDetailListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricConfigChangeDetailListRequest) Expand(expand string) ApiGetFabricConfigChangeDetailListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricConfigChangeDetailListRequest) Apply(apply string) ApiGetFabricConfigChangeDetailListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricConfigChangeDetailListRequest) Count(count bool) ApiGetFabricConfigChangeDetailListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricConfigChangeDetailListRequest) Inlinecount(inlinecount string) ApiGetFabricConfigChangeDetailListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricConfigChangeDetailListRequest) At(at string) ApiGetFabricConfigChangeDetailListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricConfigChangeDetailListRequest) Tags(tags string) ApiGetFabricConfigChangeDetailListRequest {
 	r.tags = &tags
@@ -10082,7 +10139,7 @@ GetFabricConfigChangeDetailList Read a 'fabric.ConfigChangeDetail' resource.
 func (a *FabricApiService) GetFabricConfigChangeDetailList(ctx _context.Context) ApiGetFabricConfigChangeDetailListRequest {
 	return ApiGetFabricConfigChangeDetailListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10221,13 +10278,13 @@ func (a *FabricApiService) GetFabricConfigChangeDetailListExecute(r ApiGetFabric
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10244,11 +10301,10 @@ func (a *FabricApiService) GetFabricConfigChangeDetailListExecute(r ApiGetFabric
 }
 
 type ApiGetFabricConfigResultByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricConfigResultByMoidRequest) Execute() (FabricConfigResult, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricConfigResultByMoidExecute(r)
@@ -10264,8 +10320,8 @@ GetFabricConfigResultByMoid Read a 'fabric.ConfigResult' resource.
 func (a *FabricApiService) GetFabricConfigResultByMoid(ctx _context.Context, moid string) ApiGetFabricConfigResultByMoidRequest {
 	return ApiGetFabricConfigResultByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10372,13 +10428,13 @@ func (a *FabricApiService) GetFabricConfigResultByMoidExecute(r ApiGetFabricConf
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10395,11 +10451,10 @@ func (a *FabricApiService) GetFabricConfigResultByMoidExecute(r ApiGetFabricConf
 }
 
 type ApiGetFabricConfigResultEntryByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricConfigResultEntryByMoidRequest) Execute() (FabricConfigResultEntry, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricConfigResultEntryByMoidExecute(r)
@@ -10415,8 +10470,8 @@ GetFabricConfigResultEntryByMoid Read a 'fabric.ConfigResultEntry' resource.
 func (a *FabricApiService) GetFabricConfigResultEntryByMoid(ctx _context.Context, moid string) ApiGetFabricConfigResultEntryByMoidRequest {
 	return ApiGetFabricConfigResultEntryByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10523,13 +10578,13 @@ func (a *FabricApiService) GetFabricConfigResultEntryByMoidExecute(r ApiGetFabri
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10546,19 +10601,19 @@ func (a *FabricApiService) GetFabricConfigResultEntryByMoidExecute(r ApiGetFabri
 }
 
 type ApiGetFabricConfigResultEntryListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10566,51 +10621,61 @@ func (r ApiGetFabricConfigResultEntryListRequest) Filter(filter string) ApiGetFa
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricConfigResultEntryListRequest) Orderby(orderby string) ApiGetFabricConfigResultEntryListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricConfigResultEntryListRequest) Top(top int32) ApiGetFabricConfigResultEntryListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricConfigResultEntryListRequest) Skip(skip int32) ApiGetFabricConfigResultEntryListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricConfigResultEntryListRequest) Select_(select_ string) ApiGetFabricConfigResultEntryListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricConfigResultEntryListRequest) Expand(expand string) ApiGetFabricConfigResultEntryListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricConfigResultEntryListRequest) Apply(apply string) ApiGetFabricConfigResultEntryListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricConfigResultEntryListRequest) Count(count bool) ApiGetFabricConfigResultEntryListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricConfigResultEntryListRequest) Inlinecount(inlinecount string) ApiGetFabricConfigResultEntryListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricConfigResultEntryListRequest) At(at string) ApiGetFabricConfigResultEntryListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricConfigResultEntryListRequest) Tags(tags string) ApiGetFabricConfigResultEntryListRequest {
 	r.tags = &tags
@@ -10630,7 +10695,7 @@ GetFabricConfigResultEntryList Read a 'fabric.ConfigResultEntry' resource.
 func (a *FabricApiService) GetFabricConfigResultEntryList(ctx _context.Context) ApiGetFabricConfigResultEntryListRequest {
 	return ApiGetFabricConfigResultEntryListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10769,13 +10834,13 @@ func (a *FabricApiService) GetFabricConfigResultEntryListExecute(r ApiGetFabricC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10792,19 +10857,19 @@ func (a *FabricApiService) GetFabricConfigResultEntryListExecute(r ApiGetFabricC
 }
 
 type ApiGetFabricConfigResultListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10812,51 +10877,61 @@ func (r ApiGetFabricConfigResultListRequest) Filter(filter string) ApiGetFabricC
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricConfigResultListRequest) Orderby(orderby string) ApiGetFabricConfigResultListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricConfigResultListRequest) Top(top int32) ApiGetFabricConfigResultListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricConfigResultListRequest) Skip(skip int32) ApiGetFabricConfigResultListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricConfigResultListRequest) Select_(select_ string) ApiGetFabricConfigResultListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricConfigResultListRequest) Expand(expand string) ApiGetFabricConfigResultListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricConfigResultListRequest) Apply(apply string) ApiGetFabricConfigResultListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricConfigResultListRequest) Count(count bool) ApiGetFabricConfigResultListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricConfigResultListRequest) Inlinecount(inlinecount string) ApiGetFabricConfigResultListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricConfigResultListRequest) At(at string) ApiGetFabricConfigResultListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricConfigResultListRequest) Tags(tags string) ApiGetFabricConfigResultListRequest {
 	r.tags = &tags
@@ -10876,7 +10951,7 @@ GetFabricConfigResultList Read a 'fabric.ConfigResult' resource.
 func (a *FabricApiService) GetFabricConfigResultList(ctx _context.Context) ApiGetFabricConfigResultListRequest {
 	return ApiGetFabricConfigResultListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11015,13 +11090,13 @@ func (a *FabricApiService) GetFabricConfigResultListExecute(r ApiGetFabricConfig
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11038,11 +11113,10 @@ func (a *FabricApiService) GetFabricConfigResultListExecute(r ApiGetFabricConfig
 }
 
 type ApiGetFabricElementIdentityByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricElementIdentityByMoidRequest) Execute() (FabricElementIdentity, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricElementIdentityByMoidExecute(r)
@@ -11058,8 +11132,8 @@ GetFabricElementIdentityByMoid Read a 'fabric.ElementIdentity' resource.
 func (a *FabricApiService) GetFabricElementIdentityByMoid(ctx _context.Context, moid string) ApiGetFabricElementIdentityByMoidRequest {
 	return ApiGetFabricElementIdentityByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11166,13 +11240,13 @@ func (a *FabricApiService) GetFabricElementIdentityByMoidExecute(r ApiGetFabricE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11189,19 +11263,19 @@ func (a *FabricApiService) GetFabricElementIdentityByMoidExecute(r ApiGetFabricE
 }
 
 type ApiGetFabricElementIdentityListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11209,51 +11283,61 @@ func (r ApiGetFabricElementIdentityListRequest) Filter(filter string) ApiGetFabr
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricElementIdentityListRequest) Orderby(orderby string) ApiGetFabricElementIdentityListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricElementIdentityListRequest) Top(top int32) ApiGetFabricElementIdentityListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricElementIdentityListRequest) Skip(skip int32) ApiGetFabricElementIdentityListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricElementIdentityListRequest) Select_(select_ string) ApiGetFabricElementIdentityListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricElementIdentityListRequest) Expand(expand string) ApiGetFabricElementIdentityListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricElementIdentityListRequest) Apply(apply string) ApiGetFabricElementIdentityListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricElementIdentityListRequest) Count(count bool) ApiGetFabricElementIdentityListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricElementIdentityListRequest) Inlinecount(inlinecount string) ApiGetFabricElementIdentityListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricElementIdentityListRequest) At(at string) ApiGetFabricElementIdentityListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricElementIdentityListRequest) Tags(tags string) ApiGetFabricElementIdentityListRequest {
 	r.tags = &tags
@@ -11273,7 +11357,7 @@ GetFabricElementIdentityList Read a 'fabric.ElementIdentity' resource.
 func (a *FabricApiService) GetFabricElementIdentityList(ctx _context.Context) ApiGetFabricElementIdentityListRequest {
 	return ApiGetFabricElementIdentityListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11412,13 +11496,13 @@ func (a *FabricApiService) GetFabricElementIdentityListExecute(r ApiGetFabricEle
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11435,11 +11519,10 @@ func (a *FabricApiService) GetFabricElementIdentityListExecute(r ApiGetFabricEle
 }
 
 type ApiGetFabricEthNetworkControlPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricEthNetworkControlPolicyByMoidRequest) Execute() (FabricEthNetworkControlPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricEthNetworkControlPolicyByMoidExecute(r)
@@ -11455,8 +11538,8 @@ GetFabricEthNetworkControlPolicyByMoid Read a 'fabric.EthNetworkControlPolicy' r
 func (a *FabricApiService) GetFabricEthNetworkControlPolicyByMoid(ctx _context.Context, moid string) ApiGetFabricEthNetworkControlPolicyByMoidRequest {
 	return ApiGetFabricEthNetworkControlPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11563,13 +11646,13 @@ func (a *FabricApiService) GetFabricEthNetworkControlPolicyByMoidExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11586,19 +11669,19 @@ func (a *FabricApiService) GetFabricEthNetworkControlPolicyByMoidExecute(r ApiGe
 }
 
 type ApiGetFabricEthNetworkControlPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11606,51 +11689,61 @@ func (r ApiGetFabricEthNetworkControlPolicyListRequest) Filter(filter string) Ap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricEthNetworkControlPolicyListRequest) Orderby(orderby string) ApiGetFabricEthNetworkControlPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricEthNetworkControlPolicyListRequest) Top(top int32) ApiGetFabricEthNetworkControlPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricEthNetworkControlPolicyListRequest) Skip(skip int32) ApiGetFabricEthNetworkControlPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricEthNetworkControlPolicyListRequest) Select_(select_ string) ApiGetFabricEthNetworkControlPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricEthNetworkControlPolicyListRequest) Expand(expand string) ApiGetFabricEthNetworkControlPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricEthNetworkControlPolicyListRequest) Apply(apply string) ApiGetFabricEthNetworkControlPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricEthNetworkControlPolicyListRequest) Count(count bool) ApiGetFabricEthNetworkControlPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricEthNetworkControlPolicyListRequest) Inlinecount(inlinecount string) ApiGetFabricEthNetworkControlPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricEthNetworkControlPolicyListRequest) At(at string) ApiGetFabricEthNetworkControlPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricEthNetworkControlPolicyListRequest) Tags(tags string) ApiGetFabricEthNetworkControlPolicyListRequest {
 	r.tags = &tags
@@ -11670,7 +11763,7 @@ GetFabricEthNetworkControlPolicyList Read a 'fabric.EthNetworkControlPolicy' res
 func (a *FabricApiService) GetFabricEthNetworkControlPolicyList(ctx _context.Context) ApiGetFabricEthNetworkControlPolicyListRequest {
 	return ApiGetFabricEthNetworkControlPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11809,13 +11902,13 @@ func (a *FabricApiService) GetFabricEthNetworkControlPolicyListExecute(r ApiGetF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11832,11 +11925,10 @@ func (a *FabricApiService) GetFabricEthNetworkControlPolicyListExecute(r ApiGetF
 }
 
 type ApiGetFabricEthNetworkGroupPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricEthNetworkGroupPolicyByMoidRequest) Execute() (FabricEthNetworkGroupPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricEthNetworkGroupPolicyByMoidExecute(r)
@@ -11852,8 +11944,8 @@ GetFabricEthNetworkGroupPolicyByMoid Read a 'fabric.EthNetworkGroupPolicy' resou
 func (a *FabricApiService) GetFabricEthNetworkGroupPolicyByMoid(ctx _context.Context, moid string) ApiGetFabricEthNetworkGroupPolicyByMoidRequest {
 	return ApiGetFabricEthNetworkGroupPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11960,13 +12052,13 @@ func (a *FabricApiService) GetFabricEthNetworkGroupPolicyByMoidExecute(r ApiGetF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11983,19 +12075,19 @@ func (a *FabricApiService) GetFabricEthNetworkGroupPolicyByMoidExecute(r ApiGetF
 }
 
 type ApiGetFabricEthNetworkGroupPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12003,51 +12095,61 @@ func (r ApiGetFabricEthNetworkGroupPolicyListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricEthNetworkGroupPolicyListRequest) Orderby(orderby string) ApiGetFabricEthNetworkGroupPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricEthNetworkGroupPolicyListRequest) Top(top int32) ApiGetFabricEthNetworkGroupPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricEthNetworkGroupPolicyListRequest) Skip(skip int32) ApiGetFabricEthNetworkGroupPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricEthNetworkGroupPolicyListRequest) Select_(select_ string) ApiGetFabricEthNetworkGroupPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricEthNetworkGroupPolicyListRequest) Expand(expand string) ApiGetFabricEthNetworkGroupPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricEthNetworkGroupPolicyListRequest) Apply(apply string) ApiGetFabricEthNetworkGroupPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricEthNetworkGroupPolicyListRequest) Count(count bool) ApiGetFabricEthNetworkGroupPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricEthNetworkGroupPolicyListRequest) Inlinecount(inlinecount string) ApiGetFabricEthNetworkGroupPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricEthNetworkGroupPolicyListRequest) At(at string) ApiGetFabricEthNetworkGroupPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricEthNetworkGroupPolicyListRequest) Tags(tags string) ApiGetFabricEthNetworkGroupPolicyListRequest {
 	r.tags = &tags
@@ -12067,7 +12169,7 @@ GetFabricEthNetworkGroupPolicyList Read a 'fabric.EthNetworkGroupPolicy' resourc
 func (a *FabricApiService) GetFabricEthNetworkGroupPolicyList(ctx _context.Context) ApiGetFabricEthNetworkGroupPolicyListRequest {
 	return ApiGetFabricEthNetworkGroupPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12206,13 +12308,13 @@ func (a *FabricApiService) GetFabricEthNetworkGroupPolicyListExecute(r ApiGetFab
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12229,11 +12331,10 @@ func (a *FabricApiService) GetFabricEthNetworkGroupPolicyListExecute(r ApiGetFab
 }
 
 type ApiGetFabricEthNetworkPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricEthNetworkPolicyByMoidRequest) Execute() (FabricEthNetworkPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricEthNetworkPolicyByMoidExecute(r)
@@ -12249,8 +12350,8 @@ GetFabricEthNetworkPolicyByMoid Read a 'fabric.EthNetworkPolicy' resource.
 func (a *FabricApiService) GetFabricEthNetworkPolicyByMoid(ctx _context.Context, moid string) ApiGetFabricEthNetworkPolicyByMoidRequest {
 	return ApiGetFabricEthNetworkPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12357,13 +12458,13 @@ func (a *FabricApiService) GetFabricEthNetworkPolicyByMoidExecute(r ApiGetFabric
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12380,19 +12481,19 @@ func (a *FabricApiService) GetFabricEthNetworkPolicyByMoidExecute(r ApiGetFabric
 }
 
 type ApiGetFabricEthNetworkPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12400,51 +12501,61 @@ func (r ApiGetFabricEthNetworkPolicyListRequest) Filter(filter string) ApiGetFab
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricEthNetworkPolicyListRequest) Orderby(orderby string) ApiGetFabricEthNetworkPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricEthNetworkPolicyListRequest) Top(top int32) ApiGetFabricEthNetworkPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricEthNetworkPolicyListRequest) Skip(skip int32) ApiGetFabricEthNetworkPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricEthNetworkPolicyListRequest) Select_(select_ string) ApiGetFabricEthNetworkPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricEthNetworkPolicyListRequest) Expand(expand string) ApiGetFabricEthNetworkPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricEthNetworkPolicyListRequest) Apply(apply string) ApiGetFabricEthNetworkPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricEthNetworkPolicyListRequest) Count(count bool) ApiGetFabricEthNetworkPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricEthNetworkPolicyListRequest) Inlinecount(inlinecount string) ApiGetFabricEthNetworkPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricEthNetworkPolicyListRequest) At(at string) ApiGetFabricEthNetworkPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricEthNetworkPolicyListRequest) Tags(tags string) ApiGetFabricEthNetworkPolicyListRequest {
 	r.tags = &tags
@@ -12464,7 +12575,7 @@ GetFabricEthNetworkPolicyList Read a 'fabric.EthNetworkPolicy' resource.
 func (a *FabricApiService) GetFabricEthNetworkPolicyList(ctx _context.Context) ApiGetFabricEthNetworkPolicyListRequest {
 	return ApiGetFabricEthNetworkPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12603,13 +12714,13 @@ func (a *FabricApiService) GetFabricEthNetworkPolicyListExecute(r ApiGetFabricEt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12626,11 +12737,10 @@ func (a *FabricApiService) GetFabricEthNetworkPolicyListExecute(r ApiGetFabricEt
 }
 
 type ApiGetFabricFcNetworkPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricFcNetworkPolicyByMoidRequest) Execute() (FabricFcNetworkPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricFcNetworkPolicyByMoidExecute(r)
@@ -12646,8 +12756,8 @@ GetFabricFcNetworkPolicyByMoid Read a 'fabric.FcNetworkPolicy' resource.
 func (a *FabricApiService) GetFabricFcNetworkPolicyByMoid(ctx _context.Context, moid string) ApiGetFabricFcNetworkPolicyByMoidRequest {
 	return ApiGetFabricFcNetworkPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12754,13 +12864,13 @@ func (a *FabricApiService) GetFabricFcNetworkPolicyByMoidExecute(r ApiGetFabricF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12777,19 +12887,19 @@ func (a *FabricApiService) GetFabricFcNetworkPolicyByMoidExecute(r ApiGetFabricF
 }
 
 type ApiGetFabricFcNetworkPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12797,51 +12907,61 @@ func (r ApiGetFabricFcNetworkPolicyListRequest) Filter(filter string) ApiGetFabr
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricFcNetworkPolicyListRequest) Orderby(orderby string) ApiGetFabricFcNetworkPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricFcNetworkPolicyListRequest) Top(top int32) ApiGetFabricFcNetworkPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricFcNetworkPolicyListRequest) Skip(skip int32) ApiGetFabricFcNetworkPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricFcNetworkPolicyListRequest) Select_(select_ string) ApiGetFabricFcNetworkPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricFcNetworkPolicyListRequest) Expand(expand string) ApiGetFabricFcNetworkPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricFcNetworkPolicyListRequest) Apply(apply string) ApiGetFabricFcNetworkPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricFcNetworkPolicyListRequest) Count(count bool) ApiGetFabricFcNetworkPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricFcNetworkPolicyListRequest) Inlinecount(inlinecount string) ApiGetFabricFcNetworkPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricFcNetworkPolicyListRequest) At(at string) ApiGetFabricFcNetworkPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricFcNetworkPolicyListRequest) Tags(tags string) ApiGetFabricFcNetworkPolicyListRequest {
 	r.tags = &tags
@@ -12861,7 +12981,7 @@ GetFabricFcNetworkPolicyList Read a 'fabric.FcNetworkPolicy' resource.
 func (a *FabricApiService) GetFabricFcNetworkPolicyList(ctx _context.Context) ApiGetFabricFcNetworkPolicyListRequest {
 	return ApiGetFabricFcNetworkPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13000,13 +13120,13 @@ func (a *FabricApiService) GetFabricFcNetworkPolicyListExecute(r ApiGetFabricFcN
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13023,11 +13143,10 @@ func (a *FabricApiService) GetFabricFcNetworkPolicyListExecute(r ApiGetFabricFcN
 }
 
 type ApiGetFabricFcStorageRoleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricFcStorageRoleByMoidRequest) Execute() (FabricFcStorageRole, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricFcStorageRoleByMoidExecute(r)
@@ -13043,8 +13162,8 @@ GetFabricFcStorageRoleByMoid Read a 'fabric.FcStorageRole' resource.
 func (a *FabricApiService) GetFabricFcStorageRoleByMoid(ctx _context.Context, moid string) ApiGetFabricFcStorageRoleByMoidRequest {
 	return ApiGetFabricFcStorageRoleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13151,13 +13270,13 @@ func (a *FabricApiService) GetFabricFcStorageRoleByMoidExecute(r ApiGetFabricFcS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13174,19 +13293,19 @@ func (a *FabricApiService) GetFabricFcStorageRoleByMoidExecute(r ApiGetFabricFcS
 }
 
 type ApiGetFabricFcStorageRoleListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13194,51 +13313,61 @@ func (r ApiGetFabricFcStorageRoleListRequest) Filter(filter string) ApiGetFabric
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricFcStorageRoleListRequest) Orderby(orderby string) ApiGetFabricFcStorageRoleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricFcStorageRoleListRequest) Top(top int32) ApiGetFabricFcStorageRoleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricFcStorageRoleListRequest) Skip(skip int32) ApiGetFabricFcStorageRoleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricFcStorageRoleListRequest) Select_(select_ string) ApiGetFabricFcStorageRoleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricFcStorageRoleListRequest) Expand(expand string) ApiGetFabricFcStorageRoleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricFcStorageRoleListRequest) Apply(apply string) ApiGetFabricFcStorageRoleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricFcStorageRoleListRequest) Count(count bool) ApiGetFabricFcStorageRoleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricFcStorageRoleListRequest) Inlinecount(inlinecount string) ApiGetFabricFcStorageRoleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricFcStorageRoleListRequest) At(at string) ApiGetFabricFcStorageRoleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricFcStorageRoleListRequest) Tags(tags string) ApiGetFabricFcStorageRoleListRequest {
 	r.tags = &tags
@@ -13258,7 +13387,7 @@ GetFabricFcStorageRoleList Read a 'fabric.FcStorageRole' resource.
 func (a *FabricApiService) GetFabricFcStorageRoleList(ctx _context.Context) ApiGetFabricFcStorageRoleListRequest {
 	return ApiGetFabricFcStorageRoleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13397,13 +13526,13 @@ func (a *FabricApiService) GetFabricFcStorageRoleListExecute(r ApiGetFabricFcSto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13420,11 +13549,10 @@ func (a *FabricApiService) GetFabricFcStorageRoleListExecute(r ApiGetFabricFcSto
 }
 
 type ApiGetFabricFcUplinkPcRoleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricFcUplinkPcRoleByMoidRequest) Execute() (FabricFcUplinkPcRole, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricFcUplinkPcRoleByMoidExecute(r)
@@ -13440,8 +13568,8 @@ GetFabricFcUplinkPcRoleByMoid Read a 'fabric.FcUplinkPcRole' resource.
 func (a *FabricApiService) GetFabricFcUplinkPcRoleByMoid(ctx _context.Context, moid string) ApiGetFabricFcUplinkPcRoleByMoidRequest {
 	return ApiGetFabricFcUplinkPcRoleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13548,13 +13676,13 @@ func (a *FabricApiService) GetFabricFcUplinkPcRoleByMoidExecute(r ApiGetFabricFc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13571,19 +13699,19 @@ func (a *FabricApiService) GetFabricFcUplinkPcRoleByMoidExecute(r ApiGetFabricFc
 }
 
 type ApiGetFabricFcUplinkPcRoleListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13591,51 +13719,61 @@ func (r ApiGetFabricFcUplinkPcRoleListRequest) Filter(filter string) ApiGetFabri
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricFcUplinkPcRoleListRequest) Orderby(orderby string) ApiGetFabricFcUplinkPcRoleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricFcUplinkPcRoleListRequest) Top(top int32) ApiGetFabricFcUplinkPcRoleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricFcUplinkPcRoleListRequest) Skip(skip int32) ApiGetFabricFcUplinkPcRoleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricFcUplinkPcRoleListRequest) Select_(select_ string) ApiGetFabricFcUplinkPcRoleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricFcUplinkPcRoleListRequest) Expand(expand string) ApiGetFabricFcUplinkPcRoleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricFcUplinkPcRoleListRequest) Apply(apply string) ApiGetFabricFcUplinkPcRoleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricFcUplinkPcRoleListRequest) Count(count bool) ApiGetFabricFcUplinkPcRoleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricFcUplinkPcRoleListRequest) Inlinecount(inlinecount string) ApiGetFabricFcUplinkPcRoleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricFcUplinkPcRoleListRequest) At(at string) ApiGetFabricFcUplinkPcRoleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricFcUplinkPcRoleListRequest) Tags(tags string) ApiGetFabricFcUplinkPcRoleListRequest {
 	r.tags = &tags
@@ -13655,7 +13793,7 @@ GetFabricFcUplinkPcRoleList Read a 'fabric.FcUplinkPcRole' resource.
 func (a *FabricApiService) GetFabricFcUplinkPcRoleList(ctx _context.Context) ApiGetFabricFcUplinkPcRoleListRequest {
 	return ApiGetFabricFcUplinkPcRoleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13794,13 +13932,13 @@ func (a *FabricApiService) GetFabricFcUplinkPcRoleListExecute(r ApiGetFabricFcUp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13817,11 +13955,10 @@ func (a *FabricApiService) GetFabricFcUplinkPcRoleListExecute(r ApiGetFabricFcUp
 }
 
 type ApiGetFabricFcUplinkRoleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricFcUplinkRoleByMoidRequest) Execute() (FabricFcUplinkRole, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricFcUplinkRoleByMoidExecute(r)
@@ -13837,8 +13974,8 @@ GetFabricFcUplinkRoleByMoid Read a 'fabric.FcUplinkRole' resource.
 func (a *FabricApiService) GetFabricFcUplinkRoleByMoid(ctx _context.Context, moid string) ApiGetFabricFcUplinkRoleByMoidRequest {
 	return ApiGetFabricFcUplinkRoleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13945,13 +14082,13 @@ func (a *FabricApiService) GetFabricFcUplinkRoleByMoidExecute(r ApiGetFabricFcUp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13968,19 +14105,19 @@ func (a *FabricApiService) GetFabricFcUplinkRoleByMoidExecute(r ApiGetFabricFcUp
 }
 
 type ApiGetFabricFcUplinkRoleListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13988,51 +14125,61 @@ func (r ApiGetFabricFcUplinkRoleListRequest) Filter(filter string) ApiGetFabricF
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricFcUplinkRoleListRequest) Orderby(orderby string) ApiGetFabricFcUplinkRoleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricFcUplinkRoleListRequest) Top(top int32) ApiGetFabricFcUplinkRoleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricFcUplinkRoleListRequest) Skip(skip int32) ApiGetFabricFcUplinkRoleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricFcUplinkRoleListRequest) Select_(select_ string) ApiGetFabricFcUplinkRoleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricFcUplinkRoleListRequest) Expand(expand string) ApiGetFabricFcUplinkRoleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricFcUplinkRoleListRequest) Apply(apply string) ApiGetFabricFcUplinkRoleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricFcUplinkRoleListRequest) Count(count bool) ApiGetFabricFcUplinkRoleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricFcUplinkRoleListRequest) Inlinecount(inlinecount string) ApiGetFabricFcUplinkRoleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricFcUplinkRoleListRequest) At(at string) ApiGetFabricFcUplinkRoleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricFcUplinkRoleListRequest) Tags(tags string) ApiGetFabricFcUplinkRoleListRequest {
 	r.tags = &tags
@@ -14052,7 +14199,7 @@ GetFabricFcUplinkRoleList Read a 'fabric.FcUplinkRole' resource.
 func (a *FabricApiService) GetFabricFcUplinkRoleList(ctx _context.Context) ApiGetFabricFcUplinkRoleListRequest {
 	return ApiGetFabricFcUplinkRoleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14191,13 +14338,13 @@ func (a *FabricApiService) GetFabricFcUplinkRoleListExecute(r ApiGetFabricFcUpli
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14214,11 +14361,10 @@ func (a *FabricApiService) GetFabricFcUplinkRoleListExecute(r ApiGetFabricFcUpli
 }
 
 type ApiGetFabricFcoeUplinkPcRoleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricFcoeUplinkPcRoleByMoidRequest) Execute() (FabricFcoeUplinkPcRole, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricFcoeUplinkPcRoleByMoidExecute(r)
@@ -14234,8 +14380,8 @@ GetFabricFcoeUplinkPcRoleByMoid Read a 'fabric.FcoeUplinkPcRole' resource.
 func (a *FabricApiService) GetFabricFcoeUplinkPcRoleByMoid(ctx _context.Context, moid string) ApiGetFabricFcoeUplinkPcRoleByMoidRequest {
 	return ApiGetFabricFcoeUplinkPcRoleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14342,13 +14488,13 @@ func (a *FabricApiService) GetFabricFcoeUplinkPcRoleByMoidExecute(r ApiGetFabric
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14365,19 +14511,19 @@ func (a *FabricApiService) GetFabricFcoeUplinkPcRoleByMoidExecute(r ApiGetFabric
 }
 
 type ApiGetFabricFcoeUplinkPcRoleListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -14385,51 +14531,61 @@ func (r ApiGetFabricFcoeUplinkPcRoleListRequest) Filter(filter string) ApiGetFab
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricFcoeUplinkPcRoleListRequest) Orderby(orderby string) ApiGetFabricFcoeUplinkPcRoleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricFcoeUplinkPcRoleListRequest) Top(top int32) ApiGetFabricFcoeUplinkPcRoleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricFcoeUplinkPcRoleListRequest) Skip(skip int32) ApiGetFabricFcoeUplinkPcRoleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricFcoeUplinkPcRoleListRequest) Select_(select_ string) ApiGetFabricFcoeUplinkPcRoleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricFcoeUplinkPcRoleListRequest) Expand(expand string) ApiGetFabricFcoeUplinkPcRoleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricFcoeUplinkPcRoleListRequest) Apply(apply string) ApiGetFabricFcoeUplinkPcRoleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricFcoeUplinkPcRoleListRequest) Count(count bool) ApiGetFabricFcoeUplinkPcRoleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricFcoeUplinkPcRoleListRequest) Inlinecount(inlinecount string) ApiGetFabricFcoeUplinkPcRoleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricFcoeUplinkPcRoleListRequest) At(at string) ApiGetFabricFcoeUplinkPcRoleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricFcoeUplinkPcRoleListRequest) Tags(tags string) ApiGetFabricFcoeUplinkPcRoleListRequest {
 	r.tags = &tags
@@ -14449,7 +14605,7 @@ GetFabricFcoeUplinkPcRoleList Read a 'fabric.FcoeUplinkPcRole' resource.
 func (a *FabricApiService) GetFabricFcoeUplinkPcRoleList(ctx _context.Context) ApiGetFabricFcoeUplinkPcRoleListRequest {
 	return ApiGetFabricFcoeUplinkPcRoleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14588,13 +14744,13 @@ func (a *FabricApiService) GetFabricFcoeUplinkPcRoleListExecute(r ApiGetFabricFc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14611,11 +14767,10 @@ func (a *FabricApiService) GetFabricFcoeUplinkPcRoleListExecute(r ApiGetFabricFc
 }
 
 type ApiGetFabricFcoeUplinkRoleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricFcoeUplinkRoleByMoidRequest) Execute() (FabricFcoeUplinkRole, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricFcoeUplinkRoleByMoidExecute(r)
@@ -14631,8 +14786,8 @@ GetFabricFcoeUplinkRoleByMoid Read a 'fabric.FcoeUplinkRole' resource.
 func (a *FabricApiService) GetFabricFcoeUplinkRoleByMoid(ctx _context.Context, moid string) ApiGetFabricFcoeUplinkRoleByMoidRequest {
 	return ApiGetFabricFcoeUplinkRoleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14739,13 +14894,13 @@ func (a *FabricApiService) GetFabricFcoeUplinkRoleByMoidExecute(r ApiGetFabricFc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14762,19 +14917,19 @@ func (a *FabricApiService) GetFabricFcoeUplinkRoleByMoidExecute(r ApiGetFabricFc
 }
 
 type ApiGetFabricFcoeUplinkRoleListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -14782,51 +14937,61 @@ func (r ApiGetFabricFcoeUplinkRoleListRequest) Filter(filter string) ApiGetFabri
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricFcoeUplinkRoleListRequest) Orderby(orderby string) ApiGetFabricFcoeUplinkRoleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricFcoeUplinkRoleListRequest) Top(top int32) ApiGetFabricFcoeUplinkRoleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricFcoeUplinkRoleListRequest) Skip(skip int32) ApiGetFabricFcoeUplinkRoleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricFcoeUplinkRoleListRequest) Select_(select_ string) ApiGetFabricFcoeUplinkRoleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricFcoeUplinkRoleListRequest) Expand(expand string) ApiGetFabricFcoeUplinkRoleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricFcoeUplinkRoleListRequest) Apply(apply string) ApiGetFabricFcoeUplinkRoleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricFcoeUplinkRoleListRequest) Count(count bool) ApiGetFabricFcoeUplinkRoleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricFcoeUplinkRoleListRequest) Inlinecount(inlinecount string) ApiGetFabricFcoeUplinkRoleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricFcoeUplinkRoleListRequest) At(at string) ApiGetFabricFcoeUplinkRoleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricFcoeUplinkRoleListRequest) Tags(tags string) ApiGetFabricFcoeUplinkRoleListRequest {
 	r.tags = &tags
@@ -14846,7 +15011,7 @@ GetFabricFcoeUplinkRoleList Read a 'fabric.FcoeUplinkRole' resource.
 func (a *FabricApiService) GetFabricFcoeUplinkRoleList(ctx _context.Context) ApiGetFabricFcoeUplinkRoleListRequest {
 	return ApiGetFabricFcoeUplinkRoleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14985,13 +15150,13 @@ func (a *FabricApiService) GetFabricFcoeUplinkRoleListExecute(r ApiGetFabricFcoe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15008,11 +15173,10 @@ func (a *FabricApiService) GetFabricFcoeUplinkRoleListExecute(r ApiGetFabricFcoe
 }
 
 type ApiGetFabricFlowControlPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricFlowControlPolicyByMoidRequest) Execute() (FabricFlowControlPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricFlowControlPolicyByMoidExecute(r)
@@ -15028,8 +15192,8 @@ GetFabricFlowControlPolicyByMoid Read a 'fabric.FlowControlPolicy' resource.
 func (a *FabricApiService) GetFabricFlowControlPolicyByMoid(ctx _context.Context, moid string) ApiGetFabricFlowControlPolicyByMoidRequest {
 	return ApiGetFabricFlowControlPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15136,13 +15300,13 @@ func (a *FabricApiService) GetFabricFlowControlPolicyByMoidExecute(r ApiGetFabri
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15159,19 +15323,19 @@ func (a *FabricApiService) GetFabricFlowControlPolicyByMoidExecute(r ApiGetFabri
 }
 
 type ApiGetFabricFlowControlPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15179,51 +15343,61 @@ func (r ApiGetFabricFlowControlPolicyListRequest) Filter(filter string) ApiGetFa
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricFlowControlPolicyListRequest) Orderby(orderby string) ApiGetFabricFlowControlPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricFlowControlPolicyListRequest) Top(top int32) ApiGetFabricFlowControlPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricFlowControlPolicyListRequest) Skip(skip int32) ApiGetFabricFlowControlPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricFlowControlPolicyListRequest) Select_(select_ string) ApiGetFabricFlowControlPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricFlowControlPolicyListRequest) Expand(expand string) ApiGetFabricFlowControlPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricFlowControlPolicyListRequest) Apply(apply string) ApiGetFabricFlowControlPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricFlowControlPolicyListRequest) Count(count bool) ApiGetFabricFlowControlPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricFlowControlPolicyListRequest) Inlinecount(inlinecount string) ApiGetFabricFlowControlPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricFlowControlPolicyListRequest) At(at string) ApiGetFabricFlowControlPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricFlowControlPolicyListRequest) Tags(tags string) ApiGetFabricFlowControlPolicyListRequest {
 	r.tags = &tags
@@ -15243,7 +15417,7 @@ GetFabricFlowControlPolicyList Read a 'fabric.FlowControlPolicy' resource.
 func (a *FabricApiService) GetFabricFlowControlPolicyList(ctx _context.Context) ApiGetFabricFlowControlPolicyListRequest {
 	return ApiGetFabricFlowControlPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15382,13 +15556,13 @@ func (a *FabricApiService) GetFabricFlowControlPolicyListExecute(r ApiGetFabricF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15405,11 +15579,10 @@ func (a *FabricApiService) GetFabricFlowControlPolicyListExecute(r ApiGetFabricF
 }
 
 type ApiGetFabricLinkAggregationPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricLinkAggregationPolicyByMoidRequest) Execute() (FabricLinkAggregationPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricLinkAggregationPolicyByMoidExecute(r)
@@ -15425,8 +15598,8 @@ GetFabricLinkAggregationPolicyByMoid Read a 'fabric.LinkAggregationPolicy' resou
 func (a *FabricApiService) GetFabricLinkAggregationPolicyByMoid(ctx _context.Context, moid string) ApiGetFabricLinkAggregationPolicyByMoidRequest {
 	return ApiGetFabricLinkAggregationPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15533,13 +15706,13 @@ func (a *FabricApiService) GetFabricLinkAggregationPolicyByMoidExecute(r ApiGetF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15556,19 +15729,19 @@ func (a *FabricApiService) GetFabricLinkAggregationPolicyByMoidExecute(r ApiGetF
 }
 
 type ApiGetFabricLinkAggregationPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15576,51 +15749,61 @@ func (r ApiGetFabricLinkAggregationPolicyListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricLinkAggregationPolicyListRequest) Orderby(orderby string) ApiGetFabricLinkAggregationPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricLinkAggregationPolicyListRequest) Top(top int32) ApiGetFabricLinkAggregationPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricLinkAggregationPolicyListRequest) Skip(skip int32) ApiGetFabricLinkAggregationPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricLinkAggregationPolicyListRequest) Select_(select_ string) ApiGetFabricLinkAggregationPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricLinkAggregationPolicyListRequest) Expand(expand string) ApiGetFabricLinkAggregationPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricLinkAggregationPolicyListRequest) Apply(apply string) ApiGetFabricLinkAggregationPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricLinkAggregationPolicyListRequest) Count(count bool) ApiGetFabricLinkAggregationPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricLinkAggregationPolicyListRequest) Inlinecount(inlinecount string) ApiGetFabricLinkAggregationPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricLinkAggregationPolicyListRequest) At(at string) ApiGetFabricLinkAggregationPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricLinkAggregationPolicyListRequest) Tags(tags string) ApiGetFabricLinkAggregationPolicyListRequest {
 	r.tags = &tags
@@ -15640,7 +15823,7 @@ GetFabricLinkAggregationPolicyList Read a 'fabric.LinkAggregationPolicy' resourc
 func (a *FabricApiService) GetFabricLinkAggregationPolicyList(ctx _context.Context) ApiGetFabricLinkAggregationPolicyListRequest {
 	return ApiGetFabricLinkAggregationPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15779,13 +15962,13 @@ func (a *FabricApiService) GetFabricLinkAggregationPolicyListExecute(r ApiGetFab
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15802,11 +15985,10 @@ func (a *FabricApiService) GetFabricLinkAggregationPolicyListExecute(r ApiGetFab
 }
 
 type ApiGetFabricLinkControlPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricLinkControlPolicyByMoidRequest) Execute() (FabricLinkControlPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricLinkControlPolicyByMoidExecute(r)
@@ -15822,8 +16004,8 @@ GetFabricLinkControlPolicyByMoid Read a 'fabric.LinkControlPolicy' resource.
 func (a *FabricApiService) GetFabricLinkControlPolicyByMoid(ctx _context.Context, moid string) ApiGetFabricLinkControlPolicyByMoidRequest {
 	return ApiGetFabricLinkControlPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15930,13 +16112,13 @@ func (a *FabricApiService) GetFabricLinkControlPolicyByMoidExecute(r ApiGetFabri
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15953,19 +16135,19 @@ func (a *FabricApiService) GetFabricLinkControlPolicyByMoidExecute(r ApiGetFabri
 }
 
 type ApiGetFabricLinkControlPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15973,51 +16155,61 @@ func (r ApiGetFabricLinkControlPolicyListRequest) Filter(filter string) ApiGetFa
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricLinkControlPolicyListRequest) Orderby(orderby string) ApiGetFabricLinkControlPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricLinkControlPolicyListRequest) Top(top int32) ApiGetFabricLinkControlPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricLinkControlPolicyListRequest) Skip(skip int32) ApiGetFabricLinkControlPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricLinkControlPolicyListRequest) Select_(select_ string) ApiGetFabricLinkControlPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricLinkControlPolicyListRequest) Expand(expand string) ApiGetFabricLinkControlPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricLinkControlPolicyListRequest) Apply(apply string) ApiGetFabricLinkControlPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricLinkControlPolicyListRequest) Count(count bool) ApiGetFabricLinkControlPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricLinkControlPolicyListRequest) Inlinecount(inlinecount string) ApiGetFabricLinkControlPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricLinkControlPolicyListRequest) At(at string) ApiGetFabricLinkControlPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricLinkControlPolicyListRequest) Tags(tags string) ApiGetFabricLinkControlPolicyListRequest {
 	r.tags = &tags
@@ -16037,7 +16229,7 @@ GetFabricLinkControlPolicyList Read a 'fabric.LinkControlPolicy' resource.
 func (a *FabricApiService) GetFabricLinkControlPolicyList(ctx _context.Context) ApiGetFabricLinkControlPolicyListRequest {
 	return ApiGetFabricLinkControlPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -16176,13 +16368,13 @@ func (a *FabricApiService) GetFabricLinkControlPolicyListExecute(r ApiGetFabricL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16199,11 +16391,10 @@ func (a *FabricApiService) GetFabricLinkControlPolicyListExecute(r ApiGetFabricL
 }
 
 type ApiGetFabricMulticastPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricMulticastPolicyByMoidRequest) Execute() (FabricMulticastPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricMulticastPolicyByMoidExecute(r)
@@ -16219,8 +16410,8 @@ GetFabricMulticastPolicyByMoid Read a 'fabric.MulticastPolicy' resource.
 func (a *FabricApiService) GetFabricMulticastPolicyByMoid(ctx _context.Context, moid string) ApiGetFabricMulticastPolicyByMoidRequest {
 	return ApiGetFabricMulticastPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16327,13 +16518,13 @@ func (a *FabricApiService) GetFabricMulticastPolicyByMoidExecute(r ApiGetFabricM
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16350,19 +16541,19 @@ func (a *FabricApiService) GetFabricMulticastPolicyByMoidExecute(r ApiGetFabricM
 }
 
 type ApiGetFabricMulticastPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -16370,51 +16561,61 @@ func (r ApiGetFabricMulticastPolicyListRequest) Filter(filter string) ApiGetFabr
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricMulticastPolicyListRequest) Orderby(orderby string) ApiGetFabricMulticastPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricMulticastPolicyListRequest) Top(top int32) ApiGetFabricMulticastPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricMulticastPolicyListRequest) Skip(skip int32) ApiGetFabricMulticastPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricMulticastPolicyListRequest) Select_(select_ string) ApiGetFabricMulticastPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricMulticastPolicyListRequest) Expand(expand string) ApiGetFabricMulticastPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricMulticastPolicyListRequest) Apply(apply string) ApiGetFabricMulticastPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricMulticastPolicyListRequest) Count(count bool) ApiGetFabricMulticastPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricMulticastPolicyListRequest) Inlinecount(inlinecount string) ApiGetFabricMulticastPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricMulticastPolicyListRequest) At(at string) ApiGetFabricMulticastPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricMulticastPolicyListRequest) Tags(tags string) ApiGetFabricMulticastPolicyListRequest {
 	r.tags = &tags
@@ -16434,7 +16635,7 @@ GetFabricMulticastPolicyList Read a 'fabric.MulticastPolicy' resource.
 func (a *FabricApiService) GetFabricMulticastPolicyList(ctx _context.Context) ApiGetFabricMulticastPolicyListRequest {
 	return ApiGetFabricMulticastPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -16573,13 +16774,13 @@ func (a *FabricApiService) GetFabricMulticastPolicyListExecute(r ApiGetFabricMul
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16596,11 +16797,10 @@ func (a *FabricApiService) GetFabricMulticastPolicyListExecute(r ApiGetFabricMul
 }
 
 type ApiGetFabricPcMemberByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricPcMemberByMoidRequest) Execute() (FabricPcMember, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricPcMemberByMoidExecute(r)
@@ -16616,8 +16816,8 @@ GetFabricPcMemberByMoid Read a 'fabric.PcMember' resource.
 func (a *FabricApiService) GetFabricPcMemberByMoid(ctx _context.Context, moid string) ApiGetFabricPcMemberByMoidRequest {
 	return ApiGetFabricPcMemberByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16724,13 +16924,13 @@ func (a *FabricApiService) GetFabricPcMemberByMoidExecute(r ApiGetFabricPcMember
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16747,19 +16947,19 @@ func (a *FabricApiService) GetFabricPcMemberByMoidExecute(r ApiGetFabricPcMember
 }
 
 type ApiGetFabricPcMemberListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -16767,51 +16967,61 @@ func (r ApiGetFabricPcMemberListRequest) Filter(filter string) ApiGetFabricPcMem
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricPcMemberListRequest) Orderby(orderby string) ApiGetFabricPcMemberListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricPcMemberListRequest) Top(top int32) ApiGetFabricPcMemberListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricPcMemberListRequest) Skip(skip int32) ApiGetFabricPcMemberListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricPcMemberListRequest) Select_(select_ string) ApiGetFabricPcMemberListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricPcMemberListRequest) Expand(expand string) ApiGetFabricPcMemberListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricPcMemberListRequest) Apply(apply string) ApiGetFabricPcMemberListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricPcMemberListRequest) Count(count bool) ApiGetFabricPcMemberListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricPcMemberListRequest) Inlinecount(inlinecount string) ApiGetFabricPcMemberListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricPcMemberListRequest) At(at string) ApiGetFabricPcMemberListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricPcMemberListRequest) Tags(tags string) ApiGetFabricPcMemberListRequest {
 	r.tags = &tags
@@ -16831,7 +17041,7 @@ GetFabricPcMemberList Read a 'fabric.PcMember' resource.
 func (a *FabricApiService) GetFabricPcMemberList(ctx _context.Context) ApiGetFabricPcMemberListRequest {
 	return ApiGetFabricPcMemberListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -16970,13 +17180,13 @@ func (a *FabricApiService) GetFabricPcMemberListExecute(r ApiGetFabricPcMemberLi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16993,11 +17203,10 @@ func (a *FabricApiService) GetFabricPcMemberListExecute(r ApiGetFabricPcMemberLi
 }
 
 type ApiGetFabricPcOperationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricPcOperationByMoidRequest) Execute() (FabricPcOperation, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricPcOperationByMoidExecute(r)
@@ -17013,8 +17222,8 @@ GetFabricPcOperationByMoid Read a 'fabric.PcOperation' resource.
 func (a *FabricApiService) GetFabricPcOperationByMoid(ctx _context.Context, moid string) ApiGetFabricPcOperationByMoidRequest {
 	return ApiGetFabricPcOperationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17121,13 +17330,13 @@ func (a *FabricApiService) GetFabricPcOperationByMoidExecute(r ApiGetFabricPcOpe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17144,19 +17353,19 @@ func (a *FabricApiService) GetFabricPcOperationByMoidExecute(r ApiGetFabricPcOpe
 }
 
 type ApiGetFabricPcOperationListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -17164,51 +17373,61 @@ func (r ApiGetFabricPcOperationListRequest) Filter(filter string) ApiGetFabricPc
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricPcOperationListRequest) Orderby(orderby string) ApiGetFabricPcOperationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricPcOperationListRequest) Top(top int32) ApiGetFabricPcOperationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricPcOperationListRequest) Skip(skip int32) ApiGetFabricPcOperationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricPcOperationListRequest) Select_(select_ string) ApiGetFabricPcOperationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricPcOperationListRequest) Expand(expand string) ApiGetFabricPcOperationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricPcOperationListRequest) Apply(apply string) ApiGetFabricPcOperationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricPcOperationListRequest) Count(count bool) ApiGetFabricPcOperationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricPcOperationListRequest) Inlinecount(inlinecount string) ApiGetFabricPcOperationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricPcOperationListRequest) At(at string) ApiGetFabricPcOperationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricPcOperationListRequest) Tags(tags string) ApiGetFabricPcOperationListRequest {
 	r.tags = &tags
@@ -17228,7 +17447,7 @@ GetFabricPcOperationList Read a 'fabric.PcOperation' resource.
 func (a *FabricApiService) GetFabricPcOperationList(ctx _context.Context) ApiGetFabricPcOperationListRequest {
 	return ApiGetFabricPcOperationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -17367,13 +17586,13 @@ func (a *FabricApiService) GetFabricPcOperationListExecute(r ApiGetFabricPcOpera
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17390,11 +17609,10 @@ func (a *FabricApiService) GetFabricPcOperationListExecute(r ApiGetFabricPcOpera
 }
 
 type ApiGetFabricPortModeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricPortModeByMoidRequest) Execute() (FabricPortMode, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricPortModeByMoidExecute(r)
@@ -17410,8 +17628,8 @@ GetFabricPortModeByMoid Read a 'fabric.PortMode' resource.
 func (a *FabricApiService) GetFabricPortModeByMoid(ctx _context.Context, moid string) ApiGetFabricPortModeByMoidRequest {
 	return ApiGetFabricPortModeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17518,13 +17736,13 @@ func (a *FabricApiService) GetFabricPortModeByMoidExecute(r ApiGetFabricPortMode
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17541,19 +17759,19 @@ func (a *FabricApiService) GetFabricPortModeByMoidExecute(r ApiGetFabricPortMode
 }
 
 type ApiGetFabricPortModeListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -17561,51 +17779,61 @@ func (r ApiGetFabricPortModeListRequest) Filter(filter string) ApiGetFabricPortM
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricPortModeListRequest) Orderby(orderby string) ApiGetFabricPortModeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricPortModeListRequest) Top(top int32) ApiGetFabricPortModeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricPortModeListRequest) Skip(skip int32) ApiGetFabricPortModeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricPortModeListRequest) Select_(select_ string) ApiGetFabricPortModeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricPortModeListRequest) Expand(expand string) ApiGetFabricPortModeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricPortModeListRequest) Apply(apply string) ApiGetFabricPortModeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricPortModeListRequest) Count(count bool) ApiGetFabricPortModeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricPortModeListRequest) Inlinecount(inlinecount string) ApiGetFabricPortModeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricPortModeListRequest) At(at string) ApiGetFabricPortModeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricPortModeListRequest) Tags(tags string) ApiGetFabricPortModeListRequest {
 	r.tags = &tags
@@ -17625,7 +17853,7 @@ GetFabricPortModeList Read a 'fabric.PortMode' resource.
 func (a *FabricApiService) GetFabricPortModeList(ctx _context.Context) ApiGetFabricPortModeListRequest {
 	return ApiGetFabricPortModeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -17764,13 +17992,13 @@ func (a *FabricApiService) GetFabricPortModeListExecute(r ApiGetFabricPortModeLi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17787,11 +18015,10 @@ func (a *FabricApiService) GetFabricPortModeListExecute(r ApiGetFabricPortModeLi
 }
 
 type ApiGetFabricPortOperationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricPortOperationByMoidRequest) Execute() (FabricPortOperation, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricPortOperationByMoidExecute(r)
@@ -17807,8 +18034,8 @@ GetFabricPortOperationByMoid Read a 'fabric.PortOperation' resource.
 func (a *FabricApiService) GetFabricPortOperationByMoid(ctx _context.Context, moid string) ApiGetFabricPortOperationByMoidRequest {
 	return ApiGetFabricPortOperationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17915,13 +18142,13 @@ func (a *FabricApiService) GetFabricPortOperationByMoidExecute(r ApiGetFabricPor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17938,19 +18165,19 @@ func (a *FabricApiService) GetFabricPortOperationByMoidExecute(r ApiGetFabricPor
 }
 
 type ApiGetFabricPortOperationListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -17958,51 +18185,61 @@ func (r ApiGetFabricPortOperationListRequest) Filter(filter string) ApiGetFabric
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricPortOperationListRequest) Orderby(orderby string) ApiGetFabricPortOperationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricPortOperationListRequest) Top(top int32) ApiGetFabricPortOperationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricPortOperationListRequest) Skip(skip int32) ApiGetFabricPortOperationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricPortOperationListRequest) Select_(select_ string) ApiGetFabricPortOperationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricPortOperationListRequest) Expand(expand string) ApiGetFabricPortOperationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricPortOperationListRequest) Apply(apply string) ApiGetFabricPortOperationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricPortOperationListRequest) Count(count bool) ApiGetFabricPortOperationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricPortOperationListRequest) Inlinecount(inlinecount string) ApiGetFabricPortOperationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricPortOperationListRequest) At(at string) ApiGetFabricPortOperationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricPortOperationListRequest) Tags(tags string) ApiGetFabricPortOperationListRequest {
 	r.tags = &tags
@@ -18022,7 +18259,7 @@ GetFabricPortOperationList Read a 'fabric.PortOperation' resource.
 func (a *FabricApiService) GetFabricPortOperationList(ctx _context.Context) ApiGetFabricPortOperationListRequest {
 	return ApiGetFabricPortOperationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -18161,13 +18398,13 @@ func (a *FabricApiService) GetFabricPortOperationListExecute(r ApiGetFabricPortO
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18184,11 +18421,10 @@ func (a *FabricApiService) GetFabricPortOperationListExecute(r ApiGetFabricPortO
 }
 
 type ApiGetFabricPortPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricPortPolicyByMoidRequest) Execute() (FabricPortPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricPortPolicyByMoidExecute(r)
@@ -18204,8 +18440,8 @@ GetFabricPortPolicyByMoid Read a 'fabric.PortPolicy' resource.
 func (a *FabricApiService) GetFabricPortPolicyByMoid(ctx _context.Context, moid string) ApiGetFabricPortPolicyByMoidRequest {
 	return ApiGetFabricPortPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18312,13 +18548,13 @@ func (a *FabricApiService) GetFabricPortPolicyByMoidExecute(r ApiGetFabricPortPo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18335,19 +18571,19 @@ func (a *FabricApiService) GetFabricPortPolicyByMoidExecute(r ApiGetFabricPortPo
 }
 
 type ApiGetFabricPortPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -18355,51 +18591,61 @@ func (r ApiGetFabricPortPolicyListRequest) Filter(filter string) ApiGetFabricPor
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricPortPolicyListRequest) Orderby(orderby string) ApiGetFabricPortPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricPortPolicyListRequest) Top(top int32) ApiGetFabricPortPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricPortPolicyListRequest) Skip(skip int32) ApiGetFabricPortPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricPortPolicyListRequest) Select_(select_ string) ApiGetFabricPortPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricPortPolicyListRequest) Expand(expand string) ApiGetFabricPortPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricPortPolicyListRequest) Apply(apply string) ApiGetFabricPortPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricPortPolicyListRequest) Count(count bool) ApiGetFabricPortPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricPortPolicyListRequest) Inlinecount(inlinecount string) ApiGetFabricPortPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricPortPolicyListRequest) At(at string) ApiGetFabricPortPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricPortPolicyListRequest) Tags(tags string) ApiGetFabricPortPolicyListRequest {
 	r.tags = &tags
@@ -18419,7 +18665,7 @@ GetFabricPortPolicyList Read a 'fabric.PortPolicy' resource.
 func (a *FabricApiService) GetFabricPortPolicyList(ctx _context.Context) ApiGetFabricPortPolicyListRequest {
 	return ApiGetFabricPortPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -18558,13 +18804,13 @@ func (a *FabricApiService) GetFabricPortPolicyListExecute(r ApiGetFabricPortPoli
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18581,11 +18827,10 @@ func (a *FabricApiService) GetFabricPortPolicyListExecute(r ApiGetFabricPortPoli
 }
 
 type ApiGetFabricServerRoleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricServerRoleByMoidRequest) Execute() (FabricServerRole, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricServerRoleByMoidExecute(r)
@@ -18601,8 +18846,8 @@ GetFabricServerRoleByMoid Read a 'fabric.ServerRole' resource.
 func (a *FabricApiService) GetFabricServerRoleByMoid(ctx _context.Context, moid string) ApiGetFabricServerRoleByMoidRequest {
 	return ApiGetFabricServerRoleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18709,13 +18954,13 @@ func (a *FabricApiService) GetFabricServerRoleByMoidExecute(r ApiGetFabricServer
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18732,19 +18977,19 @@ func (a *FabricApiService) GetFabricServerRoleByMoidExecute(r ApiGetFabricServer
 }
 
 type ApiGetFabricServerRoleListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -18752,51 +18997,61 @@ func (r ApiGetFabricServerRoleListRequest) Filter(filter string) ApiGetFabricSer
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricServerRoleListRequest) Orderby(orderby string) ApiGetFabricServerRoleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricServerRoleListRequest) Top(top int32) ApiGetFabricServerRoleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricServerRoleListRequest) Skip(skip int32) ApiGetFabricServerRoleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricServerRoleListRequest) Select_(select_ string) ApiGetFabricServerRoleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricServerRoleListRequest) Expand(expand string) ApiGetFabricServerRoleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricServerRoleListRequest) Apply(apply string) ApiGetFabricServerRoleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricServerRoleListRequest) Count(count bool) ApiGetFabricServerRoleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricServerRoleListRequest) Inlinecount(inlinecount string) ApiGetFabricServerRoleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricServerRoleListRequest) At(at string) ApiGetFabricServerRoleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricServerRoleListRequest) Tags(tags string) ApiGetFabricServerRoleListRequest {
 	r.tags = &tags
@@ -18816,7 +19071,7 @@ GetFabricServerRoleList Read a 'fabric.ServerRole' resource.
 func (a *FabricApiService) GetFabricServerRoleList(ctx _context.Context) ApiGetFabricServerRoleListRequest {
 	return ApiGetFabricServerRoleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -18955,13 +19210,13 @@ func (a *FabricApiService) GetFabricServerRoleListExecute(r ApiGetFabricServerRo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18978,11 +19233,10 @@ func (a *FabricApiService) GetFabricServerRoleListExecute(r ApiGetFabricServerRo
 }
 
 type ApiGetFabricSwitchClusterProfileByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricSwitchClusterProfileByMoidRequest) Execute() (FabricSwitchClusterProfile, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricSwitchClusterProfileByMoidExecute(r)
@@ -18998,8 +19252,8 @@ GetFabricSwitchClusterProfileByMoid Read a 'fabric.SwitchClusterProfile' resourc
 func (a *FabricApiService) GetFabricSwitchClusterProfileByMoid(ctx _context.Context, moid string) ApiGetFabricSwitchClusterProfileByMoidRequest {
 	return ApiGetFabricSwitchClusterProfileByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19106,13 +19360,13 @@ func (a *FabricApiService) GetFabricSwitchClusterProfileByMoidExecute(r ApiGetFa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19129,19 +19383,19 @@ func (a *FabricApiService) GetFabricSwitchClusterProfileByMoidExecute(r ApiGetFa
 }
 
 type ApiGetFabricSwitchClusterProfileListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -19149,51 +19403,61 @@ func (r ApiGetFabricSwitchClusterProfileListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricSwitchClusterProfileListRequest) Orderby(orderby string) ApiGetFabricSwitchClusterProfileListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricSwitchClusterProfileListRequest) Top(top int32) ApiGetFabricSwitchClusterProfileListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricSwitchClusterProfileListRequest) Skip(skip int32) ApiGetFabricSwitchClusterProfileListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricSwitchClusterProfileListRequest) Select_(select_ string) ApiGetFabricSwitchClusterProfileListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricSwitchClusterProfileListRequest) Expand(expand string) ApiGetFabricSwitchClusterProfileListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricSwitchClusterProfileListRequest) Apply(apply string) ApiGetFabricSwitchClusterProfileListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricSwitchClusterProfileListRequest) Count(count bool) ApiGetFabricSwitchClusterProfileListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricSwitchClusterProfileListRequest) Inlinecount(inlinecount string) ApiGetFabricSwitchClusterProfileListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricSwitchClusterProfileListRequest) At(at string) ApiGetFabricSwitchClusterProfileListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricSwitchClusterProfileListRequest) Tags(tags string) ApiGetFabricSwitchClusterProfileListRequest {
 	r.tags = &tags
@@ -19213,7 +19477,7 @@ GetFabricSwitchClusterProfileList Read a 'fabric.SwitchClusterProfile' resource.
 func (a *FabricApiService) GetFabricSwitchClusterProfileList(ctx _context.Context) ApiGetFabricSwitchClusterProfileListRequest {
 	return ApiGetFabricSwitchClusterProfileListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -19352,13 +19616,13 @@ func (a *FabricApiService) GetFabricSwitchClusterProfileListExecute(r ApiGetFabr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19375,11 +19639,10 @@ func (a *FabricApiService) GetFabricSwitchClusterProfileListExecute(r ApiGetFabr
 }
 
 type ApiGetFabricSwitchControlPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricSwitchControlPolicyByMoidRequest) Execute() (FabricSwitchControlPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricSwitchControlPolicyByMoidExecute(r)
@@ -19395,8 +19658,8 @@ GetFabricSwitchControlPolicyByMoid Read a 'fabric.SwitchControlPolicy' resource.
 func (a *FabricApiService) GetFabricSwitchControlPolicyByMoid(ctx _context.Context, moid string) ApiGetFabricSwitchControlPolicyByMoidRequest {
 	return ApiGetFabricSwitchControlPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19503,13 +19766,13 @@ func (a *FabricApiService) GetFabricSwitchControlPolicyByMoidExecute(r ApiGetFab
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19526,19 +19789,19 @@ func (a *FabricApiService) GetFabricSwitchControlPolicyByMoidExecute(r ApiGetFab
 }
 
 type ApiGetFabricSwitchControlPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -19546,51 +19809,61 @@ func (r ApiGetFabricSwitchControlPolicyListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricSwitchControlPolicyListRequest) Orderby(orderby string) ApiGetFabricSwitchControlPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricSwitchControlPolicyListRequest) Top(top int32) ApiGetFabricSwitchControlPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricSwitchControlPolicyListRequest) Skip(skip int32) ApiGetFabricSwitchControlPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricSwitchControlPolicyListRequest) Select_(select_ string) ApiGetFabricSwitchControlPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricSwitchControlPolicyListRequest) Expand(expand string) ApiGetFabricSwitchControlPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricSwitchControlPolicyListRequest) Apply(apply string) ApiGetFabricSwitchControlPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricSwitchControlPolicyListRequest) Count(count bool) ApiGetFabricSwitchControlPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricSwitchControlPolicyListRequest) Inlinecount(inlinecount string) ApiGetFabricSwitchControlPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricSwitchControlPolicyListRequest) At(at string) ApiGetFabricSwitchControlPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricSwitchControlPolicyListRequest) Tags(tags string) ApiGetFabricSwitchControlPolicyListRequest {
 	r.tags = &tags
@@ -19610,7 +19883,7 @@ GetFabricSwitchControlPolicyList Read a 'fabric.SwitchControlPolicy' resource.
 func (a *FabricApiService) GetFabricSwitchControlPolicyList(ctx _context.Context) ApiGetFabricSwitchControlPolicyListRequest {
 	return ApiGetFabricSwitchControlPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -19749,13 +20022,13 @@ func (a *FabricApiService) GetFabricSwitchControlPolicyListExecute(r ApiGetFabri
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19772,11 +20045,10 @@ func (a *FabricApiService) GetFabricSwitchControlPolicyListExecute(r ApiGetFabri
 }
 
 type ApiGetFabricSwitchProfileByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricSwitchProfileByMoidRequest) Execute() (FabricSwitchProfile, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricSwitchProfileByMoidExecute(r)
@@ -19792,8 +20064,8 @@ GetFabricSwitchProfileByMoid Read a 'fabric.SwitchProfile' resource.
 func (a *FabricApiService) GetFabricSwitchProfileByMoid(ctx _context.Context, moid string) ApiGetFabricSwitchProfileByMoidRequest {
 	return ApiGetFabricSwitchProfileByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19900,13 +20172,13 @@ func (a *FabricApiService) GetFabricSwitchProfileByMoidExecute(r ApiGetFabricSwi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19923,19 +20195,19 @@ func (a *FabricApiService) GetFabricSwitchProfileByMoidExecute(r ApiGetFabricSwi
 }
 
 type ApiGetFabricSwitchProfileListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -19943,51 +20215,61 @@ func (r ApiGetFabricSwitchProfileListRequest) Filter(filter string) ApiGetFabric
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricSwitchProfileListRequest) Orderby(orderby string) ApiGetFabricSwitchProfileListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricSwitchProfileListRequest) Top(top int32) ApiGetFabricSwitchProfileListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricSwitchProfileListRequest) Skip(skip int32) ApiGetFabricSwitchProfileListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricSwitchProfileListRequest) Select_(select_ string) ApiGetFabricSwitchProfileListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricSwitchProfileListRequest) Expand(expand string) ApiGetFabricSwitchProfileListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricSwitchProfileListRequest) Apply(apply string) ApiGetFabricSwitchProfileListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricSwitchProfileListRequest) Count(count bool) ApiGetFabricSwitchProfileListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricSwitchProfileListRequest) Inlinecount(inlinecount string) ApiGetFabricSwitchProfileListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricSwitchProfileListRequest) At(at string) ApiGetFabricSwitchProfileListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricSwitchProfileListRequest) Tags(tags string) ApiGetFabricSwitchProfileListRequest {
 	r.tags = &tags
@@ -20007,7 +20289,7 @@ GetFabricSwitchProfileList Read a 'fabric.SwitchProfile' resource.
 func (a *FabricApiService) GetFabricSwitchProfileList(ctx _context.Context) ApiGetFabricSwitchProfileListRequest {
 	return ApiGetFabricSwitchProfileListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -20146,13 +20428,13 @@ func (a *FabricApiService) GetFabricSwitchProfileListExecute(r ApiGetFabricSwitc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20169,11 +20451,10 @@ func (a *FabricApiService) GetFabricSwitchProfileListExecute(r ApiGetFabricSwitc
 }
 
 type ApiGetFabricSystemQosPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricSystemQosPolicyByMoidRequest) Execute() (FabricSystemQosPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricSystemQosPolicyByMoidExecute(r)
@@ -20189,8 +20470,8 @@ GetFabricSystemQosPolicyByMoid Read a 'fabric.SystemQosPolicy' resource.
 func (a *FabricApiService) GetFabricSystemQosPolicyByMoid(ctx _context.Context, moid string) ApiGetFabricSystemQosPolicyByMoidRequest {
 	return ApiGetFabricSystemQosPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20297,13 +20578,13 @@ func (a *FabricApiService) GetFabricSystemQosPolicyByMoidExecute(r ApiGetFabricS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20320,19 +20601,19 @@ func (a *FabricApiService) GetFabricSystemQosPolicyByMoidExecute(r ApiGetFabricS
 }
 
 type ApiGetFabricSystemQosPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -20340,51 +20621,61 @@ func (r ApiGetFabricSystemQosPolicyListRequest) Filter(filter string) ApiGetFabr
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricSystemQosPolicyListRequest) Orderby(orderby string) ApiGetFabricSystemQosPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricSystemQosPolicyListRequest) Top(top int32) ApiGetFabricSystemQosPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricSystemQosPolicyListRequest) Skip(skip int32) ApiGetFabricSystemQosPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricSystemQosPolicyListRequest) Select_(select_ string) ApiGetFabricSystemQosPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricSystemQosPolicyListRequest) Expand(expand string) ApiGetFabricSystemQosPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricSystemQosPolicyListRequest) Apply(apply string) ApiGetFabricSystemQosPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricSystemQosPolicyListRequest) Count(count bool) ApiGetFabricSystemQosPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricSystemQosPolicyListRequest) Inlinecount(inlinecount string) ApiGetFabricSystemQosPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricSystemQosPolicyListRequest) At(at string) ApiGetFabricSystemQosPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricSystemQosPolicyListRequest) Tags(tags string) ApiGetFabricSystemQosPolicyListRequest {
 	r.tags = &tags
@@ -20404,7 +20695,7 @@ GetFabricSystemQosPolicyList Read a 'fabric.SystemQosPolicy' resource.
 func (a *FabricApiService) GetFabricSystemQosPolicyList(ctx _context.Context) ApiGetFabricSystemQosPolicyListRequest {
 	return ApiGetFabricSystemQosPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -20543,13 +20834,13 @@ func (a *FabricApiService) GetFabricSystemQosPolicyListExecute(r ApiGetFabricSys
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20566,11 +20857,10 @@ func (a *FabricApiService) GetFabricSystemQosPolicyListExecute(r ApiGetFabricSys
 }
 
 type ApiGetFabricUplinkPcRoleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricUplinkPcRoleByMoidRequest) Execute() (FabricUplinkPcRole, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricUplinkPcRoleByMoidExecute(r)
@@ -20586,8 +20876,8 @@ GetFabricUplinkPcRoleByMoid Read a 'fabric.UplinkPcRole' resource.
 func (a *FabricApiService) GetFabricUplinkPcRoleByMoid(ctx _context.Context, moid string) ApiGetFabricUplinkPcRoleByMoidRequest {
 	return ApiGetFabricUplinkPcRoleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20694,13 +20984,13 @@ func (a *FabricApiService) GetFabricUplinkPcRoleByMoidExecute(r ApiGetFabricUpli
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20717,19 +21007,19 @@ func (a *FabricApiService) GetFabricUplinkPcRoleByMoidExecute(r ApiGetFabricUpli
 }
 
 type ApiGetFabricUplinkPcRoleListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -20737,51 +21027,61 @@ func (r ApiGetFabricUplinkPcRoleListRequest) Filter(filter string) ApiGetFabricU
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricUplinkPcRoleListRequest) Orderby(orderby string) ApiGetFabricUplinkPcRoleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricUplinkPcRoleListRequest) Top(top int32) ApiGetFabricUplinkPcRoleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricUplinkPcRoleListRequest) Skip(skip int32) ApiGetFabricUplinkPcRoleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricUplinkPcRoleListRequest) Select_(select_ string) ApiGetFabricUplinkPcRoleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricUplinkPcRoleListRequest) Expand(expand string) ApiGetFabricUplinkPcRoleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricUplinkPcRoleListRequest) Apply(apply string) ApiGetFabricUplinkPcRoleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricUplinkPcRoleListRequest) Count(count bool) ApiGetFabricUplinkPcRoleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricUplinkPcRoleListRequest) Inlinecount(inlinecount string) ApiGetFabricUplinkPcRoleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricUplinkPcRoleListRequest) At(at string) ApiGetFabricUplinkPcRoleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricUplinkPcRoleListRequest) Tags(tags string) ApiGetFabricUplinkPcRoleListRequest {
 	r.tags = &tags
@@ -20801,7 +21101,7 @@ GetFabricUplinkPcRoleList Read a 'fabric.UplinkPcRole' resource.
 func (a *FabricApiService) GetFabricUplinkPcRoleList(ctx _context.Context) ApiGetFabricUplinkPcRoleListRequest {
 	return ApiGetFabricUplinkPcRoleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -20940,13 +21240,13 @@ func (a *FabricApiService) GetFabricUplinkPcRoleListExecute(r ApiGetFabricUplink
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20963,11 +21263,10 @@ func (a *FabricApiService) GetFabricUplinkPcRoleListExecute(r ApiGetFabricUplink
 }
 
 type ApiGetFabricUplinkRoleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricUplinkRoleByMoidRequest) Execute() (FabricUplinkRole, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricUplinkRoleByMoidExecute(r)
@@ -20983,8 +21282,8 @@ GetFabricUplinkRoleByMoid Read a 'fabric.UplinkRole' resource.
 func (a *FabricApiService) GetFabricUplinkRoleByMoid(ctx _context.Context, moid string) ApiGetFabricUplinkRoleByMoidRequest {
 	return ApiGetFabricUplinkRoleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21091,13 +21390,13 @@ func (a *FabricApiService) GetFabricUplinkRoleByMoidExecute(r ApiGetFabricUplink
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21114,19 +21413,19 @@ func (a *FabricApiService) GetFabricUplinkRoleByMoidExecute(r ApiGetFabricUplink
 }
 
 type ApiGetFabricUplinkRoleListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -21134,51 +21433,61 @@ func (r ApiGetFabricUplinkRoleListRequest) Filter(filter string) ApiGetFabricUpl
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricUplinkRoleListRequest) Orderby(orderby string) ApiGetFabricUplinkRoleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricUplinkRoleListRequest) Top(top int32) ApiGetFabricUplinkRoleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricUplinkRoleListRequest) Skip(skip int32) ApiGetFabricUplinkRoleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricUplinkRoleListRequest) Select_(select_ string) ApiGetFabricUplinkRoleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricUplinkRoleListRequest) Expand(expand string) ApiGetFabricUplinkRoleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricUplinkRoleListRequest) Apply(apply string) ApiGetFabricUplinkRoleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricUplinkRoleListRequest) Count(count bool) ApiGetFabricUplinkRoleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricUplinkRoleListRequest) Inlinecount(inlinecount string) ApiGetFabricUplinkRoleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricUplinkRoleListRequest) At(at string) ApiGetFabricUplinkRoleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricUplinkRoleListRequest) Tags(tags string) ApiGetFabricUplinkRoleListRequest {
 	r.tags = &tags
@@ -21198,7 +21507,7 @@ GetFabricUplinkRoleList Read a 'fabric.UplinkRole' resource.
 func (a *FabricApiService) GetFabricUplinkRoleList(ctx _context.Context) ApiGetFabricUplinkRoleListRequest {
 	return ApiGetFabricUplinkRoleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -21337,13 +21646,13 @@ func (a *FabricApiService) GetFabricUplinkRoleListExecute(r ApiGetFabricUplinkRo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21360,11 +21669,10 @@ func (a *FabricApiService) GetFabricUplinkRoleListExecute(r ApiGetFabricUplinkRo
 }
 
 type ApiGetFabricVlanByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricVlanByMoidRequest) Execute() (FabricVlan, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricVlanByMoidExecute(r)
@@ -21380,8 +21688,8 @@ GetFabricVlanByMoid Read a 'fabric.Vlan' resource.
 func (a *FabricApiService) GetFabricVlanByMoid(ctx _context.Context, moid string) ApiGetFabricVlanByMoidRequest {
 	return ApiGetFabricVlanByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21488,13 +21796,13 @@ func (a *FabricApiService) GetFabricVlanByMoidExecute(r ApiGetFabricVlanByMoidRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21511,19 +21819,19 @@ func (a *FabricApiService) GetFabricVlanByMoidExecute(r ApiGetFabricVlanByMoidRe
 }
 
 type ApiGetFabricVlanListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -21531,51 +21839,61 @@ func (r ApiGetFabricVlanListRequest) Filter(filter string) ApiGetFabricVlanListR
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricVlanListRequest) Orderby(orderby string) ApiGetFabricVlanListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricVlanListRequest) Top(top int32) ApiGetFabricVlanListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricVlanListRequest) Skip(skip int32) ApiGetFabricVlanListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricVlanListRequest) Select_(select_ string) ApiGetFabricVlanListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricVlanListRequest) Expand(expand string) ApiGetFabricVlanListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricVlanListRequest) Apply(apply string) ApiGetFabricVlanListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricVlanListRequest) Count(count bool) ApiGetFabricVlanListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricVlanListRequest) Inlinecount(inlinecount string) ApiGetFabricVlanListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricVlanListRequest) At(at string) ApiGetFabricVlanListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricVlanListRequest) Tags(tags string) ApiGetFabricVlanListRequest {
 	r.tags = &tags
@@ -21595,7 +21913,7 @@ GetFabricVlanList Read a 'fabric.Vlan' resource.
 func (a *FabricApiService) GetFabricVlanList(ctx _context.Context) ApiGetFabricVlanListRequest {
 	return ApiGetFabricVlanListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -21734,13 +22052,13 @@ func (a *FabricApiService) GetFabricVlanListExecute(r ApiGetFabricVlanListReques
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21757,11 +22075,10 @@ func (a *FabricApiService) GetFabricVlanListExecute(r ApiGetFabricVlanListReques
 }
 
 type ApiGetFabricVsanByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFabricVsanByMoidRequest) Execute() (FabricVsan, *_nethttp.Response, error) {
 	return r.ApiService.GetFabricVsanByMoidExecute(r)
@@ -21777,8 +22094,8 @@ GetFabricVsanByMoid Read a 'fabric.Vsan' resource.
 func (a *FabricApiService) GetFabricVsanByMoid(ctx _context.Context, moid string) ApiGetFabricVsanByMoidRequest {
 	return ApiGetFabricVsanByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21885,13 +22202,13 @@ func (a *FabricApiService) GetFabricVsanByMoidExecute(r ApiGetFabricVsanByMoidRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21908,19 +22225,19 @@ func (a *FabricApiService) GetFabricVsanByMoidExecute(r ApiGetFabricVsanByMoidRe
 }
 
 type ApiGetFabricVsanListRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FabricApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -21928,51 +22245,61 @@ func (r ApiGetFabricVsanListRequest) Filter(filter string) ApiGetFabricVsanListR
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFabricVsanListRequest) Orderby(orderby string) ApiGetFabricVsanListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFabricVsanListRequest) Top(top int32) ApiGetFabricVsanListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFabricVsanListRequest) Skip(skip int32) ApiGetFabricVsanListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFabricVsanListRequest) Select_(select_ string) ApiGetFabricVsanListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFabricVsanListRequest) Expand(expand string) ApiGetFabricVsanListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFabricVsanListRequest) Apply(apply string) ApiGetFabricVsanListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFabricVsanListRequest) Count(count bool) ApiGetFabricVsanListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFabricVsanListRequest) Inlinecount(inlinecount string) ApiGetFabricVsanListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFabricVsanListRequest) At(at string) ApiGetFabricVsanListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFabricVsanListRequest) Tags(tags string) ApiGetFabricVsanListRequest {
 	r.tags = &tags
@@ -21992,7 +22319,7 @@ GetFabricVsanList Read a 'fabric.Vsan' resource.
 func (a *FabricApiService) GetFabricVsanList(ctx _context.Context) ApiGetFabricVsanListRequest {
 	return ApiGetFabricVsanListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -22131,13 +22458,13 @@ func (a *FabricApiService) GetFabricVsanListExecute(r ApiGetFabricVsanListReques
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22154,11 +22481,11 @@ func (a *FabricApiService) GetFabricVsanListExecute(r ApiGetFabricVsanListReques
 }
 
 type ApiPatchFabricAppliancePcRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FabricApiService
+	moid                  string
 	fabricAppliancePcRole *FabricAppliancePcRole
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;fabric.AppliancePcRole&#39; resource to update.
@@ -22166,6 +22493,7 @@ func (r ApiPatchFabricAppliancePcRoleRequest) FabricAppliancePcRole(fabricApplia
 	r.fabricAppliancePcRole = &fabricAppliancePcRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricAppliancePcRoleRequest) IfMatch(ifMatch string) ApiPatchFabricAppliancePcRoleRequest {
 	r.ifMatch = &ifMatch
@@ -22186,8 +22514,8 @@ PatchFabricAppliancePcRole Update a 'fabric.AppliancePcRole' resource.
 func (a *FabricApiService) PatchFabricAppliancePcRole(ctx _context.Context, moid string) ApiPatchFabricAppliancePcRoleRequest {
 	return ApiPatchFabricAppliancePcRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22302,13 +22630,13 @@ func (a *FabricApiService) PatchFabricAppliancePcRoleExecute(r ApiPatchFabricApp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22325,11 +22653,11 @@ func (a *FabricApiService) PatchFabricAppliancePcRoleExecute(r ApiPatchFabricApp
 }
 
 type ApiPatchFabricApplianceRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *FabricApiService
+	moid                string
 	fabricApplianceRole *FabricApplianceRole
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;fabric.ApplianceRole&#39; resource to update.
@@ -22337,6 +22665,7 @@ func (r ApiPatchFabricApplianceRoleRequest) FabricApplianceRole(fabricApplianceR
 	r.fabricApplianceRole = &fabricApplianceRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricApplianceRoleRequest) IfMatch(ifMatch string) ApiPatchFabricApplianceRoleRequest {
 	r.ifMatch = &ifMatch
@@ -22357,8 +22686,8 @@ PatchFabricApplianceRole Update a 'fabric.ApplianceRole' resource.
 func (a *FabricApiService) PatchFabricApplianceRole(ctx _context.Context, moid string) ApiPatchFabricApplianceRoleRequest {
 	return ApiPatchFabricApplianceRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22473,13 +22802,13 @@ func (a *FabricApiService) PatchFabricApplianceRoleExecute(r ApiPatchFabricAppli
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22496,11 +22825,11 @@ func (a *FabricApiService) PatchFabricApplianceRoleExecute(r ApiPatchFabricAppli
 }
 
 type ApiPatchFabricElementIdentityRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FabricApiService
+	moid                  string
 	fabricElementIdentity *FabricElementIdentity
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;fabric.ElementIdentity&#39; resource to update.
@@ -22508,6 +22837,7 @@ func (r ApiPatchFabricElementIdentityRequest) FabricElementIdentity(fabricElemen
 	r.fabricElementIdentity = &fabricElementIdentity
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricElementIdentityRequest) IfMatch(ifMatch string) ApiPatchFabricElementIdentityRequest {
 	r.ifMatch = &ifMatch
@@ -22528,8 +22858,8 @@ PatchFabricElementIdentity Update a 'fabric.ElementIdentity' resource.
 func (a *FabricApiService) PatchFabricElementIdentity(ctx _context.Context, moid string) ApiPatchFabricElementIdentityRequest {
 	return ApiPatchFabricElementIdentityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22644,13 +22974,13 @@ func (a *FabricApiService) PatchFabricElementIdentityExecute(r ApiPatchFabricEle
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22667,11 +22997,11 @@ func (a *FabricApiService) PatchFabricElementIdentityExecute(r ApiPatchFabricEle
 }
 
 type ApiPatchFabricEthNetworkControlPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *FabricApiService
+	moid                          string
 	fabricEthNetworkControlPolicy *FabricEthNetworkControlPolicy
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;fabric.EthNetworkControlPolicy&#39; resource to update.
@@ -22679,6 +23009,7 @@ func (r ApiPatchFabricEthNetworkControlPolicyRequest) FabricEthNetworkControlPol
 	r.fabricEthNetworkControlPolicy = &fabricEthNetworkControlPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricEthNetworkControlPolicyRequest) IfMatch(ifMatch string) ApiPatchFabricEthNetworkControlPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -22699,8 +23030,8 @@ PatchFabricEthNetworkControlPolicy Update a 'fabric.EthNetworkControlPolicy' res
 func (a *FabricApiService) PatchFabricEthNetworkControlPolicy(ctx _context.Context, moid string) ApiPatchFabricEthNetworkControlPolicyRequest {
 	return ApiPatchFabricEthNetworkControlPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22815,13 +23146,13 @@ func (a *FabricApiService) PatchFabricEthNetworkControlPolicyExecute(r ApiPatchF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22838,11 +23169,11 @@ func (a *FabricApiService) PatchFabricEthNetworkControlPolicyExecute(r ApiPatchF
 }
 
 type ApiPatchFabricEthNetworkGroupPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *FabricApiService
+	moid                        string
 	fabricEthNetworkGroupPolicy *FabricEthNetworkGroupPolicy
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;fabric.EthNetworkGroupPolicy&#39; resource to update.
@@ -22850,6 +23181,7 @@ func (r ApiPatchFabricEthNetworkGroupPolicyRequest) FabricEthNetworkGroupPolicy(
 	r.fabricEthNetworkGroupPolicy = &fabricEthNetworkGroupPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricEthNetworkGroupPolicyRequest) IfMatch(ifMatch string) ApiPatchFabricEthNetworkGroupPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -22870,8 +23202,8 @@ PatchFabricEthNetworkGroupPolicy Update a 'fabric.EthNetworkGroupPolicy' resourc
 func (a *FabricApiService) PatchFabricEthNetworkGroupPolicy(ctx _context.Context, moid string) ApiPatchFabricEthNetworkGroupPolicyRequest {
 	return ApiPatchFabricEthNetworkGroupPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22986,13 +23318,13 @@ func (a *FabricApiService) PatchFabricEthNetworkGroupPolicyExecute(r ApiPatchFab
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23009,11 +23341,11 @@ func (a *FabricApiService) PatchFabricEthNetworkGroupPolicyExecute(r ApiPatchFab
 }
 
 type ApiPatchFabricEthNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *FabricApiService
+	moid                   string
 	fabricEthNetworkPolicy *FabricEthNetworkPolicy
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;fabric.EthNetworkPolicy&#39; resource to update.
@@ -23021,6 +23353,7 @@ func (r ApiPatchFabricEthNetworkPolicyRequest) FabricEthNetworkPolicy(fabricEthN
 	r.fabricEthNetworkPolicy = &fabricEthNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricEthNetworkPolicyRequest) IfMatch(ifMatch string) ApiPatchFabricEthNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -23041,8 +23374,8 @@ PatchFabricEthNetworkPolicy Update a 'fabric.EthNetworkPolicy' resource.
 func (a *FabricApiService) PatchFabricEthNetworkPolicy(ctx _context.Context, moid string) ApiPatchFabricEthNetworkPolicyRequest {
 	return ApiPatchFabricEthNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23157,13 +23490,13 @@ func (a *FabricApiService) PatchFabricEthNetworkPolicyExecute(r ApiPatchFabricEt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23180,11 +23513,11 @@ func (a *FabricApiService) PatchFabricEthNetworkPolicyExecute(r ApiPatchFabricEt
 }
 
 type ApiPatchFabricFcNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FabricApiService
+	moid                  string
 	fabricFcNetworkPolicy *FabricFcNetworkPolicy
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;fabric.FcNetworkPolicy&#39; resource to update.
@@ -23192,6 +23525,7 @@ func (r ApiPatchFabricFcNetworkPolicyRequest) FabricFcNetworkPolicy(fabricFcNetw
 	r.fabricFcNetworkPolicy = &fabricFcNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricFcNetworkPolicyRequest) IfMatch(ifMatch string) ApiPatchFabricFcNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -23212,8 +23546,8 @@ PatchFabricFcNetworkPolicy Update a 'fabric.FcNetworkPolicy' resource.
 func (a *FabricApiService) PatchFabricFcNetworkPolicy(ctx _context.Context, moid string) ApiPatchFabricFcNetworkPolicyRequest {
 	return ApiPatchFabricFcNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23328,13 +23662,13 @@ func (a *FabricApiService) PatchFabricFcNetworkPolicyExecute(r ApiPatchFabricFcN
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23351,11 +23685,11 @@ func (a *FabricApiService) PatchFabricFcNetworkPolicyExecute(r ApiPatchFabricFcN
 }
 
 type ApiPatchFabricFcStorageRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *FabricApiService
+	moid                string
 	fabricFcStorageRole *FabricFcStorageRole
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;fabric.FcStorageRole&#39; resource to update.
@@ -23363,6 +23697,7 @@ func (r ApiPatchFabricFcStorageRoleRequest) FabricFcStorageRole(fabricFcStorageR
 	r.fabricFcStorageRole = &fabricFcStorageRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricFcStorageRoleRequest) IfMatch(ifMatch string) ApiPatchFabricFcStorageRoleRequest {
 	r.ifMatch = &ifMatch
@@ -23383,8 +23718,8 @@ PatchFabricFcStorageRole Update a 'fabric.FcStorageRole' resource.
 func (a *FabricApiService) PatchFabricFcStorageRole(ctx _context.Context, moid string) ApiPatchFabricFcStorageRoleRequest {
 	return ApiPatchFabricFcStorageRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23499,13 +23834,13 @@ func (a *FabricApiService) PatchFabricFcStorageRoleExecute(r ApiPatchFabricFcSto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23522,11 +23857,11 @@ func (a *FabricApiService) PatchFabricFcStorageRoleExecute(r ApiPatchFabricFcSto
 }
 
 type ApiPatchFabricFcUplinkPcRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *FabricApiService
+	moid                 string
 	fabricFcUplinkPcRole *FabricFcUplinkPcRole
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;fabric.FcUplinkPcRole&#39; resource to update.
@@ -23534,6 +23869,7 @@ func (r ApiPatchFabricFcUplinkPcRoleRequest) FabricFcUplinkPcRole(fabricFcUplink
 	r.fabricFcUplinkPcRole = &fabricFcUplinkPcRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricFcUplinkPcRoleRequest) IfMatch(ifMatch string) ApiPatchFabricFcUplinkPcRoleRequest {
 	r.ifMatch = &ifMatch
@@ -23554,8 +23890,8 @@ PatchFabricFcUplinkPcRole Update a 'fabric.FcUplinkPcRole' resource.
 func (a *FabricApiService) PatchFabricFcUplinkPcRole(ctx _context.Context, moid string) ApiPatchFabricFcUplinkPcRoleRequest {
 	return ApiPatchFabricFcUplinkPcRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23670,13 +24006,13 @@ func (a *FabricApiService) PatchFabricFcUplinkPcRoleExecute(r ApiPatchFabricFcUp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23693,11 +24029,11 @@ func (a *FabricApiService) PatchFabricFcUplinkPcRoleExecute(r ApiPatchFabricFcUp
 }
 
 type ApiPatchFabricFcUplinkRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                _context.Context
+	ApiService         *FabricApiService
+	moid               string
 	fabricFcUplinkRole *FabricFcUplinkRole
-	ifMatch *string
+	ifMatch            *string
 }
 
 // The &#39;fabric.FcUplinkRole&#39; resource to update.
@@ -23705,6 +24041,7 @@ func (r ApiPatchFabricFcUplinkRoleRequest) FabricFcUplinkRole(fabricFcUplinkRole
 	r.fabricFcUplinkRole = &fabricFcUplinkRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricFcUplinkRoleRequest) IfMatch(ifMatch string) ApiPatchFabricFcUplinkRoleRequest {
 	r.ifMatch = &ifMatch
@@ -23725,8 +24062,8 @@ PatchFabricFcUplinkRole Update a 'fabric.FcUplinkRole' resource.
 func (a *FabricApiService) PatchFabricFcUplinkRole(ctx _context.Context, moid string) ApiPatchFabricFcUplinkRoleRequest {
 	return ApiPatchFabricFcUplinkRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23841,13 +24178,13 @@ func (a *FabricApiService) PatchFabricFcUplinkRoleExecute(r ApiPatchFabricFcUpli
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23864,11 +24201,11 @@ func (a *FabricApiService) PatchFabricFcUplinkRoleExecute(r ApiPatchFabricFcUpli
 }
 
 type ApiPatchFabricFcoeUplinkPcRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *FabricApiService
+	moid                   string
 	fabricFcoeUplinkPcRole *FabricFcoeUplinkPcRole
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;fabric.FcoeUplinkPcRole&#39; resource to update.
@@ -23876,6 +24213,7 @@ func (r ApiPatchFabricFcoeUplinkPcRoleRequest) FabricFcoeUplinkPcRole(fabricFcoe
 	r.fabricFcoeUplinkPcRole = &fabricFcoeUplinkPcRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricFcoeUplinkPcRoleRequest) IfMatch(ifMatch string) ApiPatchFabricFcoeUplinkPcRoleRequest {
 	r.ifMatch = &ifMatch
@@ -23896,8 +24234,8 @@ PatchFabricFcoeUplinkPcRole Update a 'fabric.FcoeUplinkPcRole' resource.
 func (a *FabricApiService) PatchFabricFcoeUplinkPcRole(ctx _context.Context, moid string) ApiPatchFabricFcoeUplinkPcRoleRequest {
 	return ApiPatchFabricFcoeUplinkPcRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24012,13 +24350,13 @@ func (a *FabricApiService) PatchFabricFcoeUplinkPcRoleExecute(r ApiPatchFabricFc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24035,11 +24373,11 @@ func (a *FabricApiService) PatchFabricFcoeUplinkPcRoleExecute(r ApiPatchFabricFc
 }
 
 type ApiPatchFabricFcoeUplinkRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *FabricApiService
+	moid                 string
 	fabricFcoeUplinkRole *FabricFcoeUplinkRole
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;fabric.FcoeUplinkRole&#39; resource to update.
@@ -24047,6 +24385,7 @@ func (r ApiPatchFabricFcoeUplinkRoleRequest) FabricFcoeUplinkRole(fabricFcoeUpli
 	r.fabricFcoeUplinkRole = &fabricFcoeUplinkRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricFcoeUplinkRoleRequest) IfMatch(ifMatch string) ApiPatchFabricFcoeUplinkRoleRequest {
 	r.ifMatch = &ifMatch
@@ -24067,8 +24406,8 @@ PatchFabricFcoeUplinkRole Update a 'fabric.FcoeUplinkRole' resource.
 func (a *FabricApiService) PatchFabricFcoeUplinkRole(ctx _context.Context, moid string) ApiPatchFabricFcoeUplinkRoleRequest {
 	return ApiPatchFabricFcoeUplinkRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24183,13 +24522,13 @@ func (a *FabricApiService) PatchFabricFcoeUplinkRoleExecute(r ApiPatchFabricFcoe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24206,11 +24545,11 @@ func (a *FabricApiService) PatchFabricFcoeUplinkRoleExecute(r ApiPatchFabricFcoe
 }
 
 type ApiPatchFabricFlowControlPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *FabricApiService
+	moid                    string
 	fabricFlowControlPolicy *FabricFlowControlPolicy
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;fabric.FlowControlPolicy&#39; resource to update.
@@ -24218,6 +24557,7 @@ func (r ApiPatchFabricFlowControlPolicyRequest) FabricFlowControlPolicy(fabricFl
 	r.fabricFlowControlPolicy = &fabricFlowControlPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricFlowControlPolicyRequest) IfMatch(ifMatch string) ApiPatchFabricFlowControlPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -24238,8 +24578,8 @@ PatchFabricFlowControlPolicy Update a 'fabric.FlowControlPolicy' resource.
 func (a *FabricApiService) PatchFabricFlowControlPolicy(ctx _context.Context, moid string) ApiPatchFabricFlowControlPolicyRequest {
 	return ApiPatchFabricFlowControlPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24354,13 +24694,13 @@ func (a *FabricApiService) PatchFabricFlowControlPolicyExecute(r ApiPatchFabricF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24377,11 +24717,11 @@ func (a *FabricApiService) PatchFabricFlowControlPolicyExecute(r ApiPatchFabricF
 }
 
 type ApiPatchFabricLinkAggregationPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *FabricApiService
+	moid                        string
 	fabricLinkAggregationPolicy *FabricLinkAggregationPolicy
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;fabric.LinkAggregationPolicy&#39; resource to update.
@@ -24389,6 +24729,7 @@ func (r ApiPatchFabricLinkAggregationPolicyRequest) FabricLinkAggregationPolicy(
 	r.fabricLinkAggregationPolicy = &fabricLinkAggregationPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricLinkAggregationPolicyRequest) IfMatch(ifMatch string) ApiPatchFabricLinkAggregationPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -24409,8 +24750,8 @@ PatchFabricLinkAggregationPolicy Update a 'fabric.LinkAggregationPolicy' resourc
 func (a *FabricApiService) PatchFabricLinkAggregationPolicy(ctx _context.Context, moid string) ApiPatchFabricLinkAggregationPolicyRequest {
 	return ApiPatchFabricLinkAggregationPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24525,13 +24866,13 @@ func (a *FabricApiService) PatchFabricLinkAggregationPolicyExecute(r ApiPatchFab
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24548,11 +24889,11 @@ func (a *FabricApiService) PatchFabricLinkAggregationPolicyExecute(r ApiPatchFab
 }
 
 type ApiPatchFabricLinkControlPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *FabricApiService
+	moid                    string
 	fabricLinkControlPolicy *FabricLinkControlPolicy
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;fabric.LinkControlPolicy&#39; resource to update.
@@ -24560,6 +24901,7 @@ func (r ApiPatchFabricLinkControlPolicyRequest) FabricLinkControlPolicy(fabricLi
 	r.fabricLinkControlPolicy = &fabricLinkControlPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricLinkControlPolicyRequest) IfMatch(ifMatch string) ApiPatchFabricLinkControlPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -24580,8 +24922,8 @@ PatchFabricLinkControlPolicy Update a 'fabric.LinkControlPolicy' resource.
 func (a *FabricApiService) PatchFabricLinkControlPolicy(ctx _context.Context, moid string) ApiPatchFabricLinkControlPolicyRequest {
 	return ApiPatchFabricLinkControlPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24696,13 +25038,13 @@ func (a *FabricApiService) PatchFabricLinkControlPolicyExecute(r ApiPatchFabricL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24719,11 +25061,11 @@ func (a *FabricApiService) PatchFabricLinkControlPolicyExecute(r ApiPatchFabricL
 }
 
 type ApiPatchFabricMulticastPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FabricApiService
+	moid                  string
 	fabricMulticastPolicy *FabricMulticastPolicy
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;fabric.MulticastPolicy&#39; resource to update.
@@ -24731,6 +25073,7 @@ func (r ApiPatchFabricMulticastPolicyRequest) FabricMulticastPolicy(fabricMultic
 	r.fabricMulticastPolicy = &fabricMulticastPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricMulticastPolicyRequest) IfMatch(ifMatch string) ApiPatchFabricMulticastPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -24751,8 +25094,8 @@ PatchFabricMulticastPolicy Update a 'fabric.MulticastPolicy' resource.
 func (a *FabricApiService) PatchFabricMulticastPolicy(ctx _context.Context, moid string) ApiPatchFabricMulticastPolicyRequest {
 	return ApiPatchFabricMulticastPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24867,13 +25210,13 @@ func (a *FabricApiService) PatchFabricMulticastPolicyExecute(r ApiPatchFabricMul
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24890,11 +25233,11 @@ func (a *FabricApiService) PatchFabricMulticastPolicyExecute(r ApiPatchFabricMul
 }
 
 type ApiPatchFabricPcOperationRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *FabricApiService
+	moid              string
 	fabricPcOperation *FabricPcOperation
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;fabric.PcOperation&#39; resource to update.
@@ -24902,6 +25245,7 @@ func (r ApiPatchFabricPcOperationRequest) FabricPcOperation(fabricPcOperation Fa
 	r.fabricPcOperation = &fabricPcOperation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricPcOperationRequest) IfMatch(ifMatch string) ApiPatchFabricPcOperationRequest {
 	r.ifMatch = &ifMatch
@@ -24922,8 +25266,8 @@ PatchFabricPcOperation Update a 'fabric.PcOperation' resource.
 func (a *FabricApiService) PatchFabricPcOperation(ctx _context.Context, moid string) ApiPatchFabricPcOperationRequest {
 	return ApiPatchFabricPcOperationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25038,13 +25382,13 @@ func (a *FabricApiService) PatchFabricPcOperationExecute(r ApiPatchFabricPcOpera
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25061,11 +25405,11 @@ func (a *FabricApiService) PatchFabricPcOperationExecute(r ApiPatchFabricPcOpera
 }
 
 type ApiPatchFabricPortModeRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx            _context.Context
+	ApiService     *FabricApiService
+	moid           string
 	fabricPortMode *FabricPortMode
-	ifMatch *string
+	ifMatch        *string
 }
 
 // The &#39;fabric.PortMode&#39; resource to update.
@@ -25073,6 +25417,7 @@ func (r ApiPatchFabricPortModeRequest) FabricPortMode(fabricPortMode FabricPortM
 	r.fabricPortMode = &fabricPortMode
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricPortModeRequest) IfMatch(ifMatch string) ApiPatchFabricPortModeRequest {
 	r.ifMatch = &ifMatch
@@ -25093,8 +25438,8 @@ PatchFabricPortMode Update a 'fabric.PortMode' resource.
 func (a *FabricApiService) PatchFabricPortMode(ctx _context.Context, moid string) ApiPatchFabricPortModeRequest {
 	return ApiPatchFabricPortModeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25209,13 +25554,13 @@ func (a *FabricApiService) PatchFabricPortModeExecute(r ApiPatchFabricPortModeRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25232,11 +25577,11 @@ func (a *FabricApiService) PatchFabricPortModeExecute(r ApiPatchFabricPortModeRe
 }
 
 type ApiPatchFabricPortOperationRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *FabricApiService
+	moid                string
 	fabricPortOperation *FabricPortOperation
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;fabric.PortOperation&#39; resource to update.
@@ -25244,6 +25589,7 @@ func (r ApiPatchFabricPortOperationRequest) FabricPortOperation(fabricPortOperat
 	r.fabricPortOperation = &fabricPortOperation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricPortOperationRequest) IfMatch(ifMatch string) ApiPatchFabricPortOperationRequest {
 	r.ifMatch = &ifMatch
@@ -25264,8 +25610,8 @@ PatchFabricPortOperation Update a 'fabric.PortOperation' resource.
 func (a *FabricApiService) PatchFabricPortOperation(ctx _context.Context, moid string) ApiPatchFabricPortOperationRequest {
 	return ApiPatchFabricPortOperationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25380,13 +25726,13 @@ func (a *FabricApiService) PatchFabricPortOperationExecute(r ApiPatchFabricPortO
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25403,11 +25749,11 @@ func (a *FabricApiService) PatchFabricPortOperationExecute(r ApiPatchFabricPortO
 }
 
 type ApiPatchFabricPortPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *FabricApiService
+	moid             string
 	fabricPortPolicy *FabricPortPolicy
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;fabric.PortPolicy&#39; resource to update.
@@ -25415,6 +25761,7 @@ func (r ApiPatchFabricPortPolicyRequest) FabricPortPolicy(fabricPortPolicy Fabri
 	r.fabricPortPolicy = &fabricPortPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricPortPolicyRequest) IfMatch(ifMatch string) ApiPatchFabricPortPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -25435,8 +25782,8 @@ PatchFabricPortPolicy Update a 'fabric.PortPolicy' resource.
 func (a *FabricApiService) PatchFabricPortPolicy(ctx _context.Context, moid string) ApiPatchFabricPortPolicyRequest {
 	return ApiPatchFabricPortPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25551,13 +25898,13 @@ func (a *FabricApiService) PatchFabricPortPolicyExecute(r ApiPatchFabricPortPoli
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25574,11 +25921,11 @@ func (a *FabricApiService) PatchFabricPortPolicyExecute(r ApiPatchFabricPortPoli
 }
 
 type ApiPatchFabricServerRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *FabricApiService
+	moid             string
 	fabricServerRole *FabricServerRole
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;fabric.ServerRole&#39; resource to update.
@@ -25586,6 +25933,7 @@ func (r ApiPatchFabricServerRoleRequest) FabricServerRole(fabricServerRole Fabri
 	r.fabricServerRole = &fabricServerRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricServerRoleRequest) IfMatch(ifMatch string) ApiPatchFabricServerRoleRequest {
 	r.ifMatch = &ifMatch
@@ -25606,8 +25954,8 @@ PatchFabricServerRole Update a 'fabric.ServerRole' resource.
 func (a *FabricApiService) PatchFabricServerRole(ctx _context.Context, moid string) ApiPatchFabricServerRoleRequest {
 	return ApiPatchFabricServerRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25722,13 +26070,13 @@ func (a *FabricApiService) PatchFabricServerRoleExecute(r ApiPatchFabricServerRo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25745,11 +26093,11 @@ func (a *FabricApiService) PatchFabricServerRoleExecute(r ApiPatchFabricServerRo
 }
 
 type ApiPatchFabricSwitchClusterProfileRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *FabricApiService
+	moid                       string
 	fabricSwitchClusterProfile *FabricSwitchClusterProfile
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;fabric.SwitchClusterProfile&#39; resource to update.
@@ -25757,6 +26105,7 @@ func (r ApiPatchFabricSwitchClusterProfileRequest) FabricSwitchClusterProfile(fa
 	r.fabricSwitchClusterProfile = &fabricSwitchClusterProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricSwitchClusterProfileRequest) IfMatch(ifMatch string) ApiPatchFabricSwitchClusterProfileRequest {
 	r.ifMatch = &ifMatch
@@ -25777,8 +26126,8 @@ PatchFabricSwitchClusterProfile Update a 'fabric.SwitchClusterProfile' resource.
 func (a *FabricApiService) PatchFabricSwitchClusterProfile(ctx _context.Context, moid string) ApiPatchFabricSwitchClusterProfileRequest {
 	return ApiPatchFabricSwitchClusterProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25893,13 +26242,13 @@ func (a *FabricApiService) PatchFabricSwitchClusterProfileExecute(r ApiPatchFabr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25916,11 +26265,11 @@ func (a *FabricApiService) PatchFabricSwitchClusterProfileExecute(r ApiPatchFabr
 }
 
 type ApiPatchFabricSwitchControlPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *FabricApiService
+	moid                      string
 	fabricSwitchControlPolicy *FabricSwitchControlPolicy
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;fabric.SwitchControlPolicy&#39; resource to update.
@@ -25928,6 +26277,7 @@ func (r ApiPatchFabricSwitchControlPolicyRequest) FabricSwitchControlPolicy(fabr
 	r.fabricSwitchControlPolicy = &fabricSwitchControlPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricSwitchControlPolicyRequest) IfMatch(ifMatch string) ApiPatchFabricSwitchControlPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -25948,8 +26298,8 @@ PatchFabricSwitchControlPolicy Update a 'fabric.SwitchControlPolicy' resource.
 func (a *FabricApiService) PatchFabricSwitchControlPolicy(ctx _context.Context, moid string) ApiPatchFabricSwitchControlPolicyRequest {
 	return ApiPatchFabricSwitchControlPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26064,13 +26414,13 @@ func (a *FabricApiService) PatchFabricSwitchControlPolicyExecute(r ApiPatchFabri
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26087,11 +26437,11 @@ func (a *FabricApiService) PatchFabricSwitchControlPolicyExecute(r ApiPatchFabri
 }
 
 type ApiPatchFabricSwitchProfileRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *FabricApiService
+	moid                string
 	fabricSwitchProfile *FabricSwitchProfile
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;fabric.SwitchProfile&#39; resource to update.
@@ -26099,6 +26449,7 @@ func (r ApiPatchFabricSwitchProfileRequest) FabricSwitchProfile(fabricSwitchProf
 	r.fabricSwitchProfile = &fabricSwitchProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricSwitchProfileRequest) IfMatch(ifMatch string) ApiPatchFabricSwitchProfileRequest {
 	r.ifMatch = &ifMatch
@@ -26119,8 +26470,8 @@ PatchFabricSwitchProfile Update a 'fabric.SwitchProfile' resource.
 func (a *FabricApiService) PatchFabricSwitchProfile(ctx _context.Context, moid string) ApiPatchFabricSwitchProfileRequest {
 	return ApiPatchFabricSwitchProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26235,13 +26586,13 @@ func (a *FabricApiService) PatchFabricSwitchProfileExecute(r ApiPatchFabricSwitc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26258,11 +26609,11 @@ func (a *FabricApiService) PatchFabricSwitchProfileExecute(r ApiPatchFabricSwitc
 }
 
 type ApiPatchFabricSystemQosPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FabricApiService
+	moid                  string
 	fabricSystemQosPolicy *FabricSystemQosPolicy
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;fabric.SystemQosPolicy&#39; resource to update.
@@ -26270,6 +26621,7 @@ func (r ApiPatchFabricSystemQosPolicyRequest) FabricSystemQosPolicy(fabricSystem
 	r.fabricSystemQosPolicy = &fabricSystemQosPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricSystemQosPolicyRequest) IfMatch(ifMatch string) ApiPatchFabricSystemQosPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -26290,8 +26642,8 @@ PatchFabricSystemQosPolicy Update a 'fabric.SystemQosPolicy' resource.
 func (a *FabricApiService) PatchFabricSystemQosPolicy(ctx _context.Context, moid string) ApiPatchFabricSystemQosPolicyRequest {
 	return ApiPatchFabricSystemQosPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26406,13 +26758,13 @@ func (a *FabricApiService) PatchFabricSystemQosPolicyExecute(r ApiPatchFabricSys
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26429,11 +26781,11 @@ func (a *FabricApiService) PatchFabricSystemQosPolicyExecute(r ApiPatchFabricSys
 }
 
 type ApiPatchFabricUplinkPcRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                _context.Context
+	ApiService         *FabricApiService
+	moid               string
 	fabricUplinkPcRole *FabricUplinkPcRole
-	ifMatch *string
+	ifMatch            *string
 }
 
 // The &#39;fabric.UplinkPcRole&#39; resource to update.
@@ -26441,6 +26793,7 @@ func (r ApiPatchFabricUplinkPcRoleRequest) FabricUplinkPcRole(fabricUplinkPcRole
 	r.fabricUplinkPcRole = &fabricUplinkPcRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricUplinkPcRoleRequest) IfMatch(ifMatch string) ApiPatchFabricUplinkPcRoleRequest {
 	r.ifMatch = &ifMatch
@@ -26461,8 +26814,8 @@ PatchFabricUplinkPcRole Update a 'fabric.UplinkPcRole' resource.
 func (a *FabricApiService) PatchFabricUplinkPcRole(ctx _context.Context, moid string) ApiPatchFabricUplinkPcRoleRequest {
 	return ApiPatchFabricUplinkPcRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26577,13 +26930,13 @@ func (a *FabricApiService) PatchFabricUplinkPcRoleExecute(r ApiPatchFabricUplink
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26600,11 +26953,11 @@ func (a *FabricApiService) PatchFabricUplinkPcRoleExecute(r ApiPatchFabricUplink
 }
 
 type ApiPatchFabricUplinkRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *FabricApiService
+	moid             string
 	fabricUplinkRole *FabricUplinkRole
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;fabric.UplinkRole&#39; resource to update.
@@ -26612,6 +26965,7 @@ func (r ApiPatchFabricUplinkRoleRequest) FabricUplinkRole(fabricUplinkRole Fabri
 	r.fabricUplinkRole = &fabricUplinkRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricUplinkRoleRequest) IfMatch(ifMatch string) ApiPatchFabricUplinkRoleRequest {
 	r.ifMatch = &ifMatch
@@ -26632,8 +26986,8 @@ PatchFabricUplinkRole Update a 'fabric.UplinkRole' resource.
 func (a *FabricApiService) PatchFabricUplinkRole(ctx _context.Context, moid string) ApiPatchFabricUplinkRoleRequest {
 	return ApiPatchFabricUplinkRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26748,13 +27102,13 @@ func (a *FabricApiService) PatchFabricUplinkRoleExecute(r ApiPatchFabricUplinkRo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26771,11 +27125,11 @@ func (a *FabricApiService) PatchFabricUplinkRoleExecute(r ApiPatchFabricUplinkRo
 }
 
 type ApiPatchFabricVlanRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 	fabricVlan *FabricVlan
-	ifMatch *string
+	ifMatch    *string
 }
 
 // The &#39;fabric.Vlan&#39; resource to update.
@@ -26783,6 +27137,7 @@ func (r ApiPatchFabricVlanRequest) FabricVlan(fabricVlan FabricVlan) ApiPatchFab
 	r.fabricVlan = &fabricVlan
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricVlanRequest) IfMatch(ifMatch string) ApiPatchFabricVlanRequest {
 	r.ifMatch = &ifMatch
@@ -26803,8 +27158,8 @@ PatchFabricVlan Update a 'fabric.Vlan' resource.
 func (a *FabricApiService) PatchFabricVlan(ctx _context.Context, moid string) ApiPatchFabricVlanRequest {
 	return ApiPatchFabricVlanRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26919,13 +27274,13 @@ func (a *FabricApiService) PatchFabricVlanExecute(r ApiPatchFabricVlanRequest) (
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26942,11 +27297,11 @@ func (a *FabricApiService) PatchFabricVlanExecute(r ApiPatchFabricVlanRequest) (
 }
 
 type ApiPatchFabricVsanRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 	fabricVsan *FabricVsan
-	ifMatch *string
+	ifMatch    *string
 }
 
 // The &#39;fabric.Vsan&#39; resource to update.
@@ -26954,6 +27309,7 @@ func (r ApiPatchFabricVsanRequest) FabricVsan(fabricVsan FabricVsan) ApiPatchFab
 	r.fabricVsan = &fabricVsan
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFabricVsanRequest) IfMatch(ifMatch string) ApiPatchFabricVsanRequest {
 	r.ifMatch = &ifMatch
@@ -26974,8 +27330,8 @@ PatchFabricVsan Update a 'fabric.Vsan' resource.
 func (a *FabricApiService) PatchFabricVsan(ctx _context.Context, moid string) ApiPatchFabricVsanRequest {
 	return ApiPatchFabricVsanRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -27090,13 +27446,13 @@ func (a *FabricApiService) PatchFabricVsanExecute(r ApiPatchFabricVsanRequest) (
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27113,11 +27469,11 @@ func (a *FabricApiService) PatchFabricVsanExecute(r ApiPatchFabricVsanRequest) (
 }
 
 type ApiUpdateFabricAppliancePcRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FabricApiService
+	moid                  string
 	fabricAppliancePcRole *FabricAppliancePcRole
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;fabric.AppliancePcRole&#39; resource to update.
@@ -27125,6 +27481,7 @@ func (r ApiUpdateFabricAppliancePcRoleRequest) FabricAppliancePcRole(fabricAppli
 	r.fabricAppliancePcRole = &fabricAppliancePcRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricAppliancePcRoleRequest) IfMatch(ifMatch string) ApiUpdateFabricAppliancePcRoleRequest {
 	r.ifMatch = &ifMatch
@@ -27145,8 +27502,8 @@ UpdateFabricAppliancePcRole Update a 'fabric.AppliancePcRole' resource.
 func (a *FabricApiService) UpdateFabricAppliancePcRole(ctx _context.Context, moid string) ApiUpdateFabricAppliancePcRoleRequest {
 	return ApiUpdateFabricAppliancePcRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -27261,13 +27618,13 @@ func (a *FabricApiService) UpdateFabricAppliancePcRoleExecute(r ApiUpdateFabricA
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27284,11 +27641,11 @@ func (a *FabricApiService) UpdateFabricAppliancePcRoleExecute(r ApiUpdateFabricA
 }
 
 type ApiUpdateFabricApplianceRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *FabricApiService
+	moid                string
 	fabricApplianceRole *FabricApplianceRole
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;fabric.ApplianceRole&#39; resource to update.
@@ -27296,6 +27653,7 @@ func (r ApiUpdateFabricApplianceRoleRequest) FabricApplianceRole(fabricAppliance
 	r.fabricApplianceRole = &fabricApplianceRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricApplianceRoleRequest) IfMatch(ifMatch string) ApiUpdateFabricApplianceRoleRequest {
 	r.ifMatch = &ifMatch
@@ -27316,8 +27674,8 @@ UpdateFabricApplianceRole Update a 'fabric.ApplianceRole' resource.
 func (a *FabricApiService) UpdateFabricApplianceRole(ctx _context.Context, moid string) ApiUpdateFabricApplianceRoleRequest {
 	return ApiUpdateFabricApplianceRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -27432,13 +27790,13 @@ func (a *FabricApiService) UpdateFabricApplianceRoleExecute(r ApiUpdateFabricApp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27455,11 +27813,11 @@ func (a *FabricApiService) UpdateFabricApplianceRoleExecute(r ApiUpdateFabricApp
 }
 
 type ApiUpdateFabricElementIdentityRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FabricApiService
+	moid                  string
 	fabricElementIdentity *FabricElementIdentity
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;fabric.ElementIdentity&#39; resource to update.
@@ -27467,6 +27825,7 @@ func (r ApiUpdateFabricElementIdentityRequest) FabricElementIdentity(fabricEleme
 	r.fabricElementIdentity = &fabricElementIdentity
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricElementIdentityRequest) IfMatch(ifMatch string) ApiUpdateFabricElementIdentityRequest {
 	r.ifMatch = &ifMatch
@@ -27487,8 +27846,8 @@ UpdateFabricElementIdentity Update a 'fabric.ElementIdentity' resource.
 func (a *FabricApiService) UpdateFabricElementIdentity(ctx _context.Context, moid string) ApiUpdateFabricElementIdentityRequest {
 	return ApiUpdateFabricElementIdentityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -27603,13 +27962,13 @@ func (a *FabricApiService) UpdateFabricElementIdentityExecute(r ApiUpdateFabricE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27626,11 +27985,11 @@ func (a *FabricApiService) UpdateFabricElementIdentityExecute(r ApiUpdateFabricE
 }
 
 type ApiUpdateFabricEthNetworkControlPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *FabricApiService
+	moid                          string
 	fabricEthNetworkControlPolicy *FabricEthNetworkControlPolicy
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;fabric.EthNetworkControlPolicy&#39; resource to update.
@@ -27638,6 +27997,7 @@ func (r ApiUpdateFabricEthNetworkControlPolicyRequest) FabricEthNetworkControlPo
 	r.fabricEthNetworkControlPolicy = &fabricEthNetworkControlPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricEthNetworkControlPolicyRequest) IfMatch(ifMatch string) ApiUpdateFabricEthNetworkControlPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -27658,8 +28018,8 @@ UpdateFabricEthNetworkControlPolicy Update a 'fabric.EthNetworkControlPolicy' re
 func (a *FabricApiService) UpdateFabricEthNetworkControlPolicy(ctx _context.Context, moid string) ApiUpdateFabricEthNetworkControlPolicyRequest {
 	return ApiUpdateFabricEthNetworkControlPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -27774,13 +28134,13 @@ func (a *FabricApiService) UpdateFabricEthNetworkControlPolicyExecute(r ApiUpdat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27797,11 +28157,11 @@ func (a *FabricApiService) UpdateFabricEthNetworkControlPolicyExecute(r ApiUpdat
 }
 
 type ApiUpdateFabricEthNetworkGroupPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *FabricApiService
+	moid                        string
 	fabricEthNetworkGroupPolicy *FabricEthNetworkGroupPolicy
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;fabric.EthNetworkGroupPolicy&#39; resource to update.
@@ -27809,6 +28169,7 @@ func (r ApiUpdateFabricEthNetworkGroupPolicyRequest) FabricEthNetworkGroupPolicy
 	r.fabricEthNetworkGroupPolicy = &fabricEthNetworkGroupPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricEthNetworkGroupPolicyRequest) IfMatch(ifMatch string) ApiUpdateFabricEthNetworkGroupPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -27829,8 +28190,8 @@ UpdateFabricEthNetworkGroupPolicy Update a 'fabric.EthNetworkGroupPolicy' resour
 func (a *FabricApiService) UpdateFabricEthNetworkGroupPolicy(ctx _context.Context, moid string) ApiUpdateFabricEthNetworkGroupPolicyRequest {
 	return ApiUpdateFabricEthNetworkGroupPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -27945,13 +28306,13 @@ func (a *FabricApiService) UpdateFabricEthNetworkGroupPolicyExecute(r ApiUpdateF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27968,11 +28329,11 @@ func (a *FabricApiService) UpdateFabricEthNetworkGroupPolicyExecute(r ApiUpdateF
 }
 
 type ApiUpdateFabricEthNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *FabricApiService
+	moid                   string
 	fabricEthNetworkPolicy *FabricEthNetworkPolicy
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;fabric.EthNetworkPolicy&#39; resource to update.
@@ -27980,6 +28341,7 @@ func (r ApiUpdateFabricEthNetworkPolicyRequest) FabricEthNetworkPolicy(fabricEth
 	r.fabricEthNetworkPolicy = &fabricEthNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricEthNetworkPolicyRequest) IfMatch(ifMatch string) ApiUpdateFabricEthNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -28000,8 +28362,8 @@ UpdateFabricEthNetworkPolicy Update a 'fabric.EthNetworkPolicy' resource.
 func (a *FabricApiService) UpdateFabricEthNetworkPolicy(ctx _context.Context, moid string) ApiUpdateFabricEthNetworkPolicyRequest {
 	return ApiUpdateFabricEthNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -28116,13 +28478,13 @@ func (a *FabricApiService) UpdateFabricEthNetworkPolicyExecute(r ApiUpdateFabric
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28139,11 +28501,11 @@ func (a *FabricApiService) UpdateFabricEthNetworkPolicyExecute(r ApiUpdateFabric
 }
 
 type ApiUpdateFabricFcNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FabricApiService
+	moid                  string
 	fabricFcNetworkPolicy *FabricFcNetworkPolicy
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;fabric.FcNetworkPolicy&#39; resource to update.
@@ -28151,6 +28513,7 @@ func (r ApiUpdateFabricFcNetworkPolicyRequest) FabricFcNetworkPolicy(fabricFcNet
 	r.fabricFcNetworkPolicy = &fabricFcNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricFcNetworkPolicyRequest) IfMatch(ifMatch string) ApiUpdateFabricFcNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -28171,8 +28534,8 @@ UpdateFabricFcNetworkPolicy Update a 'fabric.FcNetworkPolicy' resource.
 func (a *FabricApiService) UpdateFabricFcNetworkPolicy(ctx _context.Context, moid string) ApiUpdateFabricFcNetworkPolicyRequest {
 	return ApiUpdateFabricFcNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -28287,13 +28650,13 @@ func (a *FabricApiService) UpdateFabricFcNetworkPolicyExecute(r ApiUpdateFabricF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28310,11 +28673,11 @@ func (a *FabricApiService) UpdateFabricFcNetworkPolicyExecute(r ApiUpdateFabricF
 }
 
 type ApiUpdateFabricFcStorageRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *FabricApiService
+	moid                string
 	fabricFcStorageRole *FabricFcStorageRole
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;fabric.FcStorageRole&#39; resource to update.
@@ -28322,6 +28685,7 @@ func (r ApiUpdateFabricFcStorageRoleRequest) FabricFcStorageRole(fabricFcStorage
 	r.fabricFcStorageRole = &fabricFcStorageRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricFcStorageRoleRequest) IfMatch(ifMatch string) ApiUpdateFabricFcStorageRoleRequest {
 	r.ifMatch = &ifMatch
@@ -28342,8 +28706,8 @@ UpdateFabricFcStorageRole Update a 'fabric.FcStorageRole' resource.
 func (a *FabricApiService) UpdateFabricFcStorageRole(ctx _context.Context, moid string) ApiUpdateFabricFcStorageRoleRequest {
 	return ApiUpdateFabricFcStorageRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -28458,13 +28822,13 @@ func (a *FabricApiService) UpdateFabricFcStorageRoleExecute(r ApiUpdateFabricFcS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28481,11 +28845,11 @@ func (a *FabricApiService) UpdateFabricFcStorageRoleExecute(r ApiUpdateFabricFcS
 }
 
 type ApiUpdateFabricFcUplinkPcRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *FabricApiService
+	moid                 string
 	fabricFcUplinkPcRole *FabricFcUplinkPcRole
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;fabric.FcUplinkPcRole&#39; resource to update.
@@ -28493,6 +28857,7 @@ func (r ApiUpdateFabricFcUplinkPcRoleRequest) FabricFcUplinkPcRole(fabricFcUplin
 	r.fabricFcUplinkPcRole = &fabricFcUplinkPcRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricFcUplinkPcRoleRequest) IfMatch(ifMatch string) ApiUpdateFabricFcUplinkPcRoleRequest {
 	r.ifMatch = &ifMatch
@@ -28513,8 +28878,8 @@ UpdateFabricFcUplinkPcRole Update a 'fabric.FcUplinkPcRole' resource.
 func (a *FabricApiService) UpdateFabricFcUplinkPcRole(ctx _context.Context, moid string) ApiUpdateFabricFcUplinkPcRoleRequest {
 	return ApiUpdateFabricFcUplinkPcRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -28629,13 +28994,13 @@ func (a *FabricApiService) UpdateFabricFcUplinkPcRoleExecute(r ApiUpdateFabricFc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28652,11 +29017,11 @@ func (a *FabricApiService) UpdateFabricFcUplinkPcRoleExecute(r ApiUpdateFabricFc
 }
 
 type ApiUpdateFabricFcUplinkRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                _context.Context
+	ApiService         *FabricApiService
+	moid               string
 	fabricFcUplinkRole *FabricFcUplinkRole
-	ifMatch *string
+	ifMatch            *string
 }
 
 // The &#39;fabric.FcUplinkRole&#39; resource to update.
@@ -28664,6 +29029,7 @@ func (r ApiUpdateFabricFcUplinkRoleRequest) FabricFcUplinkRole(fabricFcUplinkRol
 	r.fabricFcUplinkRole = &fabricFcUplinkRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricFcUplinkRoleRequest) IfMatch(ifMatch string) ApiUpdateFabricFcUplinkRoleRequest {
 	r.ifMatch = &ifMatch
@@ -28684,8 +29050,8 @@ UpdateFabricFcUplinkRole Update a 'fabric.FcUplinkRole' resource.
 func (a *FabricApiService) UpdateFabricFcUplinkRole(ctx _context.Context, moid string) ApiUpdateFabricFcUplinkRoleRequest {
 	return ApiUpdateFabricFcUplinkRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -28800,13 +29166,13 @@ func (a *FabricApiService) UpdateFabricFcUplinkRoleExecute(r ApiUpdateFabricFcUp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28823,11 +29189,11 @@ func (a *FabricApiService) UpdateFabricFcUplinkRoleExecute(r ApiUpdateFabricFcUp
 }
 
 type ApiUpdateFabricFcoeUplinkPcRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *FabricApiService
+	moid                   string
 	fabricFcoeUplinkPcRole *FabricFcoeUplinkPcRole
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;fabric.FcoeUplinkPcRole&#39; resource to update.
@@ -28835,6 +29201,7 @@ func (r ApiUpdateFabricFcoeUplinkPcRoleRequest) FabricFcoeUplinkPcRole(fabricFco
 	r.fabricFcoeUplinkPcRole = &fabricFcoeUplinkPcRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricFcoeUplinkPcRoleRequest) IfMatch(ifMatch string) ApiUpdateFabricFcoeUplinkPcRoleRequest {
 	r.ifMatch = &ifMatch
@@ -28855,8 +29222,8 @@ UpdateFabricFcoeUplinkPcRole Update a 'fabric.FcoeUplinkPcRole' resource.
 func (a *FabricApiService) UpdateFabricFcoeUplinkPcRole(ctx _context.Context, moid string) ApiUpdateFabricFcoeUplinkPcRoleRequest {
 	return ApiUpdateFabricFcoeUplinkPcRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -28971,13 +29338,13 @@ func (a *FabricApiService) UpdateFabricFcoeUplinkPcRoleExecute(r ApiUpdateFabric
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28994,11 +29361,11 @@ func (a *FabricApiService) UpdateFabricFcoeUplinkPcRoleExecute(r ApiUpdateFabric
 }
 
 type ApiUpdateFabricFcoeUplinkRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *FabricApiService
+	moid                 string
 	fabricFcoeUplinkRole *FabricFcoeUplinkRole
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;fabric.FcoeUplinkRole&#39; resource to update.
@@ -29006,6 +29373,7 @@ func (r ApiUpdateFabricFcoeUplinkRoleRequest) FabricFcoeUplinkRole(fabricFcoeUpl
 	r.fabricFcoeUplinkRole = &fabricFcoeUplinkRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricFcoeUplinkRoleRequest) IfMatch(ifMatch string) ApiUpdateFabricFcoeUplinkRoleRequest {
 	r.ifMatch = &ifMatch
@@ -29026,8 +29394,8 @@ UpdateFabricFcoeUplinkRole Update a 'fabric.FcoeUplinkRole' resource.
 func (a *FabricApiService) UpdateFabricFcoeUplinkRole(ctx _context.Context, moid string) ApiUpdateFabricFcoeUplinkRoleRequest {
 	return ApiUpdateFabricFcoeUplinkRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -29142,13 +29510,13 @@ func (a *FabricApiService) UpdateFabricFcoeUplinkRoleExecute(r ApiUpdateFabricFc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29165,11 +29533,11 @@ func (a *FabricApiService) UpdateFabricFcoeUplinkRoleExecute(r ApiUpdateFabricFc
 }
 
 type ApiUpdateFabricFlowControlPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *FabricApiService
+	moid                    string
 	fabricFlowControlPolicy *FabricFlowControlPolicy
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;fabric.FlowControlPolicy&#39; resource to update.
@@ -29177,6 +29545,7 @@ func (r ApiUpdateFabricFlowControlPolicyRequest) FabricFlowControlPolicy(fabricF
 	r.fabricFlowControlPolicy = &fabricFlowControlPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricFlowControlPolicyRequest) IfMatch(ifMatch string) ApiUpdateFabricFlowControlPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -29197,8 +29566,8 @@ UpdateFabricFlowControlPolicy Update a 'fabric.FlowControlPolicy' resource.
 func (a *FabricApiService) UpdateFabricFlowControlPolicy(ctx _context.Context, moid string) ApiUpdateFabricFlowControlPolicyRequest {
 	return ApiUpdateFabricFlowControlPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -29313,13 +29682,13 @@ func (a *FabricApiService) UpdateFabricFlowControlPolicyExecute(r ApiUpdateFabri
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29336,11 +29705,11 @@ func (a *FabricApiService) UpdateFabricFlowControlPolicyExecute(r ApiUpdateFabri
 }
 
 type ApiUpdateFabricLinkAggregationPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *FabricApiService
+	moid                        string
 	fabricLinkAggregationPolicy *FabricLinkAggregationPolicy
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;fabric.LinkAggregationPolicy&#39; resource to update.
@@ -29348,6 +29717,7 @@ func (r ApiUpdateFabricLinkAggregationPolicyRequest) FabricLinkAggregationPolicy
 	r.fabricLinkAggregationPolicy = &fabricLinkAggregationPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricLinkAggregationPolicyRequest) IfMatch(ifMatch string) ApiUpdateFabricLinkAggregationPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -29368,8 +29738,8 @@ UpdateFabricLinkAggregationPolicy Update a 'fabric.LinkAggregationPolicy' resour
 func (a *FabricApiService) UpdateFabricLinkAggregationPolicy(ctx _context.Context, moid string) ApiUpdateFabricLinkAggregationPolicyRequest {
 	return ApiUpdateFabricLinkAggregationPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -29484,13 +29854,13 @@ func (a *FabricApiService) UpdateFabricLinkAggregationPolicyExecute(r ApiUpdateF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29507,11 +29877,11 @@ func (a *FabricApiService) UpdateFabricLinkAggregationPolicyExecute(r ApiUpdateF
 }
 
 type ApiUpdateFabricLinkControlPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *FabricApiService
+	moid                    string
 	fabricLinkControlPolicy *FabricLinkControlPolicy
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;fabric.LinkControlPolicy&#39; resource to update.
@@ -29519,6 +29889,7 @@ func (r ApiUpdateFabricLinkControlPolicyRequest) FabricLinkControlPolicy(fabricL
 	r.fabricLinkControlPolicy = &fabricLinkControlPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricLinkControlPolicyRequest) IfMatch(ifMatch string) ApiUpdateFabricLinkControlPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -29539,8 +29910,8 @@ UpdateFabricLinkControlPolicy Update a 'fabric.LinkControlPolicy' resource.
 func (a *FabricApiService) UpdateFabricLinkControlPolicy(ctx _context.Context, moid string) ApiUpdateFabricLinkControlPolicyRequest {
 	return ApiUpdateFabricLinkControlPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -29655,13 +30026,13 @@ func (a *FabricApiService) UpdateFabricLinkControlPolicyExecute(r ApiUpdateFabri
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29678,11 +30049,11 @@ func (a *FabricApiService) UpdateFabricLinkControlPolicyExecute(r ApiUpdateFabri
 }
 
 type ApiUpdateFabricMulticastPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FabricApiService
+	moid                  string
 	fabricMulticastPolicy *FabricMulticastPolicy
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;fabric.MulticastPolicy&#39; resource to update.
@@ -29690,6 +30061,7 @@ func (r ApiUpdateFabricMulticastPolicyRequest) FabricMulticastPolicy(fabricMulti
 	r.fabricMulticastPolicy = &fabricMulticastPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricMulticastPolicyRequest) IfMatch(ifMatch string) ApiUpdateFabricMulticastPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -29710,8 +30082,8 @@ UpdateFabricMulticastPolicy Update a 'fabric.MulticastPolicy' resource.
 func (a *FabricApiService) UpdateFabricMulticastPolicy(ctx _context.Context, moid string) ApiUpdateFabricMulticastPolicyRequest {
 	return ApiUpdateFabricMulticastPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -29826,13 +30198,13 @@ func (a *FabricApiService) UpdateFabricMulticastPolicyExecute(r ApiUpdateFabricM
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29849,11 +30221,11 @@ func (a *FabricApiService) UpdateFabricMulticastPolicyExecute(r ApiUpdateFabricM
 }
 
 type ApiUpdateFabricPcOperationRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *FabricApiService
+	moid              string
 	fabricPcOperation *FabricPcOperation
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;fabric.PcOperation&#39; resource to update.
@@ -29861,6 +30233,7 @@ func (r ApiUpdateFabricPcOperationRequest) FabricPcOperation(fabricPcOperation F
 	r.fabricPcOperation = &fabricPcOperation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricPcOperationRequest) IfMatch(ifMatch string) ApiUpdateFabricPcOperationRequest {
 	r.ifMatch = &ifMatch
@@ -29881,8 +30254,8 @@ UpdateFabricPcOperation Update a 'fabric.PcOperation' resource.
 func (a *FabricApiService) UpdateFabricPcOperation(ctx _context.Context, moid string) ApiUpdateFabricPcOperationRequest {
 	return ApiUpdateFabricPcOperationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -29997,13 +30370,13 @@ func (a *FabricApiService) UpdateFabricPcOperationExecute(r ApiUpdateFabricPcOpe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30020,11 +30393,11 @@ func (a *FabricApiService) UpdateFabricPcOperationExecute(r ApiUpdateFabricPcOpe
 }
 
 type ApiUpdateFabricPortModeRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx            _context.Context
+	ApiService     *FabricApiService
+	moid           string
 	fabricPortMode *FabricPortMode
-	ifMatch *string
+	ifMatch        *string
 }
 
 // The &#39;fabric.PortMode&#39; resource to update.
@@ -30032,6 +30405,7 @@ func (r ApiUpdateFabricPortModeRequest) FabricPortMode(fabricPortMode FabricPort
 	r.fabricPortMode = &fabricPortMode
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricPortModeRequest) IfMatch(ifMatch string) ApiUpdateFabricPortModeRequest {
 	r.ifMatch = &ifMatch
@@ -30052,8 +30426,8 @@ UpdateFabricPortMode Update a 'fabric.PortMode' resource.
 func (a *FabricApiService) UpdateFabricPortMode(ctx _context.Context, moid string) ApiUpdateFabricPortModeRequest {
 	return ApiUpdateFabricPortModeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -30168,13 +30542,13 @@ func (a *FabricApiService) UpdateFabricPortModeExecute(r ApiUpdateFabricPortMode
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30191,11 +30565,11 @@ func (a *FabricApiService) UpdateFabricPortModeExecute(r ApiUpdateFabricPortMode
 }
 
 type ApiUpdateFabricPortOperationRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *FabricApiService
+	moid                string
 	fabricPortOperation *FabricPortOperation
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;fabric.PortOperation&#39; resource to update.
@@ -30203,6 +30577,7 @@ func (r ApiUpdateFabricPortOperationRequest) FabricPortOperation(fabricPortOpera
 	r.fabricPortOperation = &fabricPortOperation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricPortOperationRequest) IfMatch(ifMatch string) ApiUpdateFabricPortOperationRequest {
 	r.ifMatch = &ifMatch
@@ -30223,8 +30598,8 @@ UpdateFabricPortOperation Update a 'fabric.PortOperation' resource.
 func (a *FabricApiService) UpdateFabricPortOperation(ctx _context.Context, moid string) ApiUpdateFabricPortOperationRequest {
 	return ApiUpdateFabricPortOperationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -30339,13 +30714,13 @@ func (a *FabricApiService) UpdateFabricPortOperationExecute(r ApiUpdateFabricPor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30362,11 +30737,11 @@ func (a *FabricApiService) UpdateFabricPortOperationExecute(r ApiUpdateFabricPor
 }
 
 type ApiUpdateFabricPortPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *FabricApiService
+	moid             string
 	fabricPortPolicy *FabricPortPolicy
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;fabric.PortPolicy&#39; resource to update.
@@ -30374,6 +30749,7 @@ func (r ApiUpdateFabricPortPolicyRequest) FabricPortPolicy(fabricPortPolicy Fabr
 	r.fabricPortPolicy = &fabricPortPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricPortPolicyRequest) IfMatch(ifMatch string) ApiUpdateFabricPortPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -30394,8 +30770,8 @@ UpdateFabricPortPolicy Update a 'fabric.PortPolicy' resource.
 func (a *FabricApiService) UpdateFabricPortPolicy(ctx _context.Context, moid string) ApiUpdateFabricPortPolicyRequest {
 	return ApiUpdateFabricPortPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -30510,13 +30886,13 @@ func (a *FabricApiService) UpdateFabricPortPolicyExecute(r ApiUpdateFabricPortPo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30533,11 +30909,11 @@ func (a *FabricApiService) UpdateFabricPortPolicyExecute(r ApiUpdateFabricPortPo
 }
 
 type ApiUpdateFabricServerRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *FabricApiService
+	moid             string
 	fabricServerRole *FabricServerRole
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;fabric.ServerRole&#39; resource to update.
@@ -30545,6 +30921,7 @@ func (r ApiUpdateFabricServerRoleRequest) FabricServerRole(fabricServerRole Fabr
 	r.fabricServerRole = &fabricServerRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricServerRoleRequest) IfMatch(ifMatch string) ApiUpdateFabricServerRoleRequest {
 	r.ifMatch = &ifMatch
@@ -30565,8 +30942,8 @@ UpdateFabricServerRole Update a 'fabric.ServerRole' resource.
 func (a *FabricApiService) UpdateFabricServerRole(ctx _context.Context, moid string) ApiUpdateFabricServerRoleRequest {
 	return ApiUpdateFabricServerRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -30681,13 +31058,13 @@ func (a *FabricApiService) UpdateFabricServerRoleExecute(r ApiUpdateFabricServer
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30704,11 +31081,11 @@ func (a *FabricApiService) UpdateFabricServerRoleExecute(r ApiUpdateFabricServer
 }
 
 type ApiUpdateFabricSwitchClusterProfileRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *FabricApiService
+	moid                       string
 	fabricSwitchClusterProfile *FabricSwitchClusterProfile
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;fabric.SwitchClusterProfile&#39; resource to update.
@@ -30716,6 +31093,7 @@ func (r ApiUpdateFabricSwitchClusterProfileRequest) FabricSwitchClusterProfile(f
 	r.fabricSwitchClusterProfile = &fabricSwitchClusterProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricSwitchClusterProfileRequest) IfMatch(ifMatch string) ApiUpdateFabricSwitchClusterProfileRequest {
 	r.ifMatch = &ifMatch
@@ -30736,8 +31114,8 @@ UpdateFabricSwitchClusterProfile Update a 'fabric.SwitchClusterProfile' resource
 func (a *FabricApiService) UpdateFabricSwitchClusterProfile(ctx _context.Context, moid string) ApiUpdateFabricSwitchClusterProfileRequest {
 	return ApiUpdateFabricSwitchClusterProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -30852,13 +31230,13 @@ func (a *FabricApiService) UpdateFabricSwitchClusterProfileExecute(r ApiUpdateFa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30875,11 +31253,11 @@ func (a *FabricApiService) UpdateFabricSwitchClusterProfileExecute(r ApiUpdateFa
 }
 
 type ApiUpdateFabricSwitchControlPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *FabricApiService
+	moid                      string
 	fabricSwitchControlPolicy *FabricSwitchControlPolicy
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;fabric.SwitchControlPolicy&#39; resource to update.
@@ -30887,6 +31265,7 @@ func (r ApiUpdateFabricSwitchControlPolicyRequest) FabricSwitchControlPolicy(fab
 	r.fabricSwitchControlPolicy = &fabricSwitchControlPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricSwitchControlPolicyRequest) IfMatch(ifMatch string) ApiUpdateFabricSwitchControlPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -30907,8 +31286,8 @@ UpdateFabricSwitchControlPolicy Update a 'fabric.SwitchControlPolicy' resource.
 func (a *FabricApiService) UpdateFabricSwitchControlPolicy(ctx _context.Context, moid string) ApiUpdateFabricSwitchControlPolicyRequest {
 	return ApiUpdateFabricSwitchControlPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -31023,13 +31402,13 @@ func (a *FabricApiService) UpdateFabricSwitchControlPolicyExecute(r ApiUpdateFab
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31046,11 +31425,11 @@ func (a *FabricApiService) UpdateFabricSwitchControlPolicyExecute(r ApiUpdateFab
 }
 
 type ApiUpdateFabricSwitchProfileRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *FabricApiService
+	moid                string
 	fabricSwitchProfile *FabricSwitchProfile
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;fabric.SwitchProfile&#39; resource to update.
@@ -31058,6 +31437,7 @@ func (r ApiUpdateFabricSwitchProfileRequest) FabricSwitchProfile(fabricSwitchPro
 	r.fabricSwitchProfile = &fabricSwitchProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricSwitchProfileRequest) IfMatch(ifMatch string) ApiUpdateFabricSwitchProfileRequest {
 	r.ifMatch = &ifMatch
@@ -31078,8 +31458,8 @@ UpdateFabricSwitchProfile Update a 'fabric.SwitchProfile' resource.
 func (a *FabricApiService) UpdateFabricSwitchProfile(ctx _context.Context, moid string) ApiUpdateFabricSwitchProfileRequest {
 	return ApiUpdateFabricSwitchProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -31194,13 +31574,13 @@ func (a *FabricApiService) UpdateFabricSwitchProfileExecute(r ApiUpdateFabricSwi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31217,11 +31597,11 @@ func (a *FabricApiService) UpdateFabricSwitchProfileExecute(r ApiUpdateFabricSwi
 }
 
 type ApiUpdateFabricSystemQosPolicyRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FabricApiService
+	moid                  string
 	fabricSystemQosPolicy *FabricSystemQosPolicy
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;fabric.SystemQosPolicy&#39; resource to update.
@@ -31229,6 +31609,7 @@ func (r ApiUpdateFabricSystemQosPolicyRequest) FabricSystemQosPolicy(fabricSyste
 	r.fabricSystemQosPolicy = &fabricSystemQosPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricSystemQosPolicyRequest) IfMatch(ifMatch string) ApiUpdateFabricSystemQosPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -31249,8 +31630,8 @@ UpdateFabricSystemQosPolicy Update a 'fabric.SystemQosPolicy' resource.
 func (a *FabricApiService) UpdateFabricSystemQosPolicy(ctx _context.Context, moid string) ApiUpdateFabricSystemQosPolicyRequest {
 	return ApiUpdateFabricSystemQosPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -31365,13 +31746,13 @@ func (a *FabricApiService) UpdateFabricSystemQosPolicyExecute(r ApiUpdateFabricS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31388,11 +31769,11 @@ func (a *FabricApiService) UpdateFabricSystemQosPolicyExecute(r ApiUpdateFabricS
 }
 
 type ApiUpdateFabricUplinkPcRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx                _context.Context
+	ApiService         *FabricApiService
+	moid               string
 	fabricUplinkPcRole *FabricUplinkPcRole
-	ifMatch *string
+	ifMatch            *string
 }
 
 // The &#39;fabric.UplinkPcRole&#39; resource to update.
@@ -31400,6 +31781,7 @@ func (r ApiUpdateFabricUplinkPcRoleRequest) FabricUplinkPcRole(fabricUplinkPcRol
 	r.fabricUplinkPcRole = &fabricUplinkPcRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricUplinkPcRoleRequest) IfMatch(ifMatch string) ApiUpdateFabricUplinkPcRoleRequest {
 	r.ifMatch = &ifMatch
@@ -31420,8 +31802,8 @@ UpdateFabricUplinkPcRole Update a 'fabric.UplinkPcRole' resource.
 func (a *FabricApiService) UpdateFabricUplinkPcRole(ctx _context.Context, moid string) ApiUpdateFabricUplinkPcRoleRequest {
 	return ApiUpdateFabricUplinkPcRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -31536,13 +31918,13 @@ func (a *FabricApiService) UpdateFabricUplinkPcRoleExecute(r ApiUpdateFabricUpli
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31559,11 +31941,11 @@ func (a *FabricApiService) UpdateFabricUplinkPcRoleExecute(r ApiUpdateFabricUpli
 }
 
 type ApiUpdateFabricUplinkRoleRequest struct {
-	ctx _context.Context
-	ApiService *FabricApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *FabricApiService
+	moid             string
 	fabricUplinkRole *FabricUplinkRole
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;fabric.UplinkRole&#39; resource to update.
@@ -31571,6 +31953,7 @@ func (r ApiUpdateFabricUplinkRoleRequest) FabricUplinkRole(fabricUplinkRole Fabr
 	r.fabricUplinkRole = &fabricUplinkRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricUplinkRoleRequest) IfMatch(ifMatch string) ApiUpdateFabricUplinkRoleRequest {
 	r.ifMatch = &ifMatch
@@ -31591,8 +31974,8 @@ UpdateFabricUplinkRole Update a 'fabric.UplinkRole' resource.
 func (a *FabricApiService) UpdateFabricUplinkRole(ctx _context.Context, moid string) ApiUpdateFabricUplinkRoleRequest {
 	return ApiUpdateFabricUplinkRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -31707,13 +32090,13 @@ func (a *FabricApiService) UpdateFabricUplinkRoleExecute(r ApiUpdateFabricUplink
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31730,11 +32113,11 @@ func (a *FabricApiService) UpdateFabricUplinkRoleExecute(r ApiUpdateFabricUplink
 }
 
 type ApiUpdateFabricVlanRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 	fabricVlan *FabricVlan
-	ifMatch *string
+	ifMatch    *string
 }
 
 // The &#39;fabric.Vlan&#39; resource to update.
@@ -31742,6 +32125,7 @@ func (r ApiUpdateFabricVlanRequest) FabricVlan(fabricVlan FabricVlan) ApiUpdateF
 	r.fabricVlan = &fabricVlan
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricVlanRequest) IfMatch(ifMatch string) ApiUpdateFabricVlanRequest {
 	r.ifMatch = &ifMatch
@@ -31762,8 +32146,8 @@ UpdateFabricVlan Update a 'fabric.Vlan' resource.
 func (a *FabricApiService) UpdateFabricVlan(ctx _context.Context, moid string) ApiUpdateFabricVlanRequest {
 	return ApiUpdateFabricVlanRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -31878,13 +32262,13 @@ func (a *FabricApiService) UpdateFabricVlanExecute(r ApiUpdateFabricVlanRequest)
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31901,11 +32285,11 @@ func (a *FabricApiService) UpdateFabricVlanExecute(r ApiUpdateFabricVlanRequest)
 }
 
 type ApiUpdateFabricVsanRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FabricApiService
-	moid string
+	moid       string
 	fabricVsan *FabricVsan
-	ifMatch *string
+	ifMatch    *string
 }
 
 // The &#39;fabric.Vsan&#39; resource to update.
@@ -31913,6 +32297,7 @@ func (r ApiUpdateFabricVsanRequest) FabricVsan(fabricVsan FabricVsan) ApiUpdateF
 	r.fabricVsan = &fabricVsan
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFabricVsanRequest) IfMatch(ifMatch string) ApiUpdateFabricVsanRequest {
 	r.ifMatch = &ifMatch
@@ -31933,8 +32318,8 @@ UpdateFabricVsan Update a 'fabric.Vsan' resource.
 func (a *FabricApiService) UpdateFabricVsan(ctx _context.Context, moid string) ApiUpdateFabricVsanRequest {
 	return ApiUpdateFabricVsanRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -32049,13 +32434,13 @@ func (a *FabricApiService) UpdateFabricVsanExecute(r ApiUpdateFabricVsanRequest)
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

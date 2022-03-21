@@ -22,10 +22,10 @@ type FirmwareFirmwareSummaryAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Version details at the bundle level for the each of server.
-	BundleVersion *string `json:"BundleVersion,omitempty"`
-	ComponentsFwInventory []FirmwareFirmwareInventory `json:"ComponentsFwInventory,omitempty"`
-	Server *ComputePhysicalRelationship `json:"Server,omitempty"`
-	AdditionalProperties map[string]interface{}
+	BundleVersion         *string                      `json:"BundleVersion,omitempty"`
+	ComponentsFwInventory []FirmwareFirmwareInventory  `json:"ComponentsFwInventory,omitempty"`
+	Server                *ComputePhysicalRelationship `json:"Server,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _FirmwareFirmwareSummaryAllOf FirmwareFirmwareSummaryAllOf
@@ -66,7 +66,7 @@ func (o *FirmwareFirmwareSummaryAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareFirmwareSummaryAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *FirmwareFirmwareSummaryAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareFirmwareSummaryAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -135,7 +135,7 @@ func (o *FirmwareFirmwareSummaryAllOf) SetBundleVersion(v string) {
 
 // GetComponentsFwInventory returns the ComponentsFwInventory field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareFirmwareSummaryAllOf) GetComponentsFwInventory() []FirmwareFirmwareInventory {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareFirmwareInventory
 		return ret
 	}
@@ -279,5 +279,3 @@ func (v *NullableFirmwareFirmwareSummaryAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

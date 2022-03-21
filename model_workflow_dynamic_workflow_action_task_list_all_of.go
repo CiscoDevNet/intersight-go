@@ -24,7 +24,7 @@ type WorkflowDynamicWorkflowActionTaskListAllOf struct {
 	// The action of the Dynamic Workflow.
 	Action *string `json:"Action,omitempty"`
 	// The task list that has precedence which dictates how the workflow should be constructed.
-	Tasks interface{} `json:"Tasks,omitempty"`
+	Tasks                interface{} `json:"Tasks,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *WorkflowDynamicWorkflowActionTaskListAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowDynamicWorkflowActionTaskListAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *WorkflowDynamicWorkflowActionTaskListAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowDynamicWorkflowActionTaskListAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -135,7 +135,7 @@ func (o *WorkflowDynamicWorkflowActionTaskListAllOf) SetAction(v string) {
 
 // GetTasks returns the Tasks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowDynamicWorkflowActionTaskListAllOf) GetTasks() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -243,5 +243,3 @@ func (v *NullableWorkflowDynamicWorkflowActionTaskListAllOf) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

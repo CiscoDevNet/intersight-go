@@ -24,7 +24,7 @@ type WorkflowCustomDataTypePropertiesAllOf struct {
 	// When set to false custom data type is not cloneable. It is set to true only if data type is not internal and it is not using any internal custom data type.
 	Cloneable *bool `json:"Cloneable,omitempty"`
 	// When set to false the custom data type is owned by the system and used for internal services. Such custom data type cannot be directly used by external entities.
-	ExternalMeta *bool `json:"ExternalMeta,omitempty"`
+	ExternalMeta         *bool `json:"ExternalMeta,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *WorkflowCustomDataTypePropertiesAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowCustomDataTypePropertiesAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *WorkflowCustomDataTypePropertiesAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowCustomDataTypePropertiesAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -242,5 +242,3 @@ func (v *NullableWorkflowCustomDataTypePropertiesAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

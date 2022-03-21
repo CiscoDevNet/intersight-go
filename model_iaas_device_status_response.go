@@ -20,30 +20,29 @@ import (
 type IaasDeviceStatusResponse struct {
 	IaasDeviceStatusList *IaasDeviceStatusList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IaasDeviceStatusListAsIaasDeviceStatusResponse is a convenience function that returns IaasDeviceStatusList wrapped in IaasDeviceStatusResponse
 func IaasDeviceStatusListAsIaasDeviceStatusResponse(v *IaasDeviceStatusList) IaasDeviceStatusResponse {
-	return IaasDeviceStatusResponse{ IaasDeviceStatusList: v}
+	return IaasDeviceStatusResponse{IaasDeviceStatusList: v}
 }
 
 // MoAggregateTransformAsIaasDeviceStatusResponse is a convenience function that returns MoAggregateTransform wrapped in IaasDeviceStatusResponse
 func MoAggregateTransformAsIaasDeviceStatusResponse(v *MoAggregateTransform) IaasDeviceStatusResponse {
-	return IaasDeviceStatusResponse{ MoAggregateTransform: v}
+	return IaasDeviceStatusResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIaasDeviceStatusResponse is a convenience function that returns MoDocumentCount wrapped in IaasDeviceStatusResponse
 func MoDocumentCountAsIaasDeviceStatusResponse(v *MoDocumentCount) IaasDeviceStatusResponse {
-	return IaasDeviceStatusResponse{ MoDocumentCount: v}
+	return IaasDeviceStatusResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIaasDeviceStatusResponse is a convenience function that returns MoTagSummary wrapped in IaasDeviceStatusResponse
 func MoTagSummaryAsIaasDeviceStatusResponse(v *MoTagSummary) IaasDeviceStatusResponse {
-	return IaasDeviceStatusResponse{ MoTagSummary: v}
+	return IaasDeviceStatusResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IaasDeviceStatusResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IaasDeviceStatusResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IaasDeviceStatusResponse) GetActualInstance() (interface{}) {
+func (obj *IaasDeviceStatusResponse) GetActualInstance() interface{} {
 	if obj.IaasDeviceStatusList != nil {
 		return obj.IaasDeviceStatusList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIaasDeviceStatusResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

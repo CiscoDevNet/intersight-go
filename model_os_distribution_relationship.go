@@ -18,20 +18,19 @@ import (
 
 // OsDistributionRelationship - A relationship to the 'os.Distribution' resource, or the expanded 'os.Distribution' resource, or the 'null' value.
 type OsDistributionRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef        *MoMoRef
 	OsDistribution *OsDistribution
 }
 
 // MoMoRefAsOsDistributionRelationship is a convenience function that returns MoMoRef wrapped in OsDistributionRelationship
 func MoMoRefAsOsDistributionRelationship(v *MoMoRef) OsDistributionRelationship {
-	return OsDistributionRelationship{ MoMoRef: v}
+	return OsDistributionRelationship{MoMoRef: v}
 }
 
 // OsDistributionAsOsDistributionRelationship is a convenience function that returns OsDistribution wrapped in OsDistributionRelationship
 func OsDistributionAsOsDistributionRelationship(v *OsDistribution) OsDistributionRelationship {
-	return OsDistributionRelationship{ OsDistribution: v}
+	return OsDistributionRelationship{OsDistribution: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *OsDistributionRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src OsDistributionRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *OsDistributionRelationship) GetActualInstance() (interface{}) {
+func (obj *OsDistributionRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableOsDistributionRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

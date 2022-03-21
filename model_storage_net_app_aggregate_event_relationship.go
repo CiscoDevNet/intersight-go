@@ -18,20 +18,19 @@ import (
 
 // StorageNetAppAggregateEventRelationship - A relationship to the 'storage.NetAppAggregateEvent' resource, or the expanded 'storage.NetAppAggregateEvent' resource, or the 'null' value.
 type StorageNetAppAggregateEventRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                     *MoMoRef
 	StorageNetAppAggregateEvent *StorageNetAppAggregateEvent
 }
 
 // MoMoRefAsStorageNetAppAggregateEventRelationship is a convenience function that returns MoMoRef wrapped in StorageNetAppAggregateEventRelationship
 func MoMoRefAsStorageNetAppAggregateEventRelationship(v *MoMoRef) StorageNetAppAggregateEventRelationship {
-	return StorageNetAppAggregateEventRelationship{ MoMoRef: v}
+	return StorageNetAppAggregateEventRelationship{MoMoRef: v}
 }
 
 // StorageNetAppAggregateEventAsStorageNetAppAggregateEventRelationship is a convenience function that returns StorageNetAppAggregateEvent wrapped in StorageNetAppAggregateEventRelationship
 func StorageNetAppAggregateEventAsStorageNetAppAggregateEventRelationship(v *StorageNetAppAggregateEvent) StorageNetAppAggregateEventRelationship {
-	return StorageNetAppAggregateEventRelationship{ StorageNetAppAggregateEvent: v}
+	return StorageNetAppAggregateEventRelationship{StorageNetAppAggregateEvent: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageNetAppAggregateEventRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageNetAppAggregateEventRelationship) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *StorageNetAppAggregateEventRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageNetAppAggregateEventRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageNetAppAggregateEventRelationship) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

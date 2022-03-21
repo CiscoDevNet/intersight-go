@@ -20,30 +20,29 @@ import (
 type EquipmentChassisResponse struct {
 	EquipmentChassisList *EquipmentChassisList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // EquipmentChassisListAsEquipmentChassisResponse is a convenience function that returns EquipmentChassisList wrapped in EquipmentChassisResponse
 func EquipmentChassisListAsEquipmentChassisResponse(v *EquipmentChassisList) EquipmentChassisResponse {
-	return EquipmentChassisResponse{ EquipmentChassisList: v}
+	return EquipmentChassisResponse{EquipmentChassisList: v}
 }
 
 // MoAggregateTransformAsEquipmentChassisResponse is a convenience function that returns MoAggregateTransform wrapped in EquipmentChassisResponse
 func MoAggregateTransformAsEquipmentChassisResponse(v *MoAggregateTransform) EquipmentChassisResponse {
-	return EquipmentChassisResponse{ MoAggregateTransform: v}
+	return EquipmentChassisResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsEquipmentChassisResponse is a convenience function that returns MoDocumentCount wrapped in EquipmentChassisResponse
 func MoDocumentCountAsEquipmentChassisResponse(v *MoDocumentCount) EquipmentChassisResponse {
-	return EquipmentChassisResponse{ MoDocumentCount: v}
+	return EquipmentChassisResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsEquipmentChassisResponse is a convenience function that returns MoTagSummary wrapped in EquipmentChassisResponse
 func MoTagSummaryAsEquipmentChassisResponse(v *MoTagSummary) EquipmentChassisResponse {
-	return EquipmentChassisResponse{ MoTagSummary: v}
+	return EquipmentChassisResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentChassisResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src EquipmentChassisResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentChassisResponse) GetActualInstance() (interface{}) {
+func (obj *EquipmentChassisResponse) GetActualInstance() interface{} {
 	if obj.EquipmentChassisList != nil {
 		return obj.EquipmentChassisList
 	}
@@ -184,5 +183,3 @@ func (v *NullableEquipmentChassisResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

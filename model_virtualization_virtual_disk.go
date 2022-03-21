@@ -45,13 +45,13 @@ type VirtualizationVirtualDisk struct {
 	// Source disk from which the content is copied.
 	SourceDiskToClone *string `json:"SourceDiskToClone,omitempty"`
 	// Image path used to import on the created disk.
-	SourceFilePath *string `json:"SourceFilePath,omitempty"`
-	VolumeIopsInfo NullableCloudVolumeIopsInfo `json:"VolumeIopsInfo,omitempty"`
-	Zone NullableCloudAvailabilityZone `json:"Zone,omitempty"`
-	Cluster *VirtualizationBaseClusterRelationship `json:"Cluster,omitempty"`
-	Inventory *VirtualizationBaseVirtualDiskRelationship `json:"Inventory,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
+	SourceFilePath       *string                                    `json:"SourceFilePath,omitempty"`
+	VolumeIopsInfo       NullableCloudVolumeIopsInfo                `json:"VolumeIopsInfo,omitempty"`
+	Zone                 NullableCloudAvailabilityZone              `json:"Zone,omitempty"`
+	Cluster              *VirtualizationBaseClusterRelationship     `json:"Cluster,omitempty"`
+	Inventory            *VirtualizationBaseVirtualDiskRelationship `json:"Inventory,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship       `json:"RegisteredDevice,omitempty"`
+	WorkflowInfo         *WorkflowWorkflowInfoRelationship          `json:"WorkflowInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -97,7 +97,7 @@ func (o *VirtualizationVirtualDisk) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVirtualDisk) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -121,7 +121,7 @@ func (o *VirtualizationVirtualDisk) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVirtualDisk) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -497,7 +497,7 @@ func (o *VirtualizationVirtualDisk) GetVolumeIopsInfo() CloudVolumeIopsInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVirtualDisk) GetVolumeIopsInfoOk() (*CloudVolumeIopsInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VolumeIopsInfo.Get(), o.VolumeIopsInfo.IsSet()
@@ -516,6 +516,7 @@ func (o *VirtualizationVirtualDisk) HasVolumeIopsInfo() bool {
 func (o *VirtualizationVirtualDisk) SetVolumeIopsInfo(v CloudVolumeIopsInfo) {
 	o.VolumeIopsInfo.Set(&v)
 }
+
 // SetVolumeIopsInfoNil sets the value for VolumeIopsInfo to be an explicit nil
 func (o *VirtualizationVirtualDisk) SetVolumeIopsInfoNil() {
 	o.VolumeIopsInfo.Set(nil)
@@ -539,7 +540,7 @@ func (o *VirtualizationVirtualDisk) GetZone() CloudAvailabilityZone {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVirtualDisk) GetZoneOk() (*CloudAvailabilityZone, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Zone.Get(), o.Zone.IsSet()
@@ -558,6 +559,7 @@ func (o *VirtualizationVirtualDisk) HasZone() bool {
 func (o *VirtualizationVirtualDisk) SetZone(v CloudAvailabilityZone) {
 	o.Zone.Set(&v)
 }
+
 // SetZoneNil sets the value for Zone to be an explicit nil
 func (o *VirtualizationVirtualDisk) SetZoneNil() {
 	o.Zone.Set(nil)
@@ -798,13 +800,13 @@ func (o *VirtualizationVirtualDisk) UnmarshalJSON(bytes []byte) (err error) {
 		// Source disk from which the content is copied.
 		SourceDiskToClone *string `json:"SourceDiskToClone,omitempty"`
 		// Image path used to import on the created disk.
-		SourceFilePath *string `json:"SourceFilePath,omitempty"`
-		VolumeIopsInfo NullableCloudVolumeIopsInfo `json:"VolumeIopsInfo,omitempty"`
-		Zone NullableCloudAvailabilityZone `json:"Zone,omitempty"`
-		Cluster *VirtualizationBaseClusterRelationship `json:"Cluster,omitempty"`
-		Inventory *VirtualizationBaseVirtualDiskRelationship `json:"Inventory,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-		WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
+		SourceFilePath   *string                                    `json:"SourceFilePath,omitempty"`
+		VolumeIopsInfo   NullableCloudVolumeIopsInfo                `json:"VolumeIopsInfo,omitempty"`
+		Zone             NullableCloudAvailabilityZone              `json:"Zone,omitempty"`
+		Cluster          *VirtualizationBaseClusterRelationship     `json:"Cluster,omitempty"`
+		Inventory        *VirtualizationBaseVirtualDiskRelationship `json:"Inventory,omitempty"`
+		RegisteredDevice *AssetDeviceRegistrationRelationship       `json:"RegisteredDevice,omitempty"`
+		WorkflowInfo     *WorkflowWorkflowInfoRelationship          `json:"WorkflowInfo,omitempty"`
 	}
 
 	varVirtualizationVirtualDiskWithoutEmbeddedStruct := VirtualizationVirtualDiskWithoutEmbeddedStruct{}
@@ -927,5 +929,3 @@ func (v *NullableVirtualizationVirtualDisk) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

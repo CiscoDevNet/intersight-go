@@ -29,7 +29,7 @@ type StorageBaseHostLun struct {
 	// Name of the host associated with LUN.
 	HostName *string `json:"HostName,omitempty"`
 	// Name of the storage volume associated with LUN.
-	VolumeName *string `json:"VolumeName,omitempty"`
+	VolumeName           *string `json:"VolumeName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *StorageBaseHostLun) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseHostLun) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *StorageBaseHostLun) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseHostLun) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -337,5 +337,3 @@ func (v *NullableStorageBaseHostLun) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,32 +18,31 @@ import (
 
 // RecoveryConfigResultEntryResponse - The response body of a HTTP GET request for the 'recovery.ConfigResultEntry' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'recovery.ConfigResultEntry' resources.
 type RecoveryConfigResultEntryResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform          *MoAggregateTransform
+	MoDocumentCount               *MoDocumentCount
+	MoTagSummary                  *MoTagSummary
 	RecoveryConfigResultEntryList *RecoveryConfigResultEntryList
 }
 
 // MoAggregateTransformAsRecoveryConfigResultEntryResponse is a convenience function that returns MoAggregateTransform wrapped in RecoveryConfigResultEntryResponse
 func MoAggregateTransformAsRecoveryConfigResultEntryResponse(v *MoAggregateTransform) RecoveryConfigResultEntryResponse {
-	return RecoveryConfigResultEntryResponse{ MoAggregateTransform: v}
+	return RecoveryConfigResultEntryResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsRecoveryConfigResultEntryResponse is a convenience function that returns MoDocumentCount wrapped in RecoveryConfigResultEntryResponse
 func MoDocumentCountAsRecoveryConfigResultEntryResponse(v *MoDocumentCount) RecoveryConfigResultEntryResponse {
-	return RecoveryConfigResultEntryResponse{ MoDocumentCount: v}
+	return RecoveryConfigResultEntryResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsRecoveryConfigResultEntryResponse is a convenience function that returns MoTagSummary wrapped in RecoveryConfigResultEntryResponse
 func MoTagSummaryAsRecoveryConfigResultEntryResponse(v *MoTagSummary) RecoveryConfigResultEntryResponse {
-	return RecoveryConfigResultEntryResponse{ MoTagSummary: v}
+	return RecoveryConfigResultEntryResponse{MoTagSummary: v}
 }
 
 // RecoveryConfigResultEntryListAsRecoveryConfigResultEntryResponse is a convenience function that returns RecoveryConfigResultEntryList wrapped in RecoveryConfigResultEntryResponse
 func RecoveryConfigResultEntryListAsRecoveryConfigResultEntryResponse(v *RecoveryConfigResultEntryList) RecoveryConfigResultEntryResponse {
-	return RecoveryConfigResultEntryResponse{ RecoveryConfigResultEntryList: v}
+	return RecoveryConfigResultEntryResponse{RecoveryConfigResultEntryList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *RecoveryConfigResultEntryResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src RecoveryConfigResultEntryResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *RecoveryConfigResultEntryResponse) GetActualInstance() (interface{}) {
+func (obj *RecoveryConfigResultEntryResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableRecoveryConfigResultEntryResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

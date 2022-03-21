@@ -23,13 +23,13 @@ type ResourcepoolPoolMember struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Features []string `json:"Features,omitempty"`
+	ObjectType string   `json:"ObjectType"`
+	Features   []string `json:"Features,omitempty"`
 	// An array of relationships to moBaseMo resources.
-	AssignedToEntity []MoBaseMoRelationship `json:"AssignedToEntity,omitempty"`
-	Peer *ResourcepoolLeaseRelationship `json:"Peer,omitempty"`
-	Pool *ResourcepoolPoolRelationship `json:"Pool,omitempty"`
-	Resource *MoBaseMoRelationship `json:"Resource,omitempty"`
+	AssignedToEntity     []MoBaseMoRelationship         `json:"AssignedToEntity,omitempty"`
+	Peer                 *ResourcepoolLeaseRelationship `json:"Peer,omitempty"`
+	Pool                 *ResourcepoolPoolRelationship  `json:"Pool,omitempty"`
+	Resource             *MoBaseMoRelationship          `json:"Resource,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *ResourcepoolPoolMember) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ResourcepoolPoolMember) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *ResourcepoolPoolMember) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ResourcepoolPoolMember) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -110,7 +110,7 @@ func (o *ResourcepoolPoolMember) SetObjectType(v string) {
 
 // GetFeatures returns the Features field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ResourcepoolPoolMember) GetFeatures() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *ResourcepoolPoolMember) SetFeatures(v []string) {
 
 // GetAssignedToEntity returns the AssignedToEntity field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ResourcepoolPoolMember) GetAssignedToEntity() []MoBaseMoRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []MoBaseMoRelationship
 		return ret
 	}
@@ -314,13 +314,13 @@ func (o *ResourcepoolPoolMember) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Features []string `json:"Features,omitempty"`
+		ObjectType string   `json:"ObjectType"`
+		Features   []string `json:"Features,omitempty"`
 		// An array of relationships to moBaseMo resources.
-		AssignedToEntity []MoBaseMoRelationship `json:"AssignedToEntity,omitempty"`
-		Peer *ResourcepoolLeaseRelationship `json:"Peer,omitempty"`
-		Pool *ResourcepoolPoolRelationship `json:"Pool,omitempty"`
-		Resource *MoBaseMoRelationship `json:"Resource,omitempty"`
+		AssignedToEntity []MoBaseMoRelationship         `json:"AssignedToEntity,omitempty"`
+		Peer             *ResourcepoolLeaseRelationship `json:"Peer,omitempty"`
+		Pool             *ResourcepoolPoolRelationship  `json:"Pool,omitempty"`
+		Resource         *MoBaseMoRelationship          `json:"Resource,omitempty"`
 	}
 
 	varResourcepoolPoolMemberWithoutEmbeddedStruct := ResourcepoolPoolMemberWithoutEmbeddedStruct{}
@@ -419,5 +419,3 @@ func (v *NullableResourcepoolPoolMember) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

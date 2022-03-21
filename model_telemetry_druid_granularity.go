@@ -13,26 +13,24 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
 )
 
 // TelemetryDruidGranularity - The granularity field determines how data gets bucketed across the time dimension, or how it gets aggregated by hour, day, minute, etc. It can be specified either as a string for simple granularities or as an object for arbitrary granularities. See [Granularities](https://druid.apache.org/docs/latest/querying/granularities.html).
 type TelemetryDruidGranularity struct {
 	TelemetryDruidDurationGranularity *TelemetryDruidDurationGranularity
-	TelemetryDruidPeriodGranularity *TelemetryDruidPeriodGranularity
+	TelemetryDruidPeriodGranularity   *TelemetryDruidPeriodGranularity
 }
 
 // TelemetryDruidDurationGranularityAsTelemetryDruidGranularity is a convenience function that returns TelemetryDruidDurationGranularity wrapped in TelemetryDruidGranularity
 func TelemetryDruidDurationGranularityAsTelemetryDruidGranularity(v *TelemetryDruidDurationGranularity) TelemetryDruidGranularity {
-	return TelemetryDruidGranularity{ TelemetryDruidDurationGranularity: v}
+	return TelemetryDruidGranularity{TelemetryDruidDurationGranularity: v}
 }
 
 // TelemetryDruidPeriodGranularityAsTelemetryDruidGranularity is a convenience function that returns TelemetryDruidPeriodGranularity wrapped in TelemetryDruidGranularity
 func TelemetryDruidPeriodGranularityAsTelemetryDruidGranularity(v *TelemetryDruidPeriodGranularity) TelemetryDruidGranularity {
-	return TelemetryDruidGranularity{ TelemetryDruidPeriodGranularity: v}
+	return TelemetryDruidGranularity{TelemetryDruidPeriodGranularity: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *TelemetryDruidGranularity) UnmarshalJSON(data []byte) error {
@@ -109,7 +107,7 @@ func (src TelemetryDruidGranularity) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *TelemetryDruidGranularity) GetActualInstance() (interface{}) {
+func (obj *TelemetryDruidGranularity) GetActualInstance() interface{} {
 	if obj.TelemetryDruidDurationGranularity != nil {
 		return obj.TelemetryDruidDurationGranularity
 	}
@@ -157,5 +155,3 @@ func (v *NullableTelemetryDruidGranularity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

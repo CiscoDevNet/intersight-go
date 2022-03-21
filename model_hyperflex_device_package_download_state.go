@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // HyperflexDevicePackageDownloadState HyperFlex Device Package Download State.
@@ -28,11 +28,11 @@ type HyperflexDevicePackageDownloadState struct {
 	// Checksum of HyperFlex health check Debian package installed on the HyperFlex Device.
 	Checksum *string `json:"Checksum,omitempty"`
 	// HyperFlex Device Name for which the package download state is tracked.
-	HxDeviceName *string `json:"HxDeviceName,omitempty"`
-	HxNodes []string `json:"HxNodes,omitempty"`
+	HxDeviceName *string  `json:"HxDeviceName,omitempty"`
+	HxNodes      []string `json:"HxNodes,omitempty"`
 	// Timestamp of the last health check Debian package installation on the HyperFlex Device.
-	Timestamp *time.Time `json:"Timestamp,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Timestamp            *time.Time                           `json:"Timestamp,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *HyperflexDevicePackageDownloadState) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexDevicePackageDownloadState) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *HyperflexDevicePackageDownloadState) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexDevicePackageDownloadState) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -175,7 +175,7 @@ func (o *HyperflexDevicePackageDownloadState) SetHxDeviceName(v string) {
 
 // GetHxNodes returns the HxNodes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexDevicePackageDownloadState) GetHxNodes() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -318,10 +318,10 @@ func (o *HyperflexDevicePackageDownloadState) UnmarshalJSON(bytes []byte) (err e
 		// Checksum of HyperFlex health check Debian package installed on the HyperFlex Device.
 		Checksum *string `json:"Checksum,omitempty"`
 		// HyperFlex Device Name for which the package download state is tracked.
-		HxDeviceName *string `json:"HxDeviceName,omitempty"`
-		HxNodes []string `json:"HxNodes,omitempty"`
+		HxDeviceName *string  `json:"HxDeviceName,omitempty"`
+		HxNodes      []string `json:"HxNodes,omitempty"`
 		// Timestamp of the last health check Debian package installation on the HyperFlex Device.
-		Timestamp *time.Time `json:"Timestamp,omitempty"`
+		Timestamp        *time.Time                           `json:"Timestamp,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -421,5 +421,3 @@ func (v *NullableHyperflexDevicePackageDownloadState) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -38,8 +38,8 @@ type NiatelemetryPodSnmpPoliciesAllOf struct {
 	// List of Dn of the SNMP Trap Fwd Server in APIC.
 	SnmpTrapFwdServer *string `json:"SnmpTrapFwdServer,omitempty"`
 	// List of Dn of the SNMP user in APIC.
-	SnmpUser *string `json:"SnmpUser,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SnmpUser             *string                              `json:"SnmpUser,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *NiatelemetryPodSnmpPoliciesAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryPodSnmpPoliciesAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *NiatelemetryPodSnmpPoliciesAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryPodSnmpPoliciesAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -545,5 +545,3 @@ func (v *NullableNiatelemetryPodSnmpPoliciesAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

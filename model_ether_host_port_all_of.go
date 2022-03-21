@@ -24,9 +24,9 @@ type EtherHostPortAllOf struct {
 	// Fabric extender identifier for this port.
 	ModuleId *int64 `json:"ModuleId,omitempty"`
 	// Host Port Speed of IO card or fabric extender.
-	Speed *string `json:"Speed,omitempty"`
-	EquipmentIoCardBase *EquipmentIoCardBaseRelationship `json:"EquipmentIoCardBase,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Speed                *string                              `json:"Speed,omitempty"`
+	EquipmentIoCardBase  *EquipmentIoCardBaseRelationship     `json:"EquipmentIoCardBase,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *EtherHostPortAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EtherHostPortAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *EtherHostPortAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EtherHostPortAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -316,5 +316,3 @@ func (v *NullableEtherHostPortAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

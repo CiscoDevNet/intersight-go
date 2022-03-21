@@ -19,31 +19,30 @@ import (
 // KubernetesDeploymentResponse - The response body of a HTTP GET request for the 'kubernetes.Deployment' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'kubernetes.Deployment' resources.
 type KubernetesDeploymentResponse struct {
 	KubernetesDeploymentList *KubernetesDeploymentList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform     *MoAggregateTransform
+	MoDocumentCount          *MoDocumentCount
+	MoTagSummary             *MoTagSummary
 }
 
 // KubernetesDeploymentListAsKubernetesDeploymentResponse is a convenience function that returns KubernetesDeploymentList wrapped in KubernetesDeploymentResponse
 func KubernetesDeploymentListAsKubernetesDeploymentResponse(v *KubernetesDeploymentList) KubernetesDeploymentResponse {
-	return KubernetesDeploymentResponse{ KubernetesDeploymentList: v}
+	return KubernetesDeploymentResponse{KubernetesDeploymentList: v}
 }
 
 // MoAggregateTransformAsKubernetesDeploymentResponse is a convenience function that returns MoAggregateTransform wrapped in KubernetesDeploymentResponse
 func MoAggregateTransformAsKubernetesDeploymentResponse(v *MoAggregateTransform) KubernetesDeploymentResponse {
-	return KubernetesDeploymentResponse{ MoAggregateTransform: v}
+	return KubernetesDeploymentResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsKubernetesDeploymentResponse is a convenience function that returns MoDocumentCount wrapped in KubernetesDeploymentResponse
 func MoDocumentCountAsKubernetesDeploymentResponse(v *MoDocumentCount) KubernetesDeploymentResponse {
-	return KubernetesDeploymentResponse{ MoDocumentCount: v}
+	return KubernetesDeploymentResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsKubernetesDeploymentResponse is a convenience function that returns MoTagSummary wrapped in KubernetesDeploymentResponse
 func MoTagSummaryAsKubernetesDeploymentResponse(v *MoTagSummary) KubernetesDeploymentResponse {
-	return KubernetesDeploymentResponse{ MoTagSummary: v}
+	return KubernetesDeploymentResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesDeploymentResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src KubernetesDeploymentResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KubernetesDeploymentResponse) GetActualInstance() (interface{}) {
+func (obj *KubernetesDeploymentResponse) GetActualInstance() interface{} {
 	if obj.KubernetesDeploymentList != nil {
 		return obj.KubernetesDeploymentList
 	}
@@ -184,5 +183,3 @@ func (v *NullableKubernetesDeploymentResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

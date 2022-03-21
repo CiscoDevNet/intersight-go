@@ -19,31 +19,30 @@ import (
 // PortGroupResponse - The response body of a HTTP GET request for the 'port.Group' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'port.Group' resources.
 type PortGroupResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
-	PortGroupList *PortGroupList
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
+	PortGroupList        *PortGroupList
 }
 
 // MoAggregateTransformAsPortGroupResponse is a convenience function that returns MoAggregateTransform wrapped in PortGroupResponse
 func MoAggregateTransformAsPortGroupResponse(v *MoAggregateTransform) PortGroupResponse {
-	return PortGroupResponse{ MoAggregateTransform: v}
+	return PortGroupResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsPortGroupResponse is a convenience function that returns MoDocumentCount wrapped in PortGroupResponse
 func MoDocumentCountAsPortGroupResponse(v *MoDocumentCount) PortGroupResponse {
-	return PortGroupResponse{ MoDocumentCount: v}
+	return PortGroupResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsPortGroupResponse is a convenience function that returns MoTagSummary wrapped in PortGroupResponse
 func MoTagSummaryAsPortGroupResponse(v *MoTagSummary) PortGroupResponse {
-	return PortGroupResponse{ MoTagSummary: v}
+	return PortGroupResponse{MoTagSummary: v}
 }
 
 // PortGroupListAsPortGroupResponse is a convenience function that returns PortGroupList wrapped in PortGroupResponse
 func PortGroupListAsPortGroupResponse(v *PortGroupList) PortGroupResponse {
-	return PortGroupResponse{ PortGroupList: v}
+	return PortGroupResponse{PortGroupList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *PortGroupResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src PortGroupResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *PortGroupResponse) GetActualInstance() (interface{}) {
+func (obj *PortGroupResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullablePortGroupResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

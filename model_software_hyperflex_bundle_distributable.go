@@ -23,10 +23,10 @@ type SoftwareHyperflexBundleDistributable struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Catalog *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
+	ObjectType string                                 `json:"ObjectType"`
+	Catalog    *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
 	// An array of relationships to softwareHyperflexDistributable resources.
-	Images []SoftwareHyperflexDistributableRelationship `json:"Images,omitempty"`
+	Images               []SoftwareHyperflexDistributableRelationship `json:"Images,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *SoftwareHyperflexBundleDistributable) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SoftwareHyperflexBundleDistributable) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *SoftwareHyperflexBundleDistributable) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SoftwareHyperflexBundleDistributable) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -141,7 +141,7 @@ func (o *SoftwareHyperflexBundleDistributable) SetCatalog(v SoftwarerepositoryCa
 
 // GetImages returns the Images field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SoftwareHyperflexBundleDistributable) GetImages() []SoftwareHyperflexDistributableRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []SoftwareHyperflexDistributableRelationship
 		return ret
 	}
@@ -207,8 +207,8 @@ func (o *SoftwareHyperflexBundleDistributable) UnmarshalJSON(bytes []byte) (err 
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Catalog *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
+		ObjectType string                                 `json:"ObjectType"`
+		Catalog    *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
 		// An array of relationships to softwareHyperflexDistributable resources.
 		Images []SoftwareHyperflexDistributableRelationship `json:"Images,omitempty"`
 	}
@@ -303,5 +303,3 @@ func (v *NullableSoftwareHyperflexBundleDistributable) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -25,14 +25,14 @@ type HyperflexClusterReplicationNetworkPolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Bandwidth for the Replication network in Mbps.
-	ReplicationBandwidthMbps *int64 `json:"ReplicationBandwidthMbps,omitempty"`
-	ReplicationIpranges []HyperflexIpAddrRange `json:"ReplicationIpranges,omitempty"`
+	ReplicationBandwidthMbps *int64                 `json:"ReplicationBandwidthMbps,omitempty"`
+	ReplicationIpranges      []HyperflexIpAddrRange `json:"ReplicationIpranges,omitempty"`
 	// MTU for the Replication network.
-	ReplicationMtu *int64 `json:"ReplicationMtu,omitempty"`
+	ReplicationMtu  *int64                     `json:"ReplicationMtu,omitempty"`
 	ReplicationVlan NullableHyperflexNamedVlan `json:"ReplicationVlan,omitempty"`
 	// An array of relationships to hyperflexClusterProfile resources.
-	ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ClusterProfiles      []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *HyperflexClusterReplicationNetworkPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexClusterReplicationNetworkPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *HyperflexClusterReplicationNetworkPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexClusterReplicationNetworkPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -151,7 +151,7 @@ func (o *HyperflexClusterReplicationNetworkPolicy) SetReplicationBandwidthMbps(v
 
 // GetReplicationIpranges returns the ReplicationIpranges field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexClusterReplicationNetworkPolicy) GetReplicationIpranges() []HyperflexIpAddrRange {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexIpAddrRange
 		return ret
 	}
@@ -227,7 +227,7 @@ func (o *HyperflexClusterReplicationNetworkPolicy) GetReplicationVlan() Hyperfle
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexClusterReplicationNetworkPolicy) GetReplicationVlanOk() (*HyperflexNamedVlan, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ReplicationVlan.Get(), o.ReplicationVlan.IsSet()
@@ -246,6 +246,7 @@ func (o *HyperflexClusterReplicationNetworkPolicy) HasReplicationVlan() bool {
 func (o *HyperflexClusterReplicationNetworkPolicy) SetReplicationVlan(v HyperflexNamedVlan) {
 	o.ReplicationVlan.Set(&v)
 }
+
 // SetReplicationVlanNil sets the value for ReplicationVlan to be an explicit nil
 func (o *HyperflexClusterReplicationNetworkPolicy) SetReplicationVlanNil() {
 	o.ReplicationVlan.Set(nil)
@@ -258,7 +259,7 @@ func (o *HyperflexClusterReplicationNetworkPolicy) UnsetReplicationVlan() {
 
 // GetClusterProfiles returns the ClusterProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexClusterReplicationNetworkPolicy) GetClusterProfiles() []HyperflexClusterProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexClusterProfileRelationship
 		return ret
 	}
@@ -370,14 +371,14 @@ func (o *HyperflexClusterReplicationNetworkPolicy) UnmarshalJSON(bytes []byte) (
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Bandwidth for the Replication network in Mbps.
-		ReplicationBandwidthMbps *int64 `json:"ReplicationBandwidthMbps,omitempty"`
-		ReplicationIpranges []HyperflexIpAddrRange `json:"ReplicationIpranges,omitempty"`
+		ReplicationBandwidthMbps *int64                 `json:"ReplicationBandwidthMbps,omitempty"`
+		ReplicationIpranges      []HyperflexIpAddrRange `json:"ReplicationIpranges,omitempty"`
 		// MTU for the Replication network.
-		ReplicationMtu *int64 `json:"ReplicationMtu,omitempty"`
+		ReplicationMtu  *int64                     `json:"ReplicationMtu,omitempty"`
 		ReplicationVlan NullableHyperflexNamedVlan `json:"ReplicationVlan,omitempty"`
 		// An array of relationships to hyperflexClusterProfile resources.
 		ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		Organization    *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
 	varHyperflexClusterReplicationNetworkPolicyWithoutEmbeddedStruct := HyperflexClusterReplicationNetworkPolicyWithoutEmbeddedStruct{}
@@ -478,5 +479,3 @@ func (v *NullableHyperflexClusterReplicationNetworkPolicy) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

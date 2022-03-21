@@ -18,7 +18,7 @@ import (
 // CmrfCmRfAllOf Definition of the list of properties defined in 'cmrf.CmRf', excluding properties defined in parent classes.
 type CmrfCmRfAllOf struct {
 	// The Moid of the referenced REST resource.
-	Moid *string `json:"Moid,omitempty"`
+	Moid                 *string `json:"Moid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -138,5 +138,3 @@ func (v *NullableCmrfCmRfAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

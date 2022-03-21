@@ -18,20 +18,19 @@ import (
 
 // StorageVdMemberEpRelationship - A relationship to the 'storage.VdMemberEp' resource, or the expanded 'storage.VdMemberEp' resource, or the 'null' value.
 type StorageVdMemberEpRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 	StorageVdMemberEp *StorageVdMemberEp
 }
 
 // MoMoRefAsStorageVdMemberEpRelationship is a convenience function that returns MoMoRef wrapped in StorageVdMemberEpRelationship
 func MoMoRefAsStorageVdMemberEpRelationship(v *MoMoRef) StorageVdMemberEpRelationship {
-	return StorageVdMemberEpRelationship{ MoMoRef: v}
+	return StorageVdMemberEpRelationship{MoMoRef: v}
 }
 
 // StorageVdMemberEpAsStorageVdMemberEpRelationship is a convenience function that returns StorageVdMemberEp wrapped in StorageVdMemberEpRelationship
 func StorageVdMemberEpAsStorageVdMemberEpRelationship(v *StorageVdMemberEp) StorageVdMemberEpRelationship {
-	return StorageVdMemberEpRelationship{ StorageVdMemberEp: v}
+	return StorageVdMemberEpRelationship{StorageVdMemberEp: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageVdMemberEpRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageVdMemberEpRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageVdMemberEpRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageVdMemberEpRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageVdMemberEpRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

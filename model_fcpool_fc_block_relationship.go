@@ -19,19 +19,18 @@ import (
 // FcpoolFcBlockRelationship - A relationship to the 'fcpool.FcBlock' resource, or the expanded 'fcpool.FcBlock' resource, or the 'null' value.
 type FcpoolFcBlockRelationship struct {
 	FcpoolFcBlock *FcpoolFcBlock
-	MoMoRef *MoMoRef
+	MoMoRef       *MoMoRef
 }
 
 // FcpoolFcBlockAsFcpoolFcBlockRelationship is a convenience function that returns FcpoolFcBlock wrapped in FcpoolFcBlockRelationship
 func FcpoolFcBlockAsFcpoolFcBlockRelationship(v *FcpoolFcBlock) FcpoolFcBlockRelationship {
-	return FcpoolFcBlockRelationship{ FcpoolFcBlock: v}
+	return FcpoolFcBlockRelationship{FcpoolFcBlock: v}
 }
 
 // MoMoRefAsFcpoolFcBlockRelationship is a convenience function that returns MoMoRef wrapped in FcpoolFcBlockRelationship
 func MoMoRefAsFcpoolFcBlockRelationship(v *MoMoRef) FcpoolFcBlockRelationship {
-	return FcpoolFcBlockRelationship{ MoMoRef: v}
+	return FcpoolFcBlockRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FcpoolFcBlockRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src FcpoolFcBlockRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FcpoolFcBlockRelationship) GetActualInstance() (interface{}) {
+func (obj *FcpoolFcBlockRelationship) GetActualInstance() interface{} {
 	if obj.FcpoolFcBlock != nil {
 		return obj.FcpoolFcBlock
 	}
@@ -137,5 +136,3 @@ func (v *NullableFcpoolFcBlockRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

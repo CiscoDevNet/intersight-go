@@ -20,8 +20,8 @@ type NotificationAlarmMoConditionAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Severity []string `json:"Severity,omitempty"`
+	ObjectType           string   `json:"ObjectType"`
+	Severity             []string `json:"Severity,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -63,7 +63,7 @@ func (o *NotificationAlarmMoConditionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NotificationAlarmMoConditionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -87,7 +87,7 @@ func (o *NotificationAlarmMoConditionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NotificationAlarmMoConditionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -100,7 +100,7 @@ func (o *NotificationAlarmMoConditionAllOf) SetObjectType(v string) {
 
 // GetSeverity returns the Severity field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NotificationAlarmMoConditionAllOf) GetSeverity() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -204,5 +204,3 @@ func (v *NullableNotificationAlarmMoConditionAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

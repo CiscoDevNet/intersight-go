@@ -19,19 +19,18 @@ import (
 // ManagementInterfaceRelationship - A relationship to the 'management.Interface' resource, or the expanded 'management.Interface' resource, or the 'null' value.
 type ManagementInterfaceRelationship struct {
 	ManagementInterface *ManagementInterface
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 }
 
 // ManagementInterfaceAsManagementInterfaceRelationship is a convenience function that returns ManagementInterface wrapped in ManagementInterfaceRelationship
 func ManagementInterfaceAsManagementInterfaceRelationship(v *ManagementInterface) ManagementInterfaceRelationship {
-	return ManagementInterfaceRelationship{ ManagementInterface: v}
+	return ManagementInterfaceRelationship{ManagementInterface: v}
 }
 
 // MoMoRefAsManagementInterfaceRelationship is a convenience function that returns MoMoRef wrapped in ManagementInterfaceRelationship
 func MoMoRefAsManagementInterfaceRelationship(v *MoMoRef) ManagementInterfaceRelationship {
-	return ManagementInterfaceRelationship{ MoMoRef: v}
+	return ManagementInterfaceRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ManagementInterfaceRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ManagementInterfaceRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ManagementInterfaceRelationship) GetActualInstance() (interface{}) {
+func (obj *ManagementInterfaceRelationship) GetActualInstance() interface{} {
 	if obj.ManagementInterface != nil {
 		return obj.ManagementInterface
 	}
@@ -137,5 +136,3 @@ func (v *NullableManagementInterfaceRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

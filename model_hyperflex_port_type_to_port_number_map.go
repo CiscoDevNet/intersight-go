@@ -27,7 +27,7 @@ type HyperflexPortTypeToPortNumberMap struct {
 	// Integer describing port type to port number map.
 	I16 *int64 `json:"I16,omitempty"`
 	// String describing port type to port number map.
-	String *string `json:"String,omitempty"`
+	String               *string `json:"String,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *HyperflexPortTypeToPortNumberMap) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexPortTypeToPortNumberMap) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *HyperflexPortTypeToPortNumberMap) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexPortTypeToPortNumberMap) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -300,5 +300,3 @@ func (v *NullableHyperflexPortTypeToPortNumberMap) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

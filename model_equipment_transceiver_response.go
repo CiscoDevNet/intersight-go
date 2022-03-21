@@ -19,31 +19,30 @@ import (
 // EquipmentTransceiverResponse - The response body of a HTTP GET request for the 'equipment.Transceiver' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'equipment.Transceiver' resources.
 type EquipmentTransceiverResponse struct {
 	EquipmentTransceiverList *EquipmentTransceiverList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform     *MoAggregateTransform
+	MoDocumentCount          *MoDocumentCount
+	MoTagSummary             *MoTagSummary
 }
 
 // EquipmentTransceiverListAsEquipmentTransceiverResponse is a convenience function that returns EquipmentTransceiverList wrapped in EquipmentTransceiverResponse
 func EquipmentTransceiverListAsEquipmentTransceiverResponse(v *EquipmentTransceiverList) EquipmentTransceiverResponse {
-	return EquipmentTransceiverResponse{ EquipmentTransceiverList: v}
+	return EquipmentTransceiverResponse{EquipmentTransceiverList: v}
 }
 
 // MoAggregateTransformAsEquipmentTransceiverResponse is a convenience function that returns MoAggregateTransform wrapped in EquipmentTransceiverResponse
 func MoAggregateTransformAsEquipmentTransceiverResponse(v *MoAggregateTransform) EquipmentTransceiverResponse {
-	return EquipmentTransceiverResponse{ MoAggregateTransform: v}
+	return EquipmentTransceiverResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsEquipmentTransceiverResponse is a convenience function that returns MoDocumentCount wrapped in EquipmentTransceiverResponse
 func MoDocumentCountAsEquipmentTransceiverResponse(v *MoDocumentCount) EquipmentTransceiverResponse {
-	return EquipmentTransceiverResponse{ MoDocumentCount: v}
+	return EquipmentTransceiverResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsEquipmentTransceiverResponse is a convenience function that returns MoTagSummary wrapped in EquipmentTransceiverResponse
 func MoTagSummaryAsEquipmentTransceiverResponse(v *MoTagSummary) EquipmentTransceiverResponse {
-	return EquipmentTransceiverResponse{ MoTagSummary: v}
+	return EquipmentTransceiverResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentTransceiverResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src EquipmentTransceiverResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentTransceiverResponse) GetActualInstance() (interface{}) {
+func (obj *EquipmentTransceiverResponse) GetActualInstance() interface{} {
 	if obj.EquipmentTransceiverList != nil {
 		return obj.EquipmentTransceiverList
 	}
@@ -184,5 +183,3 @@ func (v *NullableEquipmentTransceiverResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

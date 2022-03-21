@@ -24,14 +24,14 @@ type HyperflexStPlatformClusterHealingInfoAllOf struct {
 	// The estimated time in seconds it will take to complete the auto-healing process.
 	EstimatedCompletionTimeInSeconds *int64 `json:"EstimatedCompletionTimeInSeconds,omitempty"`
 	// The status of the cluster's auto-healing process. If 'true', auto-healing is in progress for the cluster.
-	InProgress *bool `json:"InProgress,omitempty"`
-	Messages []string `json:"Messages,omitempty"`
+	InProgress *bool    `json:"InProgress,omitempty"`
+	Messages   []string `json:"Messages,omitempty"`
 	// The current message describing the auto-healing process of the cluster.
 	MessagesIterator interface{} `json:"MessagesIterator,omitempty"`
 	// The number of elements in the messages collection.
 	MessagesSize *int64 `json:"MessagesSize,omitempty"`
 	// The progress of the auto-healing process as a percentage.
-	PercentComplete *int64 `json:"PercentComplete,omitempty"`
+	PercentComplete      *int64 `json:"PercentComplete,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *HyperflexStPlatformClusterHealingInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexStPlatformClusterHealingInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *HyperflexStPlatformClusterHealingInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexStPlatformClusterHealingInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -174,7 +174,7 @@ func (o *HyperflexStPlatformClusterHealingInfoAllOf) SetInProgress(v bool) {
 
 // GetMessages returns the Messages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexStPlatformClusterHealingInfoAllOf) GetMessages() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *HyperflexStPlatformClusterHealingInfoAllOf) SetMessages(v []string) {
 
 // GetMessagesIterator returns the MessagesIterator field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexStPlatformClusterHealingInfoAllOf) GetMessagesIterator() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -395,5 +395,3 @@ func (v *NullableHyperflexStPlatformClusterHealingInfoAllOf) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

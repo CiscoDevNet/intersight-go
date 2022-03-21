@@ -20,7 +20,7 @@ type WorkflowTaskMetadataListAllOf struct {
 	// The total number of 'workflow.TaskMetadata' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'workflow.TaskMetadata' resources matching the request.
-	Results []WorkflowTaskMetadata `json:"Results,omitempty"`
+	Results              []WorkflowTaskMetadata `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *WorkflowTaskMetadataListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTaskMetadataListAllOf) GetResults() []WorkflowTaskMetadata {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowTaskMetadata
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableWorkflowTaskMetadataListAllOf) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

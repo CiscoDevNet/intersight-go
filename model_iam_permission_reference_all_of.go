@@ -24,7 +24,7 @@ type IamPermissionReferenceAllOf struct {
 	// MOID of the permission which user has access to.
 	PermissionIdentifier *string `json:"PermissionIdentifier,omitempty"`
 	// Name of the permission which user has access to.
-	PermissionName *string `json:"PermissionName,omitempty"`
+	PermissionName       *string `json:"PermissionName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *IamPermissionReferenceAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamPermissionReferenceAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *IamPermissionReferenceAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamPermissionReferenceAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -242,5 +242,3 @@ func (v *NullableIamPermissionReferenceAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -35,8 +35,8 @@ type NiatelemetryDcnmFexDetails struct {
 	// Serial number of the fex in the fabric inventory.
 	SerialNumber *string `json:"SerialNumber,omitempty"`
 	// Vendor Id of the fex in the fabric inventory.
-	VendorId *string `json:"VendorId,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	VendorId             *string                              `json:"VendorId,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *NiatelemetryDcnmFexDetails) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryDcnmFexDetails) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *NiatelemetryDcnmFexDetails) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryDcnmFexDetails) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -399,7 +399,7 @@ func (o *NiatelemetryDcnmFexDetails) UnmarshalJSON(bytes []byte) (err error) {
 		// Serial number of the fex in the fabric inventory.
 		SerialNumber *string `json:"SerialNumber,omitempty"`
 		// Vendor Id of the fex in the fabric inventory.
-		VendorId *string `json:"VendorId,omitempty"`
+		VendorId         *string                              `json:"VendorId,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -503,5 +503,3 @@ func (v *NullableNiatelemetryDcnmFexDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

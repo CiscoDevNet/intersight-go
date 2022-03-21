@@ -18,9 +18,9 @@ import (
 // TelemetryDruidDataSourceMetadataRequest Data Source Metadata queries return metadata information for a dataSource. These queries return information about the timestamp of latest ingested event for the dataSource. This is the ingested event without any consideration of rollup.
 type TelemetryDruidDataSourceMetadataRequest struct {
 	// null
-	QueryType string `json:"queryType"`
-	DataSource TelemetryDruidDataSource `json:"dataSource"`
-	Context *TelemetryDruidQueryContext `json:"context,omitempty"`
+	QueryType            string                      `json:"queryType"`
+	DataSource           TelemetryDruidDataSource    `json:"dataSource"`
+	Context              *TelemetryDruidQueryContext `json:"context,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -58,7 +58,7 @@ func (o *TelemetryDruidDataSourceMetadataRequest) GetQueryType() string {
 // GetQueryTypeOk returns a tuple with the QueryType field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidDataSourceMetadataRequest) GetQueryTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.QueryType, true
@@ -82,7 +82,7 @@ func (o *TelemetryDruidDataSourceMetadataRequest) GetDataSource() TelemetryDruid
 // GetDataSourceOk returns a tuple with the DataSource field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidDataSourceMetadataRequest) GetDataSourceOk() (*TelemetryDruidDataSource, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DataSource, true
@@ -198,5 +198,3 @@ func (v *NullableTelemetryDruidDataSourceMetadataRequest) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

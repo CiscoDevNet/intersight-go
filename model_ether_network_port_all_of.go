@@ -32,9 +32,9 @@ type EtherNetworkPortAllOf struct {
 	// Network Port Speed of IO card or fabric extender.
 	Speed *string `json:"Speed,omitempty"`
 	// Switch Identifier that is local to a cluster.
-	SwitchId *string `json:"SwitchId,omitempty"`
-	EquipmentIoCardBase *EquipmentIoCardBaseRelationship `json:"EquipmentIoCardBase,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SwitchId             *string                              `json:"SwitchId,omitempty"`
+	EquipmentIoCardBase  *EquipmentIoCardBaseRelationship     `json:"EquipmentIoCardBase,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *EtherNetworkPortAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EtherNetworkPortAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *EtherNetworkPortAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EtherNetworkPortAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -468,5 +468,3 @@ func (v *NullableEtherNetworkPortAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

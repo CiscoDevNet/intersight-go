@@ -19,19 +19,18 @@ import (
 // LicenseIksLicenseCountRelationship - A relationship to the 'license.IksLicenseCount' resource, or the expanded 'license.IksLicenseCount' resource, or the 'null' value.
 type LicenseIksLicenseCountRelationship struct {
 	LicenseIksLicenseCount *LicenseIksLicenseCount
-	MoMoRef *MoMoRef
+	MoMoRef                *MoMoRef
 }
 
 // LicenseIksLicenseCountAsLicenseIksLicenseCountRelationship is a convenience function that returns LicenseIksLicenseCount wrapped in LicenseIksLicenseCountRelationship
 func LicenseIksLicenseCountAsLicenseIksLicenseCountRelationship(v *LicenseIksLicenseCount) LicenseIksLicenseCountRelationship {
-	return LicenseIksLicenseCountRelationship{ LicenseIksLicenseCount: v}
+	return LicenseIksLicenseCountRelationship{LicenseIksLicenseCount: v}
 }
 
 // MoMoRefAsLicenseIksLicenseCountRelationship is a convenience function that returns MoMoRef wrapped in LicenseIksLicenseCountRelationship
 func MoMoRefAsLicenseIksLicenseCountRelationship(v *MoMoRef) LicenseIksLicenseCountRelationship {
-	return LicenseIksLicenseCountRelationship{ MoMoRef: v}
+	return LicenseIksLicenseCountRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *LicenseIksLicenseCountRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src LicenseIksLicenseCountRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *LicenseIksLicenseCountRelationship) GetActualInstance() (interface{}) {
+func (obj *LicenseIksLicenseCountRelationship) GetActualInstance() interface{} {
 	if obj.LicenseIksLicenseCount != nil {
 		return obj.LicenseIksLicenseCount
 	}
@@ -137,5 +136,3 @@ func (v *NullableLicenseIksLicenseCountRelationship) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

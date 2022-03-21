@@ -19,19 +19,18 @@ import (
 // IamEndPointUserPolicyRelationship - A relationship to the 'iam.EndPointUserPolicy' resource, or the expanded 'iam.EndPointUserPolicy' resource, or the 'null' value.
 type IamEndPointUserPolicyRelationship struct {
 	IamEndPointUserPolicy *IamEndPointUserPolicy
-	MoMoRef *MoMoRef
+	MoMoRef               *MoMoRef
 }
 
 // IamEndPointUserPolicyAsIamEndPointUserPolicyRelationship is a convenience function that returns IamEndPointUserPolicy wrapped in IamEndPointUserPolicyRelationship
 func IamEndPointUserPolicyAsIamEndPointUserPolicyRelationship(v *IamEndPointUserPolicy) IamEndPointUserPolicyRelationship {
-	return IamEndPointUserPolicyRelationship{ IamEndPointUserPolicy: v}
+	return IamEndPointUserPolicyRelationship{IamEndPointUserPolicy: v}
 }
 
 // MoMoRefAsIamEndPointUserPolicyRelationship is a convenience function that returns MoMoRef wrapped in IamEndPointUserPolicyRelationship
 func MoMoRefAsIamEndPointUserPolicyRelationship(v *MoMoRef) IamEndPointUserPolicyRelationship {
-	return IamEndPointUserPolicyRelationship{ MoMoRef: v}
+	return IamEndPointUserPolicyRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamEndPointUserPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamEndPointUserPolicyRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamEndPointUserPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *IamEndPointUserPolicyRelationship) GetActualInstance() interface{} {
 	if obj.IamEndPointUserPolicy != nil {
 		return obj.IamEndPointUserPolicy
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamEndPointUserPolicyRelationship) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,20 +18,19 @@ import (
 
 // RecoveryScheduleConfigPolicyRelationship - A relationship to the 'recovery.ScheduleConfigPolicy' resource, or the expanded 'recovery.ScheduleConfigPolicy' resource, or the 'null' value.
 type RecoveryScheduleConfigPolicyRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                      *MoMoRef
 	RecoveryScheduleConfigPolicy *RecoveryScheduleConfigPolicy
 }
 
 // MoMoRefAsRecoveryScheduleConfigPolicyRelationship is a convenience function that returns MoMoRef wrapped in RecoveryScheduleConfigPolicyRelationship
 func MoMoRefAsRecoveryScheduleConfigPolicyRelationship(v *MoMoRef) RecoveryScheduleConfigPolicyRelationship {
-	return RecoveryScheduleConfigPolicyRelationship{ MoMoRef: v}
+	return RecoveryScheduleConfigPolicyRelationship{MoMoRef: v}
 }
 
 // RecoveryScheduleConfigPolicyAsRecoveryScheduleConfigPolicyRelationship is a convenience function that returns RecoveryScheduleConfigPolicy wrapped in RecoveryScheduleConfigPolicyRelationship
 func RecoveryScheduleConfigPolicyAsRecoveryScheduleConfigPolicyRelationship(v *RecoveryScheduleConfigPolicy) RecoveryScheduleConfigPolicyRelationship {
-	return RecoveryScheduleConfigPolicyRelationship{ RecoveryScheduleConfigPolicy: v}
+	return RecoveryScheduleConfigPolicyRelationship{RecoveryScheduleConfigPolicy: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *RecoveryScheduleConfigPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src RecoveryScheduleConfigPolicyRelationship) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *RecoveryScheduleConfigPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *RecoveryScheduleConfigPolicyRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableRecoveryScheduleConfigPolicyRelationship) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

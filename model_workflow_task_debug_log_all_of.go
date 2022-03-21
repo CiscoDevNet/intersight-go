@@ -26,9 +26,9 @@ type WorkflowTaskDebugLogAllOf struct {
 	// Holds information helpful in isolating task failures.
 	TaskDebugLogEntries interface{} `json:"TaskDebugLogEntries,omitempty"`
 	// The unique identifier for task instance.
-	TaskInstId *string `json:"TaskInstId,omitempty"`
-	TaskInfo *WorkflowTaskInfoRelationship `json:"TaskInfo,omitempty"`
-	WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
+	TaskInstId           *string                           `json:"TaskInstId,omitempty"`
+	TaskInfo             *WorkflowTaskInfoRelationship     `json:"TaskInfo,omitempty"`
+	WorkflowInfo         *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *WorkflowTaskDebugLogAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowTaskDebugLogAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *WorkflowTaskDebugLogAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowTaskDebugLogAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -139,7 +139,7 @@ func (o *WorkflowTaskDebugLogAllOf) SetRetryCount(v int64) {
 
 // GetTaskDebugLogEntries returns the TaskDebugLogEntries field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTaskDebugLogAllOf) GetTaskDebugLogEntries() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -355,5 +355,3 @@ func (v *NullableWorkflowTaskDebugLogAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

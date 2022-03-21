@@ -28,12 +28,12 @@ type HyperflexSoftwareDistributionComponentAllOf struct {
 	// The HyperFlex Software Distribution Component Name.
 	ComponentName *string `json:"ComponentName,omitempty"`
 	// File location on the cloud storage.
-	FilePath *string `json:"FilePath,omitempty"`
+	FilePath        *string  `json:"FilePath,omitempty"`
 	FilesToDownload []string `json:"FilesToDownload,omitempty"`
 	// The HyperFlex Software Distribution Component Version.
-	Version *string `json:"Version,omitempty"`
+	Version                     *string                                           `json:"Version,omitempty"`
 	SoftwareDistributionVersion *HyperflexSoftwareDistributionVersionRelationship `json:"SoftwareDistributionVersion,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties        map[string]interface{}
 }
 
 type _HyperflexSoftwareDistributionComponentAllOf HyperflexSoftwareDistributionComponentAllOf
@@ -74,7 +74,7 @@ func (o *HyperflexSoftwareDistributionComponentAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexSoftwareDistributionComponentAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *HyperflexSoftwareDistributionComponentAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexSoftwareDistributionComponentAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -239,7 +239,7 @@ func (o *HyperflexSoftwareDistributionComponentAllOf) SetFilePath(v string) {
 
 // GetFilesToDownload returns the FilesToDownload field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexSoftwareDistributionComponentAllOf) GetFilesToDownload() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -431,5 +431,3 @@ func (v *NullableHyperflexSoftwareDistributionComponentAllOf) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

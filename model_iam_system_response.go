@@ -18,32 +18,31 @@ import (
 
 // IamSystemResponse - The response body of a HTTP GET request for the 'iam.System' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'iam.System' resources.
 type IamSystemResponse struct {
-	IamSystemList *IamSystemList
+	IamSystemList        *IamSystemList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IamSystemListAsIamSystemResponse is a convenience function that returns IamSystemList wrapped in IamSystemResponse
 func IamSystemListAsIamSystemResponse(v *IamSystemList) IamSystemResponse {
-	return IamSystemResponse{ IamSystemList: v}
+	return IamSystemResponse{IamSystemList: v}
 }
 
 // MoAggregateTransformAsIamSystemResponse is a convenience function that returns MoAggregateTransform wrapped in IamSystemResponse
 func MoAggregateTransformAsIamSystemResponse(v *MoAggregateTransform) IamSystemResponse {
-	return IamSystemResponse{ MoAggregateTransform: v}
+	return IamSystemResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIamSystemResponse is a convenience function that returns MoDocumentCount wrapped in IamSystemResponse
 func MoDocumentCountAsIamSystemResponse(v *MoDocumentCount) IamSystemResponse {
-	return IamSystemResponse{ MoDocumentCount: v}
+	return IamSystemResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIamSystemResponse is a convenience function that returns MoTagSummary wrapped in IamSystemResponse
 func MoTagSummaryAsIamSystemResponse(v *MoTagSummary) IamSystemResponse {
-	return IamSystemResponse{ MoTagSummary: v}
+	return IamSystemResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamSystemResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IamSystemResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamSystemResponse) GetActualInstance() (interface{}) {
+func (obj *IamSystemResponse) GetActualInstance() interface{} {
 	if obj.IamSystemList != nil {
 		return obj.IamSystemList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIamSystemResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

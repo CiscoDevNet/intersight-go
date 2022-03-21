@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // IwotenantTenantStatus When an Intersight customer activates IWO license, kubernetes resources need to configured, vault policies need to be setup, etc. to run IWO services as pods. The provisioning of these resources takes a few minutes. Any feature dependent on the IWO APIs will fail till these services are healthy. TenantStatus MO provides status and health of the tenants, so user can be notified when tenant creation is in progress or has failed.
@@ -30,8 +30,8 @@ type IwotenantTenantStatus struct {
 	// The iwoId uniquely identifies a IWO tenant. The iwoId is used as part of namespace, (logical) database names, policies in vault and many others. As of now, accountMoid has to be provided as the iwoId.
 	IwoId *string `json:"IwoId,omitempty"`
 	// During IWO tenant upgrade (or reconfiguration), deployStatus is set to InProgress and referenceTime set to current time. When tenant upgrade (or reconfiguration) does not complete within a pre-defined time using this as reference, deployStatus is set as Failed.
-	ReferenceTime *time.Time `json:"ReferenceTime,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	ReferenceTime        *time.Time              `json:"ReferenceTime,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *IwotenantTenantStatus) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IwotenantTenantStatus) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *IwotenantTenantStatus) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IwotenantTenantStatus) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -283,8 +283,8 @@ func (o *IwotenantTenantStatus) UnmarshalJSON(bytes []byte) (err error) {
 		// The iwoId uniquely identifies a IWO tenant. The iwoId is used as part of namespace, (logical) database names, policies in vault and many others. As of now, accountMoid has to be provided as the iwoId.
 		IwoId *string `json:"IwoId,omitempty"`
 		// During IWO tenant upgrade (or reconfiguration), deployStatus is set to InProgress and referenceTime set to current time. When tenant upgrade (or reconfiguration) does not complete within a pre-defined time using this as reference, deployStatus is set as Failed.
-		ReferenceTime *time.Time `json:"ReferenceTime,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
+		ReferenceTime *time.Time              `json:"ReferenceTime,omitempty"`
+		Account       *IamAccountRelationship `json:"Account,omitempty"`
 	}
 
 	varIwotenantTenantStatusWithoutEmbeddedStruct := IwotenantTenantStatusWithoutEmbeddedStruct{}
@@ -381,5 +381,3 @@ func (v *NullableIwotenantTenantStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

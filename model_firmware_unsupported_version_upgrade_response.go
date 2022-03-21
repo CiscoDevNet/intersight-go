@@ -19,31 +19,30 @@ import (
 // FirmwareUnsupportedVersionUpgradeResponse - The response body of a HTTP GET request for the 'firmware.UnsupportedVersionUpgrade' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'firmware.UnsupportedVersionUpgrade' resources.
 type FirmwareUnsupportedVersionUpgradeResponse struct {
 	FirmwareUnsupportedVersionUpgradeList *FirmwareUnsupportedVersionUpgradeList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                  *MoAggregateTransform
+	MoDocumentCount                       *MoDocumentCount
+	MoTagSummary                          *MoTagSummary
 }
 
 // FirmwareUnsupportedVersionUpgradeListAsFirmwareUnsupportedVersionUpgradeResponse is a convenience function that returns FirmwareUnsupportedVersionUpgradeList wrapped in FirmwareUnsupportedVersionUpgradeResponse
 func FirmwareUnsupportedVersionUpgradeListAsFirmwareUnsupportedVersionUpgradeResponse(v *FirmwareUnsupportedVersionUpgradeList) FirmwareUnsupportedVersionUpgradeResponse {
-	return FirmwareUnsupportedVersionUpgradeResponse{ FirmwareUnsupportedVersionUpgradeList: v}
+	return FirmwareUnsupportedVersionUpgradeResponse{FirmwareUnsupportedVersionUpgradeList: v}
 }
 
 // MoAggregateTransformAsFirmwareUnsupportedVersionUpgradeResponse is a convenience function that returns MoAggregateTransform wrapped in FirmwareUnsupportedVersionUpgradeResponse
 func MoAggregateTransformAsFirmwareUnsupportedVersionUpgradeResponse(v *MoAggregateTransform) FirmwareUnsupportedVersionUpgradeResponse {
-	return FirmwareUnsupportedVersionUpgradeResponse{ MoAggregateTransform: v}
+	return FirmwareUnsupportedVersionUpgradeResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsFirmwareUnsupportedVersionUpgradeResponse is a convenience function that returns MoDocumentCount wrapped in FirmwareUnsupportedVersionUpgradeResponse
 func MoDocumentCountAsFirmwareUnsupportedVersionUpgradeResponse(v *MoDocumentCount) FirmwareUnsupportedVersionUpgradeResponse {
-	return FirmwareUnsupportedVersionUpgradeResponse{ MoDocumentCount: v}
+	return FirmwareUnsupportedVersionUpgradeResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsFirmwareUnsupportedVersionUpgradeResponse is a convenience function that returns MoTagSummary wrapped in FirmwareUnsupportedVersionUpgradeResponse
 func MoTagSummaryAsFirmwareUnsupportedVersionUpgradeResponse(v *MoTagSummary) FirmwareUnsupportedVersionUpgradeResponse {
-	return FirmwareUnsupportedVersionUpgradeResponse{ MoTagSummary: v}
+	return FirmwareUnsupportedVersionUpgradeResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FirmwareUnsupportedVersionUpgradeResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src FirmwareUnsupportedVersionUpgradeResponse) MarshalJSON() ([]byte, erro
 }
 
 // Get the actual instance
-func (obj *FirmwareUnsupportedVersionUpgradeResponse) GetActualInstance() (interface{}) {
+func (obj *FirmwareUnsupportedVersionUpgradeResponse) GetActualInstance() interface{} {
 	if obj.FirmwareUnsupportedVersionUpgradeList != nil {
 		return obj.FirmwareUnsupportedVersionUpgradeList
 	}
@@ -184,5 +183,3 @@ func (v *NullableFirmwareUnsupportedVersionUpgradeResponse) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

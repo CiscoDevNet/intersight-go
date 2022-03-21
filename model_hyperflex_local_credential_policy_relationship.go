@@ -19,19 +19,18 @@ import (
 // HyperflexLocalCredentialPolicyRelationship - A relationship to the 'hyperflex.LocalCredentialPolicy' resource, or the expanded 'hyperflex.LocalCredentialPolicy' resource, or the 'null' value.
 type HyperflexLocalCredentialPolicyRelationship struct {
 	HyperflexLocalCredentialPolicy *HyperflexLocalCredentialPolicy
-	MoMoRef *MoMoRef
+	MoMoRef                        *MoMoRef
 }
 
 // HyperflexLocalCredentialPolicyAsHyperflexLocalCredentialPolicyRelationship is a convenience function that returns HyperflexLocalCredentialPolicy wrapped in HyperflexLocalCredentialPolicyRelationship
 func HyperflexLocalCredentialPolicyAsHyperflexLocalCredentialPolicyRelationship(v *HyperflexLocalCredentialPolicy) HyperflexLocalCredentialPolicyRelationship {
-	return HyperflexLocalCredentialPolicyRelationship{ HyperflexLocalCredentialPolicy: v}
+	return HyperflexLocalCredentialPolicyRelationship{HyperflexLocalCredentialPolicy: v}
 }
 
 // MoMoRefAsHyperflexLocalCredentialPolicyRelationship is a convenience function that returns MoMoRef wrapped in HyperflexLocalCredentialPolicyRelationship
 func MoMoRefAsHyperflexLocalCredentialPolicyRelationship(v *MoMoRef) HyperflexLocalCredentialPolicyRelationship {
-	return HyperflexLocalCredentialPolicyRelationship{ MoMoRef: v}
+	return HyperflexLocalCredentialPolicyRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexLocalCredentialPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexLocalCredentialPolicyRelationship) MarshalJSON() ([]byte, err
 }
 
 // Get the actual instance
-func (obj *HyperflexLocalCredentialPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexLocalCredentialPolicyRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexLocalCredentialPolicy != nil {
 		return obj.HyperflexLocalCredentialPolicy
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexLocalCredentialPolicyRelationship) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,7 +23,7 @@ type TerraformExecutor struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType    string                   `json:"ObjectType"`
 	CloudResource []TerraformCloudResource `json:"CloudResource,omitempty"`
 	// Command to be executed during update operation.
 	Command *string `json:"Command,omitempty"`
@@ -32,8 +32,8 @@ type TerraformExecutor struct {
 	// Terraform output of the entire execution.
 	Output interface{} `json:"Output,omitempty"`
 	// The Platform type used in conjunction with 'sourceFolderPath' and 'sourceFolderName' determines unique path for a Terraform workflow.
-	PlatformType *string `json:"PlatformType,omitempty"`
-	RunState []TerraformRunstate `json:"RunState,omitempty"`
+	PlatformType *string             `json:"PlatformType,omitempty"`
+	RunState     []TerraformRunstate `json:"RunState,omitempty"`
 	// Folder Name where Terraform workflows are stored.
 	SourceFolderName *string `json:"SourceFolderName,omitempty"`
 	// Relative folder Path where 'sourceFolderName' is located.
@@ -49,10 +49,10 @@ type TerraformExecutor struct {
 	// TaskId of a pontem workflow is same as the MO.
 	TaskId *string `json:"TaskId,omitempty"`
 	// Variables needed by the terraform configuration as a JSON object.
-	Variables interface{} `json:"Variables,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
+	Variables            interface{}                          `json:"Variables,omitempty"`
+	Account              *IamAccountRelationship              `json:"Account,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	WorkflowInfo         *WorkflowWorkflowInfoRelationship    `json:"WorkflowInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -98,7 +98,7 @@ func (o *TerraformExecutor) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TerraformExecutor) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -122,7 +122,7 @@ func (o *TerraformExecutor) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TerraformExecutor) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -135,7 +135,7 @@ func (o *TerraformExecutor) SetObjectType(v string) {
 
 // GetCloudResource returns the CloudResource field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TerraformExecutor) GetCloudResource() []TerraformCloudResource {
-	if o == nil  {
+	if o == nil {
 		var ret []TerraformCloudResource
 		return ret
 	}
@@ -232,7 +232,7 @@ func (o *TerraformExecutor) SetOperation(v string) {
 
 // GetOutput returns the Output field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TerraformExecutor) GetOutput() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -297,7 +297,7 @@ func (o *TerraformExecutor) SetPlatformType(v string) {
 
 // GetRunState returns the RunState field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TerraformExecutor) GetRunState() []TerraformRunstate {
-	if o == nil  {
+	if o == nil {
 		var ret []TerraformRunstate
 		return ret
 	}
@@ -458,7 +458,7 @@ func (o *TerraformExecutor) SetStatus(v string) {
 
 // GetStderr returns the Stderr field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TerraformExecutor) GetStderr() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -491,7 +491,7 @@ func (o *TerraformExecutor) SetStderr(v interface{}) {
 
 // GetStdout returns the Stdout field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TerraformExecutor) GetStdout() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -556,7 +556,7 @@ func (o *TerraformExecutor) SetTaskId(v string) {
 
 // GetVariables returns the Variables field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TerraformExecutor) GetVariables() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -763,7 +763,7 @@ func (o *TerraformExecutor) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType    string                   `json:"ObjectType"`
 		CloudResource []TerraformCloudResource `json:"CloudResource,omitempty"`
 		// Command to be executed during update operation.
 		Command *string `json:"Command,omitempty"`
@@ -772,8 +772,8 @@ func (o *TerraformExecutor) UnmarshalJSON(bytes []byte) (err error) {
 		// Terraform output of the entire execution.
 		Output interface{} `json:"Output,omitempty"`
 		// The Platform type used in conjunction with 'sourceFolderPath' and 'sourceFolderName' determines unique path for a Terraform workflow.
-		PlatformType *string `json:"PlatformType,omitempty"`
-		RunState []TerraformRunstate `json:"RunState,omitempty"`
+		PlatformType *string             `json:"PlatformType,omitempty"`
+		RunState     []TerraformRunstate `json:"RunState,omitempty"`
 		// Folder Name where Terraform workflows are stored.
 		SourceFolderName *string `json:"SourceFolderName,omitempty"`
 		// Relative folder Path where 'sourceFolderName' is located.
@@ -789,10 +789,10 @@ func (o *TerraformExecutor) UnmarshalJSON(bytes []byte) (err error) {
 		// TaskId of a pontem workflow is same as the MO.
 		TaskId *string `json:"TaskId,omitempty"`
 		// Variables needed by the terraform configuration as a JSON object.
-		Variables interface{} `json:"Variables,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
+		Variables        interface{}                          `json:"Variables,omitempty"`
+		Account          *IamAccountRelationship              `json:"Account,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-		WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
+		WorkflowInfo     *WorkflowWorkflowInfoRelationship    `json:"WorkflowInfo,omitempty"`
 	}
 
 	varTerraformExecutorWithoutEmbeddedStruct := TerraformExecutorWithoutEmbeddedStruct{}
@@ -915,5 +915,3 @@ func (v *NullableTerraformExecutor) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

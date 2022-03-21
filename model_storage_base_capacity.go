@@ -33,7 +33,7 @@ type StorageBaseCapacity struct {
 	// Total storage capacity, represented in bytes. It is set by the component manufacturer.
 	Total *int64 `json:"Total,omitempty"`
 	// Used or consumed storage capacity, represented in bytes.
-	Used *int64 `json:"Used,omitempty"`
+	Used                 *int64 `json:"Used,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *StorageBaseCapacity) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseCapacity) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *StorageBaseCapacity) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseCapacity) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -419,5 +419,3 @@ func (v *NullableStorageBaseCapacity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

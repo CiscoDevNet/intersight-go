@@ -29,7 +29,7 @@ type KubernetesActionInfo struct {
 	// Name of the Action performed on a resource like VM, Disk etc.
 	Name *string `json:"Name,omitempty"`
 	// No longer maintained and will be removed soon. * `None` - A place holder for the default value. * `InProgress` - Action triggered on the resource is still running. * `Success` - Action triggered on the resource is completed successfully. * `Failure` - Action triggered on the resource is failed.
-	Status *string `json:"Status,omitempty"`
+	Status               *string `json:"Status,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *KubernetesActionInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesActionInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *KubernetesActionInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesActionInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -345,5 +345,3 @@ func (v *NullableKubernetesActionInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

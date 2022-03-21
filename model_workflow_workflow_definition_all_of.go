@@ -24,8 +24,8 @@ type WorkflowWorkflowDefinitionAllOf struct {
 	// When true this will be the workflow version that is used when a specific workflow definition version is not specified. The default version is used when user executes a workflow without specifying a version or when workflow is included in another workflow without a specific version. The very first workflow definition created with a name will be set as the default version, after that user can explicitly set any version of the workflow definition as the default version.
 	DefaultVersion *bool `json:"DefaultVersion,omitempty"`
 	// The description for this workflow.
-	Description *string `json:"Description,omitempty"`
-	InputDefinition []WorkflowBaseDataType `json:"InputDefinition,omitempty"`
+	Description       *string                `json:"Description,omitempty"`
+	InputDefinition   []WorkflowBaseDataType `json:"InputDefinition,omitempty"`
 	InputParameterSet []WorkflowParameterSet `json:"InputParameterSet,omitempty"`
 	// A user friendly short name to identify the workflow. Label can only contain letters (a-z, A-Z), numbers (0-9), hyphen (-), period (.), colon (:), space ( ), forward slash (/), or an underscore (_).
 	Label *string `json:"Label,omitempty"`
@@ -36,22 +36,22 @@ type WorkflowWorkflowDefinitionAllOf struct {
 	// The maximum number of external (worker) tasks that can be executed on this workflow.
 	MaxWorkerTaskCount *int64 `json:"MaxWorkerTaskCount,omitempty"`
 	// The name for this workflow. You can have multiple versions of the workflow with the same name. Name can only contain letters (a-z, A-Z), numbers (0-9), hyphen (-), period (.) or an underscore (_).
-	Name *string `json:"Name,omitempty"`
+	Name             *string                `json:"Name,omitempty"`
 	OutputDefinition []WorkflowBaseDataType `json:"OutputDefinition,omitempty"`
 	// The output mappings for the workflow. The outputs for workflows will generally be task output variables that we want to export out at the end of the workflow. The format to specify the mapping is '${Source.output.JsonPath}', where 'Source' is the name of the task within the workflow. Any task output can be mapped to a workflow output as long as the types are compatible. It's followed by a JSON path expression to extract JSON fragment from source's output.
-	OutputParameters interface{} `json:"OutputParameters,omitempty"`
-	Properties NullableWorkflowWorkflowProperties `json:"Properties,omitempty"`
-	Tasks []WorkflowWorkflowTask `json:"Tasks,omitempty"`
-	UiInputFilters []WorkflowUiInputFilter `json:"UiInputFilters,omitempty"`
+	OutputParameters interface{}                        `json:"OutputParameters,omitempty"`
+	Properties       NullableWorkflowWorkflowProperties `json:"Properties,omitempty"`
+	Tasks            []WorkflowWorkflowTask             `json:"Tasks,omitempty"`
+	UiInputFilters   []WorkflowUiInputFilter            `json:"UiInputFilters,omitempty"`
 	// This will hold the data needed for workflow to be rendered in the user interface.
-	UiRenderingData interface{} `json:"UiRenderingData,omitempty"`
+	UiRenderingData       interface{}                           `json:"UiRenderingData,omitempty"`
 	ValidationInformation NullableWorkflowValidationInformation `json:"ValidationInformation,omitempty"`
-	VariableDefinition []WorkflowBaseDataType `json:"VariableDefinition,omitempty"`
+	VariableDefinition    []WorkflowBaseDataType                `json:"VariableDefinition,omitempty"`
 	// The version of the workflow to support multiple versions.
-	Version *int64 `json:"Version,omitempty"`
-	Catalog *WorkflowCatalogRelationship `json:"Catalog,omitempty"`
-	ClonedFrom *WorkflowWorkflowDefinitionRelationship `json:"ClonedFrom,omitempty"`
-	WorkflowMetadata *WorkflowWorkflowMetadataRelationship `json:"WorkflowMetadata,omitempty"`
+	Version              *int64                                  `json:"Version,omitempty"`
+	Catalog              *WorkflowCatalogRelationship            `json:"Catalog,omitempty"`
+	ClonedFrom           *WorkflowWorkflowDefinitionRelationship `json:"ClonedFrom,omitempty"`
+	WorkflowMetadata     *WorkflowWorkflowMetadataRelationship   `json:"WorkflowMetadata,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -97,7 +97,7 @@ func (o *WorkflowWorkflowDefinitionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWorkflowDefinitionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -121,7 +121,7 @@ func (o *WorkflowWorkflowDefinitionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWorkflowDefinitionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -198,7 +198,7 @@ func (o *WorkflowWorkflowDefinitionAllOf) SetDescription(v string) {
 
 // GetInputDefinition returns the InputDefinition field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWorkflowDefinitionAllOf) GetInputDefinition() []WorkflowBaseDataType {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowBaseDataType
 		return ret
 	}
@@ -231,7 +231,7 @@ func (o *WorkflowWorkflowDefinitionAllOf) SetInputDefinition(v []WorkflowBaseDat
 
 // GetInputParameterSet returns the InputParameterSet field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWorkflowDefinitionAllOf) GetInputParameterSet() []WorkflowParameterSet {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowParameterSet
 		return ret
 	}
@@ -424,7 +424,7 @@ func (o *WorkflowWorkflowDefinitionAllOf) SetName(v string) {
 
 // GetOutputDefinition returns the OutputDefinition field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWorkflowDefinitionAllOf) GetOutputDefinition() []WorkflowBaseDataType {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowBaseDataType
 		return ret
 	}
@@ -457,7 +457,7 @@ func (o *WorkflowWorkflowDefinitionAllOf) SetOutputDefinition(v []WorkflowBaseDa
 
 // GetOutputParameters returns the OutputParameters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWorkflowDefinitionAllOf) GetOutputParameters() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -501,7 +501,7 @@ func (o *WorkflowWorkflowDefinitionAllOf) GetProperties() WorkflowWorkflowProper
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowWorkflowDefinitionAllOf) GetPropertiesOk() (*WorkflowWorkflowProperties, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Properties.Get(), o.Properties.IsSet()
@@ -520,6 +520,7 @@ func (o *WorkflowWorkflowDefinitionAllOf) HasProperties() bool {
 func (o *WorkflowWorkflowDefinitionAllOf) SetProperties(v WorkflowWorkflowProperties) {
 	o.Properties.Set(&v)
 }
+
 // SetPropertiesNil sets the value for Properties to be an explicit nil
 func (o *WorkflowWorkflowDefinitionAllOf) SetPropertiesNil() {
 	o.Properties.Set(nil)
@@ -532,7 +533,7 @@ func (o *WorkflowWorkflowDefinitionAllOf) UnsetProperties() {
 
 // GetTasks returns the Tasks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWorkflowDefinitionAllOf) GetTasks() []WorkflowWorkflowTask {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowWorkflowTask
 		return ret
 	}
@@ -565,7 +566,7 @@ func (o *WorkflowWorkflowDefinitionAllOf) SetTasks(v []WorkflowWorkflowTask) {
 
 // GetUiInputFilters returns the UiInputFilters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWorkflowDefinitionAllOf) GetUiInputFilters() []WorkflowUiInputFilter {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowUiInputFilter
 		return ret
 	}
@@ -598,7 +599,7 @@ func (o *WorkflowWorkflowDefinitionAllOf) SetUiInputFilters(v []WorkflowUiInputF
 
 // GetUiRenderingData returns the UiRenderingData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWorkflowDefinitionAllOf) GetUiRenderingData() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -642,7 +643,7 @@ func (o *WorkflowWorkflowDefinitionAllOf) GetValidationInformation() WorkflowVal
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowWorkflowDefinitionAllOf) GetValidationInformationOk() (*WorkflowValidationInformation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ValidationInformation.Get(), o.ValidationInformation.IsSet()
@@ -661,6 +662,7 @@ func (o *WorkflowWorkflowDefinitionAllOf) HasValidationInformation() bool {
 func (o *WorkflowWorkflowDefinitionAllOf) SetValidationInformation(v WorkflowValidationInformation) {
 	o.ValidationInformation.Set(&v)
 }
+
 // SetValidationInformationNil sets the value for ValidationInformation to be an explicit nil
 func (o *WorkflowWorkflowDefinitionAllOf) SetValidationInformationNil() {
 	o.ValidationInformation.Set(nil)
@@ -673,7 +675,7 @@ func (o *WorkflowWorkflowDefinitionAllOf) UnsetValidationInformation() {
 
 // GetVariableDefinition returns the VariableDefinition field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWorkflowDefinitionAllOf) GetVariableDefinition() []WorkflowBaseDataType {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowBaseDataType
 		return ret
 	}
@@ -985,5 +987,3 @@ func (v *NullableWorkflowWorkflowDefinitionAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

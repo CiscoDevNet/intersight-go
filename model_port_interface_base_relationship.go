@@ -18,20 +18,19 @@ import (
 
 // PortInterfaceBaseRelationship - A relationship to the 'port.InterfaceBase' resource, or the expanded 'port.InterfaceBase' resource, or the 'null' value.
 type PortInterfaceBaseRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 	PortInterfaceBase *PortInterfaceBase
 }
 
 // MoMoRefAsPortInterfaceBaseRelationship is a convenience function that returns MoMoRef wrapped in PortInterfaceBaseRelationship
 func MoMoRefAsPortInterfaceBaseRelationship(v *MoMoRef) PortInterfaceBaseRelationship {
-	return PortInterfaceBaseRelationship{ MoMoRef: v}
+	return PortInterfaceBaseRelationship{MoMoRef: v}
 }
 
 // PortInterfaceBaseAsPortInterfaceBaseRelationship is a convenience function that returns PortInterfaceBase wrapped in PortInterfaceBaseRelationship
 func PortInterfaceBaseAsPortInterfaceBaseRelationship(v *PortInterfaceBase) PortInterfaceBaseRelationship {
-	return PortInterfaceBaseRelationship{ PortInterfaceBase: v}
+	return PortInterfaceBaseRelationship{PortInterfaceBase: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *PortInterfaceBaseRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src PortInterfaceBaseRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *PortInterfaceBaseRelationship) GetActualInstance() (interface{}) {
+func (obj *PortInterfaceBaseRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullablePortInterfaceBaseRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

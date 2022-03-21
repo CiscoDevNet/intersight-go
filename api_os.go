@@ -29,11 +29,11 @@ var (
 type OsApiService service
 
 type ApiCreateOsBulkInstallInfoRequest struct {
-	ctx _context.Context
-	ApiService *OsApiService
+	ctx               _context.Context
+	ApiService        *OsApiService
 	osBulkInstallInfo *OsBulkInstallInfo
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch           *string
+	ifNoneMatch       *string
 }
 
 // The &#39;os.BulkInstallInfo&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateOsBulkInstallInfoRequest) OsBulkInstallInfo(osBulkInstallInfo O
 	r.osBulkInstallInfo = &osBulkInstallInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateOsBulkInstallInfoRequest) IfMatch(ifMatch string) ApiCreateOsBulkInstallInfoRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateOsBulkInstallInfoRequest) IfNoneMatch(ifNoneMatch string) ApiCreateOsBulkInstallInfoRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateOsBulkInstallInfo Create a 'os.BulkInstallInfo' resource.
 func (a *OsApiService) CreateOsBulkInstallInfo(ctx _context.Context) ApiCreateOsBulkInstallInfoRequest {
 	return ApiCreateOsBulkInstallInfoRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *OsApiService) CreateOsBulkInstallInfoExecute(r ApiCreateOsBulkInstallIn
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,11 @@ func (a *OsApiService) CreateOsBulkInstallInfoExecute(r ApiCreateOsBulkInstallIn
 }
 
 type ApiCreateOsConfigurationFileRequest struct {
-	ctx _context.Context
-	ApiService *OsApiService
+	ctx                 _context.Context
+	ApiService          *OsApiService
 	osConfigurationFile *OsConfigurationFile
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch             *string
+	ifNoneMatch         *string
 }
 
 // The &#39;os.ConfigurationFile&#39; resource to create.
@@ -217,11 +219,13 @@ func (r ApiCreateOsConfigurationFileRequest) OsConfigurationFile(osConfiguration
 	r.osConfigurationFile = &osConfigurationFile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateOsConfigurationFileRequest) IfMatch(ifMatch string) ApiCreateOsConfigurationFileRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateOsConfigurationFileRequest) IfNoneMatch(ifNoneMatch string) ApiCreateOsConfigurationFileRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateOsConfigurationFile Create a 'os.ConfigurationFile' resource.
 func (a *OsApiService) CreateOsConfigurationFile(ctx _context.Context) ApiCreateOsConfigurationFileRequest {
 	return ApiCreateOsConfigurationFileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *OsApiService) CreateOsConfigurationFileExecute(r ApiCreateOsConfigurati
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,10 +385,10 @@ func (a *OsApiService) CreateOsConfigurationFileExecute(r ApiCreateOsConfigurati
 }
 
 type ApiCreateOsInstallRequest struct {
-	ctx _context.Context
-	ApiService *OsApiService
-	osInstall *OsInstall
-	ifMatch *string
+	ctx         _context.Context
+	ApiService  *OsApiService
+	osInstall   *OsInstall
+	ifMatch     *string
 	ifNoneMatch *string
 }
 
@@ -393,11 +397,13 @@ func (r ApiCreateOsInstallRequest) OsInstall(osInstall OsInstall) ApiCreateOsIns
 	r.osInstall = &osInstall
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateOsInstallRequest) IfMatch(ifMatch string) ApiCreateOsInstallRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateOsInstallRequest) IfNoneMatch(ifNoneMatch string) ApiCreateOsInstallRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -417,7 +423,7 @@ CreateOsInstall Create a 'os.Install' resource.
 func (a *OsApiService) CreateOsInstall(ctx _context.Context) ApiCreateOsInstallRequest {
 	return ApiCreateOsInstallRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -534,13 +540,13 @@ func (a *OsApiService) CreateOsInstallExecute(r ApiCreateOsInstallRequest) (OsIn
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -557,10 +563,10 @@ func (a *OsApiService) CreateOsInstallExecute(r ApiCreateOsInstallRequest) (OsIn
 }
 
 type ApiCreateOsOsSupportRequest struct {
-	ctx _context.Context
-	ApiService *OsApiService
+	ctx         _context.Context
+	ApiService  *OsApiService
 	osOsSupport *OsOsSupport
-	ifMatch *string
+	ifMatch     *string
 	ifNoneMatch *string
 }
 
@@ -569,11 +575,13 @@ func (r ApiCreateOsOsSupportRequest) OsOsSupport(osOsSupport OsOsSupport) ApiCre
 	r.osOsSupport = &osOsSupport
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateOsOsSupportRequest) IfMatch(ifMatch string) ApiCreateOsOsSupportRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateOsOsSupportRequest) IfNoneMatch(ifNoneMatch string) ApiCreateOsOsSupportRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -593,7 +601,7 @@ CreateOsOsSupport Create a 'os.OsSupport' resource.
 func (a *OsApiService) CreateOsOsSupport(ctx _context.Context) ApiCreateOsOsSupportRequest {
 	return ApiCreateOsOsSupportRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -710,13 +718,13 @@ func (a *OsApiService) CreateOsOsSupportExecute(r ApiCreateOsOsSupportRequest) (
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -733,11 +741,11 @@ func (a *OsApiService) CreateOsOsSupportExecute(r ApiCreateOsOsSupportRequest) (
 }
 
 type ApiCreateOsTemplateFileRequest struct {
-	ctx _context.Context
-	ApiService *OsApiService
+	ctx            _context.Context
+	ApiService     *OsApiService
 	osTemplateFile *OsTemplateFile
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch        *string
+	ifNoneMatch    *string
 }
 
 // The &#39;os.TemplateFile&#39; resource to create.
@@ -745,11 +753,13 @@ func (r ApiCreateOsTemplateFileRequest) OsTemplateFile(osTemplateFile OsTemplate
 	r.osTemplateFile = &osTemplateFile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateOsTemplateFileRequest) IfMatch(ifMatch string) ApiCreateOsTemplateFileRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateOsTemplateFileRequest) IfNoneMatch(ifNoneMatch string) ApiCreateOsTemplateFileRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -769,7 +779,7 @@ CreateOsTemplateFile Create a 'os.TemplateFile' resource.
 func (a *OsApiService) CreateOsTemplateFile(ctx _context.Context) ApiCreateOsTemplateFileRequest {
 	return ApiCreateOsTemplateFileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -886,13 +896,13 @@ func (a *OsApiService) CreateOsTemplateFileExecute(r ApiCreateOsTemplateFileRequ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -909,11 +919,11 @@ func (a *OsApiService) CreateOsTemplateFileExecute(r ApiCreateOsTemplateFileRequ
 }
 
 type ApiCreateOsValidInstallTargetRequest struct {
-	ctx _context.Context
-	ApiService *OsApiService
+	ctx                  _context.Context
+	ApiService           *OsApiService
 	osValidInstallTarget *OsValidInstallTarget
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch              *string
+	ifNoneMatch          *string
 }
 
 // The &#39;os.ValidInstallTarget&#39; resource to create.
@@ -921,11 +931,13 @@ func (r ApiCreateOsValidInstallTargetRequest) OsValidInstallTarget(osValidInstal
 	r.osValidInstallTarget = &osValidInstallTarget
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateOsValidInstallTargetRequest) IfMatch(ifMatch string) ApiCreateOsValidInstallTargetRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateOsValidInstallTargetRequest) IfNoneMatch(ifNoneMatch string) ApiCreateOsValidInstallTargetRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -945,7 +957,7 @@ CreateOsValidInstallTarget Create a 'os.ValidInstallTarget' resource.
 func (a *OsApiService) CreateOsValidInstallTarget(ctx _context.Context) ApiCreateOsValidInstallTargetRequest {
 	return ApiCreateOsValidInstallTargetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1062,13 +1074,13 @@ func (a *OsApiService) CreateOsValidInstallTargetExecute(r ApiCreateOsValidInsta
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1085,11 +1097,10 @@ func (a *OsApiService) CreateOsValidInstallTargetExecute(r ApiCreateOsValidInsta
 }
 
 type ApiDeleteOsConfigurationFileRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *OsApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteOsConfigurationFileRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteOsConfigurationFileExecute(r)
@@ -1105,8 +1116,8 @@ DeleteOsConfigurationFile Delete a 'os.ConfigurationFile' resource.
 func (a *OsApiService) DeleteOsConfigurationFile(ctx _context.Context, moid string) ApiDeleteOsConfigurationFileRequest {
 	return ApiDeleteOsConfigurationFileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1211,13 +1222,13 @@ func (a *OsApiService) DeleteOsConfigurationFileExecute(r ApiDeleteOsConfigurati
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1225,11 +1236,10 @@ func (a *OsApiService) DeleteOsConfigurationFileExecute(r ApiDeleteOsConfigurati
 }
 
 type ApiGetOsBulkInstallInfoByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *OsApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetOsBulkInstallInfoByMoidRequest) Execute() (OsBulkInstallInfo, *_nethttp.Response, error) {
 	return r.ApiService.GetOsBulkInstallInfoByMoidExecute(r)
@@ -1245,8 +1255,8 @@ GetOsBulkInstallInfoByMoid Read a 'os.BulkInstallInfo' resource.
 func (a *OsApiService) GetOsBulkInstallInfoByMoid(ctx _context.Context, moid string) ApiGetOsBulkInstallInfoByMoidRequest {
 	return ApiGetOsBulkInstallInfoByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1353,13 +1363,13 @@ func (a *OsApiService) GetOsBulkInstallInfoByMoidExecute(r ApiGetOsBulkInstallIn
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1376,19 +1386,19 @@ func (a *OsApiService) GetOsBulkInstallInfoByMoidExecute(r ApiGetOsBulkInstallIn
 }
 
 type ApiGetOsBulkInstallInfoListRequest struct {
-	ctx _context.Context
-	ApiService *OsApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *OsApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1396,51 +1406,61 @@ func (r ApiGetOsBulkInstallInfoListRequest) Filter(filter string) ApiGetOsBulkIn
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetOsBulkInstallInfoListRequest) Orderby(orderby string) ApiGetOsBulkInstallInfoListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetOsBulkInstallInfoListRequest) Top(top int32) ApiGetOsBulkInstallInfoListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetOsBulkInstallInfoListRequest) Skip(skip int32) ApiGetOsBulkInstallInfoListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetOsBulkInstallInfoListRequest) Select_(select_ string) ApiGetOsBulkInstallInfoListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetOsBulkInstallInfoListRequest) Expand(expand string) ApiGetOsBulkInstallInfoListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetOsBulkInstallInfoListRequest) Apply(apply string) ApiGetOsBulkInstallInfoListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetOsBulkInstallInfoListRequest) Count(count bool) ApiGetOsBulkInstallInfoListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetOsBulkInstallInfoListRequest) Inlinecount(inlinecount string) ApiGetOsBulkInstallInfoListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetOsBulkInstallInfoListRequest) At(at string) ApiGetOsBulkInstallInfoListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetOsBulkInstallInfoListRequest) Tags(tags string) ApiGetOsBulkInstallInfoListRequest {
 	r.tags = &tags
@@ -1460,7 +1480,7 @@ GetOsBulkInstallInfoList Read a 'os.BulkInstallInfo' resource.
 func (a *OsApiService) GetOsBulkInstallInfoList(ctx _context.Context) ApiGetOsBulkInstallInfoListRequest {
 	return ApiGetOsBulkInstallInfoListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1599,13 +1619,13 @@ func (a *OsApiService) GetOsBulkInstallInfoListExecute(r ApiGetOsBulkInstallInfo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1622,11 +1642,10 @@ func (a *OsApiService) GetOsBulkInstallInfoListExecute(r ApiGetOsBulkInstallInfo
 }
 
 type ApiGetOsCatalogByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *OsApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetOsCatalogByMoidRequest) Execute() (OsCatalog, *_nethttp.Response, error) {
 	return r.ApiService.GetOsCatalogByMoidExecute(r)
@@ -1642,8 +1661,8 @@ GetOsCatalogByMoid Read a 'os.Catalog' resource.
 func (a *OsApiService) GetOsCatalogByMoid(ctx _context.Context, moid string) ApiGetOsCatalogByMoidRequest {
 	return ApiGetOsCatalogByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1750,13 +1769,13 @@ func (a *OsApiService) GetOsCatalogByMoidExecute(r ApiGetOsCatalogByMoidRequest)
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1773,19 +1792,19 @@ func (a *OsApiService) GetOsCatalogByMoidExecute(r ApiGetOsCatalogByMoidRequest)
 }
 
 type ApiGetOsCatalogListRequest struct {
-	ctx _context.Context
-	ApiService *OsApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *OsApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1793,51 +1812,61 @@ func (r ApiGetOsCatalogListRequest) Filter(filter string) ApiGetOsCatalogListReq
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetOsCatalogListRequest) Orderby(orderby string) ApiGetOsCatalogListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetOsCatalogListRequest) Top(top int32) ApiGetOsCatalogListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetOsCatalogListRequest) Skip(skip int32) ApiGetOsCatalogListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetOsCatalogListRequest) Select_(select_ string) ApiGetOsCatalogListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetOsCatalogListRequest) Expand(expand string) ApiGetOsCatalogListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetOsCatalogListRequest) Apply(apply string) ApiGetOsCatalogListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetOsCatalogListRequest) Count(count bool) ApiGetOsCatalogListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetOsCatalogListRequest) Inlinecount(inlinecount string) ApiGetOsCatalogListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetOsCatalogListRequest) At(at string) ApiGetOsCatalogListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetOsCatalogListRequest) Tags(tags string) ApiGetOsCatalogListRequest {
 	r.tags = &tags
@@ -1857,7 +1886,7 @@ GetOsCatalogList Read a 'os.Catalog' resource.
 func (a *OsApiService) GetOsCatalogList(ctx _context.Context) ApiGetOsCatalogListRequest {
 	return ApiGetOsCatalogListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1996,13 +2025,13 @@ func (a *OsApiService) GetOsCatalogListExecute(r ApiGetOsCatalogListRequest) (Os
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2019,11 +2048,10 @@ func (a *OsApiService) GetOsCatalogListExecute(r ApiGetOsCatalogListRequest) (Os
 }
 
 type ApiGetOsConfigurationFileByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *OsApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetOsConfigurationFileByMoidRequest) Execute() (OsConfigurationFile, *_nethttp.Response, error) {
 	return r.ApiService.GetOsConfigurationFileByMoidExecute(r)
@@ -2039,8 +2067,8 @@ GetOsConfigurationFileByMoid Read a 'os.ConfigurationFile' resource.
 func (a *OsApiService) GetOsConfigurationFileByMoid(ctx _context.Context, moid string) ApiGetOsConfigurationFileByMoidRequest {
 	return ApiGetOsConfigurationFileByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2147,13 +2175,13 @@ func (a *OsApiService) GetOsConfigurationFileByMoidExecute(r ApiGetOsConfigurati
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2170,19 +2198,19 @@ func (a *OsApiService) GetOsConfigurationFileByMoidExecute(r ApiGetOsConfigurati
 }
 
 type ApiGetOsConfigurationFileListRequest struct {
-	ctx _context.Context
-	ApiService *OsApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *OsApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2190,51 +2218,61 @@ func (r ApiGetOsConfigurationFileListRequest) Filter(filter string) ApiGetOsConf
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetOsConfigurationFileListRequest) Orderby(orderby string) ApiGetOsConfigurationFileListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetOsConfigurationFileListRequest) Top(top int32) ApiGetOsConfigurationFileListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetOsConfigurationFileListRequest) Skip(skip int32) ApiGetOsConfigurationFileListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetOsConfigurationFileListRequest) Select_(select_ string) ApiGetOsConfigurationFileListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetOsConfigurationFileListRequest) Expand(expand string) ApiGetOsConfigurationFileListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetOsConfigurationFileListRequest) Apply(apply string) ApiGetOsConfigurationFileListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetOsConfigurationFileListRequest) Count(count bool) ApiGetOsConfigurationFileListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetOsConfigurationFileListRequest) Inlinecount(inlinecount string) ApiGetOsConfigurationFileListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetOsConfigurationFileListRequest) At(at string) ApiGetOsConfigurationFileListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetOsConfigurationFileListRequest) Tags(tags string) ApiGetOsConfigurationFileListRequest {
 	r.tags = &tags
@@ -2254,7 +2292,7 @@ GetOsConfigurationFileList Read a 'os.ConfigurationFile' resource.
 func (a *OsApiService) GetOsConfigurationFileList(ctx _context.Context) ApiGetOsConfigurationFileListRequest {
 	return ApiGetOsConfigurationFileListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2393,13 +2431,13 @@ func (a *OsApiService) GetOsConfigurationFileListExecute(r ApiGetOsConfiguration
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2416,11 +2454,10 @@ func (a *OsApiService) GetOsConfigurationFileListExecute(r ApiGetOsConfiguration
 }
 
 type ApiGetOsDistributionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *OsApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetOsDistributionByMoidRequest) Execute() (OsDistribution, *_nethttp.Response, error) {
 	return r.ApiService.GetOsDistributionByMoidExecute(r)
@@ -2436,8 +2473,8 @@ GetOsDistributionByMoid Read a 'os.Distribution' resource.
 func (a *OsApiService) GetOsDistributionByMoid(ctx _context.Context, moid string) ApiGetOsDistributionByMoidRequest {
 	return ApiGetOsDistributionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2544,13 +2581,13 @@ func (a *OsApiService) GetOsDistributionByMoidExecute(r ApiGetOsDistributionByMo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2567,19 +2604,19 @@ func (a *OsApiService) GetOsDistributionByMoidExecute(r ApiGetOsDistributionByMo
 }
 
 type ApiGetOsDistributionListRequest struct {
-	ctx _context.Context
-	ApiService *OsApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *OsApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2587,51 +2624,61 @@ func (r ApiGetOsDistributionListRequest) Filter(filter string) ApiGetOsDistribut
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetOsDistributionListRequest) Orderby(orderby string) ApiGetOsDistributionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetOsDistributionListRequest) Top(top int32) ApiGetOsDistributionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetOsDistributionListRequest) Skip(skip int32) ApiGetOsDistributionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetOsDistributionListRequest) Select_(select_ string) ApiGetOsDistributionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetOsDistributionListRequest) Expand(expand string) ApiGetOsDistributionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetOsDistributionListRequest) Apply(apply string) ApiGetOsDistributionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetOsDistributionListRequest) Count(count bool) ApiGetOsDistributionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetOsDistributionListRequest) Inlinecount(inlinecount string) ApiGetOsDistributionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetOsDistributionListRequest) At(at string) ApiGetOsDistributionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetOsDistributionListRequest) Tags(tags string) ApiGetOsDistributionListRequest {
 	r.tags = &tags
@@ -2651,7 +2698,7 @@ GetOsDistributionList Read a 'os.Distribution' resource.
 func (a *OsApiService) GetOsDistributionList(ctx _context.Context) ApiGetOsDistributionListRequest {
 	return ApiGetOsDistributionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2790,13 +2837,13 @@ func (a *OsApiService) GetOsDistributionListExecute(r ApiGetOsDistributionListRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2813,11 +2860,10 @@ func (a *OsApiService) GetOsDistributionListExecute(r ApiGetOsDistributionListRe
 }
 
 type ApiGetOsInstallByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *OsApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetOsInstallByMoidRequest) Execute() (OsInstall, *_nethttp.Response, error) {
 	return r.ApiService.GetOsInstallByMoidExecute(r)
@@ -2833,8 +2879,8 @@ GetOsInstallByMoid Read a 'os.Install' resource.
 func (a *OsApiService) GetOsInstallByMoid(ctx _context.Context, moid string) ApiGetOsInstallByMoidRequest {
 	return ApiGetOsInstallByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2941,13 +2987,13 @@ func (a *OsApiService) GetOsInstallByMoidExecute(r ApiGetOsInstallByMoidRequest)
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2964,19 +3010,19 @@ func (a *OsApiService) GetOsInstallByMoidExecute(r ApiGetOsInstallByMoidRequest)
 }
 
 type ApiGetOsInstallListRequest struct {
-	ctx _context.Context
-	ApiService *OsApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *OsApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2984,51 +3030,61 @@ func (r ApiGetOsInstallListRequest) Filter(filter string) ApiGetOsInstallListReq
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetOsInstallListRequest) Orderby(orderby string) ApiGetOsInstallListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetOsInstallListRequest) Top(top int32) ApiGetOsInstallListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetOsInstallListRequest) Skip(skip int32) ApiGetOsInstallListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetOsInstallListRequest) Select_(select_ string) ApiGetOsInstallListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetOsInstallListRequest) Expand(expand string) ApiGetOsInstallListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetOsInstallListRequest) Apply(apply string) ApiGetOsInstallListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetOsInstallListRequest) Count(count bool) ApiGetOsInstallListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetOsInstallListRequest) Inlinecount(inlinecount string) ApiGetOsInstallListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetOsInstallListRequest) At(at string) ApiGetOsInstallListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetOsInstallListRequest) Tags(tags string) ApiGetOsInstallListRequest {
 	r.tags = &tags
@@ -3048,7 +3104,7 @@ GetOsInstallList Read a 'os.Install' resource.
 func (a *OsApiService) GetOsInstallList(ctx _context.Context) ApiGetOsInstallListRequest {
 	return ApiGetOsInstallListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3187,13 +3243,13 @@ func (a *OsApiService) GetOsInstallListExecute(r ApiGetOsInstallListRequest) (Os
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3210,11 +3266,10 @@ func (a *OsApiService) GetOsInstallListExecute(r ApiGetOsInstallListRequest) (Os
 }
 
 type ApiGetOsSupportedVersionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *OsApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetOsSupportedVersionByMoidRequest) Execute() (OsSupportedVersion, *_nethttp.Response, error) {
 	return r.ApiService.GetOsSupportedVersionByMoidExecute(r)
@@ -3230,8 +3285,8 @@ GetOsSupportedVersionByMoid Read a 'os.SupportedVersion' resource.
 func (a *OsApiService) GetOsSupportedVersionByMoid(ctx _context.Context, moid string) ApiGetOsSupportedVersionByMoidRequest {
 	return ApiGetOsSupportedVersionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3338,13 +3393,13 @@ func (a *OsApiService) GetOsSupportedVersionByMoidExecute(r ApiGetOsSupportedVer
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3361,19 +3416,19 @@ func (a *OsApiService) GetOsSupportedVersionByMoidExecute(r ApiGetOsSupportedVer
 }
 
 type ApiGetOsSupportedVersionListRequest struct {
-	ctx _context.Context
-	ApiService *OsApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *OsApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3381,51 +3436,61 @@ func (r ApiGetOsSupportedVersionListRequest) Filter(filter string) ApiGetOsSuppo
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetOsSupportedVersionListRequest) Orderby(orderby string) ApiGetOsSupportedVersionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetOsSupportedVersionListRequest) Top(top int32) ApiGetOsSupportedVersionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetOsSupportedVersionListRequest) Skip(skip int32) ApiGetOsSupportedVersionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetOsSupportedVersionListRequest) Select_(select_ string) ApiGetOsSupportedVersionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetOsSupportedVersionListRequest) Expand(expand string) ApiGetOsSupportedVersionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetOsSupportedVersionListRequest) Apply(apply string) ApiGetOsSupportedVersionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetOsSupportedVersionListRequest) Count(count bool) ApiGetOsSupportedVersionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetOsSupportedVersionListRequest) Inlinecount(inlinecount string) ApiGetOsSupportedVersionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetOsSupportedVersionListRequest) At(at string) ApiGetOsSupportedVersionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetOsSupportedVersionListRequest) Tags(tags string) ApiGetOsSupportedVersionListRequest {
 	r.tags = &tags
@@ -3445,7 +3510,7 @@ GetOsSupportedVersionList Read a 'os.SupportedVersion' resource.
 func (a *OsApiService) GetOsSupportedVersionList(ctx _context.Context) ApiGetOsSupportedVersionListRequest {
 	return ApiGetOsSupportedVersionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3584,13 +3649,13 @@ func (a *OsApiService) GetOsSupportedVersionListExecute(r ApiGetOsSupportedVersi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3607,11 +3672,11 @@ func (a *OsApiService) GetOsSupportedVersionListExecute(r ApiGetOsSupportedVersi
 }
 
 type ApiPatchOsConfigurationFileRequest struct {
-	ctx _context.Context
-	ApiService *OsApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *OsApiService
+	moid                string
 	osConfigurationFile *OsConfigurationFile
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;os.ConfigurationFile&#39; resource to update.
@@ -3619,6 +3684,7 @@ func (r ApiPatchOsConfigurationFileRequest) OsConfigurationFile(osConfigurationF
 	r.osConfigurationFile = &osConfigurationFile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchOsConfigurationFileRequest) IfMatch(ifMatch string) ApiPatchOsConfigurationFileRequest {
 	r.ifMatch = &ifMatch
@@ -3639,8 +3705,8 @@ PatchOsConfigurationFile Update a 'os.ConfigurationFile' resource.
 func (a *OsApiService) PatchOsConfigurationFile(ctx _context.Context, moid string) ApiPatchOsConfigurationFileRequest {
 	return ApiPatchOsConfigurationFileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3755,13 +3821,13 @@ func (a *OsApiService) PatchOsConfigurationFileExecute(r ApiPatchOsConfiguration
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3778,11 +3844,11 @@ func (a *OsApiService) PatchOsConfigurationFileExecute(r ApiPatchOsConfiguration
 }
 
 type ApiUpdateOsConfigurationFileRequest struct {
-	ctx _context.Context
-	ApiService *OsApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *OsApiService
+	moid                string
 	osConfigurationFile *OsConfigurationFile
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;os.ConfigurationFile&#39; resource to update.
@@ -3790,6 +3856,7 @@ func (r ApiUpdateOsConfigurationFileRequest) OsConfigurationFile(osConfiguration
 	r.osConfigurationFile = &osConfigurationFile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateOsConfigurationFileRequest) IfMatch(ifMatch string) ApiUpdateOsConfigurationFileRequest {
 	r.ifMatch = &ifMatch
@@ -3810,8 +3877,8 @@ UpdateOsConfigurationFile Update a 'os.ConfigurationFile' resource.
 func (a *OsApiService) UpdateOsConfigurationFile(ctx _context.Context, moid string) ApiUpdateOsConfigurationFileRequest {
 	return ApiUpdateOsConfigurationFileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3926,13 +3993,13 @@ func (a *OsApiService) UpdateOsConfigurationFileExecute(r ApiUpdateOsConfigurati
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

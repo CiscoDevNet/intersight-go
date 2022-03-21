@@ -18,20 +18,19 @@ import (
 
 // StorageControllerRelationship - A relationship to the 'storage.Controller' resource, or the expanded 'storage.Controller' resource, or the 'null' value.
 type StorageControllerRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 	StorageController *StorageController
 }
 
 // MoMoRefAsStorageControllerRelationship is a convenience function that returns MoMoRef wrapped in StorageControllerRelationship
 func MoMoRefAsStorageControllerRelationship(v *MoMoRef) StorageControllerRelationship {
-	return StorageControllerRelationship{ MoMoRef: v}
+	return StorageControllerRelationship{MoMoRef: v}
 }
 
 // StorageControllerAsStorageControllerRelationship is a convenience function that returns StorageController wrapped in StorageControllerRelationship
 func StorageControllerAsStorageControllerRelationship(v *StorageController) StorageControllerRelationship {
-	return StorageControllerRelationship{ StorageController: v}
+	return StorageControllerRelationship{StorageController: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageControllerRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageControllerRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageControllerRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageControllerRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageControllerRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

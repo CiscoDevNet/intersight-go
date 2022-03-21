@@ -28,8 +28,8 @@ type AssetSudiInfoAllOf struct {
 	// The signature is obtained by taking the base64 encoding of the Serial Number + PID + Status, taking the SHA256 hash and then signing with the SUDI X.509 Leaf Certifiate.
 	Signature *string `json:"Signature,omitempty"`
 	// The validation status of the device. * `DeviceStatusUnknown` - SUDI validation is done on the establishment of a connection. Before a device connects or after it disconnects, the SUDI validation status is set to this value. * `Verified` - The device returned a valid PID, Serial Number, Status and X.509 Leaf Certificate. The certificate signing chain was validated. * `CertificateValidationFailed` - Validation of the certificate signing chain failed. * `UnsupportedFirmware` - The firmware version of the Cisco IMC that is installed does not contain the SUDI APIs needed to perform validation. * `UnsupportedHardware` - The device is a model that does not contain a Trust Anchor Module (TAM) and thus cannot be validated. * `DeviceNotResponding` - An request was sent to the device, but no response was received.
-	Status *string `json:"Status,omitempty"`
-	SudiCertificate NullableX509Certificate `json:"SudiCertificate,omitempty"`
+	Status               *string                 `json:"Status,omitempty"`
+	SudiCertificate      NullableX509Certificate `json:"SudiCertificate,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *AssetSudiInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetSudiInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *AssetSudiInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetSudiInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -251,7 +251,7 @@ func (o *AssetSudiInfoAllOf) GetSudiCertificate() X509Certificate {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetSudiInfoAllOf) GetSudiCertificateOk() (*X509Certificate, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SudiCertificate.Get(), o.SudiCertificate.IsSet()
@@ -270,6 +270,7 @@ func (o *AssetSudiInfoAllOf) HasSudiCertificate() bool {
 func (o *AssetSudiInfoAllOf) SetSudiCertificate(v X509Certificate) {
 	o.SudiCertificate.Set(&v)
 }
+
 // SetSudiCertificateNil sets the value for SudiCertificate to be an explicit nil
 func (o *AssetSudiInfoAllOf) SetSudiCertificateNil() {
 	o.SudiCertificate.Set(nil)
@@ -369,5 +370,3 @@ func (v *NullableAssetSudiInfoAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

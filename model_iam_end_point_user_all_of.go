@@ -24,8 +24,8 @@ type IamEndPointUserAllOf struct {
 	// Name of the user to be created on the endpoint. It can be any string that adheres to the following constraints. It can have alphanumeric characters, dots, underscores and hyphen. It cannot be more than 16 characters.
 	Name *string `json:"Name,omitempty"`
 	// An array of relationships to iamEndPointUserRole resources.
-	EndPointUserRole []IamEndPointUserRoleRelationship `json:"EndPointUserRole,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	EndPointUserRole     []IamEndPointUserRoleRelationship     `json:"EndPointUserRole,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *IamEndPointUserAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamEndPointUserAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *IamEndPointUserAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamEndPointUserAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -136,7 +136,7 @@ func (o *IamEndPointUserAllOf) SetName(v string) {
 
 // GetEndPointUserRole returns the EndPointUserRole field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamEndPointUserAllOf) GetEndPointUserRole() []IamEndPointUserRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamEndPointUserRoleRelationship
 		return ret
 	}
@@ -280,5 +280,3 @@ func (v *NullableIamEndPointUserAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

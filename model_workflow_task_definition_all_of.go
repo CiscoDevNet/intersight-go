@@ -24,26 +24,26 @@ type WorkflowTaskDefinitionAllOf struct {
 	// When true this will be the task version that is used when a specific task definition version is not specified. The very first task definition created with a name will be set as the default version, after that user can explicitly set any version of the task definition as the default version.
 	DefaultVersion *bool `json:"DefaultVersion,omitempty"`
 	// A user friendly description about task on what operations are done as part of the task execution and any other specific information about task input and output.
-	Description *string `json:"Description,omitempty"`
+	Description        *string                            `json:"Description,omitempty"`
 	InternalProperties NullableWorkflowInternalProperties `json:"InternalProperties,omitempty"`
 	// A user friendly short name to identify the task definition. Label can only contain letters (a-z, A-Z), numbers (0-9), hyphen (-), period (.), colon (:), space ( ), single quote ('), forward slash (/), or an underscore (_) and must be at least 2 characters.
 	Label *string `json:"Label,omitempty"`
 	// License entitlement required to run this task. It is determined by license requirement of features. * `Base` - Base as a License type. It is default license type. * `Essential` - Essential as a License type. * `Standard` - Standard as a License type. * `Advantage` - Advantage as a License type. * `Premier` - Premier as a License type. * `IWO-Essential` - IWO-Essential as a License type. * `IWO-Advantage` - IWO-Advantage as a License type. * `IWO-Premier` - IWO-Premier as a License type. * `IKS-Advantage` - IKS-Advantage as a License type.
 	LicenseEntitlement *string `json:"LicenseEntitlement,omitempty"`
 	// The name of the task definition. The name should follow this convention <Verb or Action><Category><Vendor><Product><Noun or object> Verb or Action is a required portion of the name and this must be part of the pre-approved verb list. Category is an optional field and this will refer to the broad category of the task referring to the type of resource or endpoint. If there is no specific category then use \"Generic\" if required. Vendor is an optional field and this will refer to the specific vendor this task applies to. If the task is generic and not tied to a vendor, then do not specify anything. Product is an optional field, this will contain the vendor product and model when desired. Noun or object is a required field and  this will contain the noun or object on which the action is being performed. Name can only contain letters (a-z, A-Z), numbers (0-9), hyphen (-), period (.), colon (:), or an underscore (_). Examples SendEmail  - This is a task in Generic category for sending email. NewStorageVolume - This is a vendor agnostic task under Storage device category for creating a new volume.
-	Name *string `json:"Name,omitempty"`
-	Properties NullableWorkflowProperties `json:"Properties,omitempty"`
-	RollbackTasks []WorkflowRollbackTask `json:"RollbackTasks,omitempty"`
+	Name          *string                    `json:"Name,omitempty"`
+	Properties    NullableWorkflowProperties `json:"Properties,omitempty"`
+	RollbackTasks []WorkflowRollbackTask     `json:"RollbackTasks,omitempty"`
 	// If set to true, the task requires access to secure properties and uses an encryption token associated with a workflow moid to encrypt or decrypt the secure properties.
 	SecurePropAccess *bool `json:"SecurePropAccess,omitempty"`
 	// The version of the task definition so we can support multiple versions of a task definition.
-	Version *int64 `json:"Version,omitempty"`
-	Catalog *WorkflowCatalogRelationship `json:"Catalog,omitempty"`
+	Version    *int64                              `json:"Version,omitempty"`
+	Catalog    *WorkflowCatalogRelationship        `json:"Catalog,omitempty"`
 	ClonedFrom *WorkflowTaskDefinitionRelationship `json:"ClonedFrom,omitempty"`
 	// An array of relationships to workflowTaskDefinition resources.
-	ImplementedTasks []WorkflowTaskDefinitionRelationship `json:"ImplementedTasks,omitempty"`
-	InterfaceTask *WorkflowTaskDefinitionRelationship `json:"InterfaceTask,omitempty"`
-	TaskMetadata *WorkflowTaskMetadataRelationship `json:"TaskMetadata,omitempty"`
+	ImplementedTasks     []WorkflowTaskDefinitionRelationship `json:"ImplementedTasks,omitempty"`
+	InterfaceTask        *WorkflowTaskDefinitionRelationship  `json:"InterfaceTask,omitempty"`
+	TaskMetadata         *WorkflowTaskMetadataRelationship    `json:"TaskMetadata,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -89,7 +89,7 @@ func (o *WorkflowTaskDefinitionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowTaskDefinitionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -113,7 +113,7 @@ func (o *WorkflowTaskDefinitionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowTaskDefinitionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -201,7 +201,7 @@ func (o *WorkflowTaskDefinitionAllOf) GetInternalProperties() WorkflowInternalPr
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowTaskDefinitionAllOf) GetInternalPropertiesOk() (*WorkflowInternalProperties, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.InternalProperties.Get(), o.InternalProperties.IsSet()
@@ -220,6 +220,7 @@ func (o *WorkflowTaskDefinitionAllOf) HasInternalProperties() bool {
 func (o *WorkflowTaskDefinitionAllOf) SetInternalProperties(v WorkflowInternalProperties) {
 	o.InternalProperties.Set(&v)
 }
+
 // SetInternalPropertiesNil sets the value for InternalProperties to be an explicit nil
 func (o *WorkflowTaskDefinitionAllOf) SetInternalPropertiesNil() {
 	o.InternalProperties.Set(nil)
@@ -339,7 +340,7 @@ func (o *WorkflowTaskDefinitionAllOf) GetProperties() WorkflowProperties {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowTaskDefinitionAllOf) GetPropertiesOk() (*WorkflowProperties, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Properties.Get(), o.Properties.IsSet()
@@ -358,6 +359,7 @@ func (o *WorkflowTaskDefinitionAllOf) HasProperties() bool {
 func (o *WorkflowTaskDefinitionAllOf) SetProperties(v WorkflowProperties) {
 	o.Properties.Set(&v)
 }
+
 // SetPropertiesNil sets the value for Properties to be an explicit nil
 func (o *WorkflowTaskDefinitionAllOf) SetPropertiesNil() {
 	o.Properties.Set(nil)
@@ -370,7 +372,7 @@ func (o *WorkflowTaskDefinitionAllOf) UnsetProperties() {
 
 // GetRollbackTasks returns the RollbackTasks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTaskDefinitionAllOf) GetRollbackTasks() []WorkflowRollbackTask {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowRollbackTask
 		return ret
 	}
@@ -531,7 +533,7 @@ func (o *WorkflowTaskDefinitionAllOf) SetClonedFrom(v WorkflowTaskDefinitionRela
 
 // GetImplementedTasks returns the ImplementedTasks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTaskDefinitionAllOf) GetImplementedTasks() []WorkflowTaskDefinitionRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowTaskDefinitionRelationship
 		return ret
 	}
@@ -755,5 +757,3 @@ func (v *NullableWorkflowTaskDefinitionAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

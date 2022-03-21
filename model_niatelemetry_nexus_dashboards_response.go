@@ -18,32 +18,31 @@ import (
 
 // NiatelemetryNexusDashboardsResponse - The response body of a HTTP GET request for the 'niatelemetry.NexusDashboards' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'niatelemetry.NexusDashboards' resources.
 type NiatelemetryNexusDashboardsResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform            *MoAggregateTransform
+	MoDocumentCount                 *MoDocumentCount
+	MoTagSummary                    *MoTagSummary
 	NiatelemetryNexusDashboardsList *NiatelemetryNexusDashboardsList
 }
 
 // MoAggregateTransformAsNiatelemetryNexusDashboardsResponse is a convenience function that returns MoAggregateTransform wrapped in NiatelemetryNexusDashboardsResponse
 func MoAggregateTransformAsNiatelemetryNexusDashboardsResponse(v *MoAggregateTransform) NiatelemetryNexusDashboardsResponse {
-	return NiatelemetryNexusDashboardsResponse{ MoAggregateTransform: v}
+	return NiatelemetryNexusDashboardsResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsNiatelemetryNexusDashboardsResponse is a convenience function that returns MoDocumentCount wrapped in NiatelemetryNexusDashboardsResponse
 func MoDocumentCountAsNiatelemetryNexusDashboardsResponse(v *MoDocumentCount) NiatelemetryNexusDashboardsResponse {
-	return NiatelemetryNexusDashboardsResponse{ MoDocumentCount: v}
+	return NiatelemetryNexusDashboardsResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsNiatelemetryNexusDashboardsResponse is a convenience function that returns MoTagSummary wrapped in NiatelemetryNexusDashboardsResponse
 func MoTagSummaryAsNiatelemetryNexusDashboardsResponse(v *MoTagSummary) NiatelemetryNexusDashboardsResponse {
-	return NiatelemetryNexusDashboardsResponse{ MoTagSummary: v}
+	return NiatelemetryNexusDashboardsResponse{MoTagSummary: v}
 }
 
 // NiatelemetryNexusDashboardsListAsNiatelemetryNexusDashboardsResponse is a convenience function that returns NiatelemetryNexusDashboardsList wrapped in NiatelemetryNexusDashboardsResponse
 func NiatelemetryNexusDashboardsListAsNiatelemetryNexusDashboardsResponse(v *NiatelemetryNexusDashboardsList) NiatelemetryNexusDashboardsResponse {
-	return NiatelemetryNexusDashboardsResponse{ NiatelemetryNexusDashboardsList: v}
+	return NiatelemetryNexusDashboardsResponse{NiatelemetryNexusDashboardsList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiatelemetryNexusDashboardsResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src NiatelemetryNexusDashboardsResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NiatelemetryNexusDashboardsResponse) GetActualInstance() (interface{}) {
+func (obj *NiatelemetryNexusDashboardsResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableNiatelemetryNexusDashboardsResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

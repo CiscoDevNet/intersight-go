@@ -19,31 +19,30 @@ import (
 // ChassisIomProfileResponse - The response body of a HTTP GET request for the 'chassis.IomProfile' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'chassis.IomProfile' resources.
 type ChassisIomProfileResponse struct {
 	ChassisIomProfileList *ChassisIomProfileList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform  *MoAggregateTransform
+	MoDocumentCount       *MoDocumentCount
+	MoTagSummary          *MoTagSummary
 }
 
 // ChassisIomProfileListAsChassisIomProfileResponse is a convenience function that returns ChassisIomProfileList wrapped in ChassisIomProfileResponse
 func ChassisIomProfileListAsChassisIomProfileResponse(v *ChassisIomProfileList) ChassisIomProfileResponse {
-	return ChassisIomProfileResponse{ ChassisIomProfileList: v}
+	return ChassisIomProfileResponse{ChassisIomProfileList: v}
 }
 
 // MoAggregateTransformAsChassisIomProfileResponse is a convenience function that returns MoAggregateTransform wrapped in ChassisIomProfileResponse
 func MoAggregateTransformAsChassisIomProfileResponse(v *MoAggregateTransform) ChassisIomProfileResponse {
-	return ChassisIomProfileResponse{ MoAggregateTransform: v}
+	return ChassisIomProfileResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsChassisIomProfileResponse is a convenience function that returns MoDocumentCount wrapped in ChassisIomProfileResponse
 func MoDocumentCountAsChassisIomProfileResponse(v *MoDocumentCount) ChassisIomProfileResponse {
-	return ChassisIomProfileResponse{ MoDocumentCount: v}
+	return ChassisIomProfileResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsChassisIomProfileResponse is a convenience function that returns MoTagSummary wrapped in ChassisIomProfileResponse
 func MoTagSummaryAsChassisIomProfileResponse(v *MoTagSummary) ChassisIomProfileResponse {
-	return ChassisIomProfileResponse{ MoTagSummary: v}
+	return ChassisIomProfileResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ChassisIomProfileResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ChassisIomProfileResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ChassisIomProfileResponse) GetActualInstance() (interface{}) {
+func (obj *ChassisIomProfileResponse) GetActualInstance() interface{} {
 	if obj.ChassisIomProfileList != nil {
 		return obj.ChassisIomProfileList
 	}
@@ -184,5 +183,3 @@ func (v *NullableChassisIomProfileResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -42,7 +42,7 @@ type ComputeIpAddressAllOf struct {
 	// Subnet detail of a KVM IP Address.
 	Subnet *string `json:"Subnet,omitempty"`
 	// Type of the KVM IP Address. * `MgmtInterface` - Ip Address of a Management Interface. * `VnicIpV4StaticAddr` - Static Ipv4 Address of a Virtual Network Interface. * `VnicIpV4PooledAddr` - Ipv4 Address of a Virtual Network Interface from an address pool. * `VnicIpV4MgmtPooledAddr` - Ipv4 Address of a Virtual Network Interface from a Managed address pool. * `VnicIpV6StaticAddr` - Static Ipv6 Address of a Virtual Network Interface. * `VnicIpV6MgmtPooledAddr` - Ipv6 Address of a Virtual Network Interface from a Managed address pool. * `VnicIpV4ProfDerivedAddr` - Server Profile derived Ipv4 Address of a Virtual Network Interface. * `MgmtIpV6ProfDerivedAddr` - Server Profile derived Ipv6 Address used for accessing server management services.
-	Type *string `json:"Type,omitempty"`
+	Type                 *string `json:"Type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *ComputeIpAddressAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ComputeIpAddressAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -108,7 +108,7 @@ func (o *ComputeIpAddressAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ComputeIpAddressAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -584,5 +584,3 @@ func (v *NullableComputeIpAddressAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

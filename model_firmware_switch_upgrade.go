@@ -25,10 +25,10 @@ type FirmwareSwitchUpgrade struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The flag to enable or disable fabric evacuation during the switch firmware upgrade. In case of IMM, it is mandatory to have the Fabric Interconnects associated with domain profile for fabric evacuation to happen.
-	EnableFabricEvacuation *bool `json:"EnableFabricEvacuation,omitempty"`
-	Device *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
+	EnableFabricEvacuation *bool                                `json:"EnableFabricEvacuation,omitempty"`
+	Device                 *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
 	// An array of relationships to networkElement resources.
-	NetworkElements []NetworkElementRelationship `json:"NetworkElements,omitempty"`
+	NetworkElements      []NetworkElementRelationship `json:"NetworkElements,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *FirmwareSwitchUpgrade) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareSwitchUpgrade) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *FirmwareSwitchUpgrade) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareSwitchUpgrade) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -179,7 +179,7 @@ func (o *FirmwareSwitchUpgrade) SetDevice(v AssetDeviceRegistrationRelationship)
 
 // GetNetworkElements returns the NetworkElements field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareSwitchUpgrade) GetNetworkElements() []NetworkElementRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []NetworkElementRelationship
 		return ret
 	}
@@ -250,8 +250,8 @@ func (o *FirmwareSwitchUpgrade) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The flag to enable or disable fabric evacuation during the switch firmware upgrade. In case of IMM, it is mandatory to have the Fabric Interconnects associated with domain profile for fabric evacuation to happen.
-		EnableFabricEvacuation *bool `json:"EnableFabricEvacuation,omitempty"`
-		Device *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
+		EnableFabricEvacuation *bool                                `json:"EnableFabricEvacuation,omitempty"`
+		Device                 *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
 		// An array of relationships to networkElement resources.
 		NetworkElements []NetworkElementRelationship `json:"NetworkElements,omitempty"`
 	}
@@ -348,5 +348,3 @@ func (v *NullableFirmwareSwitchUpgrade) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

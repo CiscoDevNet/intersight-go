@@ -36,7 +36,7 @@ type WorkflowWebApiAllOf struct {
 	// If the web API is to be executed in a remote device connected to the Intersight through device connector, 'Endpoint' is expected as the value whereas if the API is an Intersight API, 'Local' is expected as the value.
 	TargetType *string `json:"TargetType,omitempty"`
 	// The URL of the resource in the target to which the API request is made.
-	Url *string `json:"Url,omitempty"`
+	Url                  *string `json:"Url,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *WorkflowWebApiAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWebApiAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *WorkflowWebApiAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWebApiAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -119,7 +119,7 @@ func (o *WorkflowWebApiAllOf) SetObjectType(v string) {
 
 // GetCookies returns the Cookies field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWebApiAllOf) GetCookies() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *WorkflowWebApiAllOf) SetEndpointRequestType(v string) {
 
 // GetHeaders returns the Headers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWebApiAllOf) GetHeaders() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -476,5 +476,3 @@ func (v *NullableWorkflowWebApiAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

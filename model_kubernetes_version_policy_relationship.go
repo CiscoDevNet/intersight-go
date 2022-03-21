@@ -19,19 +19,18 @@ import (
 // KubernetesVersionPolicyRelationship - A relationship to the 'kubernetes.VersionPolicy' resource, or the expanded 'kubernetes.VersionPolicy' resource, or the 'null' value.
 type KubernetesVersionPolicyRelationship struct {
 	KubernetesVersionPolicy *KubernetesVersionPolicy
-	MoMoRef *MoMoRef
+	MoMoRef                 *MoMoRef
 }
 
 // KubernetesVersionPolicyAsKubernetesVersionPolicyRelationship is a convenience function that returns KubernetesVersionPolicy wrapped in KubernetesVersionPolicyRelationship
 func KubernetesVersionPolicyAsKubernetesVersionPolicyRelationship(v *KubernetesVersionPolicy) KubernetesVersionPolicyRelationship {
-	return KubernetesVersionPolicyRelationship{ KubernetesVersionPolicy: v}
+	return KubernetesVersionPolicyRelationship{KubernetesVersionPolicy: v}
 }
 
 // MoMoRefAsKubernetesVersionPolicyRelationship is a convenience function that returns MoMoRef wrapped in KubernetesVersionPolicyRelationship
 func MoMoRefAsKubernetesVersionPolicyRelationship(v *MoMoRef) KubernetesVersionPolicyRelationship {
-	return KubernetesVersionPolicyRelationship{ MoMoRef: v}
+	return KubernetesVersionPolicyRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesVersionPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesVersionPolicyRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KubernetesVersionPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesVersionPolicyRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesVersionPolicy != nil {
 		return obj.KubernetesVersionPolicy
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesVersionPolicyRelationship) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

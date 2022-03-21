@@ -18,32 +18,31 @@ import (
 
 // StoragePureProtectionGroupResponse - The response body of a HTTP GET request for the 'storage.PureProtectionGroup' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'storage.PureProtectionGroup' resources.
 type StoragePureProtectionGroupResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform           *MoAggregateTransform
+	MoDocumentCount                *MoDocumentCount
+	MoTagSummary                   *MoTagSummary
 	StoragePureProtectionGroupList *StoragePureProtectionGroupList
 }
 
 // MoAggregateTransformAsStoragePureProtectionGroupResponse is a convenience function that returns MoAggregateTransform wrapped in StoragePureProtectionGroupResponse
 func MoAggregateTransformAsStoragePureProtectionGroupResponse(v *MoAggregateTransform) StoragePureProtectionGroupResponse {
-	return StoragePureProtectionGroupResponse{ MoAggregateTransform: v}
+	return StoragePureProtectionGroupResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsStoragePureProtectionGroupResponse is a convenience function that returns MoDocumentCount wrapped in StoragePureProtectionGroupResponse
 func MoDocumentCountAsStoragePureProtectionGroupResponse(v *MoDocumentCount) StoragePureProtectionGroupResponse {
-	return StoragePureProtectionGroupResponse{ MoDocumentCount: v}
+	return StoragePureProtectionGroupResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsStoragePureProtectionGroupResponse is a convenience function that returns MoTagSummary wrapped in StoragePureProtectionGroupResponse
 func MoTagSummaryAsStoragePureProtectionGroupResponse(v *MoTagSummary) StoragePureProtectionGroupResponse {
-	return StoragePureProtectionGroupResponse{ MoTagSummary: v}
+	return StoragePureProtectionGroupResponse{MoTagSummary: v}
 }
 
 // StoragePureProtectionGroupListAsStoragePureProtectionGroupResponse is a convenience function that returns StoragePureProtectionGroupList wrapped in StoragePureProtectionGroupResponse
 func StoragePureProtectionGroupListAsStoragePureProtectionGroupResponse(v *StoragePureProtectionGroupList) StoragePureProtectionGroupResponse {
-	return StoragePureProtectionGroupResponse{ StoragePureProtectionGroupList: v}
+	return StoragePureProtectionGroupResponse{StoragePureProtectionGroupList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StoragePureProtectionGroupResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src StoragePureProtectionGroupResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StoragePureProtectionGroupResponse) GetActualInstance() (interface{}) {
+func (obj *StoragePureProtectionGroupResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableStoragePureProtectionGroupResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

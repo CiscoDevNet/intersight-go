@@ -20,15 +20,15 @@ type WorkflowWorkflowCtxAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	InitiatorCtx NullableWorkflowInitiatorContext `json:"InitiatorCtx,omitempty"`
-	TargetCtxList []WorkflowTargetContext `json:"TargetCtxList,omitempty"`
+	ObjectType    string                           `json:"ObjectType"`
+	InitiatorCtx  NullableWorkflowInitiatorContext `json:"InitiatorCtx,omitempty"`
+	TargetCtxList []WorkflowTargetContext          `json:"TargetCtxList,omitempty"`
 	// The name of workflowMeta of the workflow running.
 	WorkflowMetaName *string `json:"WorkflowMetaName,omitempty"`
 	// The subtype of the workflow.
 	WorkflowSubtype *string `json:"WorkflowSubtype,omitempty"`
 	// Type of the workflow being started. This can be any string for client services to distinguish workflow by type.
-	WorkflowType *string `json:"WorkflowType,omitempty"`
+	WorkflowType         *string `json:"WorkflowType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *WorkflowWorkflowCtxAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWorkflowCtxAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *WorkflowWorkflowCtxAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWorkflowCtxAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -118,7 +118,7 @@ func (o *WorkflowWorkflowCtxAllOf) GetInitiatorCtx() WorkflowInitiatorContext {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowWorkflowCtxAllOf) GetInitiatorCtxOk() (*WorkflowInitiatorContext, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.InitiatorCtx.Get(), o.InitiatorCtx.IsSet()
@@ -137,6 +137,7 @@ func (o *WorkflowWorkflowCtxAllOf) HasInitiatorCtx() bool {
 func (o *WorkflowWorkflowCtxAllOf) SetInitiatorCtx(v WorkflowInitiatorContext) {
 	o.InitiatorCtx.Set(&v)
 }
+
 // SetInitiatorCtxNil sets the value for InitiatorCtx to be an explicit nil
 func (o *WorkflowWorkflowCtxAllOf) SetInitiatorCtxNil() {
 	o.InitiatorCtx.Set(nil)
@@ -149,7 +150,7 @@ func (o *WorkflowWorkflowCtxAllOf) UnsetInitiatorCtx() {
 
 // GetTargetCtxList returns the TargetCtxList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWorkflowCtxAllOf) GetTargetCtxList() []WorkflowTargetContext {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowTargetContext
 		return ret
 	}
@@ -365,5 +366,3 @@ func (v *NullableWorkflowWorkflowCtxAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

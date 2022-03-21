@@ -20,30 +20,29 @@ import (
 type BootVmediaDeviceResponse struct {
 	BootVmediaDeviceList *BootVmediaDeviceList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // BootVmediaDeviceListAsBootVmediaDeviceResponse is a convenience function that returns BootVmediaDeviceList wrapped in BootVmediaDeviceResponse
 func BootVmediaDeviceListAsBootVmediaDeviceResponse(v *BootVmediaDeviceList) BootVmediaDeviceResponse {
-	return BootVmediaDeviceResponse{ BootVmediaDeviceList: v}
+	return BootVmediaDeviceResponse{BootVmediaDeviceList: v}
 }
 
 // MoAggregateTransformAsBootVmediaDeviceResponse is a convenience function that returns MoAggregateTransform wrapped in BootVmediaDeviceResponse
 func MoAggregateTransformAsBootVmediaDeviceResponse(v *MoAggregateTransform) BootVmediaDeviceResponse {
-	return BootVmediaDeviceResponse{ MoAggregateTransform: v}
+	return BootVmediaDeviceResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsBootVmediaDeviceResponse is a convenience function that returns MoDocumentCount wrapped in BootVmediaDeviceResponse
 func MoDocumentCountAsBootVmediaDeviceResponse(v *MoDocumentCount) BootVmediaDeviceResponse {
-	return BootVmediaDeviceResponse{ MoDocumentCount: v}
+	return BootVmediaDeviceResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsBootVmediaDeviceResponse is a convenience function that returns MoTagSummary wrapped in BootVmediaDeviceResponse
 func MoTagSummaryAsBootVmediaDeviceResponse(v *MoTagSummary) BootVmediaDeviceResponse {
-	return BootVmediaDeviceResponse{ MoTagSummary: v}
+	return BootVmediaDeviceResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BootVmediaDeviceResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src BootVmediaDeviceResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BootVmediaDeviceResponse) GetActualInstance() (interface{}) {
+func (obj *BootVmediaDeviceResponse) GetActualInstance() interface{} {
 	if obj.BootVmediaDeviceList != nil {
 		return obj.BootVmediaDeviceList
 	}
@@ -184,5 +183,3 @@ func (v *NullableBootVmediaDeviceResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

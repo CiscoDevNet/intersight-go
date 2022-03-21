@@ -23,7 +23,7 @@ type StorageHitachiPortList struct {
 	// The total number of 'storage.HitachiPort' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'storage.HitachiPort' resources matching the request.
-	Results []StorageHitachiPort `json:"Results,omitempty"`
+	Results              []StorageHitachiPort `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *StorageHitachiPortList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageHitachiPortList) GetResults() []StorageHitachiPort {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageHitachiPort
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableStorageHitachiPortList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

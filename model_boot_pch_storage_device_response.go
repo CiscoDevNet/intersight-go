@@ -19,31 +19,30 @@ import (
 // BootPchStorageDeviceResponse - The response body of a HTTP GET request for the 'boot.PchStorageDevice' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'boot.PchStorageDevice' resources.
 type BootPchStorageDeviceResponse struct {
 	BootPchStorageDeviceList *BootPchStorageDeviceList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform     *MoAggregateTransform
+	MoDocumentCount          *MoDocumentCount
+	MoTagSummary             *MoTagSummary
 }
 
 // BootPchStorageDeviceListAsBootPchStorageDeviceResponse is a convenience function that returns BootPchStorageDeviceList wrapped in BootPchStorageDeviceResponse
 func BootPchStorageDeviceListAsBootPchStorageDeviceResponse(v *BootPchStorageDeviceList) BootPchStorageDeviceResponse {
-	return BootPchStorageDeviceResponse{ BootPchStorageDeviceList: v}
+	return BootPchStorageDeviceResponse{BootPchStorageDeviceList: v}
 }
 
 // MoAggregateTransformAsBootPchStorageDeviceResponse is a convenience function that returns MoAggregateTransform wrapped in BootPchStorageDeviceResponse
 func MoAggregateTransformAsBootPchStorageDeviceResponse(v *MoAggregateTransform) BootPchStorageDeviceResponse {
-	return BootPchStorageDeviceResponse{ MoAggregateTransform: v}
+	return BootPchStorageDeviceResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsBootPchStorageDeviceResponse is a convenience function that returns MoDocumentCount wrapped in BootPchStorageDeviceResponse
 func MoDocumentCountAsBootPchStorageDeviceResponse(v *MoDocumentCount) BootPchStorageDeviceResponse {
-	return BootPchStorageDeviceResponse{ MoDocumentCount: v}
+	return BootPchStorageDeviceResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsBootPchStorageDeviceResponse is a convenience function that returns MoTagSummary wrapped in BootPchStorageDeviceResponse
 func MoTagSummaryAsBootPchStorageDeviceResponse(v *MoTagSummary) BootPchStorageDeviceResponse {
-	return BootPchStorageDeviceResponse{ MoTagSummary: v}
+	return BootPchStorageDeviceResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BootPchStorageDeviceResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src BootPchStorageDeviceResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BootPchStorageDeviceResponse) GetActualInstance() (interface{}) {
+func (obj *BootPchStorageDeviceResponse) GetActualInstance() interface{} {
 	if obj.BootPchStorageDeviceList != nil {
 		return obj.BootPchStorageDeviceList
 	}
@@ -184,5 +183,3 @@ func (v *NullableBootPchStorageDeviceResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -35,10 +35,10 @@ type EquipmentTpm struct {
 	// Enter  the ID of the trusted platform module.
 	TpmId *int64 `json:"TpmId,omitempty"`
 	// Identifies the version of the Trusted Platform Module.
-	Version *string `json:"Version,omitempty"`
-	ComputeBoard *ComputeBoardRelationship `json:"ComputeBoard,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Version              *string                              `json:"Version,omitempty"`
+	ComputeBoard         *ComputeBoardRelationship            `json:"ComputeBoard,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *EquipmentTpm) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentTpm) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *EquipmentTpm) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentTpm) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -471,10 +471,10 @@ func (o *EquipmentTpm) UnmarshalJSON(bytes []byte) (err error) {
 		// Enter  the ID of the trusted platform module.
 		TpmId *int64 `json:"TpmId,omitempty"`
 		// Identifies the version of the Trusted Platform Module.
-		Version *string `json:"Version,omitempty"`
-		ComputeBoard *ComputeBoardRelationship `json:"ComputeBoard,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		Version             *string                              `json:"Version,omitempty"`
+		ComputeBoard        *ComputeBoardRelationship            `json:"ComputeBoard,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
 	varEquipmentTpmWithoutEmbeddedStruct := EquipmentTpmWithoutEmbeddedStruct{}
@@ -581,5 +581,3 @@ func (v *NullableEquipmentTpm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

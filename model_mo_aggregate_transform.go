@@ -21,7 +21,7 @@ import (
 type MoAggregateTransform struct {
 	MoBaseResponse
 	// The results of the aggregation query.
-	Results []map[string]interface{} `json:"Results,omitempty"`
+	Results              []map[string]interface{} `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -47,7 +47,7 @@ func NewMoAggregateTransformWithDefaults() *MoAggregateTransform {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MoAggregateTransform) GetResults() []map[string]interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -189,5 +189,3 @@ func (v *NullableMoAggregateTransform) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

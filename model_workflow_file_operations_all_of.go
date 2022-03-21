@@ -20,11 +20,11 @@ type WorkflowFileOperationsAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType   string                         `json:"ObjectType"`
 	FileDownload NullableWorkflowFileDownloadOp `json:"FileDownload,omitempty"`
 	FileTemplate NullableWorkflowFileTemplateOp `json:"FileTemplate,omitempty"`
 	// File operation type to be executed on the connected endpoint. * `FileDownload` - The API is executed in a remote device connected to the Intersightthrough its device connector. This operation is to download the filefrom specified storage bucket to the specific path on the device. * `FileTemplatize` - Populates data driven template file with input values to generate textual output.Inputs - the path of the template file on the device and json values to populate.An error will be returned if the file does not exists or if there is an error whileexecuting the template.
-	OperationType *string `json:"OperationType,omitempty"`
+	OperationType        *string `json:"OperationType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *WorkflowFileOperationsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowFileOperationsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *WorkflowFileOperationsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowFileOperationsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -118,7 +118,7 @@ func (o *WorkflowFileOperationsAllOf) GetFileDownload() WorkflowFileDownloadOp {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowFileOperationsAllOf) GetFileDownloadOk() (*WorkflowFileDownloadOp, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.FileDownload.Get(), o.FileDownload.IsSet()
@@ -137,6 +137,7 @@ func (o *WorkflowFileOperationsAllOf) HasFileDownload() bool {
 func (o *WorkflowFileOperationsAllOf) SetFileDownload(v WorkflowFileDownloadOp) {
 	o.FileDownload.Set(&v)
 }
+
 // SetFileDownloadNil sets the value for FileDownload to be an explicit nil
 func (o *WorkflowFileOperationsAllOf) SetFileDownloadNil() {
 	o.FileDownload.Set(nil)
@@ -160,7 +161,7 @@ func (o *WorkflowFileOperationsAllOf) GetFileTemplate() WorkflowFileTemplateOp {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowFileOperationsAllOf) GetFileTemplateOk() (*WorkflowFileTemplateOp, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.FileTemplate.Get(), o.FileTemplate.IsSet()
@@ -179,6 +180,7 @@ func (o *WorkflowFileOperationsAllOf) HasFileTemplate() bool {
 func (o *WorkflowFileOperationsAllOf) SetFileTemplate(v WorkflowFileTemplateOp) {
 	o.FileTemplate.Set(&v)
 }
+
 // SetFileTemplateNil sets the value for FileTemplate to be an explicit nil
 func (o *WorkflowFileOperationsAllOf) SetFileTemplateNil() {
 	o.FileTemplate.Set(nil)
@@ -302,5 +304,3 @@ func (v *NullableWorkflowFileOperationsAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

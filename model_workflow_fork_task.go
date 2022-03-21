@@ -23,10 +23,10 @@ type WorkflowForkTask struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType  string   `json:"ObjectType"`
 	ForkedTasks []string `json:"ForkedTasks,omitempty"`
 	// Task name for the join control task that must follow a fork control task.
-	JoinTask *string `json:"JoinTask,omitempty"`
+	JoinTask             *string `json:"JoinTask,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *WorkflowForkTask) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowForkTask) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *WorkflowForkTask) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowForkTask) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -105,7 +105,7 @@ func (o *WorkflowForkTask) SetObjectType(v string) {
 
 // GetForkedTasks returns the ForkedTasks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowForkTask) GetForkedTasks() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *WorkflowForkTask) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType  string   `json:"ObjectType"`
 		ForkedTasks []string `json:"ForkedTasks,omitempty"`
 		// Task name for the join control task that must follow a fork control task.
 		JoinTask *string `json:"JoinTask,omitempty"`
@@ -299,5 +299,3 @@ func (v *NullableWorkflowForkTask) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

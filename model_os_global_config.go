@@ -31,14 +31,14 @@ type OsGlobalConfig struct {
 	// The install method to be used for OS installation - vMedia, iPXE. Only vMedia is supported as of now.
 	InstallMethod *string `json:"InstallMethod,omitempty"`
 	// The Prefill install Target Name.
-	InstallTargetType *string `json:"InstallTargetType,omitempty"`
+	InstallTargetType         *string                             `json:"InstallTargetType,omitempty"`
 	OperatingSystemParameters NullableOsOperatingSystemParameters `json:"OperatingSystemParameters,omitempty"`
 	// The Operating System Image name.
 	OsImageName *string `json:"OsImageName,omitempty"`
 	// The name of the Server Configuration Utilities Image.
 	ScuImageName *string `json:"ScuImageName,omitempty"`
 	// The Windows OS edition, this property required only for Windows server.
-	WindowsEdition *string `json:"WindowsEdition,omitempty"`
+	WindowsEdition       *string `json:"WindowsEdition,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *OsGlobalConfig) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OsGlobalConfig) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *OsGlobalConfig) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OsGlobalConfig) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -256,7 +256,7 @@ func (o *OsGlobalConfig) GetOperatingSystemParameters() OsOperatingSystemParamet
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsGlobalConfig) GetOperatingSystemParametersOk() (*OsOperatingSystemParameters, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OperatingSystemParameters.Get(), o.OperatingSystemParameters.IsSet()
@@ -275,6 +275,7 @@ func (o *OsGlobalConfig) HasOperatingSystemParameters() bool {
 func (o *OsGlobalConfig) SetOperatingSystemParameters(v OsOperatingSystemParameters) {
 	o.OperatingSystemParameters.Set(&v)
 }
+
 // SetOperatingSystemParametersNil sets the value for OperatingSystemParameters to be an explicit nil
 func (o *OsGlobalConfig) SetOperatingSystemParametersNil() {
 	o.OperatingSystemParameters.Set(nil)
@@ -442,7 +443,7 @@ func (o *OsGlobalConfig) UnmarshalJSON(bytes []byte) (err error) {
 		// The install method to be used for OS installation - vMedia, iPXE. Only vMedia is supported as of now.
 		InstallMethod *string `json:"InstallMethod,omitempty"`
 		// The Prefill install Target Name.
-		InstallTargetType *string `json:"InstallTargetType,omitempty"`
+		InstallTargetType         *string                             `json:"InstallTargetType,omitempty"`
 		OperatingSystemParameters NullableOsOperatingSystemParameters `json:"OperatingSystemParameters,omitempty"`
 		// The Operating System Image name.
 		OsImageName *string `json:"OsImageName,omitempty"`
@@ -554,5 +555,3 @@ func (v *NullableOsGlobalConfig) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

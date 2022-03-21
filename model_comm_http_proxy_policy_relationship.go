@@ -19,19 +19,18 @@ import (
 // CommHttpProxyPolicyRelationship - A relationship to the 'comm.HttpProxyPolicy' resource, or the expanded 'comm.HttpProxyPolicy' resource, or the 'null' value.
 type CommHttpProxyPolicyRelationship struct {
 	CommHttpProxyPolicy *CommHttpProxyPolicy
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 }
 
 // CommHttpProxyPolicyAsCommHttpProxyPolicyRelationship is a convenience function that returns CommHttpProxyPolicy wrapped in CommHttpProxyPolicyRelationship
 func CommHttpProxyPolicyAsCommHttpProxyPolicyRelationship(v *CommHttpProxyPolicy) CommHttpProxyPolicyRelationship {
-	return CommHttpProxyPolicyRelationship{ CommHttpProxyPolicy: v}
+	return CommHttpProxyPolicyRelationship{CommHttpProxyPolicy: v}
 }
 
 // MoMoRefAsCommHttpProxyPolicyRelationship is a convenience function that returns MoMoRef wrapped in CommHttpProxyPolicyRelationship
 func MoMoRefAsCommHttpProxyPolicyRelationship(v *MoMoRef) CommHttpProxyPolicyRelationship {
-	return CommHttpProxyPolicyRelationship{ MoMoRef: v}
+	return CommHttpProxyPolicyRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CommHttpProxyPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src CommHttpProxyPolicyRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CommHttpProxyPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *CommHttpProxyPolicyRelationship) GetActualInstance() interface{} {
 	if obj.CommHttpProxyPolicy != nil {
 		return obj.CommHttpProxyPolicy
 	}
@@ -137,5 +136,3 @@ func (v *NullableCommHttpProxyPolicyRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

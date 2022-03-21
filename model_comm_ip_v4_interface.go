@@ -29,7 +29,7 @@ type CommIpV4Interface struct {
 	// The IPv4 Address, represented in the standard dot-decimal notation, e.g. 192.168.1.3.
 	IpAddress *string `json:"IpAddress,omitempty"`
 	// The IPv4 Netmask, represented in the standard dot-decimal notation, e.g. 255.255.255.0.
-	Netmask *string `json:"Netmask,omitempty"`
+	Netmask              *string `json:"Netmask,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *CommIpV4Interface) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CommIpV4Interface) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *CommIpV4Interface) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CommIpV4Interface) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -341,5 +341,3 @@ func (v *NullableCommIpV4Interface) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

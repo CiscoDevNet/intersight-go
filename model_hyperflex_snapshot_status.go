@@ -25,8 +25,8 @@ type HyperflexSnapshotStatus struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Description of this Snapshot Point.
-	Description *string `json:"Description,omitempty"`
-	Error NullableHyperflexErrorStack `json:"Error,omitempty"`
+	Description *string                     `json:"Description,omitempty"`
+	Error       NullableHyperflexErrorStack `json:"Error,omitempty"`
 	// Completion percentage for this snapshot.
 	PctComplete *int64 `json:"PctComplete,omitempty"`
 	// Current snapshot state for this snapshot. * `SUCCESS` - This snapshot status code is success. * `FAILED` - This snapshot status code is failed. * `IN_PROGRESS` - This snapshot status code is in progress. * `DELETING` - This snapshot status code is deleting. * `DELETED` - This snapshot status code is deleted. * `NONE` - This snapshot status code is none. * `INIT` - This snapshot status code is initializing.
@@ -34,7 +34,7 @@ type HyperflexSnapshotStatus struct {
 	// Timestamp at which the Snapshot is taken.
 	Timestamp *int64 `json:"Timestamp,omitempty"`
 	// Space Used by this Snapshot Point.
-	UsedSpace *int64 `json:"UsedSpace,omitempty"`
+	UsedSpace            *int64 `json:"UsedSpace,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *HyperflexSnapshotStatus) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexSnapshotStatus) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *HyperflexSnapshotStatus) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexSnapshotStatus) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -156,7 +156,7 @@ func (o *HyperflexSnapshotStatus) GetError() HyperflexErrorStack {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexSnapshotStatus) GetErrorOk() (*HyperflexErrorStack, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Error.Get(), o.Error.IsSet()
@@ -175,6 +175,7 @@ func (o *HyperflexSnapshotStatus) HasError() bool {
 func (o *HyperflexSnapshotStatus) SetError(v HyperflexErrorStack) {
 	o.Error.Set(&v)
 }
+
 // SetErrorNil sets the value for Error to be an explicit nil
 func (o *HyperflexSnapshotStatus) SetErrorNil() {
 	o.Error.Set(nil)
@@ -362,8 +363,8 @@ func (o *HyperflexSnapshotStatus) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Description of this Snapshot Point.
-		Description *string `json:"Description,omitempty"`
-		Error NullableHyperflexErrorStack `json:"Error,omitempty"`
+		Description *string                     `json:"Description,omitempty"`
+		Error       NullableHyperflexErrorStack `json:"Error,omitempty"`
 		// Completion percentage for this snapshot.
 		PctComplete *int64 `json:"PctComplete,omitempty"`
 		// Current snapshot state for this snapshot. * `SUCCESS` - This snapshot status code is success. * `FAILED` - This snapshot status code is failed. * `IN_PROGRESS` - This snapshot status code is in progress. * `DELETING` - This snapshot status code is deleting. * `DELETED` - This snapshot status code is deleted. * `NONE` - This snapshot status code is none. * `INIT` - This snapshot status code is initializing.
@@ -472,5 +473,3 @@ func (v *NullableHyperflexSnapshotStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

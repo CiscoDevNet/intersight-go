@@ -23,7 +23,7 @@ type AssetOrchestrationHitachiVirtualStoragePlatformOptionsAllOf struct {
 	ObjectType string `json:"ObjectType"`
 	// The DNS hostname or IP address of the Hitachi Ops Center API Configuration Manager used to manage the Hitachi Virtual Storage Platform.
 	OpsCenterManagementAddress *string `json:"OpsCenterManagementAddress,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties       map[string]interface{}
 }
 
 type _AssetOrchestrationHitachiVirtualStoragePlatformOptionsAllOf AssetOrchestrationHitachiVirtualStoragePlatformOptionsAllOf
@@ -64,7 +64,7 @@ func (o *AssetOrchestrationHitachiVirtualStoragePlatformOptionsAllOf) GetClassId
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetOrchestrationHitachiVirtualStoragePlatformOptionsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -88,7 +88,7 @@ func (o *AssetOrchestrationHitachiVirtualStoragePlatformOptionsAllOf) GetObjectT
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetOrchestrationHitachiVirtualStoragePlatformOptionsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -204,5 +204,3 @@ func (v *NullableAssetOrchestrationHitachiVirtualStoragePlatformOptionsAllOf) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

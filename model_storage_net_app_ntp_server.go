@@ -31,8 +31,8 @@ type StorageNetAppNtpServer struct {
 	// NTP server host name, IPv4, or IPv6 address.
 	Server *string `json:"Server,omitempty"`
 	// NTP protocol version for server. Valid versions are 3, 4, or auto. * `none` - Default unknown NTP protocol version. * `3` - NTP protocol version is 3. * `4` - NTP protocol version is 4. * `auto` - NTP protocol version is auto.
-	Version *string `json:"Version,omitempty"`
-	Array *StorageNetAppClusterRelationship `json:"Array,omitempty"`
+	Version              *string                           `json:"Version,omitempty"`
+	Array                *StorageNetAppClusterRelationship `json:"Array,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *StorageNetAppNtpServer) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppNtpServer) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *StorageNetAppNtpServer) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppNtpServer) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -321,8 +321,8 @@ func (o *StorageNetAppNtpServer) UnmarshalJSON(bytes []byte) (err error) {
 		// NTP server host name, IPv4, or IPv6 address.
 		Server *string `json:"Server,omitempty"`
 		// NTP protocol version for server. Valid versions are 3, 4, or auto. * `none` - Default unknown NTP protocol version. * `3` - NTP protocol version is 3. * `4` - NTP protocol version is 4. * `auto` - NTP protocol version is auto.
-		Version *string `json:"Version,omitempty"`
-		Array *StorageNetAppClusterRelationship `json:"Array,omitempty"`
+		Version *string                           `json:"Version,omitempty"`
+		Array   *StorageNetAppClusterRelationship `json:"Array,omitempty"`
 	}
 
 	varStorageNetAppNtpServerWithoutEmbeddedStruct := StorageNetAppNtpServerWithoutEmbeddedStruct{}
@@ -421,5 +421,3 @@ func (v *NullableStorageNetAppNtpServer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,19 +19,18 @@ import (
 // MemoryUnitRelationship - A relationship to the 'memory.Unit' resource, or the expanded 'memory.Unit' resource, or the 'null' value.
 type MemoryUnitRelationship struct {
 	MemoryUnit *MemoryUnit
-	MoMoRef *MoMoRef
+	MoMoRef    *MoMoRef
 }
 
 // MemoryUnitAsMemoryUnitRelationship is a convenience function that returns MemoryUnit wrapped in MemoryUnitRelationship
 func MemoryUnitAsMemoryUnitRelationship(v *MemoryUnit) MemoryUnitRelationship {
-	return MemoryUnitRelationship{ MemoryUnit: v}
+	return MemoryUnitRelationship{MemoryUnit: v}
 }
 
 // MoMoRefAsMemoryUnitRelationship is a convenience function that returns MoMoRef wrapped in MemoryUnitRelationship
 func MoMoRefAsMemoryUnitRelationship(v *MoMoRef) MemoryUnitRelationship {
-	return MemoryUnitRelationship{ MoMoRef: v}
+	return MemoryUnitRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MemoryUnitRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src MemoryUnitRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *MemoryUnitRelationship) GetActualInstance() (interface{}) {
+func (obj *MemoryUnitRelationship) GetActualInstance() interface{} {
 	if obj.MemoryUnit != nil {
 		return obj.MemoryUnit
 	}
@@ -137,5 +136,3 @@ func (v *NullableMemoryUnitRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

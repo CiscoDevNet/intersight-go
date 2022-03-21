@@ -30,9 +30,9 @@ type IamEndPointUserRoleAllOf struct {
 	// Valid login password of the user.
 	Password *string `json:"Password,omitempty"`
 	// An array of relationships to iamEndPointRole resources.
-	EndPointRole []IamEndPointRoleRelationship `json:"EndPointRole,omitempty"`
-	EndPointUser *IamEndPointUserRelationship `json:"EndPointUser,omitempty"`
-	EndPointUserPolicy *IamEndPointUserPolicyRelationship `json:"EndPointUserPolicy,omitempty"`
+	EndPointRole         []IamEndPointRoleRelationship      `json:"EndPointRole,omitempty"`
+	EndPointUser         *IamEndPointUserRelationship       `json:"EndPointUser,omitempty"`
+	EndPointUserPolicy   *IamEndPointUserPolicyRelationship `json:"EndPointUserPolicy,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *IamEndPointUserRoleAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamEndPointUserRoleAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *IamEndPointUserRoleAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamEndPointUserRoleAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -239,7 +239,7 @@ func (o *IamEndPointUserRoleAllOf) SetPassword(v string) {
 
 // GetEndPointRole returns the EndPointRole field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamEndPointUserRoleAllOf) GetEndPointRole() []IamEndPointRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamEndPointRoleRelationship
 		return ret
 	}
@@ -431,5 +431,3 @@ func (v *NullableIamEndPointUserRoleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

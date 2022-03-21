@@ -33,7 +33,7 @@ type OnpremUpgradePhaseAllOf struct {
 	// Name of the upgrade phase. * `init` - Upgrade service initialization phase. * `Prepare` - Upgrade service prepares folders and templated files. * `ServiceLoad` - Upgrade service loads the service images into the local docker cache. * `UiLoad` - Upgrade service loads the UI packages into the local cache. * `GenerateConfig` - Upgrade service generates the Kubernetes configuration files. * `DeployService` - Upgrade service deploys the Kubernetes services. * `Success` - Upgrade completed successfully. * `Fail` - Indicates that the upgrade process has failed. * `Cancel` - Indicates that the upgrade was canceled by the Intersight Appliance. * `Telemetry` - Upgrade service sends basic telemetry data to the Intersight.
 	Name *string `json:"Name,omitempty"`
 	// Start date of the software upgrade phase.
-	StartTime *time.Time `json:"StartTime,omitempty"`
+	StartTime            *time.Time `json:"StartTime,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *OnpremUpgradePhaseAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OnpremUpgradePhaseAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *OnpremUpgradePhaseAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OnpremUpgradePhaseAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -395,5 +395,3 @@ func (v *NullableOnpremUpgradePhaseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

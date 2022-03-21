@@ -24,16 +24,16 @@ type StoragePureProtectionGroupAllOf struct {
 	// Overall size of all snapshots in the protection group, represented in bytes.
 	Size *int64 `json:"Size,omitempty"`
 	// Name of PureStorage array name on which the protection group is created.
-	Source *string `json:"Source,omitempty"`
-	Targets []string `json:"Targets,omitempty"`
-	Array *StoragePureArrayRelationship `json:"Array,omitempty"`
+	Source  *string                       `json:"Source,omitempty"`
+	Targets []string                      `json:"Targets,omitempty"`
+	Array   *StoragePureArrayRelationship `json:"Array,omitempty"`
 	// An array of relationships to storagePureHostGroup resources.
 	HostGroups []StoragePureHostGroupRelationship `json:"HostGroups,omitempty"`
 	// An array of relationships to storagePureHost resources.
-	Hosts []StoragePureHostRelationship `json:"Hosts,omitempty"`
+	Hosts            []StoragePureHostRelationship        `json:"Hosts,omitempty"`
 	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to storagePureVolume resources.
-	Volumes []StoragePureVolumeRelationship `json:"Volumes,omitempty"`
+	Volumes              []StoragePureVolumeRelationship `json:"Volumes,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *StoragePureProtectionGroupAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StoragePureProtectionGroupAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *StoragePureProtectionGroupAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StoragePureProtectionGroupAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -176,7 +176,7 @@ func (o *StoragePureProtectionGroupAllOf) SetSource(v string) {
 
 // GetTargets returns the Targets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StoragePureProtectionGroupAllOf) GetTargets() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -241,7 +241,7 @@ func (o *StoragePureProtectionGroupAllOf) SetArray(v StoragePureArrayRelationshi
 
 // GetHostGroups returns the HostGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StoragePureProtectionGroupAllOf) GetHostGroups() []StoragePureHostGroupRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StoragePureHostGroupRelationship
 		return ret
 	}
@@ -274,7 +274,7 @@ func (o *StoragePureProtectionGroupAllOf) SetHostGroups(v []StoragePureHostGroup
 
 // GetHosts returns the Hosts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StoragePureProtectionGroupAllOf) GetHosts() []StoragePureHostRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StoragePureHostRelationship
 		return ret
 	}
@@ -339,7 +339,7 @@ func (o *StoragePureProtectionGroupAllOf) SetRegisteredDevice(v AssetDeviceRegis
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StoragePureProtectionGroupAllOf) GetVolumes() []StoragePureVolumeRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StoragePureVolumeRelationship
 		return ret
 	}
@@ -471,5 +471,3 @@ func (v *NullableStoragePureProtectionGroupAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

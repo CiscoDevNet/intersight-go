@@ -18,20 +18,19 @@ import (
 
 // WorkflowCatalogRelationship - A relationship to the 'workflow.Catalog' resource, or the expanded 'workflow.Catalog' resource, or the 'null' value.
 type WorkflowCatalogRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef         *MoMoRef
 	WorkflowCatalog *WorkflowCatalog
 }
 
 // MoMoRefAsWorkflowCatalogRelationship is a convenience function that returns MoMoRef wrapped in WorkflowCatalogRelationship
 func MoMoRefAsWorkflowCatalogRelationship(v *MoMoRef) WorkflowCatalogRelationship {
-	return WorkflowCatalogRelationship{ MoMoRef: v}
+	return WorkflowCatalogRelationship{MoMoRef: v}
 }
 
 // WorkflowCatalogAsWorkflowCatalogRelationship is a convenience function that returns WorkflowCatalog wrapped in WorkflowCatalogRelationship
 func WorkflowCatalogAsWorkflowCatalogRelationship(v *WorkflowCatalog) WorkflowCatalogRelationship {
-	return WorkflowCatalogRelationship{ WorkflowCatalog: v}
+	return WorkflowCatalogRelationship{WorkflowCatalog: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *WorkflowCatalogRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src WorkflowCatalogRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *WorkflowCatalogRelationship) GetActualInstance() (interface{}) {
+func (obj *WorkflowCatalogRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableWorkflowCatalogRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

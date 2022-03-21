@@ -20,8 +20,8 @@ type WorkflowPrimitiveArrayItemAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Properties NullableWorkflowPrimitiveDataProperty `json:"Properties,omitempty"`
+	ObjectType           string                                `json:"ObjectType"`
+	Properties           NullableWorkflowPrimitiveDataProperty `json:"Properties,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -63,7 +63,7 @@ func (o *WorkflowPrimitiveArrayItemAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowPrimitiveArrayItemAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -87,7 +87,7 @@ func (o *WorkflowPrimitiveArrayItemAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowPrimitiveArrayItemAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -111,7 +111,7 @@ func (o *WorkflowPrimitiveArrayItemAllOf) GetProperties() WorkflowPrimitiveDataP
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowPrimitiveArrayItemAllOf) GetPropertiesOk() (*WorkflowPrimitiveDataProperty, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Properties.Get(), o.Properties.IsSet()
@@ -130,6 +130,7 @@ func (o *WorkflowPrimitiveArrayItemAllOf) HasProperties() bool {
 func (o *WorkflowPrimitiveArrayItemAllOf) SetProperties(v WorkflowPrimitiveDataProperty) {
 	o.Properties.Set(&v)
 }
+
 // SetPropertiesNil sets the value for Properties to be an explicit nil
 func (o *WorkflowPrimitiveArrayItemAllOf) SetPropertiesNil() {
 	o.Properties.Set(nil)
@@ -213,5 +214,3 @@ func (v *NullableWorkflowPrimitiveArrayItemAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,10 +23,10 @@ type FirmwareFabricUpgradeImpact struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType   string                    `json:"ObjectType"`
 	ImpactDetail []FirmwareComponentImpact `json:"ImpactDetail,omitempty"`
 	// Details for the Fabric Interconnect that will be impacted by the upgrade.
-	Serial *string `json:"Serial,omitempty"`
+	Serial               *string `json:"Serial,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *FirmwareFabricUpgradeImpact) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareFabricUpgradeImpact) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *FirmwareFabricUpgradeImpact) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareFabricUpgradeImpact) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -111,7 +111,7 @@ func (o *FirmwareFabricUpgradeImpact) SetObjectType(v string) {
 
 // GetImpactDetail returns the ImpactDetail field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareFabricUpgradeImpact) GetImpactDetail() []FirmwareComponentImpact {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareComponentImpact
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *FirmwareFabricUpgradeImpact) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType   string                    `json:"ObjectType"`
 		ImpactDetail []FirmwareComponentImpact `json:"ImpactDetail,omitempty"`
 		// Details for the Fabric Interconnect that will be impacted by the upgrade.
 		Serial *string `json:"Serial,omitempty"`
@@ -305,5 +305,3 @@ func (v *NullableFirmwareFabricUpgradeImpact) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

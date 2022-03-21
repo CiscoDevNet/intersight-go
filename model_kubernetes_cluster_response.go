@@ -19,31 +19,30 @@ import (
 // KubernetesClusterResponse - The response body of a HTTP GET request for the 'kubernetes.Cluster' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'kubernetes.Cluster' resources.
 type KubernetesClusterResponse struct {
 	KubernetesClusterList *KubernetesClusterList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform  *MoAggregateTransform
+	MoDocumentCount       *MoDocumentCount
+	MoTagSummary          *MoTagSummary
 }
 
 // KubernetesClusterListAsKubernetesClusterResponse is a convenience function that returns KubernetesClusterList wrapped in KubernetesClusterResponse
 func KubernetesClusterListAsKubernetesClusterResponse(v *KubernetesClusterList) KubernetesClusterResponse {
-	return KubernetesClusterResponse{ KubernetesClusterList: v}
+	return KubernetesClusterResponse{KubernetesClusterList: v}
 }
 
 // MoAggregateTransformAsKubernetesClusterResponse is a convenience function that returns MoAggregateTransform wrapped in KubernetesClusterResponse
 func MoAggregateTransformAsKubernetesClusterResponse(v *MoAggregateTransform) KubernetesClusterResponse {
-	return KubernetesClusterResponse{ MoAggregateTransform: v}
+	return KubernetesClusterResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsKubernetesClusterResponse is a convenience function that returns MoDocumentCount wrapped in KubernetesClusterResponse
 func MoDocumentCountAsKubernetesClusterResponse(v *MoDocumentCount) KubernetesClusterResponse {
-	return KubernetesClusterResponse{ MoDocumentCount: v}
+	return KubernetesClusterResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsKubernetesClusterResponse is a convenience function that returns MoTagSummary wrapped in KubernetesClusterResponse
 func MoTagSummaryAsKubernetesClusterResponse(v *MoTagSummary) KubernetesClusterResponse {
-	return KubernetesClusterResponse{ MoTagSummary: v}
+	return KubernetesClusterResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesClusterResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src KubernetesClusterResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KubernetesClusterResponse) GetActualInstance() (interface{}) {
+func (obj *KubernetesClusterResponse) GetActualInstance() interface{} {
 	if obj.KubernetesClusterList != nil {
 		return obj.KubernetesClusterList
 	}
@@ -184,5 +183,3 @@ func (v *NullableKubernetesClusterResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

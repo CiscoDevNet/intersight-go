@@ -20,7 +20,7 @@ type SoftwarerepositoryCachedImageListAllOf struct {
 	// The total number of 'softwarerepository.CachedImage' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'softwarerepository.CachedImage' resources matching the request.
-	Results []SoftwarerepositoryCachedImage `json:"Results,omitempty"`
+	Results              []SoftwarerepositoryCachedImage `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *SoftwarerepositoryCachedImageListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SoftwarerepositoryCachedImageListAllOf) GetResults() []SoftwarerepositoryCachedImage {
-	if o == nil  {
+	if o == nil {
 		var ret []SoftwarerepositoryCachedImage
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableSoftwarerepositoryCachedImageListAllOf) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

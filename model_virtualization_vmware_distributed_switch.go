@@ -25,14 +25,14 @@ type VirtualizationVmwareDistributedSwitch struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Switch description (user provided), if any.
-	Description *string `json:"Description,omitempty"`
+	Description       *string                                       `json:"Description,omitempty"`
 	DiscoveryProtocol NullableVirtualizationVmwareDiscoveryProtocol `json:"DiscoveryProtocol,omitempty"`
 	// Maximum number of ports allowed on this distributed virtual switch.
 	MaxPort *int64 `json:"MaxPort,omitempty"`
 	// Maximum transmission unit configured on a distributed virtual switch.
 	Mtu *int64 `json:"Mtu,omitempty"`
 	// If network io control is enabled, will set the value as true.
-	NetworkIoControl *bool `json:"NetworkIoControl,omitempty"`
+	NetworkIoControl      *bool                                          `json:"NetworkIoControl,omitempty"`
 	NicTeamingAndFailover NullableVirtualizationVmwareTeamingAndFailover `json:"NicTeamingAndFailover,omitempty"`
 	// The total number of hosts attached to the distributed virtual switch.
 	NumHosts *int64 `json:"NumHosts,omitempty"`
@@ -41,16 +41,16 @@ type VirtualizationVmwareDistributedSwitch struct {
 	// Number of stand-alone ports in use.
 	NumStandAlonePorts *int64 `json:"NumStandAlonePorts,omitempty"`
 	// Number of uplinks configured in this distributed virtual switch.
-	NumUplinks *int64 `json:"NumUplinks,omitempty"`
+	NumUplinks                      *int64                                                     `json:"NumUplinks,omitempty"`
 	ResourceAllocationSystemTraffic []VirtualizationVmwareResourceAllocationSystemTrafficTypes `json:"ResourceAllocationSystemTraffic,omitempty"`
-	SwitchCapacity NullableVirtualizationStorageCapacity `json:"SwitchCapacity,omitempty"`
+	SwitchCapacity                  NullableVirtualizationStorageCapacity                      `json:"SwitchCapacity,omitempty"`
 	// Universally Unique Id of this distributed virtual switch.
 	Uuid *string `json:"Uuid,omitempty"`
 	// The running config's version details are represented.
-	Version *string `json:"Version,omitempty"`
+	Version    *string                                     `json:"Version,omitempty"`
 	Datacenter *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
 	// An array of relationships to virtualizationVmwareHost resources.
-	Hosts []VirtualizationVmwareHostRelationship `json:"Hosts,omitempty"`
+	Hosts                []VirtualizationVmwareHostRelationship `json:"Hosts,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -92,7 +92,7 @@ func (o *VirtualizationVmwareDistributedSwitch) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareDistributedSwitch) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -116,7 +116,7 @@ func (o *VirtualizationVmwareDistributedSwitch) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareDistributedSwitch) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -172,7 +172,7 @@ func (o *VirtualizationVmwareDistributedSwitch) GetDiscoveryProtocol() Virtualiz
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVmwareDistributedSwitch) GetDiscoveryProtocolOk() (*VirtualizationVmwareDiscoveryProtocol, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DiscoveryProtocol.Get(), o.DiscoveryProtocol.IsSet()
@@ -191,6 +191,7 @@ func (o *VirtualizationVmwareDistributedSwitch) HasDiscoveryProtocol() bool {
 func (o *VirtualizationVmwareDistributedSwitch) SetDiscoveryProtocol(v VirtualizationVmwareDiscoveryProtocol) {
 	o.DiscoveryProtocol.Set(&v)
 }
+
 // SetDiscoveryProtocolNil sets the value for DiscoveryProtocol to be an explicit nil
 func (o *VirtualizationVmwareDistributedSwitch) SetDiscoveryProtocolNil() {
 	o.DiscoveryProtocol.Set(nil)
@@ -310,7 +311,7 @@ func (o *VirtualizationVmwareDistributedSwitch) GetNicTeamingAndFailover() Virtu
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVmwareDistributedSwitch) GetNicTeamingAndFailoverOk() (*VirtualizationVmwareTeamingAndFailover, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NicTeamingAndFailover.Get(), o.NicTeamingAndFailover.IsSet()
@@ -329,6 +330,7 @@ func (o *VirtualizationVmwareDistributedSwitch) HasNicTeamingAndFailover() bool 
 func (o *VirtualizationVmwareDistributedSwitch) SetNicTeamingAndFailover(v VirtualizationVmwareTeamingAndFailover) {
 	o.NicTeamingAndFailover.Set(&v)
 }
+
 // SetNicTeamingAndFailoverNil sets the value for NicTeamingAndFailover to be an explicit nil
 func (o *VirtualizationVmwareDistributedSwitch) SetNicTeamingAndFailoverNil() {
 	o.NicTeamingAndFailover.Set(nil)
@@ -469,7 +471,7 @@ func (o *VirtualizationVmwareDistributedSwitch) SetNumUplinks(v int64) {
 
 // GetResourceAllocationSystemTraffic returns the ResourceAllocationSystemTraffic field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareDistributedSwitch) GetResourceAllocationSystemTraffic() []VirtualizationVmwareResourceAllocationSystemTrafficTypes {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationVmwareResourceAllocationSystemTrafficTypes
 		return ret
 	}
@@ -513,7 +515,7 @@ func (o *VirtualizationVmwareDistributedSwitch) GetSwitchCapacity() Virtualizati
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVmwareDistributedSwitch) GetSwitchCapacityOk() (*VirtualizationStorageCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SwitchCapacity.Get(), o.SwitchCapacity.IsSet()
@@ -532,6 +534,7 @@ func (o *VirtualizationVmwareDistributedSwitch) HasSwitchCapacity() bool {
 func (o *VirtualizationVmwareDistributedSwitch) SetSwitchCapacity(v VirtualizationStorageCapacity) {
 	o.SwitchCapacity.Set(&v)
 }
+
 // SetSwitchCapacityNil sets the value for SwitchCapacity to be an explicit nil
 func (o *VirtualizationVmwareDistributedSwitch) SetSwitchCapacityNil() {
 	o.SwitchCapacity.Set(nil)
@@ -640,7 +643,7 @@ func (o *VirtualizationVmwareDistributedSwitch) SetDatacenter(v VirtualizationVm
 
 // GetHosts returns the Hosts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareDistributedSwitch) GetHosts() []VirtualizationVmwareHostRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationVmwareHostRelationship
 		return ret
 	}
@@ -750,14 +753,14 @@ func (o *VirtualizationVmwareDistributedSwitch) UnmarshalJSON(bytes []byte) (err
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Switch description (user provided), if any.
-		Description *string `json:"Description,omitempty"`
+		Description       *string                                       `json:"Description,omitempty"`
 		DiscoveryProtocol NullableVirtualizationVmwareDiscoveryProtocol `json:"DiscoveryProtocol,omitempty"`
 		// Maximum number of ports allowed on this distributed virtual switch.
 		MaxPort *int64 `json:"MaxPort,omitempty"`
 		// Maximum transmission unit configured on a distributed virtual switch.
 		Mtu *int64 `json:"Mtu,omitempty"`
 		// If network io control is enabled, will set the value as true.
-		NetworkIoControl *bool `json:"NetworkIoControl,omitempty"`
+		NetworkIoControl      *bool                                          `json:"NetworkIoControl,omitempty"`
 		NicTeamingAndFailover NullableVirtualizationVmwareTeamingAndFailover `json:"NicTeamingAndFailover,omitempty"`
 		// The total number of hosts attached to the distributed virtual switch.
 		NumHosts *int64 `json:"NumHosts,omitempty"`
@@ -766,13 +769,13 @@ func (o *VirtualizationVmwareDistributedSwitch) UnmarshalJSON(bytes []byte) (err
 		// Number of stand-alone ports in use.
 		NumStandAlonePorts *int64 `json:"NumStandAlonePorts,omitempty"`
 		// Number of uplinks configured in this distributed virtual switch.
-		NumUplinks *int64 `json:"NumUplinks,omitempty"`
+		NumUplinks                      *int64                                                     `json:"NumUplinks,omitempty"`
 		ResourceAllocationSystemTraffic []VirtualizationVmwareResourceAllocationSystemTrafficTypes `json:"ResourceAllocationSystemTraffic,omitempty"`
-		SwitchCapacity NullableVirtualizationStorageCapacity `json:"SwitchCapacity,omitempty"`
+		SwitchCapacity                  NullableVirtualizationStorageCapacity                      `json:"SwitchCapacity,omitempty"`
 		// Universally Unique Id of this distributed virtual switch.
 		Uuid *string `json:"Uuid,omitempty"`
 		// The running config's version details are represented.
-		Version *string `json:"Version,omitempty"`
+		Version    *string                                     `json:"Version,omitempty"`
 		Datacenter *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
 		// An array of relationships to virtualizationVmwareHost resources.
 		Hosts []VirtualizationVmwareHostRelationship `json:"Hosts,omitempty"`
@@ -896,5 +899,3 @@ func (v *NullableVirtualizationVmwareDistributedSwitch) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

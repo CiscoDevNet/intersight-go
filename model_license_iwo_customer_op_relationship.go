@@ -19,19 +19,18 @@ import (
 // LicenseIwoCustomerOpRelationship - A relationship to the 'license.IwoCustomerOp' resource, or the expanded 'license.IwoCustomerOp' resource, or the 'null' value.
 type LicenseIwoCustomerOpRelationship struct {
 	LicenseIwoCustomerOp *LicenseIwoCustomerOp
-	MoMoRef *MoMoRef
+	MoMoRef              *MoMoRef
 }
 
 // LicenseIwoCustomerOpAsLicenseIwoCustomerOpRelationship is a convenience function that returns LicenseIwoCustomerOp wrapped in LicenseIwoCustomerOpRelationship
 func LicenseIwoCustomerOpAsLicenseIwoCustomerOpRelationship(v *LicenseIwoCustomerOp) LicenseIwoCustomerOpRelationship {
-	return LicenseIwoCustomerOpRelationship{ LicenseIwoCustomerOp: v}
+	return LicenseIwoCustomerOpRelationship{LicenseIwoCustomerOp: v}
 }
 
 // MoMoRefAsLicenseIwoCustomerOpRelationship is a convenience function that returns MoMoRef wrapped in LicenseIwoCustomerOpRelationship
 func MoMoRefAsLicenseIwoCustomerOpRelationship(v *MoMoRef) LicenseIwoCustomerOpRelationship {
-	return LicenseIwoCustomerOpRelationship{ MoMoRef: v}
+	return LicenseIwoCustomerOpRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *LicenseIwoCustomerOpRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src LicenseIwoCustomerOpRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *LicenseIwoCustomerOpRelationship) GetActualInstance() (interface{}) {
+func (obj *LicenseIwoCustomerOpRelationship) GetActualInstance() interface{} {
 	if obj.LicenseIwoCustomerOp != nil {
 		return obj.LicenseIwoCustomerOp
 	}
@@ -137,5 +136,3 @@ func (v *NullableLicenseIwoCustomerOpRelationship) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

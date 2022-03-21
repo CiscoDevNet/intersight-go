@@ -23,11 +23,11 @@ type HyperflexServerFirmwareVersion struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType string                           `json:"ObjectType"`
 	AppCatalog *HyperflexAppCatalogRelationship `json:"AppCatalog,omitempty"`
 	// An array of relationships to hyperflexServerFirmwareVersionEntry resources.
 	ServerFirmwareVersionEntries []HyperflexServerFirmwareVersionEntryRelationship `json:"ServerFirmwareVersionEntries,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties         map[string]interface{}
 }
 
 type _HyperflexServerFirmwareVersion HyperflexServerFirmwareVersion
@@ -68,7 +68,7 @@ func (o *HyperflexServerFirmwareVersion) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexServerFirmwareVersion) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *HyperflexServerFirmwareVersion) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexServerFirmwareVersion) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -137,7 +137,7 @@ func (o *HyperflexServerFirmwareVersion) SetAppCatalog(v HyperflexAppCatalogRela
 
 // GetServerFirmwareVersionEntries returns the ServerFirmwareVersionEntries field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexServerFirmwareVersion) GetServerFirmwareVersionEntries() []HyperflexServerFirmwareVersionEntryRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexServerFirmwareVersionEntryRelationship
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *HyperflexServerFirmwareVersion) UnmarshalJSON(bytes []byte) (err error)
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType string                           `json:"ObjectType"`
 		AppCatalog *HyperflexAppCatalogRelationship `json:"AppCatalog,omitempty"`
 		// An array of relationships to hyperflexServerFirmwareVersionEntry resources.
 		ServerFirmwareVersionEntries []HyperflexServerFirmwareVersionEntryRelationship `json:"ServerFirmwareVersionEntries,omitempty"`
@@ -299,5 +299,3 @@ func (v *NullableHyperflexServerFirmwareVersion) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

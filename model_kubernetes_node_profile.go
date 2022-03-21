@@ -25,11 +25,11 @@ type KubernetesNodeProfile struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ObjectType string `json:"ObjectType"`
 	// Cloud provider for this node profile. * `noProvider` - Enables the use of no cloud provider. * `external` - Out of tree cloud provider, e.g. CPI for vsphere.
-	CloudProvider *string `json:"CloudProvider,omitempty"`
-	ConfigResult *KubernetesConfigResultRelationship `json:"ConfigResult,omitempty"`
-	NodeGroup *KubernetesNodeGroupProfileRelationship `json:"NodeGroup,omitempty"`
-	Target *AssetDeviceRegistrationRelationship `json:"Target,omitempty"`
-	Version *KubernetesVersionRelationship `json:"Version,omitempty"`
+	CloudProvider        *string                                 `json:"CloudProvider,omitempty"`
+	ConfigResult         *KubernetesConfigResultRelationship     `json:"ConfigResult,omitempty"`
+	NodeGroup            *KubernetesNodeGroupProfileRelationship `json:"NodeGroup,omitempty"`
+	Target               *AssetDeviceRegistrationRelationship    `json:"Target,omitempty"`
+	Version              *KubernetesVersionRelationship          `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *KubernetesNodeProfile) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesNodeProfile) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *KubernetesNodeProfile) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesNodeProfile) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -316,11 +316,11 @@ func (o *KubernetesNodeProfile) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 		ObjectType string `json:"ObjectType"`
 		// Cloud provider for this node profile. * `noProvider` - Enables the use of no cloud provider. * `external` - Out of tree cloud provider, e.g. CPI for vsphere.
-		CloudProvider *string `json:"CloudProvider,omitempty"`
-		ConfigResult *KubernetesConfigResultRelationship `json:"ConfigResult,omitempty"`
-		NodeGroup *KubernetesNodeGroupProfileRelationship `json:"NodeGroup,omitempty"`
-		Target *AssetDeviceRegistrationRelationship `json:"Target,omitempty"`
-		Version *KubernetesVersionRelationship `json:"Version,omitempty"`
+		CloudProvider *string                                 `json:"CloudProvider,omitempty"`
+		ConfigResult  *KubernetesConfigResultRelationship     `json:"ConfigResult,omitempty"`
+		NodeGroup     *KubernetesNodeGroupProfileRelationship `json:"NodeGroup,omitempty"`
+		Target        *AssetDeviceRegistrationRelationship    `json:"Target,omitempty"`
+		Version       *KubernetesVersionRelationship          `json:"Version,omitempty"`
 	}
 
 	varKubernetesNodeProfileWithoutEmbeddedStruct := KubernetesNodeProfileWithoutEmbeddedStruct{}
@@ -419,5 +419,3 @@ func (v *NullableKubernetesNodeProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

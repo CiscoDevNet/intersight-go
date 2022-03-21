@@ -44,14 +44,14 @@ type PciSwitchAllOf struct {
 	// The type information of the switch.
 	Type *string `json:"Type,omitempty"`
 	// The vendor id of the switch.
-	VendorId *string `json:"VendorId,omitempty"`
-	ComputeBoard *ComputeBoardRelationship `json:"ComputeBoard,omitempty"`
+	VendorId            *string                          `json:"VendorId,omitempty"`
+	ComputeBoard        *ComputeBoardRelationship        `json:"ComputeBoard,omitempty"`
 	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
 	// An array of relationships to pciLink resources.
-	Links []PciLinkRelationship `json:"Links,omitempty"`
+	Links            []PciLinkRelationship                `json:"Links,omitempty"`
 	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to firmwareRunningFirmware resources.
-	RunningFirmware []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
+	RunningFirmware      []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -93,7 +93,7 @@ func (o *PciSwitchAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PciSwitchAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -117,7 +117,7 @@ func (o *PciSwitchAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PciSwitchAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -578,7 +578,7 @@ func (o *PciSwitchAllOf) SetInventoryDeviceInfo(v InventoryDeviceInfoRelationshi
 
 // GetLinks returns the Links field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PciSwitchAllOf) GetLinks() []PciLinkRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PciLinkRelationship
 		return ret
 	}
@@ -643,7 +643,7 @@ func (o *PciSwitchAllOf) SetRegisteredDevice(v AssetDeviceRegistrationRelationsh
 
 // GetRunningFirmware returns the RunningFirmware field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PciSwitchAllOf) GetRunningFirmware() []FirmwareRunningFirmwareRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareRunningFirmwareRelationship
 		return ret
 	}
@@ -811,5 +811,3 @@ func (v *NullablePciSwitchAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

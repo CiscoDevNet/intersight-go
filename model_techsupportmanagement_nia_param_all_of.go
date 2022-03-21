@@ -26,9 +26,9 @@ type TechsupportmanagementNiaParamAllOf struct {
 	// Filename specifies an individual filename to collect from the endpoint.
 	Filename *string `json:"Filename,omitempty"`
 	// ForceFresh controls whether to return pre-collected files or force the collection of new files.
-	ForceFresh *bool `json:"ForceFresh,omitempty"`
-	Pids []string `json:"Pids,omitempty"`
-	SerialNumbers []string `json:"SerialNumbers,omitempty"`
+	ForceFresh           *bool    `json:"ForceFresh,omitempty"`
+	Pids                 []string `json:"Pids,omitempty"`
+	SerialNumbers        []string `json:"SerialNumbers,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *TechsupportmanagementNiaParamAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TechsupportmanagementNiaParamAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *TechsupportmanagementNiaParamAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TechsupportmanagementNiaParamAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -207,7 +207,7 @@ func (o *TechsupportmanagementNiaParamAllOf) SetForceFresh(v bool) {
 
 // GetPids returns the Pids field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TechsupportmanagementNiaParamAllOf) GetPids() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -240,7 +240,7 @@ func (o *TechsupportmanagementNiaParamAllOf) SetPids(v []string) {
 
 // GetSerialNumbers returns the SerialNumbers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TechsupportmanagementNiaParamAllOf) GetSerialNumbers() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -360,5 +360,3 @@ func (v *NullableTechsupportmanagementNiaParamAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,10 +23,10 @@ type AssetVirtualizationCloudOptions struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
+	ObjectType     string    `json:"ObjectType"`
 	ManagedRegions []MoMoRef `json:"ManagedRegions,omitempty"`
 	// The name of the region group to which the managedRegions belong. Populated from the group property in cloud.Regions.
-	RegionGroup *string `json:"RegionGroup,omitempty"`
+	RegionGroup          *string `json:"RegionGroup,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *AssetVirtualizationCloudOptions) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetVirtualizationCloudOptions) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *AssetVirtualizationCloudOptions) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetVirtualizationCloudOptions) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -105,7 +105,7 @@ func (o *AssetVirtualizationCloudOptions) SetObjectType(v string) {
 
 // GetManagedRegions returns the ManagedRegions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetVirtualizationCloudOptions) GetManagedRegions() []MoMoRef {
-	if o == nil  {
+	if o == nil {
 		var ret []MoMoRef
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *AssetVirtualizationCloudOptions) UnmarshalJSON(bytes []byte) (err error
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-		ObjectType string `json:"ObjectType"`
+		ObjectType     string    `json:"ObjectType"`
 		ManagedRegions []MoMoRef `json:"ManagedRegions,omitempty"`
 		// The name of the region group to which the managedRegions belong. Populated from the group property in cloud.Regions.
 		RegionGroup *string `json:"RegionGroup,omitempty"`
@@ -299,5 +299,3 @@ func (v *NullableAssetVirtualizationCloudOptions) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

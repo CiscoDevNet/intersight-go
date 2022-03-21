@@ -23,12 +23,12 @@ type CloudNetworkAccessConfig struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType  string                `json:"ObjectType"`
 	ExternalIps []CloudNetworkAddress `json:"ExternalIps,omitempty"`
 	// Private DNS name assigned to the network interface.
 	PrivateDns *string `json:"PrivateDns,omitempty"`
 	// Public DNS name assigned to the network interface.
-	PublicDns *string `json:"PublicDns,omitempty"`
+	PublicDns            *string `json:"PublicDns,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *CloudNetworkAccessConfig) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudNetworkAccessConfig) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *CloudNetworkAccessConfig) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudNetworkAccessConfig) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -107,7 +107,7 @@ func (o *CloudNetworkAccessConfig) SetObjectType(v string) {
 
 // GetExternalIps returns the ExternalIps field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudNetworkAccessConfig) GetExternalIps() []CloudNetworkAddress {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudNetworkAddress
 		return ret
 	}
@@ -240,7 +240,7 @@ func (o *CloudNetworkAccessConfig) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType  string                `json:"ObjectType"`
 		ExternalIps []CloudNetworkAddress `json:"ExternalIps,omitempty"`
 		// Private DNS name assigned to the network interface.
 		PrivateDns *string `json:"PrivateDns,omitempty"`
@@ -340,5 +340,3 @@ func (v *NullableCloudNetworkAccessConfig) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

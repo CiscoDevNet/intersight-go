@@ -28,7 +28,7 @@ type NiatelemetryNvePacketCountersAllOf struct {
 	// Return ucast in packet count.
 	UcastInpkts *int64 `json:"UcastInpkts,omitempty"`
 	// Return ucast out packet count.
-	UcastOutpkts *int64 `json:"UcastOutpkts,omitempty"`
+	UcastOutpkts         *int64 `json:"UcastOutpkts,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *NiatelemetryNvePacketCountersAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNvePacketCountersAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *NiatelemetryNvePacketCountersAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNvePacketCountersAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -318,5 +318,3 @@ func (v *NullableNiatelemetryNvePacketCountersAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

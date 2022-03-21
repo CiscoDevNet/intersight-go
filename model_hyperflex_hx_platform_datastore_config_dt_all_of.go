@@ -34,7 +34,7 @@ type HyperflexHxPlatformDatastoreConfigDtAllOf struct {
 	// Specifies if this datastore is a system datastore or not.
 	SystemDatastore *bool `json:"SystemDatastore,omitempty"`
 	// HyperFlex datastore usage type. * `NFS` - The HyperFlex datastore type is NFS. * `SMB` - The HyperFlex datastore type is SMB. * `ISCSI` - The HyperFlex datastore type is ISCSI. * `UNKNOWN` - The HyperFlex datastore type is unknown.
-	UsageType *string `json:"UsageType,omitempty"`
+	UsageType            *string `json:"UsageType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *HyperflexHxPlatformDatastoreConfigDtAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHxPlatformDatastoreConfigDtAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *HyperflexHxPlatformDatastoreConfigDtAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHxPlatformDatastoreConfigDtAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -432,5 +432,3 @@ func (v *NullableHyperflexHxPlatformDatastoreConfigDtAllOf) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

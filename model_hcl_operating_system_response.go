@@ -19,31 +19,30 @@ import (
 // HclOperatingSystemResponse - The response body of a HTTP GET request for the 'hcl.OperatingSystem' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'hcl.OperatingSystem' resources.
 type HclOperatingSystemResponse struct {
 	HclOperatingSystemList *HclOperatingSystemList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform   *MoAggregateTransform
+	MoDocumentCount        *MoDocumentCount
+	MoTagSummary           *MoTagSummary
 }
 
 // HclOperatingSystemListAsHclOperatingSystemResponse is a convenience function that returns HclOperatingSystemList wrapped in HclOperatingSystemResponse
 func HclOperatingSystemListAsHclOperatingSystemResponse(v *HclOperatingSystemList) HclOperatingSystemResponse {
-	return HclOperatingSystemResponse{ HclOperatingSystemList: v}
+	return HclOperatingSystemResponse{HclOperatingSystemList: v}
 }
 
 // MoAggregateTransformAsHclOperatingSystemResponse is a convenience function that returns MoAggregateTransform wrapped in HclOperatingSystemResponse
 func MoAggregateTransformAsHclOperatingSystemResponse(v *MoAggregateTransform) HclOperatingSystemResponse {
-	return HclOperatingSystemResponse{ MoAggregateTransform: v}
+	return HclOperatingSystemResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsHclOperatingSystemResponse is a convenience function that returns MoDocumentCount wrapped in HclOperatingSystemResponse
 func MoDocumentCountAsHclOperatingSystemResponse(v *MoDocumentCount) HclOperatingSystemResponse {
-	return HclOperatingSystemResponse{ MoDocumentCount: v}
+	return HclOperatingSystemResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsHclOperatingSystemResponse is a convenience function that returns MoTagSummary wrapped in HclOperatingSystemResponse
 func MoTagSummaryAsHclOperatingSystemResponse(v *MoTagSummary) HclOperatingSystemResponse {
-	return HclOperatingSystemResponse{ MoTagSummary: v}
+	return HclOperatingSystemResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HclOperatingSystemResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src HclOperatingSystemResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HclOperatingSystemResponse) GetActualInstance() (interface{}) {
+func (obj *HclOperatingSystemResponse) GetActualInstance() interface{} {
 	if obj.HclOperatingSystemList != nil {
 		return obj.HclOperatingSystemList
 	}
@@ -184,5 +183,3 @@ func (v *NullableHclOperatingSystemResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,10 +20,10 @@ type FirmwareFabricUpgradeImpactAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType   string                    `json:"ObjectType"`
 	ImpactDetail []FirmwareComponentImpact `json:"ImpactDetail,omitempty"`
 	// Details for the Fabric Interconnect that will be impacted by the upgrade.
-	Serial *string `json:"Serial,omitempty"`
+	Serial               *string `json:"Serial,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,7 +65,7 @@ func (o *FirmwareFabricUpgradeImpactAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareFabricUpgradeImpactAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *FirmwareFabricUpgradeImpactAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareFabricUpgradeImpactAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -102,7 +102,7 @@ func (o *FirmwareFabricUpgradeImpactAllOf) SetObjectType(v string) {
 
 // GetImpactDetail returns the ImpactDetail field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareFabricUpgradeImpactAllOf) GetImpactDetail() []FirmwareComponentImpact {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareComponentImpact
 		return ret
 	}
@@ -242,5 +242,3 @@ func (v *NullableFirmwareFabricUpgradeImpactAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

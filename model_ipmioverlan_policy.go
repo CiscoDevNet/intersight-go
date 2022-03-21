@@ -31,10 +31,10 @@ type IpmioverlanPolicy struct {
 	// Indicates whether the value of the 'encryptionKey' property has been set.
 	IsEncryptionKeySet *bool `json:"IsEncryptionKeySet,omitempty"`
 	// The highest privilege level that can be assigned to an IPMI session on a server. * `admin` - Privilege to perform all actions available through IPMI. * `user` - Privilege to perform some functions through IPMI but restriction on performing administrative tasks. * `read-only` - Privilege to view information throught IPMI but restriction on making any changes.
-	Privilege *string `json:"Privilege,omitempty"`
+	Privilege    *string                               `json:"Privilege,omitempty"`
 	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
-	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *IpmioverlanPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IpmioverlanPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -108,7 +108,7 @@ func (o *IpmioverlanPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IpmioverlanPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -281,7 +281,7 @@ func (o *IpmioverlanPolicy) SetOrganization(v OrganizationOrganizationRelationsh
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IpmioverlanPolicy) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -367,7 +367,7 @@ func (o *IpmioverlanPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// Indicates whether the value of the 'encryptionKey' property has been set.
 		IsEncryptionKeySet *bool `json:"IsEncryptionKeySet,omitempty"`
 		// The highest privilege level that can be assigned to an IPMI session on a server. * `admin` - Privilege to perform all actions available through IPMI. * `user` - Privilege to perform some functions through IPMI but restriction on performing administrative tasks. * `read-only` - Privilege to view information throught IPMI but restriction on making any changes.
-		Privilege *string `json:"Privilege,omitempty"`
+		Privilege    *string                               `json:"Privilege,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 		// An array of relationships to policyAbstractConfigProfile resources.
 		Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
@@ -471,5 +471,3 @@ func (v *NullableIpmioverlanPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

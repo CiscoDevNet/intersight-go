@@ -19,19 +19,18 @@ import (
 // BiosBootDeviceRelationship - A relationship to the 'bios.BootDevice' resource, or the expanded 'bios.BootDevice' resource, or the 'null' value.
 type BiosBootDeviceRelationship struct {
 	BiosBootDevice *BiosBootDevice
-	MoMoRef *MoMoRef
+	MoMoRef        *MoMoRef
 }
 
 // BiosBootDeviceAsBiosBootDeviceRelationship is a convenience function that returns BiosBootDevice wrapped in BiosBootDeviceRelationship
 func BiosBootDeviceAsBiosBootDeviceRelationship(v *BiosBootDevice) BiosBootDeviceRelationship {
-	return BiosBootDeviceRelationship{ BiosBootDevice: v}
+	return BiosBootDeviceRelationship{BiosBootDevice: v}
 }
 
 // MoMoRefAsBiosBootDeviceRelationship is a convenience function that returns MoMoRef wrapped in BiosBootDeviceRelationship
 func MoMoRefAsBiosBootDeviceRelationship(v *MoMoRef) BiosBootDeviceRelationship {
-	return BiosBootDeviceRelationship{ MoMoRef: v}
+	return BiosBootDeviceRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BiosBootDeviceRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BiosBootDeviceRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BiosBootDeviceRelationship) GetActualInstance() (interface{}) {
+func (obj *BiosBootDeviceRelationship) GetActualInstance() interface{} {
 	if obj.BiosBootDevice != nil {
 		return obj.BiosBootDevice
 	}
@@ -137,5 +136,3 @@ func (v *NullableBiosBootDeviceRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

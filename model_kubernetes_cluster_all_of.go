@@ -24,11 +24,11 @@ type KubernetesClusterAllOf struct {
 	// Status of the endpoint connection of this Kubernetes cluster. * `` - The target details have been persisted but Intersight has not yet attempted to connect to the target. * `Connected` - Intersight is able to establish a connection to the target and initiate management activities. * `NotConnected` - Intersight is unable to establish a connection to the target. * `ClaimInProgress` - Claim of the target is in progress. A connection to the target has not been fully established. * `Unclaimed` - The device was un-claimed from the users account by an Administrator of the device. Also indicates the failure to claim Targets of type HTTP Endpoint in Intersight. * `Claimed` - Target of type HTTP Endpoint is successfully claimed in Intersight. Currently no validation is performed to verify the Target connectivity from Intersight at the time of creation. However invoking API from Intersight Orchestrator fails if this Target is not reachable from Intersight or if Target API credentials are incorrect.
 	ConnectionStatus *string `json:"ConnectionStatus,omitempty"`
 	// Kubeconfig for the cluster to collect inventory for.
-	KubeConfig *string `json:"KubeConfig,omitempty"`
+	KubeConfig          *string                                    `json:"KubeConfig,omitempty"`
 	ClusterAddonProfile *KubernetesClusterAddonProfileRelationship `json:"ClusterAddonProfile,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	Organization        *OrganizationOrganizationRelationship      `json:"Organization,omitempty"`
 	// An array of relationships to assetDeviceRegistration resources.
-	RegisteredDevices []AssetDeviceRegistrationRelationship `json:"RegisteredDevices,omitempty"`
+	RegisteredDevices    []AssetDeviceRegistrationRelationship `json:"RegisteredDevices,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *KubernetesClusterAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesClusterAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *KubernetesClusterAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesClusterAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -239,7 +239,7 @@ func (o *KubernetesClusterAllOf) SetOrganization(v OrganizationOrganizationRelat
 
 // GetRegisteredDevices returns the RegisteredDevices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesClusterAllOf) GetRegisteredDevices() []AssetDeviceRegistrationRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []AssetDeviceRegistrationRelationship
 		return ret
 	}
@@ -359,5 +359,3 @@ func (v *NullableKubernetesClusterAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

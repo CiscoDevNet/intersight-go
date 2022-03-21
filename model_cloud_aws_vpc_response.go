@@ -18,32 +18,31 @@ import (
 
 // CloudAwsVpcResponse - The response body of a HTTP GET request for the 'cloud.AwsVpc' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'cloud.AwsVpc' resources.
 type CloudAwsVpcResponse struct {
-	CloudAwsVpcList *CloudAwsVpcList
+	CloudAwsVpcList      *CloudAwsVpcList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // CloudAwsVpcListAsCloudAwsVpcResponse is a convenience function that returns CloudAwsVpcList wrapped in CloudAwsVpcResponse
 func CloudAwsVpcListAsCloudAwsVpcResponse(v *CloudAwsVpcList) CloudAwsVpcResponse {
-	return CloudAwsVpcResponse{ CloudAwsVpcList: v}
+	return CloudAwsVpcResponse{CloudAwsVpcList: v}
 }
 
 // MoAggregateTransformAsCloudAwsVpcResponse is a convenience function that returns MoAggregateTransform wrapped in CloudAwsVpcResponse
 func MoAggregateTransformAsCloudAwsVpcResponse(v *MoAggregateTransform) CloudAwsVpcResponse {
-	return CloudAwsVpcResponse{ MoAggregateTransform: v}
+	return CloudAwsVpcResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsCloudAwsVpcResponse is a convenience function that returns MoDocumentCount wrapped in CloudAwsVpcResponse
 func MoDocumentCountAsCloudAwsVpcResponse(v *MoDocumentCount) CloudAwsVpcResponse {
-	return CloudAwsVpcResponse{ MoDocumentCount: v}
+	return CloudAwsVpcResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsCloudAwsVpcResponse is a convenience function that returns MoTagSummary wrapped in CloudAwsVpcResponse
 func MoTagSummaryAsCloudAwsVpcResponse(v *MoTagSummary) CloudAwsVpcResponse {
-	return CloudAwsVpcResponse{ MoTagSummary: v}
+	return CloudAwsVpcResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CloudAwsVpcResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src CloudAwsVpcResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CloudAwsVpcResponse) GetActualInstance() (interface{}) {
+func (obj *CloudAwsVpcResponse) GetActualInstance() interface{} {
 	if obj.CloudAwsVpcList != nil {
 		return obj.CloudAwsVpcList
 	}
@@ -184,5 +183,3 @@ func (v *NullableCloudAwsVpcResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -31,12 +31,12 @@ type HyperflexSoftwareDistributionComponent struct {
 	// The HyperFlex Software Distribution Component Name.
 	ComponentName *string `json:"ComponentName,omitempty"`
 	// File location on the cloud storage.
-	FilePath *string `json:"FilePath,omitempty"`
+	FilePath        *string  `json:"FilePath,omitempty"`
 	FilesToDownload []string `json:"FilesToDownload,omitempty"`
 	// The HyperFlex Software Distribution Component Version.
-	Version *string `json:"Version,omitempty"`
+	Version                     *string                                           `json:"Version,omitempty"`
 	SoftwareDistributionVersion *HyperflexSoftwareDistributionVersionRelationship `json:"SoftwareDistributionVersion,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties        map[string]interface{}
 }
 
 type _HyperflexSoftwareDistributionComponent HyperflexSoftwareDistributionComponent
@@ -77,7 +77,7 @@ func (o *HyperflexSoftwareDistributionComponent) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexSoftwareDistributionComponent) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *HyperflexSoftwareDistributionComponent) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexSoftwareDistributionComponent) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -242,7 +242,7 @@ func (o *HyperflexSoftwareDistributionComponent) SetFilePath(v string) {
 
 // GetFilesToDownload returns the FilesToDownload field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexSoftwareDistributionComponent) GetFilesToDownload() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -395,10 +395,10 @@ func (o *HyperflexSoftwareDistributionComponent) UnmarshalJSON(bytes []byte) (er
 		// The HyperFlex Software Distribution Component Name.
 		ComponentName *string `json:"ComponentName,omitempty"`
 		// File location on the cloud storage.
-		FilePath *string `json:"FilePath,omitempty"`
+		FilePath        *string  `json:"FilePath,omitempty"`
 		FilesToDownload []string `json:"FilesToDownload,omitempty"`
 		// The HyperFlex Software Distribution Component Version.
-		Version *string `json:"Version,omitempty"`
+		Version                     *string                                           `json:"Version,omitempty"`
 		SoftwareDistributionVersion *HyperflexSoftwareDistributionVersionRelationship `json:"SoftwareDistributionVersion,omitempty"`
 	}
 
@@ -502,5 +502,3 @@ func (v *NullableHyperflexSoftwareDistributionComponent) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

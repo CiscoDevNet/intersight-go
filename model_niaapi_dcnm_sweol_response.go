@@ -19,31 +19,30 @@ import (
 // NiaapiDcnmSweolResponse - The response body of a HTTP GET request for the 'niaapi.DcnmSweol' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'niaapi.DcnmSweol' resources.
 type NiaapiDcnmSweolResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
-	NiaapiDcnmSweolList *NiaapiDcnmSweolList
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
+	NiaapiDcnmSweolList  *NiaapiDcnmSweolList
 }
 
 // MoAggregateTransformAsNiaapiDcnmSweolResponse is a convenience function that returns MoAggregateTransform wrapped in NiaapiDcnmSweolResponse
 func MoAggregateTransformAsNiaapiDcnmSweolResponse(v *MoAggregateTransform) NiaapiDcnmSweolResponse {
-	return NiaapiDcnmSweolResponse{ MoAggregateTransform: v}
+	return NiaapiDcnmSweolResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsNiaapiDcnmSweolResponse is a convenience function that returns MoDocumentCount wrapped in NiaapiDcnmSweolResponse
 func MoDocumentCountAsNiaapiDcnmSweolResponse(v *MoDocumentCount) NiaapiDcnmSweolResponse {
-	return NiaapiDcnmSweolResponse{ MoDocumentCount: v}
+	return NiaapiDcnmSweolResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsNiaapiDcnmSweolResponse is a convenience function that returns MoTagSummary wrapped in NiaapiDcnmSweolResponse
 func MoTagSummaryAsNiaapiDcnmSweolResponse(v *MoTagSummary) NiaapiDcnmSweolResponse {
-	return NiaapiDcnmSweolResponse{ MoTagSummary: v}
+	return NiaapiDcnmSweolResponse{MoTagSummary: v}
 }
 
 // NiaapiDcnmSweolListAsNiaapiDcnmSweolResponse is a convenience function that returns NiaapiDcnmSweolList wrapped in NiaapiDcnmSweolResponse
 func NiaapiDcnmSweolListAsNiaapiDcnmSweolResponse(v *NiaapiDcnmSweolList) NiaapiDcnmSweolResponse {
-	return NiaapiDcnmSweolResponse{ NiaapiDcnmSweolList: v}
+	return NiaapiDcnmSweolResponse{NiaapiDcnmSweolList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiaapiDcnmSweolResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src NiaapiDcnmSweolResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NiaapiDcnmSweolResponse) GetActualInstance() (interface{}) {
+func (obj *NiaapiDcnmSweolResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableNiaapiDcnmSweolResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

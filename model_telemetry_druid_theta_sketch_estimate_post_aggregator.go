@@ -24,7 +24,7 @@ type TelemetryDruidThetaSketchEstimatePostAggregator struct {
 	// Output name for the post-aggregator.
 	Name *string `json:"name,omitempty"`
 	// Post aggregator of type fieldAccess that refers to a thetaSketch aggregator or that of type thetaSketchSetOp.
-	Field *string `json:"field,omitempty"`
+	Field                *string `json:"field,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -61,7 +61,7 @@ func (o *TelemetryDruidThetaSketchEstimatePostAggregator) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidThetaSketchEstimatePostAggregator) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -245,5 +245,3 @@ func (v *NullableTelemetryDruidThetaSketchEstimatePostAggregator) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

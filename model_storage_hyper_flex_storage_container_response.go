@@ -18,32 +18,31 @@ import (
 
 // StorageHyperFlexStorageContainerResponse - The response body of a HTTP GET request for the 'storage.HyperFlexStorageContainer' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'storage.HyperFlexStorageContainer' resources.
 type StorageHyperFlexStorageContainerResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                 *MoAggregateTransform
+	MoDocumentCount                      *MoDocumentCount
+	MoTagSummary                         *MoTagSummary
 	StorageHyperFlexStorageContainerList *StorageHyperFlexStorageContainerList
 }
 
 // MoAggregateTransformAsStorageHyperFlexStorageContainerResponse is a convenience function that returns MoAggregateTransform wrapped in StorageHyperFlexStorageContainerResponse
 func MoAggregateTransformAsStorageHyperFlexStorageContainerResponse(v *MoAggregateTransform) StorageHyperFlexStorageContainerResponse {
-	return StorageHyperFlexStorageContainerResponse{ MoAggregateTransform: v}
+	return StorageHyperFlexStorageContainerResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsStorageHyperFlexStorageContainerResponse is a convenience function that returns MoDocumentCount wrapped in StorageHyperFlexStorageContainerResponse
 func MoDocumentCountAsStorageHyperFlexStorageContainerResponse(v *MoDocumentCount) StorageHyperFlexStorageContainerResponse {
-	return StorageHyperFlexStorageContainerResponse{ MoDocumentCount: v}
+	return StorageHyperFlexStorageContainerResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsStorageHyperFlexStorageContainerResponse is a convenience function that returns MoTagSummary wrapped in StorageHyperFlexStorageContainerResponse
 func MoTagSummaryAsStorageHyperFlexStorageContainerResponse(v *MoTagSummary) StorageHyperFlexStorageContainerResponse {
-	return StorageHyperFlexStorageContainerResponse{ MoTagSummary: v}
+	return StorageHyperFlexStorageContainerResponse{MoTagSummary: v}
 }
 
 // StorageHyperFlexStorageContainerListAsStorageHyperFlexStorageContainerResponse is a convenience function that returns StorageHyperFlexStorageContainerList wrapped in StorageHyperFlexStorageContainerResponse
 func StorageHyperFlexStorageContainerListAsStorageHyperFlexStorageContainerResponse(v *StorageHyperFlexStorageContainerList) StorageHyperFlexStorageContainerResponse {
-	return StorageHyperFlexStorageContainerResponse{ StorageHyperFlexStorageContainerList: v}
+	return StorageHyperFlexStorageContainerResponse{StorageHyperFlexStorageContainerList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageHyperFlexStorageContainerResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src StorageHyperFlexStorageContainerResponse) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *StorageHyperFlexStorageContainerResponse) GetActualInstance() (interface{}) {
+func (obj *StorageHyperFlexStorageContainerResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableStorageHyperFlexStorageContainerResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

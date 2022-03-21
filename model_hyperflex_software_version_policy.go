@@ -29,16 +29,16 @@ type HyperflexSoftwareVersionPolicy struct {
 	// Desired  hypervisor version to apply for all the nodes on the HyperFlex cluster.
 	HypervisorVersion *string `json:"HypervisorVersion,omitempty"`
 	// Desired server firmware version to apply on the HyperFlex Cluster.
-	ServerFirmwareVersion *string `json:"ServerFirmwareVersion,omitempty"`
+	ServerFirmwareVersion  *string                              `json:"ServerFirmwareVersion,omitempty"`
 	ServerFirmwareVersions []HyperflexServerFirmwareVersionInfo `json:"ServerFirmwareVersions,omitempty"`
-	UpgradeTypes []string `json:"UpgradeTypes,omitempty"`
+	UpgradeTypes           []string                             `json:"UpgradeTypes,omitempty"`
 	// An array of relationships to hyperflexClusterProfile resources.
-	ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-	HxdpVersionInfo *SoftwareHyperflexDistributableRelationship `json:"HxdpVersionInfo,omitempty"`
-	HypervisorVersionInfo *SoftwareHyperflexDistributableRelationship `json:"HypervisorVersionInfo,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	ServerFirmwareVersionInfo *FirmwareDistributableRelationship `json:"ServerFirmwareVersionInfo,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ClusterProfiles           []HyperflexClusterProfileRelationship       `json:"ClusterProfiles,omitempty"`
+	HxdpVersionInfo           *SoftwareHyperflexDistributableRelationship `json:"HxdpVersionInfo,omitempty"`
+	HypervisorVersionInfo     *SoftwareHyperflexDistributableRelationship `json:"HypervisorVersionInfo,omitempty"`
+	Organization              *OrganizationOrganizationRelationship       `json:"Organization,omitempty"`
+	ServerFirmwareVersionInfo *FirmwareDistributableRelationship          `json:"ServerFirmwareVersionInfo,omitempty"`
+	AdditionalProperties      map[string]interface{}
 }
 
 type _HyperflexSoftwareVersionPolicy HyperflexSoftwareVersionPolicy
@@ -79,7 +79,7 @@ func (o *HyperflexSoftwareVersionPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexSoftwareVersionPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *HyperflexSoftwareVersionPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexSoftwareVersionPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -212,7 +212,7 @@ func (o *HyperflexSoftwareVersionPolicy) SetServerFirmwareVersion(v string) {
 
 // GetServerFirmwareVersions returns the ServerFirmwareVersions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexSoftwareVersionPolicy) GetServerFirmwareVersions() []HyperflexServerFirmwareVersionInfo {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexServerFirmwareVersionInfo
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *HyperflexSoftwareVersionPolicy) SetServerFirmwareVersions(v []Hyperflex
 
 // GetUpgradeTypes returns the UpgradeTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexSoftwareVersionPolicy) GetUpgradeTypes() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -278,7 +278,7 @@ func (o *HyperflexSoftwareVersionPolicy) SetUpgradeTypes(v []string) {
 
 // GetClusterProfiles returns the ClusterProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexSoftwareVersionPolicy) GetClusterProfiles() []HyperflexClusterProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexClusterProfileRelationship
 		return ret
 	}
@@ -502,15 +502,15 @@ func (o *HyperflexSoftwareVersionPolicy) UnmarshalJSON(bytes []byte) (err error)
 		// Desired  hypervisor version to apply for all the nodes on the HyperFlex cluster.
 		HypervisorVersion *string `json:"HypervisorVersion,omitempty"`
 		// Desired server firmware version to apply on the HyperFlex Cluster.
-		ServerFirmwareVersion *string `json:"ServerFirmwareVersion,omitempty"`
+		ServerFirmwareVersion  *string                              `json:"ServerFirmwareVersion,omitempty"`
 		ServerFirmwareVersions []HyperflexServerFirmwareVersionInfo `json:"ServerFirmwareVersions,omitempty"`
-		UpgradeTypes []string `json:"UpgradeTypes,omitempty"`
+		UpgradeTypes           []string                             `json:"UpgradeTypes,omitempty"`
 		// An array of relationships to hyperflexClusterProfile resources.
-		ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-		HxdpVersionInfo *SoftwareHyperflexDistributableRelationship `json:"HxdpVersionInfo,omitempty"`
-		HypervisorVersionInfo *SoftwareHyperflexDistributableRelationship `json:"HypervisorVersionInfo,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-		ServerFirmwareVersionInfo *FirmwareDistributableRelationship `json:"ServerFirmwareVersionInfo,omitempty"`
+		ClusterProfiles           []HyperflexClusterProfileRelationship       `json:"ClusterProfiles,omitempty"`
+		HxdpVersionInfo           *SoftwareHyperflexDistributableRelationship `json:"HxdpVersionInfo,omitempty"`
+		HypervisorVersionInfo     *SoftwareHyperflexDistributableRelationship `json:"HypervisorVersionInfo,omitempty"`
+		Organization              *OrganizationOrganizationRelationship       `json:"Organization,omitempty"`
+		ServerFirmwareVersionInfo *FirmwareDistributableRelationship          `json:"ServerFirmwareVersionInfo,omitempty"`
 	}
 
 	varHyperflexSoftwareVersionPolicyWithoutEmbeddedStruct := HyperflexSoftwareVersionPolicyWithoutEmbeddedStruct{}
@@ -619,5 +619,3 @@ func (v *NullableHyperflexSoftwareVersionPolicy) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

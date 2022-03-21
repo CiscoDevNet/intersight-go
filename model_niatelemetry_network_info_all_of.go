@@ -20,15 +20,15 @@ type NiatelemetryNetworkInfoAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType string                   `json:"ObjectType"`
 	ActiveNode NullableNiatelemetryNode `json:"ActiveNode,omitempty"`
 	// Returns hostname of the network.
 	Hostname *string `json:"Hostname,omitempty"`
 	// Returns management IP of the network.
 	ManagementtIp *string `json:"ManagementtIp,omitempty"`
 	// Returns out of band IP of the network.
-	OutofbandIp *string `json:"OutofbandIp,omitempty"`
-	StandbyNode NullableNiatelemetryNode `json:"StandbyNode,omitempty"`
+	OutofbandIp          *string                  `json:"OutofbandIp,omitempty"`
+	StandbyNode          NullableNiatelemetryNode `json:"StandbyNode,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *NiatelemetryNetworkInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNetworkInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *NiatelemetryNetworkInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNetworkInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -118,7 +118,7 @@ func (o *NiatelemetryNetworkInfoAllOf) GetActiveNode() NiatelemetryNode {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiatelemetryNetworkInfoAllOf) GetActiveNodeOk() (*NiatelemetryNode, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ActiveNode.Get(), o.ActiveNode.IsSet()
@@ -137,6 +137,7 @@ func (o *NiatelemetryNetworkInfoAllOf) HasActiveNode() bool {
 func (o *NiatelemetryNetworkInfoAllOf) SetActiveNode(v NiatelemetryNode) {
 	o.ActiveNode.Set(&v)
 }
+
 // SetActiveNodeNil sets the value for ActiveNode to be an explicit nil
 func (o *NiatelemetryNetworkInfoAllOf) SetActiveNodeNil() {
 	o.ActiveNode.Set(nil)
@@ -256,7 +257,7 @@ func (o *NiatelemetryNetworkInfoAllOf) GetStandbyNode() NiatelemetryNode {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiatelemetryNetworkInfoAllOf) GetStandbyNodeOk() (*NiatelemetryNode, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StandbyNode.Get(), o.StandbyNode.IsSet()
@@ -275,6 +276,7 @@ func (o *NiatelemetryNetworkInfoAllOf) HasStandbyNode() bool {
 func (o *NiatelemetryNetworkInfoAllOf) SetStandbyNode(v NiatelemetryNode) {
 	o.StandbyNode.Set(&v)
 }
+
 // SetStandbyNodeNil sets the value for StandbyNode to be an explicit nil
 func (o *NiatelemetryNetworkInfoAllOf) SetStandbyNodeNil() {
 	o.StandbyNode.Set(nil)
@@ -374,5 +376,3 @@ func (v *NullableNiatelemetryNetworkInfoAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -24,7 +24,7 @@ type VirtualizationVmwareDistributedNetworkAllOf struct {
 	// If forgedTransmits property value is set to reject, outbound frames with a source MAC address different from the one set on the adapter are dropped. If property value is set to accept, no filtering is performed and all outbound frames are passed. * `Reject` - Indicates that the security policy is rejected. * `Accept` - Indicates that the security policy is accepted.
 	ForgedTransmits *string `json:"ForgedTransmits,omitempty"`
 	// If macAddressChanges property value is set to reject and the MAC address of the adapter is changed to a value other than the one specified in .vmx configuration file, all inbound frames are dropped. If property value is set to accept and the MAC address is changed, inbound frames to the new MAC address are received. * `Reject` - Indicates that the security policy is rejected. * `Accept` - Indicates that the security policy is accepted.
-	MacAddressChanges *string `json:"MacAddressChanges,omitempty"`
+	MacAddressChanges     *string                                        `json:"MacAddressChanges,omitempty"`
 	NicTeamingAndFailover NullableVirtualizationVmwareTeamingAndFailover `json:"NicTeamingAndFailover,omitempty"`
 	// The total number of hosts connected to this distributed virtual network.
 	NumHosts *int64 `json:"NumHosts,omitempty"`
@@ -33,13 +33,13 @@ type VirtualizationVmwareDistributedNetworkAllOf struct {
 	// If promiscuousMode property value is set to reject, incoming traffic only targeted to that network will be visible. If property value is set to accept, objects defined within the network can see all incoming traffic on the virtual switch based on the VLAN policy. * `Reject` - Indicates that the security policy is rejected. * `Accept` - Indicates that the security policy is accepted.
 	PromiscuousMode *string `json:"PromiscuousMode,omitempty"`
 	// Indicates if the distributed virtual network is a uplink.
-	UpLink *bool `json:"UpLink,omitempty"`
+	UpLink    *bool                           `json:"UpLink,omitempty"`
 	VlanRange []VirtualizationVmwareVlanRange `json:"VlanRange,omitempty"`
 	// VLAN type of the distributed virtual network. It can be None, VLAN, VLAN Trunking or Private VLAN. * `None` - Do not tag traffic with any VLAN Id. * `VLAN` - Tag traffic with the Id from the VLAN Id field. * `VLAN trunking` - Pass VLAN traffic with Id within the VLAN trunk range to guest operating system. * `Private VLAN` - Associate the traffic with a private VLAN created on the distributed switch.
-	VlanType *string `json:"VlanType,omitempty"`
+	VlanType          *string                                            `json:"VlanType,omitempty"`
 	DistributedSwitch *VirtualizationVmwareDistributedSwitchRelationship `json:"DistributedSwitch,omitempty"`
 	// An array of relationships to virtualizationVmwareHost resources.
-	Hosts []VirtualizationVmwareHostRelationship `json:"Hosts,omitempty"`
+	Hosts                []VirtualizationVmwareHostRelationship `json:"Hosts,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -97,7 +97,7 @@ func (o *VirtualizationVmwareDistributedNetworkAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareDistributedNetworkAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -121,7 +121,7 @@ func (o *VirtualizationVmwareDistributedNetworkAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareDistributedNetworkAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -209,7 +209,7 @@ func (o *VirtualizationVmwareDistributedNetworkAllOf) GetNicTeamingAndFailover()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVmwareDistributedNetworkAllOf) GetNicTeamingAndFailoverOk() (*VirtualizationVmwareTeamingAndFailover, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NicTeamingAndFailover.Get(), o.NicTeamingAndFailover.IsSet()
@@ -228,6 +228,7 @@ func (o *VirtualizationVmwareDistributedNetworkAllOf) HasNicTeamingAndFailover()
 func (o *VirtualizationVmwareDistributedNetworkAllOf) SetNicTeamingAndFailover(v VirtualizationVmwareTeamingAndFailover) {
 	o.NicTeamingAndFailover.Set(&v)
 }
+
 // SetNicTeamingAndFailoverNil sets the value for NicTeamingAndFailover to be an explicit nil
 func (o *VirtualizationVmwareDistributedNetworkAllOf) SetNicTeamingAndFailoverNil() {
 	o.NicTeamingAndFailover.Set(nil)
@@ -368,7 +369,7 @@ func (o *VirtualizationVmwareDistributedNetworkAllOf) SetUpLink(v bool) {
 
 // GetVlanRange returns the VlanRange field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareDistributedNetworkAllOf) GetVlanRange() []VirtualizationVmwareVlanRange {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationVmwareVlanRange
 		return ret
 	}
@@ -465,7 +466,7 @@ func (o *VirtualizationVmwareDistributedNetworkAllOf) SetDistributedSwitch(v Vir
 
 // GetHosts returns the Hosts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareDistributedNetworkAllOf) GetHosts() []VirtualizationVmwareHostRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationVmwareHostRelationship
 		return ret
 	}
@@ -609,5 +610,3 @@ func (v *NullableVirtualizationVmwareDistributedNetworkAllOf) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

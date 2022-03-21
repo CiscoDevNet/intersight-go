@@ -26,7 +26,7 @@ type CloudNetworkAddressAllOf struct {
 	// IP address allocation type (DYNAMIC | STATIC | IPAM_CALLOUT | PRE_ALLOCATE). * `Dynamic` - IP address allocation type is dynamic. * `Static` - IP address allocation type is static. * `IpamCallout` - IP address is assigned with the results of callout scripts execution. * `PreAllocate` - IP address allocation type is PreAllocate .
 	IpAllocation *string `json:"IpAllocation,omitempty"`
 	// Whether IP address is of type IPv4 or IPv6. * `IPv4` - Internet protocol version 4. * `IPv6` - Internet protocol version 6.
-	IpVersion *string `json:"IpVersion,omitempty"`
+	IpVersion            *string `json:"IpVersion,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *CloudNetworkAddressAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudNetworkAddressAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *CloudNetworkAddressAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudNetworkAddressAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,5 +280,3 @@ func (v *NullableCloudNetworkAddressAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

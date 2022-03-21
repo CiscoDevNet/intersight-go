@@ -18,20 +18,19 @@ import (
 
 // ServerConfigResultEntryRelationship - A relationship to the 'server.ConfigResultEntry' resource, or the expanded 'server.ConfigResultEntry' resource, or the 'null' value.
 type ServerConfigResultEntryRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                 *MoMoRef
 	ServerConfigResultEntry *ServerConfigResultEntry
 }
 
 // MoMoRefAsServerConfigResultEntryRelationship is a convenience function that returns MoMoRef wrapped in ServerConfigResultEntryRelationship
 func MoMoRefAsServerConfigResultEntryRelationship(v *MoMoRef) ServerConfigResultEntryRelationship {
-	return ServerConfigResultEntryRelationship{ MoMoRef: v}
+	return ServerConfigResultEntryRelationship{MoMoRef: v}
 }
 
 // ServerConfigResultEntryAsServerConfigResultEntryRelationship is a convenience function that returns ServerConfigResultEntry wrapped in ServerConfigResultEntryRelationship
 func ServerConfigResultEntryAsServerConfigResultEntryRelationship(v *ServerConfigResultEntry) ServerConfigResultEntryRelationship {
-	return ServerConfigResultEntryRelationship{ ServerConfigResultEntry: v}
+	return ServerConfigResultEntryRelationship{ServerConfigResultEntry: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ServerConfigResultEntryRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ServerConfigResultEntryRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ServerConfigResultEntryRelationship) GetActualInstance() (interface{}) {
+func (obj *ServerConfigResultEntryRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableServerConfigResultEntryRelationship) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

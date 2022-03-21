@@ -29,11 +29,11 @@ var (
 type ConnectorpackApiService service
 
 type ApiCreateConnectorpackConnectorPackUpgradeRequest struct {
-	ctx _context.Context
-	ApiService *ConnectorpackApiService
+	ctx                               _context.Context
+	ApiService                        *ConnectorpackApiService
 	connectorpackConnectorPackUpgrade *ConnectorpackConnectorPackUpgrade
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                           *string
+	ifNoneMatch                       *string
 }
 
 // The &#39;connectorpack.ConnectorPackUpgrade&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateConnectorpackConnectorPackUpgradeRequest) ConnectorpackConnecto
 	r.connectorpackConnectorPackUpgrade = &connectorpackConnectorPackUpgrade
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateConnectorpackConnectorPackUpgradeRequest) IfMatch(ifMatch string) ApiCreateConnectorpackConnectorPackUpgradeRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateConnectorpackConnectorPackUpgradeRequest) IfNoneMatch(ifNoneMatch string) ApiCreateConnectorpackConnectorPackUpgradeRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateConnectorpackConnectorPackUpgrade Create a 'connectorpack.ConnectorPackUpg
 func (a *ConnectorpackApiService) CreateConnectorpackConnectorPackUpgrade(ctx _context.Context) ApiCreateConnectorpackConnectorPackUpgradeRequest {
 	return ApiCreateConnectorpackConnectorPackUpgradeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *ConnectorpackApiService) CreateConnectorpackConnectorPackUpgradeExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,10 @@ func (a *ConnectorpackApiService) CreateConnectorpackConnectorPackUpgradeExecute
 }
 
 type ApiDeleteConnectorpackConnectorPackUpgradeRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ConnectorpackApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteConnectorpackConnectorPackUpgradeRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteConnectorpackConnectorPackUpgradeExecute(r)
@@ -225,8 +226,8 @@ DeleteConnectorpackConnectorPackUpgrade Delete a 'connectorpack.ConnectorPackUpg
 func (a *ConnectorpackApiService) DeleteConnectorpackConnectorPackUpgrade(ctx _context.Context, moid string) ApiDeleteConnectorpackConnectorPackUpgradeRequest {
 	return ApiDeleteConnectorpackConnectorPackUpgradeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -331,13 +332,13 @@ func (a *ConnectorpackApiService) DeleteConnectorpackConnectorPackUpgradeExecute
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -345,11 +346,10 @@ func (a *ConnectorpackApiService) DeleteConnectorpackConnectorPackUpgradeExecute
 }
 
 type ApiGetConnectorpackConnectorPackUpgradeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ConnectorpackApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetConnectorpackConnectorPackUpgradeByMoidRequest) Execute() (ConnectorpackConnectorPackUpgrade, *_nethttp.Response, error) {
 	return r.ApiService.GetConnectorpackConnectorPackUpgradeByMoidExecute(r)
@@ -365,8 +365,8 @@ GetConnectorpackConnectorPackUpgradeByMoid Read a 'connectorpack.ConnectorPackUp
 func (a *ConnectorpackApiService) GetConnectorpackConnectorPackUpgradeByMoid(ctx _context.Context, moid string) ApiGetConnectorpackConnectorPackUpgradeByMoidRequest {
 	return ApiGetConnectorpackConnectorPackUpgradeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -473,13 +473,13 @@ func (a *ConnectorpackApiService) GetConnectorpackConnectorPackUpgradeByMoidExec
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -496,19 +496,19 @@ func (a *ConnectorpackApiService) GetConnectorpackConnectorPackUpgradeByMoidExec
 }
 
 type ApiGetConnectorpackConnectorPackUpgradeListRequest struct {
-	ctx _context.Context
-	ApiService *ConnectorpackApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ConnectorpackApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -516,51 +516,61 @@ func (r ApiGetConnectorpackConnectorPackUpgradeListRequest) Filter(filter string
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetConnectorpackConnectorPackUpgradeListRequest) Orderby(orderby string) ApiGetConnectorpackConnectorPackUpgradeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetConnectorpackConnectorPackUpgradeListRequest) Top(top int32) ApiGetConnectorpackConnectorPackUpgradeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetConnectorpackConnectorPackUpgradeListRequest) Skip(skip int32) ApiGetConnectorpackConnectorPackUpgradeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetConnectorpackConnectorPackUpgradeListRequest) Select_(select_ string) ApiGetConnectorpackConnectorPackUpgradeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetConnectorpackConnectorPackUpgradeListRequest) Expand(expand string) ApiGetConnectorpackConnectorPackUpgradeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetConnectorpackConnectorPackUpgradeListRequest) Apply(apply string) ApiGetConnectorpackConnectorPackUpgradeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetConnectorpackConnectorPackUpgradeListRequest) Count(count bool) ApiGetConnectorpackConnectorPackUpgradeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetConnectorpackConnectorPackUpgradeListRequest) Inlinecount(inlinecount string) ApiGetConnectorpackConnectorPackUpgradeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetConnectorpackConnectorPackUpgradeListRequest) At(at string) ApiGetConnectorpackConnectorPackUpgradeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetConnectorpackConnectorPackUpgradeListRequest) Tags(tags string) ApiGetConnectorpackConnectorPackUpgradeListRequest {
 	r.tags = &tags
@@ -580,7 +590,7 @@ GetConnectorpackConnectorPackUpgradeList Read a 'connectorpack.ConnectorPackUpgr
 func (a *ConnectorpackApiService) GetConnectorpackConnectorPackUpgradeList(ctx _context.Context) ApiGetConnectorpackConnectorPackUpgradeListRequest {
 	return ApiGetConnectorpackConnectorPackUpgradeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -719,13 +729,13 @@ func (a *ConnectorpackApiService) GetConnectorpackConnectorPackUpgradeListExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -742,11 +752,10 @@ func (a *ConnectorpackApiService) GetConnectorpackConnectorPackUpgradeListExecut
 }
 
 type ApiGetConnectorpackUpgradeImpactByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ConnectorpackApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetConnectorpackUpgradeImpactByMoidRequest) Execute() (ConnectorpackUpgradeImpact, *_nethttp.Response, error) {
 	return r.ApiService.GetConnectorpackUpgradeImpactByMoidExecute(r)
@@ -762,8 +771,8 @@ GetConnectorpackUpgradeImpactByMoid Read a 'connectorpack.UpgradeImpact' resourc
 func (a *ConnectorpackApiService) GetConnectorpackUpgradeImpactByMoid(ctx _context.Context, moid string) ApiGetConnectorpackUpgradeImpactByMoidRequest {
 	return ApiGetConnectorpackUpgradeImpactByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -870,13 +879,13 @@ func (a *ConnectorpackApiService) GetConnectorpackUpgradeImpactByMoidExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -893,19 +902,19 @@ func (a *ConnectorpackApiService) GetConnectorpackUpgradeImpactByMoidExecute(r A
 }
 
 type ApiGetConnectorpackUpgradeImpactListRequest struct {
-	ctx _context.Context
-	ApiService *ConnectorpackApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ConnectorpackApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -913,51 +922,61 @@ func (r ApiGetConnectorpackUpgradeImpactListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetConnectorpackUpgradeImpactListRequest) Orderby(orderby string) ApiGetConnectorpackUpgradeImpactListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetConnectorpackUpgradeImpactListRequest) Top(top int32) ApiGetConnectorpackUpgradeImpactListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetConnectorpackUpgradeImpactListRequest) Skip(skip int32) ApiGetConnectorpackUpgradeImpactListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetConnectorpackUpgradeImpactListRequest) Select_(select_ string) ApiGetConnectorpackUpgradeImpactListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetConnectorpackUpgradeImpactListRequest) Expand(expand string) ApiGetConnectorpackUpgradeImpactListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetConnectorpackUpgradeImpactListRequest) Apply(apply string) ApiGetConnectorpackUpgradeImpactListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetConnectorpackUpgradeImpactListRequest) Count(count bool) ApiGetConnectorpackUpgradeImpactListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetConnectorpackUpgradeImpactListRequest) Inlinecount(inlinecount string) ApiGetConnectorpackUpgradeImpactListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetConnectorpackUpgradeImpactListRequest) At(at string) ApiGetConnectorpackUpgradeImpactListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetConnectorpackUpgradeImpactListRequest) Tags(tags string) ApiGetConnectorpackUpgradeImpactListRequest {
 	r.tags = &tags
@@ -977,7 +996,7 @@ GetConnectorpackUpgradeImpactList Read a 'connectorpack.UpgradeImpact' resource.
 func (a *ConnectorpackApiService) GetConnectorpackUpgradeImpactList(ctx _context.Context) ApiGetConnectorpackUpgradeImpactListRequest {
 	return ApiGetConnectorpackUpgradeImpactListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1116,13 +1135,13 @@ func (a *ConnectorpackApiService) GetConnectorpackUpgradeImpactListExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

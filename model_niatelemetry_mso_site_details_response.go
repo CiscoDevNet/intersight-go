@@ -18,32 +18,31 @@ import (
 
 // NiatelemetryMsoSiteDetailsResponse - The response body of a HTTP GET request for the 'niatelemetry.MsoSiteDetails' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'niatelemetry.MsoSiteDetails' resources.
 type NiatelemetryMsoSiteDetailsResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform           *MoAggregateTransform
+	MoDocumentCount                *MoDocumentCount
+	MoTagSummary                   *MoTagSummary
 	NiatelemetryMsoSiteDetailsList *NiatelemetryMsoSiteDetailsList
 }
 
 // MoAggregateTransformAsNiatelemetryMsoSiteDetailsResponse is a convenience function that returns MoAggregateTransform wrapped in NiatelemetryMsoSiteDetailsResponse
 func MoAggregateTransformAsNiatelemetryMsoSiteDetailsResponse(v *MoAggregateTransform) NiatelemetryMsoSiteDetailsResponse {
-	return NiatelemetryMsoSiteDetailsResponse{ MoAggregateTransform: v}
+	return NiatelemetryMsoSiteDetailsResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsNiatelemetryMsoSiteDetailsResponse is a convenience function that returns MoDocumentCount wrapped in NiatelemetryMsoSiteDetailsResponse
 func MoDocumentCountAsNiatelemetryMsoSiteDetailsResponse(v *MoDocumentCount) NiatelemetryMsoSiteDetailsResponse {
-	return NiatelemetryMsoSiteDetailsResponse{ MoDocumentCount: v}
+	return NiatelemetryMsoSiteDetailsResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsNiatelemetryMsoSiteDetailsResponse is a convenience function that returns MoTagSummary wrapped in NiatelemetryMsoSiteDetailsResponse
 func MoTagSummaryAsNiatelemetryMsoSiteDetailsResponse(v *MoTagSummary) NiatelemetryMsoSiteDetailsResponse {
-	return NiatelemetryMsoSiteDetailsResponse{ MoTagSummary: v}
+	return NiatelemetryMsoSiteDetailsResponse{MoTagSummary: v}
 }
 
 // NiatelemetryMsoSiteDetailsListAsNiatelemetryMsoSiteDetailsResponse is a convenience function that returns NiatelemetryMsoSiteDetailsList wrapped in NiatelemetryMsoSiteDetailsResponse
 func NiatelemetryMsoSiteDetailsListAsNiatelemetryMsoSiteDetailsResponse(v *NiatelemetryMsoSiteDetailsList) NiatelemetryMsoSiteDetailsResponse {
-	return NiatelemetryMsoSiteDetailsResponse{ NiatelemetryMsoSiteDetailsList: v}
+	return NiatelemetryMsoSiteDetailsResponse{NiatelemetryMsoSiteDetailsList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiatelemetryMsoSiteDetailsResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src NiatelemetryMsoSiteDetailsResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NiatelemetryMsoSiteDetailsResponse) GetActualInstance() (interface{}) {
+func (obj *NiatelemetryMsoSiteDetailsResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableNiatelemetryMsoSiteDetailsResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

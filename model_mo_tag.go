@@ -20,7 +20,7 @@ type MoTag struct {
 	// The string representation of a tag key.
 	Key *string `json:"Key,omitempty"`
 	// The string representation of a tag value.
-	Value *string `json:"Value,omitempty"`
+	Value                *string `json:"Value,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -176,5 +176,3 @@ func (v *NullableMoTag) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

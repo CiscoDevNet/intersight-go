@@ -18,32 +18,31 @@ import (
 
 // CondAlarmResponse - The response body of a HTTP GET request for the 'cond.Alarm' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'cond.Alarm' resources.
 type CondAlarmResponse struct {
-	CondAlarmList *CondAlarmList
+	CondAlarmList        *CondAlarmList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // CondAlarmListAsCondAlarmResponse is a convenience function that returns CondAlarmList wrapped in CondAlarmResponse
 func CondAlarmListAsCondAlarmResponse(v *CondAlarmList) CondAlarmResponse {
-	return CondAlarmResponse{ CondAlarmList: v}
+	return CondAlarmResponse{CondAlarmList: v}
 }
 
 // MoAggregateTransformAsCondAlarmResponse is a convenience function that returns MoAggregateTransform wrapped in CondAlarmResponse
 func MoAggregateTransformAsCondAlarmResponse(v *MoAggregateTransform) CondAlarmResponse {
-	return CondAlarmResponse{ MoAggregateTransform: v}
+	return CondAlarmResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsCondAlarmResponse is a convenience function that returns MoDocumentCount wrapped in CondAlarmResponse
 func MoDocumentCountAsCondAlarmResponse(v *MoDocumentCount) CondAlarmResponse {
-	return CondAlarmResponse{ MoDocumentCount: v}
+	return CondAlarmResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsCondAlarmResponse is a convenience function that returns MoTagSummary wrapped in CondAlarmResponse
 func MoTagSummaryAsCondAlarmResponse(v *MoTagSummary) CondAlarmResponse {
-	return CondAlarmResponse{ MoTagSummary: v}
+	return CondAlarmResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CondAlarmResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src CondAlarmResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CondAlarmResponse) GetActualInstance() (interface{}) {
+func (obj *CondAlarmResponse) GetActualInstance() interface{} {
 	if obj.CondAlarmList != nil {
 		return obj.CondAlarmList
 	}
@@ -184,5 +183,3 @@ func (v *NullableCondAlarmResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

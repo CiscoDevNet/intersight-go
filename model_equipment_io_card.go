@@ -27,18 +27,18 @@ type EquipmentIoCard struct {
 	// Switch Id to which the IOM is connected to. The value can be A or B.
 	ConnectionPath *string `json:"ConnectionPath,omitempty"`
 	// IOM device connector support.
-	DcSupported *bool `json:"DcSupported,omitempty"`
+	DcSupported       *bool              `json:"DcSupported,omitempty"`
 	InbandIpAddresses []ComputeIpAddress `json:"InbandIpAddresses,omitempty"`
 	// Location of IOM within a chassis. The value can be left or right.
-	Side *string `json:"Side,omitempty"`
+	Side             *string                       `json:"Side,omitempty"`
 	EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
-	EquipmentFex *EquipmentFexRelationship `json:"EquipmentFex,omitempty"`
+	EquipmentFex     *EquipmentFexRelationship     `json:"EquipmentFex,omitempty"`
 	// An array of relationships to equipmentFanModule resources.
-	FanModules []EquipmentFanModuleRelationship `json:"FanModules,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+	FanModules                 []EquipmentFanModuleRelationship     `json:"FanModules,omitempty"`
+	InventoryDeviceInfo        *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
 	PhysicalDeviceRegistration *AssetDeviceRegistrationRelationship `json:"PhysicalDeviceRegistration,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RegisteredDevice           *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	AdditionalProperties       map[string]interface{}
 }
 
 type _EquipmentIoCard EquipmentIoCard
@@ -79,7 +79,7 @@ func (o *EquipmentIoCard) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentIoCard) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *EquipmentIoCard) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentIoCard) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -180,7 +180,7 @@ func (o *EquipmentIoCard) SetDcSupported(v bool) {
 
 // GetInbandIpAddresses returns the InbandIpAddresses field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentIoCard) GetInbandIpAddresses() []ComputeIpAddress {
-	if o == nil  {
+	if o == nil {
 		var ret []ComputeIpAddress
 		return ret
 	}
@@ -309,7 +309,7 @@ func (o *EquipmentIoCard) SetEquipmentFex(v EquipmentFexRelationship) {
 
 // GetFanModules returns the FanModules field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentIoCard) GetFanModules() []EquipmentFanModuleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentFanModuleRelationship
 		return ret
 	}
@@ -499,17 +499,17 @@ func (o *EquipmentIoCard) UnmarshalJSON(bytes []byte) (err error) {
 		// Switch Id to which the IOM is connected to. The value can be A or B.
 		ConnectionPath *string `json:"ConnectionPath,omitempty"`
 		// IOM device connector support.
-		DcSupported *bool `json:"DcSupported,omitempty"`
+		DcSupported       *bool              `json:"DcSupported,omitempty"`
 		InbandIpAddresses []ComputeIpAddress `json:"InbandIpAddresses,omitempty"`
 		// Location of IOM within a chassis. The value can be left or right.
-		Side *string `json:"Side,omitempty"`
+		Side             *string                       `json:"Side,omitempty"`
 		EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
-		EquipmentFex *EquipmentFexRelationship `json:"EquipmentFex,omitempty"`
+		EquipmentFex     *EquipmentFexRelationship     `json:"EquipmentFex,omitempty"`
 		// An array of relationships to equipmentFanModule resources.
-		FanModules []EquipmentFanModuleRelationship `json:"FanModules,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+		FanModules                 []EquipmentFanModuleRelationship     `json:"FanModules,omitempty"`
+		InventoryDeviceInfo        *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
 		PhysicalDeviceRegistration *AssetDeviceRegistrationRelationship `json:"PhysicalDeviceRegistration,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		RegisteredDevice           *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
 	varEquipmentIoCardWithoutEmbeddedStruct := EquipmentIoCardWithoutEmbeddedStruct{}
@@ -618,5 +618,3 @@ func (v *NullableEquipmentIoCard) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

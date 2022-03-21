@@ -26,10 +26,10 @@ type FabricAppliancePcRoleAllOf struct {
 	// Port mode to be set on the appliance port-channel. * `trunk` - Trunk Mode Switch Port Type. * `access` - Access Mode Switch Port Type.
 	Mode *string `json:"Mode,omitempty"`
 	// The 'name' of the System QoS Class. * `Best Effort` - QoS Priority for Best-effort traffic. * `FC` - QoS Priority for FC traffic. * `Platinum` - QoS Priority for Platinum traffic. * `Gold` - QoS Priority for Gold traffic. * `Silver` - QoS Priority for Silver traffic. * `Bronze` - QoS Priority for Bronze traffic.
-	Priority *string `json:"Priority,omitempty"`
+	Priority                *string                                    `json:"Priority,omitempty"`
 	EthNetworkControlPolicy *FabricEthNetworkControlPolicyRelationship `json:"EthNetworkControlPolicy,omitempty"`
-	EthNetworkGroupPolicy *FabricEthNetworkGroupPolicyRelationship `json:"EthNetworkGroupPolicy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	EthNetworkGroupPolicy   *FabricEthNetworkGroupPolicyRelationship   `json:"EthNetworkGroupPolicy,omitempty"`
+	AdditionalProperties    map[string]interface{}
 }
 
 type _FabricAppliancePcRoleAllOf FabricAppliancePcRoleAllOf
@@ -82,7 +82,7 @@ func (o *FabricAppliancePcRoleAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricAppliancePcRoleAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *FabricAppliancePcRoleAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricAppliancePcRoleAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -366,5 +366,3 @@ func (v *NullableFabricAppliancePcRoleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

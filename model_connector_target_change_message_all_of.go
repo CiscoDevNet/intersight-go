@@ -26,7 +26,7 @@ type ConnectorTargetChangeMessageAllOf struct {
 	// A Json-serialized representation of the 'configuration' portion of the Target instance. Ie the representation contains configuration properties like the target's connectivity information but not operation status. The representation include credential information, encrypted with the RSA public key of the Appliance device connector. Appliance device connector is the sole maintainer of the RSA private key and the only system component which is capable of interpreting the credential.
 	TargetDetails interface{} `json:"TargetDetails,omitempty"`
 	// The Moid identifying the Target instance being created, modified or deleted.
-	TargetMoid *string `json:"TargetMoid,omitempty"`
+	TargetMoid           *string `json:"TargetMoid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *ConnectorTargetChangeMessageAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorTargetChangeMessageAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *ConnectorTargetChangeMessageAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorTargetChangeMessageAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -141,7 +141,7 @@ func (o *ConnectorTargetChangeMessageAllOf) SetModStatus(v string) {
 
 // GetTargetDetails returns the TargetDetails field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ConnectorTargetChangeMessageAllOf) GetTargetDetails() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -285,5 +285,3 @@ func (v *NullableConnectorTargetChangeMessageAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,20 +18,19 @@ import (
 
 // TechsupportmanagementTechSupportBundleRelationship - A relationship to the 'techsupportmanagement.TechSupportBundle' resource, or the expanded 'techsupportmanagement.TechSupportBundle' resource, or the 'null' value.
 type TechsupportmanagementTechSupportBundleRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                                *MoMoRef
 	TechsupportmanagementTechSupportBundle *TechsupportmanagementTechSupportBundle
 }
 
 // MoMoRefAsTechsupportmanagementTechSupportBundleRelationship is a convenience function that returns MoMoRef wrapped in TechsupportmanagementTechSupportBundleRelationship
 func MoMoRefAsTechsupportmanagementTechSupportBundleRelationship(v *MoMoRef) TechsupportmanagementTechSupportBundleRelationship {
-	return TechsupportmanagementTechSupportBundleRelationship{ MoMoRef: v}
+	return TechsupportmanagementTechSupportBundleRelationship{MoMoRef: v}
 }
 
 // TechsupportmanagementTechSupportBundleAsTechsupportmanagementTechSupportBundleRelationship is a convenience function that returns TechsupportmanagementTechSupportBundle wrapped in TechsupportmanagementTechSupportBundleRelationship
 func TechsupportmanagementTechSupportBundleAsTechsupportmanagementTechSupportBundleRelationship(v *TechsupportmanagementTechSupportBundle) TechsupportmanagementTechSupportBundleRelationship {
-	return TechsupportmanagementTechSupportBundleRelationship{ TechsupportmanagementTechSupportBundle: v}
+	return TechsupportmanagementTechSupportBundleRelationship{TechsupportmanagementTechSupportBundle: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *TechsupportmanagementTechSupportBundleRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src TechsupportmanagementTechSupportBundleRelationship) MarshalJSON() ([]b
 }
 
 // Get the actual instance
-func (obj *TechsupportmanagementTechSupportBundleRelationship) GetActualInstance() (interface{}) {
+func (obj *TechsupportmanagementTechSupportBundleRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableTechsupportmanagementTechSupportBundleRelationship) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

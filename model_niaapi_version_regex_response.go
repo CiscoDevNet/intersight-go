@@ -18,32 +18,31 @@ import (
 
 // NiaapiVersionRegexResponse - The response body of a HTTP GET request for the 'niaapi.VersionRegex' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'niaapi.VersionRegex' resources.
 type NiaapiVersionRegexResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform   *MoAggregateTransform
+	MoDocumentCount        *MoDocumentCount
+	MoTagSummary           *MoTagSummary
 	NiaapiVersionRegexList *NiaapiVersionRegexList
 }
 
 // MoAggregateTransformAsNiaapiVersionRegexResponse is a convenience function that returns MoAggregateTransform wrapped in NiaapiVersionRegexResponse
 func MoAggregateTransformAsNiaapiVersionRegexResponse(v *MoAggregateTransform) NiaapiVersionRegexResponse {
-	return NiaapiVersionRegexResponse{ MoAggregateTransform: v}
+	return NiaapiVersionRegexResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsNiaapiVersionRegexResponse is a convenience function that returns MoDocumentCount wrapped in NiaapiVersionRegexResponse
 func MoDocumentCountAsNiaapiVersionRegexResponse(v *MoDocumentCount) NiaapiVersionRegexResponse {
-	return NiaapiVersionRegexResponse{ MoDocumentCount: v}
+	return NiaapiVersionRegexResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsNiaapiVersionRegexResponse is a convenience function that returns MoTagSummary wrapped in NiaapiVersionRegexResponse
 func MoTagSummaryAsNiaapiVersionRegexResponse(v *MoTagSummary) NiaapiVersionRegexResponse {
-	return NiaapiVersionRegexResponse{ MoTagSummary: v}
+	return NiaapiVersionRegexResponse{MoTagSummary: v}
 }
 
 // NiaapiVersionRegexListAsNiaapiVersionRegexResponse is a convenience function that returns NiaapiVersionRegexList wrapped in NiaapiVersionRegexResponse
 func NiaapiVersionRegexListAsNiaapiVersionRegexResponse(v *NiaapiVersionRegexList) NiaapiVersionRegexResponse {
-	return NiaapiVersionRegexResponse{ NiaapiVersionRegexList: v}
+	return NiaapiVersionRegexResponse{NiaapiVersionRegexList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiaapiVersionRegexResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src NiaapiVersionRegexResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NiaapiVersionRegexResponse) GetActualInstance() (interface{}) {
+func (obj *NiaapiVersionRegexResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableNiaapiVersionRegexResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

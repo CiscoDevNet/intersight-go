@@ -29,11 +29,10 @@ var (
 type ComputeApiService service
 
 type ApiDeleteComputeBladeIdentityRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ComputeApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteComputeBladeIdentityRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteComputeBladeIdentityExecute(r)
@@ -49,8 +48,8 @@ DeleteComputeBladeIdentity Delete a 'compute.BladeIdentity' resource.
 func (a *ComputeApiService) DeleteComputeBladeIdentity(ctx _context.Context, moid string) ApiDeleteComputeBladeIdentityRequest {
 	return ApiDeleteComputeBladeIdentityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -155,13 +154,13 @@ func (a *ComputeApiService) DeleteComputeBladeIdentityExecute(r ApiDeleteCompute
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -169,11 +168,10 @@ func (a *ComputeApiService) DeleteComputeBladeIdentityExecute(r ApiDeleteCompute
 }
 
 type ApiDeleteComputeRackUnitIdentityRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ComputeApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteComputeRackUnitIdentityRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteComputeRackUnitIdentityExecute(r)
@@ -189,8 +187,8 @@ DeleteComputeRackUnitIdentity Delete a 'compute.RackUnitIdentity' resource.
 func (a *ComputeApiService) DeleteComputeRackUnitIdentity(ctx _context.Context, moid string) ApiDeleteComputeRackUnitIdentityRequest {
 	return ApiDeleteComputeRackUnitIdentityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -295,13 +293,13 @@ func (a *ComputeApiService) DeleteComputeRackUnitIdentityExecute(r ApiDeleteComp
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -309,11 +307,10 @@ func (a *ComputeApiService) DeleteComputeRackUnitIdentityExecute(r ApiDeleteComp
 }
 
 type ApiDeleteComputeServerPowerPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ComputeApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteComputeServerPowerPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteComputeServerPowerPolicyExecute(r)
@@ -329,8 +326,8 @@ DeleteComputeServerPowerPolicy Delete a 'compute.ServerPowerPolicy' resource.
 func (a *ComputeApiService) DeleteComputeServerPowerPolicy(ctx _context.Context, moid string) ApiDeleteComputeServerPowerPolicyRequest {
 	return ApiDeleteComputeServerPowerPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -435,13 +432,13 @@ func (a *ComputeApiService) DeleteComputeServerPowerPolicyExecute(r ApiDeleteCom
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -449,11 +446,10 @@ func (a *ComputeApiService) DeleteComputeServerPowerPolicyExecute(r ApiDeleteCom
 }
 
 type ApiGetComputeBladeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ComputeApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetComputeBladeByMoidRequest) Execute() (ComputeBlade, *_nethttp.Response, error) {
 	return r.ApiService.GetComputeBladeByMoidExecute(r)
@@ -469,8 +465,8 @@ GetComputeBladeByMoid Read a 'compute.Blade' resource.
 func (a *ComputeApiService) GetComputeBladeByMoid(ctx _context.Context, moid string) ApiGetComputeBladeByMoidRequest {
 	return ApiGetComputeBladeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -577,13 +573,13 @@ func (a *ComputeApiService) GetComputeBladeByMoidExecute(r ApiGetComputeBladeByM
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -600,11 +596,10 @@ func (a *ComputeApiService) GetComputeBladeByMoidExecute(r ApiGetComputeBladeByM
 }
 
 type ApiGetComputeBladeIdentityByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ComputeApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetComputeBladeIdentityByMoidRequest) Execute() (ComputeBladeIdentity, *_nethttp.Response, error) {
 	return r.ApiService.GetComputeBladeIdentityByMoidExecute(r)
@@ -620,8 +615,8 @@ GetComputeBladeIdentityByMoid Read a 'compute.BladeIdentity' resource.
 func (a *ComputeApiService) GetComputeBladeIdentityByMoid(ctx _context.Context, moid string) ApiGetComputeBladeIdentityByMoidRequest {
 	return ApiGetComputeBladeIdentityByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -728,13 +723,13 @@ func (a *ComputeApiService) GetComputeBladeIdentityByMoidExecute(r ApiGetCompute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -751,19 +746,19 @@ func (a *ComputeApiService) GetComputeBladeIdentityByMoidExecute(r ApiGetCompute
 }
 
 type ApiGetComputeBladeIdentityListRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ComputeApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -771,51 +766,61 @@ func (r ApiGetComputeBladeIdentityListRequest) Filter(filter string) ApiGetCompu
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetComputeBladeIdentityListRequest) Orderby(orderby string) ApiGetComputeBladeIdentityListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetComputeBladeIdentityListRequest) Top(top int32) ApiGetComputeBladeIdentityListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetComputeBladeIdentityListRequest) Skip(skip int32) ApiGetComputeBladeIdentityListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetComputeBladeIdentityListRequest) Select_(select_ string) ApiGetComputeBladeIdentityListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetComputeBladeIdentityListRequest) Expand(expand string) ApiGetComputeBladeIdentityListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetComputeBladeIdentityListRequest) Apply(apply string) ApiGetComputeBladeIdentityListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetComputeBladeIdentityListRequest) Count(count bool) ApiGetComputeBladeIdentityListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetComputeBladeIdentityListRequest) Inlinecount(inlinecount string) ApiGetComputeBladeIdentityListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetComputeBladeIdentityListRequest) At(at string) ApiGetComputeBladeIdentityListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetComputeBladeIdentityListRequest) Tags(tags string) ApiGetComputeBladeIdentityListRequest {
 	r.tags = &tags
@@ -835,7 +840,7 @@ GetComputeBladeIdentityList Read a 'compute.BladeIdentity' resource.
 func (a *ComputeApiService) GetComputeBladeIdentityList(ctx _context.Context) ApiGetComputeBladeIdentityListRequest {
 	return ApiGetComputeBladeIdentityListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -974,13 +979,13 @@ func (a *ComputeApiService) GetComputeBladeIdentityListExecute(r ApiGetComputeBl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -997,19 +1002,19 @@ func (a *ComputeApiService) GetComputeBladeIdentityListExecute(r ApiGetComputeBl
 }
 
 type ApiGetComputeBladeListRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ComputeApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1017,51 +1022,61 @@ func (r ApiGetComputeBladeListRequest) Filter(filter string) ApiGetComputeBladeL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetComputeBladeListRequest) Orderby(orderby string) ApiGetComputeBladeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetComputeBladeListRequest) Top(top int32) ApiGetComputeBladeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetComputeBladeListRequest) Skip(skip int32) ApiGetComputeBladeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetComputeBladeListRequest) Select_(select_ string) ApiGetComputeBladeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetComputeBladeListRequest) Expand(expand string) ApiGetComputeBladeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetComputeBladeListRequest) Apply(apply string) ApiGetComputeBladeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetComputeBladeListRequest) Count(count bool) ApiGetComputeBladeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetComputeBladeListRequest) Inlinecount(inlinecount string) ApiGetComputeBladeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetComputeBladeListRequest) At(at string) ApiGetComputeBladeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetComputeBladeListRequest) Tags(tags string) ApiGetComputeBladeListRequest {
 	r.tags = &tags
@@ -1081,7 +1096,7 @@ GetComputeBladeList Read a 'compute.Blade' resource.
 func (a *ComputeApiService) GetComputeBladeList(ctx _context.Context) ApiGetComputeBladeListRequest {
 	return ApiGetComputeBladeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1220,13 +1235,13 @@ func (a *ComputeApiService) GetComputeBladeListExecute(r ApiGetComputeBladeListR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1243,11 +1258,10 @@ func (a *ComputeApiService) GetComputeBladeListExecute(r ApiGetComputeBladeListR
 }
 
 type ApiGetComputeBoardByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ComputeApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetComputeBoardByMoidRequest) Execute() (ComputeBoard, *_nethttp.Response, error) {
 	return r.ApiService.GetComputeBoardByMoidExecute(r)
@@ -1263,8 +1277,8 @@ GetComputeBoardByMoid Read a 'compute.Board' resource.
 func (a *ComputeApiService) GetComputeBoardByMoid(ctx _context.Context, moid string) ApiGetComputeBoardByMoidRequest {
 	return ApiGetComputeBoardByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1371,13 +1385,13 @@ func (a *ComputeApiService) GetComputeBoardByMoidExecute(r ApiGetComputeBoardByM
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1394,19 +1408,19 @@ func (a *ComputeApiService) GetComputeBoardByMoidExecute(r ApiGetComputeBoardByM
 }
 
 type ApiGetComputeBoardListRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ComputeApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1414,51 +1428,61 @@ func (r ApiGetComputeBoardListRequest) Filter(filter string) ApiGetComputeBoardL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetComputeBoardListRequest) Orderby(orderby string) ApiGetComputeBoardListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetComputeBoardListRequest) Top(top int32) ApiGetComputeBoardListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetComputeBoardListRequest) Skip(skip int32) ApiGetComputeBoardListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetComputeBoardListRequest) Select_(select_ string) ApiGetComputeBoardListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetComputeBoardListRequest) Expand(expand string) ApiGetComputeBoardListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetComputeBoardListRequest) Apply(apply string) ApiGetComputeBoardListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetComputeBoardListRequest) Count(count bool) ApiGetComputeBoardListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetComputeBoardListRequest) Inlinecount(inlinecount string) ApiGetComputeBoardListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetComputeBoardListRequest) At(at string) ApiGetComputeBoardListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetComputeBoardListRequest) Tags(tags string) ApiGetComputeBoardListRequest {
 	r.tags = &tags
@@ -1478,7 +1502,7 @@ GetComputeBoardList Read a 'compute.Board' resource.
 func (a *ComputeApiService) GetComputeBoardList(ctx _context.Context) ApiGetComputeBoardListRequest {
 	return ApiGetComputeBoardListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1617,13 +1641,13 @@ func (a *ComputeApiService) GetComputeBoardListExecute(r ApiGetComputeBoardListR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1640,11 +1664,10 @@ func (a *ComputeApiService) GetComputeBoardListExecute(r ApiGetComputeBoardListR
 }
 
 type ApiGetComputeMappingByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ComputeApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetComputeMappingByMoidRequest) Execute() (ComputeMapping, *_nethttp.Response, error) {
 	return r.ApiService.GetComputeMappingByMoidExecute(r)
@@ -1660,8 +1683,8 @@ GetComputeMappingByMoid Read a 'compute.Mapping' resource.
 func (a *ComputeApiService) GetComputeMappingByMoid(ctx _context.Context, moid string) ApiGetComputeMappingByMoidRequest {
 	return ApiGetComputeMappingByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1768,13 +1791,13 @@ func (a *ComputeApiService) GetComputeMappingByMoidExecute(r ApiGetComputeMappin
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1791,19 +1814,19 @@ func (a *ComputeApiService) GetComputeMappingByMoidExecute(r ApiGetComputeMappin
 }
 
 type ApiGetComputeMappingListRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ComputeApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1811,51 +1834,61 @@ func (r ApiGetComputeMappingListRequest) Filter(filter string) ApiGetComputeMapp
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetComputeMappingListRequest) Orderby(orderby string) ApiGetComputeMappingListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetComputeMappingListRequest) Top(top int32) ApiGetComputeMappingListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetComputeMappingListRequest) Skip(skip int32) ApiGetComputeMappingListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetComputeMappingListRequest) Select_(select_ string) ApiGetComputeMappingListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetComputeMappingListRequest) Expand(expand string) ApiGetComputeMappingListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetComputeMappingListRequest) Apply(apply string) ApiGetComputeMappingListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetComputeMappingListRequest) Count(count bool) ApiGetComputeMappingListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetComputeMappingListRequest) Inlinecount(inlinecount string) ApiGetComputeMappingListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetComputeMappingListRequest) At(at string) ApiGetComputeMappingListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetComputeMappingListRequest) Tags(tags string) ApiGetComputeMappingListRequest {
 	r.tags = &tags
@@ -1875,7 +1908,7 @@ GetComputeMappingList Read a 'compute.Mapping' resource.
 func (a *ComputeApiService) GetComputeMappingList(ctx _context.Context) ApiGetComputeMappingListRequest {
 	return ApiGetComputeMappingListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2014,13 +2047,13 @@ func (a *ComputeApiService) GetComputeMappingListExecute(r ApiGetComputeMappingL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2037,11 +2070,10 @@ func (a *ComputeApiService) GetComputeMappingListExecute(r ApiGetComputeMappingL
 }
 
 type ApiGetComputePhysicalSummaryByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ComputeApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetComputePhysicalSummaryByMoidRequest) Execute() (ComputePhysicalSummary, *_nethttp.Response, error) {
 	return r.ApiService.GetComputePhysicalSummaryByMoidExecute(r)
@@ -2057,8 +2089,8 @@ GetComputePhysicalSummaryByMoid Read a 'compute.PhysicalSummary' resource.
 func (a *ComputeApiService) GetComputePhysicalSummaryByMoid(ctx _context.Context, moid string) ApiGetComputePhysicalSummaryByMoidRequest {
 	return ApiGetComputePhysicalSummaryByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2165,13 +2197,13 @@ func (a *ComputeApiService) GetComputePhysicalSummaryByMoidExecute(r ApiGetCompu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2188,19 +2220,19 @@ func (a *ComputeApiService) GetComputePhysicalSummaryByMoidExecute(r ApiGetCompu
 }
 
 type ApiGetComputePhysicalSummaryListRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ComputeApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2208,51 +2240,61 @@ func (r ApiGetComputePhysicalSummaryListRequest) Filter(filter string) ApiGetCom
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetComputePhysicalSummaryListRequest) Orderby(orderby string) ApiGetComputePhysicalSummaryListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetComputePhysicalSummaryListRequest) Top(top int32) ApiGetComputePhysicalSummaryListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetComputePhysicalSummaryListRequest) Skip(skip int32) ApiGetComputePhysicalSummaryListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetComputePhysicalSummaryListRequest) Select_(select_ string) ApiGetComputePhysicalSummaryListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetComputePhysicalSummaryListRequest) Expand(expand string) ApiGetComputePhysicalSummaryListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetComputePhysicalSummaryListRequest) Apply(apply string) ApiGetComputePhysicalSummaryListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetComputePhysicalSummaryListRequest) Count(count bool) ApiGetComputePhysicalSummaryListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetComputePhysicalSummaryListRequest) Inlinecount(inlinecount string) ApiGetComputePhysicalSummaryListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetComputePhysicalSummaryListRequest) At(at string) ApiGetComputePhysicalSummaryListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetComputePhysicalSummaryListRequest) Tags(tags string) ApiGetComputePhysicalSummaryListRequest {
 	r.tags = &tags
@@ -2272,7 +2314,7 @@ GetComputePhysicalSummaryList Read a 'compute.PhysicalSummary' resource.
 func (a *ComputeApiService) GetComputePhysicalSummaryList(ctx _context.Context) ApiGetComputePhysicalSummaryListRequest {
 	return ApiGetComputePhysicalSummaryListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2411,13 +2453,13 @@ func (a *ComputeApiService) GetComputePhysicalSummaryListExecute(r ApiGetCompute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2434,11 +2476,10 @@ func (a *ComputeApiService) GetComputePhysicalSummaryListExecute(r ApiGetCompute
 }
 
 type ApiGetComputeRackUnitByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ComputeApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetComputeRackUnitByMoidRequest) Execute() (ComputeRackUnit, *_nethttp.Response, error) {
 	return r.ApiService.GetComputeRackUnitByMoidExecute(r)
@@ -2454,8 +2495,8 @@ GetComputeRackUnitByMoid Read a 'compute.RackUnit' resource.
 func (a *ComputeApiService) GetComputeRackUnitByMoid(ctx _context.Context, moid string) ApiGetComputeRackUnitByMoidRequest {
 	return ApiGetComputeRackUnitByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2562,13 +2603,13 @@ func (a *ComputeApiService) GetComputeRackUnitByMoidExecute(r ApiGetComputeRackU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2585,11 +2626,10 @@ func (a *ComputeApiService) GetComputeRackUnitByMoidExecute(r ApiGetComputeRackU
 }
 
 type ApiGetComputeRackUnitIdentityByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ComputeApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetComputeRackUnitIdentityByMoidRequest) Execute() (ComputeRackUnitIdentity, *_nethttp.Response, error) {
 	return r.ApiService.GetComputeRackUnitIdentityByMoidExecute(r)
@@ -2605,8 +2645,8 @@ GetComputeRackUnitIdentityByMoid Read a 'compute.RackUnitIdentity' resource.
 func (a *ComputeApiService) GetComputeRackUnitIdentityByMoid(ctx _context.Context, moid string) ApiGetComputeRackUnitIdentityByMoidRequest {
 	return ApiGetComputeRackUnitIdentityByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2713,13 +2753,13 @@ func (a *ComputeApiService) GetComputeRackUnitIdentityByMoidExecute(r ApiGetComp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2736,19 +2776,19 @@ func (a *ComputeApiService) GetComputeRackUnitIdentityByMoidExecute(r ApiGetComp
 }
 
 type ApiGetComputeRackUnitIdentityListRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ComputeApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2756,51 +2796,61 @@ func (r ApiGetComputeRackUnitIdentityListRequest) Filter(filter string) ApiGetCo
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetComputeRackUnitIdentityListRequest) Orderby(orderby string) ApiGetComputeRackUnitIdentityListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetComputeRackUnitIdentityListRequest) Top(top int32) ApiGetComputeRackUnitIdentityListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetComputeRackUnitIdentityListRequest) Skip(skip int32) ApiGetComputeRackUnitIdentityListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetComputeRackUnitIdentityListRequest) Select_(select_ string) ApiGetComputeRackUnitIdentityListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetComputeRackUnitIdentityListRequest) Expand(expand string) ApiGetComputeRackUnitIdentityListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetComputeRackUnitIdentityListRequest) Apply(apply string) ApiGetComputeRackUnitIdentityListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetComputeRackUnitIdentityListRequest) Count(count bool) ApiGetComputeRackUnitIdentityListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetComputeRackUnitIdentityListRequest) Inlinecount(inlinecount string) ApiGetComputeRackUnitIdentityListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetComputeRackUnitIdentityListRequest) At(at string) ApiGetComputeRackUnitIdentityListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetComputeRackUnitIdentityListRequest) Tags(tags string) ApiGetComputeRackUnitIdentityListRequest {
 	r.tags = &tags
@@ -2820,7 +2870,7 @@ GetComputeRackUnitIdentityList Read a 'compute.RackUnitIdentity' resource.
 func (a *ComputeApiService) GetComputeRackUnitIdentityList(ctx _context.Context) ApiGetComputeRackUnitIdentityListRequest {
 	return ApiGetComputeRackUnitIdentityListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2959,13 +3009,13 @@ func (a *ComputeApiService) GetComputeRackUnitIdentityListExecute(r ApiGetComput
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2982,19 +3032,19 @@ func (a *ComputeApiService) GetComputeRackUnitIdentityListExecute(r ApiGetComput
 }
 
 type ApiGetComputeRackUnitListRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ComputeApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3002,51 +3052,61 @@ func (r ApiGetComputeRackUnitListRequest) Filter(filter string) ApiGetComputeRac
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetComputeRackUnitListRequest) Orderby(orderby string) ApiGetComputeRackUnitListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetComputeRackUnitListRequest) Top(top int32) ApiGetComputeRackUnitListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetComputeRackUnitListRequest) Skip(skip int32) ApiGetComputeRackUnitListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetComputeRackUnitListRequest) Select_(select_ string) ApiGetComputeRackUnitListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetComputeRackUnitListRequest) Expand(expand string) ApiGetComputeRackUnitListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetComputeRackUnitListRequest) Apply(apply string) ApiGetComputeRackUnitListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetComputeRackUnitListRequest) Count(count bool) ApiGetComputeRackUnitListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetComputeRackUnitListRequest) Inlinecount(inlinecount string) ApiGetComputeRackUnitListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetComputeRackUnitListRequest) At(at string) ApiGetComputeRackUnitListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetComputeRackUnitListRequest) Tags(tags string) ApiGetComputeRackUnitListRequest {
 	r.tags = &tags
@@ -3066,7 +3126,7 @@ GetComputeRackUnitList Read a 'compute.RackUnit' resource.
 func (a *ComputeApiService) GetComputeRackUnitList(ctx _context.Context) ApiGetComputeRackUnitListRequest {
 	return ApiGetComputeRackUnitListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3205,13 +3265,13 @@ func (a *ComputeApiService) GetComputeRackUnitListExecute(r ApiGetComputeRackUni
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3228,11 +3288,10 @@ func (a *ComputeApiService) GetComputeRackUnitListExecute(r ApiGetComputeRackUni
 }
 
 type ApiGetComputeServerPowerPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ComputeApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetComputeServerPowerPolicyByMoidRequest) Execute() (ComputeServerPowerPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetComputeServerPowerPolicyByMoidExecute(r)
@@ -3248,8 +3307,8 @@ GetComputeServerPowerPolicyByMoid Read a 'compute.ServerPowerPolicy' resource.
 func (a *ComputeApiService) GetComputeServerPowerPolicyByMoid(ctx _context.Context, moid string) ApiGetComputeServerPowerPolicyByMoidRequest {
 	return ApiGetComputeServerPowerPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3356,13 +3415,13 @@ func (a *ComputeApiService) GetComputeServerPowerPolicyByMoidExecute(r ApiGetCom
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3379,19 +3438,19 @@ func (a *ComputeApiService) GetComputeServerPowerPolicyByMoidExecute(r ApiGetCom
 }
 
 type ApiGetComputeServerPowerPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ComputeApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3399,51 +3458,61 @@ func (r ApiGetComputeServerPowerPolicyListRequest) Filter(filter string) ApiGetC
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetComputeServerPowerPolicyListRequest) Orderby(orderby string) ApiGetComputeServerPowerPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetComputeServerPowerPolicyListRequest) Top(top int32) ApiGetComputeServerPowerPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetComputeServerPowerPolicyListRequest) Skip(skip int32) ApiGetComputeServerPowerPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetComputeServerPowerPolicyListRequest) Select_(select_ string) ApiGetComputeServerPowerPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetComputeServerPowerPolicyListRequest) Expand(expand string) ApiGetComputeServerPowerPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetComputeServerPowerPolicyListRequest) Apply(apply string) ApiGetComputeServerPowerPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetComputeServerPowerPolicyListRequest) Count(count bool) ApiGetComputeServerPowerPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetComputeServerPowerPolicyListRequest) Inlinecount(inlinecount string) ApiGetComputeServerPowerPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetComputeServerPowerPolicyListRequest) At(at string) ApiGetComputeServerPowerPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetComputeServerPowerPolicyListRequest) Tags(tags string) ApiGetComputeServerPowerPolicyListRequest {
 	r.tags = &tags
@@ -3463,7 +3532,7 @@ GetComputeServerPowerPolicyList Read a 'compute.ServerPowerPolicy' resource.
 func (a *ComputeApiService) GetComputeServerPowerPolicyList(ctx _context.Context) ApiGetComputeServerPowerPolicyListRequest {
 	return ApiGetComputeServerPowerPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3602,13 +3671,13 @@ func (a *ComputeApiService) GetComputeServerPowerPolicyListExecute(r ApiGetCompu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3625,11 +3694,10 @@ func (a *ComputeApiService) GetComputeServerPowerPolicyListExecute(r ApiGetCompu
 }
 
 type ApiGetComputeServerSettingByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ComputeApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetComputeServerSettingByMoidRequest) Execute() (ComputeServerSetting, *_nethttp.Response, error) {
 	return r.ApiService.GetComputeServerSettingByMoidExecute(r)
@@ -3645,8 +3713,8 @@ GetComputeServerSettingByMoid Read a 'compute.ServerSetting' resource.
 func (a *ComputeApiService) GetComputeServerSettingByMoid(ctx _context.Context, moid string) ApiGetComputeServerSettingByMoidRequest {
 	return ApiGetComputeServerSettingByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3753,13 +3821,13 @@ func (a *ComputeApiService) GetComputeServerSettingByMoidExecute(r ApiGetCompute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3776,19 +3844,19 @@ func (a *ComputeApiService) GetComputeServerSettingByMoidExecute(r ApiGetCompute
 }
 
 type ApiGetComputeServerSettingListRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ComputeApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3796,51 +3864,61 @@ func (r ApiGetComputeServerSettingListRequest) Filter(filter string) ApiGetCompu
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetComputeServerSettingListRequest) Orderby(orderby string) ApiGetComputeServerSettingListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetComputeServerSettingListRequest) Top(top int32) ApiGetComputeServerSettingListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetComputeServerSettingListRequest) Skip(skip int32) ApiGetComputeServerSettingListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetComputeServerSettingListRequest) Select_(select_ string) ApiGetComputeServerSettingListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetComputeServerSettingListRequest) Expand(expand string) ApiGetComputeServerSettingListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetComputeServerSettingListRequest) Apply(apply string) ApiGetComputeServerSettingListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetComputeServerSettingListRequest) Count(count bool) ApiGetComputeServerSettingListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetComputeServerSettingListRequest) Inlinecount(inlinecount string) ApiGetComputeServerSettingListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetComputeServerSettingListRequest) At(at string) ApiGetComputeServerSettingListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetComputeServerSettingListRequest) Tags(tags string) ApiGetComputeServerSettingListRequest {
 	r.tags = &tags
@@ -3860,7 +3938,7 @@ GetComputeServerSettingList Read a 'compute.ServerSetting' resource.
 func (a *ComputeApiService) GetComputeServerSettingList(ctx _context.Context) ApiGetComputeServerSettingListRequest {
 	return ApiGetComputeServerSettingListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3999,13 +4077,13 @@ func (a *ComputeApiService) GetComputeServerSettingListExecute(r ApiGetComputeSe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4022,11 +4100,10 @@ func (a *ComputeApiService) GetComputeServerSettingListExecute(r ApiGetComputeSe
 }
 
 type ApiGetComputeVmediaByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ComputeApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetComputeVmediaByMoidRequest) Execute() (ComputeVmedia, *_nethttp.Response, error) {
 	return r.ApiService.GetComputeVmediaByMoidExecute(r)
@@ -4042,8 +4119,8 @@ GetComputeVmediaByMoid Read a 'compute.Vmedia' resource.
 func (a *ComputeApiService) GetComputeVmediaByMoid(ctx _context.Context, moid string) ApiGetComputeVmediaByMoidRequest {
 	return ApiGetComputeVmediaByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4150,13 +4227,13 @@ func (a *ComputeApiService) GetComputeVmediaByMoidExecute(r ApiGetComputeVmediaB
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4173,19 +4250,19 @@ func (a *ComputeApiService) GetComputeVmediaByMoidExecute(r ApiGetComputeVmediaB
 }
 
 type ApiGetComputeVmediaListRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ComputeApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4193,51 +4270,61 @@ func (r ApiGetComputeVmediaListRequest) Filter(filter string) ApiGetComputeVmedi
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetComputeVmediaListRequest) Orderby(orderby string) ApiGetComputeVmediaListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetComputeVmediaListRequest) Top(top int32) ApiGetComputeVmediaListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetComputeVmediaListRequest) Skip(skip int32) ApiGetComputeVmediaListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetComputeVmediaListRequest) Select_(select_ string) ApiGetComputeVmediaListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetComputeVmediaListRequest) Expand(expand string) ApiGetComputeVmediaListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetComputeVmediaListRequest) Apply(apply string) ApiGetComputeVmediaListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetComputeVmediaListRequest) Count(count bool) ApiGetComputeVmediaListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetComputeVmediaListRequest) Inlinecount(inlinecount string) ApiGetComputeVmediaListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetComputeVmediaListRequest) At(at string) ApiGetComputeVmediaListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetComputeVmediaListRequest) Tags(tags string) ApiGetComputeVmediaListRequest {
 	r.tags = &tags
@@ -4257,7 +4344,7 @@ GetComputeVmediaList Read a 'compute.Vmedia' resource.
 func (a *ComputeApiService) GetComputeVmediaList(ctx _context.Context) ApiGetComputeVmediaListRequest {
 	return ApiGetComputeVmediaListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4396,13 +4483,13 @@ func (a *ComputeApiService) GetComputeVmediaListExecute(r ApiGetComputeVmediaLis
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4419,11 +4506,11 @@ func (a *ComputeApiService) GetComputeVmediaListExecute(r ApiGetComputeVmediaLis
 }
 
 type ApiPatchComputeBladeRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *ComputeApiService
+	moid         string
 	computeBlade *ComputeBlade
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;compute.Blade&#39; resource to update.
@@ -4431,6 +4518,7 @@ func (r ApiPatchComputeBladeRequest) ComputeBlade(computeBlade ComputeBlade) Api
 	r.computeBlade = &computeBlade
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchComputeBladeRequest) IfMatch(ifMatch string) ApiPatchComputeBladeRequest {
 	r.ifMatch = &ifMatch
@@ -4451,8 +4539,8 @@ PatchComputeBlade Update a 'compute.Blade' resource.
 func (a *ComputeApiService) PatchComputeBlade(ctx _context.Context, moid string) ApiPatchComputeBladeRequest {
 	return ApiPatchComputeBladeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4567,13 +4655,13 @@ func (a *ComputeApiService) PatchComputeBladeExecute(r ApiPatchComputeBladeReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4590,11 +4678,11 @@ func (a *ComputeApiService) PatchComputeBladeExecute(r ApiPatchComputeBladeReque
 }
 
 type ApiPatchComputeBladeIdentityRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *ComputeApiService
+	moid                 string
 	computeBladeIdentity *ComputeBladeIdentity
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;compute.BladeIdentity&#39; resource to update.
@@ -4602,6 +4690,7 @@ func (r ApiPatchComputeBladeIdentityRequest) ComputeBladeIdentity(computeBladeId
 	r.computeBladeIdentity = &computeBladeIdentity
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchComputeBladeIdentityRequest) IfMatch(ifMatch string) ApiPatchComputeBladeIdentityRequest {
 	r.ifMatch = &ifMatch
@@ -4622,8 +4711,8 @@ PatchComputeBladeIdentity Update a 'compute.BladeIdentity' resource.
 func (a *ComputeApiService) PatchComputeBladeIdentity(ctx _context.Context, moid string) ApiPatchComputeBladeIdentityRequest {
 	return ApiPatchComputeBladeIdentityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4738,13 +4827,13 @@ func (a *ComputeApiService) PatchComputeBladeIdentityExecute(r ApiPatchComputeBl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4761,11 +4850,11 @@ func (a *ComputeApiService) PatchComputeBladeIdentityExecute(r ApiPatchComputeBl
 }
 
 type ApiPatchComputeBoardRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *ComputeApiService
+	moid         string
 	computeBoard *ComputeBoard
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;compute.Board&#39; resource to update.
@@ -4773,6 +4862,7 @@ func (r ApiPatchComputeBoardRequest) ComputeBoard(computeBoard ComputeBoard) Api
 	r.computeBoard = &computeBoard
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchComputeBoardRequest) IfMatch(ifMatch string) ApiPatchComputeBoardRequest {
 	r.ifMatch = &ifMatch
@@ -4793,8 +4883,8 @@ PatchComputeBoard Update a 'compute.Board' resource.
 func (a *ComputeApiService) PatchComputeBoard(ctx _context.Context, moid string) ApiPatchComputeBoardRequest {
 	return ApiPatchComputeBoardRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4909,13 +4999,13 @@ func (a *ComputeApiService) PatchComputeBoardExecute(r ApiPatchComputeBoardReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4932,11 +5022,11 @@ func (a *ComputeApiService) PatchComputeBoardExecute(r ApiPatchComputeBoardReque
 }
 
 type ApiPatchComputeMappingRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	moid string
+	ctx            _context.Context
+	ApiService     *ComputeApiService
+	moid           string
 	computeMapping *ComputeMapping
-	ifMatch *string
+	ifMatch        *string
 }
 
 // The &#39;compute.Mapping&#39; resource to update.
@@ -4944,6 +5034,7 @@ func (r ApiPatchComputeMappingRequest) ComputeMapping(computeMapping ComputeMapp
 	r.computeMapping = &computeMapping
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchComputeMappingRequest) IfMatch(ifMatch string) ApiPatchComputeMappingRequest {
 	r.ifMatch = &ifMatch
@@ -4964,8 +5055,8 @@ PatchComputeMapping Update a 'compute.Mapping' resource.
 func (a *ComputeApiService) PatchComputeMapping(ctx _context.Context, moid string) ApiPatchComputeMappingRequest {
 	return ApiPatchComputeMappingRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5080,13 +5171,13 @@ func (a *ComputeApiService) PatchComputeMappingExecute(r ApiPatchComputeMappingR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5103,11 +5194,11 @@ func (a *ComputeApiService) PatchComputeMappingExecute(r ApiPatchComputeMappingR
 }
 
 type ApiPatchComputeRackUnitRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *ComputeApiService
+	moid            string
 	computeRackUnit *ComputeRackUnit
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;compute.RackUnit&#39; resource to update.
@@ -5115,6 +5206,7 @@ func (r ApiPatchComputeRackUnitRequest) ComputeRackUnit(computeRackUnit ComputeR
 	r.computeRackUnit = &computeRackUnit
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchComputeRackUnitRequest) IfMatch(ifMatch string) ApiPatchComputeRackUnitRequest {
 	r.ifMatch = &ifMatch
@@ -5135,8 +5227,8 @@ PatchComputeRackUnit Update a 'compute.RackUnit' resource.
 func (a *ComputeApiService) PatchComputeRackUnit(ctx _context.Context, moid string) ApiPatchComputeRackUnitRequest {
 	return ApiPatchComputeRackUnitRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5251,13 +5343,13 @@ func (a *ComputeApiService) PatchComputeRackUnitExecute(r ApiPatchComputeRackUni
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5274,11 +5366,11 @@ func (a *ComputeApiService) PatchComputeRackUnitExecute(r ApiPatchComputeRackUni
 }
 
 type ApiPatchComputeRackUnitIdentityRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *ComputeApiService
+	moid                    string
 	computeRackUnitIdentity *ComputeRackUnitIdentity
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;compute.RackUnitIdentity&#39; resource to update.
@@ -5286,6 +5378,7 @@ func (r ApiPatchComputeRackUnitIdentityRequest) ComputeRackUnitIdentity(computeR
 	r.computeRackUnitIdentity = &computeRackUnitIdentity
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchComputeRackUnitIdentityRequest) IfMatch(ifMatch string) ApiPatchComputeRackUnitIdentityRequest {
 	r.ifMatch = &ifMatch
@@ -5306,8 +5399,8 @@ PatchComputeRackUnitIdentity Update a 'compute.RackUnitIdentity' resource.
 func (a *ComputeApiService) PatchComputeRackUnitIdentity(ctx _context.Context, moid string) ApiPatchComputeRackUnitIdentityRequest {
 	return ApiPatchComputeRackUnitIdentityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5422,13 +5515,13 @@ func (a *ComputeApiService) PatchComputeRackUnitIdentityExecute(r ApiPatchComput
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5445,11 +5538,11 @@ func (a *ComputeApiService) PatchComputeRackUnitIdentityExecute(r ApiPatchComput
 }
 
 type ApiPatchComputeServerPowerPolicyRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *ComputeApiService
+	moid                     string
 	computeServerPowerPolicy *ComputeServerPowerPolicy
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;compute.ServerPowerPolicy&#39; resource to update.
@@ -5457,6 +5550,7 @@ func (r ApiPatchComputeServerPowerPolicyRequest) ComputeServerPowerPolicy(comput
 	r.computeServerPowerPolicy = &computeServerPowerPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchComputeServerPowerPolicyRequest) IfMatch(ifMatch string) ApiPatchComputeServerPowerPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -5477,8 +5571,8 @@ PatchComputeServerPowerPolicy Update a 'compute.ServerPowerPolicy' resource.
 func (a *ComputeApiService) PatchComputeServerPowerPolicy(ctx _context.Context, moid string) ApiPatchComputeServerPowerPolicyRequest {
 	return ApiPatchComputeServerPowerPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5593,13 +5687,13 @@ func (a *ComputeApiService) PatchComputeServerPowerPolicyExecute(r ApiPatchCompu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5616,11 +5710,11 @@ func (a *ComputeApiService) PatchComputeServerPowerPolicyExecute(r ApiPatchCompu
 }
 
 type ApiPatchComputeServerSettingRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *ComputeApiService
+	moid                 string
 	computeServerSetting *ComputeServerSetting
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;compute.ServerSetting&#39; resource to update.
@@ -5628,6 +5722,7 @@ func (r ApiPatchComputeServerSettingRequest) ComputeServerSetting(computeServerS
 	r.computeServerSetting = &computeServerSetting
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchComputeServerSettingRequest) IfMatch(ifMatch string) ApiPatchComputeServerSettingRequest {
 	r.ifMatch = &ifMatch
@@ -5648,8 +5743,8 @@ PatchComputeServerSetting Update a 'compute.ServerSetting' resource.
 func (a *ComputeApiService) PatchComputeServerSetting(ctx _context.Context, moid string) ApiPatchComputeServerSettingRequest {
 	return ApiPatchComputeServerSettingRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5764,13 +5859,13 @@ func (a *ComputeApiService) PatchComputeServerSettingExecute(r ApiPatchComputeSe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5787,11 +5882,11 @@ func (a *ComputeApiService) PatchComputeServerSettingExecute(r ApiPatchComputeSe
 }
 
 type ApiUpdateComputeBladeRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *ComputeApiService
+	moid         string
 	computeBlade *ComputeBlade
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;compute.Blade&#39; resource to update.
@@ -5799,6 +5894,7 @@ func (r ApiUpdateComputeBladeRequest) ComputeBlade(computeBlade ComputeBlade) Ap
 	r.computeBlade = &computeBlade
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateComputeBladeRequest) IfMatch(ifMatch string) ApiUpdateComputeBladeRequest {
 	r.ifMatch = &ifMatch
@@ -5819,8 +5915,8 @@ UpdateComputeBlade Update a 'compute.Blade' resource.
 func (a *ComputeApiService) UpdateComputeBlade(ctx _context.Context, moid string) ApiUpdateComputeBladeRequest {
 	return ApiUpdateComputeBladeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5935,13 +6031,13 @@ func (a *ComputeApiService) UpdateComputeBladeExecute(r ApiUpdateComputeBladeReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5958,11 +6054,11 @@ func (a *ComputeApiService) UpdateComputeBladeExecute(r ApiUpdateComputeBladeReq
 }
 
 type ApiUpdateComputeBladeIdentityRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *ComputeApiService
+	moid                 string
 	computeBladeIdentity *ComputeBladeIdentity
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;compute.BladeIdentity&#39; resource to update.
@@ -5970,6 +6066,7 @@ func (r ApiUpdateComputeBladeIdentityRequest) ComputeBladeIdentity(computeBladeI
 	r.computeBladeIdentity = &computeBladeIdentity
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateComputeBladeIdentityRequest) IfMatch(ifMatch string) ApiUpdateComputeBladeIdentityRequest {
 	r.ifMatch = &ifMatch
@@ -5990,8 +6087,8 @@ UpdateComputeBladeIdentity Update a 'compute.BladeIdentity' resource.
 func (a *ComputeApiService) UpdateComputeBladeIdentity(ctx _context.Context, moid string) ApiUpdateComputeBladeIdentityRequest {
 	return ApiUpdateComputeBladeIdentityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6106,13 +6203,13 @@ func (a *ComputeApiService) UpdateComputeBladeIdentityExecute(r ApiUpdateCompute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6129,11 +6226,11 @@ func (a *ComputeApiService) UpdateComputeBladeIdentityExecute(r ApiUpdateCompute
 }
 
 type ApiUpdateComputeBoardRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *ComputeApiService
+	moid         string
 	computeBoard *ComputeBoard
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;compute.Board&#39; resource to update.
@@ -6141,6 +6238,7 @@ func (r ApiUpdateComputeBoardRequest) ComputeBoard(computeBoard ComputeBoard) Ap
 	r.computeBoard = &computeBoard
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateComputeBoardRequest) IfMatch(ifMatch string) ApiUpdateComputeBoardRequest {
 	r.ifMatch = &ifMatch
@@ -6161,8 +6259,8 @@ UpdateComputeBoard Update a 'compute.Board' resource.
 func (a *ComputeApiService) UpdateComputeBoard(ctx _context.Context, moid string) ApiUpdateComputeBoardRequest {
 	return ApiUpdateComputeBoardRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6277,13 +6375,13 @@ func (a *ComputeApiService) UpdateComputeBoardExecute(r ApiUpdateComputeBoardReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6300,11 +6398,11 @@ func (a *ComputeApiService) UpdateComputeBoardExecute(r ApiUpdateComputeBoardReq
 }
 
 type ApiUpdateComputeMappingRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	moid string
+	ctx            _context.Context
+	ApiService     *ComputeApiService
+	moid           string
 	computeMapping *ComputeMapping
-	ifMatch *string
+	ifMatch        *string
 }
 
 // The &#39;compute.Mapping&#39; resource to update.
@@ -6312,6 +6410,7 @@ func (r ApiUpdateComputeMappingRequest) ComputeMapping(computeMapping ComputeMap
 	r.computeMapping = &computeMapping
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateComputeMappingRequest) IfMatch(ifMatch string) ApiUpdateComputeMappingRequest {
 	r.ifMatch = &ifMatch
@@ -6332,8 +6431,8 @@ UpdateComputeMapping Update a 'compute.Mapping' resource.
 func (a *ComputeApiService) UpdateComputeMapping(ctx _context.Context, moid string) ApiUpdateComputeMappingRequest {
 	return ApiUpdateComputeMappingRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6448,13 +6547,13 @@ func (a *ComputeApiService) UpdateComputeMappingExecute(r ApiUpdateComputeMappin
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6471,11 +6570,11 @@ func (a *ComputeApiService) UpdateComputeMappingExecute(r ApiUpdateComputeMappin
 }
 
 type ApiUpdateComputeRackUnitRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *ComputeApiService
+	moid            string
 	computeRackUnit *ComputeRackUnit
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;compute.RackUnit&#39; resource to update.
@@ -6483,6 +6582,7 @@ func (r ApiUpdateComputeRackUnitRequest) ComputeRackUnit(computeRackUnit Compute
 	r.computeRackUnit = &computeRackUnit
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateComputeRackUnitRequest) IfMatch(ifMatch string) ApiUpdateComputeRackUnitRequest {
 	r.ifMatch = &ifMatch
@@ -6503,8 +6603,8 @@ UpdateComputeRackUnit Update a 'compute.RackUnit' resource.
 func (a *ComputeApiService) UpdateComputeRackUnit(ctx _context.Context, moid string) ApiUpdateComputeRackUnitRequest {
 	return ApiUpdateComputeRackUnitRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6619,13 +6719,13 @@ func (a *ComputeApiService) UpdateComputeRackUnitExecute(r ApiUpdateComputeRackU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6642,11 +6742,11 @@ func (a *ComputeApiService) UpdateComputeRackUnitExecute(r ApiUpdateComputeRackU
 }
 
 type ApiUpdateComputeRackUnitIdentityRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *ComputeApiService
+	moid                    string
 	computeRackUnitIdentity *ComputeRackUnitIdentity
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;compute.RackUnitIdentity&#39; resource to update.
@@ -6654,6 +6754,7 @@ func (r ApiUpdateComputeRackUnitIdentityRequest) ComputeRackUnitIdentity(compute
 	r.computeRackUnitIdentity = &computeRackUnitIdentity
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateComputeRackUnitIdentityRequest) IfMatch(ifMatch string) ApiUpdateComputeRackUnitIdentityRequest {
 	r.ifMatch = &ifMatch
@@ -6674,8 +6775,8 @@ UpdateComputeRackUnitIdentity Update a 'compute.RackUnitIdentity' resource.
 func (a *ComputeApiService) UpdateComputeRackUnitIdentity(ctx _context.Context, moid string) ApiUpdateComputeRackUnitIdentityRequest {
 	return ApiUpdateComputeRackUnitIdentityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6790,13 +6891,13 @@ func (a *ComputeApiService) UpdateComputeRackUnitIdentityExecute(r ApiUpdateComp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6813,11 +6914,11 @@ func (a *ComputeApiService) UpdateComputeRackUnitIdentityExecute(r ApiUpdateComp
 }
 
 type ApiUpdateComputeServerPowerPolicyRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *ComputeApiService
+	moid                     string
 	computeServerPowerPolicy *ComputeServerPowerPolicy
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;compute.ServerPowerPolicy&#39; resource to update.
@@ -6825,6 +6926,7 @@ func (r ApiUpdateComputeServerPowerPolicyRequest) ComputeServerPowerPolicy(compu
 	r.computeServerPowerPolicy = &computeServerPowerPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateComputeServerPowerPolicyRequest) IfMatch(ifMatch string) ApiUpdateComputeServerPowerPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -6845,8 +6947,8 @@ UpdateComputeServerPowerPolicy Update a 'compute.ServerPowerPolicy' resource.
 func (a *ComputeApiService) UpdateComputeServerPowerPolicy(ctx _context.Context, moid string) ApiUpdateComputeServerPowerPolicyRequest {
 	return ApiUpdateComputeServerPowerPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6961,13 +7063,13 @@ func (a *ComputeApiService) UpdateComputeServerPowerPolicyExecute(r ApiUpdateCom
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6984,11 +7086,11 @@ func (a *ComputeApiService) UpdateComputeServerPowerPolicyExecute(r ApiUpdateCom
 }
 
 type ApiUpdateComputeServerSettingRequest struct {
-	ctx _context.Context
-	ApiService *ComputeApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *ComputeApiService
+	moid                 string
 	computeServerSetting *ComputeServerSetting
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;compute.ServerSetting&#39; resource to update.
@@ -6996,6 +7098,7 @@ func (r ApiUpdateComputeServerSettingRequest) ComputeServerSetting(computeServer
 	r.computeServerSetting = &computeServerSetting
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateComputeServerSettingRequest) IfMatch(ifMatch string) ApiUpdateComputeServerSettingRequest {
 	r.ifMatch = &ifMatch
@@ -7016,8 +7119,8 @@ UpdateComputeServerSetting Update a 'compute.ServerSetting' resource.
 func (a *ComputeApiService) UpdateComputeServerSetting(ctx _context.Context, moid string) ApiUpdateComputeServerSettingRequest {
 	return ApiUpdateComputeServerSettingRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7132,13 +7235,13 @@ func (a *ComputeApiService) UpdateComputeServerSettingExecute(r ApiUpdateCompute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

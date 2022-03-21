@@ -19,19 +19,18 @@ import (
 // BiosUnitRelationship - A relationship to the 'bios.Unit' resource, or the expanded 'bios.Unit' resource, or the 'null' value.
 type BiosUnitRelationship struct {
 	BiosUnit *BiosUnit
-	MoMoRef *MoMoRef
+	MoMoRef  *MoMoRef
 }
 
 // BiosUnitAsBiosUnitRelationship is a convenience function that returns BiosUnit wrapped in BiosUnitRelationship
 func BiosUnitAsBiosUnitRelationship(v *BiosUnit) BiosUnitRelationship {
-	return BiosUnitRelationship{ BiosUnit: v}
+	return BiosUnitRelationship{BiosUnit: v}
 }
 
 // MoMoRefAsBiosUnitRelationship is a convenience function that returns MoMoRef wrapped in BiosUnitRelationship
 func MoMoRefAsBiosUnitRelationship(v *MoMoRef) BiosUnitRelationship {
-	return BiosUnitRelationship{ MoMoRef: v}
+	return BiosUnitRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BiosUnitRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BiosUnitRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BiosUnitRelationship) GetActualInstance() (interface{}) {
+func (obj *BiosUnitRelationship) GetActualInstance() interface{} {
 	if obj.BiosUnit != nil {
 		return obj.BiosUnit
 	}
@@ -137,5 +136,3 @@ func (v *NullableBiosUnitRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

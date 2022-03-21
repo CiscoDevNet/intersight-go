@@ -22,12 +22,12 @@ type WorkflowInternalPropertiesAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// This field will hold the base task type like HttpBaseTask or RemoteAnsibleBaseTask.
-	BaseTaskType *string `json:"BaseTaskType,omitempty"`
-	Constraints NullableWorkflowTaskConstraints `json:"Constraints,omitempty"`
+	BaseTaskType *string                         `json:"BaseTaskType,omitempty"`
+	Constraints  NullableWorkflowTaskConstraints `json:"Constraints,omitempty"`
 	// Denotes this is an internal task. Internal tasks will be hidden from the UI when executing a workflow.
 	Internal *bool `json:"Internal,omitempty"`
 	// The service that owns and is responsible for execution of the task.
-	Owner *string `json:"Owner,omitempty"`
+	Owner                *string `json:"Owner,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *WorkflowInternalPropertiesAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowInternalPropertiesAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *WorkflowInternalPropertiesAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowInternalPropertiesAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -149,7 +149,7 @@ func (o *WorkflowInternalPropertiesAllOf) GetConstraints() WorkflowTaskConstrain
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowInternalPropertiesAllOf) GetConstraintsOk() (*WorkflowTaskConstraints, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Constraints.Get(), o.Constraints.IsSet()
@@ -168,6 +168,7 @@ func (o *WorkflowInternalPropertiesAllOf) HasConstraints() bool {
 func (o *WorkflowInternalPropertiesAllOf) SetConstraints(v WorkflowTaskConstraints) {
 	o.Constraints.Set(&v)
 }
+
 // SetConstraintsNil sets the value for Constraints to be an explicit nil
 func (o *WorkflowInternalPropertiesAllOf) SetConstraintsNil() {
 	o.Constraints.Set(nil)
@@ -327,5 +328,3 @@ func (v *NullableWorkflowInternalPropertiesAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -22,11 +22,11 @@ type WorkflowSolutionActionDefinitionAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Type of actionDefinition which decides on how to trigger the action. * `External` - External actions definition can be triggered by enduser to perform actions on the solution. Once action is completed successfully (eg. create/deploy), user cannot re-trigger that action again. * `Internal` - Internal action definition is used to trigger periodic actions on the solution instance. * `Repetitive` - Repetitive action definition is an external action that can be triggered by enduser to perform repetitive actions (eg. Edit/Update/Perform health check) on the created solution.
-	ActionType *string `json:"ActionType,omitempty"`
-	AllowedInstanceStates []string `json:"AllowedInstanceStates,omitempty"`
-	CoreWorkflows []WorkflowActionWorkflowDefinition `json:"CoreWorkflows,omitempty"`
+	ActionType            *string                            `json:"ActionType,omitempty"`
+	AllowedInstanceStates []string                           `json:"AllowedInstanceStates,omitempty"`
+	CoreWorkflows         []WorkflowActionWorkflowDefinition `json:"CoreWorkflows,omitempty"`
 	// The description for this action which provides information on what are the pre-requisites to use this action on the solution and what features are supported by this action.
-	Description *string `json:"Description,omitempty"`
+	Description     *string                `json:"Description,omitempty"`
 	InputDefinition []WorkflowBaseDataType `json:"InputDefinition,omitempty"`
 	// A user friendly short name to identify the action. Name can only contain letters (a-z, A-Z), numbers (0-9), hyphen (-), period (.), colon (:), space ( ) or an underscore (_).
 	Label *string `json:"Label,omitempty"`
@@ -35,15 +35,15 @@ type WorkflowSolutionActionDefinitionAllOf struct {
 	// The output mappings from workflows in the action definition to the solution output definition. Any output from core or post-core workflow can be mapped to solution output definition. The output can be referred using the name of the workflow definition and the output name in the following format '${<ActionWorkflowDefinition.Name>.output.<outputName>'.
 	OutputParameters interface{} `json:"OutputParameters,omitempty"`
 	// Value in seconds to specify the periodicity of the workflows. A zero value indicate the workflow will not execute periodically. A non-zero value indicate, the workflow will be executed periodically with this periodicity.
-	Periodicity *int64 `json:"Periodicity,omitempty"`
-	PostCoreWorkflows []WorkflowActionWorkflowDefinition `json:"PostCoreWorkflows,omitempty"`
-	PreCoreWorkflows []WorkflowActionWorkflowDefinition `json:"PreCoreWorkflows,omitempty"`
-	StopWorkflows []WorkflowActionWorkflowDefinition `json:"StopWorkflows,omitempty"`
-	ValidationInformation NullableWorkflowValidationInformation `json:"ValidationInformation,omitempty"`
-	ValidationWorkflows []WorkflowActionWorkflowDefinition `json:"ValidationWorkflows,omitempty"`
-	SolutionDefinition *WorkflowSolutionDefinitionRelationship `json:"SolutionDefinition,omitempty"`
-	WorkflowDefinition *WorkflowWorkflowDefinitionRelationship `json:"WorkflowDefinition,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Periodicity           *int64                                  `json:"Periodicity,omitempty"`
+	PostCoreWorkflows     []WorkflowActionWorkflowDefinition      `json:"PostCoreWorkflows,omitempty"`
+	PreCoreWorkflows      []WorkflowActionWorkflowDefinition      `json:"PreCoreWorkflows,omitempty"`
+	StopWorkflows         []WorkflowActionWorkflowDefinition      `json:"StopWorkflows,omitempty"`
+	ValidationInformation NullableWorkflowValidationInformation   `json:"ValidationInformation,omitempty"`
+	ValidationWorkflows   []WorkflowActionWorkflowDefinition      `json:"ValidationWorkflows,omitempty"`
+	SolutionDefinition    *WorkflowSolutionDefinitionRelationship `json:"SolutionDefinition,omitempty"`
+	WorkflowDefinition    *WorkflowWorkflowDefinitionRelationship `json:"WorkflowDefinition,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _WorkflowSolutionActionDefinitionAllOf WorkflowSolutionActionDefinitionAllOf
@@ -88,7 +88,7 @@ func (o *WorkflowSolutionActionDefinitionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowSolutionActionDefinitionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *WorkflowSolutionActionDefinitionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowSolutionActionDefinitionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -157,7 +157,7 @@ func (o *WorkflowSolutionActionDefinitionAllOf) SetActionType(v string) {
 
 // GetAllowedInstanceStates returns the AllowedInstanceStates field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionActionDefinitionAllOf) GetAllowedInstanceStates() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *WorkflowSolutionActionDefinitionAllOf) SetAllowedInstanceStates(v []str
 
 // GetCoreWorkflows returns the CoreWorkflows field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionActionDefinitionAllOf) GetCoreWorkflows() []WorkflowActionWorkflowDefinition {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowActionWorkflowDefinition
 		return ret
 	}
@@ -255,7 +255,7 @@ func (o *WorkflowSolutionActionDefinitionAllOf) SetDescription(v string) {
 
 // GetInputDefinition returns the InputDefinition field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionActionDefinitionAllOf) GetInputDefinition() []WorkflowBaseDataType {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowBaseDataType
 		return ret
 	}
@@ -352,7 +352,7 @@ func (o *WorkflowSolutionActionDefinitionAllOf) SetName(v string) {
 
 // GetOutputParameters returns the OutputParameters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionActionDefinitionAllOf) GetOutputParameters() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -417,7 +417,7 @@ func (o *WorkflowSolutionActionDefinitionAllOf) SetPeriodicity(v int64) {
 
 // GetPostCoreWorkflows returns the PostCoreWorkflows field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionActionDefinitionAllOf) GetPostCoreWorkflows() []WorkflowActionWorkflowDefinition {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowActionWorkflowDefinition
 		return ret
 	}
@@ -450,7 +450,7 @@ func (o *WorkflowSolutionActionDefinitionAllOf) SetPostCoreWorkflows(v []Workflo
 
 // GetPreCoreWorkflows returns the PreCoreWorkflows field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionActionDefinitionAllOf) GetPreCoreWorkflows() []WorkflowActionWorkflowDefinition {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowActionWorkflowDefinition
 		return ret
 	}
@@ -483,7 +483,7 @@ func (o *WorkflowSolutionActionDefinitionAllOf) SetPreCoreWorkflows(v []Workflow
 
 // GetStopWorkflows returns the StopWorkflows field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionActionDefinitionAllOf) GetStopWorkflows() []WorkflowActionWorkflowDefinition {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowActionWorkflowDefinition
 		return ret
 	}
@@ -527,7 +527,7 @@ func (o *WorkflowSolutionActionDefinitionAllOf) GetValidationInformation() Workf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowSolutionActionDefinitionAllOf) GetValidationInformationOk() (*WorkflowValidationInformation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ValidationInformation.Get(), o.ValidationInformation.IsSet()
@@ -546,6 +546,7 @@ func (o *WorkflowSolutionActionDefinitionAllOf) HasValidationInformation() bool 
 func (o *WorkflowSolutionActionDefinitionAllOf) SetValidationInformation(v WorkflowValidationInformation) {
 	o.ValidationInformation.Set(&v)
 }
+
 // SetValidationInformationNil sets the value for ValidationInformation to be an explicit nil
 func (o *WorkflowSolutionActionDefinitionAllOf) SetValidationInformationNil() {
 	o.ValidationInformation.Set(nil)
@@ -558,7 +559,7 @@ func (o *WorkflowSolutionActionDefinitionAllOf) UnsetValidationInformation() {
 
 // GetValidationWorkflows returns the ValidationWorkflows field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionActionDefinitionAllOf) GetValidationWorkflows() []WorkflowActionWorkflowDefinition {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowActionWorkflowDefinition
 		return ret
 	}
@@ -786,5 +787,3 @@ func (v *NullableWorkflowSolutionActionDefinitionAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

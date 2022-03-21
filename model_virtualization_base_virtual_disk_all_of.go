@@ -24,7 +24,7 @@ type VirtualizationBaseVirtualDiskAllOf struct {
 	// Name of the storage disk. Name must be unique within a Datastore.
 	Name *string `json:"Name,omitempty"`
 	// Disk size represented in bytes.
-	Size *int64 `json:"Size,omitempty"`
+	Size                 *int64 `json:"Size,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -62,7 +62,7 @@ func (o *VirtualizationBaseVirtualDiskAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBaseVirtualDiskAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -86,7 +86,7 @@ func (o *VirtualizationBaseVirtualDiskAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBaseVirtualDiskAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -238,5 +238,3 @@ func (v *NullableVirtualizationBaseVirtualDiskAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

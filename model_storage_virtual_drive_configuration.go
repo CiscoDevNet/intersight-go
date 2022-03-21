@@ -31,8 +31,8 @@ type StorageVirtualDriveConfiguration struct {
 	// The name of the virtual drive. The name can be between 1 and 15 alphanumeric characters. Spaces or any special characters other than - (hyphen), _ (underscore), : (colon), and . (period) are not allowed.
 	Name *string `json:"Name,omitempty"`
 	// Virtual drive size in MebiBytes. Size is mandatory field except when the Expand to Available option is enabled.
-	Size *int64 `json:"Size,omitempty"`
-	VirtualDrivePolicy NullableStorageVirtualDrivePolicy `json:"VirtualDrivePolicy,omitempty"`
+	Size                 *int64                            `json:"Size,omitempty"`
+	VirtualDrivePolicy   NullableStorageVirtualDrivePolicy `json:"VirtualDrivePolicy,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *StorageVirtualDriveConfiguration) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageVirtualDriveConfiguration) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *StorageVirtualDriveConfiguration) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageVirtualDriveConfiguration) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -250,7 +250,7 @@ func (o *StorageVirtualDriveConfiguration) GetVirtualDrivePolicy() StorageVirtua
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageVirtualDriveConfiguration) GetVirtualDrivePolicyOk() (*StorageVirtualDrivePolicy, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VirtualDrivePolicy.Get(), o.VirtualDrivePolicy.IsSet()
@@ -269,6 +269,7 @@ func (o *StorageVirtualDriveConfiguration) HasVirtualDrivePolicy() bool {
 func (o *StorageVirtualDriveConfiguration) SetVirtualDrivePolicy(v StorageVirtualDrivePolicy) {
 	o.VirtualDrivePolicy.Set(&v)
 }
+
 // SetVirtualDrivePolicyNil sets the value for VirtualDrivePolicy to be an explicit nil
 func (o *StorageVirtualDriveConfiguration) SetVirtualDrivePolicyNil() {
 	o.VirtualDrivePolicy.Set(nil)
@@ -331,7 +332,7 @@ func (o *StorageVirtualDriveConfiguration) UnmarshalJSON(bytes []byte) (err erro
 		// The name of the virtual drive. The name can be between 1 and 15 alphanumeric characters. Spaces or any special characters other than - (hyphen), _ (underscore), : (colon), and . (period) are not allowed.
 		Name *string `json:"Name,omitempty"`
 		// Virtual drive size in MebiBytes. Size is mandatory field except when the Expand to Available option is enabled.
-		Size *int64 `json:"Size,omitempty"`
+		Size               *int64                            `json:"Size,omitempty"`
 		VirtualDrivePolicy NullableStorageVirtualDrivePolicy `json:"VirtualDrivePolicy,omitempty"`
 	}
 
@@ -431,5 +432,3 @@ func (v *NullableStorageVirtualDriveConfiguration) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

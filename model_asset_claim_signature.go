@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // AssetClaimSignature A cryptographic signature that can be used to auto-claim a device connector into a user's account.
@@ -28,7 +28,7 @@ type AssetClaimSignature struct {
 	// The result of signing the deviceId appended with the timeStamp fields with the devices private key.
 	Signature *string `json:"Signature,omitempty"`
 	// The time at which the signature was generated. Date is accurate to Intersights clock. Used to expire the signature.
-	TimeStamp *time.Time `json:"TimeStamp,omitempty"`
+	TimeStamp            *time.Time `json:"TimeStamp,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *AssetClaimSignature) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetClaimSignature) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *AssetClaimSignature) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetClaimSignature) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -297,5 +297,3 @@ func (v *NullableAssetClaimSignature) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

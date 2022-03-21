@@ -29,11 +29,11 @@ var (
 type ServerApiService service
 
 type ApiCreateServerConfigImportRequest struct {
-	ctx _context.Context
-	ApiService *ServerApiService
+	ctx                _context.Context
+	ApiService         *ServerApiService
 	serverConfigImport *ServerConfigImport
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch            *string
+	ifNoneMatch        *string
 }
 
 // The &#39;server.ConfigImport&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateServerConfigImportRequest) ServerConfigImport(serverConfigImpor
 	r.serverConfigImport = &serverConfigImport
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateServerConfigImportRequest) IfMatch(ifMatch string) ApiCreateServerConfigImportRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateServerConfigImportRequest) IfNoneMatch(ifNoneMatch string) ApiCreateServerConfigImportRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateServerConfigImport Create a 'server.ConfigImport' resource.
 func (a *ServerApiService) CreateServerConfigImport(ctx _context.Context) ApiCreateServerConfigImportRequest {
 	return ApiCreateServerConfigImportRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *ServerApiService) CreateServerConfigImportExecute(r ApiCreateServerConf
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,11 @@ func (a *ServerApiService) CreateServerConfigImportExecute(r ApiCreateServerConf
 }
 
 type ApiCreateServerProfileRequest struct {
-	ctx _context.Context
-	ApiService *ServerApiService
+	ctx           _context.Context
+	ApiService    *ServerApiService
 	serverProfile *ServerProfile
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch       *string
+	ifNoneMatch   *string
 }
 
 // The &#39;server.Profile&#39; resource to create.
@@ -217,11 +219,13 @@ func (r ApiCreateServerProfileRequest) ServerProfile(serverProfile ServerProfile
 	r.serverProfile = &serverProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateServerProfileRequest) IfMatch(ifMatch string) ApiCreateServerProfileRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateServerProfileRequest) IfNoneMatch(ifNoneMatch string) ApiCreateServerProfileRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateServerProfile Create a 'server.Profile' resource.
 func (a *ServerApiService) CreateServerProfile(ctx _context.Context) ApiCreateServerProfileRequest {
 	return ApiCreateServerProfileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *ServerApiService) CreateServerProfileExecute(r ApiCreateServerProfileRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,11 +385,11 @@ func (a *ServerApiService) CreateServerProfileExecute(r ApiCreateServerProfileRe
 }
 
 type ApiCreateServerProfileTemplateRequest struct {
-	ctx _context.Context
-	ApiService *ServerApiService
+	ctx                   _context.Context
+	ApiService            *ServerApiService
 	serverProfileTemplate *ServerProfileTemplate
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;server.ProfileTemplate&#39; resource to create.
@@ -393,11 +397,13 @@ func (r ApiCreateServerProfileTemplateRequest) ServerProfileTemplate(serverProfi
 	r.serverProfileTemplate = &serverProfileTemplate
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateServerProfileTemplateRequest) IfMatch(ifMatch string) ApiCreateServerProfileTemplateRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateServerProfileTemplateRequest) IfNoneMatch(ifNoneMatch string) ApiCreateServerProfileTemplateRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -417,7 +423,7 @@ CreateServerProfileTemplate Create a 'server.ProfileTemplate' resource.
 func (a *ServerApiService) CreateServerProfileTemplate(ctx _context.Context) ApiCreateServerProfileTemplateRequest {
 	return ApiCreateServerProfileTemplateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -534,13 +540,13 @@ func (a *ServerApiService) CreateServerProfileTemplateExecute(r ApiCreateServerP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -557,11 +563,10 @@ func (a *ServerApiService) CreateServerProfileTemplateExecute(r ApiCreateServerP
 }
 
 type ApiDeleteServerProfileRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ServerApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteServerProfileRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteServerProfileExecute(r)
@@ -577,8 +582,8 @@ DeleteServerProfile Delete a 'server.Profile' resource.
 func (a *ServerApiService) DeleteServerProfile(ctx _context.Context, moid string) ApiDeleteServerProfileRequest {
 	return ApiDeleteServerProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -683,13 +688,13 @@ func (a *ServerApiService) DeleteServerProfileExecute(r ApiDeleteServerProfileRe
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -697,11 +702,10 @@ func (a *ServerApiService) DeleteServerProfileExecute(r ApiDeleteServerProfileRe
 }
 
 type ApiDeleteServerProfileTemplateRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ServerApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteServerProfileTemplateRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteServerProfileTemplateExecute(r)
@@ -717,8 +721,8 @@ DeleteServerProfileTemplate Delete a 'server.ProfileTemplate' resource.
 func (a *ServerApiService) DeleteServerProfileTemplate(ctx _context.Context, moid string) ApiDeleteServerProfileTemplateRequest {
 	return ApiDeleteServerProfileTemplateRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -823,13 +827,13 @@ func (a *ServerApiService) DeleteServerProfileTemplateExecute(r ApiDeleteServerP
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -837,11 +841,10 @@ func (a *ServerApiService) DeleteServerProfileTemplateExecute(r ApiDeleteServerP
 }
 
 type ApiGetServerConfigChangeDetailByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ServerApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetServerConfigChangeDetailByMoidRequest) Execute() (ServerConfigChangeDetail, *_nethttp.Response, error) {
 	return r.ApiService.GetServerConfigChangeDetailByMoidExecute(r)
@@ -857,8 +860,8 @@ GetServerConfigChangeDetailByMoid Read a 'server.ConfigChangeDetail' resource.
 func (a *ServerApiService) GetServerConfigChangeDetailByMoid(ctx _context.Context, moid string) ApiGetServerConfigChangeDetailByMoidRequest {
 	return ApiGetServerConfigChangeDetailByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -965,13 +968,13 @@ func (a *ServerApiService) GetServerConfigChangeDetailByMoidExecute(r ApiGetServ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -988,19 +991,19 @@ func (a *ServerApiService) GetServerConfigChangeDetailByMoidExecute(r ApiGetServ
 }
 
 type ApiGetServerConfigChangeDetailListRequest struct {
-	ctx _context.Context
-	ApiService *ServerApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ServerApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1008,51 +1011,61 @@ func (r ApiGetServerConfigChangeDetailListRequest) Filter(filter string) ApiGetS
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetServerConfigChangeDetailListRequest) Orderby(orderby string) ApiGetServerConfigChangeDetailListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetServerConfigChangeDetailListRequest) Top(top int32) ApiGetServerConfigChangeDetailListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetServerConfigChangeDetailListRequest) Skip(skip int32) ApiGetServerConfigChangeDetailListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetServerConfigChangeDetailListRequest) Select_(select_ string) ApiGetServerConfigChangeDetailListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetServerConfigChangeDetailListRequest) Expand(expand string) ApiGetServerConfigChangeDetailListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetServerConfigChangeDetailListRequest) Apply(apply string) ApiGetServerConfigChangeDetailListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetServerConfigChangeDetailListRequest) Count(count bool) ApiGetServerConfigChangeDetailListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetServerConfigChangeDetailListRequest) Inlinecount(inlinecount string) ApiGetServerConfigChangeDetailListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetServerConfigChangeDetailListRequest) At(at string) ApiGetServerConfigChangeDetailListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetServerConfigChangeDetailListRequest) Tags(tags string) ApiGetServerConfigChangeDetailListRequest {
 	r.tags = &tags
@@ -1072,7 +1085,7 @@ GetServerConfigChangeDetailList Read a 'server.ConfigChangeDetail' resource.
 func (a *ServerApiService) GetServerConfigChangeDetailList(ctx _context.Context) ApiGetServerConfigChangeDetailListRequest {
 	return ApiGetServerConfigChangeDetailListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1211,13 +1224,13 @@ func (a *ServerApiService) GetServerConfigChangeDetailListExecute(r ApiGetServer
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1234,11 +1247,10 @@ func (a *ServerApiService) GetServerConfigChangeDetailListExecute(r ApiGetServer
 }
 
 type ApiGetServerConfigImportByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ServerApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetServerConfigImportByMoidRequest) Execute() (ServerConfigImport, *_nethttp.Response, error) {
 	return r.ApiService.GetServerConfigImportByMoidExecute(r)
@@ -1254,8 +1266,8 @@ GetServerConfigImportByMoid Read a 'server.ConfigImport' resource.
 func (a *ServerApiService) GetServerConfigImportByMoid(ctx _context.Context, moid string) ApiGetServerConfigImportByMoidRequest {
 	return ApiGetServerConfigImportByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1362,13 +1374,13 @@ func (a *ServerApiService) GetServerConfigImportByMoidExecute(r ApiGetServerConf
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1385,19 +1397,19 @@ func (a *ServerApiService) GetServerConfigImportByMoidExecute(r ApiGetServerConf
 }
 
 type ApiGetServerConfigImportListRequest struct {
-	ctx _context.Context
-	ApiService *ServerApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ServerApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1405,51 +1417,61 @@ func (r ApiGetServerConfigImportListRequest) Filter(filter string) ApiGetServerC
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetServerConfigImportListRequest) Orderby(orderby string) ApiGetServerConfigImportListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetServerConfigImportListRequest) Top(top int32) ApiGetServerConfigImportListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetServerConfigImportListRequest) Skip(skip int32) ApiGetServerConfigImportListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetServerConfigImportListRequest) Select_(select_ string) ApiGetServerConfigImportListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetServerConfigImportListRequest) Expand(expand string) ApiGetServerConfigImportListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetServerConfigImportListRequest) Apply(apply string) ApiGetServerConfigImportListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetServerConfigImportListRequest) Count(count bool) ApiGetServerConfigImportListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetServerConfigImportListRequest) Inlinecount(inlinecount string) ApiGetServerConfigImportListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetServerConfigImportListRequest) At(at string) ApiGetServerConfigImportListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetServerConfigImportListRequest) Tags(tags string) ApiGetServerConfigImportListRequest {
 	r.tags = &tags
@@ -1469,7 +1491,7 @@ GetServerConfigImportList Read a 'server.ConfigImport' resource.
 func (a *ServerApiService) GetServerConfigImportList(ctx _context.Context) ApiGetServerConfigImportListRequest {
 	return ApiGetServerConfigImportListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1608,13 +1630,13 @@ func (a *ServerApiService) GetServerConfigImportListExecute(r ApiGetServerConfig
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1631,11 +1653,10 @@ func (a *ServerApiService) GetServerConfigImportListExecute(r ApiGetServerConfig
 }
 
 type ApiGetServerConfigResultByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ServerApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetServerConfigResultByMoidRequest) Execute() (ServerConfigResult, *_nethttp.Response, error) {
 	return r.ApiService.GetServerConfigResultByMoidExecute(r)
@@ -1651,8 +1672,8 @@ GetServerConfigResultByMoid Read a 'server.ConfigResult' resource.
 func (a *ServerApiService) GetServerConfigResultByMoid(ctx _context.Context, moid string) ApiGetServerConfigResultByMoidRequest {
 	return ApiGetServerConfigResultByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1759,13 +1780,13 @@ func (a *ServerApiService) GetServerConfigResultByMoidExecute(r ApiGetServerConf
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1782,11 +1803,10 @@ func (a *ServerApiService) GetServerConfigResultByMoidExecute(r ApiGetServerConf
 }
 
 type ApiGetServerConfigResultEntryByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ServerApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetServerConfigResultEntryByMoidRequest) Execute() (ServerConfigResultEntry, *_nethttp.Response, error) {
 	return r.ApiService.GetServerConfigResultEntryByMoidExecute(r)
@@ -1802,8 +1822,8 @@ GetServerConfigResultEntryByMoid Read a 'server.ConfigResultEntry' resource.
 func (a *ServerApiService) GetServerConfigResultEntryByMoid(ctx _context.Context, moid string) ApiGetServerConfigResultEntryByMoidRequest {
 	return ApiGetServerConfigResultEntryByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1910,13 +1930,13 @@ func (a *ServerApiService) GetServerConfigResultEntryByMoidExecute(r ApiGetServe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1933,19 +1953,19 @@ func (a *ServerApiService) GetServerConfigResultEntryByMoidExecute(r ApiGetServe
 }
 
 type ApiGetServerConfigResultEntryListRequest struct {
-	ctx _context.Context
-	ApiService *ServerApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ServerApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1953,51 +1973,61 @@ func (r ApiGetServerConfigResultEntryListRequest) Filter(filter string) ApiGetSe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetServerConfigResultEntryListRequest) Orderby(orderby string) ApiGetServerConfigResultEntryListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetServerConfigResultEntryListRequest) Top(top int32) ApiGetServerConfigResultEntryListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetServerConfigResultEntryListRequest) Skip(skip int32) ApiGetServerConfigResultEntryListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetServerConfigResultEntryListRequest) Select_(select_ string) ApiGetServerConfigResultEntryListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetServerConfigResultEntryListRequest) Expand(expand string) ApiGetServerConfigResultEntryListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetServerConfigResultEntryListRequest) Apply(apply string) ApiGetServerConfigResultEntryListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetServerConfigResultEntryListRequest) Count(count bool) ApiGetServerConfigResultEntryListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetServerConfigResultEntryListRequest) Inlinecount(inlinecount string) ApiGetServerConfigResultEntryListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetServerConfigResultEntryListRequest) At(at string) ApiGetServerConfigResultEntryListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetServerConfigResultEntryListRequest) Tags(tags string) ApiGetServerConfigResultEntryListRequest {
 	r.tags = &tags
@@ -2017,7 +2047,7 @@ GetServerConfigResultEntryList Read a 'server.ConfigResultEntry' resource.
 func (a *ServerApiService) GetServerConfigResultEntryList(ctx _context.Context) ApiGetServerConfigResultEntryListRequest {
 	return ApiGetServerConfigResultEntryListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2156,13 +2186,13 @@ func (a *ServerApiService) GetServerConfigResultEntryListExecute(r ApiGetServerC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2179,19 +2209,19 @@ func (a *ServerApiService) GetServerConfigResultEntryListExecute(r ApiGetServerC
 }
 
 type ApiGetServerConfigResultListRequest struct {
-	ctx _context.Context
-	ApiService *ServerApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ServerApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2199,51 +2229,61 @@ func (r ApiGetServerConfigResultListRequest) Filter(filter string) ApiGetServerC
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetServerConfigResultListRequest) Orderby(orderby string) ApiGetServerConfigResultListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetServerConfigResultListRequest) Top(top int32) ApiGetServerConfigResultListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetServerConfigResultListRequest) Skip(skip int32) ApiGetServerConfigResultListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetServerConfigResultListRequest) Select_(select_ string) ApiGetServerConfigResultListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetServerConfigResultListRequest) Expand(expand string) ApiGetServerConfigResultListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetServerConfigResultListRequest) Apply(apply string) ApiGetServerConfigResultListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetServerConfigResultListRequest) Count(count bool) ApiGetServerConfigResultListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetServerConfigResultListRequest) Inlinecount(inlinecount string) ApiGetServerConfigResultListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetServerConfigResultListRequest) At(at string) ApiGetServerConfigResultListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetServerConfigResultListRequest) Tags(tags string) ApiGetServerConfigResultListRequest {
 	r.tags = &tags
@@ -2263,7 +2303,7 @@ GetServerConfigResultList Read a 'server.ConfigResult' resource.
 func (a *ServerApiService) GetServerConfigResultList(ctx _context.Context) ApiGetServerConfigResultListRequest {
 	return ApiGetServerConfigResultListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2402,13 +2442,13 @@ func (a *ServerApiService) GetServerConfigResultListExecute(r ApiGetServerConfig
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2425,11 +2465,10 @@ func (a *ServerApiService) GetServerConfigResultListExecute(r ApiGetServerConfig
 }
 
 type ApiGetServerProfileByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ServerApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetServerProfileByMoidRequest) Execute() (ServerProfile, *_nethttp.Response, error) {
 	return r.ApiService.GetServerProfileByMoidExecute(r)
@@ -2445,8 +2484,8 @@ GetServerProfileByMoid Read a 'server.Profile' resource.
 func (a *ServerApiService) GetServerProfileByMoid(ctx _context.Context, moid string) ApiGetServerProfileByMoidRequest {
 	return ApiGetServerProfileByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2553,13 +2592,13 @@ func (a *ServerApiService) GetServerProfileByMoidExecute(r ApiGetServerProfileBy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2576,19 +2615,19 @@ func (a *ServerApiService) GetServerProfileByMoidExecute(r ApiGetServerProfileBy
 }
 
 type ApiGetServerProfileListRequest struct {
-	ctx _context.Context
-	ApiService *ServerApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ServerApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2596,51 +2635,61 @@ func (r ApiGetServerProfileListRequest) Filter(filter string) ApiGetServerProfil
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetServerProfileListRequest) Orderby(orderby string) ApiGetServerProfileListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetServerProfileListRequest) Top(top int32) ApiGetServerProfileListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetServerProfileListRequest) Skip(skip int32) ApiGetServerProfileListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetServerProfileListRequest) Select_(select_ string) ApiGetServerProfileListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetServerProfileListRequest) Expand(expand string) ApiGetServerProfileListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetServerProfileListRequest) Apply(apply string) ApiGetServerProfileListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetServerProfileListRequest) Count(count bool) ApiGetServerProfileListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetServerProfileListRequest) Inlinecount(inlinecount string) ApiGetServerProfileListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetServerProfileListRequest) At(at string) ApiGetServerProfileListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetServerProfileListRequest) Tags(tags string) ApiGetServerProfileListRequest {
 	r.tags = &tags
@@ -2660,7 +2709,7 @@ GetServerProfileList Read a 'server.Profile' resource.
 func (a *ServerApiService) GetServerProfileList(ctx _context.Context) ApiGetServerProfileListRequest {
 	return ApiGetServerProfileListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2799,13 +2848,13 @@ func (a *ServerApiService) GetServerProfileListExecute(r ApiGetServerProfileList
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2822,11 +2871,10 @@ func (a *ServerApiService) GetServerProfileListExecute(r ApiGetServerProfileList
 }
 
 type ApiGetServerProfileTemplateByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ServerApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetServerProfileTemplateByMoidRequest) Execute() (ServerProfileTemplate, *_nethttp.Response, error) {
 	return r.ApiService.GetServerProfileTemplateByMoidExecute(r)
@@ -2842,8 +2890,8 @@ GetServerProfileTemplateByMoid Read a 'server.ProfileTemplate' resource.
 func (a *ServerApiService) GetServerProfileTemplateByMoid(ctx _context.Context, moid string) ApiGetServerProfileTemplateByMoidRequest {
 	return ApiGetServerProfileTemplateByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2950,13 +2998,13 @@ func (a *ServerApiService) GetServerProfileTemplateByMoidExecute(r ApiGetServerP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2973,19 +3021,19 @@ func (a *ServerApiService) GetServerProfileTemplateByMoidExecute(r ApiGetServerP
 }
 
 type ApiGetServerProfileTemplateListRequest struct {
-	ctx _context.Context
-	ApiService *ServerApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ServerApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2993,51 +3041,61 @@ func (r ApiGetServerProfileTemplateListRequest) Filter(filter string) ApiGetServ
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetServerProfileTemplateListRequest) Orderby(orderby string) ApiGetServerProfileTemplateListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetServerProfileTemplateListRequest) Top(top int32) ApiGetServerProfileTemplateListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetServerProfileTemplateListRequest) Skip(skip int32) ApiGetServerProfileTemplateListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetServerProfileTemplateListRequest) Select_(select_ string) ApiGetServerProfileTemplateListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetServerProfileTemplateListRequest) Expand(expand string) ApiGetServerProfileTemplateListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetServerProfileTemplateListRequest) Apply(apply string) ApiGetServerProfileTemplateListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetServerProfileTemplateListRequest) Count(count bool) ApiGetServerProfileTemplateListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetServerProfileTemplateListRequest) Inlinecount(inlinecount string) ApiGetServerProfileTemplateListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetServerProfileTemplateListRequest) At(at string) ApiGetServerProfileTemplateListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetServerProfileTemplateListRequest) Tags(tags string) ApiGetServerProfileTemplateListRequest {
 	r.tags = &tags
@@ -3057,7 +3115,7 @@ GetServerProfileTemplateList Read a 'server.ProfileTemplate' resource.
 func (a *ServerApiService) GetServerProfileTemplateList(ctx _context.Context) ApiGetServerProfileTemplateListRequest {
 	return ApiGetServerProfileTemplateListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3196,13 +3254,13 @@ func (a *ServerApiService) GetServerProfileTemplateListExecute(r ApiGetServerPro
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3219,11 +3277,11 @@ func (a *ServerApiService) GetServerProfileTemplateListExecute(r ApiGetServerPro
 }
 
 type ApiPatchServerProfileRequest struct {
-	ctx _context.Context
-	ApiService *ServerApiService
-	moid string
+	ctx           _context.Context
+	ApiService    *ServerApiService
+	moid          string
 	serverProfile *ServerProfile
-	ifMatch *string
+	ifMatch       *string
 }
 
 // The &#39;server.Profile&#39; resource to update.
@@ -3231,6 +3289,7 @@ func (r ApiPatchServerProfileRequest) ServerProfile(serverProfile ServerProfile)
 	r.serverProfile = &serverProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchServerProfileRequest) IfMatch(ifMatch string) ApiPatchServerProfileRequest {
 	r.ifMatch = &ifMatch
@@ -3251,8 +3310,8 @@ PatchServerProfile Update a 'server.Profile' resource.
 func (a *ServerApiService) PatchServerProfile(ctx _context.Context, moid string) ApiPatchServerProfileRequest {
 	return ApiPatchServerProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3367,13 +3426,13 @@ func (a *ServerApiService) PatchServerProfileExecute(r ApiPatchServerProfileRequ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3390,11 +3449,11 @@ func (a *ServerApiService) PatchServerProfileExecute(r ApiPatchServerProfileRequ
 }
 
 type ApiPatchServerProfileTemplateRequest struct {
-	ctx _context.Context
-	ApiService *ServerApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *ServerApiService
+	moid                  string
 	serverProfileTemplate *ServerProfileTemplate
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;server.ProfileTemplate&#39; resource to update.
@@ -3402,6 +3461,7 @@ func (r ApiPatchServerProfileTemplateRequest) ServerProfileTemplate(serverProfil
 	r.serverProfileTemplate = &serverProfileTemplate
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchServerProfileTemplateRequest) IfMatch(ifMatch string) ApiPatchServerProfileTemplateRequest {
 	r.ifMatch = &ifMatch
@@ -3422,8 +3482,8 @@ PatchServerProfileTemplate Update a 'server.ProfileTemplate' resource.
 func (a *ServerApiService) PatchServerProfileTemplate(ctx _context.Context, moid string) ApiPatchServerProfileTemplateRequest {
 	return ApiPatchServerProfileTemplateRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3538,13 +3598,13 @@ func (a *ServerApiService) PatchServerProfileTemplateExecute(r ApiPatchServerPro
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3561,11 +3621,11 @@ func (a *ServerApiService) PatchServerProfileTemplateExecute(r ApiPatchServerPro
 }
 
 type ApiUpdateServerProfileRequest struct {
-	ctx _context.Context
-	ApiService *ServerApiService
-	moid string
+	ctx           _context.Context
+	ApiService    *ServerApiService
+	moid          string
 	serverProfile *ServerProfile
-	ifMatch *string
+	ifMatch       *string
 }
 
 // The &#39;server.Profile&#39; resource to update.
@@ -3573,6 +3633,7 @@ func (r ApiUpdateServerProfileRequest) ServerProfile(serverProfile ServerProfile
 	r.serverProfile = &serverProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateServerProfileRequest) IfMatch(ifMatch string) ApiUpdateServerProfileRequest {
 	r.ifMatch = &ifMatch
@@ -3593,8 +3654,8 @@ UpdateServerProfile Update a 'server.Profile' resource.
 func (a *ServerApiService) UpdateServerProfile(ctx _context.Context, moid string) ApiUpdateServerProfileRequest {
 	return ApiUpdateServerProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3709,13 +3770,13 @@ func (a *ServerApiService) UpdateServerProfileExecute(r ApiUpdateServerProfileRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3732,11 +3793,11 @@ func (a *ServerApiService) UpdateServerProfileExecute(r ApiUpdateServerProfileRe
 }
 
 type ApiUpdateServerProfileTemplateRequest struct {
-	ctx _context.Context
-	ApiService *ServerApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *ServerApiService
+	moid                  string
 	serverProfileTemplate *ServerProfileTemplate
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;server.ProfileTemplate&#39; resource to update.
@@ -3744,6 +3805,7 @@ func (r ApiUpdateServerProfileTemplateRequest) ServerProfileTemplate(serverProfi
 	r.serverProfileTemplate = &serverProfileTemplate
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateServerProfileTemplateRequest) IfMatch(ifMatch string) ApiUpdateServerProfileTemplateRequest {
 	r.ifMatch = &ifMatch
@@ -3764,8 +3826,8 @@ UpdateServerProfileTemplate Update a 'server.ProfileTemplate' resource.
 func (a *ServerApiService) UpdateServerProfileTemplate(ctx _context.Context, moid string) ApiUpdateServerProfileTemplateRequest {
 	return ApiUpdateServerProfileTemplateRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3880,13 +3942,13 @@ func (a *ServerApiService) UpdateServerProfileTemplateExecute(r ApiUpdateServerP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

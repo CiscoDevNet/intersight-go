@@ -25,12 +25,12 @@ type HyperflexExtIscsiStoragePolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Enable or disable external FCoE storage configuration.
-	AdminState *bool `json:"AdminState,omitempty"`
+	AdminState  *bool                      `json:"AdminState,omitempty"`
 	ExtaTraffic NullableHyperflexNamedVlan `json:"ExtaTraffic,omitempty"`
 	ExtbTraffic NullableHyperflexNamedVlan `json:"ExtbTraffic,omitempty"`
 	// An array of relationships to hyperflexClusterProfile resources.
-	ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ClusterProfiles      []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *HyperflexExtIscsiStoragePolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexExtIscsiStoragePolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *HyperflexExtIscsiStoragePolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexExtIscsiStoragePolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -152,7 +152,7 @@ func (o *HyperflexExtIscsiStoragePolicy) GetExtaTraffic() HyperflexNamedVlan {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexExtIscsiStoragePolicy) GetExtaTrafficOk() (*HyperflexNamedVlan, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ExtaTraffic.Get(), o.ExtaTraffic.IsSet()
@@ -171,6 +171,7 @@ func (o *HyperflexExtIscsiStoragePolicy) HasExtaTraffic() bool {
 func (o *HyperflexExtIscsiStoragePolicy) SetExtaTraffic(v HyperflexNamedVlan) {
 	o.ExtaTraffic.Set(&v)
 }
+
 // SetExtaTrafficNil sets the value for ExtaTraffic to be an explicit nil
 func (o *HyperflexExtIscsiStoragePolicy) SetExtaTrafficNil() {
 	o.ExtaTraffic.Set(nil)
@@ -194,7 +195,7 @@ func (o *HyperflexExtIscsiStoragePolicy) GetExtbTraffic() HyperflexNamedVlan {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexExtIscsiStoragePolicy) GetExtbTrafficOk() (*HyperflexNamedVlan, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ExtbTraffic.Get(), o.ExtbTraffic.IsSet()
@@ -213,6 +214,7 @@ func (o *HyperflexExtIscsiStoragePolicy) HasExtbTraffic() bool {
 func (o *HyperflexExtIscsiStoragePolicy) SetExtbTraffic(v HyperflexNamedVlan) {
 	o.ExtbTraffic.Set(&v)
 }
+
 // SetExtbTrafficNil sets the value for ExtbTraffic to be an explicit nil
 func (o *HyperflexExtIscsiStoragePolicy) SetExtbTrafficNil() {
 	o.ExtbTraffic.Set(nil)
@@ -225,7 +227,7 @@ func (o *HyperflexExtIscsiStoragePolicy) UnsetExtbTraffic() {
 
 // GetClusterProfiles returns the ClusterProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexExtIscsiStoragePolicy) GetClusterProfiles() []HyperflexClusterProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexClusterProfileRelationship
 		return ret
 	}
@@ -334,12 +336,12 @@ func (o *HyperflexExtIscsiStoragePolicy) UnmarshalJSON(bytes []byte) (err error)
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Enable or disable external FCoE storage configuration.
-		AdminState *bool `json:"AdminState,omitempty"`
+		AdminState  *bool                      `json:"AdminState,omitempty"`
 		ExtaTraffic NullableHyperflexNamedVlan `json:"ExtaTraffic,omitempty"`
 		ExtbTraffic NullableHyperflexNamedVlan `json:"ExtbTraffic,omitempty"`
 		// An array of relationships to hyperflexClusterProfile resources.
 		ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		Organization    *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
 	varHyperflexExtIscsiStoragePolicyWithoutEmbeddedStruct := HyperflexExtIscsiStoragePolicyWithoutEmbeddedStruct{}
@@ -438,5 +440,3 @@ func (v *NullableHyperflexExtIscsiStoragePolicy) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

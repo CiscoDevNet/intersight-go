@@ -20,7 +20,7 @@ type EquipmentChassisAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType   string                      `json:"ObjectType"`
 	AlarmSummary NullableComputeAlarmSummary `json:"AlarmSummary,omitempty"`
 	// The assigned identifier for a chassis.
 	ChassisId *int64 `json:"ChassisId,omitempty"`
@@ -36,7 +36,7 @@ type EquipmentChassisAllOf struct {
 	// The management mode of the blade server chassis. * `IntersightStandalone` - Intersight Standalone mode of operation. * `UCSM` - Unified Computing System Manager mode of operation. * `Intersight` - Intersight managed mode of operation.
 	ManagementMode *string `json:"ManagementMode,omitempty"`
 	// This field identifies the name for the chassis enclosure.
-	Name *string `json:"Name,omitempty"`
+	Name       *string  `json:"Name,omitempty"`
 	OperReason []string `json:"OperReason,omitempty"`
 	// This field identifies the Chassis Operational State.
 	OperState *string `json:"OperState,omitempty"`
@@ -56,17 +56,17 @@ type EquipmentChassisAllOf struct {
 	Blades []ComputeBladeRelationship `json:"Blades,omitempty"`
 	// An array of relationships to equipmentExpanderModule resources.
 	ExpanderModules []EquipmentExpanderModuleRelationship `json:"ExpanderModules,omitempty"`
-	FanControl *EquipmentFanControlRelationship `json:"FanControl,omitempty"`
+	FanControl      *EquipmentFanControlRelationship      `json:"FanControl,omitempty"`
 	// An array of relationships to equipmentFanModule resources.
-	Fanmodules []EquipmentFanModuleRelationship `json:"Fanmodules,omitempty"`
+	Fanmodules          []EquipmentFanModuleRelationship `json:"Fanmodules,omitempty"`
 	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
 	// An array of relationships to equipmentIoCard resources.
-	Ioms []EquipmentIoCardRelationship `json:"Ioms,omitempty"`
-	LocatorLed *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
-	PowerControlState *PowerControlStateRelationship `json:"PowerControlState,omitempty"`
-	PsuControl *EquipmentPsuControlRelationship `json:"PsuControl,omitempty"`
+	Ioms              []EquipmentIoCardRelationship    `json:"Ioms,omitempty"`
+	LocatorLed        *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
+	PowerControlState *PowerControlStateRelationship   `json:"PowerControlState,omitempty"`
+	PsuControl        *EquipmentPsuControlRelationship `json:"PsuControl,omitempty"`
 	// An array of relationships to equipmentPsu resources.
-	Psus []EquipmentPsuRelationship `json:"Psus,omitempty"`
+	Psus             []EquipmentPsuRelationship           `json:"Psus,omitempty"`
 	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to storageSasExpander resources.
 	Sasexpanders []StorageSasExpanderRelationship `json:"Sasexpanders,omitempty"`
@@ -76,7 +76,7 @@ type EquipmentChassisAllOf struct {
 	StorageEnclosures []StorageEnclosureRelationship `json:"StorageEnclosures,omitempty"`
 	// An array of relationships to storageVirtualDriveContainer resources.
 	VirtualDriveContainer []StorageVirtualDriveContainerRelationship `json:"VirtualDriveContainer,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties  map[string]interface{}
 }
 
 type _EquipmentChassisAllOf EquipmentChassisAllOf
@@ -117,7 +117,7 @@ func (o *EquipmentChassisAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentChassisAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -141,7 +141,7 @@ func (o *EquipmentChassisAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentChassisAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -165,7 +165,7 @@ func (o *EquipmentChassisAllOf) GetAlarmSummary() ComputeAlarmSummary {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EquipmentChassisAllOf) GetAlarmSummaryOk() (*ComputeAlarmSummary, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AlarmSummary.Get(), o.AlarmSummary.IsSet()
@@ -184,6 +184,7 @@ func (o *EquipmentChassisAllOf) HasAlarmSummary() bool {
 func (o *EquipmentChassisAllOf) SetAlarmSummary(v ComputeAlarmSummary) {
 	o.AlarmSummary.Set(&v)
 }
+
 // SetAlarmSummaryNil sets the value for AlarmSummary to be an explicit nil
 func (o *EquipmentChassisAllOf) SetAlarmSummaryNil() {
 	o.AlarmSummary.Set(nil)
@@ -423,7 +424,7 @@ func (o *EquipmentChassisAllOf) SetName(v string) {
 
 // GetOperReason returns the OperReason field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentChassisAllOf) GetOperReason() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -680,7 +681,7 @@ func (o *EquipmentChassisAllOf) SetVid(v string) {
 
 // GetBlades returns the Blades field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentChassisAllOf) GetBlades() []ComputeBladeRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ComputeBladeRelationship
 		return ret
 	}
@@ -713,7 +714,7 @@ func (o *EquipmentChassisAllOf) SetBlades(v []ComputeBladeRelationship) {
 
 // GetExpanderModules returns the ExpanderModules field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentChassisAllOf) GetExpanderModules() []EquipmentExpanderModuleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentExpanderModuleRelationship
 		return ret
 	}
@@ -778,7 +779,7 @@ func (o *EquipmentChassisAllOf) SetFanControl(v EquipmentFanControlRelationship)
 
 // GetFanmodules returns the Fanmodules field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentChassisAllOf) GetFanmodules() []EquipmentFanModuleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentFanModuleRelationship
 		return ret
 	}
@@ -843,7 +844,7 @@ func (o *EquipmentChassisAllOf) SetInventoryDeviceInfo(v InventoryDeviceInfoRela
 
 // GetIoms returns the Ioms field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentChassisAllOf) GetIoms() []EquipmentIoCardRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentIoCardRelationship
 		return ret
 	}
@@ -972,7 +973,7 @@ func (o *EquipmentChassisAllOf) SetPsuControl(v EquipmentPsuControlRelationship)
 
 // GetPsus returns the Psus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentChassisAllOf) GetPsus() []EquipmentPsuRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentPsuRelationship
 		return ret
 	}
@@ -1037,7 +1038,7 @@ func (o *EquipmentChassisAllOf) SetRegisteredDevice(v AssetDeviceRegistrationRel
 
 // GetSasexpanders returns the Sasexpanders field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentChassisAllOf) GetSasexpanders() []StorageSasExpanderRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageSasExpanderRelationship
 		return ret
 	}
@@ -1070,7 +1071,7 @@ func (o *EquipmentChassisAllOf) SetSasexpanders(v []StorageSasExpanderRelationsh
 
 // GetSiocs returns the Siocs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentChassisAllOf) GetSiocs() []EquipmentSystemIoControllerRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentSystemIoControllerRelationship
 		return ret
 	}
@@ -1103,7 +1104,7 @@ func (o *EquipmentChassisAllOf) SetSiocs(v []EquipmentSystemIoControllerRelation
 
 // GetStorageEnclosures returns the StorageEnclosures field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentChassisAllOf) GetStorageEnclosures() []StorageEnclosureRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageEnclosureRelationship
 		return ret
 	}
@@ -1136,7 +1137,7 @@ func (o *EquipmentChassisAllOf) SetStorageEnclosures(v []StorageEnclosureRelatio
 
 // GetVirtualDriveContainer returns the VirtualDriveContainer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentChassisAllOf) GetVirtualDriveContainer() []StorageVirtualDriveContainerRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageVirtualDriveContainerRelationship
 		return ret
 	}
@@ -1360,5 +1361,3 @@ func (v *NullableEquipmentChassisAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

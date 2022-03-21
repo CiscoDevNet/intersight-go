@@ -26,8 +26,8 @@ type FabricFlowControlPolicyAllOf struct {
 	// Link-level Flow Control configured in the receive direction. * `Disabled` - Admin configured Disabled State. * `Enabled` - Admin configured Enabled State.
 	ReceiveDirection *string `json:"ReceiveDirection,omitempty"`
 	// Link-level Flow Control configured in the send direction. * `Disabled` - Admin configured Disabled State. * `Enabled` - Admin configured Enabled State.
-	SendDirection *string `json:"SendDirection,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	SendDirection        *string                               `json:"SendDirection,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *FabricFlowControlPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricFlowControlPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *FabricFlowControlPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricFlowControlPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -329,5 +329,3 @@ func (v *NullableFabricFlowControlPolicyAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

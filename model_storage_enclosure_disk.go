@@ -41,11 +41,11 @@ type StorageEnclosureDisk struct {
 	// This field identifies the SAS address assigned to the disk SAS port-2.
 	SasAddress2 *string `json:"SasAddress2,omitempty"`
 	// The size of the physical disk in MB.
-	Size *string `json:"Size,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	PhysicalDisk *StoragePhysicalDiskRelationship `json:"PhysicalDisk,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	StorageEnclosure *StorageEnclosureRelationship `json:"StorageEnclosure,omitempty"`
+	Size                 *string                              `json:"Size,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	PhysicalDisk         *StoragePhysicalDiskRelationship     `json:"PhysicalDisk,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	StorageEnclosure     *StorageEnclosureRelationship        `json:"StorageEnclosure,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -87,7 +87,7 @@ func (o *StorageEnclosureDisk) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageEnclosureDisk) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -111,7 +111,7 @@ func (o *StorageEnclosureDisk) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageEnclosureDisk) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -624,11 +624,11 @@ func (o *StorageEnclosureDisk) UnmarshalJSON(bytes []byte) (err error) {
 		// This field identifies the SAS address assigned to the disk SAS port-2.
 		SasAddress2 *string `json:"SasAddress2,omitempty"`
 		// The size of the physical disk in MB.
-		Size *string `json:"Size,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		PhysicalDisk *StoragePhysicalDiskRelationship `json:"PhysicalDisk,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-		StorageEnclosure *StorageEnclosureRelationship `json:"StorageEnclosure,omitempty"`
+		Size                *string                              `json:"Size,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		PhysicalDisk        *StoragePhysicalDiskRelationship     `json:"PhysicalDisk,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		StorageEnclosure    *StorageEnclosureRelationship        `json:"StorageEnclosure,omitempty"`
 	}
 
 	varStorageEnclosureDiskWithoutEmbeddedStruct := StorageEnclosureDiskWithoutEmbeddedStruct{}
@@ -743,5 +743,3 @@ func (v *NullableStorageEnclosureDisk) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

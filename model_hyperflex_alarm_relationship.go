@@ -19,19 +19,18 @@ import (
 // HyperflexAlarmRelationship - A relationship to the 'hyperflex.Alarm' resource, or the expanded 'hyperflex.Alarm' resource, or the 'null' value.
 type HyperflexAlarmRelationship struct {
 	HyperflexAlarm *HyperflexAlarm
-	MoMoRef *MoMoRef
+	MoMoRef        *MoMoRef
 }
 
 // HyperflexAlarmAsHyperflexAlarmRelationship is a convenience function that returns HyperflexAlarm wrapped in HyperflexAlarmRelationship
 func HyperflexAlarmAsHyperflexAlarmRelationship(v *HyperflexAlarm) HyperflexAlarmRelationship {
-	return HyperflexAlarmRelationship{ HyperflexAlarm: v}
+	return HyperflexAlarmRelationship{HyperflexAlarm: v}
 }
 
 // MoMoRefAsHyperflexAlarmRelationship is a convenience function that returns MoMoRef wrapped in HyperflexAlarmRelationship
 func MoMoRefAsHyperflexAlarmRelationship(v *MoMoRef) HyperflexAlarmRelationship {
-	return HyperflexAlarmRelationship{ MoMoRef: v}
+	return HyperflexAlarmRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexAlarmRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexAlarmRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexAlarmRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexAlarmRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexAlarm != nil {
 		return obj.HyperflexAlarm
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexAlarmRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

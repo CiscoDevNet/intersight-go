@@ -28,7 +28,7 @@ type NtpAuthNtpServerAllOf struct {
 	// The key ID is a positive integer that identifies a cryptographic key used to authenticate NTP messages.
 	SymKeyId *int64 `json:"SymKeyId,omitempty"`
 	// The value of the symmetric key.
-	SymKeyValue *string `json:"SymKeyValue,omitempty"`
+	SymKeyValue          *string `json:"SymKeyValue,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *NtpAuthNtpServerAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NtpAuthNtpServerAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *NtpAuthNtpServerAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NtpAuthNtpServerAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -322,5 +322,3 @@ func (v *NullableNtpAuthNtpServerAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

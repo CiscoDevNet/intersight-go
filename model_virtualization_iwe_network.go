@@ -29,12 +29,12 @@ type VirtualizationIweNetwork struct {
 	// The MTU size of the network.
 	Mtu *int64 `json:"Mtu,omitempty"`
 	// Network attachment type, only \"L2\" is available now. * `unknown` - This network is of an unknown network type. * `L2` - A Layer 2 switching network type.
-	NetworkType *string `json:"NetworkType,omitempty"`
-	Trunk []string `json:"Trunk,omitempty"`
+	NetworkType *string  `json:"NetworkType,omitempty"`
+	Trunk       []string `json:"Trunk,omitempty"`
 	// A vlan id set on the network attachment point.
-	Vlan *int64 `json:"Vlan,omitempty"`
-	Cluster *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
-	Dvswitch *VirtualizationIweDvswitchRelationship `json:"Dvswitch,omitempty"`
+	Vlan                 *int64                                 `json:"Vlan,omitempty"`
+	Cluster              *VirtualizationIweClusterRelationship  `json:"Cluster,omitempty"`
+	Dvswitch             *VirtualizationIweDvswitchRelationship `json:"Dvswitch,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *VirtualizationIweNetwork) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweNetwork) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *VirtualizationIweNetwork) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweNetwork) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -213,7 +213,7 @@ func (o *VirtualizationIweNetwork) SetNetworkType(v string) {
 
 // GetTrunk returns the Trunk field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationIweNetwork) GetTrunk() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -396,11 +396,11 @@ func (o *VirtualizationIweNetwork) UnmarshalJSON(bytes []byte) (err error) {
 		// The MTU size of the network.
 		Mtu *int64 `json:"Mtu,omitempty"`
 		// Network attachment type, only \"L2\" is available now. * `unknown` - This network is of an unknown network type. * `L2` - A Layer 2 switching network type.
-		NetworkType *string `json:"NetworkType,omitempty"`
-		Trunk []string `json:"Trunk,omitempty"`
+		NetworkType *string  `json:"NetworkType,omitempty"`
+		Trunk       []string `json:"Trunk,omitempty"`
 		// A vlan id set on the network attachment point.
-		Vlan *int64 `json:"Vlan,omitempty"`
-		Cluster *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
+		Vlan     *int64                                 `json:"Vlan,omitempty"`
+		Cluster  *VirtualizationIweClusterRelationship  `json:"Cluster,omitempty"`
 		Dvswitch *VirtualizationIweDvswitchRelationship `json:"Dvswitch,omitempty"`
 	}
 
@@ -504,5 +504,3 @@ func (v *NullableVirtualizationIweNetwork) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

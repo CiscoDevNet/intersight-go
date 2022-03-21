@@ -23,12 +23,12 @@ type FirmwareUpgrade struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	ExcludeComponentList []string `json:"ExcludeComponentList,omitempty"`
+	ObjectType              string                                      `json:"ObjectType"`
+	ExcludeComponentList    []string                                    `json:"ExcludeComponentList,omitempty"`
 	ExcludeComponentPidList NullableFirmwareExcludeComponentPidListType `json:"ExcludeComponentPidList,omitempty"`
-	Device *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
-	Server *ComputePhysicalRelationship `json:"Server,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Device                  *AssetDeviceRegistrationRelationship        `json:"Device,omitempty"`
+	Server                  *ComputePhysicalRelationship                `json:"Server,omitempty"`
+	AdditionalProperties    map[string]interface{}
 }
 
 type _FirmwareUpgrade FirmwareUpgrade
@@ -73,7 +73,7 @@ func (o *FirmwareUpgrade) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareUpgrade) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *FirmwareUpgrade) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareUpgrade) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -110,7 +110,7 @@ func (o *FirmwareUpgrade) SetObjectType(v string) {
 
 // GetExcludeComponentList returns the ExcludeComponentList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareUpgrade) GetExcludeComponentList() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *FirmwareUpgrade) GetExcludeComponentPidList() FirmwareExcludeComponentP
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FirmwareUpgrade) GetExcludeComponentPidListOk() (*FirmwareExcludeComponentPidListType, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ExcludeComponentPidList.Get(), o.ExcludeComponentPidList.IsSet()
@@ -173,6 +173,7 @@ func (o *FirmwareUpgrade) HasExcludeComponentPidList() bool {
 func (o *FirmwareUpgrade) SetExcludeComponentPidList(v FirmwareExcludeComponentPidListType) {
 	o.ExcludeComponentPidList.Set(&v)
 }
+
 // SetExcludeComponentPidListNil sets the value for ExcludeComponentPidList to be an explicit nil
 func (o *FirmwareUpgrade) SetExcludeComponentPidListNil() {
 	o.ExcludeComponentPidList.Set(nil)
@@ -288,11 +289,11 @@ func (o *FirmwareUpgrade) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		ExcludeComponentList []string `json:"ExcludeComponentList,omitempty"`
+		ObjectType              string                                      `json:"ObjectType"`
+		ExcludeComponentList    []string                                    `json:"ExcludeComponentList,omitempty"`
 		ExcludeComponentPidList NullableFirmwareExcludeComponentPidListType `json:"ExcludeComponentPidList,omitempty"`
-		Device *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
-		Server *ComputePhysicalRelationship `json:"Server,omitempty"`
+		Device                  *AssetDeviceRegistrationRelationship        `json:"Device,omitempty"`
+		Server                  *ComputePhysicalRelationship                `json:"Server,omitempty"`
 	}
 
 	varFirmwareUpgradeWithoutEmbeddedStruct := FirmwareUpgradeWithoutEmbeddedStruct{}
@@ -389,5 +390,3 @@ func (v *NullableFirmwareUpgrade) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

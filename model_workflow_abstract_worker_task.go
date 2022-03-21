@@ -35,7 +35,7 @@ type WorkflowAbstractWorkerTask struct {
 	// UseDefault when set to true, means the default version of the task or workflow will be used at the time of execution. When this property is set then version for task or subworkflow cannot be set. When workflow is created or updated the default version of task or subworkflow will be used for validation, but when the workflow is executed the default version that that time will be used for validation and subsequent execution.
 	UseDefault *bool `json:"UseDefault,omitempty"`
 	// JSON formatted key-value pairs that perform variable update at the end of the task execution. Mapping for variables can be provided as either static values, direct mapping or advanced mapping using templates. The direct mapping can be specified as '${Source.< input | output | variable>.<JSONPath>}'. 'Source' can be either workflow or the name of the current or an earlier task within the workflow. You can map the variable to either a workflow input, a task output or another variable. Golang template syntax is supported for advanced mapping. A simple flattened example is \"VariableParameters\":{ \"var1\":\"${task1.output.output1}\", \"var2\":\"{{ Itoa .global.workflow.variable.varInt}}\" } where variable var1 is mapped directly to output1 of task1 and variable var2 is using a template to convert another variable varInt to string and assign that value.
-	VariableParameters interface{} `json:"VariableParameters,omitempty"`
+	VariableParameters   interface{} `json:"VariableParameters,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *WorkflowAbstractWorkerTask) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowAbstractWorkerTask) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *WorkflowAbstractWorkerTask) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowAbstractWorkerTask) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -118,7 +118,7 @@ func (o *WorkflowAbstractWorkerTask) SetObjectType(v string) {
 
 // GetInputParameters returns the InputParameters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowAbstractWorkerTask) GetInputParameters() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -279,7 +279,7 @@ func (o *WorkflowAbstractWorkerTask) SetUseDefault(v bool) {
 
 // GetVariableParameters returns the VariableParameters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowAbstractWorkerTask) GetVariableParameters() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -470,5 +470,3 @@ func (v *NullableWorkflowAbstractWorkerTask) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

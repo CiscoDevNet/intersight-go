@@ -19,19 +19,18 @@ import (
 // EtherPortChannelRelationship - A relationship to the 'ether.PortChannel' resource, or the expanded 'ether.PortChannel' resource, or the 'null' value.
 type EtherPortChannelRelationship struct {
 	EtherPortChannel *EtherPortChannel
-	MoMoRef *MoMoRef
+	MoMoRef          *MoMoRef
 }
 
 // EtherPortChannelAsEtherPortChannelRelationship is a convenience function that returns EtherPortChannel wrapped in EtherPortChannelRelationship
 func EtherPortChannelAsEtherPortChannelRelationship(v *EtherPortChannel) EtherPortChannelRelationship {
-	return EtherPortChannelRelationship{ EtherPortChannel: v}
+	return EtherPortChannelRelationship{EtherPortChannel: v}
 }
 
 // MoMoRefAsEtherPortChannelRelationship is a convenience function that returns MoMoRef wrapped in EtherPortChannelRelationship
 func MoMoRefAsEtherPortChannelRelationship(v *MoMoRef) EtherPortChannelRelationship {
-	return EtherPortChannelRelationship{ MoMoRef: v}
+	return EtherPortChannelRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EtherPortChannelRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src EtherPortChannelRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EtherPortChannelRelationship) GetActualInstance() (interface{}) {
+func (obj *EtherPortChannelRelationship) GetActualInstance() interface{} {
 	if obj.EtherPortChannel != nil {
 		return obj.EtherPortChannel
 	}
@@ -137,5 +136,3 @@ func (v *NullableEtherPortChannelRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

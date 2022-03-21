@@ -35,7 +35,7 @@ type WorkflowTaskInfoAllOf struct {
 	// Denotes whether or not this is an internal task.  Internal tasks will be hidden from the UI within a workflow.
 	Internal *bool `json:"Internal,omitempty"`
 	// User friendly short label to describe this task instance in the workflow.
-	Label *string `json:"Label,omitempty"`
+	Label   *string           `json:"Label,omitempty"`
 	Message []WorkflowMessage `json:"Message,omitempty"`
 	// Task definition name which specifies the task type.
 	Name *string `json:"Name,omitempty"`
@@ -52,12 +52,12 @@ type WorkflowTaskInfoAllOf struct {
 	// The time stamp when the task started execution.
 	StartTime *time.Time `json:"StartTime,omitempty"`
 	// The status of the task and this will specify if the task is running or has reached a final state.
-	Status *string `json:"Status,omitempty"`
-	TaskInstIdList []WorkflowTaskRetryInfo `json:"TaskInstIdList,omitempty"`
-	TaskLoopInfo NullableWorkflowTaskLoopInfo `json:"TaskLoopInfo,omitempty"`
-	SubWorkflowInfo *WorkflowWorkflowInfoRelationship `json:"SubWorkflowInfo,omitempty"`
-	TaskDefinition *WorkflowTaskDefinitionRelationship `json:"TaskDefinition,omitempty"`
-	WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
+	Status               *string                             `json:"Status,omitempty"`
+	TaskInstIdList       []WorkflowTaskRetryInfo             `json:"TaskInstIdList,omitempty"`
+	TaskLoopInfo         NullableWorkflowTaskLoopInfo        `json:"TaskLoopInfo,omitempty"`
+	SubWorkflowInfo      *WorkflowWorkflowInfoRelationship   `json:"SubWorkflowInfo,omitempty"`
+	TaskDefinition       *WorkflowTaskDefinitionRelationship `json:"TaskDefinition,omitempty"`
+	WorkflowInfo         *WorkflowWorkflowInfoRelationship   `json:"WorkflowInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -99,7 +99,7 @@ func (o *WorkflowTaskInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowTaskInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -123,7 +123,7 @@ func (o *WorkflowTaskInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowTaskInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -232,7 +232,7 @@ func (o *WorkflowTaskInfoAllOf) SetFailureReason(v string) {
 
 // GetInput returns the Input field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTaskInfoAllOf) GetInput() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -361,7 +361,7 @@ func (o *WorkflowTaskInfoAllOf) SetLabel(v string) {
 
 // GetMessage returns the Message field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTaskInfoAllOf) GetMessage() []WorkflowMessage {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowMessage
 		return ret
 	}
@@ -426,7 +426,7 @@ func (o *WorkflowTaskInfoAllOf) SetName(v string) {
 
 // GetOutput returns the Output field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTaskInfoAllOf) GetOutput() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -651,7 +651,7 @@ func (o *WorkflowTaskInfoAllOf) SetStatus(v string) {
 
 // GetTaskInstIdList returns the TaskInstIdList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTaskInfoAllOf) GetTaskInstIdList() []WorkflowTaskRetryInfo {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowTaskRetryInfo
 		return ret
 	}
@@ -695,7 +695,7 @@ func (o *WorkflowTaskInfoAllOf) GetTaskLoopInfo() WorkflowTaskLoopInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowTaskInfoAllOf) GetTaskLoopInfoOk() (*WorkflowTaskLoopInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TaskLoopInfo.Get(), o.TaskLoopInfo.IsSet()
@@ -714,6 +714,7 @@ func (o *WorkflowTaskInfoAllOf) HasTaskLoopInfo() bool {
 func (o *WorkflowTaskInfoAllOf) SetTaskLoopInfo(v WorkflowTaskLoopInfo) {
 	o.TaskLoopInfo.Set(&v)
 }
+
 // SetTaskLoopInfoNil sets the value for TaskLoopInfo to be an explicit nil
 func (o *WorkflowTaskInfoAllOf) SetTaskLoopInfoNil() {
 	o.TaskLoopInfo.Set(nil)
@@ -973,5 +974,3 @@ func (v *NullableWorkflowTaskInfoAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

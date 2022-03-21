@@ -23,7 +23,7 @@ type FaultInstanceList struct {
 	// The total number of 'fault.Instance' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'fault.Instance' resources matching the request.
-	Results []FaultInstance `json:"Results,omitempty"`
+	Results              []FaultInstance `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *FaultInstanceList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FaultInstanceList) GetResults() []FaultInstance {
-	if o == nil  {
+	if o == nil {
 		var ret []FaultInstance
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableFaultInstanceList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

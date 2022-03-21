@@ -38,12 +38,12 @@ type VirtualizationVmwareDatastoreAllOf struct {
 	// The URL to access this datastore (example - 'ds:///vmfs/volumes/562a4e8a-0eeb5372-dd61-78baf9cb9afa/').
 	Url *string `json:"Url,omitempty"`
 	// Number of virtual machine templates relying on (using) this datastore.
-	VmTemplateCount *int64 `json:"VmTemplateCount,omitempty"`
-	Cluster *VirtualizationVmwareClusterRelationship `json:"Cluster,omitempty"`
-	Datacenter *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
+	VmTemplateCount  *int64                                            `json:"VmTemplateCount,omitempty"`
+	Cluster          *VirtualizationVmwareClusterRelationship          `json:"Cluster,omitempty"`
+	Datacenter       *VirtualizationVmwareDatacenterRelationship       `json:"Datacenter,omitempty"`
 	DatastoreCluster *VirtualizationVmwareDatastoreClusterRelationship `json:"DatastoreCluster,omitempty"`
 	// An array of relationships to virtualizationVmwareHost resources.
-	Hosts []VirtualizationVmwareHostRelationship `json:"Hosts,omitempty"`
+	Hosts                []VirtualizationVmwareHostRelationship `json:"Hosts,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -89,7 +89,7 @@ func (o *VirtualizationVmwareDatastoreAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareDatastoreAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -113,7 +113,7 @@ func (o *VirtualizationVmwareDatastoreAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareDatastoreAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -510,7 +510,7 @@ func (o *VirtualizationVmwareDatastoreAllOf) SetDatastoreCluster(v Virtualizatio
 
 // GetHosts returns the Hosts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareDatastoreAllOf) GetHosts() []VirtualizationVmwareHostRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationVmwareHostRelationship
 		return ret
 	}
@@ -662,5 +662,3 @@ func (v *NullableVirtualizationVmwareDatastoreAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

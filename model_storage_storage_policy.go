@@ -25,18 +25,18 @@ type StorageStoragePolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// A collection of disks that is to be used as hot spares, globally, for all the RAID groups. Allowed value is a number range separated by a comma or a hyphen.
-	GlobalHotSpares *string `json:"GlobalHotSpares,omitempty"`
-	M2VirtualDrive NullableStorageM2VirtualDriveConfig `json:"M2VirtualDrive,omitempty"`
-	Raid0Drive NullableStorageR0Drive `json:"Raid0Drive,omitempty"`
+	GlobalHotSpares *string                             `json:"GlobalHotSpares,omitempty"`
+	M2VirtualDrive  NullableStorageM2VirtualDriveConfig `json:"M2VirtualDrive,omitempty"`
+	Raid0Drive      NullableStorageR0Drive              `json:"Raid0Drive,omitempty"`
 	// State to which disks, not used in this policy, are to be moved. NoChange will not change the drive state. * `NoChange` - Drive state will not be modified by Storage Policy. * `UnconfiguredGood` - Unconfigured good state -ready to be added in a RAID group. * `Jbod` - JBOD state where the disks start showing up to Host OS.
 	UnusedDisksState *string `json:"UnusedDisksState,omitempty"`
 	// Disks in JBOD State are used to create virtual drives.
 	UseJbodForVdCreation *bool `json:"UseJbodForVdCreation,omitempty"`
 	// An array of relationships to storageDriveGroup resources.
-	DriveGroup []StorageDriveGroupRelationship `json:"DriveGroup,omitempty"`
+	DriveGroup   []StorageDriveGroupRelationship       `json:"DriveGroup,omitempty"`
 	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
-	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *StorageStoragePolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageStoragePolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *StorageStoragePolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageStoragePolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -162,7 +162,7 @@ func (o *StorageStoragePolicy) GetM2VirtualDrive() StorageM2VirtualDriveConfig {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageStoragePolicy) GetM2VirtualDriveOk() (*StorageM2VirtualDriveConfig, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.M2VirtualDrive.Get(), o.M2VirtualDrive.IsSet()
@@ -181,6 +181,7 @@ func (o *StorageStoragePolicy) HasM2VirtualDrive() bool {
 func (o *StorageStoragePolicy) SetM2VirtualDrive(v StorageM2VirtualDriveConfig) {
 	o.M2VirtualDrive.Set(&v)
 }
+
 // SetM2VirtualDriveNil sets the value for M2VirtualDrive to be an explicit nil
 func (o *StorageStoragePolicy) SetM2VirtualDriveNil() {
 	o.M2VirtualDrive.Set(nil)
@@ -204,7 +205,7 @@ func (o *StorageStoragePolicy) GetRaid0Drive() StorageR0Drive {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageStoragePolicy) GetRaid0DriveOk() (*StorageR0Drive, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Raid0Drive.Get(), o.Raid0Drive.IsSet()
@@ -223,6 +224,7 @@ func (o *StorageStoragePolicy) HasRaid0Drive() bool {
 func (o *StorageStoragePolicy) SetRaid0Drive(v StorageR0Drive) {
 	o.Raid0Drive.Set(&v)
 }
+
 // SetRaid0DriveNil sets the value for Raid0Drive to be an explicit nil
 func (o *StorageStoragePolicy) SetRaid0DriveNil() {
 	o.Raid0Drive.Set(nil)
@@ -299,7 +301,7 @@ func (o *StorageStoragePolicy) SetUseJbodForVdCreation(v bool) {
 
 // GetDriveGroup returns the DriveGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageStoragePolicy) GetDriveGroup() []StorageDriveGroupRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageDriveGroupRelationship
 		return ret
 	}
@@ -364,7 +366,7 @@ func (o *StorageStoragePolicy) SetOrganization(v OrganizationOrganizationRelatio
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageStoragePolicy) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -450,15 +452,15 @@ func (o *StorageStoragePolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// A collection of disks that is to be used as hot spares, globally, for all the RAID groups. Allowed value is a number range separated by a comma or a hyphen.
-		GlobalHotSpares *string `json:"GlobalHotSpares,omitempty"`
-		M2VirtualDrive NullableStorageM2VirtualDriveConfig `json:"M2VirtualDrive,omitempty"`
-		Raid0Drive NullableStorageR0Drive `json:"Raid0Drive,omitempty"`
+		GlobalHotSpares *string                             `json:"GlobalHotSpares,omitempty"`
+		M2VirtualDrive  NullableStorageM2VirtualDriveConfig `json:"M2VirtualDrive,omitempty"`
+		Raid0Drive      NullableStorageR0Drive              `json:"Raid0Drive,omitempty"`
 		// State to which disks, not used in this policy, are to be moved. NoChange will not change the drive state. * `NoChange` - Drive state will not be modified by Storage Policy. * `UnconfiguredGood` - Unconfigured good state -ready to be added in a RAID group. * `Jbod` - JBOD state where the disks start showing up to Host OS.
 		UnusedDisksState *string `json:"UnusedDisksState,omitempty"`
 		// Disks in JBOD State are used to create virtual drives.
 		UseJbodForVdCreation *bool `json:"UseJbodForVdCreation,omitempty"`
 		// An array of relationships to storageDriveGroup resources.
-		DriveGroup []StorageDriveGroupRelationship `json:"DriveGroup,omitempty"`
+		DriveGroup   []StorageDriveGroupRelationship       `json:"DriveGroup,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 		// An array of relationships to policyAbstractConfigProfile resources.
 		Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
@@ -566,5 +568,3 @@ func (v *NullableStorageStoragePolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,9 +29,9 @@ type ApplianceBackupPolicyAllOf struct {
 	// Backup mode of the appliance. Automatic backups of the appliance are not initiated if this property is set to 'true' and the backup schedule field is ignored.
 	ManualBackup *bool `json:"ManualBackup,omitempty"`
 	// Password to authenticate the file server.
-	Password *string `json:"Password,omitempty"`
-	Schedule NullableOnpremSchedule `json:"Schedule,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	Password             *string                 `json:"Password,omitempty"`
+	Schedule             NullableOnpremSchedule  `json:"Schedule,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *ApplianceBackupPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceBackupPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *ApplianceBackupPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceBackupPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -249,7 +249,7 @@ func (o *ApplianceBackupPolicyAllOf) GetSchedule() OnpremSchedule {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplianceBackupPolicyAllOf) GetScheduleOk() (*OnpremSchedule, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Schedule.Get(), o.Schedule.IsSet()
@@ -268,6 +268,7 @@ func (o *ApplianceBackupPolicyAllOf) HasSchedule() bool {
 func (o *ApplianceBackupPolicyAllOf) SetSchedule(v OnpremSchedule) {
 	o.Schedule.Set(&v)
 }
+
 // SetScheduleNil sets the value for Schedule to be an explicit nil
 func (o *ApplianceBackupPolicyAllOf) SetScheduleNil() {
 	o.Schedule.Set(nil)
@@ -403,5 +404,3 @@ func (v *NullableApplianceBackupPolicyAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

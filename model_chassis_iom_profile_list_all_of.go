@@ -20,7 +20,7 @@ type ChassisIomProfileListAllOf struct {
 	// The total number of 'chassis.IomProfile' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'chassis.IomProfile' resources matching the request.
-	Results []ChassisIomProfile `json:"Results,omitempty"`
+	Results              []ChassisIomProfile `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *ChassisIomProfileListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ChassisIomProfileListAllOf) GetResults() []ChassisIomProfile {
-	if o == nil  {
+	if o == nil {
 		var ret []ChassisIomProfile
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableChassisIomProfileListAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

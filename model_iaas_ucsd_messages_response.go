@@ -20,30 +20,29 @@ import (
 type IaasUcsdMessagesResponse struct {
 	IaasUcsdMessagesList *IaasUcsdMessagesList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IaasUcsdMessagesListAsIaasUcsdMessagesResponse is a convenience function that returns IaasUcsdMessagesList wrapped in IaasUcsdMessagesResponse
 func IaasUcsdMessagesListAsIaasUcsdMessagesResponse(v *IaasUcsdMessagesList) IaasUcsdMessagesResponse {
-	return IaasUcsdMessagesResponse{ IaasUcsdMessagesList: v}
+	return IaasUcsdMessagesResponse{IaasUcsdMessagesList: v}
 }
 
 // MoAggregateTransformAsIaasUcsdMessagesResponse is a convenience function that returns MoAggregateTransform wrapped in IaasUcsdMessagesResponse
 func MoAggregateTransformAsIaasUcsdMessagesResponse(v *MoAggregateTransform) IaasUcsdMessagesResponse {
-	return IaasUcsdMessagesResponse{ MoAggregateTransform: v}
+	return IaasUcsdMessagesResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIaasUcsdMessagesResponse is a convenience function that returns MoDocumentCount wrapped in IaasUcsdMessagesResponse
 func MoDocumentCountAsIaasUcsdMessagesResponse(v *MoDocumentCount) IaasUcsdMessagesResponse {
-	return IaasUcsdMessagesResponse{ MoDocumentCount: v}
+	return IaasUcsdMessagesResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIaasUcsdMessagesResponse is a convenience function that returns MoTagSummary wrapped in IaasUcsdMessagesResponse
 func MoTagSummaryAsIaasUcsdMessagesResponse(v *MoTagSummary) IaasUcsdMessagesResponse {
-	return IaasUcsdMessagesResponse{ MoTagSummary: v}
+	return IaasUcsdMessagesResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IaasUcsdMessagesResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IaasUcsdMessagesResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IaasUcsdMessagesResponse) GetActualInstance() (interface{}) {
+func (obj *IaasUcsdMessagesResponse) GetActualInstance() interface{} {
 	if obj.IaasUcsdMessagesList != nil {
 		return obj.IaasUcsdMessagesList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIaasUcsdMessagesResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

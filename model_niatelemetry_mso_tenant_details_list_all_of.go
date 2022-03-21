@@ -20,7 +20,7 @@ type NiatelemetryMsoTenantDetailsListAllOf struct {
 	// The total number of 'niatelemetry.MsoTenantDetails' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'niatelemetry.MsoTenantDetails' resources matching the request.
-	Results []NiatelemetryMsoTenantDetails `json:"Results,omitempty"`
+	Results              []NiatelemetryMsoTenantDetails `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *NiatelemetryMsoTenantDetailsListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetryMsoTenantDetailsListAllOf) GetResults() []NiatelemetryMsoTenantDetails {
-	if o == nil  {
+	if o == nil {
 		var ret []NiatelemetryMsoTenantDetails
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableNiatelemetryMsoTenantDetailsListAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

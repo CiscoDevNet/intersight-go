@@ -19,19 +19,18 @@ import (
 // AdapterHostEthInterfaceRelationship - A relationship to the 'adapter.HostEthInterface' resource, or the expanded 'adapter.HostEthInterface' resource, or the 'null' value.
 type AdapterHostEthInterfaceRelationship struct {
 	AdapterHostEthInterface *AdapterHostEthInterface
-	MoMoRef *MoMoRef
+	MoMoRef                 *MoMoRef
 }
 
 // AdapterHostEthInterfaceAsAdapterHostEthInterfaceRelationship is a convenience function that returns AdapterHostEthInterface wrapped in AdapterHostEthInterfaceRelationship
 func AdapterHostEthInterfaceAsAdapterHostEthInterfaceRelationship(v *AdapterHostEthInterface) AdapterHostEthInterfaceRelationship {
-	return AdapterHostEthInterfaceRelationship{ AdapterHostEthInterface: v}
+	return AdapterHostEthInterfaceRelationship{AdapterHostEthInterface: v}
 }
 
 // MoMoRefAsAdapterHostEthInterfaceRelationship is a convenience function that returns MoMoRef wrapped in AdapterHostEthInterfaceRelationship
 func MoMoRefAsAdapterHostEthInterfaceRelationship(v *MoMoRef) AdapterHostEthInterfaceRelationship {
-	return AdapterHostEthInterfaceRelationship{ MoMoRef: v}
+	return AdapterHostEthInterfaceRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AdapterHostEthInterfaceRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src AdapterHostEthInterfaceRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AdapterHostEthInterfaceRelationship) GetActualInstance() (interface{}) {
+func (obj *AdapterHostEthInterfaceRelationship) GetActualInstance() interface{} {
 	if obj.AdapterHostEthInterface != nil {
 		return obj.AdapterHostEthInterface
 	}
@@ -137,5 +136,3 @@ func (v *NullableAdapterHostEthInterfaceRelationship) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

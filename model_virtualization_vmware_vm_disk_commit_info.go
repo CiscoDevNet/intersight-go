@@ -29,7 +29,7 @@ type VirtualizationVmwareVmDiskCommitInfo struct {
 	// Total uncommitted disk space that is available for use (in bytes).
 	UnCommittedDisk *int64 `json:"UnCommittedDisk,omitempty"`
 	// Total unshared disk space (in bytes).
-	UnsharedDisk *int64 `json:"UnsharedDisk,omitempty"`
+	UnsharedDisk         *int64 `json:"UnsharedDisk,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *VirtualizationVmwareVmDiskCommitInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVmDiskCommitInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *VirtualizationVmwareVmDiskCommitInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVmDiskCommitInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -341,5 +341,3 @@ func (v *NullableVirtualizationVmwareVmDiskCommitInfo) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

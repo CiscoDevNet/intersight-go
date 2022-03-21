@@ -19,31 +19,30 @@ import (
 // ApplianceSystemStatusResponse - The response body of a HTTP GET request for the 'appliance.SystemStatus' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'appliance.SystemStatus' resources.
 type ApplianceSystemStatusResponse struct {
 	ApplianceSystemStatusList *ApplianceSystemStatusList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform      *MoAggregateTransform
+	MoDocumentCount           *MoDocumentCount
+	MoTagSummary              *MoTagSummary
 }
 
 // ApplianceSystemStatusListAsApplianceSystemStatusResponse is a convenience function that returns ApplianceSystemStatusList wrapped in ApplianceSystemStatusResponse
 func ApplianceSystemStatusListAsApplianceSystemStatusResponse(v *ApplianceSystemStatusList) ApplianceSystemStatusResponse {
-	return ApplianceSystemStatusResponse{ ApplianceSystemStatusList: v}
+	return ApplianceSystemStatusResponse{ApplianceSystemStatusList: v}
 }
 
 // MoAggregateTransformAsApplianceSystemStatusResponse is a convenience function that returns MoAggregateTransform wrapped in ApplianceSystemStatusResponse
 func MoAggregateTransformAsApplianceSystemStatusResponse(v *MoAggregateTransform) ApplianceSystemStatusResponse {
-	return ApplianceSystemStatusResponse{ MoAggregateTransform: v}
+	return ApplianceSystemStatusResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsApplianceSystemStatusResponse is a convenience function that returns MoDocumentCount wrapped in ApplianceSystemStatusResponse
 func MoDocumentCountAsApplianceSystemStatusResponse(v *MoDocumentCount) ApplianceSystemStatusResponse {
-	return ApplianceSystemStatusResponse{ MoDocumentCount: v}
+	return ApplianceSystemStatusResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsApplianceSystemStatusResponse is a convenience function that returns MoTagSummary wrapped in ApplianceSystemStatusResponse
 func MoTagSummaryAsApplianceSystemStatusResponse(v *MoTagSummary) ApplianceSystemStatusResponse {
-	return ApplianceSystemStatusResponse{ MoTagSummary: v}
+	return ApplianceSystemStatusResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ApplianceSystemStatusResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ApplianceSystemStatusResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ApplianceSystemStatusResponse) GetActualInstance() (interface{}) {
+func (obj *ApplianceSystemStatusResponse) GetActualInstance() interface{} {
 	if obj.ApplianceSystemStatusList != nil {
 		return obj.ApplianceSystemStatusList
 	}
@@ -184,5 +183,3 @@ func (v *NullableApplianceSystemStatusResponse) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

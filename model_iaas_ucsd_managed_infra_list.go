@@ -23,7 +23,7 @@ type IaasUcsdManagedInfraList struct {
 	// The total number of 'iaas.UcsdManagedInfra' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'iaas.UcsdManagedInfra' resources matching the request.
-	Results []IaasUcsdManagedInfra `json:"Results,omitempty"`
+	Results              []IaasUcsdManagedInfra `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *IaasUcsdManagedInfraList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IaasUcsdManagedInfraList) GetResults() []IaasUcsdManagedInfra {
-	if o == nil  {
+	if o == nil {
 		var ret []IaasUcsdManagedInfra
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableIaasUcsdManagedInfraList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

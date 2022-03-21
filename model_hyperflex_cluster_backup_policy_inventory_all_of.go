@@ -38,16 +38,16 @@ type HyperflexClusterBackupPolicyInventoryAllOf struct {
 	// Intersight HyperFlex Cluster Backup Policy MOID.
 	PolicyMoid *string `json:"PolicyMoid,omitempty"`
 	// Unique request ID allowing retry of the same logical request following a transient communication failure.
-	RequestId *string `json:"RequestId,omitempty"`
-	Settings NullableHyperflexBackupPolicySettings `json:"Settings,omitempty"`
+	RequestId *string                               `json:"RequestId,omitempty"`
+	Settings  NullableHyperflexBackupPolicySettings `json:"Settings,omitempty"`
 	// UUID of the source HyperFlex Cluster.
 	SourceUuid *string `json:"SourceUuid,omitempty"`
 	// UUID of the target HyperFlex Cluster.
 	TargetUuid *string `json:"TargetUuid,omitempty"`
 	// Version of the Backup Policy.
-	Version *int64 `json:"Version,omitempty"`
-	SrcCluster *HyperflexClusterRelationship `json:"SrcCluster,omitempty"`
-	TgtCluster *HyperflexClusterRelationship `json:"TgtCluster,omitempty"`
+	Version              *int64                        `json:"Version,omitempty"`
+	SrcCluster           *HyperflexClusterRelationship `json:"SrcCluster,omitempty"`
+	TgtCluster           *HyperflexClusterRelationship `json:"TgtCluster,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -89,7 +89,7 @@ func (o *HyperflexClusterBackupPolicyInventoryAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexClusterBackupPolicyInventoryAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -113,7 +113,7 @@ func (o *HyperflexClusterBackupPolicyInventoryAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexClusterBackupPolicyInventoryAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -425,7 +425,7 @@ func (o *HyperflexClusterBackupPolicyInventoryAllOf) GetSettings() HyperflexBack
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexClusterBackupPolicyInventoryAllOf) GetSettingsOk() (*HyperflexBackupPolicySettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Settings.Get(), o.Settings.IsSet()
@@ -444,6 +444,7 @@ func (o *HyperflexClusterBackupPolicyInventoryAllOf) HasSettings() bool {
 func (o *HyperflexClusterBackupPolicyInventoryAllOf) SetSettings(v HyperflexBackupPolicySettings) {
 	o.Settings.Set(&v)
 }
+
 // SetSettingsNil sets the value for Settings to be an explicit nil
 func (o *HyperflexClusterBackupPolicyInventoryAllOf) SetSettingsNil() {
 	o.Settings.Set(nil)
@@ -743,5 +744,3 @@ func (v *NullableHyperflexClusterBackupPolicyInventoryAllOf) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,8 +23,8 @@ type OsIpv4Configuration struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	IpV4Config NullableCommIpV4Interface `json:"IpV4Config,omitempty"`
+	ObjectType           string                    `json:"ObjectType"`
+	IpV4Config           NullableCommIpV4Interface `json:"IpV4Config,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *OsIpv4Configuration) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OsIpv4Configuration) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *OsIpv4Configuration) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OsIpv4Configuration) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -114,7 +114,7 @@ func (o *OsIpv4Configuration) GetIpV4Config() CommIpV4Interface {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsIpv4Configuration) GetIpV4ConfigOk() (*CommIpV4Interface, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IpV4Config.Get(), o.IpV4Config.IsSet()
@@ -133,6 +133,7 @@ func (o *OsIpv4Configuration) HasIpV4Config() bool {
 func (o *OsIpv4Configuration) SetIpV4Config(v CommIpV4Interface) {
 	o.IpV4Config.Set(&v)
 }
+
 // SetIpV4ConfigNil sets the value for IpV4Config to be an explicit nil
 func (o *OsIpv4Configuration) SetIpV4ConfigNil() {
 	o.IpV4Config.Set(nil)
@@ -175,7 +176,7 @@ func (o *OsIpv4Configuration) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType string                    `json:"ObjectType"`
 		IpV4Config NullableCommIpV4Interface `json:"IpV4Config,omitempty"`
 	}
 
@@ -267,5 +268,3 @@ func (v *NullableOsIpv4Configuration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

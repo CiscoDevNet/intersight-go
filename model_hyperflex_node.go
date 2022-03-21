@@ -27,17 +27,17 @@ type HyperflexNode struct {
 	// The build number of the hypervisor running on the host.
 	BuildNumber *string `json:"BuildNumber,omitempty"`
 	// The user-friendly string representation of the hypervisor version of the host.
-	DisplayVersion *string `json:"DisplayVersion,omitempty"`
+	DisplayVersion *string  `json:"DisplayVersion,omitempty"`
 	EmptySlotsList []string `json:"EmptySlotsList,omitempty"`
 	// The hostname configured for the hypervisor running on the host.
-	HostName *string `json:"HostName,omitempty"`
+	HostName   *string                             `json:"HostName,omitempty"`
 	HxdpDataIp NullableHyperflexHxNetworkAddressDt `json:"HxdpDataIp,omitempty"`
 	HxdpMmgtIp NullableHyperflexHxNetworkAddressDt `json:"HxdpMmgtIp,omitempty"`
 	// The type of hypervisor running on the host.
-	Hypervisor *string `json:"Hypervisor,omitempty"`
+	Hypervisor       *string                             `json:"Hypervisor,omitempty"`
 	HypervisorDataIp NullableHyperflexHxNetworkAddressDt `json:"HypervisorDataIp,omitempty"`
-	Identity NullableHyperflexHxUuIdDt `json:"Identity,omitempty"`
-	Ip NullableHyperflexHxNetworkAddressDt `json:"Ip,omitempty"`
+	Identity         NullableHyperflexHxUuIdDt           `json:"Identity,omitempty"`
+	Ip               NullableHyperflexHxNetworkAddressDt `json:"Ip,omitempty"`
 	// The admin state of lockdown mode on the host. If 'true', lockdown mode is enabled.
 	Lockdown *bool `json:"Lockdown,omitempty"`
 	// The model of the host server.
@@ -55,12 +55,12 @@ type HyperflexNode struct {
 	// The status of the host. Indicates whether the hypervisor is online. * `UNKNOWN` - The host status cannot be determined. * `ONLINE` - The host is online and operational. * `OFFLINE` - The host is offline and is currently not participating in the HyperFlex cluster. * `INMAINTENANCE` - The host is not participating in the HyperFlex cluster because of a maintenance operation, such as firmware or data platform upgrade. * `DEGRADED` - The host is degraded and may not be performing in its full operational capacity.
 	Status *string `json:"Status,omitempty"`
 	// The version of the hypervisor running on the host.
-	Version *string `json:"Version,omitempty"`
-	Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
+	Version       *string                         `json:"Version,omitempty"`
+	Cluster       *HyperflexClusterRelationship   `json:"Cluster,omitempty"`
 	ClusterMember *AssetClusterMemberRelationship `json:"ClusterMember,omitempty"`
 	// An array of relationships to hyperflexDrive resources.
-	Drives []HyperflexDriveRelationship `json:"Drives,omitempty"`
-	PhysicalServer *ComputePhysicalRelationship `json:"PhysicalServer,omitempty"`
+	Drives               []HyperflexDriveRelationship `json:"Drives,omitempty"`
+	PhysicalServer       *ComputePhysicalRelationship `json:"PhysicalServer,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -102,7 +102,7 @@ func (o *HyperflexNode) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexNode) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -126,7 +126,7 @@ func (o *HyperflexNode) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexNode) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -203,7 +203,7 @@ func (o *HyperflexNode) SetDisplayVersion(v string) {
 
 // GetEmptySlotsList returns the EmptySlotsList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexNode) GetEmptySlotsList() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -279,7 +279,7 @@ func (o *HyperflexNode) GetHxdpDataIp() HyperflexHxNetworkAddressDt {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexNode) GetHxdpDataIpOk() (*HyperflexHxNetworkAddressDt, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HxdpDataIp.Get(), o.HxdpDataIp.IsSet()
@@ -298,6 +298,7 @@ func (o *HyperflexNode) HasHxdpDataIp() bool {
 func (o *HyperflexNode) SetHxdpDataIp(v HyperflexHxNetworkAddressDt) {
 	o.HxdpDataIp.Set(&v)
 }
+
 // SetHxdpDataIpNil sets the value for HxdpDataIp to be an explicit nil
 func (o *HyperflexNode) SetHxdpDataIpNil() {
 	o.HxdpDataIp.Set(nil)
@@ -321,7 +322,7 @@ func (o *HyperflexNode) GetHxdpMmgtIp() HyperflexHxNetworkAddressDt {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexNode) GetHxdpMmgtIpOk() (*HyperflexHxNetworkAddressDt, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HxdpMmgtIp.Get(), o.HxdpMmgtIp.IsSet()
@@ -340,6 +341,7 @@ func (o *HyperflexNode) HasHxdpMmgtIp() bool {
 func (o *HyperflexNode) SetHxdpMmgtIp(v HyperflexHxNetworkAddressDt) {
 	o.HxdpMmgtIp.Set(&v)
 }
+
 // SetHxdpMmgtIpNil sets the value for HxdpMmgtIp to be an explicit nil
 func (o *HyperflexNode) SetHxdpMmgtIpNil() {
 	o.HxdpMmgtIp.Set(nil)
@@ -395,7 +397,7 @@ func (o *HyperflexNode) GetHypervisorDataIp() HyperflexHxNetworkAddressDt {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexNode) GetHypervisorDataIpOk() (*HyperflexHxNetworkAddressDt, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HypervisorDataIp.Get(), o.HypervisorDataIp.IsSet()
@@ -414,6 +416,7 @@ func (o *HyperflexNode) HasHypervisorDataIp() bool {
 func (o *HyperflexNode) SetHypervisorDataIp(v HyperflexHxNetworkAddressDt) {
 	o.HypervisorDataIp.Set(&v)
 }
+
 // SetHypervisorDataIpNil sets the value for HypervisorDataIp to be an explicit nil
 func (o *HyperflexNode) SetHypervisorDataIpNil() {
 	o.HypervisorDataIp.Set(nil)
@@ -437,7 +440,7 @@ func (o *HyperflexNode) GetIdentity() HyperflexHxUuIdDt {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexNode) GetIdentityOk() (*HyperflexHxUuIdDt, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Identity.Get(), o.Identity.IsSet()
@@ -456,6 +459,7 @@ func (o *HyperflexNode) HasIdentity() bool {
 func (o *HyperflexNode) SetIdentity(v HyperflexHxUuIdDt) {
 	o.Identity.Set(&v)
 }
+
 // SetIdentityNil sets the value for Identity to be an explicit nil
 func (o *HyperflexNode) SetIdentityNil() {
 	o.Identity.Set(nil)
@@ -479,7 +483,7 @@ func (o *HyperflexNode) GetIp() HyperflexHxNetworkAddressDt {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexNode) GetIpOk() (*HyperflexHxNetworkAddressDt, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Ip.Get(), o.Ip.IsSet()
@@ -498,6 +502,7 @@ func (o *HyperflexNode) HasIp() bool {
 func (o *HyperflexNode) SetIp(v HyperflexHxNetworkAddressDt) {
 	o.Ip.Set(&v)
 }
+
 // SetIpNil sets the value for Ip to be an explicit nil
 func (o *HyperflexNode) SetIpNil() {
 	o.Ip.Set(nil)
@@ -862,7 +867,7 @@ func (o *HyperflexNode) SetClusterMember(v AssetClusterMemberRelationship) {
 
 // GetDrives returns the Drives field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexNode) GetDrives() []HyperflexDriveRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexDriveRelationship
 		return ret
 	}
@@ -1027,17 +1032,17 @@ func (o *HyperflexNode) UnmarshalJSON(bytes []byte) (err error) {
 		// The build number of the hypervisor running on the host.
 		BuildNumber *string `json:"BuildNumber,omitempty"`
 		// The user-friendly string representation of the hypervisor version of the host.
-		DisplayVersion *string `json:"DisplayVersion,omitempty"`
+		DisplayVersion *string  `json:"DisplayVersion,omitempty"`
 		EmptySlotsList []string `json:"EmptySlotsList,omitempty"`
 		// The hostname configured for the hypervisor running on the host.
-		HostName *string `json:"HostName,omitempty"`
+		HostName   *string                             `json:"HostName,omitempty"`
 		HxdpDataIp NullableHyperflexHxNetworkAddressDt `json:"HxdpDataIp,omitempty"`
 		HxdpMmgtIp NullableHyperflexHxNetworkAddressDt `json:"HxdpMmgtIp,omitempty"`
 		// The type of hypervisor running on the host.
-		Hypervisor *string `json:"Hypervisor,omitempty"`
+		Hypervisor       *string                             `json:"Hypervisor,omitempty"`
 		HypervisorDataIp NullableHyperflexHxNetworkAddressDt `json:"HypervisorDataIp,omitempty"`
-		Identity NullableHyperflexHxUuIdDt `json:"Identity,omitempty"`
-		Ip NullableHyperflexHxNetworkAddressDt `json:"Ip,omitempty"`
+		Identity         NullableHyperflexHxUuIdDt           `json:"Identity,omitempty"`
+		Ip               NullableHyperflexHxNetworkAddressDt `json:"Ip,omitempty"`
 		// The admin state of lockdown mode on the host. If 'true', lockdown mode is enabled.
 		Lockdown *bool `json:"Lockdown,omitempty"`
 		// The model of the host server.
@@ -1055,11 +1060,11 @@ func (o *HyperflexNode) UnmarshalJSON(bytes []byte) (err error) {
 		// The status of the host. Indicates whether the hypervisor is online. * `UNKNOWN` - The host status cannot be determined. * `ONLINE` - The host is online and operational. * `OFFLINE` - The host is offline and is currently not participating in the HyperFlex cluster. * `INMAINTENANCE` - The host is not participating in the HyperFlex cluster because of a maintenance operation, such as firmware or data platform upgrade. * `DEGRADED` - The host is degraded and may not be performing in its full operational capacity.
 		Status *string `json:"Status,omitempty"`
 		// The version of the hypervisor running on the host.
-		Version *string `json:"Version,omitempty"`
-		Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
+		Version       *string                         `json:"Version,omitempty"`
+		Cluster       *HyperflexClusterRelationship   `json:"Cluster,omitempty"`
 		ClusterMember *AssetClusterMemberRelationship `json:"ClusterMember,omitempty"`
 		// An array of relationships to hyperflexDrive resources.
-		Drives []HyperflexDriveRelationship `json:"Drives,omitempty"`
+		Drives         []HyperflexDriveRelationship `json:"Drives,omitempty"`
 		PhysicalServer *ComputePhysicalRelationship `json:"PhysicalServer,omitempty"`
 	}
 
@@ -1195,5 +1200,3 @@ func (v *NullableHyperflexNode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

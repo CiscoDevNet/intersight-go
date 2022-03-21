@@ -32,7 +32,7 @@ type AaaAbstractAuditRecordAllOf struct {
 	// The body of the REST request that was received from a client to create or modify a REST resource, represented as a JSON document.
 	Request interface{} `json:"Request,omitempty"`
 	// The trace id of the request that was used to create, modify or delete a REST resource. A trace id is a unique identifier for one particular REST request. It may be used for troubleshooting purpose by the Intersight technical support team.
-	TraceId *string `json:"TraceId,omitempty"`
+	TraceId              *string `json:"TraceId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *AaaAbstractAuditRecordAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AaaAbstractAuditRecordAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *AaaAbstractAuditRecordAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AaaAbstractAuditRecordAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -143,7 +143,7 @@ func (o *AaaAbstractAuditRecordAllOf) SetEvent(v string) {
 
 // GetMoDisplayNames returns the MoDisplayNames field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AaaAbstractAuditRecordAllOf) GetMoDisplayNames() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -240,7 +240,7 @@ func (o *AaaAbstractAuditRecordAllOf) SetObjectMoid(v string) {
 
 // GetRequest returns the Request field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AaaAbstractAuditRecordAllOf) GetRequest() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -396,5 +396,3 @@ func (v *NullableAaaAbstractAuditRecordAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

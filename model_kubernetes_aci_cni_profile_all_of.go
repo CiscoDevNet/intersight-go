@@ -56,9 +56,9 @@ type KubernetesAciCniProfileAllOf struct {
 	// An array of relationships to kubernetesAciCniTenantClusterAllocation resources.
 	ClusterAciAllocations []KubernetesAciCniTenantClusterAllocationRelationship `json:"ClusterAciAllocations,omitempty"`
 	// An array of relationships to kubernetesClusterProfile resources.
-	ClusterProfiles []KubernetesClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	ClusterProfiles      []KubernetesClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship  `json:"Organization,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship   `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -100,7 +100,7 @@ func (o *KubernetesAciCniProfileAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAciCniProfileAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -124,7 +124,7 @@ func (o *KubernetesAciCniProfileAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAciCniProfileAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -649,7 +649,7 @@ func (o *KubernetesAciCniProfileAllOf) SetVrf(v string) {
 
 // GetClusterAciAllocations returns the ClusterAciAllocations field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesAciCniProfileAllOf) GetClusterAciAllocations() []KubernetesAciCniTenantClusterAllocationRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesAciCniTenantClusterAllocationRelationship
 		return ret
 	}
@@ -682,7 +682,7 @@ func (o *KubernetesAciCniProfileAllOf) SetClusterAciAllocations(v []KubernetesAc
 
 // GetClusterProfiles returns the ClusterProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesAciCniProfileAllOf) GetClusterProfiles() []KubernetesClusterProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesClusterProfileRelationship
 		return ret
 	}
@@ -926,5 +926,3 @@ func (v *NullableKubernetesAciCniProfileAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

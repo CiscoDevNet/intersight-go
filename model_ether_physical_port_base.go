@@ -37,10 +37,10 @@ type EtherPhysicalPortBase struct {
 	// Defines the transport type for this port (ethernet OR fc).
 	PortType *string `json:"PortType,omitempty"`
 	// Transceiver model attached to a port in the Fabric Interconnect.
-	TransceiverType *string `json:"TransceiverType,omitempty"`
+	TransceiverType           *string                        `json:"TransceiverType,omitempty"`
 	AcknowledgedPeerInterface *PortInterfaceBaseRelationship `json:"AcknowledgedPeerInterface,omitempty"`
-	PeerInterface *PortInterfaceBaseRelationship `json:"PeerInterface,omitempty"`
-	AdditionalProperties map[string]interface{}
+	PeerInterface             *PortInterfaceBaseRelationship `json:"PeerInterface,omitempty"`
+	AdditionalProperties      map[string]interface{}
 }
 
 type _EtherPhysicalPortBase EtherPhysicalPortBase
@@ -77,7 +77,7 @@ func (o *EtherPhysicalPortBase) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EtherPhysicalPortBase) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *EtherPhysicalPortBase) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EtherPhysicalPortBase) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -470,9 +470,9 @@ func (o *EtherPhysicalPortBase) UnmarshalJSON(bytes []byte) (err error) {
 		// Defines the transport type for this port (ethernet OR fc).
 		PortType *string `json:"PortType,omitempty"`
 		// Transceiver model attached to a port in the Fabric Interconnect.
-		TransceiverType *string `json:"TransceiverType,omitempty"`
+		TransceiverType           *string                        `json:"TransceiverType,omitempty"`
 		AcknowledgedPeerInterface *PortInterfaceBaseRelationship `json:"AcknowledgedPeerInterface,omitempty"`
-		PeerInterface *PortInterfaceBaseRelationship `json:"PeerInterface,omitempty"`
+		PeerInterface             *PortInterfaceBaseRelationship `json:"PeerInterface,omitempty"`
 	}
 
 	varEtherPhysicalPortBaseWithoutEmbeddedStruct := EtherPhysicalPortBaseWithoutEmbeddedStruct{}
@@ -579,5 +579,3 @@ func (v *NullableEtherPhysicalPortBase) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

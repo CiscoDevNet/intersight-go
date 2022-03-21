@@ -24,14 +24,14 @@ type VirtualizationVmwareNetworkAllOf struct {
 	// If forgedTransmits property value is set to reject, outbound frames with source MAC address different from the one set on the adapter are dropped. If property value is set to accept, no filtering is performed and all outbound frames are passed. * `Reject` - Indicates that the security policy is rejected. * `Accept` - Indicates that the security policy is accepted.
 	ForgedTransmits *string `json:"ForgedTransmits,omitempty"`
 	// If macAddressChanges property value is set to reject and the MAC address of the adapter is changed to a value other than the one specified in .vmx configuration file, all inbound frames are dropped. If property value is set to accept and the MAC address is changed, inbound frames to the new MAC address are received. * `Reject` - Indicates that the security policy is rejected. * `Accept` - Indicates that the security policy is accepted.
-	MacAddressChanges *string `json:"MacAddressChanges,omitempty"`
+	MacAddressChanges     *string                                        `json:"MacAddressChanges,omitempty"`
 	NicTeamingAndFailover NullableVirtualizationVmwareTeamingAndFailover `json:"NicTeamingAndFailover,omitempty"`
 	// If promiscuousMode property value is set to reject, incoming traffic only targeted to that network will be visible. If property value is set to accept, objects defined within the network can see all incoming traffic on the virtual switch based on the VLAN policy. * `Reject` - Indicates that the security policy is rejected. * `Accept` - Indicates that the security policy is accepted.
 	PromiscuousMode *string `json:"PromiscuousMode,omitempty"`
 	// VLAN id with which the network is associated. A value of 0 specifies that port is not associated with a VLAN.
-	VlanId *int64 `json:"VlanId,omitempty"`
-	Host *VirtualizationVmwareHostRelationship `json:"Host,omitempty"`
-	VirtualSwitch *VirtualizationVmwareVirtualSwitchRelationship `json:"VirtualSwitch,omitempty"`
+	VlanId               *int64                                         `json:"VlanId,omitempty"`
+	Host                 *VirtualizationVmwareHostRelationship          `json:"Host,omitempty"`
+	VirtualSwitch        *VirtualizationVmwareVirtualSwitchRelationship `json:"VirtualSwitch,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -85,7 +85,7 @@ func (o *VirtualizationVmwareNetworkAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareNetworkAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -109,7 +109,7 @@ func (o *VirtualizationVmwareNetworkAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareNetworkAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -197,7 +197,7 @@ func (o *VirtualizationVmwareNetworkAllOf) GetNicTeamingAndFailover() Virtualiza
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVmwareNetworkAllOf) GetNicTeamingAndFailoverOk() (*VirtualizationVmwareTeamingAndFailover, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NicTeamingAndFailover.Get(), o.NicTeamingAndFailover.IsSet()
@@ -216,6 +216,7 @@ func (o *VirtualizationVmwareNetworkAllOf) HasNicTeamingAndFailover() bool {
 func (o *VirtualizationVmwareNetworkAllOf) SetNicTeamingAndFailover(v VirtualizationVmwareTeamingAndFailover) {
 	o.NicTeamingAndFailover.Set(&v)
 }
+
 // SetNicTeamingAndFailoverNil sets the value for NicTeamingAndFailover to be an explicit nil
 func (o *VirtualizationVmwareNetworkAllOf) SetNicTeamingAndFailoverNil() {
 	o.NicTeamingAndFailover.Set(nil)
@@ -451,5 +452,3 @@ func (v *NullableVirtualizationVmwareNetworkAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

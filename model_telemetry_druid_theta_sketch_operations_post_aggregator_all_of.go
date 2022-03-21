@@ -21,7 +21,7 @@ type TelemetryDruidThetaSketchOperationsPostAggregatorAllOf struct {
 	Name *string `json:"name,omitempty"`
 	Func *string `json:"func,omitempty"`
 	// must be max of size from sketches in fields input.
-	Size *int32 `json:"size,omitempty"`
+	Size                 *int32 `json:"size,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -217,5 +217,3 @@ func (v *NullableTelemetryDruidThetaSketchOperationsPostAggregatorAllOf) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

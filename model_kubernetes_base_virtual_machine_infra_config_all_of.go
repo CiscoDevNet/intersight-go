@@ -20,9 +20,9 @@ type KubernetesBaseVirtualMachineInfraConfigAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
-	Interfaces []string `json:"Interfaces,omitempty"`
-	NetworkInterfaces []KubernetesNetworkInterfaceSpec `json:"NetworkInterfaces,omitempty"`
+	ObjectType           string                           `json:"ObjectType"`
+	Interfaces           []string                         `json:"Interfaces,omitempty"`
+	NetworkInterfaces    []KubernetesNetworkInterfaceSpec `json:"NetworkInterfaces,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -60,7 +60,7 @@ func (o *KubernetesBaseVirtualMachineInfraConfigAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesBaseVirtualMachineInfraConfigAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -84,7 +84,7 @@ func (o *KubernetesBaseVirtualMachineInfraConfigAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesBaseVirtualMachineInfraConfigAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -97,7 +97,7 @@ func (o *KubernetesBaseVirtualMachineInfraConfigAllOf) SetObjectType(v string) {
 
 // GetInterfaces returns the Interfaces field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesBaseVirtualMachineInfraConfigAllOf) GetInterfaces() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *KubernetesBaseVirtualMachineInfraConfigAllOf) SetInterfaces(v []string)
 
 // GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesBaseVirtualMachineInfraConfigAllOf) GetNetworkInterfaces() []KubernetesNetworkInterfaceSpec {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesNetworkInterfaceSpec
 		return ret
 	}
@@ -238,5 +238,3 @@ func (v *NullableKubernetesBaseVirtualMachineInfraConfigAllOf) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

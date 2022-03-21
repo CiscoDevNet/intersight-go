@@ -29,11 +29,11 @@ var (
 type HclApiService service
 
 type ApiCreateHclCompatibilityStatusRequest struct {
-	ctx _context.Context
-	ApiService *HclApiService
+	ctx                    _context.Context
+	ApiService             *HclApiService
 	hclCompatibilityStatus *HclCompatibilityStatus
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                *string
+	ifNoneMatch            *string
 }
 
 // The &#39;hcl.CompatibilityStatus&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateHclCompatibilityStatusRequest) HclCompatibilityStatus(hclCompat
 	r.hclCompatibilityStatus = &hclCompatibilityStatus
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHclCompatibilityStatusRequest) IfMatch(ifMatch string) ApiCreateHclCompatibilityStatusRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHclCompatibilityStatusRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHclCompatibilityStatusRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateHclCompatibilityStatus Create a 'hcl.CompatibilityStatus' resource.
 func (a *HclApiService) CreateHclCompatibilityStatus(ctx _context.Context) ApiCreateHclCompatibilityStatusRequest {
 	return ApiCreateHclCompatibilityStatusRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *HclApiService) CreateHclCompatibilityStatusExecute(r ApiCreateHclCompat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,11 @@ func (a *HclApiService) CreateHclCompatibilityStatusExecute(r ApiCreateHclCompat
 }
 
 type ApiCreateHclHyperflexSoftwareCompatibilityInfoRequest struct {
-	ctx _context.Context
-	ApiService *HclApiService
+	ctx                                   _context.Context
+	ApiService                            *HclApiService
 	hclHyperflexSoftwareCompatibilityInfo *HclHyperflexSoftwareCompatibilityInfo
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                               *string
+	ifNoneMatch                           *string
 }
 
 // The &#39;hcl.HyperflexSoftwareCompatibilityInfo&#39; resource to create.
@@ -217,11 +219,13 @@ func (r ApiCreateHclHyperflexSoftwareCompatibilityInfoRequest) HclHyperflexSoftw
 	r.hclHyperflexSoftwareCompatibilityInfo = &hclHyperflexSoftwareCompatibilityInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHclHyperflexSoftwareCompatibilityInfoRequest) IfMatch(ifMatch string) ApiCreateHclHyperflexSoftwareCompatibilityInfoRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHclHyperflexSoftwareCompatibilityInfoRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHclHyperflexSoftwareCompatibilityInfoRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateHclHyperflexSoftwareCompatibilityInfo Create a 'hcl.HyperflexSoftwareCompa
 func (a *HclApiService) CreateHclHyperflexSoftwareCompatibilityInfo(ctx _context.Context) ApiCreateHclHyperflexSoftwareCompatibilityInfoRequest {
 	return ApiCreateHclHyperflexSoftwareCompatibilityInfoRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *HclApiService) CreateHclHyperflexSoftwareCompatibilityInfoExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,11 +385,11 @@ func (a *HclApiService) CreateHclHyperflexSoftwareCompatibilityInfoExecute(r Api
 }
 
 type ApiCreateHclSupportedDriverNameRequest struct {
-	ctx _context.Context
-	ApiService *HclApiService
+	ctx                    _context.Context
+	ApiService             *HclApiService
 	hclSupportedDriverName *HclSupportedDriverName
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                *string
+	ifNoneMatch            *string
 }
 
 // The &#39;hcl.SupportedDriverName&#39; resource to create.
@@ -393,11 +397,13 @@ func (r ApiCreateHclSupportedDriverNameRequest) HclSupportedDriverName(hclSuppor
 	r.hclSupportedDriverName = &hclSupportedDriverName
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHclSupportedDriverNameRequest) IfMatch(ifMatch string) ApiCreateHclSupportedDriverNameRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHclSupportedDriverNameRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHclSupportedDriverNameRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -417,7 +423,7 @@ CreateHclSupportedDriverName Create a 'hcl.SupportedDriverName' resource.
 func (a *HclApiService) CreateHclSupportedDriverName(ctx _context.Context) ApiCreateHclSupportedDriverNameRequest {
 	return ApiCreateHclSupportedDriverNameRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -534,13 +540,13 @@ func (a *HclApiService) CreateHclSupportedDriverNameExecute(r ApiCreateHclSuppor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -557,11 +563,10 @@ func (a *HclApiService) CreateHclSupportedDriverNameExecute(r ApiCreateHclSuppor
 }
 
 type ApiDeleteHclHyperflexSoftwareCompatibilityInfoRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HclApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHclHyperflexSoftwareCompatibilityInfoRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHclHyperflexSoftwareCompatibilityInfoExecute(r)
@@ -577,8 +582,8 @@ DeleteHclHyperflexSoftwareCompatibilityInfo Delete a 'hcl.HyperflexSoftwareCompa
 func (a *HclApiService) DeleteHclHyperflexSoftwareCompatibilityInfo(ctx _context.Context, moid string) ApiDeleteHclHyperflexSoftwareCompatibilityInfoRequest {
 	return ApiDeleteHclHyperflexSoftwareCompatibilityInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -683,13 +688,13 @@ func (a *HclApiService) DeleteHclHyperflexSoftwareCompatibilityInfoExecute(r Api
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -697,11 +702,10 @@ func (a *HclApiService) DeleteHclHyperflexSoftwareCompatibilityInfoExecute(r Api
 }
 
 type ApiGetHclDriverImageByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HclApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHclDriverImageByMoidRequest) Execute() (HclDriverImage, *_nethttp.Response, error) {
 	return r.ApiService.GetHclDriverImageByMoidExecute(r)
@@ -717,8 +721,8 @@ GetHclDriverImageByMoid Read a 'hcl.DriverImage' resource.
 func (a *HclApiService) GetHclDriverImageByMoid(ctx _context.Context, moid string) ApiGetHclDriverImageByMoidRequest {
 	return ApiGetHclDriverImageByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -825,13 +829,13 @@ func (a *HclApiService) GetHclDriverImageByMoidExecute(r ApiGetHclDriverImageByM
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -848,19 +852,19 @@ func (a *HclApiService) GetHclDriverImageByMoidExecute(r ApiGetHclDriverImageByM
 }
 
 type ApiGetHclDriverImageListRequest struct {
-	ctx _context.Context
-	ApiService *HclApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HclApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -868,51 +872,61 @@ func (r ApiGetHclDriverImageListRequest) Filter(filter string) ApiGetHclDriverIm
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHclDriverImageListRequest) Orderby(orderby string) ApiGetHclDriverImageListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHclDriverImageListRequest) Top(top int32) ApiGetHclDriverImageListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHclDriverImageListRequest) Skip(skip int32) ApiGetHclDriverImageListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHclDriverImageListRequest) Select_(select_ string) ApiGetHclDriverImageListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHclDriverImageListRequest) Expand(expand string) ApiGetHclDriverImageListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHclDriverImageListRequest) Apply(apply string) ApiGetHclDriverImageListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHclDriverImageListRequest) Count(count bool) ApiGetHclDriverImageListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHclDriverImageListRequest) Inlinecount(inlinecount string) ApiGetHclDriverImageListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHclDriverImageListRequest) At(at string) ApiGetHclDriverImageListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHclDriverImageListRequest) Tags(tags string) ApiGetHclDriverImageListRequest {
 	r.tags = &tags
@@ -932,7 +946,7 @@ GetHclDriverImageList Read a 'hcl.DriverImage' resource.
 func (a *HclApiService) GetHclDriverImageList(ctx _context.Context) ApiGetHclDriverImageListRequest {
 	return ApiGetHclDriverImageListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1071,13 +1085,13 @@ func (a *HclApiService) GetHclDriverImageListExecute(r ApiGetHclDriverImageListR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1094,11 +1108,10 @@ func (a *HclApiService) GetHclDriverImageListExecute(r ApiGetHclDriverImageListR
 }
 
 type ApiGetHclExemptedCatalogByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HclApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHclExemptedCatalogByMoidRequest) Execute() (HclExemptedCatalog, *_nethttp.Response, error) {
 	return r.ApiService.GetHclExemptedCatalogByMoidExecute(r)
@@ -1114,8 +1127,8 @@ GetHclExemptedCatalogByMoid Read a 'hcl.ExemptedCatalog' resource.
 func (a *HclApiService) GetHclExemptedCatalogByMoid(ctx _context.Context, moid string) ApiGetHclExemptedCatalogByMoidRequest {
 	return ApiGetHclExemptedCatalogByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1222,13 +1235,13 @@ func (a *HclApiService) GetHclExemptedCatalogByMoidExecute(r ApiGetHclExemptedCa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1245,19 +1258,19 @@ func (a *HclApiService) GetHclExemptedCatalogByMoidExecute(r ApiGetHclExemptedCa
 }
 
 type ApiGetHclExemptedCatalogListRequest struct {
-	ctx _context.Context
-	ApiService *HclApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HclApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1265,51 +1278,61 @@ func (r ApiGetHclExemptedCatalogListRequest) Filter(filter string) ApiGetHclExem
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHclExemptedCatalogListRequest) Orderby(orderby string) ApiGetHclExemptedCatalogListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHclExemptedCatalogListRequest) Top(top int32) ApiGetHclExemptedCatalogListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHclExemptedCatalogListRequest) Skip(skip int32) ApiGetHclExemptedCatalogListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHclExemptedCatalogListRequest) Select_(select_ string) ApiGetHclExemptedCatalogListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHclExemptedCatalogListRequest) Expand(expand string) ApiGetHclExemptedCatalogListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHclExemptedCatalogListRequest) Apply(apply string) ApiGetHclExemptedCatalogListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHclExemptedCatalogListRequest) Count(count bool) ApiGetHclExemptedCatalogListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHclExemptedCatalogListRequest) Inlinecount(inlinecount string) ApiGetHclExemptedCatalogListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHclExemptedCatalogListRequest) At(at string) ApiGetHclExemptedCatalogListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHclExemptedCatalogListRequest) Tags(tags string) ApiGetHclExemptedCatalogListRequest {
 	r.tags = &tags
@@ -1329,7 +1352,7 @@ GetHclExemptedCatalogList Read a 'hcl.ExemptedCatalog' resource.
 func (a *HclApiService) GetHclExemptedCatalogList(ctx _context.Context) ApiGetHclExemptedCatalogListRequest {
 	return ApiGetHclExemptedCatalogListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1468,13 +1491,13 @@ func (a *HclApiService) GetHclExemptedCatalogListExecute(r ApiGetHclExemptedCata
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1491,11 +1514,10 @@ func (a *HclApiService) GetHclExemptedCatalogListExecute(r ApiGetHclExemptedCata
 }
 
 type ApiGetHclHyperflexSoftwareCompatibilityInfoByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HclApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHclHyperflexSoftwareCompatibilityInfoByMoidRequest) Execute() (HclHyperflexSoftwareCompatibilityInfo, *_nethttp.Response, error) {
 	return r.ApiService.GetHclHyperflexSoftwareCompatibilityInfoByMoidExecute(r)
@@ -1511,8 +1533,8 @@ GetHclHyperflexSoftwareCompatibilityInfoByMoid Read a 'hcl.HyperflexSoftwareComp
 func (a *HclApiService) GetHclHyperflexSoftwareCompatibilityInfoByMoid(ctx _context.Context, moid string) ApiGetHclHyperflexSoftwareCompatibilityInfoByMoidRequest {
 	return ApiGetHclHyperflexSoftwareCompatibilityInfoByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1619,13 +1641,13 @@ func (a *HclApiService) GetHclHyperflexSoftwareCompatibilityInfoByMoidExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1642,19 +1664,19 @@ func (a *HclApiService) GetHclHyperflexSoftwareCompatibilityInfoByMoidExecute(r 
 }
 
 type ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest struct {
-	ctx _context.Context
-	ApiService *HclApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HclApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1662,51 +1684,61 @@ func (r ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest) Filter(filter st
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest) Orderby(orderby string) ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest) Top(top int32) ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest) Skip(skip int32) ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest) Select_(select_ string) ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest) Expand(expand string) ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest) Apply(apply string) ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest) Count(count bool) ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest) Inlinecount(inlinecount string) ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest) At(at string) ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest) Tags(tags string) ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest {
 	r.tags = &tags
@@ -1726,7 +1758,7 @@ GetHclHyperflexSoftwareCompatibilityInfoList Read a 'hcl.HyperflexSoftwareCompat
 func (a *HclApiService) GetHclHyperflexSoftwareCompatibilityInfoList(ctx _context.Context) ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest {
 	return ApiGetHclHyperflexSoftwareCompatibilityInfoListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1865,13 +1897,13 @@ func (a *HclApiService) GetHclHyperflexSoftwareCompatibilityInfoListExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1888,11 +1920,10 @@ func (a *HclApiService) GetHclHyperflexSoftwareCompatibilityInfoListExecute(r Ap
 }
 
 type ApiGetHclOperatingSystemByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HclApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHclOperatingSystemByMoidRequest) Execute() (HclOperatingSystem, *_nethttp.Response, error) {
 	return r.ApiService.GetHclOperatingSystemByMoidExecute(r)
@@ -1908,8 +1939,8 @@ GetHclOperatingSystemByMoid Read a 'hcl.OperatingSystem' resource.
 func (a *HclApiService) GetHclOperatingSystemByMoid(ctx _context.Context, moid string) ApiGetHclOperatingSystemByMoidRequest {
 	return ApiGetHclOperatingSystemByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2016,13 +2047,13 @@ func (a *HclApiService) GetHclOperatingSystemByMoidExecute(r ApiGetHclOperatingS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2039,19 +2070,19 @@ func (a *HclApiService) GetHclOperatingSystemByMoidExecute(r ApiGetHclOperatingS
 }
 
 type ApiGetHclOperatingSystemListRequest struct {
-	ctx _context.Context
-	ApiService *HclApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HclApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2059,51 +2090,61 @@ func (r ApiGetHclOperatingSystemListRequest) Filter(filter string) ApiGetHclOper
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHclOperatingSystemListRequest) Orderby(orderby string) ApiGetHclOperatingSystemListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHclOperatingSystemListRequest) Top(top int32) ApiGetHclOperatingSystemListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHclOperatingSystemListRequest) Skip(skip int32) ApiGetHclOperatingSystemListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHclOperatingSystemListRequest) Select_(select_ string) ApiGetHclOperatingSystemListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHclOperatingSystemListRequest) Expand(expand string) ApiGetHclOperatingSystemListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHclOperatingSystemListRequest) Apply(apply string) ApiGetHclOperatingSystemListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHclOperatingSystemListRequest) Count(count bool) ApiGetHclOperatingSystemListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHclOperatingSystemListRequest) Inlinecount(inlinecount string) ApiGetHclOperatingSystemListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHclOperatingSystemListRequest) At(at string) ApiGetHclOperatingSystemListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHclOperatingSystemListRequest) Tags(tags string) ApiGetHclOperatingSystemListRequest {
 	r.tags = &tags
@@ -2123,7 +2164,7 @@ GetHclOperatingSystemList Read a 'hcl.OperatingSystem' resource.
 func (a *HclApiService) GetHclOperatingSystemList(ctx _context.Context) ApiGetHclOperatingSystemListRequest {
 	return ApiGetHclOperatingSystemListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2262,13 +2303,13 @@ func (a *HclApiService) GetHclOperatingSystemListExecute(r ApiGetHclOperatingSys
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2285,11 +2326,10 @@ func (a *HclApiService) GetHclOperatingSystemListExecute(r ApiGetHclOperatingSys
 }
 
 type ApiGetHclOperatingSystemVendorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HclApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHclOperatingSystemVendorByMoidRequest) Execute() (HclOperatingSystemVendor, *_nethttp.Response, error) {
 	return r.ApiService.GetHclOperatingSystemVendorByMoidExecute(r)
@@ -2305,8 +2345,8 @@ GetHclOperatingSystemVendorByMoid Read a 'hcl.OperatingSystemVendor' resource.
 func (a *HclApiService) GetHclOperatingSystemVendorByMoid(ctx _context.Context, moid string) ApiGetHclOperatingSystemVendorByMoidRequest {
 	return ApiGetHclOperatingSystemVendorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2413,13 +2453,13 @@ func (a *HclApiService) GetHclOperatingSystemVendorByMoidExecute(r ApiGetHclOper
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2436,19 +2476,19 @@ func (a *HclApiService) GetHclOperatingSystemVendorByMoidExecute(r ApiGetHclOper
 }
 
 type ApiGetHclOperatingSystemVendorListRequest struct {
-	ctx _context.Context
-	ApiService *HclApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HclApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2456,51 +2496,61 @@ func (r ApiGetHclOperatingSystemVendorListRequest) Filter(filter string) ApiGetH
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHclOperatingSystemVendorListRequest) Orderby(orderby string) ApiGetHclOperatingSystemVendorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHclOperatingSystemVendorListRequest) Top(top int32) ApiGetHclOperatingSystemVendorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHclOperatingSystemVendorListRequest) Skip(skip int32) ApiGetHclOperatingSystemVendorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHclOperatingSystemVendorListRequest) Select_(select_ string) ApiGetHclOperatingSystemVendorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHclOperatingSystemVendorListRequest) Expand(expand string) ApiGetHclOperatingSystemVendorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHclOperatingSystemVendorListRequest) Apply(apply string) ApiGetHclOperatingSystemVendorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHclOperatingSystemVendorListRequest) Count(count bool) ApiGetHclOperatingSystemVendorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHclOperatingSystemVendorListRequest) Inlinecount(inlinecount string) ApiGetHclOperatingSystemVendorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHclOperatingSystemVendorListRequest) At(at string) ApiGetHclOperatingSystemVendorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHclOperatingSystemVendorListRequest) Tags(tags string) ApiGetHclOperatingSystemVendorListRequest {
 	r.tags = &tags
@@ -2520,7 +2570,7 @@ GetHclOperatingSystemVendorList Read a 'hcl.OperatingSystemVendor' resource.
 func (a *HclApiService) GetHclOperatingSystemVendorList(ctx _context.Context) ApiGetHclOperatingSystemVendorListRequest {
 	return ApiGetHclOperatingSystemVendorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2659,13 +2709,13 @@ func (a *HclApiService) GetHclOperatingSystemVendorListExecute(r ApiGetHclOperat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2682,11 +2732,11 @@ func (a *HclApiService) GetHclOperatingSystemVendorListExecute(r ApiGetHclOperat
 }
 
 type ApiPatchHclHyperflexSoftwareCompatibilityInfoRequest struct {
-	ctx _context.Context
-	ApiService *HclApiService
-	moid string
+	ctx                                   _context.Context
+	ApiService                            *HclApiService
+	moid                                  string
 	hclHyperflexSoftwareCompatibilityInfo *HclHyperflexSoftwareCompatibilityInfo
-	ifMatch *string
+	ifMatch                               *string
 }
 
 // The &#39;hcl.HyperflexSoftwareCompatibilityInfo&#39; resource to update.
@@ -2694,6 +2744,7 @@ func (r ApiPatchHclHyperflexSoftwareCompatibilityInfoRequest) HclHyperflexSoftwa
 	r.hclHyperflexSoftwareCompatibilityInfo = &hclHyperflexSoftwareCompatibilityInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHclHyperflexSoftwareCompatibilityInfoRequest) IfMatch(ifMatch string) ApiPatchHclHyperflexSoftwareCompatibilityInfoRequest {
 	r.ifMatch = &ifMatch
@@ -2714,8 +2765,8 @@ PatchHclHyperflexSoftwareCompatibilityInfo Update a 'hcl.HyperflexSoftwareCompat
 func (a *HclApiService) PatchHclHyperflexSoftwareCompatibilityInfo(ctx _context.Context, moid string) ApiPatchHclHyperflexSoftwareCompatibilityInfoRequest {
 	return ApiPatchHclHyperflexSoftwareCompatibilityInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2830,13 +2881,13 @@ func (a *HclApiService) PatchHclHyperflexSoftwareCompatibilityInfoExecute(r ApiP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2853,11 +2904,11 @@ func (a *HclApiService) PatchHclHyperflexSoftwareCompatibilityInfoExecute(r ApiP
 }
 
 type ApiUpdateHclHyperflexSoftwareCompatibilityInfoRequest struct {
-	ctx _context.Context
-	ApiService *HclApiService
-	moid string
+	ctx                                   _context.Context
+	ApiService                            *HclApiService
+	moid                                  string
 	hclHyperflexSoftwareCompatibilityInfo *HclHyperflexSoftwareCompatibilityInfo
-	ifMatch *string
+	ifMatch                               *string
 }
 
 // The &#39;hcl.HyperflexSoftwareCompatibilityInfo&#39; resource to update.
@@ -2865,6 +2916,7 @@ func (r ApiUpdateHclHyperflexSoftwareCompatibilityInfoRequest) HclHyperflexSoftw
 	r.hclHyperflexSoftwareCompatibilityInfo = &hclHyperflexSoftwareCompatibilityInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHclHyperflexSoftwareCompatibilityInfoRequest) IfMatch(ifMatch string) ApiUpdateHclHyperflexSoftwareCompatibilityInfoRequest {
 	r.ifMatch = &ifMatch
@@ -2885,8 +2937,8 @@ UpdateHclHyperflexSoftwareCompatibilityInfo Update a 'hcl.HyperflexSoftwareCompa
 func (a *HclApiService) UpdateHclHyperflexSoftwareCompatibilityInfo(ctx _context.Context, moid string) ApiUpdateHclHyperflexSoftwareCompatibilityInfoRequest {
 	return ApiUpdateHclHyperflexSoftwareCompatibilityInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3001,13 +3053,13 @@ func (a *HclApiService) UpdateHclHyperflexSoftwareCompatibilityInfoExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

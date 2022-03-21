@@ -20,11 +20,11 @@ type MetaDefinitionAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	AccessPrivileges []MetaAccessPrivilege `json:"AccessPrivileges,omitempty"`
-	AncestorClasses []string `json:"AncestorClasses,omitempty"`
-	DisplayNameMetas []MetaDisplayNameDefinition `json:"DisplayNameMetas,omitempty"`
-	IdentityConstraints []MetaIdentityDefinition `json:"IdentityConstraints,omitempty"`
+	ObjectType          string                      `json:"ObjectType"`
+	AccessPrivileges    []MetaAccessPrivilege       `json:"AccessPrivileges,omitempty"`
+	AncestorClasses     []string                    `json:"AncestorClasses,omitempty"`
+	DisplayNameMetas    []MetaDisplayNameDefinition `json:"DisplayNameMetas,omitempty"`
+	IdentityConstraints []MetaIdentityDefinition    `json:"IdentityConstraints,omitempty"`
 	// Boolean flag to specify whether the meta class is a concrete class or not.
 	IsConcrete *bool `json:"IsConcrete,omitempty"`
 	// Indicates whether the meta class is a complex type or managed object. * `ManagedObject` - The meta.Definition object describes a managed object. * `ComplexType` - The meta.Definition object describes a nested complex type within a managed object.
@@ -36,16 +36,16 @@ type MetaDefinitionAllOf struct {
 	// The fully-qualified name of the parent metaclass in the class inheritance hierarchy.
 	ParentClass *string `json:"ParentClass,omitempty"`
 	// Boolean flag to specify whether instances of this class type can be specified in permissions for instance based access control. Permissions can be created for entire Intersight account or to a subset of resources (instance based access control). In the first release, permissions are supported for entire account or for a subset of organizations.
-	PermissionSupported *bool `json:"PermissionSupported,omitempty"`
-	Properties []MetaPropDefinition `json:"Properties,omitempty"`
+	PermissionSupported *bool                `json:"PermissionSupported,omitempty"`
+	Properties          []MetaPropDefinition `json:"Properties,omitempty"`
 	// Boolean flag to specify whether instances of this class type can be assigned to resource groups that are part of an organization for access control. Inventoried physical/logical objects which needs access control should have rbacResource=true. These objects are not part of any organization by default like device registrations and should be assigned to organizations for access control. Profiles, policies, workflow definitions which are created by specifying organization need not have this flag set.
-	RbacResource *bool `json:"RbacResource,omitempty"`
-	Relationships []MetaRelationshipDefinition `json:"Relationships,omitempty"`
-	ResourcePoolTypes []string `json:"ResourcePoolTypes,omitempty"`
+	RbacResource      *bool                        `json:"RbacResource,omitempty"`
+	Relationships     []MetaRelationshipDefinition `json:"Relationships,omitempty"`
+	ResourcePoolTypes []string                     `json:"ResourcePoolTypes,omitempty"`
 	// Restful URL path for the meta.
 	RestPath *string `json:"RestPath,omitempty"`
 	// The version of the service that defines the meta-data.
-	Version *string `json:"Version,omitempty"`
+	Version              *string `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -87,7 +87,7 @@ func (o *MetaDefinitionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MetaDefinitionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -111,7 +111,7 @@ func (o *MetaDefinitionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MetaDefinitionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -124,7 +124,7 @@ func (o *MetaDefinitionAllOf) SetObjectType(v string) {
 
 // GetAccessPrivileges returns the AccessPrivileges field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MetaDefinitionAllOf) GetAccessPrivileges() []MetaAccessPrivilege {
-	if o == nil  {
+	if o == nil {
 		var ret []MetaAccessPrivilege
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *MetaDefinitionAllOf) SetAccessPrivileges(v []MetaAccessPrivilege) {
 
 // GetAncestorClasses returns the AncestorClasses field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MetaDefinitionAllOf) GetAncestorClasses() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *MetaDefinitionAllOf) SetAncestorClasses(v []string) {
 
 // GetDisplayNameMetas returns the DisplayNameMetas field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MetaDefinitionAllOf) GetDisplayNameMetas() []MetaDisplayNameDefinition {
-	if o == nil  {
+	if o == nil {
 		var ret []MetaDisplayNameDefinition
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *MetaDefinitionAllOf) SetDisplayNameMetas(v []MetaDisplayNameDefinition)
 
 // GetIdentityConstraints returns the IdentityConstraints field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MetaDefinitionAllOf) GetIdentityConstraints() []MetaIdentityDefinition {
-	if o == nil  {
+	if o == nil {
 		var ret []MetaIdentityDefinition
 		return ret
 	}
@@ -448,7 +448,7 @@ func (o *MetaDefinitionAllOf) SetPermissionSupported(v bool) {
 
 // GetProperties returns the Properties field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MetaDefinitionAllOf) GetProperties() []MetaPropDefinition {
-	if o == nil  {
+	if o == nil {
 		var ret []MetaPropDefinition
 		return ret
 	}
@@ -513,7 +513,7 @@ func (o *MetaDefinitionAllOf) SetRbacResource(v bool) {
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MetaDefinitionAllOf) GetRelationships() []MetaRelationshipDefinition {
-	if o == nil  {
+	if o == nil {
 		var ret []MetaRelationshipDefinition
 		return ret
 	}
@@ -546,7 +546,7 @@ func (o *MetaDefinitionAllOf) SetRelationships(v []MetaRelationshipDefinition) {
 
 // GetResourcePoolTypes returns the ResourcePoolTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MetaDefinitionAllOf) GetResourcePoolTypes() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -774,5 +774,3 @@ func (v *NullableMetaDefinitionAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

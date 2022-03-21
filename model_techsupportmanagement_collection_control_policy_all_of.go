@@ -24,9 +24,9 @@ type TechsupportmanagementCollectionControlPolicyAllOf struct {
 	// Deployment type defines whether the policy is associated with a SaaS or Appliance account. * `None` - Service deployment type None. * `SaaS` - Service deployment type SaaS. * `Appliance` - Service deployment type Appliance.
 	DeploymentType *string `json:"DeploymentType,omitempty"`
 	// Enable or Disable techsupport collection for a specific account. * `Enable` - Enable techsupport collection. * `Disable` - Disable techsupport collection.
-	TechSupportCollection *string `json:"TechSupportCollection,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TechSupportCollection *string                 `json:"TechSupportCollection,omitempty"`
+	Account               *IamAccountRelationship `json:"Account,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _TechsupportmanagementCollectionControlPolicyAllOf TechsupportmanagementCollectionControlPolicyAllOf
@@ -71,7 +71,7 @@ func (o *TechsupportmanagementCollectionControlPolicyAllOf) GetClassId() string 
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TechsupportmanagementCollectionControlPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *TechsupportmanagementCollectionControlPolicyAllOf) GetObjectType() stri
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TechsupportmanagementCollectionControlPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -283,5 +283,3 @@ func (v *NullableTechsupportmanagementCollectionControlPolicyAllOf) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

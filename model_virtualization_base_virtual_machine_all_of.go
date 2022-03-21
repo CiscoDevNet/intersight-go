@@ -23,23 +23,23 @@ type VirtualizationBaseVirtualMachineAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ObjectType string `json:"ObjectType"`
 	// Time when this VM booted up.
-	BootTime *time.Time `json:"BootTime,omitempty"`
+	BootTime *time.Time                `json:"BootTime,omitempty"`
 	Capacity NullableInfraHardwareInfo `json:"Capacity,omitempty"`
 	// Average CPU utilization percentage derived as a ratio of CPU used to CPU allocated. The value is calculated whenever inventory is performed.
-	CpuUtilization *float32 `json:"CpuUtilization,omitempty"`
-	GuestInfo NullableVirtualizationGuestInfo `json:"GuestInfo,omitempty"`
+	CpuUtilization *float32                        `json:"CpuUtilization,omitempty"`
+	GuestInfo      NullableVirtualizationGuestInfo `json:"GuestInfo,omitempty"`
 	// Type of hypervisor where the virtual machine is hosted for example ESXi. * `ESXi` - The hypervisor running on the HyperFlex cluster is a Vmware ESXi hypervisor of any version. * `HyperFlexAp` - The hypervisor of the virtualization platform is Cisco HyperFlex Application Platform. * `IWE` - The hypervisor of the virtualization platform is Cisco Intersight Workload Engine. * `Hyper-V` - The hypervisor running on the HyperFlex cluster is Microsoft Hyper-V. * `Unknown` - The hypervisor running on the HyperFlex cluster is not known.
 	HypervisorType *string `json:"HypervisorType,omitempty"`
 	// The internally generated identity of this VM. This entity is not manipulated by users. It aids in uniquely identifying the virtual machine object. For VMware, this is MOR (managed object reference).
-	Identity *string `json:"Identity,omitempty"`
-	IpAddress []string `json:"IpAddress,omitempty"`
+	Identity       *string                              `json:"Identity,omitempty"`
+	IpAddress      []string                             `json:"IpAddress,omitempty"`
 	MemoryCapacity NullableVirtualizationMemoryCapacity `json:"MemoryCapacity,omitempty"`
 	// Average memory utilization percentage derived as a ratio of memory used to available memory. The value is calculated whenever inventory is performed.
 	MemoryUtilization *float32 `json:"MemoryUtilization,omitempty"`
 	// User-provided name to identify the virtual machine.
 	Name *string `json:"Name,omitempty"`
 	// Power state of the virtual machine. * `Unknown` - The entity's power state is unknown. * `PoweringOn` - The entity is powering on. * `PoweredOn` - The entity is powered on. * `PoweringOff` - The entity is powering off. * `PoweredOff` - The entity is powered down. * `StandBy` - The entity is in standby mode. * `Paused` - The entity is in pause state. * `Rebooting` - The entity reboot is in progress. * `` - The entity's power state is not available.
-	PowerState *string `json:"PowerState,omitempty"`
+	PowerState        *string                               `json:"PowerState,omitempty"`
 	ProcessorCapacity NullableVirtualizationComputeCapacity `json:"ProcessorCapacity,omitempty"`
 	// Cloud platform, where the virtual machine is launched. * `Unknown` - Cloud provider is not known. * `VMwarevSphere` - Cloud provider named VMware vSphere. * `AmazonWebServices` - Cloud provider named Amazon Web Services. * `MicrosoftAzure` - Cloud provider named Microsoft Azure. * `GoogleCloudPlatform` - Cloud provider named Google Cloud Platform. * `CiscoIntersightWorkloadEngine` - Cloud provider named Cisco Intersight Workload Engine.
 	Provider *string `json:"Provider,omitempty"`
@@ -48,7 +48,7 @@ type VirtualizationBaseVirtualMachineAllOf struct {
 	// The uuid of this virtual machine. The uuid is internally generated and not user specified.
 	Uuid *string `json:"Uuid,omitempty"`
 	// Time when this virtualmachine is created.
-	VmCreationTime *time.Time `json:"VmCreationTime,omitempty"`
+	VmCreationTime       *time.Time `json:"VmCreationTime,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -102,7 +102,7 @@ func (o *VirtualizationBaseVirtualMachineAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBaseVirtualMachineAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -126,7 +126,7 @@ func (o *VirtualizationBaseVirtualMachineAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBaseVirtualMachineAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -182,7 +182,7 @@ func (o *VirtualizationBaseVirtualMachineAllOf) GetCapacity() InfraHardwareInfo 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationBaseVirtualMachineAllOf) GetCapacityOk() (*InfraHardwareInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Capacity.Get(), o.Capacity.IsSet()
@@ -201,6 +201,7 @@ func (o *VirtualizationBaseVirtualMachineAllOf) HasCapacity() bool {
 func (o *VirtualizationBaseVirtualMachineAllOf) SetCapacity(v InfraHardwareInfo) {
 	o.Capacity.Set(&v)
 }
+
 // SetCapacityNil sets the value for Capacity to be an explicit nil
 func (o *VirtualizationBaseVirtualMachineAllOf) SetCapacityNil() {
 	o.Capacity.Set(nil)
@@ -256,7 +257,7 @@ func (o *VirtualizationBaseVirtualMachineAllOf) GetGuestInfo() VirtualizationGue
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationBaseVirtualMachineAllOf) GetGuestInfoOk() (*VirtualizationGuestInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.GuestInfo.Get(), o.GuestInfo.IsSet()
@@ -275,6 +276,7 @@ func (o *VirtualizationBaseVirtualMachineAllOf) HasGuestInfo() bool {
 func (o *VirtualizationBaseVirtualMachineAllOf) SetGuestInfo(v VirtualizationGuestInfo) {
 	o.GuestInfo.Set(&v)
 }
+
 // SetGuestInfoNil sets the value for GuestInfo to be an explicit nil
 func (o *VirtualizationBaseVirtualMachineAllOf) SetGuestInfoNil() {
 	o.GuestInfo.Set(nil)
@@ -351,7 +353,7 @@ func (o *VirtualizationBaseVirtualMachineAllOf) SetIdentity(v string) {
 
 // GetIpAddress returns the IpAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationBaseVirtualMachineAllOf) GetIpAddress() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -395,7 +397,7 @@ func (o *VirtualizationBaseVirtualMachineAllOf) GetMemoryCapacity() Virtualizati
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationBaseVirtualMachineAllOf) GetMemoryCapacityOk() (*VirtualizationMemoryCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MemoryCapacity.Get(), o.MemoryCapacity.IsSet()
@@ -414,6 +416,7 @@ func (o *VirtualizationBaseVirtualMachineAllOf) HasMemoryCapacity() bool {
 func (o *VirtualizationBaseVirtualMachineAllOf) SetMemoryCapacity(v VirtualizationMemoryCapacity) {
 	o.MemoryCapacity.Set(&v)
 }
+
 // SetMemoryCapacityNil sets the value for MemoryCapacity to be an explicit nil
 func (o *VirtualizationBaseVirtualMachineAllOf) SetMemoryCapacityNil() {
 	o.MemoryCapacity.Set(nil)
@@ -533,7 +536,7 @@ func (o *VirtualizationBaseVirtualMachineAllOf) GetProcessorCapacity() Virtualiz
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationBaseVirtualMachineAllOf) GetProcessorCapacityOk() (*VirtualizationComputeCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ProcessorCapacity.Get(), o.ProcessorCapacity.IsSet()
@@ -552,6 +555,7 @@ func (o *VirtualizationBaseVirtualMachineAllOf) HasProcessorCapacity() bool {
 func (o *VirtualizationBaseVirtualMachineAllOf) SetProcessorCapacity(v VirtualizationComputeCapacity) {
 	o.ProcessorCapacity.Set(&v)
 }
+
 // SetProcessorCapacityNil sets the value for ProcessorCapacity to be an explicit nil
 func (o *VirtualizationBaseVirtualMachineAllOf) SetProcessorCapacityNil() {
 	o.ProcessorCapacity.Set(nil)
@@ -823,5 +827,3 @@ func (v *NullableVirtualizationBaseVirtualMachineAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

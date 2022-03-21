@@ -24,7 +24,7 @@ type TelemetryDruidHyperUniquePostAggregator struct {
 	// Output name for the post-aggregator.
 	Name *string `json:"name,omitempty"`
 	// The name field value of the hyperUnique aggregator.
-	FieldName *string `json:"fieldName,omitempty"`
+	FieldName            *string `json:"fieldName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -61,7 +61,7 @@ func (o *TelemetryDruidHyperUniquePostAggregator) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidHyperUniquePostAggregator) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -245,5 +245,3 @@ func (v *NullableTelemetryDruidHyperUniquePostAggregator) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

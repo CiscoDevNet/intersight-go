@@ -18,20 +18,19 @@ import (
 
 // VirtualizationCiscoHypervisorManagerRelationship - A relationship to the 'virtualization.CiscoHypervisorManager' resource, or the expanded 'virtualization.CiscoHypervisorManager' resource, or the 'null' value.
 type VirtualizationCiscoHypervisorManagerRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                              *MoMoRef
 	VirtualizationCiscoHypervisorManager *VirtualizationCiscoHypervisorManager
 }
 
 // MoMoRefAsVirtualizationCiscoHypervisorManagerRelationship is a convenience function that returns MoMoRef wrapped in VirtualizationCiscoHypervisorManagerRelationship
 func MoMoRefAsVirtualizationCiscoHypervisorManagerRelationship(v *MoMoRef) VirtualizationCiscoHypervisorManagerRelationship {
-	return VirtualizationCiscoHypervisorManagerRelationship{ MoMoRef: v}
+	return VirtualizationCiscoHypervisorManagerRelationship{MoMoRef: v}
 }
 
 // VirtualizationCiscoHypervisorManagerAsVirtualizationCiscoHypervisorManagerRelationship is a convenience function that returns VirtualizationCiscoHypervisorManager wrapped in VirtualizationCiscoHypervisorManagerRelationship
 func VirtualizationCiscoHypervisorManagerAsVirtualizationCiscoHypervisorManagerRelationship(v *VirtualizationCiscoHypervisorManager) VirtualizationCiscoHypervisorManagerRelationship {
-	return VirtualizationCiscoHypervisorManagerRelationship{ VirtualizationCiscoHypervisorManager: v}
+	return VirtualizationCiscoHypervisorManagerRelationship{VirtualizationCiscoHypervisorManager: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VirtualizationCiscoHypervisorManagerRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src VirtualizationCiscoHypervisorManagerRelationship) MarshalJSON() ([]byt
 }
 
 // Get the actual instance
-func (obj *VirtualizationCiscoHypervisorManagerRelationship) GetActualInstance() (interface{}) {
+func (obj *VirtualizationCiscoHypervisorManagerRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableVirtualizationCiscoHypervisorManagerRelationship) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

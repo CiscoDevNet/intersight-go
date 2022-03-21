@@ -18,20 +18,19 @@ import (
 
 // RecommendationPhysicalItemRelationship - A relationship to the 'recommendation.PhysicalItem' resource, or the expanded 'recommendation.PhysicalItem' resource, or the 'null' value.
 type RecommendationPhysicalItemRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                    *MoMoRef
 	RecommendationPhysicalItem *RecommendationPhysicalItem
 }
 
 // MoMoRefAsRecommendationPhysicalItemRelationship is a convenience function that returns MoMoRef wrapped in RecommendationPhysicalItemRelationship
 func MoMoRefAsRecommendationPhysicalItemRelationship(v *MoMoRef) RecommendationPhysicalItemRelationship {
-	return RecommendationPhysicalItemRelationship{ MoMoRef: v}
+	return RecommendationPhysicalItemRelationship{MoMoRef: v}
 }
 
 // RecommendationPhysicalItemAsRecommendationPhysicalItemRelationship is a convenience function that returns RecommendationPhysicalItem wrapped in RecommendationPhysicalItemRelationship
 func RecommendationPhysicalItemAsRecommendationPhysicalItemRelationship(v *RecommendationPhysicalItem) RecommendationPhysicalItemRelationship {
-	return RecommendationPhysicalItemRelationship{ RecommendationPhysicalItem: v}
+	return RecommendationPhysicalItemRelationship{RecommendationPhysicalItem: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *RecommendationPhysicalItemRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src RecommendationPhysicalItemRelationship) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *RecommendationPhysicalItemRelationship) GetActualInstance() (interface{}) {
+func (obj *RecommendationPhysicalItemRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableRecommendationPhysicalItemRelationship) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,13 +23,13 @@ type IqnpoolPool struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType      string                  `json:"ObjectType"`
 	IqnSuffixBlocks []IqnpoolIqnSuffixBlock `json:"IqnSuffixBlocks,omitempty"`
 	// The prefix for any IQN blocks created for this pool. IQN Prefix must have the following format \"iqn.yyyy-mm.naming-authority\", where naming-authority is usually the reverse syntax of the Internet domain name of the naming authority.
 	Prefix *string `json:"Prefix,omitempty"`
 	// An array of relationships to iqnpoolBlock resources.
-	BlockHeads []IqnpoolBlockRelationship `json:"BlockHeads,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	BlockHeads           []IqnpoolBlockRelationship            `json:"BlockHeads,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *IqnpoolPool) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IqnpoolPool) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *IqnpoolPool) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IqnpoolPool) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -110,7 +110,7 @@ func (o *IqnpoolPool) SetObjectType(v string) {
 
 // GetIqnSuffixBlocks returns the IqnSuffixBlocks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IqnpoolPool) GetIqnSuffixBlocks() []IqnpoolIqnSuffixBlock {
-	if o == nil  {
+	if o == nil {
 		var ret []IqnpoolIqnSuffixBlock
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *IqnpoolPool) SetPrefix(v string) {
 
 // GetBlockHeads returns the BlockHeads field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IqnpoolPool) GetBlockHeads() []IqnpoolBlockRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IqnpoolBlockRelationship
 		return ret
 	}
@@ -279,12 +279,12 @@ func (o *IqnpoolPool) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType      string                  `json:"ObjectType"`
 		IqnSuffixBlocks []IqnpoolIqnSuffixBlock `json:"IqnSuffixBlocks,omitempty"`
 		// The prefix for any IQN blocks created for this pool. IQN Prefix must have the following format \"iqn.yyyy-mm.naming-authority\", where naming-authority is usually the reverse syntax of the Internet domain name of the naming authority.
 		Prefix *string `json:"Prefix,omitempty"`
 		// An array of relationships to iqnpoolBlock resources.
-		BlockHeads []IqnpoolBlockRelationship `json:"BlockHeads,omitempty"`
+		BlockHeads   []IqnpoolBlockRelationship            `json:"BlockHeads,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
@@ -382,5 +382,3 @@ func (v *NullableIqnpoolPool) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

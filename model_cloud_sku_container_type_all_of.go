@@ -24,7 +24,7 @@ type CloudSkuContainerTypeAllOf struct {
 	// The CpuUnit. Will be MILLI_CPU for containers. * `VIRTUAL_CPU` - The CPU unit used for virtual machines. * `MILLI_CPU` - The CPU unit used by containers.
 	CpuUnit *string `json:"CpuUnit,omitempty"`
 	// The number of CPUs in this instance type.
-	NumOfCpus *int64 `json:"NumOfCpus,omitempty"`
+	NumOfCpus            *int64 `json:"NumOfCpus,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *CloudSkuContainerTypeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudSkuContainerTypeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *CloudSkuContainerTypeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudSkuContainerTypeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -246,5 +246,3 @@ func (v *NullableCloudSkuContainerTypeAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

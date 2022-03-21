@@ -18,20 +18,19 @@ import (
 
 // StorageSpanRelationship - A relationship to the 'storage.Span' resource, or the expanded 'storage.Span' resource, or the 'null' value.
 type StorageSpanRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef     *MoMoRef
 	StorageSpan *StorageSpan
 }
 
 // MoMoRefAsStorageSpanRelationship is a convenience function that returns MoMoRef wrapped in StorageSpanRelationship
 func MoMoRefAsStorageSpanRelationship(v *MoMoRef) StorageSpanRelationship {
-	return StorageSpanRelationship{ MoMoRef: v}
+	return StorageSpanRelationship{MoMoRef: v}
 }
 
 // StorageSpanAsStorageSpanRelationship is a convenience function that returns StorageSpan wrapped in StorageSpanRelationship
 func StorageSpanAsStorageSpanRelationship(v *StorageSpan) StorageSpanRelationship {
-	return StorageSpanRelationship{ StorageSpan: v}
+	return StorageSpanRelationship{StorageSpan: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageSpanRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageSpanRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageSpanRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageSpanRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageSpanRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

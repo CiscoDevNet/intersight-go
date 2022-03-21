@@ -20,11 +20,11 @@ type KubernetesVirtualMachineInfrastructureProviderAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	InfraConfig NullableKubernetesBaseVirtualMachineInfraConfig `json:"InfraConfig,omitempty"`
-	InfraConfigPolicy *KubernetesVirtualMachineInfraConfigPolicyRelationship `json:"InfraConfigPolicy,omitempty"`
-	InstanceType *KubernetesVirtualMachineInstanceTypeRelationship `json:"InstanceType,omitempty"`
-	Target *AssetDeviceRegistrationRelationship `json:"Target,omitempty"`
+	ObjectType           string                                                 `json:"ObjectType"`
+	InfraConfig          NullableKubernetesBaseVirtualMachineInfraConfig        `json:"InfraConfig,omitempty"`
+	InfraConfigPolicy    *KubernetesVirtualMachineInfraConfigPolicyRelationship `json:"InfraConfigPolicy,omitempty"`
+	InstanceType         *KubernetesVirtualMachineInstanceTypeRelationship      `json:"InstanceType,omitempty"`
+	Target               *AssetDeviceRegistrationRelationship                   `json:"Target,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *KubernetesVirtualMachineInfrastructureProviderAllOf) GetClassId() strin
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesVirtualMachineInfrastructureProviderAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *KubernetesVirtualMachineInfrastructureProviderAllOf) GetObjectType() st
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesVirtualMachineInfrastructureProviderAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -114,7 +114,7 @@ func (o *KubernetesVirtualMachineInfrastructureProviderAllOf) GetInfraConfig() K
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KubernetesVirtualMachineInfrastructureProviderAllOf) GetInfraConfigOk() (*KubernetesBaseVirtualMachineInfraConfig, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.InfraConfig.Get(), o.InfraConfig.IsSet()
@@ -133,6 +133,7 @@ func (o *KubernetesVirtualMachineInfrastructureProviderAllOf) HasInfraConfig() b
 func (o *KubernetesVirtualMachineInfrastructureProviderAllOf) SetInfraConfig(v KubernetesBaseVirtualMachineInfraConfig) {
 	o.InfraConfig.Set(&v)
 }
+
 // SetInfraConfigNil sets the value for InfraConfig to be an explicit nil
 func (o *KubernetesVirtualMachineInfrastructureProviderAllOf) SetInfraConfigNil() {
 	o.InfraConfig.Set(nil)
@@ -324,5 +325,3 @@ func (v *NullableKubernetesVirtualMachineInfrastructureProviderAllOf) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

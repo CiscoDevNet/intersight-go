@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // CloudVolumeAttachment Volume attachment details for the virtual machine.
@@ -38,7 +38,7 @@ type CloudVolumeAttachment struct {
 	// The position of the volume attachment in the virtual machine.
 	Index *int64 `json:"Index,omitempty"`
 	// If set to true, then it is the root volume.
-	IsRoot *bool `json:"IsRoot,omitempty"`
+	IsRoot               *bool `json:"IsRoot,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *CloudVolumeAttachment) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudVolumeAttachment) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *CloudVolumeAttachment) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudVolumeAttachment) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -506,5 +506,3 @@ func (v *NullableCloudVolumeAttachment) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

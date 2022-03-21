@@ -24,14 +24,14 @@ type FabricSwitchControlPolicyAllOf struct {
 	// Enable or Disable Ethernet End Host Switching Mode. * `end-host` - In end-host mode, the fabric interconnects appear to the upstream devices as end hosts with multiple links.In this mode, the switch does not run Spanning Tree Protocol and avoids loops by following a set of rules for traffic forwarding.In case of ethernet switching mode - Ethernet end-host mode is also known as Ethernet host virtualizer. * `switch` - In switch mode, the switch runs Spanning Tree Protocol to avoid loops, and broadcast and multicast packets are handled in the traditional way.This is the traditional switch mode.
 	EthernetSwitchingMode *string `json:"EthernetSwitchingMode,omitempty"`
 	// Enable or Disable FC End Host Switching Mode. * `end-host` - In end-host mode, the fabric interconnects appear to the upstream devices as end hosts with multiple links.In this mode, the switch does not run Spanning Tree Protocol and avoids loops by following a set of rules for traffic forwarding.In case of ethernet switching mode - Ethernet end-host mode is also known as Ethernet host virtualizer. * `switch` - In switch mode, the switch runs Spanning Tree Protocol to avoid loops, and broadcast and multicast packets are handled in the traditional way.This is the traditional switch mode.
-	FcSwitchingMode *string `json:"FcSwitchingMode,omitempty"`
-	MacAgingSettings NullableFabricMacAgingSettings `json:"MacAgingSettings,omitempty"`
-	UdldSettings NullableFabricUdldGlobalSettings `json:"UdldSettings,omitempty"`
+	FcSwitchingMode  *string                          `json:"FcSwitchingMode,omitempty"`
+	MacAgingSettings NullableFabricMacAgingSettings   `json:"MacAgingSettings,omitempty"`
+	UdldSettings     NullableFabricUdldGlobalSettings `json:"UdldSettings,omitempty"`
 	// To enable or disable the VLAN port count optimization.
-	VlanPortOptimizationEnabled *bool `json:"VlanPortOptimizationEnabled,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	VlanPortOptimizationEnabled *bool                                 `json:"VlanPortOptimizationEnabled,omitempty"`
+	Organization                *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to fabricSwitchProfile resources.
-	Profiles []FabricSwitchProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []FabricSwitchProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -85,7 +85,7 @@ func (o *FabricSwitchControlPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricSwitchControlPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -109,7 +109,7 @@ func (o *FabricSwitchControlPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricSwitchControlPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -197,7 +197,7 @@ func (o *FabricSwitchControlPolicyAllOf) GetMacAgingSettings() FabricMacAgingSet
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FabricSwitchControlPolicyAllOf) GetMacAgingSettingsOk() (*FabricMacAgingSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MacAgingSettings.Get(), o.MacAgingSettings.IsSet()
@@ -216,6 +216,7 @@ func (o *FabricSwitchControlPolicyAllOf) HasMacAgingSettings() bool {
 func (o *FabricSwitchControlPolicyAllOf) SetMacAgingSettings(v FabricMacAgingSettings) {
 	o.MacAgingSettings.Set(&v)
 }
+
 // SetMacAgingSettingsNil sets the value for MacAgingSettings to be an explicit nil
 func (o *FabricSwitchControlPolicyAllOf) SetMacAgingSettingsNil() {
 	o.MacAgingSettings.Set(nil)
@@ -239,7 +240,7 @@ func (o *FabricSwitchControlPolicyAllOf) GetUdldSettings() FabricUdldGlobalSetti
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FabricSwitchControlPolicyAllOf) GetUdldSettingsOk() (*FabricUdldGlobalSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UdldSettings.Get(), o.UdldSettings.IsSet()
@@ -258,6 +259,7 @@ func (o *FabricSwitchControlPolicyAllOf) HasUdldSettings() bool {
 func (o *FabricSwitchControlPolicyAllOf) SetUdldSettings(v FabricUdldGlobalSettings) {
 	o.UdldSettings.Set(&v)
 }
+
 // SetUdldSettingsNil sets the value for UdldSettings to be an explicit nil
 func (o *FabricSwitchControlPolicyAllOf) SetUdldSettingsNil() {
 	o.UdldSettings.Set(nil)
@@ -334,7 +336,7 @@ func (o *FabricSwitchControlPolicyAllOf) SetOrganization(v OrganizationOrganizat
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FabricSwitchControlPolicyAllOf) GetProfiles() []FabricSwitchProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FabricSwitchProfileRelationship
 		return ret
 	}
@@ -462,5 +464,3 @@ func (v *NullableFabricSwitchControlPolicyAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

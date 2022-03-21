@@ -19,31 +19,30 @@ import (
 // SecurityUnitResponse - The response body of a HTTP GET request for the 'security.Unit' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'security.Unit' resources.
 type SecurityUnitResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
-	SecurityUnitList *SecurityUnitList
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
+	SecurityUnitList     *SecurityUnitList
 }
 
 // MoAggregateTransformAsSecurityUnitResponse is a convenience function that returns MoAggregateTransform wrapped in SecurityUnitResponse
 func MoAggregateTransformAsSecurityUnitResponse(v *MoAggregateTransform) SecurityUnitResponse {
-	return SecurityUnitResponse{ MoAggregateTransform: v}
+	return SecurityUnitResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsSecurityUnitResponse is a convenience function that returns MoDocumentCount wrapped in SecurityUnitResponse
 func MoDocumentCountAsSecurityUnitResponse(v *MoDocumentCount) SecurityUnitResponse {
-	return SecurityUnitResponse{ MoDocumentCount: v}
+	return SecurityUnitResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsSecurityUnitResponse is a convenience function that returns MoTagSummary wrapped in SecurityUnitResponse
 func MoTagSummaryAsSecurityUnitResponse(v *MoTagSummary) SecurityUnitResponse {
-	return SecurityUnitResponse{ MoTagSummary: v}
+	return SecurityUnitResponse{MoTagSummary: v}
 }
 
 // SecurityUnitListAsSecurityUnitResponse is a convenience function that returns SecurityUnitList wrapped in SecurityUnitResponse
 func SecurityUnitListAsSecurityUnitResponse(v *SecurityUnitList) SecurityUnitResponse {
-	return SecurityUnitResponse{ SecurityUnitList: v}
+	return SecurityUnitResponse{SecurityUnitList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SecurityUnitResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src SecurityUnitResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SecurityUnitResponse) GetActualInstance() (interface{}) {
+func (obj *SecurityUnitResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableSecurityUnitResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

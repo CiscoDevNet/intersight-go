@@ -29,11 +29,10 @@ var (
 type PortApiService service
 
 type ApiGetPortGroupByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *PortApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetPortGroupByMoidRequest) Execute() (PortGroup, *_nethttp.Response, error) {
 	return r.ApiService.GetPortGroupByMoidExecute(r)
@@ -49,8 +48,8 @@ GetPortGroupByMoid Read a 'port.Group' resource.
 func (a *PortApiService) GetPortGroupByMoid(ctx _context.Context, moid string) ApiGetPortGroupByMoidRequest {
 	return ApiGetPortGroupByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -157,13 +156,13 @@ func (a *PortApiService) GetPortGroupByMoidExecute(r ApiGetPortGroupByMoidReques
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -180,19 +179,19 @@ func (a *PortApiService) GetPortGroupByMoidExecute(r ApiGetPortGroupByMoidReques
 }
 
 type ApiGetPortGroupListRequest struct {
-	ctx _context.Context
-	ApiService *PortApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *PortApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -200,51 +199,61 @@ func (r ApiGetPortGroupListRequest) Filter(filter string) ApiGetPortGroupListReq
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetPortGroupListRequest) Orderby(orderby string) ApiGetPortGroupListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetPortGroupListRequest) Top(top int32) ApiGetPortGroupListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetPortGroupListRequest) Skip(skip int32) ApiGetPortGroupListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetPortGroupListRequest) Select_(select_ string) ApiGetPortGroupListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetPortGroupListRequest) Expand(expand string) ApiGetPortGroupListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetPortGroupListRequest) Apply(apply string) ApiGetPortGroupListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetPortGroupListRequest) Count(count bool) ApiGetPortGroupListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetPortGroupListRequest) Inlinecount(inlinecount string) ApiGetPortGroupListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetPortGroupListRequest) At(at string) ApiGetPortGroupListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetPortGroupListRequest) Tags(tags string) ApiGetPortGroupListRequest {
 	r.tags = &tags
@@ -264,7 +273,7 @@ GetPortGroupList Read a 'port.Group' resource.
 func (a *PortApiService) GetPortGroupList(ctx _context.Context) ApiGetPortGroupListRequest {
 	return ApiGetPortGroupListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -403,13 +412,13 @@ func (a *PortApiService) GetPortGroupListExecute(r ApiGetPortGroupListRequest) (
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -426,11 +435,10 @@ func (a *PortApiService) GetPortGroupListExecute(r ApiGetPortGroupListRequest) (
 }
 
 type ApiGetPortMacBindingByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *PortApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetPortMacBindingByMoidRequest) Execute() (PortMacBinding, *_nethttp.Response, error) {
 	return r.ApiService.GetPortMacBindingByMoidExecute(r)
@@ -446,8 +454,8 @@ GetPortMacBindingByMoid Read a 'port.MacBinding' resource.
 func (a *PortApiService) GetPortMacBindingByMoid(ctx _context.Context, moid string) ApiGetPortMacBindingByMoidRequest {
 	return ApiGetPortMacBindingByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -554,13 +562,13 @@ func (a *PortApiService) GetPortMacBindingByMoidExecute(r ApiGetPortMacBindingBy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -577,19 +585,19 @@ func (a *PortApiService) GetPortMacBindingByMoidExecute(r ApiGetPortMacBindingBy
 }
 
 type ApiGetPortMacBindingListRequest struct {
-	ctx _context.Context
-	ApiService *PortApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *PortApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -597,51 +605,61 @@ func (r ApiGetPortMacBindingListRequest) Filter(filter string) ApiGetPortMacBind
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetPortMacBindingListRequest) Orderby(orderby string) ApiGetPortMacBindingListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetPortMacBindingListRequest) Top(top int32) ApiGetPortMacBindingListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetPortMacBindingListRequest) Skip(skip int32) ApiGetPortMacBindingListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetPortMacBindingListRequest) Select_(select_ string) ApiGetPortMacBindingListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetPortMacBindingListRequest) Expand(expand string) ApiGetPortMacBindingListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetPortMacBindingListRequest) Apply(apply string) ApiGetPortMacBindingListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetPortMacBindingListRequest) Count(count bool) ApiGetPortMacBindingListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetPortMacBindingListRequest) Inlinecount(inlinecount string) ApiGetPortMacBindingListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetPortMacBindingListRequest) At(at string) ApiGetPortMacBindingListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetPortMacBindingListRequest) Tags(tags string) ApiGetPortMacBindingListRequest {
 	r.tags = &tags
@@ -661,7 +679,7 @@ GetPortMacBindingList Read a 'port.MacBinding' resource.
 func (a *PortApiService) GetPortMacBindingList(ctx _context.Context) ApiGetPortMacBindingListRequest {
 	return ApiGetPortMacBindingListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -800,13 +818,13 @@ func (a *PortApiService) GetPortMacBindingListExecute(r ApiGetPortMacBindingList
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -823,11 +841,10 @@ func (a *PortApiService) GetPortMacBindingListExecute(r ApiGetPortMacBindingList
 }
 
 type ApiGetPortSubGroupByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *PortApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetPortSubGroupByMoidRequest) Execute() (PortSubGroup, *_nethttp.Response, error) {
 	return r.ApiService.GetPortSubGroupByMoidExecute(r)
@@ -843,8 +860,8 @@ GetPortSubGroupByMoid Read a 'port.SubGroup' resource.
 func (a *PortApiService) GetPortSubGroupByMoid(ctx _context.Context, moid string) ApiGetPortSubGroupByMoidRequest {
 	return ApiGetPortSubGroupByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -951,13 +968,13 @@ func (a *PortApiService) GetPortSubGroupByMoidExecute(r ApiGetPortSubGroupByMoid
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -974,19 +991,19 @@ func (a *PortApiService) GetPortSubGroupByMoidExecute(r ApiGetPortSubGroupByMoid
 }
 
 type ApiGetPortSubGroupListRequest struct {
-	ctx _context.Context
-	ApiService *PortApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *PortApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -994,51 +1011,61 @@ func (r ApiGetPortSubGroupListRequest) Filter(filter string) ApiGetPortSubGroupL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetPortSubGroupListRequest) Orderby(orderby string) ApiGetPortSubGroupListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetPortSubGroupListRequest) Top(top int32) ApiGetPortSubGroupListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetPortSubGroupListRequest) Skip(skip int32) ApiGetPortSubGroupListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetPortSubGroupListRequest) Select_(select_ string) ApiGetPortSubGroupListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetPortSubGroupListRequest) Expand(expand string) ApiGetPortSubGroupListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetPortSubGroupListRequest) Apply(apply string) ApiGetPortSubGroupListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetPortSubGroupListRequest) Count(count bool) ApiGetPortSubGroupListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetPortSubGroupListRequest) Inlinecount(inlinecount string) ApiGetPortSubGroupListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetPortSubGroupListRequest) At(at string) ApiGetPortSubGroupListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetPortSubGroupListRequest) Tags(tags string) ApiGetPortSubGroupListRequest {
 	r.tags = &tags
@@ -1058,7 +1085,7 @@ GetPortSubGroupList Read a 'port.SubGroup' resource.
 func (a *PortApiService) GetPortSubGroupList(ctx _context.Context) ApiGetPortSubGroupListRequest {
 	return ApiGetPortSubGroupListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1197,13 +1224,13 @@ func (a *PortApiService) GetPortSubGroupListExecute(r ApiGetPortSubGroupListRequ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1220,11 +1247,11 @@ func (a *PortApiService) GetPortSubGroupListExecute(r ApiGetPortSubGroupListRequ
 }
 
 type ApiPatchPortGroupRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *PortApiService
-	moid string
-	portGroup *PortGroup
-	ifMatch *string
+	moid       string
+	portGroup  *PortGroup
+	ifMatch    *string
 }
 
 // The &#39;port.Group&#39; resource to update.
@@ -1232,6 +1259,7 @@ func (r ApiPatchPortGroupRequest) PortGroup(portGroup PortGroup) ApiPatchPortGro
 	r.portGroup = &portGroup
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchPortGroupRequest) IfMatch(ifMatch string) ApiPatchPortGroupRequest {
 	r.ifMatch = &ifMatch
@@ -1252,8 +1280,8 @@ PatchPortGroup Update a 'port.Group' resource.
 func (a *PortApiService) PatchPortGroup(ctx _context.Context, moid string) ApiPatchPortGroupRequest {
 	return ApiPatchPortGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1368,13 +1396,13 @@ func (a *PortApiService) PatchPortGroupExecute(r ApiPatchPortGroupRequest) (Port
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1391,11 +1419,11 @@ func (a *PortApiService) PatchPortGroupExecute(r ApiPatchPortGroupRequest) (Port
 }
 
 type ApiPatchPortMacBindingRequest struct {
-	ctx _context.Context
-	ApiService *PortApiService
-	moid string
+	ctx            _context.Context
+	ApiService     *PortApiService
+	moid           string
 	portMacBinding *PortMacBinding
-	ifMatch *string
+	ifMatch        *string
 }
 
 // The &#39;port.MacBinding&#39; resource to update.
@@ -1403,6 +1431,7 @@ func (r ApiPatchPortMacBindingRequest) PortMacBinding(portMacBinding PortMacBind
 	r.portMacBinding = &portMacBinding
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchPortMacBindingRequest) IfMatch(ifMatch string) ApiPatchPortMacBindingRequest {
 	r.ifMatch = &ifMatch
@@ -1423,8 +1452,8 @@ PatchPortMacBinding Update a 'port.MacBinding' resource.
 func (a *PortApiService) PatchPortMacBinding(ctx _context.Context, moid string) ApiPatchPortMacBindingRequest {
 	return ApiPatchPortMacBindingRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1539,13 +1568,13 @@ func (a *PortApiService) PatchPortMacBindingExecute(r ApiPatchPortMacBindingRequ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1562,11 +1591,11 @@ func (a *PortApiService) PatchPortMacBindingExecute(r ApiPatchPortMacBindingRequ
 }
 
 type ApiPatchPortSubGroupRequest struct {
-	ctx _context.Context
-	ApiService *PortApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *PortApiService
+	moid         string
 	portSubGroup *PortSubGroup
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;port.SubGroup&#39; resource to update.
@@ -1574,6 +1603,7 @@ func (r ApiPatchPortSubGroupRequest) PortSubGroup(portSubGroup PortSubGroup) Api
 	r.portSubGroup = &portSubGroup
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchPortSubGroupRequest) IfMatch(ifMatch string) ApiPatchPortSubGroupRequest {
 	r.ifMatch = &ifMatch
@@ -1594,8 +1624,8 @@ PatchPortSubGroup Update a 'port.SubGroup' resource.
 func (a *PortApiService) PatchPortSubGroup(ctx _context.Context, moid string) ApiPatchPortSubGroupRequest {
 	return ApiPatchPortSubGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1710,13 +1740,13 @@ func (a *PortApiService) PatchPortSubGroupExecute(r ApiPatchPortSubGroupRequest)
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1733,11 +1763,11 @@ func (a *PortApiService) PatchPortSubGroupExecute(r ApiPatchPortSubGroupRequest)
 }
 
 type ApiUpdatePortGroupRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *PortApiService
-	moid string
-	portGroup *PortGroup
-	ifMatch *string
+	moid       string
+	portGroup  *PortGroup
+	ifMatch    *string
 }
 
 // The &#39;port.Group&#39; resource to update.
@@ -1745,6 +1775,7 @@ func (r ApiUpdatePortGroupRequest) PortGroup(portGroup PortGroup) ApiUpdatePortG
 	r.portGroup = &portGroup
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdatePortGroupRequest) IfMatch(ifMatch string) ApiUpdatePortGroupRequest {
 	r.ifMatch = &ifMatch
@@ -1765,8 +1796,8 @@ UpdatePortGroup Update a 'port.Group' resource.
 func (a *PortApiService) UpdatePortGroup(ctx _context.Context, moid string) ApiUpdatePortGroupRequest {
 	return ApiUpdatePortGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1881,13 +1912,13 @@ func (a *PortApiService) UpdatePortGroupExecute(r ApiUpdatePortGroupRequest) (Po
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1904,11 +1935,11 @@ func (a *PortApiService) UpdatePortGroupExecute(r ApiUpdatePortGroupRequest) (Po
 }
 
 type ApiUpdatePortMacBindingRequest struct {
-	ctx _context.Context
-	ApiService *PortApiService
-	moid string
+	ctx            _context.Context
+	ApiService     *PortApiService
+	moid           string
 	portMacBinding *PortMacBinding
-	ifMatch *string
+	ifMatch        *string
 }
 
 // The &#39;port.MacBinding&#39; resource to update.
@@ -1916,6 +1947,7 @@ func (r ApiUpdatePortMacBindingRequest) PortMacBinding(portMacBinding PortMacBin
 	r.portMacBinding = &portMacBinding
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdatePortMacBindingRequest) IfMatch(ifMatch string) ApiUpdatePortMacBindingRequest {
 	r.ifMatch = &ifMatch
@@ -1936,8 +1968,8 @@ UpdatePortMacBinding Update a 'port.MacBinding' resource.
 func (a *PortApiService) UpdatePortMacBinding(ctx _context.Context, moid string) ApiUpdatePortMacBindingRequest {
 	return ApiUpdatePortMacBindingRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2052,13 +2084,13 @@ func (a *PortApiService) UpdatePortMacBindingExecute(r ApiUpdatePortMacBindingRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2075,11 +2107,11 @@ func (a *PortApiService) UpdatePortMacBindingExecute(r ApiUpdatePortMacBindingRe
 }
 
 type ApiUpdatePortSubGroupRequest struct {
-	ctx _context.Context
-	ApiService *PortApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *PortApiService
+	moid         string
 	portSubGroup *PortSubGroup
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;port.SubGroup&#39; resource to update.
@@ -2087,6 +2119,7 @@ func (r ApiUpdatePortSubGroupRequest) PortSubGroup(portSubGroup PortSubGroup) Ap
 	r.portSubGroup = &portSubGroup
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdatePortSubGroupRequest) IfMatch(ifMatch string) ApiUpdatePortSubGroupRequest {
 	r.ifMatch = &ifMatch
@@ -2107,8 +2140,8 @@ UpdatePortSubGroup Update a 'port.SubGroup' resource.
 func (a *PortApiService) UpdatePortSubGroup(ctx _context.Context, moid string) ApiUpdatePortSubGroupRequest {
 	return ApiUpdatePortSubGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2223,13 +2256,13 @@ func (a *PortApiService) UpdatePortSubGroupExecute(r ApiUpdatePortSubGroupReques
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

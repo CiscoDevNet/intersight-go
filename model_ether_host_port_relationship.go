@@ -19,19 +19,18 @@ import (
 // EtherHostPortRelationship - A relationship to the 'ether.HostPort' resource, or the expanded 'ether.HostPort' resource, or the 'null' value.
 type EtherHostPortRelationship struct {
 	EtherHostPort *EtherHostPort
-	MoMoRef *MoMoRef
+	MoMoRef       *MoMoRef
 }
 
 // EtherHostPortAsEtherHostPortRelationship is a convenience function that returns EtherHostPort wrapped in EtherHostPortRelationship
 func EtherHostPortAsEtherHostPortRelationship(v *EtherHostPort) EtherHostPortRelationship {
-	return EtherHostPortRelationship{ EtherHostPort: v}
+	return EtherHostPortRelationship{EtherHostPort: v}
 }
 
 // MoMoRefAsEtherHostPortRelationship is a convenience function that returns MoMoRef wrapped in EtherHostPortRelationship
 func MoMoRefAsEtherHostPortRelationship(v *MoMoRef) EtherHostPortRelationship {
-	return EtherHostPortRelationship{ MoMoRef: v}
+	return EtherHostPortRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EtherHostPortRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src EtherHostPortRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EtherHostPortRelationship) GetActualInstance() (interface{}) {
+func (obj *EtherHostPortRelationship) GetActualInstance() interface{} {
 	if obj.EtherHostPort != nil {
 		return obj.EtherHostPort
 	}
@@ -137,5 +136,3 @@ func (v *NullableEtherHostPortRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

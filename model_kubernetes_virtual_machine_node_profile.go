@@ -23,13 +23,13 @@ type KubernetesVirtualMachineNodeProfile struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType string               `json:"ObjectType"`
 	Interfaces []KubernetesEthernet `json:"Interfaces,omitempty"`
 	// An array of relationships to ippoolIpLease resources.
 	// Deprecated
-	IpAddresses []IppoolIpLeaseRelationship `json:"IpAddresses,omitempty"`
-	NodeIp *IppoolIpLeaseRelationship `json:"NodeIp,omitempty"`
-	VirtualMachine *VirtualizationVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
+	IpAddresses          []IppoolIpLeaseRelationship               `json:"IpAddresses,omitempty"`
+	NodeIp               *IppoolIpLeaseRelationship                `json:"NodeIp,omitempty"`
+	VirtualMachine       *VirtualizationVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *KubernetesVirtualMachineNodeProfile) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesVirtualMachineNodeProfile) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *KubernetesVirtualMachineNodeProfile) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesVirtualMachineNodeProfile) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -114,7 +114,7 @@ func (o *KubernetesVirtualMachineNodeProfile) SetObjectType(v string) {
 
 // GetInterfaces returns the Interfaces field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesVirtualMachineNodeProfile) GetInterfaces() []KubernetesEthernet {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesEthernet
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *KubernetesVirtualMachineNodeProfile) SetInterfaces(v []KubernetesEthern
 // GetIpAddresses returns the IpAddresses field value if set, zero value otherwise (both if not set or set to explicit null).
 // Deprecated
 func (o *KubernetesVirtualMachineNodeProfile) GetIpAddresses() []IppoolIpLeaseRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IppoolIpLeaseRelationship
 		return ret
 	}
@@ -286,12 +286,12 @@ func (o *KubernetesVirtualMachineNodeProfile) UnmarshalJSON(bytes []byte) (err e
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType string               `json:"ObjectType"`
 		Interfaces []KubernetesEthernet `json:"Interfaces,omitempty"`
 		// An array of relationships to ippoolIpLease resources.
 		// Deprecated
-		IpAddresses []IppoolIpLeaseRelationship `json:"IpAddresses,omitempty"`
-		NodeIp *IppoolIpLeaseRelationship `json:"NodeIp,omitempty"`
+		IpAddresses    []IppoolIpLeaseRelationship               `json:"IpAddresses,omitempty"`
+		NodeIp         *IppoolIpLeaseRelationship                `json:"NodeIp,omitempty"`
 		VirtualMachine *VirtualizationVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
 	}
 
@@ -389,5 +389,3 @@ func (v *NullableKubernetesVirtualMachineNodeProfile) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

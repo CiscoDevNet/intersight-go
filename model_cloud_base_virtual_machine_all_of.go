@@ -21,23 +21,23 @@ type CloudBaseVirtualMachineAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
-	BillingUnit NullableCloudBillingUnit `json:"BillingUnit,omitempty"`
-	ImageInfo NullableCloudImageReference `json:"ImageInfo,omitempty"`
-	InstanceType NullableCloudInstanceType `json:"InstanceType,omitempty"`
+	ObjectType                  string                            `json:"ObjectType"`
+	BillingUnit                 NullableCloudBillingUnit          `json:"BillingUnit,omitempty"`
+	ImageInfo                   NullableCloudImageReference       `json:"ImageInfo,omitempty"`
+	InstanceType                NullableCloudInstanceType         `json:"InstanceType,omitempty"`
 	NetworkInterfaceAttachments []CloudNetworkInterfaceAttachment `json:"NetworkInterfaceAttachments,omitempty"`
 	// The private DNS hostname name assigned to the instance.
 	PrivateDns *string `json:"PrivateDns,omitempty"`
 	// The public DNS name assigned to the instance.
-	PublicDns *string `json:"PublicDns,omitempty"`
-	Region NullableCloudCloudRegion `json:"Region,omitempty"`
+	PublicDns *string                  `json:"PublicDns,omitempty"`
+	Region    NullableCloudCloudRegion `json:"Region,omitempty"`
 	// How virtual machines are distributed across physical hardware and affects pricing.
 	Tenancy *string `json:"Tenancy,omitempty"`
 	// Time when this virtualmachine is terminated.
-	TerminationTime *time.Time `json:"TerminationTime,omitempty"`
-	VirtualMachineTags []CloudCloudTag `json:"VirtualMachineTags,omitempty"`
-	VolumeAttachments []CloudVolumeAttachment `json:"VolumeAttachments,omitempty"`
-	Zone NullableCloudAvailabilityZone `json:"Zone,omitempty"`
+	TerminationTime      *time.Time                    `json:"TerminationTime,omitempty"`
+	VirtualMachineTags   []CloudCloudTag               `json:"VirtualMachineTags,omitempty"`
+	VolumeAttachments    []CloudVolumeAttachment       `json:"VolumeAttachments,omitempty"`
+	Zone                 NullableCloudAvailabilityZone `json:"Zone,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *CloudBaseVirtualMachineAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudBaseVirtualMachineAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *CloudBaseVirtualMachineAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudBaseVirtualMachineAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -127,7 +127,7 @@ func (o *CloudBaseVirtualMachineAllOf) GetBillingUnit() CloudBillingUnit {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBaseVirtualMachineAllOf) GetBillingUnitOk() (*CloudBillingUnit, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BillingUnit.Get(), o.BillingUnit.IsSet()
@@ -146,6 +146,7 @@ func (o *CloudBaseVirtualMachineAllOf) HasBillingUnit() bool {
 func (o *CloudBaseVirtualMachineAllOf) SetBillingUnit(v CloudBillingUnit) {
 	o.BillingUnit.Set(&v)
 }
+
 // SetBillingUnitNil sets the value for BillingUnit to be an explicit nil
 func (o *CloudBaseVirtualMachineAllOf) SetBillingUnitNil() {
 	o.BillingUnit.Set(nil)
@@ -169,7 +170,7 @@ func (o *CloudBaseVirtualMachineAllOf) GetImageInfo() CloudImageReference {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBaseVirtualMachineAllOf) GetImageInfoOk() (*CloudImageReference, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ImageInfo.Get(), o.ImageInfo.IsSet()
@@ -188,6 +189,7 @@ func (o *CloudBaseVirtualMachineAllOf) HasImageInfo() bool {
 func (o *CloudBaseVirtualMachineAllOf) SetImageInfo(v CloudImageReference) {
 	o.ImageInfo.Set(&v)
 }
+
 // SetImageInfoNil sets the value for ImageInfo to be an explicit nil
 func (o *CloudBaseVirtualMachineAllOf) SetImageInfoNil() {
 	o.ImageInfo.Set(nil)
@@ -211,7 +213,7 @@ func (o *CloudBaseVirtualMachineAllOf) GetInstanceType() CloudInstanceType {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBaseVirtualMachineAllOf) GetInstanceTypeOk() (*CloudInstanceType, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.InstanceType.Get(), o.InstanceType.IsSet()
@@ -230,6 +232,7 @@ func (o *CloudBaseVirtualMachineAllOf) HasInstanceType() bool {
 func (o *CloudBaseVirtualMachineAllOf) SetInstanceType(v CloudInstanceType) {
 	o.InstanceType.Set(&v)
 }
+
 // SetInstanceTypeNil sets the value for InstanceType to be an explicit nil
 func (o *CloudBaseVirtualMachineAllOf) SetInstanceTypeNil() {
 	o.InstanceType.Set(nil)
@@ -242,7 +245,7 @@ func (o *CloudBaseVirtualMachineAllOf) UnsetInstanceType() {
 
 // GetNetworkInterfaceAttachments returns the NetworkInterfaceAttachments field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudBaseVirtualMachineAllOf) GetNetworkInterfaceAttachments() []CloudNetworkInterfaceAttachment {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudNetworkInterfaceAttachment
 		return ret
 	}
@@ -350,7 +353,7 @@ func (o *CloudBaseVirtualMachineAllOf) GetRegion() CloudCloudRegion {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBaseVirtualMachineAllOf) GetRegionOk() (*CloudCloudRegion, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Region.Get(), o.Region.IsSet()
@@ -369,6 +372,7 @@ func (o *CloudBaseVirtualMachineAllOf) HasRegion() bool {
 func (o *CloudBaseVirtualMachineAllOf) SetRegion(v CloudCloudRegion) {
 	o.Region.Set(&v)
 }
+
 // SetRegionNil sets the value for Region to be an explicit nil
 func (o *CloudBaseVirtualMachineAllOf) SetRegionNil() {
 	o.Region.Set(nil)
@@ -445,7 +449,7 @@ func (o *CloudBaseVirtualMachineAllOf) SetTerminationTime(v time.Time) {
 
 // GetVirtualMachineTags returns the VirtualMachineTags field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudBaseVirtualMachineAllOf) GetVirtualMachineTags() []CloudCloudTag {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudCloudTag
 		return ret
 	}
@@ -478,7 +482,7 @@ func (o *CloudBaseVirtualMachineAllOf) SetVirtualMachineTags(v []CloudCloudTag) 
 
 // GetVolumeAttachments returns the VolumeAttachments field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudBaseVirtualMachineAllOf) GetVolumeAttachments() []CloudVolumeAttachment {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudVolumeAttachment
 		return ret
 	}
@@ -522,7 +526,7 @@ func (o *CloudBaseVirtualMachineAllOf) GetZone() CloudAvailabilityZone {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBaseVirtualMachineAllOf) GetZoneOk() (*CloudAvailabilityZone, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Zone.Get(), o.Zone.IsSet()
@@ -541,6 +545,7 @@ func (o *CloudBaseVirtualMachineAllOf) HasZone() bool {
 func (o *CloudBaseVirtualMachineAllOf) SetZone(v CloudAvailabilityZone) {
 	o.Zone.Set(&v)
 }
+
 // SetZoneNil sets the value for Zone to be an explicit nil
 func (o *CloudBaseVirtualMachineAllOf) SetZoneNil() {
 	o.Zone.Set(nil)
@@ -668,5 +673,3 @@ func (v *NullableCloudBaseVirtualMachineAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

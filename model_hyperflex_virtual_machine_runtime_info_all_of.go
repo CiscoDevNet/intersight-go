@@ -48,7 +48,7 @@ type HyperflexVirtualMachineRuntimeInfoAllOf struct {
 	// Virtual Machine unique MOID.
 	Moid *string `json:"Moid,omitempty"`
 	// Name of the Virtual Machine.
-	Name *string `json:"Name,omitempty"`
+	Name     *string  `json:"Name,omitempty"`
 	Networks []string `json:"Networks,omitempty"`
 	// Number of CPUs for the VM.
 	NumCpu *int64 `json:"NumCpu,omitempty"`
@@ -63,7 +63,7 @@ type HyperflexVirtualMachineRuntimeInfoAllOf struct {
 	// Version of the Virtual Machine.
 	Version *string `json:"Version,omitempty"`
 	// Vmx Path in VC datastore format.
-	VmxPath *string `json:"VmxPath,omitempty"`
+	VmxPath              *string `json:"VmxPath,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -105,7 +105,7 @@ func (o *HyperflexVirtualMachineRuntimeInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexVirtualMachineRuntimeInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -129,7 +129,7 @@ func (o *HyperflexVirtualMachineRuntimeInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexVirtualMachineRuntimeInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -590,7 +590,7 @@ func (o *HyperflexVirtualMachineRuntimeInfoAllOf) SetName(v string) {
 
 // GetNetworks returns the Networks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexVirtualMachineRuntimeInfoAllOf) GetNetworks() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -1002,5 +1002,3 @@ func (v *NullableHyperflexVirtualMachineRuntimeInfoAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

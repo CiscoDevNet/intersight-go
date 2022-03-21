@@ -20,7 +20,7 @@ type TelemetryDruidUnionDataSource struct {
 	// The type of data source.
 	Type string `json:"type"`
 	// A list of data sources.
-	DataSources []string `json:"dataSources"`
+	DataSources          []string `json:"dataSources"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -58,7 +58,7 @@ func (o *TelemetryDruidUnionDataSource) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidUnionDataSource) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -82,7 +82,7 @@ func (o *TelemetryDruidUnionDataSource) GetDataSources() []string {
 // GetDataSourcesOk returns a tuple with the DataSources field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidUnionDataSource) GetDataSourcesOk() (*[]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DataSources, true
@@ -162,5 +162,3 @@ func (v *NullableTelemetryDruidUnionDataSource) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

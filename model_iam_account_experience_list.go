@@ -23,7 +23,7 @@ type IamAccountExperienceList struct {
 	// The total number of 'iam.AccountExperience' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'iam.AccountExperience' resources matching the request.
-	Results []IamAccountExperience `json:"Results,omitempty"`
+	Results              []IamAccountExperience `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *IamAccountExperienceList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccountExperienceList) GetResults() []IamAccountExperience {
-	if o == nil  {
+	if o == nil {
 		var ret []IamAccountExperience
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableIamAccountExperienceList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

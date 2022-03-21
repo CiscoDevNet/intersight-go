@@ -29,10 +29,10 @@ type GraphicsController struct {
 	// The PCI address of the graphics controller.
 	PciAddr *string `json:"PciAddr,omitempty"`
 	// The PCI slot information of the graphics controller.
-	PciSlot *string `json:"PciSlot,omitempty"`
-	GraphicsCard *GraphicsCardRelationship `json:"GraphicsCard,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	PciSlot              *string                              `json:"PciSlot,omitempty"`
+	GraphicsCard         *GraphicsCardRelationship            `json:"GraphicsCard,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *GraphicsController) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *GraphicsController) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *GraphicsController) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *GraphicsController) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -354,10 +354,10 @@ func (o *GraphicsController) UnmarshalJSON(bytes []byte) (err error) {
 		// The PCI address of the graphics controller.
 		PciAddr *string `json:"PciAddr,omitempty"`
 		// The PCI slot information of the graphics controller.
-		PciSlot *string `json:"PciSlot,omitempty"`
-		GraphicsCard *GraphicsCardRelationship `json:"GraphicsCard,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		PciSlot             *string                              `json:"PciSlot,omitempty"`
+		GraphicsCard        *GraphicsCardRelationship            `json:"GraphicsCard,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
 	varGraphicsControllerWithoutEmbeddedStruct := GraphicsControllerWithoutEmbeddedStruct{}
@@ -458,5 +458,3 @@ func (v *NullableGraphicsController) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

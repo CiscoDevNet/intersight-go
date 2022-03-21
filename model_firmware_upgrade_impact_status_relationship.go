@@ -19,19 +19,18 @@ import (
 // FirmwareUpgradeImpactStatusRelationship - A relationship to the 'firmware.UpgradeImpactStatus' resource, or the expanded 'firmware.UpgradeImpactStatus' resource, or the 'null' value.
 type FirmwareUpgradeImpactStatusRelationship struct {
 	FirmwareUpgradeImpactStatus *FirmwareUpgradeImpactStatus
-	MoMoRef *MoMoRef
+	MoMoRef                     *MoMoRef
 }
 
 // FirmwareUpgradeImpactStatusAsFirmwareUpgradeImpactStatusRelationship is a convenience function that returns FirmwareUpgradeImpactStatus wrapped in FirmwareUpgradeImpactStatusRelationship
 func FirmwareUpgradeImpactStatusAsFirmwareUpgradeImpactStatusRelationship(v *FirmwareUpgradeImpactStatus) FirmwareUpgradeImpactStatusRelationship {
-	return FirmwareUpgradeImpactStatusRelationship{ FirmwareUpgradeImpactStatus: v}
+	return FirmwareUpgradeImpactStatusRelationship{FirmwareUpgradeImpactStatus: v}
 }
 
 // MoMoRefAsFirmwareUpgradeImpactStatusRelationship is a convenience function that returns MoMoRef wrapped in FirmwareUpgradeImpactStatusRelationship
 func MoMoRefAsFirmwareUpgradeImpactStatusRelationship(v *MoMoRef) FirmwareUpgradeImpactStatusRelationship {
-	return FirmwareUpgradeImpactStatusRelationship{ MoMoRef: v}
+	return FirmwareUpgradeImpactStatusRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FirmwareUpgradeImpactStatusRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src FirmwareUpgradeImpactStatusRelationship) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *FirmwareUpgradeImpactStatusRelationship) GetActualInstance() (interface{}) {
+func (obj *FirmwareUpgradeImpactStatusRelationship) GetActualInstance() interface{} {
 	if obj.FirmwareUpgradeImpactStatus != nil {
 		return obj.FirmwareUpgradeImpactStatus
 	}
@@ -137,5 +136,3 @@ func (v *NullableFirmwareUpgradeImpactStatusRelationship) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

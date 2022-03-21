@@ -18,7 +18,7 @@ import (
 // TelemetryDruidGreatestLeastPostAggregatorAllOf struct for TelemetryDruidGreatestLeastPostAggregatorAllOf
 type TelemetryDruidGreatestLeastPostAggregatorAllOf struct {
 	// Output name for the post-aggregator.
-	Name *string `json:"name,omitempty"`
+	Name                 *string `json:"name,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -138,5 +138,3 @@ func (v *NullableTelemetryDruidGreatestLeastPostAggregatorAllOf) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -45,16 +45,16 @@ type IamUserAllOf struct {
 	// An array of relationships to iamApiKey resources.
 	ApiKeys []IamApiKeyRelationship `json:"ApiKeys,omitempty"`
 	// An array of relationships to iamAppRegistration resources.
-	AppRegistrations []IamAppRegistrationRelationship `json:"AppRegistrations,omitempty"`
-	Idp *IamIdpRelationship `json:"Idp,omitempty"`
-	Idpreference *IamIdpReferenceRelationship `json:"Idpreference,omitempty"`
+	AppRegistrations  []IamAppRegistrationRelationship  `json:"AppRegistrations,omitempty"`
+	Idp               *IamIdpRelationship               `json:"Idp,omitempty"`
+	Idpreference      *IamIdpReferenceRelationship      `json:"Idpreference,omitempty"`
 	LocalUserPassword *IamLocalUserPasswordRelationship `json:"LocalUserPassword,omitempty"`
 	// An array of relationships to iamOAuthToken resources.
 	OauthTokens []IamOAuthTokenRelationship `json:"OauthTokens,omitempty"`
 	// An array of relationships to iamPermission resources.
 	Permissions []IamPermissionRelationship `json:"Permissions,omitempty"`
 	// An array of relationships to iamSession resources.
-	Sessions []IamSessionRelationship `json:"Sessions,omitempty"`
+	Sessions             []IamSessionRelationship `json:"Sessions,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -96,7 +96,7 @@ func (o *IamUserAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamUserAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -120,7 +120,7 @@ func (o *IamUserAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamUserAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -453,7 +453,7 @@ func (o *IamUserAllOf) SetUserUniqueIdentifier(v string) {
 
 // GetApiKeys returns the ApiKeys field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamUserAllOf) GetApiKeys() []IamApiKeyRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamApiKeyRelationship
 		return ret
 	}
@@ -486,7 +486,7 @@ func (o *IamUserAllOf) SetApiKeys(v []IamApiKeyRelationship) {
 
 // GetAppRegistrations returns the AppRegistrations field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamUserAllOf) GetAppRegistrations() []IamAppRegistrationRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamAppRegistrationRelationship
 		return ret
 	}
@@ -615,7 +615,7 @@ func (o *IamUserAllOf) SetLocalUserPassword(v IamLocalUserPasswordRelationship) 
 
 // GetOauthTokens returns the OauthTokens field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamUserAllOf) GetOauthTokens() []IamOAuthTokenRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamOAuthTokenRelationship
 		return ret
 	}
@@ -648,7 +648,7 @@ func (o *IamUserAllOf) SetOauthTokens(v []IamOAuthTokenRelationship) {
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamUserAllOf) GetPermissions() []IamPermissionRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPermissionRelationship
 		return ret
 	}
@@ -681,7 +681,7 @@ func (o *IamUserAllOf) SetPermissions(v []IamPermissionRelationship) {
 
 // GetSessions returns the Sessions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamUserAllOf) GetSessions() []IamSessionRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamSessionRelationship
 		return ret
 	}
@@ -853,5 +853,3 @@ func (v *NullableIamUserAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

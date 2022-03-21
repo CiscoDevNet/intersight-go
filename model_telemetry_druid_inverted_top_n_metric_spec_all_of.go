@@ -17,7 +17,7 @@ import (
 
 // TelemetryDruidInvertedTopNMetricSpecAllOf struct for TelemetryDruidInvertedTopNMetricSpecAllOf
 type TelemetryDruidInvertedTopNMetricSpecAllOf struct {
-	Metric TelemetryDruidTopNMetricSpec `json:"metric"`
+	Metric               TelemetryDruidTopNMetricSpec `json:"metric"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -54,7 +54,7 @@ func (o *TelemetryDruidInvertedTopNMetricSpecAllOf) GetMetric() TelemetryDruidTo
 // GetMetricOk returns a tuple with the Metric field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidInvertedTopNMetricSpecAllOf) GetMetricOk() (*TelemetryDruidTopNMetricSpec, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Metric, true
@@ -130,5 +130,3 @@ func (v *NullableTelemetryDruidInvertedTopNMetricSpecAllOf) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

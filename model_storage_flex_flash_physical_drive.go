@@ -31,11 +31,11 @@ type StorageFlexFlashPhysicalDrive struct {
 	// The OEM Identifier of the flex flash physical drive.
 	OemId *string `json:"OemId,omitempty"`
 	// The drive status of the flex flash physical drive.
-	PdStatus *string `json:"PdStatus,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	PdStatus                   *string                                 `json:"PdStatus,omitempty"`
+	InventoryDeviceInfo        *InventoryDeviceInfoRelationship        `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice           *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	StorageFlexFlashController *StorageFlexFlashControllerRelationship `json:"StorageFlexFlashController,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties       map[string]interface{}
 }
 
 type _StorageFlexFlashPhysicalDrive StorageFlexFlashPhysicalDrive
@@ -76,7 +76,7 @@ func (o *StorageFlexFlashPhysicalDrive) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageFlexFlashPhysicalDrive) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *StorageFlexFlashPhysicalDrive) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageFlexFlashPhysicalDrive) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -393,9 +393,9 @@ func (o *StorageFlexFlashPhysicalDrive) UnmarshalJSON(bytes []byte) (err error) 
 		// The OEM Identifier of the flex flash physical drive.
 		OemId *string `json:"OemId,omitempty"`
 		// The drive status of the flex flash physical drive.
-		PdStatus *string `json:"PdStatus,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		PdStatus                   *string                                 `json:"PdStatus,omitempty"`
+		InventoryDeviceInfo        *InventoryDeviceInfoRelationship        `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice           *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 		StorageFlexFlashController *StorageFlexFlashControllerRelationship `json:"StorageFlexFlashController,omitempty"`
 	}
 
@@ -499,5 +499,3 @@ func (v *NullableStorageFlexFlashPhysicalDrive) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -30,13 +30,13 @@ type StorageNetAppBaseDiskAllOf struct {
 	// Current state of the NetApp disk. * `Present` - Storage disk state type is present. * `Copy` - Storage disk state type is copy. * `Broken` - Storage disk state type is broken. * `Maintenance` - Storage disk state type is maintenance. * `Partner` - Storage disk state type is partner. * `Pending` - Storage disk state type is pending. * `Reconstructing` - Storage disk state type is reconstructing. * `Removed` - Storage disk state type is removed. * `Spare` - Storage disk state type is spare. * `Unfail` - Storage disk state type is unfail. * `Zeroing` - Storage disk state type is zeroing.
 	State *string `json:"State,omitempty"`
 	// Universally unique identifier of the NetApp Disk.
-	Uuid *string `json:"Uuid,omitempty"`
-	Array *StorageNetAppClusterRelationship `json:"Array,omitempty"`
-	ArrayController *StorageNetAppNodeRelationship `json:"ArrayController,omitempty"`
+	Uuid            *string                           `json:"Uuid,omitempty"`
+	Array           *StorageNetAppClusterRelationship `json:"Array,omitempty"`
+	ArrayController *StorageNetAppNodeRelationship    `json:"ArrayController,omitempty"`
 	// An array of relationships to storageNetAppAggregate resources.
 	DiskPool []StorageNetAppAggregateRelationship `json:"DiskPool,omitempty"`
 	// An array of relationships to storageNetAppDiskEvent resources.
-	Events []StorageNetAppDiskEventRelationship `json:"Events,omitempty"`
+	Events               []StorageNetAppDiskEventRelationship `json:"Events,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *StorageNetAppBaseDiskAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppBaseDiskAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *StorageNetAppBaseDiskAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppBaseDiskAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -339,7 +339,7 @@ func (o *StorageNetAppBaseDiskAllOf) SetArrayController(v StorageNetAppNodeRelat
 
 // GetDiskPool returns the DiskPool field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppBaseDiskAllOf) GetDiskPool() []StorageNetAppAggregateRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppAggregateRelationship
 		return ret
 	}
@@ -372,7 +372,7 @@ func (o *StorageNetAppBaseDiskAllOf) SetDiskPool(v []StorageNetAppAggregateRelat
 
 // GetEvents returns the Events field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppBaseDiskAllOf) GetEvents() []StorageNetAppDiskEventRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppDiskEventRelationship
 		return ret
 	}
@@ -508,5 +508,3 @@ func (v *NullableStorageNetAppBaseDiskAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

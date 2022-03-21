@@ -24,7 +24,7 @@ type TelemetryDruidRegexFilter struct {
 	// null
 	Dimension string `json:"dimension"`
 	// null
-	Pattern string `json:"pattern"`
+	Pattern              string `json:"pattern"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -63,7 +63,7 @@ func (o *TelemetryDruidRegexFilter) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidRegexFilter) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -119,7 +119,7 @@ func (o *TelemetryDruidRegexFilter) GetDimension() string {
 // GetDimensionOk returns a tuple with the Dimension field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidRegexFilter) GetDimensionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Dimension, true
@@ -143,7 +143,7 @@ func (o *TelemetryDruidRegexFilter) GetPattern() string {
 // GetPatternOk returns a tuple with the Pattern field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidRegexFilter) GetPatternOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Pattern, true
@@ -231,5 +231,3 @@ func (v *NullableTelemetryDruidRegexFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

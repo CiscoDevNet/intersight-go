@@ -28,7 +28,7 @@ type IaasLicenseUtilizationInfoAllOf struct {
 	// License limit for this license feature.
 	LicensedLimit *string `json:"LicensedLimit,omitempty"`
 	// SKU for the UCSD license.
-	Sku *string `json:"Sku,omitempty"`
+	Sku                  *string `json:"Sku,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *IaasLicenseUtilizationInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IaasLicenseUtilizationInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *IaasLicenseUtilizationInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IaasLicenseUtilizationInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -318,5 +318,3 @@ func (v *NullableIaasLicenseUtilizationInfoAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

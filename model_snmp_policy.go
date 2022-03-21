@@ -33,7 +33,7 @@ type SnmpPolicy struct {
 	// User-defined unique identification of the static engine.
 	EngineId *string `json:"EngineId,omitempty"`
 	// Port on which Cisco IMC SNMP agent runs. Enter a value between 1-65535. Reserved ports not allowed (22, 23, 80, 123, 389, 443, 623, 636, 2068, 3268, 3269).
-	SnmpPort *int64 `json:"SnmpPort,omitempty"`
+	SnmpPort  *int64     `json:"SnmpPort,omitempty"`
 	SnmpTraps []SnmpTrap `json:"SnmpTraps,omitempty"`
 	SnmpUsers []SnmpUser `json:"SnmpUsers,omitempty"`
 	// Contact person responsible for the SNMP implementation. Enter a string up to 64 characters, such as an email address or a name and telephone number.
@@ -45,10 +45,10 @@ type SnmpPolicy struct {
 	// State of the SNMP v2c on the endpoint. If enabled, the endpoint sends SNMP v2c properties to the designated host.
 	V2Enabled *bool `json:"V2Enabled,omitempty"`
 	// State of the SNMP v3 on the endpoint. If enabled, the endpoint sends SNMP v3 properties to the designated host.
-	V3Enabled *bool `json:"V3Enabled,omitempty"`
+	V3Enabled    *bool                                 `json:"V3Enabled,omitempty"`
 	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
-	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -110,7 +110,7 @@ func (o *SnmpPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SnmpPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -134,7 +134,7 @@ func (o *SnmpPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SnmpPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -307,7 +307,7 @@ func (o *SnmpPolicy) SetSnmpPort(v int64) {
 
 // GetSnmpTraps returns the SnmpTraps field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SnmpPolicy) GetSnmpTraps() []SnmpTrap {
-	if o == nil  {
+	if o == nil {
 		var ret []SnmpTrap
 		return ret
 	}
@@ -340,7 +340,7 @@ func (o *SnmpPolicy) SetSnmpTraps(v []SnmpTrap) {
 
 // GetSnmpUsers returns the SnmpUsers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SnmpPolicy) GetSnmpUsers() []SnmpUser {
-	if o == nil  {
+	if o == nil {
 		var ret []SnmpUser
 		return ret
 	}
@@ -565,7 +565,7 @@ func (o *SnmpPolicy) SetOrganization(v OrganizationOrganizationRelationship) {
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SnmpPolicy) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -677,7 +677,7 @@ func (o *SnmpPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// User-defined unique identification of the static engine.
 		EngineId *string `json:"EngineId,omitempty"`
 		// Port on which Cisco IMC SNMP agent runs. Enter a value between 1-65535. Reserved ports not allowed (22, 23, 80, 123, 389, 443, 623, 636, 2068, 3268, 3269).
-		SnmpPort *int64 `json:"SnmpPort,omitempty"`
+		SnmpPort  *int64     `json:"SnmpPort,omitempty"`
 		SnmpTraps []SnmpTrap `json:"SnmpTraps,omitempty"`
 		SnmpUsers []SnmpUser `json:"SnmpUsers,omitempty"`
 		// Contact person responsible for the SNMP implementation. Enter a string up to 64 characters, such as an email address or a name and telephone number.
@@ -689,7 +689,7 @@ func (o *SnmpPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// State of the SNMP v2c on the endpoint. If enabled, the endpoint sends SNMP v2c properties to the designated host.
 		V2Enabled *bool `json:"V2Enabled,omitempty"`
 		// State of the SNMP v3 on the endpoint. If enabled, the endpoint sends SNMP v3 properties to the designated host.
-		V3Enabled *bool `json:"V3Enabled,omitempty"`
+		V3Enabled    *bool                                 `json:"V3Enabled,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 		// An array of relationships to policyAbstractConfigProfile resources.
 		Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
@@ -809,5 +809,3 @@ func (v *NullableSnmpPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

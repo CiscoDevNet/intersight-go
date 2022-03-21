@@ -28,7 +28,7 @@ type AdapterHostFcInterfaceAllOf struct {
 	// Identifier of Host Fibre Channel Interface.
 	HostFcInterfaceId *int64 `json:"HostFcInterfaceId,omitempty"`
 	// Name of Host Fibre Channel Interface.
-	Name *string `json:"Name,omitempty"`
+	Name       *string  `json:"Name,omitempty"`
 	OperReason []string `json:"OperReason,omitempty"`
 	// Operational State of Host Fibre Channel Interface.
 	OperState *string `json:"OperState,omitempty"`
@@ -43,10 +43,10 @@ type AdapterHostFcInterfaceAllOf struct {
 	// The uniquely distinguishable user configured World Wide Node Name of the Host.
 	Wwnn *string `json:"Wwnn,omitempty"`
 	// The uniquely distinguishable user configured World Wide Port Name of the Host Fibre Channel Interface.
-	Wwpn *string `json:"Wwpn,omitempty"`
-	AdapterUnit *AdapterUnitRelationship `json:"AdapterUnit,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Wwpn                 *string                              `json:"Wwpn,omitempty"`
+	AdapterUnit          *AdapterUnitRelationship             `json:"AdapterUnit,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -88,7 +88,7 @@ func (o *AdapterHostFcInterfaceAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AdapterHostFcInterfaceAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *AdapterHostFcInterfaceAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AdapterHostFcInterfaceAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -253,7 +253,7 @@ func (o *AdapterHostFcInterfaceAllOf) SetName(v string) {
 
 // GetOperReason returns the OperReason field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AdapterHostFcInterfaceAllOf) GetOperReason() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -733,5 +733,3 @@ func (v *NullableAdapterHostFcInterfaceAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

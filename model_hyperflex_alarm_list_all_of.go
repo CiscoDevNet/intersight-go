@@ -20,7 +20,7 @@ type HyperflexAlarmListAllOf struct {
 	// The total number of 'hyperflex.Alarm' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'hyperflex.Alarm' resources matching the request.
-	Results []HyperflexAlarm `json:"Results,omitempty"`
+	Results              []HyperflexAlarm `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *HyperflexAlarmListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexAlarmListAllOf) GetResults() []HyperflexAlarm {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexAlarm
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableHyperflexAlarmListAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

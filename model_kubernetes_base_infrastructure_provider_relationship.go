@@ -19,19 +19,18 @@ import (
 // KubernetesBaseInfrastructureProviderRelationship - A relationship to the 'kubernetes.BaseInfrastructureProvider' resource, or the expanded 'kubernetes.BaseInfrastructureProvider' resource, or the 'null' value.
 type KubernetesBaseInfrastructureProviderRelationship struct {
 	KubernetesBaseInfrastructureProvider *KubernetesBaseInfrastructureProvider
-	MoMoRef *MoMoRef
+	MoMoRef                              *MoMoRef
 }
 
 // KubernetesBaseInfrastructureProviderAsKubernetesBaseInfrastructureProviderRelationship is a convenience function that returns KubernetesBaseInfrastructureProvider wrapped in KubernetesBaseInfrastructureProviderRelationship
 func KubernetesBaseInfrastructureProviderAsKubernetesBaseInfrastructureProviderRelationship(v *KubernetesBaseInfrastructureProvider) KubernetesBaseInfrastructureProviderRelationship {
-	return KubernetesBaseInfrastructureProviderRelationship{ KubernetesBaseInfrastructureProvider: v}
+	return KubernetesBaseInfrastructureProviderRelationship{KubernetesBaseInfrastructureProvider: v}
 }
 
 // MoMoRefAsKubernetesBaseInfrastructureProviderRelationship is a convenience function that returns MoMoRef wrapped in KubernetesBaseInfrastructureProviderRelationship
 func MoMoRefAsKubernetesBaseInfrastructureProviderRelationship(v *MoMoRef) KubernetesBaseInfrastructureProviderRelationship {
-	return KubernetesBaseInfrastructureProviderRelationship{ MoMoRef: v}
+	return KubernetesBaseInfrastructureProviderRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesBaseInfrastructureProviderRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesBaseInfrastructureProviderRelationship) MarshalJSON() ([]byt
 }
 
 // Get the actual instance
-func (obj *KubernetesBaseInfrastructureProviderRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesBaseInfrastructureProviderRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesBaseInfrastructureProvider != nil {
 		return obj.KubernetesBaseInfrastructureProvider
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesBaseInfrastructureProviderRelationship) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

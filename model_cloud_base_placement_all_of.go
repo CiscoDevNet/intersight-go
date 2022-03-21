@@ -20,12 +20,12 @@ type CloudBasePlacementAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
+	ObjectType  string                   `json:"ObjectType"`
 	BillingUnit NullableCloudBillingUnit `json:"BillingUnit,omitempty"`
 	// The internally generated identity of this placement. This entity is not manipulated by users. It aids in uniquely identifying the placement object.
-	Identity *string `json:"Identity,omitempty"`
-	RegionInfo NullableCloudCloudRegion `json:"RegionInfo,omitempty"`
-	ZoneInfo NullableCloudAvailabilityZone `json:"ZoneInfo,omitempty"`
+	Identity             *string                       `json:"Identity,omitempty"`
+	RegionInfo           NullableCloudCloudRegion      `json:"RegionInfo,omitempty"`
+	ZoneInfo             NullableCloudAvailabilityZone `json:"ZoneInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *CloudBasePlacementAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudBasePlacementAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *CloudBasePlacementAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudBasePlacementAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -115,7 +115,7 @@ func (o *CloudBasePlacementAllOf) GetBillingUnit() CloudBillingUnit {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBasePlacementAllOf) GetBillingUnitOk() (*CloudBillingUnit, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BillingUnit.Get(), o.BillingUnit.IsSet()
@@ -134,6 +134,7 @@ func (o *CloudBasePlacementAllOf) HasBillingUnit() bool {
 func (o *CloudBasePlacementAllOf) SetBillingUnit(v CloudBillingUnit) {
 	o.BillingUnit.Set(&v)
 }
+
 // SetBillingUnitNil sets the value for BillingUnit to be an explicit nil
 func (o *CloudBasePlacementAllOf) SetBillingUnitNil() {
 	o.BillingUnit.Set(nil)
@@ -189,7 +190,7 @@ func (o *CloudBasePlacementAllOf) GetRegionInfo() CloudCloudRegion {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBasePlacementAllOf) GetRegionInfoOk() (*CloudCloudRegion, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RegionInfo.Get(), o.RegionInfo.IsSet()
@@ -208,6 +209,7 @@ func (o *CloudBasePlacementAllOf) HasRegionInfo() bool {
 func (o *CloudBasePlacementAllOf) SetRegionInfo(v CloudCloudRegion) {
 	o.RegionInfo.Set(&v)
 }
+
 // SetRegionInfoNil sets the value for RegionInfo to be an explicit nil
 func (o *CloudBasePlacementAllOf) SetRegionInfoNil() {
 	o.RegionInfo.Set(nil)
@@ -231,7 +233,7 @@ func (o *CloudBasePlacementAllOf) GetZoneInfo() CloudAvailabilityZone {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBasePlacementAllOf) GetZoneInfoOk() (*CloudAvailabilityZone, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ZoneInfo.Get(), o.ZoneInfo.IsSet()
@@ -250,6 +252,7 @@ func (o *CloudBasePlacementAllOf) HasZoneInfo() bool {
 func (o *CloudBasePlacementAllOf) SetZoneInfo(v CloudAvailabilityZone) {
 	o.ZoneInfo.Set(&v)
 }
+
 // SetZoneInfoNil sets the value for ZoneInfo to be an explicit nil
 func (o *CloudBasePlacementAllOf) SetZoneInfoNil() {
 	o.ZoneInfo.Set(nil)
@@ -345,5 +348,3 @@ func (v *NullableCloudBasePlacementAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -27,8 +27,8 @@ type ServerBaseProfile struct {
 	// The platform for which the server profile is applicable. It can either be a server that is operating in standalone mode or which is attached to a Fabric Interconnect managed by Intersight. * `Standalone` - Servers which are operating in standalone mode i.e. not connected to a Fabric Interconnected. * `FIAttached` - Servers which are connected to a Fabric Interconnect that is managed by Intersight.
 	TargetPlatform *string `json:"TargetPlatform,omitempty"`
 	// UUID address allocation type selected to assign an UUID address for the server. * `NONE` - The user did not assign any UUID address. * `STATIC` - The user assigns a static UUID address. * `POOL` - The user selects a pool from which the address will be leased.
-	UuidAddressType *string `json:"UuidAddressType,omitempty"`
-	UuidPool *UuidpoolPoolRelationship `json:"UuidPool,omitempty"`
+	UuidAddressType      *string                   `json:"UuidAddressType,omitempty"`
+	UuidPool             *UuidpoolPoolRelationship `json:"UuidPool,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *ServerBaseProfile) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ServerBaseProfile) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *ServerBaseProfile) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ServerBaseProfile) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -251,8 +251,8 @@ func (o *ServerBaseProfile) UnmarshalJSON(bytes []byte) (err error) {
 		// The platform for which the server profile is applicable. It can either be a server that is operating in standalone mode or which is attached to a Fabric Interconnect managed by Intersight. * `Standalone` - Servers which are operating in standalone mode i.e. not connected to a Fabric Interconnected. * `FIAttached` - Servers which are connected to a Fabric Interconnect that is managed by Intersight.
 		TargetPlatform *string `json:"TargetPlatform,omitempty"`
 		// UUID address allocation type selected to assign an UUID address for the server. * `NONE` - The user did not assign any UUID address. * `STATIC` - The user assigns a static UUID address. * `POOL` - The user selects a pool from which the address will be leased.
-		UuidAddressType *string `json:"UuidAddressType,omitempty"`
-		UuidPool *UuidpoolPoolRelationship `json:"UuidPool,omitempty"`
+		UuidAddressType *string                   `json:"UuidAddressType,omitempty"`
+		UuidPool        *UuidpoolPoolRelationship `json:"UuidPool,omitempty"`
 	}
 
 	varServerBaseProfileWithoutEmbeddedStruct := ServerBaseProfileWithoutEmbeddedStruct{}
@@ -347,5 +347,3 @@ func (v *NullableServerBaseProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

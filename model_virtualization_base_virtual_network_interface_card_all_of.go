@@ -26,7 +26,7 @@ type VirtualizationBaseVirtualNetworkInterfaceCardAllOf struct {
 	// MAC address assigned to the virtual network interface card.
 	MacAddress *string `json:"MacAddress,omitempty"`
 	// Name of the virtual network interface card.
-	Name *string `json:"Name,omitempty"`
+	Name                 *string `json:"Name,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *VirtualizationBaseVirtualNetworkInterfaceCardAllOf) GetClassId() string
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBaseVirtualNetworkInterfaceCardAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *VirtualizationBaseVirtualNetworkInterfaceCardAllOf) GetObjectType() str
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBaseVirtualNetworkInterfaceCardAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,5 +280,3 @@ func (v *NullableVirtualizationBaseVirtualNetworkInterfaceCardAllOf) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

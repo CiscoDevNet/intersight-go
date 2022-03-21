@@ -26,7 +26,7 @@ type WorkflowInitiatorContextAllOf struct {
 	// Name of the initiator who started the workflow. The initiator can be Intersight managed object that triggered the workflow.
 	InitiatorName *string `json:"InitiatorName,omitempty"`
 	// Type of Intersight managed object that initiated the workflow.
-	InitiatorType *string `json:"InitiatorType,omitempty"`
+	InitiatorType        *string `json:"InitiatorType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *WorkflowInitiatorContextAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowInitiatorContextAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *WorkflowInitiatorContextAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowInitiatorContextAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,5 +280,3 @@ func (v *NullableWorkflowInitiatorContextAllOf) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

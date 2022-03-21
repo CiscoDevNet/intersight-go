@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // SoftwarerepositoryRelease A Cisco release containing one or more firmware images. Cisco releases images for rack server components or blade server components or for Fabric Interconnect components. The version for the firmware images is the same as specific Cisco release version.
@@ -28,13 +28,13 @@ type SoftwarerepositoryRelease struct {
 	// The date when the file was released or distributed by its vendor.
 	ReleaseDate *time.Time `json:"ReleaseDate,omitempty"`
 	// The URL for the release notes of this image.
-	ReleaseNotesUrl *string `json:"ReleaseNotesUrl,omitempty"`
+	ReleaseNotesUrl *string  `json:"ReleaseNotesUrl,omitempty"`
 	SupportedModels []string `json:"SupportedModels,omitempty"`
 	// The platform type for which the images are released. This can be a Fabric Interconnect or compute server hardware. * `FabricSwitch` - The images in a release that correspond to Fabric Interconnect switches. * `ComputeSystem` - The images in a release that correspond to servers.
 	Type *string `json:"Type,omitempty"`
 	// Cisco provided release version.
-	Version *string `json:"Version,omitempty"`
-	Catalog *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
+	Version              *string                                `json:"Version,omitempty"`
+	Catalog              *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *SoftwarerepositoryRelease) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryRelease) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *SoftwarerepositoryRelease) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryRelease) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -181,7 +181,7 @@ func (o *SoftwarerepositoryRelease) SetReleaseNotesUrl(v string) {
 
 // GetSupportedModels returns the SupportedModels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SoftwarerepositoryRelease) GetSupportedModels() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -359,12 +359,12 @@ func (o *SoftwarerepositoryRelease) UnmarshalJSON(bytes []byte) (err error) {
 		// The date when the file was released or distributed by its vendor.
 		ReleaseDate *time.Time `json:"ReleaseDate,omitempty"`
 		// The URL for the release notes of this image.
-		ReleaseNotesUrl *string `json:"ReleaseNotesUrl,omitempty"`
+		ReleaseNotesUrl *string  `json:"ReleaseNotesUrl,omitempty"`
 		SupportedModels []string `json:"SupportedModels,omitempty"`
 		// The platform type for which the images are released. This can be a Fabric Interconnect or compute server hardware. * `FabricSwitch` - The images in a release that correspond to Fabric Interconnect switches. * `ComputeSystem` - The images in a release that correspond to servers.
 		Type *string `json:"Type,omitempty"`
 		// Cisco provided release version.
-		Version *string `json:"Version,omitempty"`
+		Version *string                                `json:"Version,omitempty"`
 		Catalog *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
 	}
 
@@ -466,5 +466,3 @@ func (v *NullableSoftwarerepositoryRelease) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

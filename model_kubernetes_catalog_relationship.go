@@ -19,19 +19,18 @@ import (
 // KubernetesCatalogRelationship - A relationship to the 'kubernetes.Catalog' resource, or the expanded 'kubernetes.Catalog' resource, or the 'null' value.
 type KubernetesCatalogRelationship struct {
 	KubernetesCatalog *KubernetesCatalog
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 }
 
 // KubernetesCatalogAsKubernetesCatalogRelationship is a convenience function that returns KubernetesCatalog wrapped in KubernetesCatalogRelationship
 func KubernetesCatalogAsKubernetesCatalogRelationship(v *KubernetesCatalog) KubernetesCatalogRelationship {
-	return KubernetesCatalogRelationship{ KubernetesCatalog: v}
+	return KubernetesCatalogRelationship{KubernetesCatalog: v}
 }
 
 // MoMoRefAsKubernetesCatalogRelationship is a convenience function that returns MoMoRef wrapped in KubernetesCatalogRelationship
 func MoMoRefAsKubernetesCatalogRelationship(v *MoMoRef) KubernetesCatalogRelationship {
-	return KubernetesCatalogRelationship{ MoMoRef: v}
+	return KubernetesCatalogRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesCatalogRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesCatalogRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KubernetesCatalogRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesCatalogRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesCatalog != nil {
 		return obj.KubernetesCatalog
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesCatalogRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

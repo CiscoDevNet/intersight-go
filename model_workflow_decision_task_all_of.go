@@ -22,13 +22,13 @@ type WorkflowDecisionTaskAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The condition to evaluate for this decision task. The condition can be a workflow or task variable or an JavaScript expression. Example value for condition could be a variable like \"${task1.output.var1} or ${workflow.input.var2}\" which evaluates to a value matching any of the decision case values. Example value for condition if it's an expression - \"if ( ${task1.output.var1} ! = null && ${task1.output.var1} > 0 ) 'true'; else 'false'; \" which evaluates to 'true' or 'false' and will match one of the decision case values. You can also use JavaScript functions like indexOf, toUpperCase in the expression which will be evaluated by the expression evaluator.
-	Condition *string `json:"Condition,omitempty"`
+	Condition     *string                `json:"Condition,omitempty"`
 	DecisionCases []WorkflowDecisionCase `json:"DecisionCases,omitempty"`
 	// The default next Task to execute if the decision cannot be evaluated to any of the DecisionCases.
 	DefaultTask *string `json:"DefaultTask,omitempty"`
 	// This field is deprecated. Decision case conditions can be added using the workflow input or task output variables in the Condition field. Refer to Condition field for more details.
 	// Deprecated
-	InputParameters interface{} `json:"InputParameters,omitempty"`
+	InputParameters      interface{} `json:"InputParameters,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *WorkflowDecisionTaskAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowDecisionTaskAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *WorkflowDecisionTaskAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowDecisionTaskAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -139,7 +139,7 @@ func (o *WorkflowDecisionTaskAllOf) SetCondition(v string) {
 
 // GetDecisionCases returns the DecisionCases field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowDecisionTaskAllOf) GetDecisionCases() []WorkflowDecisionCase {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowDecisionCase
 		return ret
 	}
@@ -205,7 +205,7 @@ func (o *WorkflowDecisionTaskAllOf) SetDefaultTask(v string) {
 // GetInputParameters returns the InputParameters field value if set, zero value otherwise (both if not set or set to explicit null).
 // Deprecated
 func (o *WorkflowDecisionTaskAllOf) GetInputParameters() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -323,5 +323,3 @@ func (v *NullableWorkflowDecisionTaskAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,11 +29,10 @@ var (
 type ManagementApiService service
 
 type ApiGetManagementControllerByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ManagementApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetManagementControllerByMoidRequest) Execute() (ManagementController, *_nethttp.Response, error) {
 	return r.ApiService.GetManagementControllerByMoidExecute(r)
@@ -49,8 +48,8 @@ GetManagementControllerByMoid Read a 'management.Controller' resource.
 func (a *ManagementApiService) GetManagementControllerByMoid(ctx _context.Context, moid string) ApiGetManagementControllerByMoidRequest {
 	return ApiGetManagementControllerByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -157,13 +156,13 @@ func (a *ManagementApiService) GetManagementControllerByMoidExecute(r ApiGetMana
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -180,19 +179,19 @@ func (a *ManagementApiService) GetManagementControllerByMoidExecute(r ApiGetMana
 }
 
 type ApiGetManagementControllerListRequest struct {
-	ctx _context.Context
-	ApiService *ManagementApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ManagementApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -200,51 +199,61 @@ func (r ApiGetManagementControllerListRequest) Filter(filter string) ApiGetManag
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetManagementControllerListRequest) Orderby(orderby string) ApiGetManagementControllerListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetManagementControllerListRequest) Top(top int32) ApiGetManagementControllerListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetManagementControllerListRequest) Skip(skip int32) ApiGetManagementControllerListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetManagementControllerListRequest) Select_(select_ string) ApiGetManagementControllerListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetManagementControllerListRequest) Expand(expand string) ApiGetManagementControllerListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetManagementControllerListRequest) Apply(apply string) ApiGetManagementControllerListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetManagementControllerListRequest) Count(count bool) ApiGetManagementControllerListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetManagementControllerListRequest) Inlinecount(inlinecount string) ApiGetManagementControllerListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetManagementControllerListRequest) At(at string) ApiGetManagementControllerListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetManagementControllerListRequest) Tags(tags string) ApiGetManagementControllerListRequest {
 	r.tags = &tags
@@ -264,7 +273,7 @@ GetManagementControllerList Read a 'management.Controller' resource.
 func (a *ManagementApiService) GetManagementControllerList(ctx _context.Context) ApiGetManagementControllerListRequest {
 	return ApiGetManagementControllerListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -403,13 +412,13 @@ func (a *ManagementApiService) GetManagementControllerListExecute(r ApiGetManage
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -426,11 +435,10 @@ func (a *ManagementApiService) GetManagementControllerListExecute(r ApiGetManage
 }
 
 type ApiGetManagementEntityByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ManagementApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetManagementEntityByMoidRequest) Execute() (ManagementEntity, *_nethttp.Response, error) {
 	return r.ApiService.GetManagementEntityByMoidExecute(r)
@@ -446,8 +454,8 @@ GetManagementEntityByMoid Read a 'management.Entity' resource.
 func (a *ManagementApiService) GetManagementEntityByMoid(ctx _context.Context, moid string) ApiGetManagementEntityByMoidRequest {
 	return ApiGetManagementEntityByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -554,13 +562,13 @@ func (a *ManagementApiService) GetManagementEntityByMoidExecute(r ApiGetManageme
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -577,19 +585,19 @@ func (a *ManagementApiService) GetManagementEntityByMoidExecute(r ApiGetManageme
 }
 
 type ApiGetManagementEntityListRequest struct {
-	ctx _context.Context
-	ApiService *ManagementApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ManagementApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -597,51 +605,61 @@ func (r ApiGetManagementEntityListRequest) Filter(filter string) ApiGetManagemen
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetManagementEntityListRequest) Orderby(orderby string) ApiGetManagementEntityListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetManagementEntityListRequest) Top(top int32) ApiGetManagementEntityListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetManagementEntityListRequest) Skip(skip int32) ApiGetManagementEntityListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetManagementEntityListRequest) Select_(select_ string) ApiGetManagementEntityListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetManagementEntityListRequest) Expand(expand string) ApiGetManagementEntityListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetManagementEntityListRequest) Apply(apply string) ApiGetManagementEntityListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetManagementEntityListRequest) Count(count bool) ApiGetManagementEntityListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetManagementEntityListRequest) Inlinecount(inlinecount string) ApiGetManagementEntityListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetManagementEntityListRequest) At(at string) ApiGetManagementEntityListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetManagementEntityListRequest) Tags(tags string) ApiGetManagementEntityListRequest {
 	r.tags = &tags
@@ -661,7 +679,7 @@ GetManagementEntityList Read a 'management.Entity' resource.
 func (a *ManagementApiService) GetManagementEntityList(ctx _context.Context) ApiGetManagementEntityListRequest {
 	return ApiGetManagementEntityListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -800,13 +818,13 @@ func (a *ManagementApiService) GetManagementEntityListExecute(r ApiGetManagement
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -823,11 +841,10 @@ func (a *ManagementApiService) GetManagementEntityListExecute(r ApiGetManagement
 }
 
 type ApiGetManagementInterfaceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ManagementApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetManagementInterfaceByMoidRequest) Execute() (ManagementInterface, *_nethttp.Response, error) {
 	return r.ApiService.GetManagementInterfaceByMoidExecute(r)
@@ -843,8 +860,8 @@ GetManagementInterfaceByMoid Read a 'management.Interface' resource.
 func (a *ManagementApiService) GetManagementInterfaceByMoid(ctx _context.Context, moid string) ApiGetManagementInterfaceByMoidRequest {
 	return ApiGetManagementInterfaceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -951,13 +968,13 @@ func (a *ManagementApiService) GetManagementInterfaceByMoidExecute(r ApiGetManag
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -974,19 +991,19 @@ func (a *ManagementApiService) GetManagementInterfaceByMoidExecute(r ApiGetManag
 }
 
 type ApiGetManagementInterfaceListRequest struct {
-	ctx _context.Context
-	ApiService *ManagementApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ManagementApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -994,51 +1011,61 @@ func (r ApiGetManagementInterfaceListRequest) Filter(filter string) ApiGetManage
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetManagementInterfaceListRequest) Orderby(orderby string) ApiGetManagementInterfaceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetManagementInterfaceListRequest) Top(top int32) ApiGetManagementInterfaceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetManagementInterfaceListRequest) Skip(skip int32) ApiGetManagementInterfaceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetManagementInterfaceListRequest) Select_(select_ string) ApiGetManagementInterfaceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetManagementInterfaceListRequest) Expand(expand string) ApiGetManagementInterfaceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetManagementInterfaceListRequest) Apply(apply string) ApiGetManagementInterfaceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetManagementInterfaceListRequest) Count(count bool) ApiGetManagementInterfaceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetManagementInterfaceListRequest) Inlinecount(inlinecount string) ApiGetManagementInterfaceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetManagementInterfaceListRequest) At(at string) ApiGetManagementInterfaceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetManagementInterfaceListRequest) Tags(tags string) ApiGetManagementInterfaceListRequest {
 	r.tags = &tags
@@ -1058,7 +1085,7 @@ GetManagementInterfaceList Read a 'management.Interface' resource.
 func (a *ManagementApiService) GetManagementInterfaceList(ctx _context.Context) ApiGetManagementInterfaceListRequest {
 	return ApiGetManagementInterfaceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1197,13 +1224,13 @@ func (a *ManagementApiService) GetManagementInterfaceListExecute(r ApiGetManagem
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1220,11 +1247,11 @@ func (a *ManagementApiService) GetManagementInterfaceListExecute(r ApiGetManagem
 }
 
 type ApiPatchManagementControllerRequest struct {
-	ctx _context.Context
-	ApiService *ManagementApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *ManagementApiService
+	moid                 string
 	managementController *ManagementController
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;management.Controller&#39; resource to update.
@@ -1232,6 +1259,7 @@ func (r ApiPatchManagementControllerRequest) ManagementController(managementCont
 	r.managementController = &managementController
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchManagementControllerRequest) IfMatch(ifMatch string) ApiPatchManagementControllerRequest {
 	r.ifMatch = &ifMatch
@@ -1252,8 +1280,8 @@ PatchManagementController Update a 'management.Controller' resource.
 func (a *ManagementApiService) PatchManagementController(ctx _context.Context, moid string) ApiPatchManagementControllerRequest {
 	return ApiPatchManagementControllerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1368,13 +1396,13 @@ func (a *ManagementApiService) PatchManagementControllerExecute(r ApiPatchManage
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1391,11 +1419,11 @@ func (a *ManagementApiService) PatchManagementControllerExecute(r ApiPatchManage
 }
 
 type ApiPatchManagementEntityRequest struct {
-	ctx _context.Context
-	ApiService *ManagementApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *ManagementApiService
+	moid             string
 	managementEntity *ManagementEntity
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;management.Entity&#39; resource to update.
@@ -1403,6 +1431,7 @@ func (r ApiPatchManagementEntityRequest) ManagementEntity(managementEntity Manag
 	r.managementEntity = &managementEntity
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchManagementEntityRequest) IfMatch(ifMatch string) ApiPatchManagementEntityRequest {
 	r.ifMatch = &ifMatch
@@ -1423,8 +1452,8 @@ PatchManagementEntity Update a 'management.Entity' resource.
 func (a *ManagementApiService) PatchManagementEntity(ctx _context.Context, moid string) ApiPatchManagementEntityRequest {
 	return ApiPatchManagementEntityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1539,13 +1568,13 @@ func (a *ManagementApiService) PatchManagementEntityExecute(r ApiPatchManagement
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1562,11 +1591,11 @@ func (a *ManagementApiService) PatchManagementEntityExecute(r ApiPatchManagement
 }
 
 type ApiPatchManagementInterfaceRequest struct {
-	ctx _context.Context
-	ApiService *ManagementApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *ManagementApiService
+	moid                string
 	managementInterface *ManagementInterface
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;management.Interface&#39; resource to update.
@@ -1574,6 +1603,7 @@ func (r ApiPatchManagementInterfaceRequest) ManagementInterface(managementInterf
 	r.managementInterface = &managementInterface
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchManagementInterfaceRequest) IfMatch(ifMatch string) ApiPatchManagementInterfaceRequest {
 	r.ifMatch = &ifMatch
@@ -1594,8 +1624,8 @@ PatchManagementInterface Update a 'management.Interface' resource.
 func (a *ManagementApiService) PatchManagementInterface(ctx _context.Context, moid string) ApiPatchManagementInterfaceRequest {
 	return ApiPatchManagementInterfaceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1710,13 +1740,13 @@ func (a *ManagementApiService) PatchManagementInterfaceExecute(r ApiPatchManagem
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1733,11 +1763,11 @@ func (a *ManagementApiService) PatchManagementInterfaceExecute(r ApiPatchManagem
 }
 
 type ApiUpdateManagementControllerRequest struct {
-	ctx _context.Context
-	ApiService *ManagementApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *ManagementApiService
+	moid                 string
 	managementController *ManagementController
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;management.Controller&#39; resource to update.
@@ -1745,6 +1775,7 @@ func (r ApiUpdateManagementControllerRequest) ManagementController(managementCon
 	r.managementController = &managementController
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateManagementControllerRequest) IfMatch(ifMatch string) ApiUpdateManagementControllerRequest {
 	r.ifMatch = &ifMatch
@@ -1765,8 +1796,8 @@ UpdateManagementController Update a 'management.Controller' resource.
 func (a *ManagementApiService) UpdateManagementController(ctx _context.Context, moid string) ApiUpdateManagementControllerRequest {
 	return ApiUpdateManagementControllerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1881,13 +1912,13 @@ func (a *ManagementApiService) UpdateManagementControllerExecute(r ApiUpdateMana
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1904,11 +1935,11 @@ func (a *ManagementApiService) UpdateManagementControllerExecute(r ApiUpdateMana
 }
 
 type ApiUpdateManagementEntityRequest struct {
-	ctx _context.Context
-	ApiService *ManagementApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *ManagementApiService
+	moid             string
 	managementEntity *ManagementEntity
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;management.Entity&#39; resource to update.
@@ -1916,6 +1947,7 @@ func (r ApiUpdateManagementEntityRequest) ManagementEntity(managementEntity Mana
 	r.managementEntity = &managementEntity
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateManagementEntityRequest) IfMatch(ifMatch string) ApiUpdateManagementEntityRequest {
 	r.ifMatch = &ifMatch
@@ -1936,8 +1968,8 @@ UpdateManagementEntity Update a 'management.Entity' resource.
 func (a *ManagementApiService) UpdateManagementEntity(ctx _context.Context, moid string) ApiUpdateManagementEntityRequest {
 	return ApiUpdateManagementEntityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2052,13 +2084,13 @@ func (a *ManagementApiService) UpdateManagementEntityExecute(r ApiUpdateManageme
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2075,11 +2107,11 @@ func (a *ManagementApiService) UpdateManagementEntityExecute(r ApiUpdateManageme
 }
 
 type ApiUpdateManagementInterfaceRequest struct {
-	ctx _context.Context
-	ApiService *ManagementApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *ManagementApiService
+	moid                string
 	managementInterface *ManagementInterface
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;management.Interface&#39; resource to update.
@@ -2087,6 +2119,7 @@ func (r ApiUpdateManagementInterfaceRequest) ManagementInterface(managementInter
 	r.managementInterface = &managementInterface
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateManagementInterfaceRequest) IfMatch(ifMatch string) ApiUpdateManagementInterfaceRequest {
 	r.ifMatch = &ifMatch
@@ -2107,8 +2140,8 @@ UpdateManagementInterface Update a 'management.Interface' resource.
 func (a *ManagementApiService) UpdateManagementInterface(ctx _context.Context, moid string) ApiUpdateManagementInterfaceRequest {
 	return ApiUpdateManagementInterfaceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2223,13 +2256,13 @@ func (a *ManagementApiService) UpdateManagementInterfaceExecute(r ApiUpdateManag
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

@@ -28,7 +28,7 @@ type VnicTcpOffloadSettingsAllOf struct {
 	// When enabled, the CPU sends all packet checksums to the hardware for validation.
 	RxChecksum *bool `json:"RxChecksum,omitempty"`
 	// When enabled, the CPU sends all packets to the hardware so that the checksum can be calculated.
-	TxChecksum *bool `json:"TxChecksum,omitempty"`
+	TxChecksum           *bool `json:"TxChecksum,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -86,7 +86,7 @@ func (o *VnicTcpOffloadSettingsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicTcpOffloadSettingsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -110,7 +110,7 @@ func (o *VnicTcpOffloadSettingsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicTcpOffloadSettingsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -334,5 +334,3 @@ func (v *NullableVnicTcpOffloadSettingsAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

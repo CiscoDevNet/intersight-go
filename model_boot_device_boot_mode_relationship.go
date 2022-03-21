@@ -19,19 +19,18 @@ import (
 // BootDeviceBootModeRelationship - A relationship to the 'boot.DeviceBootMode' resource, or the expanded 'boot.DeviceBootMode' resource, or the 'null' value.
 type BootDeviceBootModeRelationship struct {
 	BootDeviceBootMode *BootDeviceBootMode
-	MoMoRef *MoMoRef
+	MoMoRef            *MoMoRef
 }
 
 // BootDeviceBootModeAsBootDeviceBootModeRelationship is a convenience function that returns BootDeviceBootMode wrapped in BootDeviceBootModeRelationship
 func BootDeviceBootModeAsBootDeviceBootModeRelationship(v *BootDeviceBootMode) BootDeviceBootModeRelationship {
-	return BootDeviceBootModeRelationship{ BootDeviceBootMode: v}
+	return BootDeviceBootModeRelationship{BootDeviceBootMode: v}
 }
 
 // MoMoRefAsBootDeviceBootModeRelationship is a convenience function that returns MoMoRef wrapped in BootDeviceBootModeRelationship
 func MoMoRefAsBootDeviceBootModeRelationship(v *MoMoRef) BootDeviceBootModeRelationship {
-	return BootDeviceBootModeRelationship{ MoMoRef: v}
+	return BootDeviceBootModeRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BootDeviceBootModeRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BootDeviceBootModeRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BootDeviceBootModeRelationship) GetActualInstance() (interface{}) {
+func (obj *BootDeviceBootModeRelationship) GetActualInstance() interface{} {
 	if obj.BootDeviceBootMode != nil {
 		return obj.BootDeviceBootMode
 	}
@@ -137,5 +136,3 @@ func (v *NullableBootDeviceBootModeRelationship) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

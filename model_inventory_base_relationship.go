@@ -19,19 +19,18 @@ import (
 // InventoryBaseRelationship - A relationship to the 'inventory.Base' resource, or the expanded 'inventory.Base' resource, or the 'null' value.
 type InventoryBaseRelationship struct {
 	InventoryBase *InventoryBase
-	MoMoRef *MoMoRef
+	MoMoRef       *MoMoRef
 }
 
 // InventoryBaseAsInventoryBaseRelationship is a convenience function that returns InventoryBase wrapped in InventoryBaseRelationship
 func InventoryBaseAsInventoryBaseRelationship(v *InventoryBase) InventoryBaseRelationship {
-	return InventoryBaseRelationship{ InventoryBase: v}
+	return InventoryBaseRelationship{InventoryBase: v}
 }
 
 // MoMoRefAsInventoryBaseRelationship is a convenience function that returns MoMoRef wrapped in InventoryBaseRelationship
 func MoMoRefAsInventoryBaseRelationship(v *MoMoRef) InventoryBaseRelationship {
-	return InventoryBaseRelationship{ MoMoRef: v}
+	return InventoryBaseRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *InventoryBaseRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src InventoryBaseRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *InventoryBaseRelationship) GetActualInstance() (interface{}) {
+func (obj *InventoryBaseRelationship) GetActualInstance() interface{} {
 	if obj.InventoryBase != nil {
 		return obj.InventoryBase
 	}
@@ -137,5 +136,3 @@ func (v *NullableInventoryBaseRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

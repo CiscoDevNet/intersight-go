@@ -18,20 +18,19 @@ import (
 
 // WorkflowErrorResponseHandlerRelationship - A relationship to the 'workflow.ErrorResponseHandler' resource, or the expanded 'workflow.ErrorResponseHandler' resource, or the 'null' value.
 type WorkflowErrorResponseHandlerRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                      *MoMoRef
 	WorkflowErrorResponseHandler *WorkflowErrorResponseHandler
 }
 
 // MoMoRefAsWorkflowErrorResponseHandlerRelationship is a convenience function that returns MoMoRef wrapped in WorkflowErrorResponseHandlerRelationship
 func MoMoRefAsWorkflowErrorResponseHandlerRelationship(v *MoMoRef) WorkflowErrorResponseHandlerRelationship {
-	return WorkflowErrorResponseHandlerRelationship{ MoMoRef: v}
+	return WorkflowErrorResponseHandlerRelationship{MoMoRef: v}
 }
 
 // WorkflowErrorResponseHandlerAsWorkflowErrorResponseHandlerRelationship is a convenience function that returns WorkflowErrorResponseHandler wrapped in WorkflowErrorResponseHandlerRelationship
 func WorkflowErrorResponseHandlerAsWorkflowErrorResponseHandlerRelationship(v *WorkflowErrorResponseHandler) WorkflowErrorResponseHandlerRelationship {
-	return WorkflowErrorResponseHandlerRelationship{ WorkflowErrorResponseHandler: v}
+	return WorkflowErrorResponseHandlerRelationship{WorkflowErrorResponseHandler: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *WorkflowErrorResponseHandlerRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src WorkflowErrorResponseHandlerRelationship) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *WorkflowErrorResponseHandlerRelationship) GetActualInstance() (interface{}) {
+func (obj *WorkflowErrorResponseHandlerRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableWorkflowErrorResponseHandlerRelationship) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

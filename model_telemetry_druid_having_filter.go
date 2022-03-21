@@ -19,25 +19,24 @@ import (
 // TelemetryDruidHavingFilter - struct for TelemetryDruidHavingFilter
 type TelemetryDruidHavingFilter struct {
 	TelemetryDruidHavingDimensionSelectorFilter *TelemetryDruidHavingDimensionSelectorFilter
-	TelemetryDruidHavingNumericFilter *TelemetryDruidHavingNumericFilter
-	TelemetryDruidHavingQueryFilter *TelemetryDruidHavingQueryFilter
+	TelemetryDruidHavingNumericFilter           *TelemetryDruidHavingNumericFilter
+	TelemetryDruidHavingQueryFilter             *TelemetryDruidHavingQueryFilter
 }
 
 // TelemetryDruidHavingDimensionSelectorFilterAsTelemetryDruidHavingFilter is a convenience function that returns TelemetryDruidHavingDimensionSelectorFilter wrapped in TelemetryDruidHavingFilter
 func TelemetryDruidHavingDimensionSelectorFilterAsTelemetryDruidHavingFilter(v *TelemetryDruidHavingDimensionSelectorFilter) TelemetryDruidHavingFilter {
-	return TelemetryDruidHavingFilter{ TelemetryDruidHavingDimensionSelectorFilter: v}
+	return TelemetryDruidHavingFilter{TelemetryDruidHavingDimensionSelectorFilter: v}
 }
 
 // TelemetryDruidHavingNumericFilterAsTelemetryDruidHavingFilter is a convenience function that returns TelemetryDruidHavingNumericFilter wrapped in TelemetryDruidHavingFilter
 func TelemetryDruidHavingNumericFilterAsTelemetryDruidHavingFilter(v *TelemetryDruidHavingNumericFilter) TelemetryDruidHavingFilter {
-	return TelemetryDruidHavingFilter{ TelemetryDruidHavingNumericFilter: v}
+	return TelemetryDruidHavingFilter{TelemetryDruidHavingNumericFilter: v}
 }
 
 // TelemetryDruidHavingQueryFilterAsTelemetryDruidHavingFilter is a convenience function that returns TelemetryDruidHavingQueryFilter wrapped in TelemetryDruidHavingFilter
 func TelemetryDruidHavingQueryFilterAsTelemetryDruidHavingFilter(v *TelemetryDruidHavingQueryFilter) TelemetryDruidHavingFilter {
-	return TelemetryDruidHavingFilter{ TelemetryDruidHavingQueryFilter: v}
+	return TelemetryDruidHavingFilter{TelemetryDruidHavingQueryFilter: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *TelemetryDruidHavingFilter) UnmarshalJSON(data []byte) error {
@@ -166,7 +165,7 @@ func (src TelemetryDruidHavingFilter) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *TelemetryDruidHavingFilter) GetActualInstance() (interface{}) {
+func (obj *TelemetryDruidHavingFilter) GetActualInstance() interface{} {
 	if obj.TelemetryDruidHavingDimensionSelectorFilter != nil {
 		return obj.TelemetryDruidHavingDimensionSelectorFilter
 	}
@@ -218,5 +217,3 @@ func (v *NullableTelemetryDruidHavingFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

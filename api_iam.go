@@ -29,10 +29,10 @@ var (
 type IamApiService service
 
 type ApiCreateIamAccountRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	iamAccount *IamAccount
-	ifMatch *string
+	ctx         _context.Context
+	ApiService  *IamApiService
+	iamAccount  *IamAccount
+	ifMatch     *string
 	ifNoneMatch *string
 }
 
@@ -41,11 +41,13 @@ func (r ApiCreateIamAccountRequest) IamAccount(iamAccount IamAccount) ApiCreateI
 	r.iamAccount = &iamAccount
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamAccountRequest) IfMatch(ifMatch string) ApiCreateIamAccountRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamAccountRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamAccountRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateIamAccount Create a 'iam.Account' resource.
 func (a *IamApiService) CreateIamAccount(ctx _context.Context) ApiCreateIamAccountRequest {
 	return ApiCreateIamAccountRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *IamApiService) CreateIamAccountExecute(r ApiCreateIamAccountRequest) (I
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,11 @@ func (a *IamApiService) CreateIamAccountExecute(r ApiCreateIamAccountRequest) (I
 }
 
 type ApiCreateIamAccountExperienceRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx                  _context.Context
+	ApiService           *IamApiService
 	iamAccountExperience *IamAccountExperience
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch              *string
+	ifNoneMatch          *string
 }
 
 // The &#39;iam.AccountExperience&#39; resource to create.
@@ -217,11 +219,13 @@ func (r ApiCreateIamAccountExperienceRequest) IamAccountExperience(iamAccountExp
 	r.iamAccountExperience = &iamAccountExperience
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamAccountExperienceRequest) IfMatch(ifMatch string) ApiCreateIamAccountExperienceRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamAccountExperienceRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamAccountExperienceRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateIamAccountExperience Create a 'iam.AccountExperience' resource.
 func (a *IamApiService) CreateIamAccountExperience(ctx _context.Context) ApiCreateIamAccountExperienceRequest {
 	return ApiCreateIamAccountExperienceRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *IamApiService) CreateIamAccountExperienceExecute(r ApiCreateIamAccountE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,10 +385,10 @@ func (a *IamApiService) CreateIamAccountExperienceExecute(r ApiCreateIamAccountE
 }
 
 type ApiCreateIamApiKeyRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	iamApiKey *IamApiKey
-	ifMatch *string
+	ctx         _context.Context
+	ApiService  *IamApiService
+	iamApiKey   *IamApiKey
+	ifMatch     *string
 	ifNoneMatch *string
 }
 
@@ -393,11 +397,13 @@ func (r ApiCreateIamApiKeyRequest) IamApiKey(iamApiKey IamApiKey) ApiCreateIamAp
 	r.iamApiKey = &iamApiKey
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamApiKeyRequest) IfMatch(ifMatch string) ApiCreateIamApiKeyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamApiKeyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamApiKeyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -417,7 +423,7 @@ CreateIamApiKey Create a 'iam.ApiKey' resource.
 func (a *IamApiService) CreateIamApiKey(ctx _context.Context) ApiCreateIamApiKeyRequest {
 	return ApiCreateIamApiKeyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -534,13 +540,13 @@ func (a *IamApiService) CreateIamApiKeyExecute(r ApiCreateIamApiKeyRequest) (Iam
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -557,11 +563,11 @@ func (a *IamApiService) CreateIamApiKeyExecute(r ApiCreateIamApiKeyRequest) (Iam
 }
 
 type ApiCreateIamAppRegistrationRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx                _context.Context
+	ApiService         *IamApiService
 	iamAppRegistration *IamAppRegistration
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch            *string
+	ifNoneMatch        *string
 }
 
 // The &#39;iam.AppRegistration&#39; resource to create.
@@ -569,11 +575,13 @@ func (r ApiCreateIamAppRegistrationRequest) IamAppRegistration(iamAppRegistratio
 	r.iamAppRegistration = &iamAppRegistration
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamAppRegistrationRequest) IfMatch(ifMatch string) ApiCreateIamAppRegistrationRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamAppRegistrationRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamAppRegistrationRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -593,7 +601,7 @@ CreateIamAppRegistration Create a 'iam.AppRegistration' resource.
 func (a *IamApiService) CreateIamAppRegistration(ctx _context.Context) ApiCreateIamAppRegistrationRequest {
 	return ApiCreateIamAppRegistrationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -710,13 +718,13 @@ func (a *IamApiService) CreateIamAppRegistrationExecute(r ApiCreateIamAppRegistr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -733,11 +741,11 @@ func (a *IamApiService) CreateIamAppRegistrationExecute(r ApiCreateIamAppRegistr
 }
 
 type ApiCreateIamCertificateRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx            _context.Context
+	ApiService     *IamApiService
 	iamCertificate *IamCertificate
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch        *string
+	ifNoneMatch    *string
 }
 
 // The &#39;iam.Certificate&#39; resource to create.
@@ -745,11 +753,13 @@ func (r ApiCreateIamCertificateRequest) IamCertificate(iamCertificate IamCertifi
 	r.iamCertificate = &iamCertificate
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamCertificateRequest) IfMatch(ifMatch string) ApiCreateIamCertificateRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamCertificateRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamCertificateRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -769,7 +779,7 @@ CreateIamCertificate Create a 'iam.Certificate' resource.
 func (a *IamApiService) CreateIamCertificate(ctx _context.Context) ApiCreateIamCertificateRequest {
 	return ApiCreateIamCertificateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -886,13 +896,13 @@ func (a *IamApiService) CreateIamCertificateExecute(r ApiCreateIamCertificateReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -909,11 +919,11 @@ func (a *IamApiService) CreateIamCertificateExecute(r ApiCreateIamCertificateReq
 }
 
 type ApiCreateIamCertificateRequestRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx                   _context.Context
+	ApiService            *IamApiService
 	iamCertificateRequest *IamCertificateRequest
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;iam.CertificateRequest&#39; resource to create.
@@ -921,11 +931,13 @@ func (r ApiCreateIamCertificateRequestRequest) IamCertificateRequest(iamCertific
 	r.iamCertificateRequest = &iamCertificateRequest
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamCertificateRequestRequest) IfMatch(ifMatch string) ApiCreateIamCertificateRequestRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamCertificateRequestRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamCertificateRequestRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -945,7 +957,7 @@ CreateIamCertificateRequest Create a 'iam.CertificateRequest' resource.
 func (a *IamApiService) CreateIamCertificateRequest(ctx _context.Context) ApiCreateIamCertificateRequestRequest {
 	return ApiCreateIamCertificateRequestRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1062,13 +1074,13 @@ func (a *IamApiService) CreateIamCertificateRequestExecute(r ApiCreateIamCertifi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1085,11 +1097,11 @@ func (a *IamApiService) CreateIamCertificateRequestExecute(r ApiCreateIamCertifi
 }
 
 type ApiCreateIamEndPointUserRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx             _context.Context
+	ApiService      *IamApiService
 	iamEndPointUser *IamEndPointUser
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch         *string
+	ifNoneMatch     *string
 }
 
 // The &#39;iam.EndPointUser&#39; resource to create.
@@ -1097,11 +1109,13 @@ func (r ApiCreateIamEndPointUserRequest) IamEndPointUser(iamEndPointUser IamEndP
 	r.iamEndPointUser = &iamEndPointUser
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamEndPointUserRequest) IfMatch(ifMatch string) ApiCreateIamEndPointUserRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamEndPointUserRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamEndPointUserRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1121,7 +1135,7 @@ CreateIamEndPointUser Create a 'iam.EndPointUser' resource.
 func (a *IamApiService) CreateIamEndPointUser(ctx _context.Context) ApiCreateIamEndPointUserRequest {
 	return ApiCreateIamEndPointUserRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1238,13 +1252,13 @@ func (a *IamApiService) CreateIamEndPointUserExecute(r ApiCreateIamEndPointUserR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1261,11 +1275,11 @@ func (a *IamApiService) CreateIamEndPointUserExecute(r ApiCreateIamEndPointUserR
 }
 
 type ApiCreateIamEndPointUserPolicyRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx                   _context.Context
+	ApiService            *IamApiService
 	iamEndPointUserPolicy *IamEndPointUserPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;iam.EndPointUserPolicy&#39; resource to create.
@@ -1273,11 +1287,13 @@ func (r ApiCreateIamEndPointUserPolicyRequest) IamEndPointUserPolicy(iamEndPoint
 	r.iamEndPointUserPolicy = &iamEndPointUserPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamEndPointUserPolicyRequest) IfMatch(ifMatch string) ApiCreateIamEndPointUserPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamEndPointUserPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamEndPointUserPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1297,7 +1313,7 @@ CreateIamEndPointUserPolicy Create a 'iam.EndPointUserPolicy' resource.
 func (a *IamApiService) CreateIamEndPointUserPolicy(ctx _context.Context) ApiCreateIamEndPointUserPolicyRequest {
 	return ApiCreateIamEndPointUserPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1414,13 +1430,13 @@ func (a *IamApiService) CreateIamEndPointUserPolicyExecute(r ApiCreateIamEndPoin
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1437,11 +1453,11 @@ func (a *IamApiService) CreateIamEndPointUserPolicyExecute(r ApiCreateIamEndPoin
 }
 
 type ApiCreateIamEndPointUserRoleRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx                 _context.Context
+	ApiService          *IamApiService
 	iamEndPointUserRole *IamEndPointUserRole
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch             *string
+	ifNoneMatch         *string
 }
 
 // The &#39;iam.EndPointUserRole&#39; resource to create.
@@ -1449,11 +1465,13 @@ func (r ApiCreateIamEndPointUserRoleRequest) IamEndPointUserRole(iamEndPointUser
 	r.iamEndPointUserRole = &iamEndPointUserRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamEndPointUserRoleRequest) IfMatch(ifMatch string) ApiCreateIamEndPointUserRoleRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamEndPointUserRoleRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamEndPointUserRoleRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1473,7 +1491,7 @@ CreateIamEndPointUserRole Create a 'iam.EndPointUserRole' resource.
 func (a *IamApiService) CreateIamEndPointUserRole(ctx _context.Context) ApiCreateIamEndPointUserRoleRequest {
 	return ApiCreateIamEndPointUserRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1590,13 +1608,13 @@ func (a *IamApiService) CreateIamEndPointUserRoleExecute(r ApiCreateIamEndPointU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1613,10 +1631,10 @@ func (a *IamApiService) CreateIamEndPointUserRoleExecute(r ApiCreateIamEndPointU
 }
 
 type ApiCreateIamIdpRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	iamIdp *IamIdp
-	ifMatch *string
+	ctx         _context.Context
+	ApiService  *IamApiService
+	iamIdp      *IamIdp
+	ifMatch     *string
 	ifNoneMatch *string
 }
 
@@ -1625,11 +1643,13 @@ func (r ApiCreateIamIdpRequest) IamIdp(iamIdp IamIdp) ApiCreateIamIdpRequest {
 	r.iamIdp = &iamIdp
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamIdpRequest) IfMatch(ifMatch string) ApiCreateIamIdpRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamIdpRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamIdpRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1649,7 +1669,7 @@ CreateIamIdp Create a 'iam.Idp' resource.
 func (a *IamApiService) CreateIamIdp(ctx _context.Context) ApiCreateIamIdpRequest {
 	return ApiCreateIamIdpRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1766,13 +1786,13 @@ func (a *IamApiService) CreateIamIdpExecute(r ApiCreateIamIdpRequest) (IamIdp, *
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1789,11 +1809,11 @@ func (a *IamApiService) CreateIamIdpExecute(r ApiCreateIamIdpRequest) (IamIdp, *
 }
 
 type ApiCreateIamIpAccessManagementRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx                   _context.Context
+	ApiService            *IamApiService
 	iamIpAccessManagement *IamIpAccessManagement
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;iam.IpAccessManagement&#39; resource to create.
@@ -1801,11 +1821,13 @@ func (r ApiCreateIamIpAccessManagementRequest) IamIpAccessManagement(iamIpAccess
 	r.iamIpAccessManagement = &iamIpAccessManagement
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamIpAccessManagementRequest) IfMatch(ifMatch string) ApiCreateIamIpAccessManagementRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamIpAccessManagementRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamIpAccessManagementRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1825,7 +1847,7 @@ CreateIamIpAccessManagement Create a 'iam.IpAccessManagement' resource.
 func (a *IamApiService) CreateIamIpAccessManagement(ctx _context.Context) ApiCreateIamIpAccessManagementRequest {
 	return ApiCreateIamIpAccessManagementRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1942,13 +1964,13 @@ func (a *IamApiService) CreateIamIpAccessManagementExecute(r ApiCreateIamIpAcces
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1965,11 +1987,11 @@ func (a *IamApiService) CreateIamIpAccessManagementExecute(r ApiCreateIamIpAcces
 }
 
 type ApiCreateIamIpAddressRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx          _context.Context
+	ApiService   *IamApiService
 	iamIpAddress *IamIpAddress
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch      *string
+	ifNoneMatch  *string
 }
 
 // The &#39;iam.IpAddress&#39; resource to create.
@@ -1977,11 +1999,13 @@ func (r ApiCreateIamIpAddressRequest) IamIpAddress(iamIpAddress IamIpAddress) Ap
 	r.iamIpAddress = &iamIpAddress
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamIpAddressRequest) IfMatch(ifMatch string) ApiCreateIamIpAddressRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamIpAddressRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamIpAddressRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2001,7 +2025,7 @@ CreateIamIpAddress Create a 'iam.IpAddress' resource.
 func (a *IamApiService) CreateIamIpAddress(ctx _context.Context) ApiCreateIamIpAddressRequest {
 	return ApiCreateIamIpAddressRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2118,13 +2142,13 @@ func (a *IamApiService) CreateIamIpAddressExecute(r ApiCreateIamIpAddressRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2141,11 +2165,11 @@ func (a *IamApiService) CreateIamIpAddressExecute(r ApiCreateIamIpAddressRequest
 }
 
 type ApiCreateIamLdapGroupRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx          _context.Context
+	ApiService   *IamApiService
 	iamLdapGroup *IamLdapGroup
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch      *string
+	ifNoneMatch  *string
 }
 
 // The &#39;iam.LdapGroup&#39; resource to create.
@@ -2153,11 +2177,13 @@ func (r ApiCreateIamLdapGroupRequest) IamLdapGroup(iamLdapGroup IamLdapGroup) Ap
 	r.iamLdapGroup = &iamLdapGroup
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamLdapGroupRequest) IfMatch(ifMatch string) ApiCreateIamLdapGroupRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamLdapGroupRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamLdapGroupRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2177,7 +2203,7 @@ CreateIamLdapGroup Create a 'iam.LdapGroup' resource.
 func (a *IamApiService) CreateIamLdapGroup(ctx _context.Context) ApiCreateIamLdapGroupRequest {
 	return ApiCreateIamLdapGroupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2294,13 +2320,13 @@ func (a *IamApiService) CreateIamLdapGroupExecute(r ApiCreateIamLdapGroupRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2317,11 +2343,11 @@ func (a *IamApiService) CreateIamLdapGroupExecute(r ApiCreateIamLdapGroupRequest
 }
 
 type ApiCreateIamLdapPolicyRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx           _context.Context
+	ApiService    *IamApiService
 	iamLdapPolicy *IamLdapPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch       *string
+	ifNoneMatch   *string
 }
 
 // The &#39;iam.LdapPolicy&#39; resource to create.
@@ -2329,11 +2355,13 @@ func (r ApiCreateIamLdapPolicyRequest) IamLdapPolicy(iamLdapPolicy IamLdapPolicy
 	r.iamLdapPolicy = &iamLdapPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamLdapPolicyRequest) IfMatch(ifMatch string) ApiCreateIamLdapPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamLdapPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamLdapPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2353,7 +2381,7 @@ CreateIamLdapPolicy Create a 'iam.LdapPolicy' resource.
 func (a *IamApiService) CreateIamLdapPolicy(ctx _context.Context) ApiCreateIamLdapPolicyRequest {
 	return ApiCreateIamLdapPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2470,13 +2498,13 @@ func (a *IamApiService) CreateIamLdapPolicyExecute(r ApiCreateIamLdapPolicyReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2493,11 +2521,11 @@ func (a *IamApiService) CreateIamLdapPolicyExecute(r ApiCreateIamLdapPolicyReque
 }
 
 type ApiCreateIamLdapProviderRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx             _context.Context
+	ApiService      *IamApiService
 	iamLdapProvider *IamLdapProvider
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch         *string
+	ifNoneMatch     *string
 }
 
 // The &#39;iam.LdapProvider&#39; resource to create.
@@ -2505,11 +2533,13 @@ func (r ApiCreateIamLdapProviderRequest) IamLdapProvider(iamLdapProvider IamLdap
 	r.iamLdapProvider = &iamLdapProvider
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamLdapProviderRequest) IfMatch(ifMatch string) ApiCreateIamLdapProviderRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamLdapProviderRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamLdapProviderRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2529,7 +2559,7 @@ CreateIamLdapProvider Create a 'iam.LdapProvider' resource.
 func (a *IamApiService) CreateIamLdapProvider(ctx _context.Context) ApiCreateIamLdapProviderRequest {
 	return ApiCreateIamLdapProviderRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2646,13 +2676,13 @@ func (a *IamApiService) CreateIamLdapProviderExecute(r ApiCreateIamLdapProviderR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2669,11 +2699,11 @@ func (a *IamApiService) CreateIamLdapProviderExecute(r ApiCreateIamLdapProviderR
 }
 
 type ApiCreateIamPermissionRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx           _context.Context
+	ApiService    *IamApiService
 	iamPermission *IamPermission
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch       *string
+	ifNoneMatch   *string
 }
 
 // The &#39;iam.Permission&#39; resource to create.
@@ -2681,11 +2711,13 @@ func (r ApiCreateIamPermissionRequest) IamPermission(iamPermission IamPermission
 	r.iamPermission = &iamPermission
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamPermissionRequest) IfMatch(ifMatch string) ApiCreateIamPermissionRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamPermissionRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamPermissionRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2705,7 +2737,7 @@ CreateIamPermission Create a 'iam.Permission' resource.
 func (a *IamApiService) CreateIamPermission(ctx _context.Context) ApiCreateIamPermissionRequest {
 	return ApiCreateIamPermissionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2822,13 +2854,13 @@ func (a *IamApiService) CreateIamPermissionExecute(r ApiCreateIamPermissionReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2845,11 +2877,11 @@ func (a *IamApiService) CreateIamPermissionExecute(r ApiCreateIamPermissionReque
 }
 
 type ApiCreateIamPrivateKeySpecRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx               _context.Context
+	ApiService        *IamApiService
 	iamPrivateKeySpec *IamPrivateKeySpec
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch           *string
+	ifNoneMatch       *string
 }
 
 // The &#39;iam.PrivateKeySpec&#39; resource to create.
@@ -2857,11 +2889,13 @@ func (r ApiCreateIamPrivateKeySpecRequest) IamPrivateKeySpec(iamPrivateKeySpec I
 	r.iamPrivateKeySpec = &iamPrivateKeySpec
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamPrivateKeySpecRequest) IfMatch(ifMatch string) ApiCreateIamPrivateKeySpecRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamPrivateKeySpecRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamPrivateKeySpecRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2881,7 +2915,7 @@ CreateIamPrivateKeySpec Create a 'iam.PrivateKeySpec' resource.
 func (a *IamApiService) CreateIamPrivateKeySpec(ctx _context.Context) ApiCreateIamPrivateKeySpecRequest {
 	return ApiCreateIamPrivateKeySpecRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2998,13 +3032,13 @@ func (a *IamApiService) CreateIamPrivateKeySpecExecute(r ApiCreateIamPrivateKeyS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3021,11 +3055,11 @@ func (a *IamApiService) CreateIamPrivateKeySpecExecute(r ApiCreateIamPrivateKeyS
 }
 
 type ApiCreateIamQualifierRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx          _context.Context
+	ApiService   *IamApiService
 	iamQualifier *IamQualifier
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch      *string
+	ifNoneMatch  *string
 }
 
 // The &#39;iam.Qualifier&#39; resource to create.
@@ -3033,11 +3067,13 @@ func (r ApiCreateIamQualifierRequest) IamQualifier(iamQualifier IamQualifier) Ap
 	r.iamQualifier = &iamQualifier
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamQualifierRequest) IfMatch(ifMatch string) ApiCreateIamQualifierRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamQualifierRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamQualifierRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3057,7 +3093,7 @@ CreateIamQualifier Create a 'iam.Qualifier' resource.
 func (a *IamApiService) CreateIamQualifier(ctx _context.Context) ApiCreateIamQualifierRequest {
 	return ApiCreateIamQualifierRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3174,13 +3210,13 @@ func (a *IamApiService) CreateIamQualifierExecute(r ApiCreateIamQualifierRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3197,11 +3233,11 @@ func (a *IamApiService) CreateIamQualifierExecute(r ApiCreateIamQualifierRequest
 }
 
 type ApiCreateIamResourceRolesRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx              _context.Context
+	ApiService       *IamApiService
 	iamResourceRoles *IamResourceRoles
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch          *string
+	ifNoneMatch      *string
 }
 
 // The &#39;iam.ResourceRoles&#39; resource to create.
@@ -3209,11 +3245,13 @@ func (r ApiCreateIamResourceRolesRequest) IamResourceRoles(iamResourceRoles IamR
 	r.iamResourceRoles = &iamResourceRoles
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamResourceRolesRequest) IfMatch(ifMatch string) ApiCreateIamResourceRolesRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamResourceRolesRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamResourceRolesRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3233,7 +3271,7 @@ CreateIamResourceRoles Create a 'iam.ResourceRoles' resource.
 func (a *IamApiService) CreateIamResourceRoles(ctx _context.Context) ApiCreateIamResourceRolesRequest {
 	return ApiCreateIamResourceRolesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3350,13 +3388,13 @@ func (a *IamApiService) CreateIamResourceRolesExecute(r ApiCreateIamResourceRole
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3373,11 +3411,11 @@ func (a *IamApiService) CreateIamResourceRolesExecute(r ApiCreateIamResourceRole
 }
 
 type ApiCreateIamSessionLimitsRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx              _context.Context
+	ApiService       *IamApiService
 	iamSessionLimits *IamSessionLimits
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch          *string
+	ifNoneMatch      *string
 }
 
 // The &#39;iam.SessionLimits&#39; resource to create.
@@ -3385,11 +3423,13 @@ func (r ApiCreateIamSessionLimitsRequest) IamSessionLimits(iamSessionLimits IamS
 	r.iamSessionLimits = &iamSessionLimits
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamSessionLimitsRequest) IfMatch(ifMatch string) ApiCreateIamSessionLimitsRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamSessionLimitsRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamSessionLimitsRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3409,7 +3449,7 @@ CreateIamSessionLimits Create a 'iam.SessionLimits' resource.
 func (a *IamApiService) CreateIamSessionLimits(ctx _context.Context) ApiCreateIamSessionLimitsRequest {
 	return ApiCreateIamSessionLimitsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3526,13 +3566,13 @@ func (a *IamApiService) CreateIamSessionLimitsExecute(r ApiCreateIamSessionLimit
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3549,11 +3589,11 @@ func (a *IamApiService) CreateIamSessionLimitsExecute(r ApiCreateIamSessionLimit
 }
 
 type ApiCreateIamTrustPointRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx           _context.Context
+	ApiService    *IamApiService
 	iamTrustPoint *IamTrustPoint
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch       *string
+	ifNoneMatch   *string
 }
 
 // The &#39;iam.TrustPoint&#39; resource to create.
@@ -3561,11 +3601,13 @@ func (r ApiCreateIamTrustPointRequest) IamTrustPoint(iamTrustPoint IamTrustPoint
 	r.iamTrustPoint = &iamTrustPoint
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamTrustPointRequest) IfMatch(ifMatch string) ApiCreateIamTrustPointRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamTrustPointRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamTrustPointRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3585,7 +3627,7 @@ CreateIamTrustPoint Create a 'iam.TrustPoint' resource.
 func (a *IamApiService) CreateIamTrustPoint(ctx _context.Context) ApiCreateIamTrustPointRequest {
 	return ApiCreateIamTrustPointRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3702,13 +3744,13 @@ func (a *IamApiService) CreateIamTrustPointExecute(r ApiCreateIamTrustPointReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3725,10 +3767,10 @@ func (a *IamApiService) CreateIamTrustPointExecute(r ApiCreateIamTrustPointReque
 }
 
 type ApiCreateIamUserRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	iamUser *IamUser
-	ifMatch *string
+	ctx         _context.Context
+	ApiService  *IamApiService
+	iamUser     *IamUser
+	ifMatch     *string
 	ifNoneMatch *string
 }
 
@@ -3737,11 +3779,13 @@ func (r ApiCreateIamUserRequest) IamUser(iamUser IamUser) ApiCreateIamUserReques
 	r.iamUser = &iamUser
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamUserRequest) IfMatch(ifMatch string) ApiCreateIamUserRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamUserRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamUserRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3761,7 +3805,7 @@ CreateIamUser Create a 'iam.User' resource.
 func (a *IamApiService) CreateIamUser(ctx _context.Context) ApiCreateIamUserRequest {
 	return ApiCreateIamUserRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3878,13 +3922,13 @@ func (a *IamApiService) CreateIamUserExecute(r ApiCreateIamUserRequest) (IamUser
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3901,11 +3945,11 @@ func (a *IamApiService) CreateIamUserExecute(r ApiCreateIamUserRequest) (IamUser
 }
 
 type ApiCreateIamUserGroupRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
+	ctx          _context.Context
+	ApiService   *IamApiService
 	iamUserGroup *IamUserGroup
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch      *string
+	ifNoneMatch  *string
 }
 
 // The &#39;iam.UserGroup&#39; resource to create.
@@ -3913,11 +3957,13 @@ func (r ApiCreateIamUserGroupRequest) IamUserGroup(iamUserGroup IamUserGroup) Ap
 	r.iamUserGroup = &iamUserGroup
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateIamUserGroupRequest) IfMatch(ifMatch string) ApiCreateIamUserGroupRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateIamUserGroupRequest) IfNoneMatch(ifNoneMatch string) ApiCreateIamUserGroupRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3937,7 +3983,7 @@ CreateIamUserGroup Create a 'iam.UserGroup' resource.
 func (a *IamApiService) CreateIamUserGroup(ctx _context.Context) ApiCreateIamUserGroupRequest {
 	return ApiCreateIamUserGroupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4054,13 +4100,13 @@ func (a *IamApiService) CreateIamUserGroupExecute(r ApiCreateIamUserGroupRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4077,11 +4123,10 @@ func (a *IamApiService) CreateIamUserGroupExecute(r ApiCreateIamUserGroupRequest
 }
 
 type ApiDeleteIamAccountRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamAccountRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamAccountExecute(r)
@@ -4097,8 +4142,8 @@ DeleteIamAccount Delete a 'iam.Account' resource.
 func (a *IamApiService) DeleteIamAccount(ctx _context.Context, moid string) ApiDeleteIamAccountRequest {
 	return ApiDeleteIamAccountRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4203,13 +4248,13 @@ func (a *IamApiService) DeleteIamAccountExecute(r ApiDeleteIamAccountRequest) (*
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4217,11 +4262,10 @@ func (a *IamApiService) DeleteIamAccountExecute(r ApiDeleteIamAccountRequest) (*
 }
 
 type ApiDeleteIamApiKeyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamApiKeyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamApiKeyExecute(r)
@@ -4237,8 +4281,8 @@ DeleteIamApiKey Delete a 'iam.ApiKey' resource.
 func (a *IamApiService) DeleteIamApiKey(ctx _context.Context, moid string) ApiDeleteIamApiKeyRequest {
 	return ApiDeleteIamApiKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4343,13 +4387,13 @@ func (a *IamApiService) DeleteIamApiKeyExecute(r ApiDeleteIamApiKeyRequest) (*_n
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4357,11 +4401,10 @@ func (a *IamApiService) DeleteIamApiKeyExecute(r ApiDeleteIamApiKeyRequest) (*_n
 }
 
 type ApiDeleteIamAppRegistrationRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamAppRegistrationRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamAppRegistrationExecute(r)
@@ -4377,8 +4420,8 @@ DeleteIamAppRegistration Delete a 'iam.AppRegistration' resource.
 func (a *IamApiService) DeleteIamAppRegistration(ctx _context.Context, moid string) ApiDeleteIamAppRegistrationRequest {
 	return ApiDeleteIamAppRegistrationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4483,13 +4526,13 @@ func (a *IamApiService) DeleteIamAppRegistrationExecute(r ApiDeleteIamAppRegistr
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4497,11 +4540,10 @@ func (a *IamApiService) DeleteIamAppRegistrationExecute(r ApiDeleteIamAppRegistr
 }
 
 type ApiDeleteIamCertificateRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamCertificateRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamCertificateExecute(r)
@@ -4517,8 +4559,8 @@ DeleteIamCertificate Delete a 'iam.Certificate' resource.
 func (a *IamApiService) DeleteIamCertificate(ctx _context.Context, moid string) ApiDeleteIamCertificateRequest {
 	return ApiDeleteIamCertificateRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4623,13 +4665,13 @@ func (a *IamApiService) DeleteIamCertificateExecute(r ApiDeleteIamCertificateReq
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4637,11 +4679,10 @@ func (a *IamApiService) DeleteIamCertificateExecute(r ApiDeleteIamCertificateReq
 }
 
 type ApiDeleteIamCertificateRequestRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamCertificateRequestRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamCertificateRequestExecute(r)
@@ -4657,8 +4698,8 @@ DeleteIamCertificateRequest Delete a 'iam.CertificateRequest' resource.
 func (a *IamApiService) DeleteIamCertificateRequest(ctx _context.Context, moid string) ApiDeleteIamCertificateRequestRequest {
 	return ApiDeleteIamCertificateRequestRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4763,13 +4804,13 @@ func (a *IamApiService) DeleteIamCertificateRequestExecute(r ApiDeleteIamCertifi
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4777,11 +4818,10 @@ func (a *IamApiService) DeleteIamCertificateRequestExecute(r ApiDeleteIamCertifi
 }
 
 type ApiDeleteIamEndPointUserRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamEndPointUserRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamEndPointUserExecute(r)
@@ -4797,8 +4837,8 @@ DeleteIamEndPointUser Delete a 'iam.EndPointUser' resource.
 func (a *IamApiService) DeleteIamEndPointUser(ctx _context.Context, moid string) ApiDeleteIamEndPointUserRequest {
 	return ApiDeleteIamEndPointUserRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4903,13 +4943,13 @@ func (a *IamApiService) DeleteIamEndPointUserExecute(r ApiDeleteIamEndPointUserR
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4917,11 +4957,10 @@ func (a *IamApiService) DeleteIamEndPointUserExecute(r ApiDeleteIamEndPointUserR
 }
 
 type ApiDeleteIamEndPointUserPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamEndPointUserPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamEndPointUserPolicyExecute(r)
@@ -4937,8 +4976,8 @@ DeleteIamEndPointUserPolicy Delete a 'iam.EndPointUserPolicy' resource.
 func (a *IamApiService) DeleteIamEndPointUserPolicy(ctx _context.Context, moid string) ApiDeleteIamEndPointUserPolicyRequest {
 	return ApiDeleteIamEndPointUserPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5043,13 +5082,13 @@ func (a *IamApiService) DeleteIamEndPointUserPolicyExecute(r ApiDeleteIamEndPoin
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5057,11 +5096,10 @@ func (a *IamApiService) DeleteIamEndPointUserPolicyExecute(r ApiDeleteIamEndPoin
 }
 
 type ApiDeleteIamEndPointUserRoleRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamEndPointUserRoleRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamEndPointUserRoleExecute(r)
@@ -5077,8 +5115,8 @@ DeleteIamEndPointUserRole Delete a 'iam.EndPointUserRole' resource.
 func (a *IamApiService) DeleteIamEndPointUserRole(ctx _context.Context, moid string) ApiDeleteIamEndPointUserRoleRequest {
 	return ApiDeleteIamEndPointUserRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5183,13 +5221,13 @@ func (a *IamApiService) DeleteIamEndPointUserRoleExecute(r ApiDeleteIamEndPointU
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5197,11 +5235,10 @@ func (a *IamApiService) DeleteIamEndPointUserRoleExecute(r ApiDeleteIamEndPointU
 }
 
 type ApiDeleteIamIdpRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamIdpRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamIdpExecute(r)
@@ -5217,8 +5254,8 @@ DeleteIamIdp Delete a 'iam.Idp' resource.
 func (a *IamApiService) DeleteIamIdp(ctx _context.Context, moid string) ApiDeleteIamIdpRequest {
 	return ApiDeleteIamIdpRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5323,13 +5360,13 @@ func (a *IamApiService) DeleteIamIdpExecute(r ApiDeleteIamIdpRequest) (*_nethttp
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5337,11 +5374,10 @@ func (a *IamApiService) DeleteIamIdpExecute(r ApiDeleteIamIdpRequest) (*_nethttp
 }
 
 type ApiDeleteIamIpAddressRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamIpAddressRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamIpAddressExecute(r)
@@ -5357,8 +5393,8 @@ DeleteIamIpAddress Delete a 'iam.IpAddress' resource.
 func (a *IamApiService) DeleteIamIpAddress(ctx _context.Context, moid string) ApiDeleteIamIpAddressRequest {
 	return ApiDeleteIamIpAddressRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5463,13 +5499,13 @@ func (a *IamApiService) DeleteIamIpAddressExecute(r ApiDeleteIamIpAddressRequest
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5477,11 +5513,10 @@ func (a *IamApiService) DeleteIamIpAddressExecute(r ApiDeleteIamIpAddressRequest
 }
 
 type ApiDeleteIamLdapGroupRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamLdapGroupRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamLdapGroupExecute(r)
@@ -5497,8 +5532,8 @@ DeleteIamLdapGroup Delete a 'iam.LdapGroup' resource.
 func (a *IamApiService) DeleteIamLdapGroup(ctx _context.Context, moid string) ApiDeleteIamLdapGroupRequest {
 	return ApiDeleteIamLdapGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5603,13 +5638,13 @@ func (a *IamApiService) DeleteIamLdapGroupExecute(r ApiDeleteIamLdapGroupRequest
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5617,11 +5652,10 @@ func (a *IamApiService) DeleteIamLdapGroupExecute(r ApiDeleteIamLdapGroupRequest
 }
 
 type ApiDeleteIamLdapPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamLdapPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamLdapPolicyExecute(r)
@@ -5637,8 +5671,8 @@ DeleteIamLdapPolicy Delete a 'iam.LdapPolicy' resource.
 func (a *IamApiService) DeleteIamLdapPolicy(ctx _context.Context, moid string) ApiDeleteIamLdapPolicyRequest {
 	return ApiDeleteIamLdapPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5743,13 +5777,13 @@ func (a *IamApiService) DeleteIamLdapPolicyExecute(r ApiDeleteIamLdapPolicyReque
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5757,11 +5791,10 @@ func (a *IamApiService) DeleteIamLdapPolicyExecute(r ApiDeleteIamLdapPolicyReque
 }
 
 type ApiDeleteIamLdapProviderRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamLdapProviderRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamLdapProviderExecute(r)
@@ -5777,8 +5810,8 @@ DeleteIamLdapProvider Delete a 'iam.LdapProvider' resource.
 func (a *IamApiService) DeleteIamLdapProvider(ctx _context.Context, moid string) ApiDeleteIamLdapProviderRequest {
 	return ApiDeleteIamLdapProviderRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5883,13 +5916,13 @@ func (a *IamApiService) DeleteIamLdapProviderExecute(r ApiDeleteIamLdapProviderR
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5897,11 +5930,10 @@ func (a *IamApiService) DeleteIamLdapProviderExecute(r ApiDeleteIamLdapProviderR
 }
 
 type ApiDeleteIamOAuthTokenRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamOAuthTokenRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamOAuthTokenExecute(r)
@@ -5917,8 +5949,8 @@ DeleteIamOAuthToken Delete a 'iam.OAuthToken' resource.
 func (a *IamApiService) DeleteIamOAuthToken(ctx _context.Context, moid string) ApiDeleteIamOAuthTokenRequest {
 	return ApiDeleteIamOAuthTokenRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6023,13 +6055,13 @@ func (a *IamApiService) DeleteIamOAuthTokenExecute(r ApiDeleteIamOAuthTokenReque
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6037,11 +6069,10 @@ func (a *IamApiService) DeleteIamOAuthTokenExecute(r ApiDeleteIamOAuthTokenReque
 }
 
 type ApiDeleteIamPermissionRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamPermissionRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamPermissionExecute(r)
@@ -6057,8 +6088,8 @@ DeleteIamPermission Delete a 'iam.Permission' resource.
 func (a *IamApiService) DeleteIamPermission(ctx _context.Context, moid string) ApiDeleteIamPermissionRequest {
 	return ApiDeleteIamPermissionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6163,13 +6194,13 @@ func (a *IamApiService) DeleteIamPermissionExecute(r ApiDeleteIamPermissionReque
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6177,11 +6208,10 @@ func (a *IamApiService) DeleteIamPermissionExecute(r ApiDeleteIamPermissionReque
 }
 
 type ApiDeleteIamPrivateKeySpecRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamPrivateKeySpecRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamPrivateKeySpecExecute(r)
@@ -6197,8 +6227,8 @@ DeleteIamPrivateKeySpec Delete a 'iam.PrivateKeySpec' resource.
 func (a *IamApiService) DeleteIamPrivateKeySpec(ctx _context.Context, moid string) ApiDeleteIamPrivateKeySpecRequest {
 	return ApiDeleteIamPrivateKeySpecRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6303,13 +6333,13 @@ func (a *IamApiService) DeleteIamPrivateKeySpecExecute(r ApiDeleteIamPrivateKeyS
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6317,11 +6347,10 @@ func (a *IamApiService) DeleteIamPrivateKeySpecExecute(r ApiDeleteIamPrivateKeyS
 }
 
 type ApiDeleteIamQualifierRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamQualifierRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamQualifierExecute(r)
@@ -6337,8 +6366,8 @@ DeleteIamQualifier Delete a 'iam.Qualifier' resource.
 func (a *IamApiService) DeleteIamQualifier(ctx _context.Context, moid string) ApiDeleteIamQualifierRequest {
 	return ApiDeleteIamQualifierRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6443,13 +6472,13 @@ func (a *IamApiService) DeleteIamQualifierExecute(r ApiDeleteIamQualifierRequest
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6457,11 +6486,10 @@ func (a *IamApiService) DeleteIamQualifierExecute(r ApiDeleteIamQualifierRequest
 }
 
 type ApiDeleteIamResourceRolesRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamResourceRolesRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamResourceRolesExecute(r)
@@ -6477,8 +6505,8 @@ DeleteIamResourceRoles Delete a 'iam.ResourceRoles' resource.
 func (a *IamApiService) DeleteIamResourceRoles(ctx _context.Context, moid string) ApiDeleteIamResourceRolesRequest {
 	return ApiDeleteIamResourceRolesRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6583,13 +6611,13 @@ func (a *IamApiService) DeleteIamResourceRolesExecute(r ApiDeleteIamResourceRole
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6597,11 +6625,10 @@ func (a *IamApiService) DeleteIamResourceRolesExecute(r ApiDeleteIamResourceRole
 }
 
 type ApiDeleteIamSessionRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamSessionRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamSessionExecute(r)
@@ -6617,8 +6644,8 @@ DeleteIamSession Delete a 'iam.Session' resource.
 func (a *IamApiService) DeleteIamSession(ctx _context.Context, moid string) ApiDeleteIamSessionRequest {
 	return ApiDeleteIamSessionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6723,13 +6750,13 @@ func (a *IamApiService) DeleteIamSessionExecute(r ApiDeleteIamSessionRequest) (*
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6737,11 +6764,10 @@ func (a *IamApiService) DeleteIamSessionExecute(r ApiDeleteIamSessionRequest) (*
 }
 
 type ApiDeleteIamSessionLimitsRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamSessionLimitsRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamSessionLimitsExecute(r)
@@ -6757,8 +6783,8 @@ DeleteIamSessionLimits Delete a 'iam.SessionLimits' resource.
 func (a *IamApiService) DeleteIamSessionLimits(ctx _context.Context, moid string) ApiDeleteIamSessionLimitsRequest {
 	return ApiDeleteIamSessionLimitsRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6863,13 +6889,13 @@ func (a *IamApiService) DeleteIamSessionLimitsExecute(r ApiDeleteIamSessionLimit
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6877,11 +6903,10 @@ func (a *IamApiService) DeleteIamSessionLimitsExecute(r ApiDeleteIamSessionLimit
 }
 
 type ApiDeleteIamTrustPointRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamTrustPointRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamTrustPointExecute(r)
@@ -6897,8 +6922,8 @@ DeleteIamTrustPoint Delete a 'iam.TrustPoint' resource.
 func (a *IamApiService) DeleteIamTrustPoint(ctx _context.Context, moid string) ApiDeleteIamTrustPointRequest {
 	return ApiDeleteIamTrustPointRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7003,13 +7028,13 @@ func (a *IamApiService) DeleteIamTrustPointExecute(r ApiDeleteIamTrustPointReque
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7017,11 +7042,10 @@ func (a *IamApiService) DeleteIamTrustPointExecute(r ApiDeleteIamTrustPointReque
 }
 
 type ApiDeleteIamUserRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamUserRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamUserExecute(r)
@@ -7037,8 +7061,8 @@ DeleteIamUser Delete a 'iam.User' resource.
 func (a *IamApiService) DeleteIamUser(ctx _context.Context, moid string) ApiDeleteIamUserRequest {
 	return ApiDeleteIamUserRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7143,13 +7167,13 @@ func (a *IamApiService) DeleteIamUserExecute(r ApiDeleteIamUserRequest) (*_netht
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7157,11 +7181,10 @@ func (a *IamApiService) DeleteIamUserExecute(r ApiDeleteIamUserRequest) (*_netht
 }
 
 type ApiDeleteIamUserGroupRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteIamUserGroupRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteIamUserGroupExecute(r)
@@ -7177,8 +7200,8 @@ DeleteIamUserGroup Delete a 'iam.UserGroup' resource.
 func (a *IamApiService) DeleteIamUserGroup(ctx _context.Context, moid string) ApiDeleteIamUserGroupRequest {
 	return ApiDeleteIamUserGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7283,13 +7306,13 @@ func (a *IamApiService) DeleteIamUserGroupExecute(r ApiDeleteIamUserGroupRequest
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7297,11 +7320,10 @@ func (a *IamApiService) DeleteIamUserGroupExecute(r ApiDeleteIamUserGroupRequest
 }
 
 type ApiGetIamAccountByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamAccountByMoidRequest) Execute() (IamAccount, *_nethttp.Response, error) {
 	return r.ApiService.GetIamAccountByMoidExecute(r)
@@ -7317,8 +7339,8 @@ GetIamAccountByMoid Read a 'iam.Account' resource.
 func (a *IamApiService) GetIamAccountByMoid(ctx _context.Context, moid string) ApiGetIamAccountByMoidRequest {
 	return ApiGetIamAccountByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7425,13 +7447,13 @@ func (a *IamApiService) GetIamAccountByMoidExecute(r ApiGetIamAccountByMoidReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7448,11 +7470,10 @@ func (a *IamApiService) GetIamAccountByMoidExecute(r ApiGetIamAccountByMoidReque
 }
 
 type ApiGetIamAccountExperienceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamAccountExperienceByMoidRequest) Execute() (IamAccountExperience, *_nethttp.Response, error) {
 	return r.ApiService.GetIamAccountExperienceByMoidExecute(r)
@@ -7468,8 +7489,8 @@ GetIamAccountExperienceByMoid Read a 'iam.AccountExperience' resource.
 func (a *IamApiService) GetIamAccountExperienceByMoid(ctx _context.Context, moid string) ApiGetIamAccountExperienceByMoidRequest {
 	return ApiGetIamAccountExperienceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7576,13 +7597,13 @@ func (a *IamApiService) GetIamAccountExperienceByMoidExecute(r ApiGetIamAccountE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7599,19 +7620,19 @@ func (a *IamApiService) GetIamAccountExperienceByMoidExecute(r ApiGetIamAccountE
 }
 
 type ApiGetIamAccountExperienceListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7619,51 +7640,61 @@ func (r ApiGetIamAccountExperienceListRequest) Filter(filter string) ApiGetIamAc
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamAccountExperienceListRequest) Orderby(orderby string) ApiGetIamAccountExperienceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamAccountExperienceListRequest) Top(top int32) ApiGetIamAccountExperienceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamAccountExperienceListRequest) Skip(skip int32) ApiGetIamAccountExperienceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamAccountExperienceListRequest) Select_(select_ string) ApiGetIamAccountExperienceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamAccountExperienceListRequest) Expand(expand string) ApiGetIamAccountExperienceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamAccountExperienceListRequest) Apply(apply string) ApiGetIamAccountExperienceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamAccountExperienceListRequest) Count(count bool) ApiGetIamAccountExperienceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamAccountExperienceListRequest) Inlinecount(inlinecount string) ApiGetIamAccountExperienceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamAccountExperienceListRequest) At(at string) ApiGetIamAccountExperienceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamAccountExperienceListRequest) Tags(tags string) ApiGetIamAccountExperienceListRequest {
 	r.tags = &tags
@@ -7683,7 +7714,7 @@ GetIamAccountExperienceList Read a 'iam.AccountExperience' resource.
 func (a *IamApiService) GetIamAccountExperienceList(ctx _context.Context) ApiGetIamAccountExperienceListRequest {
 	return ApiGetIamAccountExperienceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7822,13 +7853,13 @@ func (a *IamApiService) GetIamAccountExperienceListExecute(r ApiGetIamAccountExp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7845,19 +7876,19 @@ func (a *IamApiService) GetIamAccountExperienceListExecute(r ApiGetIamAccountExp
 }
 
 type ApiGetIamAccountListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7865,51 +7896,61 @@ func (r ApiGetIamAccountListRequest) Filter(filter string) ApiGetIamAccountListR
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamAccountListRequest) Orderby(orderby string) ApiGetIamAccountListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamAccountListRequest) Top(top int32) ApiGetIamAccountListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamAccountListRequest) Skip(skip int32) ApiGetIamAccountListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamAccountListRequest) Select_(select_ string) ApiGetIamAccountListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamAccountListRequest) Expand(expand string) ApiGetIamAccountListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamAccountListRequest) Apply(apply string) ApiGetIamAccountListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamAccountListRequest) Count(count bool) ApiGetIamAccountListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamAccountListRequest) Inlinecount(inlinecount string) ApiGetIamAccountListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamAccountListRequest) At(at string) ApiGetIamAccountListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamAccountListRequest) Tags(tags string) ApiGetIamAccountListRequest {
 	r.tags = &tags
@@ -7929,7 +7970,7 @@ GetIamAccountList Read a 'iam.Account' resource.
 func (a *IamApiService) GetIamAccountList(ctx _context.Context) ApiGetIamAccountListRequest {
 	return ApiGetIamAccountListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8068,13 +8109,13 @@ func (a *IamApiService) GetIamAccountListExecute(r ApiGetIamAccountListRequest) 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8091,11 +8132,10 @@ func (a *IamApiService) GetIamAccountListExecute(r ApiGetIamAccountListRequest) 
 }
 
 type ApiGetIamApiKeyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamApiKeyByMoidRequest) Execute() (IamApiKey, *_nethttp.Response, error) {
 	return r.ApiService.GetIamApiKeyByMoidExecute(r)
@@ -8111,8 +8151,8 @@ GetIamApiKeyByMoid Read a 'iam.ApiKey' resource.
 func (a *IamApiService) GetIamApiKeyByMoid(ctx _context.Context, moid string) ApiGetIamApiKeyByMoidRequest {
 	return ApiGetIamApiKeyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8219,13 +8259,13 @@ func (a *IamApiService) GetIamApiKeyByMoidExecute(r ApiGetIamApiKeyByMoidRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8242,19 +8282,19 @@ func (a *IamApiService) GetIamApiKeyByMoidExecute(r ApiGetIamApiKeyByMoidRequest
 }
 
 type ApiGetIamApiKeyListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8262,51 +8302,61 @@ func (r ApiGetIamApiKeyListRequest) Filter(filter string) ApiGetIamApiKeyListReq
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamApiKeyListRequest) Orderby(orderby string) ApiGetIamApiKeyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamApiKeyListRequest) Top(top int32) ApiGetIamApiKeyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamApiKeyListRequest) Skip(skip int32) ApiGetIamApiKeyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamApiKeyListRequest) Select_(select_ string) ApiGetIamApiKeyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamApiKeyListRequest) Expand(expand string) ApiGetIamApiKeyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamApiKeyListRequest) Apply(apply string) ApiGetIamApiKeyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamApiKeyListRequest) Count(count bool) ApiGetIamApiKeyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamApiKeyListRequest) Inlinecount(inlinecount string) ApiGetIamApiKeyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamApiKeyListRequest) At(at string) ApiGetIamApiKeyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamApiKeyListRequest) Tags(tags string) ApiGetIamApiKeyListRequest {
 	r.tags = &tags
@@ -8326,7 +8376,7 @@ GetIamApiKeyList Read a 'iam.ApiKey' resource.
 func (a *IamApiService) GetIamApiKeyList(ctx _context.Context) ApiGetIamApiKeyListRequest {
 	return ApiGetIamApiKeyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8465,13 +8515,13 @@ func (a *IamApiService) GetIamApiKeyListExecute(r ApiGetIamApiKeyListRequest) (I
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8488,11 +8538,10 @@ func (a *IamApiService) GetIamApiKeyListExecute(r ApiGetIamApiKeyListRequest) (I
 }
 
 type ApiGetIamAppRegistrationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamAppRegistrationByMoidRequest) Execute() (IamAppRegistration, *_nethttp.Response, error) {
 	return r.ApiService.GetIamAppRegistrationByMoidExecute(r)
@@ -8508,8 +8557,8 @@ GetIamAppRegistrationByMoid Read a 'iam.AppRegistration' resource.
 func (a *IamApiService) GetIamAppRegistrationByMoid(ctx _context.Context, moid string) ApiGetIamAppRegistrationByMoidRequest {
 	return ApiGetIamAppRegistrationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8616,13 +8665,13 @@ func (a *IamApiService) GetIamAppRegistrationByMoidExecute(r ApiGetIamAppRegistr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8639,19 +8688,19 @@ func (a *IamApiService) GetIamAppRegistrationByMoidExecute(r ApiGetIamAppRegistr
 }
 
 type ApiGetIamAppRegistrationListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8659,51 +8708,61 @@ func (r ApiGetIamAppRegistrationListRequest) Filter(filter string) ApiGetIamAppR
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamAppRegistrationListRequest) Orderby(orderby string) ApiGetIamAppRegistrationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamAppRegistrationListRequest) Top(top int32) ApiGetIamAppRegistrationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamAppRegistrationListRequest) Skip(skip int32) ApiGetIamAppRegistrationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamAppRegistrationListRequest) Select_(select_ string) ApiGetIamAppRegistrationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamAppRegistrationListRequest) Expand(expand string) ApiGetIamAppRegistrationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamAppRegistrationListRequest) Apply(apply string) ApiGetIamAppRegistrationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamAppRegistrationListRequest) Count(count bool) ApiGetIamAppRegistrationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamAppRegistrationListRequest) Inlinecount(inlinecount string) ApiGetIamAppRegistrationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamAppRegistrationListRequest) At(at string) ApiGetIamAppRegistrationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamAppRegistrationListRequest) Tags(tags string) ApiGetIamAppRegistrationListRequest {
 	r.tags = &tags
@@ -8723,7 +8782,7 @@ GetIamAppRegistrationList Read a 'iam.AppRegistration' resource.
 func (a *IamApiService) GetIamAppRegistrationList(ctx _context.Context) ApiGetIamAppRegistrationListRequest {
 	return ApiGetIamAppRegistrationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8862,13 +8921,13 @@ func (a *IamApiService) GetIamAppRegistrationListExecute(r ApiGetIamAppRegistrat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8885,11 +8944,10 @@ func (a *IamApiService) GetIamAppRegistrationListExecute(r ApiGetIamAppRegistrat
 }
 
 type ApiGetIamBannerMessageByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamBannerMessageByMoidRequest) Execute() (IamBannerMessage, *_nethttp.Response, error) {
 	return r.ApiService.GetIamBannerMessageByMoidExecute(r)
@@ -8905,8 +8963,8 @@ GetIamBannerMessageByMoid Read a 'iam.BannerMessage' resource.
 func (a *IamApiService) GetIamBannerMessageByMoid(ctx _context.Context, moid string) ApiGetIamBannerMessageByMoidRequest {
 	return ApiGetIamBannerMessageByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9013,13 +9071,13 @@ func (a *IamApiService) GetIamBannerMessageByMoidExecute(r ApiGetIamBannerMessag
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9036,19 +9094,19 @@ func (a *IamApiService) GetIamBannerMessageByMoidExecute(r ApiGetIamBannerMessag
 }
 
 type ApiGetIamBannerMessageListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9056,51 +9114,61 @@ func (r ApiGetIamBannerMessageListRequest) Filter(filter string) ApiGetIamBanner
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamBannerMessageListRequest) Orderby(orderby string) ApiGetIamBannerMessageListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamBannerMessageListRequest) Top(top int32) ApiGetIamBannerMessageListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamBannerMessageListRequest) Skip(skip int32) ApiGetIamBannerMessageListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamBannerMessageListRequest) Select_(select_ string) ApiGetIamBannerMessageListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamBannerMessageListRequest) Expand(expand string) ApiGetIamBannerMessageListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamBannerMessageListRequest) Apply(apply string) ApiGetIamBannerMessageListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamBannerMessageListRequest) Count(count bool) ApiGetIamBannerMessageListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamBannerMessageListRequest) Inlinecount(inlinecount string) ApiGetIamBannerMessageListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamBannerMessageListRequest) At(at string) ApiGetIamBannerMessageListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamBannerMessageListRequest) Tags(tags string) ApiGetIamBannerMessageListRequest {
 	r.tags = &tags
@@ -9120,7 +9188,7 @@ GetIamBannerMessageList Read a 'iam.BannerMessage' resource.
 func (a *IamApiService) GetIamBannerMessageList(ctx _context.Context) ApiGetIamBannerMessageListRequest {
 	return ApiGetIamBannerMessageListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9259,13 +9327,13 @@ func (a *IamApiService) GetIamBannerMessageListExecute(r ApiGetIamBannerMessageL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9282,11 +9350,10 @@ func (a *IamApiService) GetIamBannerMessageListExecute(r ApiGetIamBannerMessageL
 }
 
 type ApiGetIamCertificateByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamCertificateByMoidRequest) Execute() (IamCertificate, *_nethttp.Response, error) {
 	return r.ApiService.GetIamCertificateByMoidExecute(r)
@@ -9302,8 +9369,8 @@ GetIamCertificateByMoid Read a 'iam.Certificate' resource.
 func (a *IamApiService) GetIamCertificateByMoid(ctx _context.Context, moid string) ApiGetIamCertificateByMoidRequest {
 	return ApiGetIamCertificateByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9410,13 +9477,13 @@ func (a *IamApiService) GetIamCertificateByMoidExecute(r ApiGetIamCertificateByM
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9433,19 +9500,19 @@ func (a *IamApiService) GetIamCertificateByMoidExecute(r ApiGetIamCertificateByM
 }
 
 type ApiGetIamCertificateListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9453,51 +9520,61 @@ func (r ApiGetIamCertificateListRequest) Filter(filter string) ApiGetIamCertific
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamCertificateListRequest) Orderby(orderby string) ApiGetIamCertificateListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamCertificateListRequest) Top(top int32) ApiGetIamCertificateListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamCertificateListRequest) Skip(skip int32) ApiGetIamCertificateListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamCertificateListRequest) Select_(select_ string) ApiGetIamCertificateListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamCertificateListRequest) Expand(expand string) ApiGetIamCertificateListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamCertificateListRequest) Apply(apply string) ApiGetIamCertificateListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamCertificateListRequest) Count(count bool) ApiGetIamCertificateListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamCertificateListRequest) Inlinecount(inlinecount string) ApiGetIamCertificateListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamCertificateListRequest) At(at string) ApiGetIamCertificateListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamCertificateListRequest) Tags(tags string) ApiGetIamCertificateListRequest {
 	r.tags = &tags
@@ -9517,7 +9594,7 @@ GetIamCertificateList Read a 'iam.Certificate' resource.
 func (a *IamApiService) GetIamCertificateList(ctx _context.Context) ApiGetIamCertificateListRequest {
 	return ApiGetIamCertificateListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9656,13 +9733,13 @@ func (a *IamApiService) GetIamCertificateListExecute(r ApiGetIamCertificateListR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9679,11 +9756,10 @@ func (a *IamApiService) GetIamCertificateListExecute(r ApiGetIamCertificateListR
 }
 
 type ApiGetIamCertificateRequestByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamCertificateRequestByMoidRequest) Execute() (IamCertificateRequest, *_nethttp.Response, error) {
 	return r.ApiService.GetIamCertificateRequestByMoidExecute(r)
@@ -9699,8 +9775,8 @@ GetIamCertificateRequestByMoid Read a 'iam.CertificateRequest' resource.
 func (a *IamApiService) GetIamCertificateRequestByMoid(ctx _context.Context, moid string) ApiGetIamCertificateRequestByMoidRequest {
 	return ApiGetIamCertificateRequestByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9807,13 +9883,13 @@ func (a *IamApiService) GetIamCertificateRequestByMoidExecute(r ApiGetIamCertifi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9830,19 +9906,19 @@ func (a *IamApiService) GetIamCertificateRequestByMoidExecute(r ApiGetIamCertifi
 }
 
 type ApiGetIamCertificateRequestListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9850,51 +9926,61 @@ func (r ApiGetIamCertificateRequestListRequest) Filter(filter string) ApiGetIamC
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamCertificateRequestListRequest) Orderby(orderby string) ApiGetIamCertificateRequestListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamCertificateRequestListRequest) Top(top int32) ApiGetIamCertificateRequestListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamCertificateRequestListRequest) Skip(skip int32) ApiGetIamCertificateRequestListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamCertificateRequestListRequest) Select_(select_ string) ApiGetIamCertificateRequestListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamCertificateRequestListRequest) Expand(expand string) ApiGetIamCertificateRequestListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamCertificateRequestListRequest) Apply(apply string) ApiGetIamCertificateRequestListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamCertificateRequestListRequest) Count(count bool) ApiGetIamCertificateRequestListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamCertificateRequestListRequest) Inlinecount(inlinecount string) ApiGetIamCertificateRequestListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamCertificateRequestListRequest) At(at string) ApiGetIamCertificateRequestListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamCertificateRequestListRequest) Tags(tags string) ApiGetIamCertificateRequestListRequest {
 	r.tags = &tags
@@ -9914,7 +10000,7 @@ GetIamCertificateRequestList Read a 'iam.CertificateRequest' resource.
 func (a *IamApiService) GetIamCertificateRequestList(ctx _context.Context) ApiGetIamCertificateRequestListRequest {
 	return ApiGetIamCertificateRequestListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10053,13 +10139,13 @@ func (a *IamApiService) GetIamCertificateRequestListExecute(r ApiGetIamCertifica
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10076,11 +10162,10 @@ func (a *IamApiService) GetIamCertificateRequestListExecute(r ApiGetIamCertifica
 }
 
 type ApiGetIamDomainGroupByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamDomainGroupByMoidRequest) Execute() (IamDomainGroup, *_nethttp.Response, error) {
 	return r.ApiService.GetIamDomainGroupByMoidExecute(r)
@@ -10096,8 +10181,8 @@ GetIamDomainGroupByMoid Read a 'iam.DomainGroup' resource.
 func (a *IamApiService) GetIamDomainGroupByMoid(ctx _context.Context, moid string) ApiGetIamDomainGroupByMoidRequest {
 	return ApiGetIamDomainGroupByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10204,13 +10289,13 @@ func (a *IamApiService) GetIamDomainGroupByMoidExecute(r ApiGetIamDomainGroupByM
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10227,19 +10312,19 @@ func (a *IamApiService) GetIamDomainGroupByMoidExecute(r ApiGetIamDomainGroupByM
 }
 
 type ApiGetIamDomainGroupListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10247,51 +10332,61 @@ func (r ApiGetIamDomainGroupListRequest) Filter(filter string) ApiGetIamDomainGr
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamDomainGroupListRequest) Orderby(orderby string) ApiGetIamDomainGroupListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamDomainGroupListRequest) Top(top int32) ApiGetIamDomainGroupListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamDomainGroupListRequest) Skip(skip int32) ApiGetIamDomainGroupListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamDomainGroupListRequest) Select_(select_ string) ApiGetIamDomainGroupListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamDomainGroupListRequest) Expand(expand string) ApiGetIamDomainGroupListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamDomainGroupListRequest) Apply(apply string) ApiGetIamDomainGroupListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamDomainGroupListRequest) Count(count bool) ApiGetIamDomainGroupListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamDomainGroupListRequest) Inlinecount(inlinecount string) ApiGetIamDomainGroupListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamDomainGroupListRequest) At(at string) ApiGetIamDomainGroupListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamDomainGroupListRequest) Tags(tags string) ApiGetIamDomainGroupListRequest {
 	r.tags = &tags
@@ -10311,7 +10406,7 @@ GetIamDomainGroupList Read a 'iam.DomainGroup' resource.
 func (a *IamApiService) GetIamDomainGroupList(ctx _context.Context) ApiGetIamDomainGroupListRequest {
 	return ApiGetIamDomainGroupListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10450,13 +10545,13 @@ func (a *IamApiService) GetIamDomainGroupListExecute(r ApiGetIamDomainGroupListR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10473,11 +10568,10 @@ func (a *IamApiService) GetIamDomainGroupListExecute(r ApiGetIamDomainGroupListR
 }
 
 type ApiGetIamEndPointPrivilegeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamEndPointPrivilegeByMoidRequest) Execute() (IamEndPointPrivilege, *_nethttp.Response, error) {
 	return r.ApiService.GetIamEndPointPrivilegeByMoidExecute(r)
@@ -10493,8 +10587,8 @@ GetIamEndPointPrivilegeByMoid Read a 'iam.EndPointPrivilege' resource.
 func (a *IamApiService) GetIamEndPointPrivilegeByMoid(ctx _context.Context, moid string) ApiGetIamEndPointPrivilegeByMoidRequest {
 	return ApiGetIamEndPointPrivilegeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10601,13 +10695,13 @@ func (a *IamApiService) GetIamEndPointPrivilegeByMoidExecute(r ApiGetIamEndPoint
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10624,19 +10718,19 @@ func (a *IamApiService) GetIamEndPointPrivilegeByMoidExecute(r ApiGetIamEndPoint
 }
 
 type ApiGetIamEndPointPrivilegeListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10644,51 +10738,61 @@ func (r ApiGetIamEndPointPrivilegeListRequest) Filter(filter string) ApiGetIamEn
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamEndPointPrivilegeListRequest) Orderby(orderby string) ApiGetIamEndPointPrivilegeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamEndPointPrivilegeListRequest) Top(top int32) ApiGetIamEndPointPrivilegeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamEndPointPrivilegeListRequest) Skip(skip int32) ApiGetIamEndPointPrivilegeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamEndPointPrivilegeListRequest) Select_(select_ string) ApiGetIamEndPointPrivilegeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamEndPointPrivilegeListRequest) Expand(expand string) ApiGetIamEndPointPrivilegeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamEndPointPrivilegeListRequest) Apply(apply string) ApiGetIamEndPointPrivilegeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamEndPointPrivilegeListRequest) Count(count bool) ApiGetIamEndPointPrivilegeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamEndPointPrivilegeListRequest) Inlinecount(inlinecount string) ApiGetIamEndPointPrivilegeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamEndPointPrivilegeListRequest) At(at string) ApiGetIamEndPointPrivilegeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamEndPointPrivilegeListRequest) Tags(tags string) ApiGetIamEndPointPrivilegeListRequest {
 	r.tags = &tags
@@ -10708,7 +10812,7 @@ GetIamEndPointPrivilegeList Read a 'iam.EndPointPrivilege' resource.
 func (a *IamApiService) GetIamEndPointPrivilegeList(ctx _context.Context) ApiGetIamEndPointPrivilegeListRequest {
 	return ApiGetIamEndPointPrivilegeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10847,13 +10951,13 @@ func (a *IamApiService) GetIamEndPointPrivilegeListExecute(r ApiGetIamEndPointPr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10870,11 +10974,10 @@ func (a *IamApiService) GetIamEndPointPrivilegeListExecute(r ApiGetIamEndPointPr
 }
 
 type ApiGetIamEndPointRoleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamEndPointRoleByMoidRequest) Execute() (IamEndPointRole, *_nethttp.Response, error) {
 	return r.ApiService.GetIamEndPointRoleByMoidExecute(r)
@@ -10890,8 +10993,8 @@ GetIamEndPointRoleByMoid Read a 'iam.EndPointRole' resource.
 func (a *IamApiService) GetIamEndPointRoleByMoid(ctx _context.Context, moid string) ApiGetIamEndPointRoleByMoidRequest {
 	return ApiGetIamEndPointRoleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10998,13 +11101,13 @@ func (a *IamApiService) GetIamEndPointRoleByMoidExecute(r ApiGetIamEndPointRoleB
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11021,19 +11124,19 @@ func (a *IamApiService) GetIamEndPointRoleByMoidExecute(r ApiGetIamEndPointRoleB
 }
 
 type ApiGetIamEndPointRoleListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11041,51 +11144,61 @@ func (r ApiGetIamEndPointRoleListRequest) Filter(filter string) ApiGetIamEndPoin
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamEndPointRoleListRequest) Orderby(orderby string) ApiGetIamEndPointRoleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamEndPointRoleListRequest) Top(top int32) ApiGetIamEndPointRoleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamEndPointRoleListRequest) Skip(skip int32) ApiGetIamEndPointRoleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamEndPointRoleListRequest) Select_(select_ string) ApiGetIamEndPointRoleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamEndPointRoleListRequest) Expand(expand string) ApiGetIamEndPointRoleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamEndPointRoleListRequest) Apply(apply string) ApiGetIamEndPointRoleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamEndPointRoleListRequest) Count(count bool) ApiGetIamEndPointRoleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamEndPointRoleListRequest) Inlinecount(inlinecount string) ApiGetIamEndPointRoleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamEndPointRoleListRequest) At(at string) ApiGetIamEndPointRoleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamEndPointRoleListRequest) Tags(tags string) ApiGetIamEndPointRoleListRequest {
 	r.tags = &tags
@@ -11105,7 +11218,7 @@ GetIamEndPointRoleList Read a 'iam.EndPointRole' resource.
 func (a *IamApiService) GetIamEndPointRoleList(ctx _context.Context) ApiGetIamEndPointRoleListRequest {
 	return ApiGetIamEndPointRoleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11244,13 +11357,13 @@ func (a *IamApiService) GetIamEndPointRoleListExecute(r ApiGetIamEndPointRoleLis
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11267,11 +11380,10 @@ func (a *IamApiService) GetIamEndPointRoleListExecute(r ApiGetIamEndPointRoleLis
 }
 
 type ApiGetIamEndPointUserByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamEndPointUserByMoidRequest) Execute() (IamEndPointUser, *_nethttp.Response, error) {
 	return r.ApiService.GetIamEndPointUserByMoidExecute(r)
@@ -11287,8 +11399,8 @@ GetIamEndPointUserByMoid Read a 'iam.EndPointUser' resource.
 func (a *IamApiService) GetIamEndPointUserByMoid(ctx _context.Context, moid string) ApiGetIamEndPointUserByMoidRequest {
 	return ApiGetIamEndPointUserByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11395,13 +11507,13 @@ func (a *IamApiService) GetIamEndPointUserByMoidExecute(r ApiGetIamEndPointUserB
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11418,19 +11530,19 @@ func (a *IamApiService) GetIamEndPointUserByMoidExecute(r ApiGetIamEndPointUserB
 }
 
 type ApiGetIamEndPointUserListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11438,51 +11550,61 @@ func (r ApiGetIamEndPointUserListRequest) Filter(filter string) ApiGetIamEndPoin
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamEndPointUserListRequest) Orderby(orderby string) ApiGetIamEndPointUserListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamEndPointUserListRequest) Top(top int32) ApiGetIamEndPointUserListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamEndPointUserListRequest) Skip(skip int32) ApiGetIamEndPointUserListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamEndPointUserListRequest) Select_(select_ string) ApiGetIamEndPointUserListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamEndPointUserListRequest) Expand(expand string) ApiGetIamEndPointUserListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamEndPointUserListRequest) Apply(apply string) ApiGetIamEndPointUserListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamEndPointUserListRequest) Count(count bool) ApiGetIamEndPointUserListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamEndPointUserListRequest) Inlinecount(inlinecount string) ApiGetIamEndPointUserListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamEndPointUserListRequest) At(at string) ApiGetIamEndPointUserListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamEndPointUserListRequest) Tags(tags string) ApiGetIamEndPointUserListRequest {
 	r.tags = &tags
@@ -11502,7 +11624,7 @@ GetIamEndPointUserList Read a 'iam.EndPointUser' resource.
 func (a *IamApiService) GetIamEndPointUserList(ctx _context.Context) ApiGetIamEndPointUserListRequest {
 	return ApiGetIamEndPointUserListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11641,13 +11763,13 @@ func (a *IamApiService) GetIamEndPointUserListExecute(r ApiGetIamEndPointUserLis
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11664,11 +11786,10 @@ func (a *IamApiService) GetIamEndPointUserListExecute(r ApiGetIamEndPointUserLis
 }
 
 type ApiGetIamEndPointUserPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamEndPointUserPolicyByMoidRequest) Execute() (IamEndPointUserPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetIamEndPointUserPolicyByMoidExecute(r)
@@ -11684,8 +11805,8 @@ GetIamEndPointUserPolicyByMoid Read a 'iam.EndPointUserPolicy' resource.
 func (a *IamApiService) GetIamEndPointUserPolicyByMoid(ctx _context.Context, moid string) ApiGetIamEndPointUserPolicyByMoidRequest {
 	return ApiGetIamEndPointUserPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11792,13 +11913,13 @@ func (a *IamApiService) GetIamEndPointUserPolicyByMoidExecute(r ApiGetIamEndPoin
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11815,19 +11936,19 @@ func (a *IamApiService) GetIamEndPointUserPolicyByMoidExecute(r ApiGetIamEndPoin
 }
 
 type ApiGetIamEndPointUserPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11835,51 +11956,61 @@ func (r ApiGetIamEndPointUserPolicyListRequest) Filter(filter string) ApiGetIamE
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamEndPointUserPolicyListRequest) Orderby(orderby string) ApiGetIamEndPointUserPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamEndPointUserPolicyListRequest) Top(top int32) ApiGetIamEndPointUserPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamEndPointUserPolicyListRequest) Skip(skip int32) ApiGetIamEndPointUserPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamEndPointUserPolicyListRequest) Select_(select_ string) ApiGetIamEndPointUserPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamEndPointUserPolicyListRequest) Expand(expand string) ApiGetIamEndPointUserPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamEndPointUserPolicyListRequest) Apply(apply string) ApiGetIamEndPointUserPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamEndPointUserPolicyListRequest) Count(count bool) ApiGetIamEndPointUserPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamEndPointUserPolicyListRequest) Inlinecount(inlinecount string) ApiGetIamEndPointUserPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamEndPointUserPolicyListRequest) At(at string) ApiGetIamEndPointUserPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamEndPointUserPolicyListRequest) Tags(tags string) ApiGetIamEndPointUserPolicyListRequest {
 	r.tags = &tags
@@ -11899,7 +12030,7 @@ GetIamEndPointUserPolicyList Read a 'iam.EndPointUserPolicy' resource.
 func (a *IamApiService) GetIamEndPointUserPolicyList(ctx _context.Context) ApiGetIamEndPointUserPolicyListRequest {
 	return ApiGetIamEndPointUserPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12038,13 +12169,13 @@ func (a *IamApiService) GetIamEndPointUserPolicyListExecute(r ApiGetIamEndPointU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12061,11 +12192,10 @@ func (a *IamApiService) GetIamEndPointUserPolicyListExecute(r ApiGetIamEndPointU
 }
 
 type ApiGetIamEndPointUserRoleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamEndPointUserRoleByMoidRequest) Execute() (IamEndPointUserRole, *_nethttp.Response, error) {
 	return r.ApiService.GetIamEndPointUserRoleByMoidExecute(r)
@@ -12081,8 +12211,8 @@ GetIamEndPointUserRoleByMoid Read a 'iam.EndPointUserRole' resource.
 func (a *IamApiService) GetIamEndPointUserRoleByMoid(ctx _context.Context, moid string) ApiGetIamEndPointUserRoleByMoidRequest {
 	return ApiGetIamEndPointUserRoleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12189,13 +12319,13 @@ func (a *IamApiService) GetIamEndPointUserRoleByMoidExecute(r ApiGetIamEndPointU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12212,19 +12342,19 @@ func (a *IamApiService) GetIamEndPointUserRoleByMoidExecute(r ApiGetIamEndPointU
 }
 
 type ApiGetIamEndPointUserRoleListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12232,51 +12362,61 @@ func (r ApiGetIamEndPointUserRoleListRequest) Filter(filter string) ApiGetIamEnd
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamEndPointUserRoleListRequest) Orderby(orderby string) ApiGetIamEndPointUserRoleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamEndPointUserRoleListRequest) Top(top int32) ApiGetIamEndPointUserRoleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamEndPointUserRoleListRequest) Skip(skip int32) ApiGetIamEndPointUserRoleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamEndPointUserRoleListRequest) Select_(select_ string) ApiGetIamEndPointUserRoleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamEndPointUserRoleListRequest) Expand(expand string) ApiGetIamEndPointUserRoleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamEndPointUserRoleListRequest) Apply(apply string) ApiGetIamEndPointUserRoleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamEndPointUserRoleListRequest) Count(count bool) ApiGetIamEndPointUserRoleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamEndPointUserRoleListRequest) Inlinecount(inlinecount string) ApiGetIamEndPointUserRoleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamEndPointUserRoleListRequest) At(at string) ApiGetIamEndPointUserRoleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamEndPointUserRoleListRequest) Tags(tags string) ApiGetIamEndPointUserRoleListRequest {
 	r.tags = &tags
@@ -12296,7 +12436,7 @@ GetIamEndPointUserRoleList Read a 'iam.EndPointUserRole' resource.
 func (a *IamApiService) GetIamEndPointUserRoleList(ctx _context.Context) ApiGetIamEndPointUserRoleListRequest {
 	return ApiGetIamEndPointUserRoleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12435,13 +12575,13 @@ func (a *IamApiService) GetIamEndPointUserRoleListExecute(r ApiGetIamEndPointUse
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12458,11 +12598,10 @@ func (a *IamApiService) GetIamEndPointUserRoleListExecute(r ApiGetIamEndPointUse
 }
 
 type ApiGetIamIdpByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamIdpByMoidRequest) Execute() (IamIdp, *_nethttp.Response, error) {
 	return r.ApiService.GetIamIdpByMoidExecute(r)
@@ -12478,8 +12617,8 @@ GetIamIdpByMoid Read a 'iam.Idp' resource.
 func (a *IamApiService) GetIamIdpByMoid(ctx _context.Context, moid string) ApiGetIamIdpByMoidRequest {
 	return ApiGetIamIdpByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12586,13 +12725,13 @@ func (a *IamApiService) GetIamIdpByMoidExecute(r ApiGetIamIdpByMoidRequest) (Iam
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12609,19 +12748,19 @@ func (a *IamApiService) GetIamIdpByMoidExecute(r ApiGetIamIdpByMoidRequest) (Iam
 }
 
 type ApiGetIamIdpListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12629,51 +12768,61 @@ func (r ApiGetIamIdpListRequest) Filter(filter string) ApiGetIamIdpListRequest {
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamIdpListRequest) Orderby(orderby string) ApiGetIamIdpListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamIdpListRequest) Top(top int32) ApiGetIamIdpListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamIdpListRequest) Skip(skip int32) ApiGetIamIdpListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamIdpListRequest) Select_(select_ string) ApiGetIamIdpListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamIdpListRequest) Expand(expand string) ApiGetIamIdpListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamIdpListRequest) Apply(apply string) ApiGetIamIdpListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamIdpListRequest) Count(count bool) ApiGetIamIdpListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamIdpListRequest) Inlinecount(inlinecount string) ApiGetIamIdpListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamIdpListRequest) At(at string) ApiGetIamIdpListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamIdpListRequest) Tags(tags string) ApiGetIamIdpListRequest {
 	r.tags = &tags
@@ -12693,7 +12842,7 @@ GetIamIdpList Read a 'iam.Idp' resource.
 func (a *IamApiService) GetIamIdpList(ctx _context.Context) ApiGetIamIdpListRequest {
 	return ApiGetIamIdpListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12832,13 +12981,13 @@ func (a *IamApiService) GetIamIdpListExecute(r ApiGetIamIdpListRequest) (IamIdpR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12855,11 +13004,10 @@ func (a *IamApiService) GetIamIdpListExecute(r ApiGetIamIdpListRequest) (IamIdpR
 }
 
 type ApiGetIamIdpReferenceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamIdpReferenceByMoidRequest) Execute() (IamIdpReference, *_nethttp.Response, error) {
 	return r.ApiService.GetIamIdpReferenceByMoidExecute(r)
@@ -12875,8 +13023,8 @@ GetIamIdpReferenceByMoid Read a 'iam.IdpReference' resource.
 func (a *IamApiService) GetIamIdpReferenceByMoid(ctx _context.Context, moid string) ApiGetIamIdpReferenceByMoidRequest {
 	return ApiGetIamIdpReferenceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12983,13 +13131,13 @@ func (a *IamApiService) GetIamIdpReferenceByMoidExecute(r ApiGetIamIdpReferenceB
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13006,19 +13154,19 @@ func (a *IamApiService) GetIamIdpReferenceByMoidExecute(r ApiGetIamIdpReferenceB
 }
 
 type ApiGetIamIdpReferenceListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13026,51 +13174,61 @@ func (r ApiGetIamIdpReferenceListRequest) Filter(filter string) ApiGetIamIdpRefe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamIdpReferenceListRequest) Orderby(orderby string) ApiGetIamIdpReferenceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamIdpReferenceListRequest) Top(top int32) ApiGetIamIdpReferenceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamIdpReferenceListRequest) Skip(skip int32) ApiGetIamIdpReferenceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamIdpReferenceListRequest) Select_(select_ string) ApiGetIamIdpReferenceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamIdpReferenceListRequest) Expand(expand string) ApiGetIamIdpReferenceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamIdpReferenceListRequest) Apply(apply string) ApiGetIamIdpReferenceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamIdpReferenceListRequest) Count(count bool) ApiGetIamIdpReferenceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamIdpReferenceListRequest) Inlinecount(inlinecount string) ApiGetIamIdpReferenceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamIdpReferenceListRequest) At(at string) ApiGetIamIdpReferenceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamIdpReferenceListRequest) Tags(tags string) ApiGetIamIdpReferenceListRequest {
 	r.tags = &tags
@@ -13090,7 +13248,7 @@ GetIamIdpReferenceList Read a 'iam.IdpReference' resource.
 func (a *IamApiService) GetIamIdpReferenceList(ctx _context.Context) ApiGetIamIdpReferenceListRequest {
 	return ApiGetIamIdpReferenceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13229,13 +13387,13 @@ func (a *IamApiService) GetIamIdpReferenceListExecute(r ApiGetIamIdpReferenceLis
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13252,11 +13410,10 @@ func (a *IamApiService) GetIamIdpReferenceListExecute(r ApiGetIamIdpReferenceLis
 }
 
 type ApiGetIamIpAccessManagementByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamIpAccessManagementByMoidRequest) Execute() (IamIpAccessManagement, *_nethttp.Response, error) {
 	return r.ApiService.GetIamIpAccessManagementByMoidExecute(r)
@@ -13272,8 +13429,8 @@ GetIamIpAccessManagementByMoid Read a 'iam.IpAccessManagement' resource.
 func (a *IamApiService) GetIamIpAccessManagementByMoid(ctx _context.Context, moid string) ApiGetIamIpAccessManagementByMoidRequest {
 	return ApiGetIamIpAccessManagementByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13380,13 +13537,13 @@ func (a *IamApiService) GetIamIpAccessManagementByMoidExecute(r ApiGetIamIpAcces
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13403,19 +13560,19 @@ func (a *IamApiService) GetIamIpAccessManagementByMoidExecute(r ApiGetIamIpAcces
 }
 
 type ApiGetIamIpAccessManagementListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13423,51 +13580,61 @@ func (r ApiGetIamIpAccessManagementListRequest) Filter(filter string) ApiGetIamI
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamIpAccessManagementListRequest) Orderby(orderby string) ApiGetIamIpAccessManagementListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamIpAccessManagementListRequest) Top(top int32) ApiGetIamIpAccessManagementListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamIpAccessManagementListRequest) Skip(skip int32) ApiGetIamIpAccessManagementListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamIpAccessManagementListRequest) Select_(select_ string) ApiGetIamIpAccessManagementListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamIpAccessManagementListRequest) Expand(expand string) ApiGetIamIpAccessManagementListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamIpAccessManagementListRequest) Apply(apply string) ApiGetIamIpAccessManagementListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamIpAccessManagementListRequest) Count(count bool) ApiGetIamIpAccessManagementListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamIpAccessManagementListRequest) Inlinecount(inlinecount string) ApiGetIamIpAccessManagementListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamIpAccessManagementListRequest) At(at string) ApiGetIamIpAccessManagementListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamIpAccessManagementListRequest) Tags(tags string) ApiGetIamIpAccessManagementListRequest {
 	r.tags = &tags
@@ -13487,7 +13654,7 @@ GetIamIpAccessManagementList Read a 'iam.IpAccessManagement' resource.
 func (a *IamApiService) GetIamIpAccessManagementList(ctx _context.Context) ApiGetIamIpAccessManagementListRequest {
 	return ApiGetIamIpAccessManagementListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13626,13 +13793,13 @@ func (a *IamApiService) GetIamIpAccessManagementListExecute(r ApiGetIamIpAccessM
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13649,11 +13816,10 @@ func (a *IamApiService) GetIamIpAccessManagementListExecute(r ApiGetIamIpAccessM
 }
 
 type ApiGetIamIpAddressByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamIpAddressByMoidRequest) Execute() (IamIpAddress, *_nethttp.Response, error) {
 	return r.ApiService.GetIamIpAddressByMoidExecute(r)
@@ -13669,8 +13835,8 @@ GetIamIpAddressByMoid Read a 'iam.IpAddress' resource.
 func (a *IamApiService) GetIamIpAddressByMoid(ctx _context.Context, moid string) ApiGetIamIpAddressByMoidRequest {
 	return ApiGetIamIpAddressByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13777,13 +13943,13 @@ func (a *IamApiService) GetIamIpAddressByMoidExecute(r ApiGetIamIpAddressByMoidR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13800,19 +13966,19 @@ func (a *IamApiService) GetIamIpAddressByMoidExecute(r ApiGetIamIpAddressByMoidR
 }
 
 type ApiGetIamIpAddressListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13820,51 +13986,61 @@ func (r ApiGetIamIpAddressListRequest) Filter(filter string) ApiGetIamIpAddressL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamIpAddressListRequest) Orderby(orderby string) ApiGetIamIpAddressListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamIpAddressListRequest) Top(top int32) ApiGetIamIpAddressListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamIpAddressListRequest) Skip(skip int32) ApiGetIamIpAddressListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamIpAddressListRequest) Select_(select_ string) ApiGetIamIpAddressListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamIpAddressListRequest) Expand(expand string) ApiGetIamIpAddressListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamIpAddressListRequest) Apply(apply string) ApiGetIamIpAddressListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamIpAddressListRequest) Count(count bool) ApiGetIamIpAddressListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamIpAddressListRequest) Inlinecount(inlinecount string) ApiGetIamIpAddressListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamIpAddressListRequest) At(at string) ApiGetIamIpAddressListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamIpAddressListRequest) Tags(tags string) ApiGetIamIpAddressListRequest {
 	r.tags = &tags
@@ -13884,7 +14060,7 @@ GetIamIpAddressList Read a 'iam.IpAddress' resource.
 func (a *IamApiService) GetIamIpAddressList(ctx _context.Context) ApiGetIamIpAddressListRequest {
 	return ApiGetIamIpAddressListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14023,13 +14199,13 @@ func (a *IamApiService) GetIamIpAddressListExecute(r ApiGetIamIpAddressListReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14046,11 +14222,10 @@ func (a *IamApiService) GetIamIpAddressListExecute(r ApiGetIamIpAddressListReque
 }
 
 type ApiGetIamLdapGroupByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamLdapGroupByMoidRequest) Execute() (IamLdapGroup, *_nethttp.Response, error) {
 	return r.ApiService.GetIamLdapGroupByMoidExecute(r)
@@ -14066,8 +14241,8 @@ GetIamLdapGroupByMoid Read a 'iam.LdapGroup' resource.
 func (a *IamApiService) GetIamLdapGroupByMoid(ctx _context.Context, moid string) ApiGetIamLdapGroupByMoidRequest {
 	return ApiGetIamLdapGroupByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14174,13 +14349,13 @@ func (a *IamApiService) GetIamLdapGroupByMoidExecute(r ApiGetIamLdapGroupByMoidR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14197,19 +14372,19 @@ func (a *IamApiService) GetIamLdapGroupByMoidExecute(r ApiGetIamLdapGroupByMoidR
 }
 
 type ApiGetIamLdapGroupListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -14217,51 +14392,61 @@ func (r ApiGetIamLdapGroupListRequest) Filter(filter string) ApiGetIamLdapGroupL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamLdapGroupListRequest) Orderby(orderby string) ApiGetIamLdapGroupListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamLdapGroupListRequest) Top(top int32) ApiGetIamLdapGroupListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamLdapGroupListRequest) Skip(skip int32) ApiGetIamLdapGroupListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamLdapGroupListRequest) Select_(select_ string) ApiGetIamLdapGroupListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamLdapGroupListRequest) Expand(expand string) ApiGetIamLdapGroupListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamLdapGroupListRequest) Apply(apply string) ApiGetIamLdapGroupListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamLdapGroupListRequest) Count(count bool) ApiGetIamLdapGroupListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamLdapGroupListRequest) Inlinecount(inlinecount string) ApiGetIamLdapGroupListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamLdapGroupListRequest) At(at string) ApiGetIamLdapGroupListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamLdapGroupListRequest) Tags(tags string) ApiGetIamLdapGroupListRequest {
 	r.tags = &tags
@@ -14281,7 +14466,7 @@ GetIamLdapGroupList Read a 'iam.LdapGroup' resource.
 func (a *IamApiService) GetIamLdapGroupList(ctx _context.Context) ApiGetIamLdapGroupListRequest {
 	return ApiGetIamLdapGroupListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14420,13 +14605,13 @@ func (a *IamApiService) GetIamLdapGroupListExecute(r ApiGetIamLdapGroupListReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14443,11 +14628,10 @@ func (a *IamApiService) GetIamLdapGroupListExecute(r ApiGetIamLdapGroupListReque
 }
 
 type ApiGetIamLdapPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamLdapPolicyByMoidRequest) Execute() (IamLdapPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetIamLdapPolicyByMoidExecute(r)
@@ -14463,8 +14647,8 @@ GetIamLdapPolicyByMoid Read a 'iam.LdapPolicy' resource.
 func (a *IamApiService) GetIamLdapPolicyByMoid(ctx _context.Context, moid string) ApiGetIamLdapPolicyByMoidRequest {
 	return ApiGetIamLdapPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14571,13 +14755,13 @@ func (a *IamApiService) GetIamLdapPolicyByMoidExecute(r ApiGetIamLdapPolicyByMoi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14594,19 +14778,19 @@ func (a *IamApiService) GetIamLdapPolicyByMoidExecute(r ApiGetIamLdapPolicyByMoi
 }
 
 type ApiGetIamLdapPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -14614,51 +14798,61 @@ func (r ApiGetIamLdapPolicyListRequest) Filter(filter string) ApiGetIamLdapPolic
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamLdapPolicyListRequest) Orderby(orderby string) ApiGetIamLdapPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamLdapPolicyListRequest) Top(top int32) ApiGetIamLdapPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamLdapPolicyListRequest) Skip(skip int32) ApiGetIamLdapPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamLdapPolicyListRequest) Select_(select_ string) ApiGetIamLdapPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamLdapPolicyListRequest) Expand(expand string) ApiGetIamLdapPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamLdapPolicyListRequest) Apply(apply string) ApiGetIamLdapPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamLdapPolicyListRequest) Count(count bool) ApiGetIamLdapPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamLdapPolicyListRequest) Inlinecount(inlinecount string) ApiGetIamLdapPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamLdapPolicyListRequest) At(at string) ApiGetIamLdapPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamLdapPolicyListRequest) Tags(tags string) ApiGetIamLdapPolicyListRequest {
 	r.tags = &tags
@@ -14678,7 +14872,7 @@ GetIamLdapPolicyList Read a 'iam.LdapPolicy' resource.
 func (a *IamApiService) GetIamLdapPolicyList(ctx _context.Context) ApiGetIamLdapPolicyListRequest {
 	return ApiGetIamLdapPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14817,13 +15011,13 @@ func (a *IamApiService) GetIamLdapPolicyListExecute(r ApiGetIamLdapPolicyListReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14840,11 +15034,10 @@ func (a *IamApiService) GetIamLdapPolicyListExecute(r ApiGetIamLdapPolicyListReq
 }
 
 type ApiGetIamLdapProviderByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamLdapProviderByMoidRequest) Execute() (IamLdapProvider, *_nethttp.Response, error) {
 	return r.ApiService.GetIamLdapProviderByMoidExecute(r)
@@ -14860,8 +15053,8 @@ GetIamLdapProviderByMoid Read a 'iam.LdapProvider' resource.
 func (a *IamApiService) GetIamLdapProviderByMoid(ctx _context.Context, moid string) ApiGetIamLdapProviderByMoidRequest {
 	return ApiGetIamLdapProviderByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14968,13 +15161,13 @@ func (a *IamApiService) GetIamLdapProviderByMoidExecute(r ApiGetIamLdapProviderB
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14991,19 +15184,19 @@ func (a *IamApiService) GetIamLdapProviderByMoidExecute(r ApiGetIamLdapProviderB
 }
 
 type ApiGetIamLdapProviderListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15011,51 +15204,61 @@ func (r ApiGetIamLdapProviderListRequest) Filter(filter string) ApiGetIamLdapPro
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamLdapProviderListRequest) Orderby(orderby string) ApiGetIamLdapProviderListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamLdapProviderListRequest) Top(top int32) ApiGetIamLdapProviderListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamLdapProviderListRequest) Skip(skip int32) ApiGetIamLdapProviderListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamLdapProviderListRequest) Select_(select_ string) ApiGetIamLdapProviderListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamLdapProviderListRequest) Expand(expand string) ApiGetIamLdapProviderListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamLdapProviderListRequest) Apply(apply string) ApiGetIamLdapProviderListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamLdapProviderListRequest) Count(count bool) ApiGetIamLdapProviderListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamLdapProviderListRequest) Inlinecount(inlinecount string) ApiGetIamLdapProviderListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamLdapProviderListRequest) At(at string) ApiGetIamLdapProviderListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamLdapProviderListRequest) Tags(tags string) ApiGetIamLdapProviderListRequest {
 	r.tags = &tags
@@ -15075,7 +15278,7 @@ GetIamLdapProviderList Read a 'iam.LdapProvider' resource.
 func (a *IamApiService) GetIamLdapProviderList(ctx _context.Context) ApiGetIamLdapProviderListRequest {
 	return ApiGetIamLdapProviderListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15214,13 +15417,13 @@ func (a *IamApiService) GetIamLdapProviderListExecute(r ApiGetIamLdapProviderLis
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15237,11 +15440,10 @@ func (a *IamApiService) GetIamLdapProviderListExecute(r ApiGetIamLdapProviderLis
 }
 
 type ApiGetIamLocalUserPasswordPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamLocalUserPasswordPolicyByMoidRequest) Execute() (IamLocalUserPasswordPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetIamLocalUserPasswordPolicyByMoidExecute(r)
@@ -15257,8 +15459,8 @@ GetIamLocalUserPasswordPolicyByMoid Read a 'iam.LocalUserPasswordPolicy' resourc
 func (a *IamApiService) GetIamLocalUserPasswordPolicyByMoid(ctx _context.Context, moid string) ApiGetIamLocalUserPasswordPolicyByMoidRequest {
 	return ApiGetIamLocalUserPasswordPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15365,13 +15567,13 @@ func (a *IamApiService) GetIamLocalUserPasswordPolicyByMoidExecute(r ApiGetIamLo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15388,19 +15590,19 @@ func (a *IamApiService) GetIamLocalUserPasswordPolicyByMoidExecute(r ApiGetIamLo
 }
 
 type ApiGetIamLocalUserPasswordPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15408,51 +15610,61 @@ func (r ApiGetIamLocalUserPasswordPolicyListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamLocalUserPasswordPolicyListRequest) Orderby(orderby string) ApiGetIamLocalUserPasswordPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamLocalUserPasswordPolicyListRequest) Top(top int32) ApiGetIamLocalUserPasswordPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamLocalUserPasswordPolicyListRequest) Skip(skip int32) ApiGetIamLocalUserPasswordPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamLocalUserPasswordPolicyListRequest) Select_(select_ string) ApiGetIamLocalUserPasswordPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamLocalUserPasswordPolicyListRequest) Expand(expand string) ApiGetIamLocalUserPasswordPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamLocalUserPasswordPolicyListRequest) Apply(apply string) ApiGetIamLocalUserPasswordPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamLocalUserPasswordPolicyListRequest) Count(count bool) ApiGetIamLocalUserPasswordPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamLocalUserPasswordPolicyListRequest) Inlinecount(inlinecount string) ApiGetIamLocalUserPasswordPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamLocalUserPasswordPolicyListRequest) At(at string) ApiGetIamLocalUserPasswordPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamLocalUserPasswordPolicyListRequest) Tags(tags string) ApiGetIamLocalUserPasswordPolicyListRequest {
 	r.tags = &tags
@@ -15472,7 +15684,7 @@ GetIamLocalUserPasswordPolicyList Read a 'iam.LocalUserPasswordPolicy' resource.
 func (a *IamApiService) GetIamLocalUserPasswordPolicyList(ctx _context.Context) ApiGetIamLocalUserPasswordPolicyListRequest {
 	return ApiGetIamLocalUserPasswordPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15611,13 +15823,13 @@ func (a *IamApiService) GetIamLocalUserPasswordPolicyListExecute(r ApiGetIamLoca
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15634,11 +15846,10 @@ func (a *IamApiService) GetIamLocalUserPasswordPolicyListExecute(r ApiGetIamLoca
 }
 
 type ApiGetIamOAuthTokenByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamOAuthTokenByMoidRequest) Execute() (IamOAuthToken, *_nethttp.Response, error) {
 	return r.ApiService.GetIamOAuthTokenByMoidExecute(r)
@@ -15654,8 +15865,8 @@ GetIamOAuthTokenByMoid Read a 'iam.OAuthToken' resource.
 func (a *IamApiService) GetIamOAuthTokenByMoid(ctx _context.Context, moid string) ApiGetIamOAuthTokenByMoidRequest {
 	return ApiGetIamOAuthTokenByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15762,13 +15973,13 @@ func (a *IamApiService) GetIamOAuthTokenByMoidExecute(r ApiGetIamOAuthTokenByMoi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15785,19 +15996,19 @@ func (a *IamApiService) GetIamOAuthTokenByMoidExecute(r ApiGetIamOAuthTokenByMoi
 }
 
 type ApiGetIamOAuthTokenListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15805,51 +16016,61 @@ func (r ApiGetIamOAuthTokenListRequest) Filter(filter string) ApiGetIamOAuthToke
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamOAuthTokenListRequest) Orderby(orderby string) ApiGetIamOAuthTokenListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamOAuthTokenListRequest) Top(top int32) ApiGetIamOAuthTokenListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamOAuthTokenListRequest) Skip(skip int32) ApiGetIamOAuthTokenListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamOAuthTokenListRequest) Select_(select_ string) ApiGetIamOAuthTokenListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamOAuthTokenListRequest) Expand(expand string) ApiGetIamOAuthTokenListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamOAuthTokenListRequest) Apply(apply string) ApiGetIamOAuthTokenListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamOAuthTokenListRequest) Count(count bool) ApiGetIamOAuthTokenListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamOAuthTokenListRequest) Inlinecount(inlinecount string) ApiGetIamOAuthTokenListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamOAuthTokenListRequest) At(at string) ApiGetIamOAuthTokenListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamOAuthTokenListRequest) Tags(tags string) ApiGetIamOAuthTokenListRequest {
 	r.tags = &tags
@@ -15869,7 +16090,7 @@ GetIamOAuthTokenList Read a 'iam.OAuthToken' resource.
 func (a *IamApiService) GetIamOAuthTokenList(ctx _context.Context) ApiGetIamOAuthTokenListRequest {
 	return ApiGetIamOAuthTokenListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -16008,13 +16229,13 @@ func (a *IamApiService) GetIamOAuthTokenListExecute(r ApiGetIamOAuthTokenListReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16031,11 +16252,10 @@ func (a *IamApiService) GetIamOAuthTokenListExecute(r ApiGetIamOAuthTokenListReq
 }
 
 type ApiGetIamPermissionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamPermissionByMoidRequest) Execute() (IamPermission, *_nethttp.Response, error) {
 	return r.ApiService.GetIamPermissionByMoidExecute(r)
@@ -16051,8 +16271,8 @@ GetIamPermissionByMoid Read a 'iam.Permission' resource.
 func (a *IamApiService) GetIamPermissionByMoid(ctx _context.Context, moid string) ApiGetIamPermissionByMoidRequest {
 	return ApiGetIamPermissionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16159,13 +16379,13 @@ func (a *IamApiService) GetIamPermissionByMoidExecute(r ApiGetIamPermissionByMoi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16182,19 +16402,19 @@ func (a *IamApiService) GetIamPermissionByMoidExecute(r ApiGetIamPermissionByMoi
 }
 
 type ApiGetIamPermissionListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -16202,51 +16422,61 @@ func (r ApiGetIamPermissionListRequest) Filter(filter string) ApiGetIamPermissio
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamPermissionListRequest) Orderby(orderby string) ApiGetIamPermissionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamPermissionListRequest) Top(top int32) ApiGetIamPermissionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamPermissionListRequest) Skip(skip int32) ApiGetIamPermissionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamPermissionListRequest) Select_(select_ string) ApiGetIamPermissionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamPermissionListRequest) Expand(expand string) ApiGetIamPermissionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamPermissionListRequest) Apply(apply string) ApiGetIamPermissionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamPermissionListRequest) Count(count bool) ApiGetIamPermissionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamPermissionListRequest) Inlinecount(inlinecount string) ApiGetIamPermissionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamPermissionListRequest) At(at string) ApiGetIamPermissionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamPermissionListRequest) Tags(tags string) ApiGetIamPermissionListRequest {
 	r.tags = &tags
@@ -16266,7 +16496,7 @@ GetIamPermissionList Read a 'iam.Permission' resource.
 func (a *IamApiService) GetIamPermissionList(ctx _context.Context) ApiGetIamPermissionListRequest {
 	return ApiGetIamPermissionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -16405,13 +16635,13 @@ func (a *IamApiService) GetIamPermissionListExecute(r ApiGetIamPermissionListReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16428,11 +16658,10 @@ func (a *IamApiService) GetIamPermissionListExecute(r ApiGetIamPermissionListReq
 }
 
 type ApiGetIamPrivateKeySpecByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamPrivateKeySpecByMoidRequest) Execute() (IamPrivateKeySpec, *_nethttp.Response, error) {
 	return r.ApiService.GetIamPrivateKeySpecByMoidExecute(r)
@@ -16448,8 +16677,8 @@ GetIamPrivateKeySpecByMoid Read a 'iam.PrivateKeySpec' resource.
 func (a *IamApiService) GetIamPrivateKeySpecByMoid(ctx _context.Context, moid string) ApiGetIamPrivateKeySpecByMoidRequest {
 	return ApiGetIamPrivateKeySpecByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16556,13 +16785,13 @@ func (a *IamApiService) GetIamPrivateKeySpecByMoidExecute(r ApiGetIamPrivateKeyS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16579,19 +16808,19 @@ func (a *IamApiService) GetIamPrivateKeySpecByMoidExecute(r ApiGetIamPrivateKeyS
 }
 
 type ApiGetIamPrivateKeySpecListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -16599,51 +16828,61 @@ func (r ApiGetIamPrivateKeySpecListRequest) Filter(filter string) ApiGetIamPriva
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamPrivateKeySpecListRequest) Orderby(orderby string) ApiGetIamPrivateKeySpecListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamPrivateKeySpecListRequest) Top(top int32) ApiGetIamPrivateKeySpecListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamPrivateKeySpecListRequest) Skip(skip int32) ApiGetIamPrivateKeySpecListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamPrivateKeySpecListRequest) Select_(select_ string) ApiGetIamPrivateKeySpecListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamPrivateKeySpecListRequest) Expand(expand string) ApiGetIamPrivateKeySpecListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamPrivateKeySpecListRequest) Apply(apply string) ApiGetIamPrivateKeySpecListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamPrivateKeySpecListRequest) Count(count bool) ApiGetIamPrivateKeySpecListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamPrivateKeySpecListRequest) Inlinecount(inlinecount string) ApiGetIamPrivateKeySpecListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamPrivateKeySpecListRequest) At(at string) ApiGetIamPrivateKeySpecListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamPrivateKeySpecListRequest) Tags(tags string) ApiGetIamPrivateKeySpecListRequest {
 	r.tags = &tags
@@ -16663,7 +16902,7 @@ GetIamPrivateKeySpecList Read a 'iam.PrivateKeySpec' resource.
 func (a *IamApiService) GetIamPrivateKeySpecList(ctx _context.Context) ApiGetIamPrivateKeySpecListRequest {
 	return ApiGetIamPrivateKeySpecListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -16802,13 +17041,13 @@ func (a *IamApiService) GetIamPrivateKeySpecListExecute(r ApiGetIamPrivateKeySpe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16825,11 +17064,10 @@ func (a *IamApiService) GetIamPrivateKeySpecListExecute(r ApiGetIamPrivateKeySpe
 }
 
 type ApiGetIamPrivilegeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamPrivilegeByMoidRequest) Execute() (IamPrivilege, *_nethttp.Response, error) {
 	return r.ApiService.GetIamPrivilegeByMoidExecute(r)
@@ -16845,8 +17083,8 @@ GetIamPrivilegeByMoid Read a 'iam.Privilege' resource.
 func (a *IamApiService) GetIamPrivilegeByMoid(ctx _context.Context, moid string) ApiGetIamPrivilegeByMoidRequest {
 	return ApiGetIamPrivilegeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16953,13 +17191,13 @@ func (a *IamApiService) GetIamPrivilegeByMoidExecute(r ApiGetIamPrivilegeByMoidR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16976,19 +17214,19 @@ func (a *IamApiService) GetIamPrivilegeByMoidExecute(r ApiGetIamPrivilegeByMoidR
 }
 
 type ApiGetIamPrivilegeListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -16996,51 +17234,61 @@ func (r ApiGetIamPrivilegeListRequest) Filter(filter string) ApiGetIamPrivilegeL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamPrivilegeListRequest) Orderby(orderby string) ApiGetIamPrivilegeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamPrivilegeListRequest) Top(top int32) ApiGetIamPrivilegeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamPrivilegeListRequest) Skip(skip int32) ApiGetIamPrivilegeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamPrivilegeListRequest) Select_(select_ string) ApiGetIamPrivilegeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamPrivilegeListRequest) Expand(expand string) ApiGetIamPrivilegeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamPrivilegeListRequest) Apply(apply string) ApiGetIamPrivilegeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamPrivilegeListRequest) Count(count bool) ApiGetIamPrivilegeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamPrivilegeListRequest) Inlinecount(inlinecount string) ApiGetIamPrivilegeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamPrivilegeListRequest) At(at string) ApiGetIamPrivilegeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamPrivilegeListRequest) Tags(tags string) ApiGetIamPrivilegeListRequest {
 	r.tags = &tags
@@ -17060,7 +17308,7 @@ GetIamPrivilegeList Read a 'iam.Privilege' resource.
 func (a *IamApiService) GetIamPrivilegeList(ctx _context.Context) ApiGetIamPrivilegeListRequest {
 	return ApiGetIamPrivilegeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -17199,13 +17447,13 @@ func (a *IamApiService) GetIamPrivilegeListExecute(r ApiGetIamPrivilegeListReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17222,11 +17470,10 @@ func (a *IamApiService) GetIamPrivilegeListExecute(r ApiGetIamPrivilegeListReque
 }
 
 type ApiGetIamPrivilegeSetByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamPrivilegeSetByMoidRequest) Execute() (IamPrivilegeSet, *_nethttp.Response, error) {
 	return r.ApiService.GetIamPrivilegeSetByMoidExecute(r)
@@ -17242,8 +17489,8 @@ GetIamPrivilegeSetByMoid Read a 'iam.PrivilegeSet' resource.
 func (a *IamApiService) GetIamPrivilegeSetByMoid(ctx _context.Context, moid string) ApiGetIamPrivilegeSetByMoidRequest {
 	return ApiGetIamPrivilegeSetByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17350,13 +17597,13 @@ func (a *IamApiService) GetIamPrivilegeSetByMoidExecute(r ApiGetIamPrivilegeSetB
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17373,19 +17620,19 @@ func (a *IamApiService) GetIamPrivilegeSetByMoidExecute(r ApiGetIamPrivilegeSetB
 }
 
 type ApiGetIamPrivilegeSetListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -17393,51 +17640,61 @@ func (r ApiGetIamPrivilegeSetListRequest) Filter(filter string) ApiGetIamPrivile
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamPrivilegeSetListRequest) Orderby(orderby string) ApiGetIamPrivilegeSetListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamPrivilegeSetListRequest) Top(top int32) ApiGetIamPrivilegeSetListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamPrivilegeSetListRequest) Skip(skip int32) ApiGetIamPrivilegeSetListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamPrivilegeSetListRequest) Select_(select_ string) ApiGetIamPrivilegeSetListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamPrivilegeSetListRequest) Expand(expand string) ApiGetIamPrivilegeSetListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamPrivilegeSetListRequest) Apply(apply string) ApiGetIamPrivilegeSetListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamPrivilegeSetListRequest) Count(count bool) ApiGetIamPrivilegeSetListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamPrivilegeSetListRequest) Inlinecount(inlinecount string) ApiGetIamPrivilegeSetListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamPrivilegeSetListRequest) At(at string) ApiGetIamPrivilegeSetListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamPrivilegeSetListRequest) Tags(tags string) ApiGetIamPrivilegeSetListRequest {
 	r.tags = &tags
@@ -17457,7 +17714,7 @@ GetIamPrivilegeSetList Read a 'iam.PrivilegeSet' resource.
 func (a *IamApiService) GetIamPrivilegeSetList(ctx _context.Context) ApiGetIamPrivilegeSetListRequest {
 	return ApiGetIamPrivilegeSetListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -17596,13 +17853,13 @@ func (a *IamApiService) GetIamPrivilegeSetListExecute(r ApiGetIamPrivilegeSetLis
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17619,11 +17876,10 @@ func (a *IamApiService) GetIamPrivilegeSetListExecute(r ApiGetIamPrivilegeSetLis
 }
 
 type ApiGetIamQualifierByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamQualifierByMoidRequest) Execute() (IamQualifier, *_nethttp.Response, error) {
 	return r.ApiService.GetIamQualifierByMoidExecute(r)
@@ -17639,8 +17895,8 @@ GetIamQualifierByMoid Read a 'iam.Qualifier' resource.
 func (a *IamApiService) GetIamQualifierByMoid(ctx _context.Context, moid string) ApiGetIamQualifierByMoidRequest {
 	return ApiGetIamQualifierByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17747,13 +18003,13 @@ func (a *IamApiService) GetIamQualifierByMoidExecute(r ApiGetIamQualifierByMoidR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17770,19 +18026,19 @@ func (a *IamApiService) GetIamQualifierByMoidExecute(r ApiGetIamQualifierByMoidR
 }
 
 type ApiGetIamQualifierListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -17790,51 +18046,61 @@ func (r ApiGetIamQualifierListRequest) Filter(filter string) ApiGetIamQualifierL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamQualifierListRequest) Orderby(orderby string) ApiGetIamQualifierListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamQualifierListRequest) Top(top int32) ApiGetIamQualifierListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamQualifierListRequest) Skip(skip int32) ApiGetIamQualifierListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamQualifierListRequest) Select_(select_ string) ApiGetIamQualifierListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamQualifierListRequest) Expand(expand string) ApiGetIamQualifierListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamQualifierListRequest) Apply(apply string) ApiGetIamQualifierListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamQualifierListRequest) Count(count bool) ApiGetIamQualifierListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamQualifierListRequest) Inlinecount(inlinecount string) ApiGetIamQualifierListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamQualifierListRequest) At(at string) ApiGetIamQualifierListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamQualifierListRequest) Tags(tags string) ApiGetIamQualifierListRequest {
 	r.tags = &tags
@@ -17854,7 +18120,7 @@ GetIamQualifierList Read a 'iam.Qualifier' resource.
 func (a *IamApiService) GetIamQualifierList(ctx _context.Context) ApiGetIamQualifierListRequest {
 	return ApiGetIamQualifierListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -17993,13 +18259,13 @@ func (a *IamApiService) GetIamQualifierListExecute(r ApiGetIamQualifierListReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18016,11 +18282,10 @@ func (a *IamApiService) GetIamQualifierListExecute(r ApiGetIamQualifierListReque
 }
 
 type ApiGetIamResourceLimitsByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamResourceLimitsByMoidRequest) Execute() (IamResourceLimits, *_nethttp.Response, error) {
 	return r.ApiService.GetIamResourceLimitsByMoidExecute(r)
@@ -18036,8 +18301,8 @@ GetIamResourceLimitsByMoid Read a 'iam.ResourceLimits' resource.
 func (a *IamApiService) GetIamResourceLimitsByMoid(ctx _context.Context, moid string) ApiGetIamResourceLimitsByMoidRequest {
 	return ApiGetIamResourceLimitsByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18144,13 +18409,13 @@ func (a *IamApiService) GetIamResourceLimitsByMoidExecute(r ApiGetIamResourceLim
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18167,19 +18432,19 @@ func (a *IamApiService) GetIamResourceLimitsByMoidExecute(r ApiGetIamResourceLim
 }
 
 type ApiGetIamResourceLimitsListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -18187,51 +18452,61 @@ func (r ApiGetIamResourceLimitsListRequest) Filter(filter string) ApiGetIamResou
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamResourceLimitsListRequest) Orderby(orderby string) ApiGetIamResourceLimitsListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamResourceLimitsListRequest) Top(top int32) ApiGetIamResourceLimitsListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamResourceLimitsListRequest) Skip(skip int32) ApiGetIamResourceLimitsListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamResourceLimitsListRequest) Select_(select_ string) ApiGetIamResourceLimitsListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamResourceLimitsListRequest) Expand(expand string) ApiGetIamResourceLimitsListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamResourceLimitsListRequest) Apply(apply string) ApiGetIamResourceLimitsListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamResourceLimitsListRequest) Count(count bool) ApiGetIamResourceLimitsListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamResourceLimitsListRequest) Inlinecount(inlinecount string) ApiGetIamResourceLimitsListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamResourceLimitsListRequest) At(at string) ApiGetIamResourceLimitsListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamResourceLimitsListRequest) Tags(tags string) ApiGetIamResourceLimitsListRequest {
 	r.tags = &tags
@@ -18251,7 +18526,7 @@ GetIamResourceLimitsList Read a 'iam.ResourceLimits' resource.
 func (a *IamApiService) GetIamResourceLimitsList(ctx _context.Context) ApiGetIamResourceLimitsListRequest {
 	return ApiGetIamResourceLimitsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -18390,13 +18665,13 @@ func (a *IamApiService) GetIamResourceLimitsListExecute(r ApiGetIamResourceLimit
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18413,11 +18688,10 @@ func (a *IamApiService) GetIamResourceLimitsListExecute(r ApiGetIamResourceLimit
 }
 
 type ApiGetIamResourcePermissionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamResourcePermissionByMoidRequest) Execute() (IamResourcePermission, *_nethttp.Response, error) {
 	return r.ApiService.GetIamResourcePermissionByMoidExecute(r)
@@ -18433,8 +18707,8 @@ GetIamResourcePermissionByMoid Read a 'iam.ResourcePermission' resource.
 func (a *IamApiService) GetIamResourcePermissionByMoid(ctx _context.Context, moid string) ApiGetIamResourcePermissionByMoidRequest {
 	return ApiGetIamResourcePermissionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18541,13 +18815,13 @@ func (a *IamApiService) GetIamResourcePermissionByMoidExecute(r ApiGetIamResourc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18564,19 +18838,19 @@ func (a *IamApiService) GetIamResourcePermissionByMoidExecute(r ApiGetIamResourc
 }
 
 type ApiGetIamResourcePermissionListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -18584,51 +18858,61 @@ func (r ApiGetIamResourcePermissionListRequest) Filter(filter string) ApiGetIamR
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamResourcePermissionListRequest) Orderby(orderby string) ApiGetIamResourcePermissionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamResourcePermissionListRequest) Top(top int32) ApiGetIamResourcePermissionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamResourcePermissionListRequest) Skip(skip int32) ApiGetIamResourcePermissionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamResourcePermissionListRequest) Select_(select_ string) ApiGetIamResourcePermissionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamResourcePermissionListRequest) Expand(expand string) ApiGetIamResourcePermissionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamResourcePermissionListRequest) Apply(apply string) ApiGetIamResourcePermissionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamResourcePermissionListRequest) Count(count bool) ApiGetIamResourcePermissionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamResourcePermissionListRequest) Inlinecount(inlinecount string) ApiGetIamResourcePermissionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamResourcePermissionListRequest) At(at string) ApiGetIamResourcePermissionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamResourcePermissionListRequest) Tags(tags string) ApiGetIamResourcePermissionListRequest {
 	r.tags = &tags
@@ -18648,7 +18932,7 @@ GetIamResourcePermissionList Read a 'iam.ResourcePermission' resource.
 func (a *IamApiService) GetIamResourcePermissionList(ctx _context.Context) ApiGetIamResourcePermissionListRequest {
 	return ApiGetIamResourcePermissionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -18787,13 +19071,13 @@ func (a *IamApiService) GetIamResourcePermissionListExecute(r ApiGetIamResourceP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18810,11 +19094,10 @@ func (a *IamApiService) GetIamResourcePermissionListExecute(r ApiGetIamResourceP
 }
 
 type ApiGetIamResourceRolesByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamResourceRolesByMoidRequest) Execute() (IamResourceRoles, *_nethttp.Response, error) {
 	return r.ApiService.GetIamResourceRolesByMoidExecute(r)
@@ -18830,8 +19113,8 @@ GetIamResourceRolesByMoid Read a 'iam.ResourceRoles' resource.
 func (a *IamApiService) GetIamResourceRolesByMoid(ctx _context.Context, moid string) ApiGetIamResourceRolesByMoidRequest {
 	return ApiGetIamResourceRolesByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18938,13 +19221,13 @@ func (a *IamApiService) GetIamResourceRolesByMoidExecute(r ApiGetIamResourceRole
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18961,19 +19244,19 @@ func (a *IamApiService) GetIamResourceRolesByMoidExecute(r ApiGetIamResourceRole
 }
 
 type ApiGetIamResourceRolesListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -18981,51 +19264,61 @@ func (r ApiGetIamResourceRolesListRequest) Filter(filter string) ApiGetIamResour
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamResourceRolesListRequest) Orderby(orderby string) ApiGetIamResourceRolesListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamResourceRolesListRequest) Top(top int32) ApiGetIamResourceRolesListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamResourceRolesListRequest) Skip(skip int32) ApiGetIamResourceRolesListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamResourceRolesListRequest) Select_(select_ string) ApiGetIamResourceRolesListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamResourceRolesListRequest) Expand(expand string) ApiGetIamResourceRolesListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamResourceRolesListRequest) Apply(apply string) ApiGetIamResourceRolesListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamResourceRolesListRequest) Count(count bool) ApiGetIamResourceRolesListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamResourceRolesListRequest) Inlinecount(inlinecount string) ApiGetIamResourceRolesListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamResourceRolesListRequest) At(at string) ApiGetIamResourceRolesListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamResourceRolesListRequest) Tags(tags string) ApiGetIamResourceRolesListRequest {
 	r.tags = &tags
@@ -19045,7 +19338,7 @@ GetIamResourceRolesList Read a 'iam.ResourceRoles' resource.
 func (a *IamApiService) GetIamResourceRolesList(ctx _context.Context) ApiGetIamResourceRolesListRequest {
 	return ApiGetIamResourceRolesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -19184,13 +19477,13 @@ func (a *IamApiService) GetIamResourceRolesListExecute(r ApiGetIamResourceRolesL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19207,11 +19500,10 @@ func (a *IamApiService) GetIamResourceRolesListExecute(r ApiGetIamResourceRolesL
 }
 
 type ApiGetIamRoleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamRoleByMoidRequest) Execute() (IamRole, *_nethttp.Response, error) {
 	return r.ApiService.GetIamRoleByMoidExecute(r)
@@ -19227,8 +19519,8 @@ GetIamRoleByMoid Read a 'iam.Role' resource.
 func (a *IamApiService) GetIamRoleByMoid(ctx _context.Context, moid string) ApiGetIamRoleByMoidRequest {
 	return ApiGetIamRoleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19335,13 +19627,13 @@ func (a *IamApiService) GetIamRoleByMoidExecute(r ApiGetIamRoleByMoidRequest) (I
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19358,19 +19650,19 @@ func (a *IamApiService) GetIamRoleByMoidExecute(r ApiGetIamRoleByMoidRequest) (I
 }
 
 type ApiGetIamRoleListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -19378,51 +19670,61 @@ func (r ApiGetIamRoleListRequest) Filter(filter string) ApiGetIamRoleListRequest
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamRoleListRequest) Orderby(orderby string) ApiGetIamRoleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamRoleListRequest) Top(top int32) ApiGetIamRoleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamRoleListRequest) Skip(skip int32) ApiGetIamRoleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamRoleListRequest) Select_(select_ string) ApiGetIamRoleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamRoleListRequest) Expand(expand string) ApiGetIamRoleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamRoleListRequest) Apply(apply string) ApiGetIamRoleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamRoleListRequest) Count(count bool) ApiGetIamRoleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamRoleListRequest) Inlinecount(inlinecount string) ApiGetIamRoleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamRoleListRequest) At(at string) ApiGetIamRoleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamRoleListRequest) Tags(tags string) ApiGetIamRoleListRequest {
 	r.tags = &tags
@@ -19442,7 +19744,7 @@ GetIamRoleList Read a 'iam.Role' resource.
 func (a *IamApiService) GetIamRoleList(ctx _context.Context) ApiGetIamRoleListRequest {
 	return ApiGetIamRoleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -19581,13 +19883,13 @@ func (a *IamApiService) GetIamRoleListExecute(r ApiGetIamRoleListRequest) (IamRo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19604,11 +19906,10 @@ func (a *IamApiService) GetIamRoleListExecute(r ApiGetIamRoleListRequest) (IamRo
 }
 
 type ApiGetIamSecurityHolderByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamSecurityHolderByMoidRequest) Execute() (IamSecurityHolder, *_nethttp.Response, error) {
 	return r.ApiService.GetIamSecurityHolderByMoidExecute(r)
@@ -19624,8 +19925,8 @@ GetIamSecurityHolderByMoid Read a 'iam.SecurityHolder' resource.
 func (a *IamApiService) GetIamSecurityHolderByMoid(ctx _context.Context, moid string) ApiGetIamSecurityHolderByMoidRequest {
 	return ApiGetIamSecurityHolderByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19732,13 +20033,13 @@ func (a *IamApiService) GetIamSecurityHolderByMoidExecute(r ApiGetIamSecurityHol
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19755,19 +20056,19 @@ func (a *IamApiService) GetIamSecurityHolderByMoidExecute(r ApiGetIamSecurityHol
 }
 
 type ApiGetIamSecurityHolderListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -19775,51 +20076,61 @@ func (r ApiGetIamSecurityHolderListRequest) Filter(filter string) ApiGetIamSecur
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamSecurityHolderListRequest) Orderby(orderby string) ApiGetIamSecurityHolderListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamSecurityHolderListRequest) Top(top int32) ApiGetIamSecurityHolderListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamSecurityHolderListRequest) Skip(skip int32) ApiGetIamSecurityHolderListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamSecurityHolderListRequest) Select_(select_ string) ApiGetIamSecurityHolderListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamSecurityHolderListRequest) Expand(expand string) ApiGetIamSecurityHolderListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamSecurityHolderListRequest) Apply(apply string) ApiGetIamSecurityHolderListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamSecurityHolderListRequest) Count(count bool) ApiGetIamSecurityHolderListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamSecurityHolderListRequest) Inlinecount(inlinecount string) ApiGetIamSecurityHolderListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamSecurityHolderListRequest) At(at string) ApiGetIamSecurityHolderListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamSecurityHolderListRequest) Tags(tags string) ApiGetIamSecurityHolderListRequest {
 	r.tags = &tags
@@ -19839,7 +20150,7 @@ GetIamSecurityHolderList Read a 'iam.SecurityHolder' resource.
 func (a *IamApiService) GetIamSecurityHolderList(ctx _context.Context) ApiGetIamSecurityHolderListRequest {
 	return ApiGetIamSecurityHolderListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -19978,13 +20289,13 @@ func (a *IamApiService) GetIamSecurityHolderListExecute(r ApiGetIamSecurityHolde
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20001,11 +20312,10 @@ func (a *IamApiService) GetIamSecurityHolderListExecute(r ApiGetIamSecurityHolde
 }
 
 type ApiGetIamServiceProviderByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamServiceProviderByMoidRequest) Execute() (IamServiceProvider, *_nethttp.Response, error) {
 	return r.ApiService.GetIamServiceProviderByMoidExecute(r)
@@ -20021,8 +20331,8 @@ GetIamServiceProviderByMoid Read a 'iam.ServiceProvider' resource.
 func (a *IamApiService) GetIamServiceProviderByMoid(ctx _context.Context, moid string) ApiGetIamServiceProviderByMoidRequest {
 	return ApiGetIamServiceProviderByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20129,13 +20439,13 @@ func (a *IamApiService) GetIamServiceProviderByMoidExecute(r ApiGetIamServicePro
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20152,19 +20462,19 @@ func (a *IamApiService) GetIamServiceProviderByMoidExecute(r ApiGetIamServicePro
 }
 
 type ApiGetIamServiceProviderListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -20172,51 +20482,61 @@ func (r ApiGetIamServiceProviderListRequest) Filter(filter string) ApiGetIamServ
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamServiceProviderListRequest) Orderby(orderby string) ApiGetIamServiceProviderListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamServiceProviderListRequest) Top(top int32) ApiGetIamServiceProviderListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamServiceProviderListRequest) Skip(skip int32) ApiGetIamServiceProviderListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamServiceProviderListRequest) Select_(select_ string) ApiGetIamServiceProviderListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamServiceProviderListRequest) Expand(expand string) ApiGetIamServiceProviderListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamServiceProviderListRequest) Apply(apply string) ApiGetIamServiceProviderListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamServiceProviderListRequest) Count(count bool) ApiGetIamServiceProviderListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamServiceProviderListRequest) Inlinecount(inlinecount string) ApiGetIamServiceProviderListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamServiceProviderListRequest) At(at string) ApiGetIamServiceProviderListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamServiceProviderListRequest) Tags(tags string) ApiGetIamServiceProviderListRequest {
 	r.tags = &tags
@@ -20236,7 +20556,7 @@ GetIamServiceProviderList Read a 'iam.ServiceProvider' resource.
 func (a *IamApiService) GetIamServiceProviderList(ctx _context.Context) ApiGetIamServiceProviderListRequest {
 	return ApiGetIamServiceProviderListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -20375,13 +20695,13 @@ func (a *IamApiService) GetIamServiceProviderListExecute(r ApiGetIamServiceProvi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20398,11 +20718,10 @@ func (a *IamApiService) GetIamServiceProviderListExecute(r ApiGetIamServiceProvi
 }
 
 type ApiGetIamSessionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamSessionByMoidRequest) Execute() (IamSession, *_nethttp.Response, error) {
 	return r.ApiService.GetIamSessionByMoidExecute(r)
@@ -20418,8 +20737,8 @@ GetIamSessionByMoid Read a 'iam.Session' resource.
 func (a *IamApiService) GetIamSessionByMoid(ctx _context.Context, moid string) ApiGetIamSessionByMoidRequest {
 	return ApiGetIamSessionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20526,13 +20845,13 @@ func (a *IamApiService) GetIamSessionByMoidExecute(r ApiGetIamSessionByMoidReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20549,11 +20868,10 @@ func (a *IamApiService) GetIamSessionByMoidExecute(r ApiGetIamSessionByMoidReque
 }
 
 type ApiGetIamSessionLimitsByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamSessionLimitsByMoidRequest) Execute() (IamSessionLimits, *_nethttp.Response, error) {
 	return r.ApiService.GetIamSessionLimitsByMoidExecute(r)
@@ -20569,8 +20887,8 @@ GetIamSessionLimitsByMoid Read a 'iam.SessionLimits' resource.
 func (a *IamApiService) GetIamSessionLimitsByMoid(ctx _context.Context, moid string) ApiGetIamSessionLimitsByMoidRequest {
 	return ApiGetIamSessionLimitsByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20677,13 +20995,13 @@ func (a *IamApiService) GetIamSessionLimitsByMoidExecute(r ApiGetIamSessionLimit
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20700,19 +21018,19 @@ func (a *IamApiService) GetIamSessionLimitsByMoidExecute(r ApiGetIamSessionLimit
 }
 
 type ApiGetIamSessionLimitsListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -20720,51 +21038,61 @@ func (r ApiGetIamSessionLimitsListRequest) Filter(filter string) ApiGetIamSessio
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamSessionLimitsListRequest) Orderby(orderby string) ApiGetIamSessionLimitsListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamSessionLimitsListRequest) Top(top int32) ApiGetIamSessionLimitsListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamSessionLimitsListRequest) Skip(skip int32) ApiGetIamSessionLimitsListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamSessionLimitsListRequest) Select_(select_ string) ApiGetIamSessionLimitsListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamSessionLimitsListRequest) Expand(expand string) ApiGetIamSessionLimitsListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamSessionLimitsListRequest) Apply(apply string) ApiGetIamSessionLimitsListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamSessionLimitsListRequest) Count(count bool) ApiGetIamSessionLimitsListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamSessionLimitsListRequest) Inlinecount(inlinecount string) ApiGetIamSessionLimitsListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamSessionLimitsListRequest) At(at string) ApiGetIamSessionLimitsListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamSessionLimitsListRequest) Tags(tags string) ApiGetIamSessionLimitsListRequest {
 	r.tags = &tags
@@ -20784,7 +21112,7 @@ GetIamSessionLimitsList Read a 'iam.SessionLimits' resource.
 func (a *IamApiService) GetIamSessionLimitsList(ctx _context.Context) ApiGetIamSessionLimitsListRequest {
 	return ApiGetIamSessionLimitsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -20923,13 +21251,13 @@ func (a *IamApiService) GetIamSessionLimitsListExecute(r ApiGetIamSessionLimitsL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20946,19 +21274,19 @@ func (a *IamApiService) GetIamSessionLimitsListExecute(r ApiGetIamSessionLimitsL
 }
 
 type ApiGetIamSessionListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -20966,51 +21294,61 @@ func (r ApiGetIamSessionListRequest) Filter(filter string) ApiGetIamSessionListR
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamSessionListRequest) Orderby(orderby string) ApiGetIamSessionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamSessionListRequest) Top(top int32) ApiGetIamSessionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamSessionListRequest) Skip(skip int32) ApiGetIamSessionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamSessionListRequest) Select_(select_ string) ApiGetIamSessionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamSessionListRequest) Expand(expand string) ApiGetIamSessionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamSessionListRequest) Apply(apply string) ApiGetIamSessionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamSessionListRequest) Count(count bool) ApiGetIamSessionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamSessionListRequest) Inlinecount(inlinecount string) ApiGetIamSessionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamSessionListRequest) At(at string) ApiGetIamSessionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamSessionListRequest) Tags(tags string) ApiGetIamSessionListRequest {
 	r.tags = &tags
@@ -21030,7 +21368,7 @@ GetIamSessionList Read a 'iam.Session' resource.
 func (a *IamApiService) GetIamSessionList(ctx _context.Context) ApiGetIamSessionListRequest {
 	return ApiGetIamSessionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -21169,13 +21507,13 @@ func (a *IamApiService) GetIamSessionListExecute(r ApiGetIamSessionListRequest) 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21192,11 +21530,10 @@ func (a *IamApiService) GetIamSessionListExecute(r ApiGetIamSessionListRequest) 
 }
 
 type ApiGetIamSystemByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamSystemByMoidRequest) Execute() (IamSystem, *_nethttp.Response, error) {
 	return r.ApiService.GetIamSystemByMoidExecute(r)
@@ -21212,8 +21549,8 @@ GetIamSystemByMoid Read a 'iam.System' resource.
 func (a *IamApiService) GetIamSystemByMoid(ctx _context.Context, moid string) ApiGetIamSystemByMoidRequest {
 	return ApiGetIamSystemByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21320,13 +21657,13 @@ func (a *IamApiService) GetIamSystemByMoidExecute(r ApiGetIamSystemByMoidRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21343,19 +21680,19 @@ func (a *IamApiService) GetIamSystemByMoidExecute(r ApiGetIamSystemByMoidRequest
 }
 
 type ApiGetIamSystemListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -21363,51 +21700,61 @@ func (r ApiGetIamSystemListRequest) Filter(filter string) ApiGetIamSystemListReq
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamSystemListRequest) Orderby(orderby string) ApiGetIamSystemListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamSystemListRequest) Top(top int32) ApiGetIamSystemListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamSystemListRequest) Skip(skip int32) ApiGetIamSystemListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamSystemListRequest) Select_(select_ string) ApiGetIamSystemListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamSystemListRequest) Expand(expand string) ApiGetIamSystemListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamSystemListRequest) Apply(apply string) ApiGetIamSystemListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamSystemListRequest) Count(count bool) ApiGetIamSystemListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamSystemListRequest) Inlinecount(inlinecount string) ApiGetIamSystemListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamSystemListRequest) At(at string) ApiGetIamSystemListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamSystemListRequest) Tags(tags string) ApiGetIamSystemListRequest {
 	r.tags = &tags
@@ -21427,7 +21774,7 @@ GetIamSystemList Read a 'iam.System' resource.
 func (a *IamApiService) GetIamSystemList(ctx _context.Context) ApiGetIamSystemListRequest {
 	return ApiGetIamSystemListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -21566,13 +21913,13 @@ func (a *IamApiService) GetIamSystemListExecute(r ApiGetIamSystemListRequest) (I
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21589,11 +21936,10 @@ func (a *IamApiService) GetIamSystemListExecute(r ApiGetIamSystemListRequest) (I
 }
 
 type ApiGetIamTrustPointByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamTrustPointByMoidRequest) Execute() (IamTrustPoint, *_nethttp.Response, error) {
 	return r.ApiService.GetIamTrustPointByMoidExecute(r)
@@ -21609,8 +21955,8 @@ GetIamTrustPointByMoid Read a 'iam.TrustPoint' resource.
 func (a *IamApiService) GetIamTrustPointByMoid(ctx _context.Context, moid string) ApiGetIamTrustPointByMoidRequest {
 	return ApiGetIamTrustPointByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21717,13 +22063,13 @@ func (a *IamApiService) GetIamTrustPointByMoidExecute(r ApiGetIamTrustPointByMoi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21740,19 +22086,19 @@ func (a *IamApiService) GetIamTrustPointByMoidExecute(r ApiGetIamTrustPointByMoi
 }
 
 type ApiGetIamTrustPointListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -21760,51 +22106,61 @@ func (r ApiGetIamTrustPointListRequest) Filter(filter string) ApiGetIamTrustPoin
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamTrustPointListRequest) Orderby(orderby string) ApiGetIamTrustPointListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamTrustPointListRequest) Top(top int32) ApiGetIamTrustPointListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamTrustPointListRequest) Skip(skip int32) ApiGetIamTrustPointListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamTrustPointListRequest) Select_(select_ string) ApiGetIamTrustPointListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamTrustPointListRequest) Expand(expand string) ApiGetIamTrustPointListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamTrustPointListRequest) Apply(apply string) ApiGetIamTrustPointListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamTrustPointListRequest) Count(count bool) ApiGetIamTrustPointListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamTrustPointListRequest) Inlinecount(inlinecount string) ApiGetIamTrustPointListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamTrustPointListRequest) At(at string) ApiGetIamTrustPointListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamTrustPointListRequest) Tags(tags string) ApiGetIamTrustPointListRequest {
 	r.tags = &tags
@@ -21824,7 +22180,7 @@ GetIamTrustPointList Read a 'iam.TrustPoint' resource.
 func (a *IamApiService) GetIamTrustPointList(ctx _context.Context) ApiGetIamTrustPointListRequest {
 	return ApiGetIamTrustPointListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -21963,13 +22319,13 @@ func (a *IamApiService) GetIamTrustPointListExecute(r ApiGetIamTrustPointListReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21986,11 +22342,10 @@ func (a *IamApiService) GetIamTrustPointListExecute(r ApiGetIamTrustPointListReq
 }
 
 type ApiGetIamUserByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamUserByMoidRequest) Execute() (IamUser, *_nethttp.Response, error) {
 	return r.ApiService.GetIamUserByMoidExecute(r)
@@ -22006,8 +22361,8 @@ GetIamUserByMoid Read a 'iam.User' resource.
 func (a *IamApiService) GetIamUserByMoid(ctx _context.Context, moid string) ApiGetIamUserByMoidRequest {
 	return ApiGetIamUserByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22114,13 +22469,13 @@ func (a *IamApiService) GetIamUserByMoidExecute(r ApiGetIamUserByMoidRequest) (I
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22137,11 +22492,10 @@ func (a *IamApiService) GetIamUserByMoidExecute(r ApiGetIamUserByMoidRequest) (I
 }
 
 type ApiGetIamUserGroupByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamUserGroupByMoidRequest) Execute() (IamUserGroup, *_nethttp.Response, error) {
 	return r.ApiService.GetIamUserGroupByMoidExecute(r)
@@ -22157,8 +22511,8 @@ GetIamUserGroupByMoid Read a 'iam.UserGroup' resource.
 func (a *IamApiService) GetIamUserGroupByMoid(ctx _context.Context, moid string) ApiGetIamUserGroupByMoidRequest {
 	return ApiGetIamUserGroupByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22265,13 +22619,13 @@ func (a *IamApiService) GetIamUserGroupByMoidExecute(r ApiGetIamUserGroupByMoidR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22288,19 +22642,19 @@ func (a *IamApiService) GetIamUserGroupByMoidExecute(r ApiGetIamUserGroupByMoidR
 }
 
 type ApiGetIamUserGroupListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -22308,51 +22662,61 @@ func (r ApiGetIamUserGroupListRequest) Filter(filter string) ApiGetIamUserGroupL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamUserGroupListRequest) Orderby(orderby string) ApiGetIamUserGroupListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamUserGroupListRequest) Top(top int32) ApiGetIamUserGroupListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamUserGroupListRequest) Skip(skip int32) ApiGetIamUserGroupListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamUserGroupListRequest) Select_(select_ string) ApiGetIamUserGroupListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamUserGroupListRequest) Expand(expand string) ApiGetIamUserGroupListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamUserGroupListRequest) Apply(apply string) ApiGetIamUserGroupListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamUserGroupListRequest) Count(count bool) ApiGetIamUserGroupListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamUserGroupListRequest) Inlinecount(inlinecount string) ApiGetIamUserGroupListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamUserGroupListRequest) At(at string) ApiGetIamUserGroupListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamUserGroupListRequest) Tags(tags string) ApiGetIamUserGroupListRequest {
 	r.tags = &tags
@@ -22372,7 +22736,7 @@ GetIamUserGroupList Read a 'iam.UserGroup' resource.
 func (a *IamApiService) GetIamUserGroupList(ctx _context.Context) ApiGetIamUserGroupListRequest {
 	return ApiGetIamUserGroupListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -22511,13 +22875,13 @@ func (a *IamApiService) GetIamUserGroupListExecute(r ApiGetIamUserGroupListReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22534,19 +22898,19 @@ func (a *IamApiService) GetIamUserGroupListExecute(r ApiGetIamUserGroupListReque
 }
 
 type ApiGetIamUserListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -22554,51 +22918,61 @@ func (r ApiGetIamUserListRequest) Filter(filter string) ApiGetIamUserListRequest
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamUserListRequest) Orderby(orderby string) ApiGetIamUserListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamUserListRequest) Top(top int32) ApiGetIamUserListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamUserListRequest) Skip(skip int32) ApiGetIamUserListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamUserListRequest) Select_(select_ string) ApiGetIamUserListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamUserListRequest) Expand(expand string) ApiGetIamUserListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamUserListRequest) Apply(apply string) ApiGetIamUserListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamUserListRequest) Count(count bool) ApiGetIamUserListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamUserListRequest) Inlinecount(inlinecount string) ApiGetIamUserListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamUserListRequest) At(at string) ApiGetIamUserListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamUserListRequest) Tags(tags string) ApiGetIamUserListRequest {
 	r.tags = &tags
@@ -22618,7 +22992,7 @@ GetIamUserList Read a 'iam.User' resource.
 func (a *IamApiService) GetIamUserList(ctx _context.Context) ApiGetIamUserListRequest {
 	return ApiGetIamUserListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -22757,13 +23131,13 @@ func (a *IamApiService) GetIamUserListExecute(r ApiGetIamUserListRequest) (IamUs
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22780,11 +23154,10 @@ func (a *IamApiService) GetIamUserListExecute(r ApiGetIamUserListRequest) (IamUs
 }
 
 type ApiGetIamUserPreferenceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetIamUserPreferenceByMoidRequest) Execute() (IamUserPreference, *_nethttp.Response, error) {
 	return r.ApiService.GetIamUserPreferenceByMoidExecute(r)
@@ -22800,8 +23173,8 @@ GetIamUserPreferenceByMoid Read a 'iam.UserPreference' resource.
 func (a *IamApiService) GetIamUserPreferenceByMoid(ctx _context.Context, moid string) ApiGetIamUserPreferenceByMoidRequest {
 	return ApiGetIamUserPreferenceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22908,13 +23281,13 @@ func (a *IamApiService) GetIamUserPreferenceByMoidExecute(r ApiGetIamUserPrefere
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22931,19 +23304,19 @@ func (a *IamApiService) GetIamUserPreferenceByMoidExecute(r ApiGetIamUserPrefere
 }
 
 type ApiGetIamUserPreferenceListRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *IamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -22951,51 +23324,61 @@ func (r ApiGetIamUserPreferenceListRequest) Filter(filter string) ApiGetIamUserP
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetIamUserPreferenceListRequest) Orderby(orderby string) ApiGetIamUserPreferenceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetIamUserPreferenceListRequest) Top(top int32) ApiGetIamUserPreferenceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetIamUserPreferenceListRequest) Skip(skip int32) ApiGetIamUserPreferenceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetIamUserPreferenceListRequest) Select_(select_ string) ApiGetIamUserPreferenceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetIamUserPreferenceListRequest) Expand(expand string) ApiGetIamUserPreferenceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetIamUserPreferenceListRequest) Apply(apply string) ApiGetIamUserPreferenceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetIamUserPreferenceListRequest) Count(count bool) ApiGetIamUserPreferenceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetIamUserPreferenceListRequest) Inlinecount(inlinecount string) ApiGetIamUserPreferenceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetIamUserPreferenceListRequest) At(at string) ApiGetIamUserPreferenceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetIamUserPreferenceListRequest) Tags(tags string) ApiGetIamUserPreferenceListRequest {
 	r.tags = &tags
@@ -23015,7 +23398,7 @@ GetIamUserPreferenceList Read a 'iam.UserPreference' resource.
 func (a *IamApiService) GetIamUserPreferenceList(ctx _context.Context) ApiGetIamUserPreferenceListRequest {
 	return ApiGetIamUserPreferenceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -23154,13 +23537,13 @@ func (a *IamApiService) GetIamUserPreferenceListExecute(r ApiGetIamUserPreferenc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23177,11 +23560,11 @@ func (a *IamApiService) GetIamUserPreferenceListExecute(r ApiGetIamUserPreferenc
 }
 
 type ApiPatchIamAccountRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 	iamAccount *IamAccount
-	ifMatch *string
+	ifMatch    *string
 }
 
 // The &#39;iam.Account&#39; resource to update.
@@ -23189,6 +23572,7 @@ func (r ApiPatchIamAccountRequest) IamAccount(iamAccount IamAccount) ApiPatchIam
 	r.iamAccount = &iamAccount
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamAccountRequest) IfMatch(ifMatch string) ApiPatchIamAccountRequest {
 	r.ifMatch = &ifMatch
@@ -23209,8 +23593,8 @@ PatchIamAccount Update a 'iam.Account' resource.
 func (a *IamApiService) PatchIamAccount(ctx _context.Context, moid string) ApiPatchIamAccountRequest {
 	return ApiPatchIamAccountRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23325,13 +23709,13 @@ func (a *IamApiService) PatchIamAccountExecute(r ApiPatchIamAccountRequest) (Iam
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23348,11 +23732,11 @@ func (a *IamApiService) PatchIamAccountExecute(r ApiPatchIamAccountRequest) (Iam
 }
 
 type ApiPatchIamAccountExperienceRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *IamApiService
+	moid                 string
 	iamAccountExperience *IamAccountExperience
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;iam.AccountExperience&#39; resource to update.
@@ -23360,6 +23744,7 @@ func (r ApiPatchIamAccountExperienceRequest) IamAccountExperience(iamAccountExpe
 	r.iamAccountExperience = &iamAccountExperience
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamAccountExperienceRequest) IfMatch(ifMatch string) ApiPatchIamAccountExperienceRequest {
 	r.ifMatch = &ifMatch
@@ -23380,8 +23765,8 @@ PatchIamAccountExperience Update a 'iam.AccountExperience' resource.
 func (a *IamApiService) PatchIamAccountExperience(ctx _context.Context, moid string) ApiPatchIamAccountExperienceRequest {
 	return ApiPatchIamAccountExperienceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23496,13 +23881,13 @@ func (a *IamApiService) PatchIamAccountExperienceExecute(r ApiPatchIamAccountExp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23519,11 +23904,11 @@ func (a *IamApiService) PatchIamAccountExperienceExecute(r ApiPatchIamAccountExp
 }
 
 type ApiPatchIamApiKeyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
-	iamApiKey *IamApiKey
-	ifMatch *string
+	moid       string
+	iamApiKey  *IamApiKey
+	ifMatch    *string
 }
 
 // The &#39;iam.ApiKey&#39; resource to update.
@@ -23531,6 +23916,7 @@ func (r ApiPatchIamApiKeyRequest) IamApiKey(iamApiKey IamApiKey) ApiPatchIamApiK
 	r.iamApiKey = &iamApiKey
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamApiKeyRequest) IfMatch(ifMatch string) ApiPatchIamApiKeyRequest {
 	r.ifMatch = &ifMatch
@@ -23551,8 +23937,8 @@ PatchIamApiKey Update a 'iam.ApiKey' resource.
 func (a *IamApiService) PatchIamApiKey(ctx _context.Context, moid string) ApiPatchIamApiKeyRequest {
 	return ApiPatchIamApiKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23667,13 +24053,13 @@ func (a *IamApiService) PatchIamApiKeyExecute(r ApiPatchIamApiKeyRequest) (IamAp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23690,11 +24076,11 @@ func (a *IamApiService) PatchIamApiKeyExecute(r ApiPatchIamApiKeyRequest) (IamAp
 }
 
 type ApiPatchIamAppRegistrationRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx                _context.Context
+	ApiService         *IamApiService
+	moid               string
 	iamAppRegistration *IamAppRegistration
-	ifMatch *string
+	ifMatch            *string
 }
 
 // The &#39;iam.AppRegistration&#39; resource to update.
@@ -23702,6 +24088,7 @@ func (r ApiPatchIamAppRegistrationRequest) IamAppRegistration(iamAppRegistration
 	r.iamAppRegistration = &iamAppRegistration
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamAppRegistrationRequest) IfMatch(ifMatch string) ApiPatchIamAppRegistrationRequest {
 	r.ifMatch = &ifMatch
@@ -23722,8 +24109,8 @@ PatchIamAppRegistration Update a 'iam.AppRegistration' resource.
 func (a *IamApiService) PatchIamAppRegistration(ctx _context.Context, moid string) ApiPatchIamAppRegistrationRequest {
 	return ApiPatchIamAppRegistrationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23838,13 +24225,13 @@ func (a *IamApiService) PatchIamAppRegistrationExecute(r ApiPatchIamAppRegistrat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23861,11 +24248,11 @@ func (a *IamApiService) PatchIamAppRegistrationExecute(r ApiPatchIamAppRegistrat
 }
 
 type ApiPatchIamBannerMessageRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *IamApiService
+	moid             string
 	iamBannerMessage *IamBannerMessage
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;iam.BannerMessage&#39; resource to update.
@@ -23873,6 +24260,7 @@ func (r ApiPatchIamBannerMessageRequest) IamBannerMessage(iamBannerMessage IamBa
 	r.iamBannerMessage = &iamBannerMessage
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamBannerMessageRequest) IfMatch(ifMatch string) ApiPatchIamBannerMessageRequest {
 	r.ifMatch = &ifMatch
@@ -23893,8 +24281,8 @@ PatchIamBannerMessage Update a 'iam.BannerMessage' resource.
 func (a *IamApiService) PatchIamBannerMessage(ctx _context.Context, moid string) ApiPatchIamBannerMessageRequest {
 	return ApiPatchIamBannerMessageRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24009,13 +24397,13 @@ func (a *IamApiService) PatchIamBannerMessageExecute(r ApiPatchIamBannerMessageR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24032,11 +24420,11 @@ func (a *IamApiService) PatchIamBannerMessageExecute(r ApiPatchIamBannerMessageR
 }
 
 type ApiPatchIamCertificateRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx            _context.Context
+	ApiService     *IamApiService
+	moid           string
 	iamCertificate *IamCertificate
-	ifMatch *string
+	ifMatch        *string
 }
 
 // The &#39;iam.Certificate&#39; resource to update.
@@ -24044,6 +24432,7 @@ func (r ApiPatchIamCertificateRequest) IamCertificate(iamCertificate IamCertific
 	r.iamCertificate = &iamCertificate
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamCertificateRequest) IfMatch(ifMatch string) ApiPatchIamCertificateRequest {
 	r.ifMatch = &ifMatch
@@ -24064,8 +24453,8 @@ PatchIamCertificate Update a 'iam.Certificate' resource.
 func (a *IamApiService) PatchIamCertificate(ctx _context.Context, moid string) ApiPatchIamCertificateRequest {
 	return ApiPatchIamCertificateRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24180,13 +24569,13 @@ func (a *IamApiService) PatchIamCertificateExecute(r ApiPatchIamCertificateReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24203,11 +24592,11 @@ func (a *IamApiService) PatchIamCertificateExecute(r ApiPatchIamCertificateReque
 }
 
 type ApiPatchIamCertificateRequestRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *IamApiService
+	moid                  string
 	iamCertificateRequest *IamCertificateRequest
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;iam.CertificateRequest&#39; resource to update.
@@ -24215,6 +24604,7 @@ func (r ApiPatchIamCertificateRequestRequest) IamCertificateRequest(iamCertifica
 	r.iamCertificateRequest = &iamCertificateRequest
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamCertificateRequestRequest) IfMatch(ifMatch string) ApiPatchIamCertificateRequestRequest {
 	r.ifMatch = &ifMatch
@@ -24235,8 +24625,8 @@ PatchIamCertificateRequest Update a 'iam.CertificateRequest' resource.
 func (a *IamApiService) PatchIamCertificateRequest(ctx _context.Context, moid string) ApiPatchIamCertificateRequestRequest {
 	return ApiPatchIamCertificateRequestRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24351,13 +24741,13 @@ func (a *IamApiService) PatchIamCertificateRequestExecute(r ApiPatchIamCertifica
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24374,11 +24764,11 @@ func (a *IamApiService) PatchIamCertificateRequestExecute(r ApiPatchIamCertifica
 }
 
 type ApiPatchIamEndPointUserRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *IamApiService
+	moid            string
 	iamEndPointUser *IamEndPointUser
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;iam.EndPointUser&#39; resource to update.
@@ -24386,6 +24776,7 @@ func (r ApiPatchIamEndPointUserRequest) IamEndPointUser(iamEndPointUser IamEndPo
 	r.iamEndPointUser = &iamEndPointUser
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamEndPointUserRequest) IfMatch(ifMatch string) ApiPatchIamEndPointUserRequest {
 	r.ifMatch = &ifMatch
@@ -24406,8 +24797,8 @@ PatchIamEndPointUser Update a 'iam.EndPointUser' resource.
 func (a *IamApiService) PatchIamEndPointUser(ctx _context.Context, moid string) ApiPatchIamEndPointUserRequest {
 	return ApiPatchIamEndPointUserRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24522,13 +24913,13 @@ func (a *IamApiService) PatchIamEndPointUserExecute(r ApiPatchIamEndPointUserReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24545,11 +24936,11 @@ func (a *IamApiService) PatchIamEndPointUserExecute(r ApiPatchIamEndPointUserReq
 }
 
 type ApiPatchIamEndPointUserPolicyRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *IamApiService
+	moid                  string
 	iamEndPointUserPolicy *IamEndPointUserPolicy
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;iam.EndPointUserPolicy&#39; resource to update.
@@ -24557,6 +24948,7 @@ func (r ApiPatchIamEndPointUserPolicyRequest) IamEndPointUserPolicy(iamEndPointU
 	r.iamEndPointUserPolicy = &iamEndPointUserPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamEndPointUserPolicyRequest) IfMatch(ifMatch string) ApiPatchIamEndPointUserPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -24577,8 +24969,8 @@ PatchIamEndPointUserPolicy Update a 'iam.EndPointUserPolicy' resource.
 func (a *IamApiService) PatchIamEndPointUserPolicy(ctx _context.Context, moid string) ApiPatchIamEndPointUserPolicyRequest {
 	return ApiPatchIamEndPointUserPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24693,13 +25085,13 @@ func (a *IamApiService) PatchIamEndPointUserPolicyExecute(r ApiPatchIamEndPointU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24716,11 +25108,11 @@ func (a *IamApiService) PatchIamEndPointUserPolicyExecute(r ApiPatchIamEndPointU
 }
 
 type ApiPatchIamEndPointUserRoleRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *IamApiService
+	moid                string
 	iamEndPointUserRole *IamEndPointUserRole
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;iam.EndPointUserRole&#39; resource to update.
@@ -24728,6 +25120,7 @@ func (r ApiPatchIamEndPointUserRoleRequest) IamEndPointUserRole(iamEndPointUserR
 	r.iamEndPointUserRole = &iamEndPointUserRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamEndPointUserRoleRequest) IfMatch(ifMatch string) ApiPatchIamEndPointUserRoleRequest {
 	r.ifMatch = &ifMatch
@@ -24748,8 +25141,8 @@ PatchIamEndPointUserRole Update a 'iam.EndPointUserRole' resource.
 func (a *IamApiService) PatchIamEndPointUserRole(ctx _context.Context, moid string) ApiPatchIamEndPointUserRoleRequest {
 	return ApiPatchIamEndPointUserRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24864,13 +25257,13 @@ func (a *IamApiService) PatchIamEndPointUserRoleExecute(r ApiPatchIamEndPointUse
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24887,11 +25280,11 @@ func (a *IamApiService) PatchIamEndPointUserRoleExecute(r ApiPatchIamEndPointUse
 }
 
 type ApiPatchIamIdpRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
-	iamIdp *IamIdp
-	ifMatch *string
+	moid       string
+	iamIdp     *IamIdp
+	ifMatch    *string
 }
 
 // The &#39;iam.Idp&#39; resource to update.
@@ -24899,6 +25292,7 @@ func (r ApiPatchIamIdpRequest) IamIdp(iamIdp IamIdp) ApiPatchIamIdpRequest {
 	r.iamIdp = &iamIdp
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamIdpRequest) IfMatch(ifMatch string) ApiPatchIamIdpRequest {
 	r.ifMatch = &ifMatch
@@ -24919,8 +25313,8 @@ PatchIamIdp Update a 'iam.Idp' resource.
 func (a *IamApiService) PatchIamIdp(ctx _context.Context, moid string) ApiPatchIamIdpRequest {
 	return ApiPatchIamIdpRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25035,13 +25429,13 @@ func (a *IamApiService) PatchIamIdpExecute(r ApiPatchIamIdpRequest) (IamIdp, *_n
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25058,11 +25452,11 @@ func (a *IamApiService) PatchIamIdpExecute(r ApiPatchIamIdpRequest) (IamIdp, *_n
 }
 
 type ApiPatchIamIdpReferenceRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *IamApiService
+	moid            string
 	iamIdpReference *IamIdpReference
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;iam.IdpReference&#39; resource to update.
@@ -25070,6 +25464,7 @@ func (r ApiPatchIamIdpReferenceRequest) IamIdpReference(iamIdpReference IamIdpRe
 	r.iamIdpReference = &iamIdpReference
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamIdpReferenceRequest) IfMatch(ifMatch string) ApiPatchIamIdpReferenceRequest {
 	r.ifMatch = &ifMatch
@@ -25090,8 +25485,8 @@ PatchIamIdpReference Update a 'iam.IdpReference' resource.
 func (a *IamApiService) PatchIamIdpReference(ctx _context.Context, moid string) ApiPatchIamIdpReferenceRequest {
 	return ApiPatchIamIdpReferenceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25206,13 +25601,13 @@ func (a *IamApiService) PatchIamIdpReferenceExecute(r ApiPatchIamIdpReferenceReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25229,11 +25624,11 @@ func (a *IamApiService) PatchIamIdpReferenceExecute(r ApiPatchIamIdpReferenceReq
 }
 
 type ApiPatchIamIpAccessManagementRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *IamApiService
+	moid                  string
 	iamIpAccessManagement *IamIpAccessManagement
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;iam.IpAccessManagement&#39; resource to update.
@@ -25241,6 +25636,7 @@ func (r ApiPatchIamIpAccessManagementRequest) IamIpAccessManagement(iamIpAccessM
 	r.iamIpAccessManagement = &iamIpAccessManagement
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamIpAccessManagementRequest) IfMatch(ifMatch string) ApiPatchIamIpAccessManagementRequest {
 	r.ifMatch = &ifMatch
@@ -25261,8 +25657,8 @@ PatchIamIpAccessManagement Update a 'iam.IpAccessManagement' resource.
 func (a *IamApiService) PatchIamIpAccessManagement(ctx _context.Context, moid string) ApiPatchIamIpAccessManagementRequest {
 	return ApiPatchIamIpAccessManagementRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25377,13 +25773,13 @@ func (a *IamApiService) PatchIamIpAccessManagementExecute(r ApiPatchIamIpAccessM
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25400,11 +25796,11 @@ func (a *IamApiService) PatchIamIpAccessManagementExecute(r ApiPatchIamIpAccessM
 }
 
 type ApiPatchIamIpAddressRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *IamApiService
+	moid         string
 	iamIpAddress *IamIpAddress
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;iam.IpAddress&#39; resource to update.
@@ -25412,6 +25808,7 @@ func (r ApiPatchIamIpAddressRequest) IamIpAddress(iamIpAddress IamIpAddress) Api
 	r.iamIpAddress = &iamIpAddress
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamIpAddressRequest) IfMatch(ifMatch string) ApiPatchIamIpAddressRequest {
 	r.ifMatch = &ifMatch
@@ -25432,8 +25829,8 @@ PatchIamIpAddress Update a 'iam.IpAddress' resource.
 func (a *IamApiService) PatchIamIpAddress(ctx _context.Context, moid string) ApiPatchIamIpAddressRequest {
 	return ApiPatchIamIpAddressRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25548,13 +25945,13 @@ func (a *IamApiService) PatchIamIpAddressExecute(r ApiPatchIamIpAddressRequest) 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25571,11 +25968,11 @@ func (a *IamApiService) PatchIamIpAddressExecute(r ApiPatchIamIpAddressRequest) 
 }
 
 type ApiPatchIamLdapGroupRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *IamApiService
+	moid         string
 	iamLdapGroup *IamLdapGroup
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;iam.LdapGroup&#39; resource to update.
@@ -25583,6 +25980,7 @@ func (r ApiPatchIamLdapGroupRequest) IamLdapGroup(iamLdapGroup IamLdapGroup) Api
 	r.iamLdapGroup = &iamLdapGroup
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamLdapGroupRequest) IfMatch(ifMatch string) ApiPatchIamLdapGroupRequest {
 	r.ifMatch = &ifMatch
@@ -25603,8 +26001,8 @@ PatchIamLdapGroup Update a 'iam.LdapGroup' resource.
 func (a *IamApiService) PatchIamLdapGroup(ctx _context.Context, moid string) ApiPatchIamLdapGroupRequest {
 	return ApiPatchIamLdapGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25719,13 +26117,13 @@ func (a *IamApiService) PatchIamLdapGroupExecute(r ApiPatchIamLdapGroupRequest) 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25742,11 +26140,11 @@ func (a *IamApiService) PatchIamLdapGroupExecute(r ApiPatchIamLdapGroupRequest) 
 }
 
 type ApiPatchIamLdapPolicyRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx           _context.Context
+	ApiService    *IamApiService
+	moid          string
 	iamLdapPolicy *IamLdapPolicy
-	ifMatch *string
+	ifMatch       *string
 }
 
 // The &#39;iam.LdapPolicy&#39; resource to update.
@@ -25754,6 +26152,7 @@ func (r ApiPatchIamLdapPolicyRequest) IamLdapPolicy(iamLdapPolicy IamLdapPolicy)
 	r.iamLdapPolicy = &iamLdapPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamLdapPolicyRequest) IfMatch(ifMatch string) ApiPatchIamLdapPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -25774,8 +26173,8 @@ PatchIamLdapPolicy Update a 'iam.LdapPolicy' resource.
 func (a *IamApiService) PatchIamLdapPolicy(ctx _context.Context, moid string) ApiPatchIamLdapPolicyRequest {
 	return ApiPatchIamLdapPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25890,13 +26289,13 @@ func (a *IamApiService) PatchIamLdapPolicyExecute(r ApiPatchIamLdapPolicyRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25913,11 +26312,11 @@ func (a *IamApiService) PatchIamLdapPolicyExecute(r ApiPatchIamLdapPolicyRequest
 }
 
 type ApiPatchIamLdapProviderRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *IamApiService
+	moid            string
 	iamLdapProvider *IamLdapProvider
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;iam.LdapProvider&#39; resource to update.
@@ -25925,6 +26324,7 @@ func (r ApiPatchIamLdapProviderRequest) IamLdapProvider(iamLdapProvider IamLdapP
 	r.iamLdapProvider = &iamLdapProvider
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamLdapProviderRequest) IfMatch(ifMatch string) ApiPatchIamLdapProviderRequest {
 	r.ifMatch = &ifMatch
@@ -25945,8 +26345,8 @@ PatchIamLdapProvider Update a 'iam.LdapProvider' resource.
 func (a *IamApiService) PatchIamLdapProvider(ctx _context.Context, moid string) ApiPatchIamLdapProviderRequest {
 	return ApiPatchIamLdapProviderRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26061,13 +26461,13 @@ func (a *IamApiService) PatchIamLdapProviderExecute(r ApiPatchIamLdapProviderReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26084,11 +26484,11 @@ func (a *IamApiService) PatchIamLdapProviderExecute(r ApiPatchIamLdapProviderReq
 }
 
 type ApiPatchIamLocalUserPasswordRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *IamApiService
+	moid                 string
 	iamLocalUserPassword *IamLocalUserPassword
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;iam.LocalUserPassword&#39; resource to update.
@@ -26096,6 +26496,7 @@ func (r ApiPatchIamLocalUserPasswordRequest) IamLocalUserPassword(iamLocalUserPa
 	r.iamLocalUserPassword = &iamLocalUserPassword
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamLocalUserPasswordRequest) IfMatch(ifMatch string) ApiPatchIamLocalUserPasswordRequest {
 	r.ifMatch = &ifMatch
@@ -26116,8 +26517,8 @@ PatchIamLocalUserPassword Update a 'iam.LocalUserPassword' resource.
 func (a *IamApiService) PatchIamLocalUserPassword(ctx _context.Context, moid string) ApiPatchIamLocalUserPasswordRequest {
 	return ApiPatchIamLocalUserPasswordRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26232,13 +26633,13 @@ func (a *IamApiService) PatchIamLocalUserPasswordExecute(r ApiPatchIamLocalUserP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26255,11 +26656,11 @@ func (a *IamApiService) PatchIamLocalUserPasswordExecute(r ApiPatchIamLocalUserP
 }
 
 type ApiPatchIamLocalUserPasswordPolicyRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *IamApiService
+	moid                       string
 	iamLocalUserPasswordPolicy *IamLocalUserPasswordPolicy
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;iam.LocalUserPasswordPolicy&#39; resource to update.
@@ -26267,6 +26668,7 @@ func (r ApiPatchIamLocalUserPasswordPolicyRequest) IamLocalUserPasswordPolicy(ia
 	r.iamLocalUserPasswordPolicy = &iamLocalUserPasswordPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamLocalUserPasswordPolicyRequest) IfMatch(ifMatch string) ApiPatchIamLocalUserPasswordPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -26287,8 +26689,8 @@ PatchIamLocalUserPasswordPolicy Update a 'iam.LocalUserPasswordPolicy' resource.
 func (a *IamApiService) PatchIamLocalUserPasswordPolicy(ctx _context.Context, moid string) ApiPatchIamLocalUserPasswordPolicyRequest {
 	return ApiPatchIamLocalUserPasswordPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26403,13 +26805,13 @@ func (a *IamApiService) PatchIamLocalUserPasswordPolicyExecute(r ApiPatchIamLoca
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26426,11 +26828,11 @@ func (a *IamApiService) PatchIamLocalUserPasswordPolicyExecute(r ApiPatchIamLoca
 }
 
 type ApiPatchIamPermissionRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx           _context.Context
+	ApiService    *IamApiService
+	moid          string
 	iamPermission *IamPermission
-	ifMatch *string
+	ifMatch       *string
 }
 
 // The &#39;iam.Permission&#39; resource to update.
@@ -26438,6 +26840,7 @@ func (r ApiPatchIamPermissionRequest) IamPermission(iamPermission IamPermission)
 	r.iamPermission = &iamPermission
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamPermissionRequest) IfMatch(ifMatch string) ApiPatchIamPermissionRequest {
 	r.ifMatch = &ifMatch
@@ -26458,8 +26861,8 @@ PatchIamPermission Update a 'iam.Permission' resource.
 func (a *IamApiService) PatchIamPermission(ctx _context.Context, moid string) ApiPatchIamPermissionRequest {
 	return ApiPatchIamPermissionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26574,13 +26977,13 @@ func (a *IamApiService) PatchIamPermissionExecute(r ApiPatchIamPermissionRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26597,11 +27000,11 @@ func (a *IamApiService) PatchIamPermissionExecute(r ApiPatchIamPermissionRequest
 }
 
 type ApiPatchIamPrivateKeySpecRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *IamApiService
+	moid              string
 	iamPrivateKeySpec *IamPrivateKeySpec
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;iam.PrivateKeySpec&#39; resource to update.
@@ -26609,6 +27012,7 @@ func (r ApiPatchIamPrivateKeySpecRequest) IamPrivateKeySpec(iamPrivateKeySpec Ia
 	r.iamPrivateKeySpec = &iamPrivateKeySpec
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamPrivateKeySpecRequest) IfMatch(ifMatch string) ApiPatchIamPrivateKeySpecRequest {
 	r.ifMatch = &ifMatch
@@ -26629,8 +27033,8 @@ PatchIamPrivateKeySpec Update a 'iam.PrivateKeySpec' resource.
 func (a *IamApiService) PatchIamPrivateKeySpec(ctx _context.Context, moid string) ApiPatchIamPrivateKeySpecRequest {
 	return ApiPatchIamPrivateKeySpecRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26745,13 +27149,13 @@ func (a *IamApiService) PatchIamPrivateKeySpecExecute(r ApiPatchIamPrivateKeySpe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26768,11 +27172,11 @@ func (a *IamApiService) PatchIamPrivateKeySpecExecute(r ApiPatchIamPrivateKeySpe
 }
 
 type ApiPatchIamQualifierRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *IamApiService
+	moid         string
 	iamQualifier *IamQualifier
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;iam.Qualifier&#39; resource to update.
@@ -26780,6 +27184,7 @@ func (r ApiPatchIamQualifierRequest) IamQualifier(iamQualifier IamQualifier) Api
 	r.iamQualifier = &iamQualifier
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamQualifierRequest) IfMatch(ifMatch string) ApiPatchIamQualifierRequest {
 	r.ifMatch = &ifMatch
@@ -26800,8 +27205,8 @@ PatchIamQualifier Update a 'iam.Qualifier' resource.
 func (a *IamApiService) PatchIamQualifier(ctx _context.Context, moid string) ApiPatchIamQualifierRequest {
 	return ApiPatchIamQualifierRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26916,13 +27321,13 @@ func (a *IamApiService) PatchIamQualifierExecute(r ApiPatchIamQualifierRequest) 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26939,11 +27344,11 @@ func (a *IamApiService) PatchIamQualifierExecute(r ApiPatchIamQualifierRequest) 
 }
 
 type ApiPatchIamResourceRolesRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *IamApiService
+	moid             string
 	iamResourceRoles *IamResourceRoles
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;iam.ResourceRoles&#39; resource to update.
@@ -26951,6 +27356,7 @@ func (r ApiPatchIamResourceRolesRequest) IamResourceRoles(iamResourceRoles IamRe
 	r.iamResourceRoles = &iamResourceRoles
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamResourceRolesRequest) IfMatch(ifMatch string) ApiPatchIamResourceRolesRequest {
 	r.ifMatch = &ifMatch
@@ -26971,8 +27377,8 @@ PatchIamResourceRoles Update a 'iam.ResourceRoles' resource.
 func (a *IamApiService) PatchIamResourceRoles(ctx _context.Context, moid string) ApiPatchIamResourceRolesRequest {
 	return ApiPatchIamResourceRolesRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -27087,13 +27493,13 @@ func (a *IamApiService) PatchIamResourceRolesExecute(r ApiPatchIamResourceRolesR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27110,11 +27516,11 @@ func (a *IamApiService) PatchIamResourceRolesExecute(r ApiPatchIamResourceRolesR
 }
 
 type ApiPatchIamSessionLimitsRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *IamApiService
+	moid             string
 	iamSessionLimits *IamSessionLimits
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;iam.SessionLimits&#39; resource to update.
@@ -27122,6 +27528,7 @@ func (r ApiPatchIamSessionLimitsRequest) IamSessionLimits(iamSessionLimits IamSe
 	r.iamSessionLimits = &iamSessionLimits
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamSessionLimitsRequest) IfMatch(ifMatch string) ApiPatchIamSessionLimitsRequest {
 	r.ifMatch = &ifMatch
@@ -27142,8 +27549,8 @@ PatchIamSessionLimits Update a 'iam.SessionLimits' resource.
 func (a *IamApiService) PatchIamSessionLimits(ctx _context.Context, moid string) ApiPatchIamSessionLimitsRequest {
 	return ApiPatchIamSessionLimitsRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -27258,13 +27665,13 @@ func (a *IamApiService) PatchIamSessionLimitsExecute(r ApiPatchIamSessionLimitsR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27281,11 +27688,11 @@ func (a *IamApiService) PatchIamSessionLimitsExecute(r ApiPatchIamSessionLimitsR
 }
 
 type ApiPatchIamUserRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
-	iamUser *IamUser
-	ifMatch *string
+	moid       string
+	iamUser    *IamUser
+	ifMatch    *string
 }
 
 // The &#39;iam.User&#39; resource to update.
@@ -27293,6 +27700,7 @@ func (r ApiPatchIamUserRequest) IamUser(iamUser IamUser) ApiPatchIamUserRequest 
 	r.iamUser = &iamUser
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamUserRequest) IfMatch(ifMatch string) ApiPatchIamUserRequest {
 	r.ifMatch = &ifMatch
@@ -27313,8 +27721,8 @@ PatchIamUser Update a 'iam.User' resource.
 func (a *IamApiService) PatchIamUser(ctx _context.Context, moid string) ApiPatchIamUserRequest {
 	return ApiPatchIamUserRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -27429,13 +27837,13 @@ func (a *IamApiService) PatchIamUserExecute(r ApiPatchIamUserRequest) (IamUser, 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27452,11 +27860,11 @@ func (a *IamApiService) PatchIamUserExecute(r ApiPatchIamUserRequest) (IamUser, 
 }
 
 type ApiPatchIamUserGroupRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *IamApiService
+	moid         string
 	iamUserGroup *IamUserGroup
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;iam.UserGroup&#39; resource to update.
@@ -27464,6 +27872,7 @@ func (r ApiPatchIamUserGroupRequest) IamUserGroup(iamUserGroup IamUserGroup) Api
 	r.iamUserGroup = &iamUserGroup
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamUserGroupRequest) IfMatch(ifMatch string) ApiPatchIamUserGroupRequest {
 	r.ifMatch = &ifMatch
@@ -27484,8 +27893,8 @@ PatchIamUserGroup Update a 'iam.UserGroup' resource.
 func (a *IamApiService) PatchIamUserGroup(ctx _context.Context, moid string) ApiPatchIamUserGroupRequest {
 	return ApiPatchIamUserGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -27600,13 +28009,13 @@ func (a *IamApiService) PatchIamUserGroupExecute(r ApiPatchIamUserGroupRequest) 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27623,11 +28032,11 @@ func (a *IamApiService) PatchIamUserGroupExecute(r ApiPatchIamUserGroupRequest) 
 }
 
 type ApiPatchIamUserPreferenceRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *IamApiService
+	moid              string
 	iamUserPreference *IamUserPreference
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;iam.UserPreference&#39; resource to update.
@@ -27635,6 +28044,7 @@ func (r ApiPatchIamUserPreferenceRequest) IamUserPreference(iamUserPreference Ia
 	r.iamUserPreference = &iamUserPreference
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchIamUserPreferenceRequest) IfMatch(ifMatch string) ApiPatchIamUserPreferenceRequest {
 	r.ifMatch = &ifMatch
@@ -27655,8 +28065,8 @@ PatchIamUserPreference Update a 'iam.UserPreference' resource.
 func (a *IamApiService) PatchIamUserPreference(ctx _context.Context, moid string) ApiPatchIamUserPreferenceRequest {
 	return ApiPatchIamUserPreferenceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -27771,13 +28181,13 @@ func (a *IamApiService) PatchIamUserPreferenceExecute(r ApiPatchIamUserPreferenc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27794,11 +28204,11 @@ func (a *IamApiService) PatchIamUserPreferenceExecute(r ApiPatchIamUserPreferenc
 }
 
 type ApiUpdateIamAccountRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
+	moid       string
 	iamAccount *IamAccount
-	ifMatch *string
+	ifMatch    *string
 }
 
 // The &#39;iam.Account&#39; resource to update.
@@ -27806,6 +28216,7 @@ func (r ApiUpdateIamAccountRequest) IamAccount(iamAccount IamAccount) ApiUpdateI
 	r.iamAccount = &iamAccount
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamAccountRequest) IfMatch(ifMatch string) ApiUpdateIamAccountRequest {
 	r.ifMatch = &ifMatch
@@ -27826,8 +28237,8 @@ UpdateIamAccount Update a 'iam.Account' resource.
 func (a *IamApiService) UpdateIamAccount(ctx _context.Context, moid string) ApiUpdateIamAccountRequest {
 	return ApiUpdateIamAccountRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -27942,13 +28353,13 @@ func (a *IamApiService) UpdateIamAccountExecute(r ApiUpdateIamAccountRequest) (I
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27965,11 +28376,11 @@ func (a *IamApiService) UpdateIamAccountExecute(r ApiUpdateIamAccountRequest) (I
 }
 
 type ApiUpdateIamAccountExperienceRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *IamApiService
+	moid                 string
 	iamAccountExperience *IamAccountExperience
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;iam.AccountExperience&#39; resource to update.
@@ -27977,6 +28388,7 @@ func (r ApiUpdateIamAccountExperienceRequest) IamAccountExperience(iamAccountExp
 	r.iamAccountExperience = &iamAccountExperience
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamAccountExperienceRequest) IfMatch(ifMatch string) ApiUpdateIamAccountExperienceRequest {
 	r.ifMatch = &ifMatch
@@ -27997,8 +28409,8 @@ UpdateIamAccountExperience Update a 'iam.AccountExperience' resource.
 func (a *IamApiService) UpdateIamAccountExperience(ctx _context.Context, moid string) ApiUpdateIamAccountExperienceRequest {
 	return ApiUpdateIamAccountExperienceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -28113,13 +28525,13 @@ func (a *IamApiService) UpdateIamAccountExperienceExecute(r ApiUpdateIamAccountE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28136,11 +28548,11 @@ func (a *IamApiService) UpdateIamAccountExperienceExecute(r ApiUpdateIamAccountE
 }
 
 type ApiUpdateIamApiKeyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
-	iamApiKey *IamApiKey
-	ifMatch *string
+	moid       string
+	iamApiKey  *IamApiKey
+	ifMatch    *string
 }
 
 // The &#39;iam.ApiKey&#39; resource to update.
@@ -28148,6 +28560,7 @@ func (r ApiUpdateIamApiKeyRequest) IamApiKey(iamApiKey IamApiKey) ApiUpdateIamAp
 	r.iamApiKey = &iamApiKey
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamApiKeyRequest) IfMatch(ifMatch string) ApiUpdateIamApiKeyRequest {
 	r.ifMatch = &ifMatch
@@ -28168,8 +28581,8 @@ UpdateIamApiKey Update a 'iam.ApiKey' resource.
 func (a *IamApiService) UpdateIamApiKey(ctx _context.Context, moid string) ApiUpdateIamApiKeyRequest {
 	return ApiUpdateIamApiKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -28284,13 +28697,13 @@ func (a *IamApiService) UpdateIamApiKeyExecute(r ApiUpdateIamApiKeyRequest) (Iam
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28307,11 +28720,11 @@ func (a *IamApiService) UpdateIamApiKeyExecute(r ApiUpdateIamApiKeyRequest) (Iam
 }
 
 type ApiUpdateIamAppRegistrationRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx                _context.Context
+	ApiService         *IamApiService
+	moid               string
 	iamAppRegistration *IamAppRegistration
-	ifMatch *string
+	ifMatch            *string
 }
 
 // The &#39;iam.AppRegistration&#39; resource to update.
@@ -28319,6 +28732,7 @@ func (r ApiUpdateIamAppRegistrationRequest) IamAppRegistration(iamAppRegistratio
 	r.iamAppRegistration = &iamAppRegistration
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamAppRegistrationRequest) IfMatch(ifMatch string) ApiUpdateIamAppRegistrationRequest {
 	r.ifMatch = &ifMatch
@@ -28339,8 +28753,8 @@ UpdateIamAppRegistration Update a 'iam.AppRegistration' resource.
 func (a *IamApiService) UpdateIamAppRegistration(ctx _context.Context, moid string) ApiUpdateIamAppRegistrationRequest {
 	return ApiUpdateIamAppRegistrationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -28455,13 +28869,13 @@ func (a *IamApiService) UpdateIamAppRegistrationExecute(r ApiUpdateIamAppRegistr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28478,11 +28892,11 @@ func (a *IamApiService) UpdateIamAppRegistrationExecute(r ApiUpdateIamAppRegistr
 }
 
 type ApiUpdateIamBannerMessageRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *IamApiService
+	moid             string
 	iamBannerMessage *IamBannerMessage
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;iam.BannerMessage&#39; resource to update.
@@ -28490,6 +28904,7 @@ func (r ApiUpdateIamBannerMessageRequest) IamBannerMessage(iamBannerMessage IamB
 	r.iamBannerMessage = &iamBannerMessage
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamBannerMessageRequest) IfMatch(ifMatch string) ApiUpdateIamBannerMessageRequest {
 	r.ifMatch = &ifMatch
@@ -28510,8 +28925,8 @@ UpdateIamBannerMessage Update a 'iam.BannerMessage' resource.
 func (a *IamApiService) UpdateIamBannerMessage(ctx _context.Context, moid string) ApiUpdateIamBannerMessageRequest {
 	return ApiUpdateIamBannerMessageRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -28626,13 +29041,13 @@ func (a *IamApiService) UpdateIamBannerMessageExecute(r ApiUpdateIamBannerMessag
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28649,11 +29064,11 @@ func (a *IamApiService) UpdateIamBannerMessageExecute(r ApiUpdateIamBannerMessag
 }
 
 type ApiUpdateIamCertificateRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx            _context.Context
+	ApiService     *IamApiService
+	moid           string
 	iamCertificate *IamCertificate
-	ifMatch *string
+	ifMatch        *string
 }
 
 // The &#39;iam.Certificate&#39; resource to update.
@@ -28661,6 +29076,7 @@ func (r ApiUpdateIamCertificateRequest) IamCertificate(iamCertificate IamCertifi
 	r.iamCertificate = &iamCertificate
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamCertificateRequest) IfMatch(ifMatch string) ApiUpdateIamCertificateRequest {
 	r.ifMatch = &ifMatch
@@ -28681,8 +29097,8 @@ UpdateIamCertificate Update a 'iam.Certificate' resource.
 func (a *IamApiService) UpdateIamCertificate(ctx _context.Context, moid string) ApiUpdateIamCertificateRequest {
 	return ApiUpdateIamCertificateRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -28797,13 +29213,13 @@ func (a *IamApiService) UpdateIamCertificateExecute(r ApiUpdateIamCertificateReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28820,11 +29236,11 @@ func (a *IamApiService) UpdateIamCertificateExecute(r ApiUpdateIamCertificateReq
 }
 
 type ApiUpdateIamCertificateRequestRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *IamApiService
+	moid                  string
 	iamCertificateRequest *IamCertificateRequest
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;iam.CertificateRequest&#39; resource to update.
@@ -28832,6 +29248,7 @@ func (r ApiUpdateIamCertificateRequestRequest) IamCertificateRequest(iamCertific
 	r.iamCertificateRequest = &iamCertificateRequest
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamCertificateRequestRequest) IfMatch(ifMatch string) ApiUpdateIamCertificateRequestRequest {
 	r.ifMatch = &ifMatch
@@ -28852,8 +29269,8 @@ UpdateIamCertificateRequest Update a 'iam.CertificateRequest' resource.
 func (a *IamApiService) UpdateIamCertificateRequest(ctx _context.Context, moid string) ApiUpdateIamCertificateRequestRequest {
 	return ApiUpdateIamCertificateRequestRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -28968,13 +29385,13 @@ func (a *IamApiService) UpdateIamCertificateRequestExecute(r ApiUpdateIamCertifi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28991,11 +29408,11 @@ func (a *IamApiService) UpdateIamCertificateRequestExecute(r ApiUpdateIamCertifi
 }
 
 type ApiUpdateIamEndPointUserRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *IamApiService
+	moid            string
 	iamEndPointUser *IamEndPointUser
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;iam.EndPointUser&#39; resource to update.
@@ -29003,6 +29420,7 @@ func (r ApiUpdateIamEndPointUserRequest) IamEndPointUser(iamEndPointUser IamEndP
 	r.iamEndPointUser = &iamEndPointUser
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamEndPointUserRequest) IfMatch(ifMatch string) ApiUpdateIamEndPointUserRequest {
 	r.ifMatch = &ifMatch
@@ -29023,8 +29441,8 @@ UpdateIamEndPointUser Update a 'iam.EndPointUser' resource.
 func (a *IamApiService) UpdateIamEndPointUser(ctx _context.Context, moid string) ApiUpdateIamEndPointUserRequest {
 	return ApiUpdateIamEndPointUserRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -29139,13 +29557,13 @@ func (a *IamApiService) UpdateIamEndPointUserExecute(r ApiUpdateIamEndPointUserR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29162,11 +29580,11 @@ func (a *IamApiService) UpdateIamEndPointUserExecute(r ApiUpdateIamEndPointUserR
 }
 
 type ApiUpdateIamEndPointUserPolicyRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *IamApiService
+	moid                  string
 	iamEndPointUserPolicy *IamEndPointUserPolicy
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;iam.EndPointUserPolicy&#39; resource to update.
@@ -29174,6 +29592,7 @@ func (r ApiUpdateIamEndPointUserPolicyRequest) IamEndPointUserPolicy(iamEndPoint
 	r.iamEndPointUserPolicy = &iamEndPointUserPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamEndPointUserPolicyRequest) IfMatch(ifMatch string) ApiUpdateIamEndPointUserPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -29194,8 +29613,8 @@ UpdateIamEndPointUserPolicy Update a 'iam.EndPointUserPolicy' resource.
 func (a *IamApiService) UpdateIamEndPointUserPolicy(ctx _context.Context, moid string) ApiUpdateIamEndPointUserPolicyRequest {
 	return ApiUpdateIamEndPointUserPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -29310,13 +29729,13 @@ func (a *IamApiService) UpdateIamEndPointUserPolicyExecute(r ApiUpdateIamEndPoin
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29333,11 +29752,11 @@ func (a *IamApiService) UpdateIamEndPointUserPolicyExecute(r ApiUpdateIamEndPoin
 }
 
 type ApiUpdateIamEndPointUserRoleRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *IamApiService
+	moid                string
 	iamEndPointUserRole *IamEndPointUserRole
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;iam.EndPointUserRole&#39; resource to update.
@@ -29345,6 +29764,7 @@ func (r ApiUpdateIamEndPointUserRoleRequest) IamEndPointUserRole(iamEndPointUser
 	r.iamEndPointUserRole = &iamEndPointUserRole
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamEndPointUserRoleRequest) IfMatch(ifMatch string) ApiUpdateIamEndPointUserRoleRequest {
 	r.ifMatch = &ifMatch
@@ -29365,8 +29785,8 @@ UpdateIamEndPointUserRole Update a 'iam.EndPointUserRole' resource.
 func (a *IamApiService) UpdateIamEndPointUserRole(ctx _context.Context, moid string) ApiUpdateIamEndPointUserRoleRequest {
 	return ApiUpdateIamEndPointUserRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -29481,13 +29901,13 @@ func (a *IamApiService) UpdateIamEndPointUserRoleExecute(r ApiUpdateIamEndPointU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29504,11 +29924,11 @@ func (a *IamApiService) UpdateIamEndPointUserRoleExecute(r ApiUpdateIamEndPointU
 }
 
 type ApiUpdateIamIdpRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
-	iamIdp *IamIdp
-	ifMatch *string
+	moid       string
+	iamIdp     *IamIdp
+	ifMatch    *string
 }
 
 // The &#39;iam.Idp&#39; resource to update.
@@ -29516,6 +29936,7 @@ func (r ApiUpdateIamIdpRequest) IamIdp(iamIdp IamIdp) ApiUpdateIamIdpRequest {
 	r.iamIdp = &iamIdp
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamIdpRequest) IfMatch(ifMatch string) ApiUpdateIamIdpRequest {
 	r.ifMatch = &ifMatch
@@ -29536,8 +29957,8 @@ UpdateIamIdp Update a 'iam.Idp' resource.
 func (a *IamApiService) UpdateIamIdp(ctx _context.Context, moid string) ApiUpdateIamIdpRequest {
 	return ApiUpdateIamIdpRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -29652,13 +30073,13 @@ func (a *IamApiService) UpdateIamIdpExecute(r ApiUpdateIamIdpRequest) (IamIdp, *
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29675,11 +30096,11 @@ func (a *IamApiService) UpdateIamIdpExecute(r ApiUpdateIamIdpRequest) (IamIdp, *
 }
 
 type ApiUpdateIamIdpReferenceRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *IamApiService
+	moid            string
 	iamIdpReference *IamIdpReference
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;iam.IdpReference&#39; resource to update.
@@ -29687,6 +30108,7 @@ func (r ApiUpdateIamIdpReferenceRequest) IamIdpReference(iamIdpReference IamIdpR
 	r.iamIdpReference = &iamIdpReference
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamIdpReferenceRequest) IfMatch(ifMatch string) ApiUpdateIamIdpReferenceRequest {
 	r.ifMatch = &ifMatch
@@ -29707,8 +30129,8 @@ UpdateIamIdpReference Update a 'iam.IdpReference' resource.
 func (a *IamApiService) UpdateIamIdpReference(ctx _context.Context, moid string) ApiUpdateIamIdpReferenceRequest {
 	return ApiUpdateIamIdpReferenceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -29823,13 +30245,13 @@ func (a *IamApiService) UpdateIamIdpReferenceExecute(r ApiUpdateIamIdpReferenceR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29846,11 +30268,11 @@ func (a *IamApiService) UpdateIamIdpReferenceExecute(r ApiUpdateIamIdpReferenceR
 }
 
 type ApiUpdateIamIpAccessManagementRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *IamApiService
+	moid                  string
 	iamIpAccessManagement *IamIpAccessManagement
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;iam.IpAccessManagement&#39; resource to update.
@@ -29858,6 +30280,7 @@ func (r ApiUpdateIamIpAccessManagementRequest) IamIpAccessManagement(iamIpAccess
 	r.iamIpAccessManagement = &iamIpAccessManagement
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamIpAccessManagementRequest) IfMatch(ifMatch string) ApiUpdateIamIpAccessManagementRequest {
 	r.ifMatch = &ifMatch
@@ -29878,8 +30301,8 @@ UpdateIamIpAccessManagement Update a 'iam.IpAccessManagement' resource.
 func (a *IamApiService) UpdateIamIpAccessManagement(ctx _context.Context, moid string) ApiUpdateIamIpAccessManagementRequest {
 	return ApiUpdateIamIpAccessManagementRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -29994,13 +30417,13 @@ func (a *IamApiService) UpdateIamIpAccessManagementExecute(r ApiUpdateIamIpAcces
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30017,11 +30440,11 @@ func (a *IamApiService) UpdateIamIpAccessManagementExecute(r ApiUpdateIamIpAcces
 }
 
 type ApiUpdateIamIpAddressRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *IamApiService
+	moid         string
 	iamIpAddress *IamIpAddress
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;iam.IpAddress&#39; resource to update.
@@ -30029,6 +30452,7 @@ func (r ApiUpdateIamIpAddressRequest) IamIpAddress(iamIpAddress IamIpAddress) Ap
 	r.iamIpAddress = &iamIpAddress
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamIpAddressRequest) IfMatch(ifMatch string) ApiUpdateIamIpAddressRequest {
 	r.ifMatch = &ifMatch
@@ -30049,8 +30473,8 @@ UpdateIamIpAddress Update a 'iam.IpAddress' resource.
 func (a *IamApiService) UpdateIamIpAddress(ctx _context.Context, moid string) ApiUpdateIamIpAddressRequest {
 	return ApiUpdateIamIpAddressRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -30165,13 +30589,13 @@ func (a *IamApiService) UpdateIamIpAddressExecute(r ApiUpdateIamIpAddressRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30188,11 +30612,11 @@ func (a *IamApiService) UpdateIamIpAddressExecute(r ApiUpdateIamIpAddressRequest
 }
 
 type ApiUpdateIamLdapGroupRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *IamApiService
+	moid         string
 	iamLdapGroup *IamLdapGroup
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;iam.LdapGroup&#39; resource to update.
@@ -30200,6 +30624,7 @@ func (r ApiUpdateIamLdapGroupRequest) IamLdapGroup(iamLdapGroup IamLdapGroup) Ap
 	r.iamLdapGroup = &iamLdapGroup
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamLdapGroupRequest) IfMatch(ifMatch string) ApiUpdateIamLdapGroupRequest {
 	r.ifMatch = &ifMatch
@@ -30220,8 +30645,8 @@ UpdateIamLdapGroup Update a 'iam.LdapGroup' resource.
 func (a *IamApiService) UpdateIamLdapGroup(ctx _context.Context, moid string) ApiUpdateIamLdapGroupRequest {
 	return ApiUpdateIamLdapGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -30336,13 +30761,13 @@ func (a *IamApiService) UpdateIamLdapGroupExecute(r ApiUpdateIamLdapGroupRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30359,11 +30784,11 @@ func (a *IamApiService) UpdateIamLdapGroupExecute(r ApiUpdateIamLdapGroupRequest
 }
 
 type ApiUpdateIamLdapPolicyRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx           _context.Context
+	ApiService    *IamApiService
+	moid          string
 	iamLdapPolicy *IamLdapPolicy
-	ifMatch *string
+	ifMatch       *string
 }
 
 // The &#39;iam.LdapPolicy&#39; resource to update.
@@ -30371,6 +30796,7 @@ func (r ApiUpdateIamLdapPolicyRequest) IamLdapPolicy(iamLdapPolicy IamLdapPolicy
 	r.iamLdapPolicy = &iamLdapPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamLdapPolicyRequest) IfMatch(ifMatch string) ApiUpdateIamLdapPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -30391,8 +30817,8 @@ UpdateIamLdapPolicy Update a 'iam.LdapPolicy' resource.
 func (a *IamApiService) UpdateIamLdapPolicy(ctx _context.Context, moid string) ApiUpdateIamLdapPolicyRequest {
 	return ApiUpdateIamLdapPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -30507,13 +30933,13 @@ func (a *IamApiService) UpdateIamLdapPolicyExecute(r ApiUpdateIamLdapPolicyReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30530,11 +30956,11 @@ func (a *IamApiService) UpdateIamLdapPolicyExecute(r ApiUpdateIamLdapPolicyReque
 }
 
 type ApiUpdateIamLdapProviderRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *IamApiService
+	moid            string
 	iamLdapProvider *IamLdapProvider
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;iam.LdapProvider&#39; resource to update.
@@ -30542,6 +30968,7 @@ func (r ApiUpdateIamLdapProviderRequest) IamLdapProvider(iamLdapProvider IamLdap
 	r.iamLdapProvider = &iamLdapProvider
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamLdapProviderRequest) IfMatch(ifMatch string) ApiUpdateIamLdapProviderRequest {
 	r.ifMatch = &ifMatch
@@ -30562,8 +30989,8 @@ UpdateIamLdapProvider Update a 'iam.LdapProvider' resource.
 func (a *IamApiService) UpdateIamLdapProvider(ctx _context.Context, moid string) ApiUpdateIamLdapProviderRequest {
 	return ApiUpdateIamLdapProviderRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -30678,13 +31105,13 @@ func (a *IamApiService) UpdateIamLdapProviderExecute(r ApiUpdateIamLdapProviderR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30701,11 +31128,11 @@ func (a *IamApiService) UpdateIamLdapProviderExecute(r ApiUpdateIamLdapProviderR
 }
 
 type ApiUpdateIamLocalUserPasswordRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *IamApiService
+	moid                 string
 	iamLocalUserPassword *IamLocalUserPassword
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;iam.LocalUserPassword&#39; resource to update.
@@ -30713,6 +31140,7 @@ func (r ApiUpdateIamLocalUserPasswordRequest) IamLocalUserPassword(iamLocalUserP
 	r.iamLocalUserPassword = &iamLocalUserPassword
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamLocalUserPasswordRequest) IfMatch(ifMatch string) ApiUpdateIamLocalUserPasswordRequest {
 	r.ifMatch = &ifMatch
@@ -30733,8 +31161,8 @@ UpdateIamLocalUserPassword Update a 'iam.LocalUserPassword' resource.
 func (a *IamApiService) UpdateIamLocalUserPassword(ctx _context.Context, moid string) ApiUpdateIamLocalUserPasswordRequest {
 	return ApiUpdateIamLocalUserPasswordRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -30849,13 +31277,13 @@ func (a *IamApiService) UpdateIamLocalUserPasswordExecute(r ApiUpdateIamLocalUse
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30872,11 +31300,11 @@ func (a *IamApiService) UpdateIamLocalUserPasswordExecute(r ApiUpdateIamLocalUse
 }
 
 type ApiUpdateIamLocalUserPasswordPolicyRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *IamApiService
+	moid                       string
 	iamLocalUserPasswordPolicy *IamLocalUserPasswordPolicy
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;iam.LocalUserPasswordPolicy&#39; resource to update.
@@ -30884,6 +31312,7 @@ func (r ApiUpdateIamLocalUserPasswordPolicyRequest) IamLocalUserPasswordPolicy(i
 	r.iamLocalUserPasswordPolicy = &iamLocalUserPasswordPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamLocalUserPasswordPolicyRequest) IfMatch(ifMatch string) ApiUpdateIamLocalUserPasswordPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -30904,8 +31333,8 @@ UpdateIamLocalUserPasswordPolicy Update a 'iam.LocalUserPasswordPolicy' resource
 func (a *IamApiService) UpdateIamLocalUserPasswordPolicy(ctx _context.Context, moid string) ApiUpdateIamLocalUserPasswordPolicyRequest {
 	return ApiUpdateIamLocalUserPasswordPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -31020,13 +31449,13 @@ func (a *IamApiService) UpdateIamLocalUserPasswordPolicyExecute(r ApiUpdateIamLo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31043,11 +31472,11 @@ func (a *IamApiService) UpdateIamLocalUserPasswordPolicyExecute(r ApiUpdateIamLo
 }
 
 type ApiUpdateIamPermissionRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx           _context.Context
+	ApiService    *IamApiService
+	moid          string
 	iamPermission *IamPermission
-	ifMatch *string
+	ifMatch       *string
 }
 
 // The &#39;iam.Permission&#39; resource to update.
@@ -31055,6 +31484,7 @@ func (r ApiUpdateIamPermissionRequest) IamPermission(iamPermission IamPermission
 	r.iamPermission = &iamPermission
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamPermissionRequest) IfMatch(ifMatch string) ApiUpdateIamPermissionRequest {
 	r.ifMatch = &ifMatch
@@ -31075,8 +31505,8 @@ UpdateIamPermission Update a 'iam.Permission' resource.
 func (a *IamApiService) UpdateIamPermission(ctx _context.Context, moid string) ApiUpdateIamPermissionRequest {
 	return ApiUpdateIamPermissionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -31191,13 +31621,13 @@ func (a *IamApiService) UpdateIamPermissionExecute(r ApiUpdateIamPermissionReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31214,11 +31644,11 @@ func (a *IamApiService) UpdateIamPermissionExecute(r ApiUpdateIamPermissionReque
 }
 
 type ApiUpdateIamPrivateKeySpecRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *IamApiService
+	moid              string
 	iamPrivateKeySpec *IamPrivateKeySpec
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;iam.PrivateKeySpec&#39; resource to update.
@@ -31226,6 +31656,7 @@ func (r ApiUpdateIamPrivateKeySpecRequest) IamPrivateKeySpec(iamPrivateKeySpec I
 	r.iamPrivateKeySpec = &iamPrivateKeySpec
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamPrivateKeySpecRequest) IfMatch(ifMatch string) ApiUpdateIamPrivateKeySpecRequest {
 	r.ifMatch = &ifMatch
@@ -31246,8 +31677,8 @@ UpdateIamPrivateKeySpec Update a 'iam.PrivateKeySpec' resource.
 func (a *IamApiService) UpdateIamPrivateKeySpec(ctx _context.Context, moid string) ApiUpdateIamPrivateKeySpecRequest {
 	return ApiUpdateIamPrivateKeySpecRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -31362,13 +31793,13 @@ func (a *IamApiService) UpdateIamPrivateKeySpecExecute(r ApiUpdateIamPrivateKeyS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31385,11 +31816,11 @@ func (a *IamApiService) UpdateIamPrivateKeySpecExecute(r ApiUpdateIamPrivateKeyS
 }
 
 type ApiUpdateIamQualifierRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *IamApiService
+	moid         string
 	iamQualifier *IamQualifier
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;iam.Qualifier&#39; resource to update.
@@ -31397,6 +31828,7 @@ func (r ApiUpdateIamQualifierRequest) IamQualifier(iamQualifier IamQualifier) Ap
 	r.iamQualifier = &iamQualifier
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamQualifierRequest) IfMatch(ifMatch string) ApiUpdateIamQualifierRequest {
 	r.ifMatch = &ifMatch
@@ -31417,8 +31849,8 @@ UpdateIamQualifier Update a 'iam.Qualifier' resource.
 func (a *IamApiService) UpdateIamQualifier(ctx _context.Context, moid string) ApiUpdateIamQualifierRequest {
 	return ApiUpdateIamQualifierRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -31533,13 +31965,13 @@ func (a *IamApiService) UpdateIamQualifierExecute(r ApiUpdateIamQualifierRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31556,11 +31988,11 @@ func (a *IamApiService) UpdateIamQualifierExecute(r ApiUpdateIamQualifierRequest
 }
 
 type ApiUpdateIamResourceRolesRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *IamApiService
+	moid             string
 	iamResourceRoles *IamResourceRoles
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;iam.ResourceRoles&#39; resource to update.
@@ -31568,6 +32000,7 @@ func (r ApiUpdateIamResourceRolesRequest) IamResourceRoles(iamResourceRoles IamR
 	r.iamResourceRoles = &iamResourceRoles
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamResourceRolesRequest) IfMatch(ifMatch string) ApiUpdateIamResourceRolesRequest {
 	r.ifMatch = &ifMatch
@@ -31588,8 +32021,8 @@ UpdateIamResourceRoles Update a 'iam.ResourceRoles' resource.
 func (a *IamApiService) UpdateIamResourceRoles(ctx _context.Context, moid string) ApiUpdateIamResourceRolesRequest {
 	return ApiUpdateIamResourceRolesRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -31704,13 +32137,13 @@ func (a *IamApiService) UpdateIamResourceRolesExecute(r ApiUpdateIamResourceRole
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31727,11 +32160,11 @@ func (a *IamApiService) UpdateIamResourceRolesExecute(r ApiUpdateIamResourceRole
 }
 
 type ApiUpdateIamSessionLimitsRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *IamApiService
+	moid             string
 	iamSessionLimits *IamSessionLimits
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;iam.SessionLimits&#39; resource to update.
@@ -31739,6 +32172,7 @@ func (r ApiUpdateIamSessionLimitsRequest) IamSessionLimits(iamSessionLimits IamS
 	r.iamSessionLimits = &iamSessionLimits
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamSessionLimitsRequest) IfMatch(ifMatch string) ApiUpdateIamSessionLimitsRequest {
 	r.ifMatch = &ifMatch
@@ -31759,8 +32193,8 @@ UpdateIamSessionLimits Update a 'iam.SessionLimits' resource.
 func (a *IamApiService) UpdateIamSessionLimits(ctx _context.Context, moid string) ApiUpdateIamSessionLimitsRequest {
 	return ApiUpdateIamSessionLimitsRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -31875,13 +32309,13 @@ func (a *IamApiService) UpdateIamSessionLimitsExecute(r ApiUpdateIamSessionLimit
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31898,11 +32332,11 @@ func (a *IamApiService) UpdateIamSessionLimitsExecute(r ApiUpdateIamSessionLimit
 }
 
 type ApiUpdateIamUserRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *IamApiService
-	moid string
-	iamUser *IamUser
-	ifMatch *string
+	moid       string
+	iamUser    *IamUser
+	ifMatch    *string
 }
 
 // The &#39;iam.User&#39; resource to update.
@@ -31910,6 +32344,7 @@ func (r ApiUpdateIamUserRequest) IamUser(iamUser IamUser) ApiUpdateIamUserReques
 	r.iamUser = &iamUser
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamUserRequest) IfMatch(ifMatch string) ApiUpdateIamUserRequest {
 	r.ifMatch = &ifMatch
@@ -31930,8 +32365,8 @@ UpdateIamUser Update a 'iam.User' resource.
 func (a *IamApiService) UpdateIamUser(ctx _context.Context, moid string) ApiUpdateIamUserRequest {
 	return ApiUpdateIamUserRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -32046,13 +32481,13 @@ func (a *IamApiService) UpdateIamUserExecute(r ApiUpdateIamUserRequest) (IamUser
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -32069,11 +32504,11 @@ func (a *IamApiService) UpdateIamUserExecute(r ApiUpdateIamUserRequest) (IamUser
 }
 
 type ApiUpdateIamUserGroupRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *IamApiService
+	moid         string
 	iamUserGroup *IamUserGroup
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;iam.UserGroup&#39; resource to update.
@@ -32081,6 +32516,7 @@ func (r ApiUpdateIamUserGroupRequest) IamUserGroup(iamUserGroup IamUserGroup) Ap
 	r.iamUserGroup = &iamUserGroup
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamUserGroupRequest) IfMatch(ifMatch string) ApiUpdateIamUserGroupRequest {
 	r.ifMatch = &ifMatch
@@ -32101,8 +32537,8 @@ UpdateIamUserGroup Update a 'iam.UserGroup' resource.
 func (a *IamApiService) UpdateIamUserGroup(ctx _context.Context, moid string) ApiUpdateIamUserGroupRequest {
 	return ApiUpdateIamUserGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -32217,13 +32653,13 @@ func (a *IamApiService) UpdateIamUserGroupExecute(r ApiUpdateIamUserGroupRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -32240,11 +32676,11 @@ func (a *IamApiService) UpdateIamUserGroupExecute(r ApiUpdateIamUserGroupRequest
 }
 
 type ApiUpdateIamUserPreferenceRequest struct {
-	ctx _context.Context
-	ApiService *IamApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *IamApiService
+	moid              string
 	iamUserPreference *IamUserPreference
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;iam.UserPreference&#39; resource to update.
@@ -32252,6 +32688,7 @@ func (r ApiUpdateIamUserPreferenceRequest) IamUserPreference(iamUserPreference I
 	r.iamUserPreference = &iamUserPreference
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateIamUserPreferenceRequest) IfMatch(ifMatch string) ApiUpdateIamUserPreferenceRequest {
 	r.ifMatch = &ifMatch
@@ -32272,8 +32709,8 @@ UpdateIamUserPreference Update a 'iam.UserPreference' resource.
 func (a *IamApiService) UpdateIamUserPreference(ctx _context.Context, moid string) ApiUpdateIamUserPreferenceRequest {
 	return ApiUpdateIamUserPreferenceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -32388,13 +32825,13 @@ func (a *IamApiService) UpdateIamUserPreferenceExecute(r ApiUpdateIamUserPrefere
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

@@ -20,18 +20,18 @@ type HyperflexReplicationPlatDatastorePairAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Ads NullableHyperflexReplicationPlatDatastore `json:"Ads,omitempty"`
+	ObjectType string                                    `json:"ObjectType"`
+	Ads        NullableHyperflexReplicationPlatDatastore `json:"Ads,omitempty"`
 	// Boolean representing if this is a backup only pair.
-	BackupOnly *bool `json:"BackupOnly,omitempty"`
-	Bds NullableHyperflexReplicationPlatDatastore `json:"Bds,omitempty"`
+	BackupOnly *bool                                     `json:"BackupOnly,omitempty"`
+	Bds        NullableHyperflexReplicationPlatDatastore `json:"Bds,omitempty"`
 	// Boolean representing if this datastore pairing has quiesce snapshots enabled.
 	Quiesce *bool `json:"Quiesce,omitempty"`
 	// The replication interval for this pair in minutes.
-	ReplicationIntervalInMinutes *int64 `json:"ReplicationIntervalInMinutes,omitempty"`
-	Sourceds NullableHyperflexReplicationPlatDatastore `json:"Sourceds,omitempty"`
+	ReplicationIntervalInMinutes *int64                                    `json:"ReplicationIntervalInMinutes,omitempty"`
+	Sourceds                     NullableHyperflexReplicationPlatDatastore `json:"Sourceds,omitempty"`
 	// HyperFlex datastore pair is used for storage only.
-	StorageOnly *bool `json:"StorageOnly,omitempty"`
+	StorageOnly          *bool `json:"StorageOnly,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *HyperflexReplicationPlatDatastorePairAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexReplicationPlatDatastorePairAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *HyperflexReplicationPlatDatastorePairAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexReplicationPlatDatastorePairAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -121,7 +121,7 @@ func (o *HyperflexReplicationPlatDatastorePairAllOf) GetAds() HyperflexReplicati
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexReplicationPlatDatastorePairAllOf) GetAdsOk() (*HyperflexReplicationPlatDatastore, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Ads.Get(), o.Ads.IsSet()
@@ -140,6 +140,7 @@ func (o *HyperflexReplicationPlatDatastorePairAllOf) HasAds() bool {
 func (o *HyperflexReplicationPlatDatastorePairAllOf) SetAds(v HyperflexReplicationPlatDatastore) {
 	o.Ads.Set(&v)
 }
+
 // SetAdsNil sets the value for Ads to be an explicit nil
 func (o *HyperflexReplicationPlatDatastorePairAllOf) SetAdsNil() {
 	o.Ads.Set(nil)
@@ -195,7 +196,7 @@ func (o *HyperflexReplicationPlatDatastorePairAllOf) GetBds() HyperflexReplicati
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexReplicationPlatDatastorePairAllOf) GetBdsOk() (*HyperflexReplicationPlatDatastore, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Bds.Get(), o.Bds.IsSet()
@@ -214,6 +215,7 @@ func (o *HyperflexReplicationPlatDatastorePairAllOf) HasBds() bool {
 func (o *HyperflexReplicationPlatDatastorePairAllOf) SetBds(v HyperflexReplicationPlatDatastore) {
 	o.Bds.Set(&v)
 }
+
 // SetBdsNil sets the value for Bds to be an explicit nil
 func (o *HyperflexReplicationPlatDatastorePairAllOf) SetBdsNil() {
 	o.Bds.Set(nil)
@@ -301,7 +303,7 @@ func (o *HyperflexReplicationPlatDatastorePairAllOf) GetSourceds() HyperflexRepl
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexReplicationPlatDatastorePairAllOf) GetSourcedsOk() (*HyperflexReplicationPlatDatastore, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Sourceds.Get(), o.Sourceds.IsSet()
@@ -320,6 +322,7 @@ func (o *HyperflexReplicationPlatDatastorePairAllOf) HasSourceds() bool {
 func (o *HyperflexReplicationPlatDatastorePairAllOf) SetSourceds(v HyperflexReplicationPlatDatastore) {
 	o.Sourceds.Set(&v)
 }
+
 // SetSourcedsNil sets the value for Sourceds to be an explicit nil
 func (o *HyperflexReplicationPlatDatastorePairAllOf) SetSourcedsNil() {
 	o.Sourceds.Set(nil)
@@ -459,5 +462,3 @@ func (v *NullableHyperflexReplicationPlatDatastorePairAllOf) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

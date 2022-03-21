@@ -96,8 +96,8 @@ type NiatelemetryTenantAllOf struct {
 	// Number of Client Contract between End Point Groups per tenant.
 	VzRtConsCount *int64 `json:"VzRtConsCount,omitempty"`
 	// Number of Client Contract between End Point Groups per tenant.
-	VzRtProvCount *int64 `json:"VzRtProvCount,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	VzRtProvCount        *int64                               `json:"VzRtProvCount,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -139,7 +139,7 @@ func (o *NiatelemetryTenantAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryTenantAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -163,7 +163,7 @@ func (o *NiatelemetryTenantAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryTenantAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -1647,5 +1647,3 @@ func (v *NullableNiatelemetryTenantAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

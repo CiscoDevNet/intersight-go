@@ -19,19 +19,18 @@ import (
 // IamLdapPolicyRelationship - A relationship to the 'iam.LdapPolicy' resource, or the expanded 'iam.LdapPolicy' resource, or the 'null' value.
 type IamLdapPolicyRelationship struct {
 	IamLdapPolicy *IamLdapPolicy
-	MoMoRef *MoMoRef
+	MoMoRef       *MoMoRef
 }
 
 // IamLdapPolicyAsIamLdapPolicyRelationship is a convenience function that returns IamLdapPolicy wrapped in IamLdapPolicyRelationship
 func IamLdapPolicyAsIamLdapPolicyRelationship(v *IamLdapPolicy) IamLdapPolicyRelationship {
-	return IamLdapPolicyRelationship{ IamLdapPolicy: v}
+	return IamLdapPolicyRelationship{IamLdapPolicy: v}
 }
 
 // MoMoRefAsIamLdapPolicyRelationship is a convenience function that returns MoMoRef wrapped in IamLdapPolicyRelationship
 func MoMoRefAsIamLdapPolicyRelationship(v *MoMoRef) IamLdapPolicyRelationship {
-	return IamLdapPolicyRelationship{ MoMoRef: v}
+	return IamLdapPolicyRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamLdapPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamLdapPolicyRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamLdapPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *IamLdapPolicyRelationship) GetActualInstance() interface{} {
 	if obj.IamLdapPolicy != nil {
 		return obj.IamLdapPolicy
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamLdapPolicyRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

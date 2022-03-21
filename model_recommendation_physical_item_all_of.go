@@ -36,10 +36,10 @@ type RecommendationPhysicalItemAllOf struct {
 	// Unit of the new capacity. * `TB` - The Enum value TB represents that the measurement unit is in terabytes. * `MB` - The Enum value MB represents that the measurement unit is in megabytes.
 	Unit *string `json:"Unit,omitempty"`
 	// Uuid of the recommended physical device.
-	Uuid *string `json:"Uuid,omitempty"`
+	Uuid           *string                                   `json:"Uuid,omitempty"`
 	CapacityRunway *RecommendationCapacityRunwayRelationship `json:"CapacityRunway,omitempty"`
 	// An array of relationships to recommendationPhysicalItem resources.
-	PhysicalItem []RecommendationPhysicalItemRelationship `json:"PhysicalItem,omitempty"`
+	PhysicalItem         []RecommendationPhysicalItemRelationship `json:"PhysicalItem,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *RecommendationPhysicalItemAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *RecommendationPhysicalItemAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *RecommendationPhysicalItemAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *RecommendationPhysicalItemAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -406,7 +406,7 @@ func (o *RecommendationPhysicalItemAllOf) SetCapacityRunway(v RecommendationCapa
 
 // GetPhysicalItem returns the PhysicalItem field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RecommendationPhysicalItemAllOf) GetPhysicalItem() []RecommendationPhysicalItemRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []RecommendationPhysicalItemRelationship
 		return ret
 	}
@@ -546,5 +546,3 @@ func (v *NullableRecommendationPhysicalItemAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

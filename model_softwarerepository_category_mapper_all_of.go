@@ -32,13 +32,13 @@ type SoftwarerepositoryCategoryMapperAllOf struct {
 	// The regex that all images of this category follow.
 	RegexPattern *string `json:"RegexPattern,omitempty"`
 	// The image can be downloaded from cisco.com or external cloud store. * `Cisco` - External repository hosted on cisco.com. * `IntersightCloud` - Repository hosted by the Intersight Cloud. * `LocalMachine` - The file is available on the local client machine. Used as an upload source type. * `NetworkShare` - External repository in the customer datacenter. This will typically be a file server.
-	Source *string `json:"Source,omitempty"`
+	Source          *string  `json:"Source,omitempty"`
 	SupportedModels []string `json:"SupportedModels,omitempty"`
 	// The software type id provided by cisco.com.
-	SwId *string `json:"SwId,omitempty"`
+	SwId     *string  `json:"SwId,omitempty"`
 	TagTypes []string `json:"TagTypes,omitempty"`
 	// The version from which user can download images from amazon store, if source is external cloud store.
-	Version *string `json:"Version,omitempty"`
+	Version              *string `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -88,7 +88,7 @@ func (o *SoftwarerepositoryCategoryMapperAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryCategoryMapperAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *SoftwarerepositoryCategoryMapperAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryCategoryMapperAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -317,7 +317,7 @@ func (o *SoftwarerepositoryCategoryMapperAllOf) SetSource(v string) {
 
 // GetSupportedModels returns the SupportedModels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SoftwarerepositoryCategoryMapperAllOf) GetSupportedModels() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -382,7 +382,7 @@ func (o *SoftwarerepositoryCategoryMapperAllOf) SetSwId(v string) {
 
 // GetTagTypes returns the TagTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SoftwarerepositoryCategoryMapperAllOf) GetTagTypes() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -554,5 +554,3 @@ func (v *NullableSoftwarerepositoryCategoryMapperAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

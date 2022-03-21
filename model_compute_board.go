@@ -29,24 +29,24 @@ type ComputeBoard struct {
 	// The type of central processing unit on the mother board.
 	CpuTypeController *string `json:"CpuTypeController,omitempty"`
 	// Current power state of the mother board of the server.
-	OperPowerState *string `json:"OperPowerState,omitempty"`
-	OperReason []string `json:"OperReason,omitempty"`
-	ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
+	OperPowerState  *string                      `json:"OperPowerState,omitempty"`
+	OperReason      []string                     `json:"OperReason,omitempty"`
+	ComputeBlade    *ComputeBladeRelationship    `json:"ComputeBlade,omitempty"`
 	ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
 	// An array of relationships to equipmentTpm resources.
 	EquipmentTpms []EquipmentTpmRelationship `json:"EquipmentTpms,omitempty"`
 	// An array of relationships to graphicsCard resources.
-	GraphicsCards []GraphicsCardRelationship `json:"GraphicsCards,omitempty"`
+	GraphicsCards       []GraphicsCardRelationship       `json:"GraphicsCards,omitempty"`
 	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
 	// An array of relationships to memoryArray resources.
 	MemoryArrays []MemoryArrayRelationship `json:"MemoryArrays,omitempty"`
 	// An array of relationships to pciCoprocessorCard resources.
 	PciCoprocessorCards []PciCoprocessorCardRelationship `json:"PciCoprocessorCards,omitempty"`
 	// An array of relationships to pciSwitch resources.
-	PciSwitch []PciSwitchRelationship `json:"PciSwitch,omitempty"`
+	PciSwitch                     []PciSwitchRelationship                          `json:"PciSwitch,omitempty"`
 	PersistentMemoryConfiguration *MemoryPersistentMemoryConfigurationRelationship `json:"PersistentMemoryConfiguration,omitempty"`
 	// An array of relationships to processorUnit resources.
-	Processors []ProcessorUnitRelationship `json:"Processors,omitempty"`
+	Processors       []ProcessorUnitRelationship          `json:"Processors,omitempty"`
 	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to securityUnit resources.
 	SecurityUnits []SecurityUnitRelationship `json:"SecurityUnits,omitempty"`
@@ -56,7 +56,7 @@ type ComputeBoard struct {
 	StorageFlexFlashControllers []StorageFlexFlashControllerRelationship `json:"StorageFlexFlashControllers,omitempty"`
 	// An array of relationships to storageFlexUtilController resources.
 	StorageFlexUtilControllers []StorageFlexUtilControllerRelationship `json:"StorageFlexUtilControllers,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties       map[string]interface{}
 }
 
 type _ComputeBoard ComputeBoard
@@ -97,7 +97,7 @@ func (o *ComputeBoard) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ComputeBoard) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -121,7 +121,7 @@ func (o *ComputeBoard) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ComputeBoard) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -230,7 +230,7 @@ func (o *ComputeBoard) SetOperPowerState(v string) {
 
 // GetOperReason returns the OperReason field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBoard) GetOperReason() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -327,7 +327,7 @@ func (o *ComputeBoard) SetComputeRackUnit(v ComputeRackUnitRelationship) {
 
 // GetEquipmentTpms returns the EquipmentTpms field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBoard) GetEquipmentTpms() []EquipmentTpmRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentTpmRelationship
 		return ret
 	}
@@ -360,7 +360,7 @@ func (o *ComputeBoard) SetEquipmentTpms(v []EquipmentTpmRelationship) {
 
 // GetGraphicsCards returns the GraphicsCards field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBoard) GetGraphicsCards() []GraphicsCardRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []GraphicsCardRelationship
 		return ret
 	}
@@ -425,7 +425,7 @@ func (o *ComputeBoard) SetInventoryDeviceInfo(v InventoryDeviceInfoRelationship)
 
 // GetMemoryArrays returns the MemoryArrays field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBoard) GetMemoryArrays() []MemoryArrayRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []MemoryArrayRelationship
 		return ret
 	}
@@ -458,7 +458,7 @@ func (o *ComputeBoard) SetMemoryArrays(v []MemoryArrayRelationship) {
 
 // GetPciCoprocessorCards returns the PciCoprocessorCards field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBoard) GetPciCoprocessorCards() []PciCoprocessorCardRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PciCoprocessorCardRelationship
 		return ret
 	}
@@ -491,7 +491,7 @@ func (o *ComputeBoard) SetPciCoprocessorCards(v []PciCoprocessorCardRelationship
 
 // GetPciSwitch returns the PciSwitch field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBoard) GetPciSwitch() []PciSwitchRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PciSwitchRelationship
 		return ret
 	}
@@ -556,7 +556,7 @@ func (o *ComputeBoard) SetPersistentMemoryConfiguration(v MemoryPersistentMemory
 
 // GetProcessors returns the Processors field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBoard) GetProcessors() []ProcessorUnitRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ProcessorUnitRelationship
 		return ret
 	}
@@ -621,7 +621,7 @@ func (o *ComputeBoard) SetRegisteredDevice(v AssetDeviceRegistrationRelationship
 
 // GetSecurityUnits returns the SecurityUnits field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBoard) GetSecurityUnits() []SecurityUnitRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []SecurityUnitRelationship
 		return ret
 	}
@@ -654,7 +654,7 @@ func (o *ComputeBoard) SetSecurityUnits(v []SecurityUnitRelationship) {
 
 // GetStorageControllers returns the StorageControllers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBoard) GetStorageControllers() []StorageControllerRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageControllerRelationship
 		return ret
 	}
@@ -687,7 +687,7 @@ func (o *ComputeBoard) SetStorageControllers(v []StorageControllerRelationship) 
 
 // GetStorageFlexFlashControllers returns the StorageFlexFlashControllers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBoard) GetStorageFlexFlashControllers() []StorageFlexFlashControllerRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageFlexFlashControllerRelationship
 		return ret
 	}
@@ -720,7 +720,7 @@ func (o *ComputeBoard) SetStorageFlexFlashControllers(v []StorageFlexFlashContro
 
 // GetStorageFlexUtilControllers returns the StorageFlexUtilControllers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBoard) GetStorageFlexUtilControllers() []StorageFlexUtilControllerRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageFlexUtilControllerRelationship
 		return ret
 	}
@@ -843,24 +843,24 @@ func (o *ComputeBoard) UnmarshalJSON(bytes []byte) (err error) {
 		// The type of central processing unit on the mother board.
 		CpuTypeController *string `json:"CpuTypeController,omitempty"`
 		// Current power state of the mother board of the server.
-		OperPowerState *string `json:"OperPowerState,omitempty"`
-		OperReason []string `json:"OperReason,omitempty"`
-		ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
+		OperPowerState  *string                      `json:"OperPowerState,omitempty"`
+		OperReason      []string                     `json:"OperReason,omitempty"`
+		ComputeBlade    *ComputeBladeRelationship    `json:"ComputeBlade,omitempty"`
 		ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
 		// An array of relationships to equipmentTpm resources.
 		EquipmentTpms []EquipmentTpmRelationship `json:"EquipmentTpms,omitempty"`
 		// An array of relationships to graphicsCard resources.
-		GraphicsCards []GraphicsCardRelationship `json:"GraphicsCards,omitempty"`
+		GraphicsCards       []GraphicsCardRelationship       `json:"GraphicsCards,omitempty"`
 		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
 		// An array of relationships to memoryArray resources.
 		MemoryArrays []MemoryArrayRelationship `json:"MemoryArrays,omitempty"`
 		// An array of relationships to pciCoprocessorCard resources.
 		PciCoprocessorCards []PciCoprocessorCardRelationship `json:"PciCoprocessorCards,omitempty"`
 		// An array of relationships to pciSwitch resources.
-		PciSwitch []PciSwitchRelationship `json:"PciSwitch,omitempty"`
+		PciSwitch                     []PciSwitchRelationship                          `json:"PciSwitch,omitempty"`
 		PersistentMemoryConfiguration *MemoryPersistentMemoryConfigurationRelationship `json:"PersistentMemoryConfiguration,omitempty"`
 		// An array of relationships to processorUnit resources.
-		Processors []ProcessorUnitRelationship `json:"Processors,omitempty"`
+		Processors       []ProcessorUnitRelationship          `json:"Processors,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 		// An array of relationships to securityUnit resources.
 		SecurityUnits []SecurityUnitRelationship `json:"SecurityUnits,omitempty"`
@@ -996,5 +996,3 @@ func (v *NullableComputeBoard) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

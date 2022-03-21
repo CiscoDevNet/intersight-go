@@ -27,7 +27,7 @@ type NiaapiFileDownloader struct {
 	// Filename of this Metadata package file, folder will be handled by api.
 	FileName *string `json:"FileName,omitempty"`
 	// The presigned URL from server to download this file.
-	PresignedUrl *string `json:"PresignedUrl,omitempty"`
+	PresignedUrl         *string `json:"PresignedUrl,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *NiaapiFileDownloader) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiFileDownloader) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *NiaapiFileDownloader) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiFileDownloader) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -300,5 +300,3 @@ func (v *NullableNiaapiFileDownloader) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

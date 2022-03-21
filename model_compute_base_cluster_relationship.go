@@ -19,19 +19,18 @@ import (
 // ComputeBaseClusterRelationship - A relationship to the 'compute.BaseCluster' resource, or the expanded 'compute.BaseCluster' resource, or the 'null' value.
 type ComputeBaseClusterRelationship struct {
 	ComputeBaseCluster *ComputeBaseCluster
-	MoMoRef *MoMoRef
+	MoMoRef            *MoMoRef
 }
 
 // ComputeBaseClusterAsComputeBaseClusterRelationship is a convenience function that returns ComputeBaseCluster wrapped in ComputeBaseClusterRelationship
 func ComputeBaseClusterAsComputeBaseClusterRelationship(v *ComputeBaseCluster) ComputeBaseClusterRelationship {
-	return ComputeBaseClusterRelationship{ ComputeBaseCluster: v}
+	return ComputeBaseClusterRelationship{ComputeBaseCluster: v}
 }
 
 // MoMoRefAsComputeBaseClusterRelationship is a convenience function that returns MoMoRef wrapped in ComputeBaseClusterRelationship
 func MoMoRefAsComputeBaseClusterRelationship(v *MoMoRef) ComputeBaseClusterRelationship {
-	return ComputeBaseClusterRelationship{ MoMoRef: v}
+	return ComputeBaseClusterRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ComputeBaseClusterRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ComputeBaseClusterRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ComputeBaseClusterRelationship) GetActualInstance() (interface{}) {
+func (obj *ComputeBaseClusterRelationship) GetActualInstance() interface{} {
 	if obj.ComputeBaseCluster != nil {
 		return obj.ComputeBaseCluster
 	}
@@ -137,5 +136,3 @@ func (v *NullableComputeBaseClusterRelationship) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

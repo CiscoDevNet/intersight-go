@@ -19,19 +19,18 @@ import (
 // BootIscsiDeviceRelationship - A relationship to the 'boot.IscsiDevice' resource, or the expanded 'boot.IscsiDevice' resource, or the 'null' value.
 type BootIscsiDeviceRelationship struct {
 	BootIscsiDevice *BootIscsiDevice
-	MoMoRef *MoMoRef
+	MoMoRef         *MoMoRef
 }
 
 // BootIscsiDeviceAsBootIscsiDeviceRelationship is a convenience function that returns BootIscsiDevice wrapped in BootIscsiDeviceRelationship
 func BootIscsiDeviceAsBootIscsiDeviceRelationship(v *BootIscsiDevice) BootIscsiDeviceRelationship {
-	return BootIscsiDeviceRelationship{ BootIscsiDevice: v}
+	return BootIscsiDeviceRelationship{BootIscsiDevice: v}
 }
 
 // MoMoRefAsBootIscsiDeviceRelationship is a convenience function that returns MoMoRef wrapped in BootIscsiDeviceRelationship
 func MoMoRefAsBootIscsiDeviceRelationship(v *MoMoRef) BootIscsiDeviceRelationship {
-	return BootIscsiDeviceRelationship{ MoMoRef: v}
+	return BootIscsiDeviceRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BootIscsiDeviceRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BootIscsiDeviceRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BootIscsiDeviceRelationship) GetActualInstance() (interface{}) {
+func (obj *BootIscsiDeviceRelationship) GetActualInstance() interface{} {
 	if obj.BootIscsiDevice != nil {
 		return obj.BootIscsiDevice
 	}
@@ -137,5 +136,3 @@ func (v *NullableBootIscsiDeviceRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

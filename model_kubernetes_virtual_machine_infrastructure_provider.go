@@ -23,11 +23,11 @@ type KubernetesVirtualMachineInfrastructureProvider struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	InfraConfig NullableKubernetesBaseVirtualMachineInfraConfig `json:"InfraConfig,omitempty"`
-	InfraConfigPolicy *KubernetesVirtualMachineInfraConfigPolicyRelationship `json:"InfraConfigPolicy,omitempty"`
-	InstanceType *KubernetesVirtualMachineInstanceTypeRelationship `json:"InstanceType,omitempty"`
-	Target *AssetDeviceRegistrationRelationship `json:"Target,omitempty"`
+	ObjectType           string                                                 `json:"ObjectType"`
+	InfraConfig          NullableKubernetesBaseVirtualMachineInfraConfig        `json:"InfraConfig,omitempty"`
+	InfraConfigPolicy    *KubernetesVirtualMachineInfraConfigPolicyRelationship `json:"InfraConfigPolicy,omitempty"`
+	InstanceType         *KubernetesVirtualMachineInstanceTypeRelationship      `json:"InstanceType,omitempty"`
+	Target               *AssetDeviceRegistrationRelationship                   `json:"Target,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *KubernetesVirtualMachineInfrastructureProvider) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesVirtualMachineInfrastructureProvider) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *KubernetesVirtualMachineInfrastructureProvider) GetObjectType() string 
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesVirtualMachineInfrastructureProvider) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -117,7 +117,7 @@ func (o *KubernetesVirtualMachineInfrastructureProvider) GetInfraConfig() Kubern
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KubernetesVirtualMachineInfrastructureProvider) GetInfraConfigOk() (*KubernetesBaseVirtualMachineInfraConfig, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.InfraConfig.Get(), o.InfraConfig.IsSet()
@@ -136,6 +136,7 @@ func (o *KubernetesVirtualMachineInfrastructureProvider) HasInfraConfig() bool {
 func (o *KubernetesVirtualMachineInfrastructureProvider) SetInfraConfig(v KubernetesBaseVirtualMachineInfraConfig) {
 	o.InfraConfig.Set(&v)
 }
+
 // SetInfraConfigNil sets the value for InfraConfig to be an explicit nil
 func (o *KubernetesVirtualMachineInfrastructureProvider) SetInfraConfigNil() {
 	o.InfraConfig.Set(nil)
@@ -283,11 +284,11 @@ func (o *KubernetesVirtualMachineInfrastructureProvider) UnmarshalJSON(bytes []b
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		InfraConfig NullableKubernetesBaseVirtualMachineInfraConfig `json:"InfraConfig,omitempty"`
+		ObjectType        string                                                 `json:"ObjectType"`
+		InfraConfig       NullableKubernetesBaseVirtualMachineInfraConfig        `json:"InfraConfig,omitempty"`
 		InfraConfigPolicy *KubernetesVirtualMachineInfraConfigPolicyRelationship `json:"InfraConfigPolicy,omitempty"`
-		InstanceType *KubernetesVirtualMachineInstanceTypeRelationship `json:"InstanceType,omitempty"`
-		Target *AssetDeviceRegistrationRelationship `json:"Target,omitempty"`
+		InstanceType      *KubernetesVirtualMachineInstanceTypeRelationship      `json:"InstanceType,omitempty"`
+		Target            *AssetDeviceRegistrationRelationship                   `json:"Target,omitempty"`
 	}
 
 	varKubernetesVirtualMachineInfrastructureProviderWithoutEmbeddedStruct := KubernetesVirtualMachineInfrastructureProviderWithoutEmbeddedStruct{}
@@ -384,5 +385,3 @@ func (v *NullableKubernetesVirtualMachineInfrastructureProvider) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

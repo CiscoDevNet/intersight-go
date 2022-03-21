@@ -28,7 +28,7 @@ type AssetWorkloadOptimizerMicrosoftAzureApplicationInsightsOptionsAllOf struct 
 	// The Azure Subscription ID.
 	SubscriptionId *string `json:"SubscriptionId,omitempty"`
 	// Tenant ID associated with Azure Account.
-	TenantId *string `json:"TenantId,omitempty"`
+	TenantId             *string `json:"TenantId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *AssetWorkloadOptimizerMicrosoftAzureApplicationInsightsOptionsAllOf) Ge
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetWorkloadOptimizerMicrosoftAzureApplicationInsightsOptionsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *AssetWorkloadOptimizerMicrosoftAzureApplicationInsightsOptionsAllOf) Ge
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetWorkloadOptimizerMicrosoftAzureApplicationInsightsOptionsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -318,5 +318,3 @@ func (v *NullableAssetWorkloadOptimizerMicrosoftAzureApplicationInsightsOptionsA
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

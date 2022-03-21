@@ -19,19 +19,18 @@ import (
 // CloudAwsSecurityGroupRelationship - A relationship to the 'cloud.AwsSecurityGroup' resource, or the expanded 'cloud.AwsSecurityGroup' resource, or the 'null' value.
 type CloudAwsSecurityGroupRelationship struct {
 	CloudAwsSecurityGroup *CloudAwsSecurityGroup
-	MoMoRef *MoMoRef
+	MoMoRef               *MoMoRef
 }
 
 // CloudAwsSecurityGroupAsCloudAwsSecurityGroupRelationship is a convenience function that returns CloudAwsSecurityGroup wrapped in CloudAwsSecurityGroupRelationship
 func CloudAwsSecurityGroupAsCloudAwsSecurityGroupRelationship(v *CloudAwsSecurityGroup) CloudAwsSecurityGroupRelationship {
-	return CloudAwsSecurityGroupRelationship{ CloudAwsSecurityGroup: v}
+	return CloudAwsSecurityGroupRelationship{CloudAwsSecurityGroup: v}
 }
 
 // MoMoRefAsCloudAwsSecurityGroupRelationship is a convenience function that returns MoMoRef wrapped in CloudAwsSecurityGroupRelationship
 func MoMoRefAsCloudAwsSecurityGroupRelationship(v *MoMoRef) CloudAwsSecurityGroupRelationship {
-	return CloudAwsSecurityGroupRelationship{ MoMoRef: v}
+	return CloudAwsSecurityGroupRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CloudAwsSecurityGroupRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src CloudAwsSecurityGroupRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CloudAwsSecurityGroupRelationship) GetActualInstance() (interface{}) {
+func (obj *CloudAwsSecurityGroupRelationship) GetActualInstance() interface{} {
 	if obj.CloudAwsSecurityGroup != nil {
 		return obj.CloudAwsSecurityGroup
 	}
@@ -137,5 +136,3 @@ func (v *NullableCloudAwsSecurityGroupRelationship) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -31,8 +31,8 @@ type SoftwarerepositoryLocalMachine struct {
 	// When the import action in file MO is updated with 'GeneratePreSignedUploadUrl', Intersight shall return a upload Id in this property as part of the PATCH response.
 	UploadId *string `json:"UploadId,omitempty"`
 	// When a file MO is created with 'LocalMachine' as the source, Intersight returns a pre-signed URL in this property as part of the POST response. The user is expected to subsequently upload the file content using this URL. Once the upload is completed, the user is expected to patch the uploader object's transfer state to success.
-	UploadUrl *string `json:"UploadUrl,omitempty"`
-	UploadUrls []string `json:"UploadUrls,omitempty"`
+	UploadUrl            *string  `json:"UploadUrl,omitempty"`
+	UploadUrls           []string `json:"UploadUrls,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *SoftwarerepositoryLocalMachine) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryLocalMachine) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *SoftwarerepositoryLocalMachine) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryLocalMachine) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -239,7 +239,7 @@ func (o *SoftwarerepositoryLocalMachine) SetUploadUrl(v string) {
 
 // GetUploadUrls returns the UploadUrls field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SoftwarerepositoryLocalMachine) GetUploadUrls() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *SoftwarerepositoryLocalMachine) UnmarshalJSON(bytes []byte) (err error)
 		// When the import action in file MO is updated with 'GeneratePreSignedUploadUrl', Intersight shall return a upload Id in this property as part of the PATCH response.
 		UploadId *string `json:"UploadId,omitempty"`
 		// When a file MO is created with 'LocalMachine' as the source, Intersight returns a pre-signed URL in this property as part of the POST response. The user is expected to subsequently upload the file content using this URL. Once the upload is completed, the user is expected to patch the uploader object's transfer state to success.
-		UploadUrl *string `json:"UploadUrl,omitempty"`
+		UploadUrl  *string  `json:"UploadUrl,omitempty"`
 		UploadUrls []string `json:"UploadUrls,omitempty"`
 	}
 
@@ -422,5 +422,3 @@ func (v *NullableSoftwarerepositoryLocalMachine) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

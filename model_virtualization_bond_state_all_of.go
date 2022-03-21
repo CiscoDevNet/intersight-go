@@ -24,8 +24,8 @@ type VirtualizationBondStateAllOf struct {
 	// The current active slave. For active-active mode, this field is empty.
 	ActiveSlave *string `json:"ActiveSlave,omitempty"`
 	// Bond mode, such as \"active-backup\", \"balance-slb\", \"balance-tcp\".
-	Mode *string `json:"Mode,omitempty"`
-	Slaves []string `json:"Slaves,omitempty"`
+	Mode                 *string  `json:"Mode,omitempty"`
+	Slaves               []string `json:"Slaves,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *VirtualizationBondStateAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBondStateAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *VirtualizationBondStateAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBondStateAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -168,7 +168,7 @@ func (o *VirtualizationBondStateAllOf) SetMode(v string) {
 
 // GetSlaves returns the Slaves field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationBondStateAllOf) GetSlaves() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -280,5 +280,3 @@ func (v *NullableVirtualizationBondStateAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

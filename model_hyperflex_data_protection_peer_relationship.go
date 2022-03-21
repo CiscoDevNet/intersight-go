@@ -19,19 +19,18 @@ import (
 // HyperflexDataProtectionPeerRelationship - A relationship to the 'hyperflex.DataProtectionPeer' resource, or the expanded 'hyperflex.DataProtectionPeer' resource, or the 'null' value.
 type HyperflexDataProtectionPeerRelationship struct {
 	HyperflexDataProtectionPeer *HyperflexDataProtectionPeer
-	MoMoRef *MoMoRef
+	MoMoRef                     *MoMoRef
 }
 
 // HyperflexDataProtectionPeerAsHyperflexDataProtectionPeerRelationship is a convenience function that returns HyperflexDataProtectionPeer wrapped in HyperflexDataProtectionPeerRelationship
 func HyperflexDataProtectionPeerAsHyperflexDataProtectionPeerRelationship(v *HyperflexDataProtectionPeer) HyperflexDataProtectionPeerRelationship {
-	return HyperflexDataProtectionPeerRelationship{ HyperflexDataProtectionPeer: v}
+	return HyperflexDataProtectionPeerRelationship{HyperflexDataProtectionPeer: v}
 }
 
 // MoMoRefAsHyperflexDataProtectionPeerRelationship is a convenience function that returns MoMoRef wrapped in HyperflexDataProtectionPeerRelationship
 func MoMoRefAsHyperflexDataProtectionPeerRelationship(v *MoMoRef) HyperflexDataProtectionPeerRelationship {
-	return HyperflexDataProtectionPeerRelationship{ MoMoRef: v}
+	return HyperflexDataProtectionPeerRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexDataProtectionPeerRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexDataProtectionPeerRelationship) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *HyperflexDataProtectionPeerRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexDataProtectionPeerRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexDataProtectionPeer != nil {
 		return obj.HyperflexDataProtectionPeer
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexDataProtectionPeerRelationship) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

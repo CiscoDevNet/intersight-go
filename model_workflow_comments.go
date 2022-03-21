@@ -25,8 +25,8 @@ type WorkflowComments struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Description field provides comment about the template function.
-	Description *string `json:"Description,omitempty"`
-	Examples []string `json:"Examples,omitempty"`
+	Description          *string  `json:"Description,omitempty"`
+	Examples             []string `json:"Examples,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *WorkflowComments) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowComments) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *WorkflowComments) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowComments) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -137,7 +137,7 @@ func (o *WorkflowComments) SetDescription(v string) {
 
 // GetExamples returns the Examples field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowComments) GetExamples() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -205,8 +205,8 @@ func (o *WorkflowComments) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Description field provides comment about the template function.
-		Description *string `json:"Description,omitempty"`
-		Examples []string `json:"Examples,omitempty"`
+		Description *string  `json:"Description,omitempty"`
+		Examples    []string `json:"Examples,omitempty"`
 	}
 
 	varWorkflowCommentsWithoutEmbeddedStruct := WorkflowCommentsWithoutEmbeddedStruct{}
@@ -299,5 +299,3 @@ func (v *NullableWorkflowComments) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

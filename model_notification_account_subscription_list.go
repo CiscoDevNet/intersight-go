@@ -23,7 +23,7 @@ type NotificationAccountSubscriptionList struct {
 	// The total number of 'notification.AccountSubscription' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'notification.AccountSubscription' resources matching the request.
-	Results []NotificationAccountSubscription `json:"Results,omitempty"`
+	Results              []NotificationAccountSubscription `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *NotificationAccountSubscriptionList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NotificationAccountSubscriptionList) GetResults() []NotificationAccountSubscription {
-	if o == nil  {
+	if o == nil {
 		var ret []NotificationAccountSubscription
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableNotificationAccountSubscriptionList) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

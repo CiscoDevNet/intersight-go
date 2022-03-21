@@ -20,7 +20,7 @@ type IqnpoolBlockListAllOf struct {
 	// The total number of 'iqnpool.Block' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'iqnpool.Block' resources matching the request.
-	Results []IqnpoolBlock `json:"Results,omitempty"`
+	Results              []IqnpoolBlock `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *IqnpoolBlockListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IqnpoolBlockListAllOf) GetResults() []IqnpoolBlock {
-	if o == nil  {
+	if o == nil {
 		var ret []IqnpoolBlock
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableIqnpoolBlockListAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

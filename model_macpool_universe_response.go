@@ -18,32 +18,31 @@ import (
 
 // MacpoolUniverseResponse - The response body of a HTTP GET request for the 'macpool.Universe' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'macpool.Universe' resources.
 type MacpoolUniverseResponse struct {
-	MacpoolUniverseList *MacpoolUniverseList
+	MacpoolUniverseList  *MacpoolUniverseList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // MacpoolUniverseListAsMacpoolUniverseResponse is a convenience function that returns MacpoolUniverseList wrapped in MacpoolUniverseResponse
 func MacpoolUniverseListAsMacpoolUniverseResponse(v *MacpoolUniverseList) MacpoolUniverseResponse {
-	return MacpoolUniverseResponse{ MacpoolUniverseList: v}
+	return MacpoolUniverseResponse{MacpoolUniverseList: v}
 }
 
 // MoAggregateTransformAsMacpoolUniverseResponse is a convenience function that returns MoAggregateTransform wrapped in MacpoolUniverseResponse
 func MoAggregateTransformAsMacpoolUniverseResponse(v *MoAggregateTransform) MacpoolUniverseResponse {
-	return MacpoolUniverseResponse{ MoAggregateTransform: v}
+	return MacpoolUniverseResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsMacpoolUniverseResponse is a convenience function that returns MoDocumentCount wrapped in MacpoolUniverseResponse
 func MoDocumentCountAsMacpoolUniverseResponse(v *MoDocumentCount) MacpoolUniverseResponse {
-	return MacpoolUniverseResponse{ MoDocumentCount: v}
+	return MacpoolUniverseResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsMacpoolUniverseResponse is a convenience function that returns MoTagSummary wrapped in MacpoolUniverseResponse
 func MoTagSummaryAsMacpoolUniverseResponse(v *MoTagSummary) MacpoolUniverseResponse {
-	return MacpoolUniverseResponse{ MoTagSummary: v}
+	return MacpoolUniverseResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MacpoolUniverseResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src MacpoolUniverseResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *MacpoolUniverseResponse) GetActualInstance() (interface{}) {
+func (obj *MacpoolUniverseResponse) GetActualInstance() interface{} {
 	if obj.MacpoolUniverseList != nil {
 		return obj.MacpoolUniverseList
 	}
@@ -184,5 +183,3 @@ func (v *NullableMacpoolUniverseResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

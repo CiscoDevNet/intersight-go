@@ -24,17 +24,17 @@ type CloudAwsVpcAllOf struct {
 	// If true, instances in the vpc get public DNS hostnames.
 	DnsHostName *bool `json:"DnsHostName,omitempty"`
 	// Indicates whether the Dns resolution is supported.
-	DnsResolution *bool `json:"DnsResolution,omitempty"`
-	Ipv4Cidr []string `json:"Ipv4Cidr,omitempty"`
-	Ipv6Cidr []string `json:"Ipv6Cidr,omitempty"`
+	DnsResolution *bool    `json:"DnsResolution,omitempty"`
+	Ipv4Cidr      []string `json:"Ipv4Cidr,omitempty"`
+	Ipv6Cidr      []string `json:"Ipv6Cidr,omitempty"`
 	// If true, indicates that this is default VPC.
 	IsDefault *bool `json:"IsDefault,omitempty"`
 	// The state of the VPC (pending | available).
 	State *string `json:"State,omitempty"`
 	// The allowed tenancy of instances launched into the VPC.
-	Tenancy *string `json:"Tenancy,omitempty"`
-	VpcTags []CloudCloudTag `json:"VpcTags,omitempty"`
-	AwsBillingUnit *CloudAwsBillingUnitRelationship `json:"AwsBillingUnit,omitempty"`
+	Tenancy              *string                          `json:"Tenancy,omitempty"`
+	VpcTags              []CloudCloudTag                  `json:"VpcTags,omitempty"`
+	AwsBillingUnit       *CloudAwsBillingUnitRelationship `json:"AwsBillingUnit,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *CloudAwsVpcAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudAwsVpcAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *CloudAwsVpcAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudAwsVpcAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -177,7 +177,7 @@ func (o *CloudAwsVpcAllOf) SetDnsResolution(v bool) {
 
 // GetIpv4Cidr returns the Ipv4Cidr field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudAwsVpcAllOf) GetIpv4Cidr() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *CloudAwsVpcAllOf) SetIpv4Cidr(v []string) {
 
 // GetIpv6Cidr returns the Ipv6Cidr field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudAwsVpcAllOf) GetIpv6Cidr() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -339,7 +339,7 @@ func (o *CloudAwsVpcAllOf) SetTenancy(v string) {
 
 // GetVpcTags returns the VpcTags field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudAwsVpcAllOf) GetVpcTags() []CloudCloudTag {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudCloudTag
 		return ret
 	}
@@ -507,5 +507,3 @@ func (v *NullableCloudAwsVpcAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

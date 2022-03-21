@@ -20,30 +20,29 @@ import (
 type ForecastInstanceResponse struct {
 	ForecastInstanceList *ForecastInstanceList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // ForecastInstanceListAsForecastInstanceResponse is a convenience function that returns ForecastInstanceList wrapped in ForecastInstanceResponse
 func ForecastInstanceListAsForecastInstanceResponse(v *ForecastInstanceList) ForecastInstanceResponse {
-	return ForecastInstanceResponse{ ForecastInstanceList: v}
+	return ForecastInstanceResponse{ForecastInstanceList: v}
 }
 
 // MoAggregateTransformAsForecastInstanceResponse is a convenience function that returns MoAggregateTransform wrapped in ForecastInstanceResponse
 func MoAggregateTransformAsForecastInstanceResponse(v *MoAggregateTransform) ForecastInstanceResponse {
-	return ForecastInstanceResponse{ MoAggregateTransform: v}
+	return ForecastInstanceResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsForecastInstanceResponse is a convenience function that returns MoDocumentCount wrapped in ForecastInstanceResponse
 func MoDocumentCountAsForecastInstanceResponse(v *MoDocumentCount) ForecastInstanceResponse {
-	return ForecastInstanceResponse{ MoDocumentCount: v}
+	return ForecastInstanceResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsForecastInstanceResponse is a convenience function that returns MoTagSummary wrapped in ForecastInstanceResponse
 func MoTagSummaryAsForecastInstanceResponse(v *MoTagSummary) ForecastInstanceResponse {
-	return ForecastInstanceResponse{ MoTagSummary: v}
+	return ForecastInstanceResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ForecastInstanceResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ForecastInstanceResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ForecastInstanceResponse) GetActualInstance() (interface{}) {
+func (obj *ForecastInstanceResponse) GetActualInstance() interface{} {
 	if obj.ForecastInstanceList != nil {
 		return obj.ForecastInstanceList
 	}
@@ -184,5 +183,3 @@ func (v *NullableForecastInstanceResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

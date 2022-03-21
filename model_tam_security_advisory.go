@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // TamSecurityAdvisory Intersight representation of a Cisco PSIRT (https://tools.cisco.com/security/center/publicationListing.x) advisory definition. It includes the description of the security advisory and a corresponding reference to the published advisory. It also includes the Intersight data sources needed to evaluate the applicability of this advisory for relevant Intersight managed objects. A PSIRT definition is evaluated against all managed object referenced using the included data sources. Only Cisco TAC and Intersight devops engineers have the ability to create PSIRT definitions in Intersight.
@@ -24,14 +24,14 @@ type TamSecurityAdvisory struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Actions []TamAction `json:"Actions,omitempty"`
+	ObjectType string      `json:"ObjectType"`
+	Actions    []TamAction `json:"Actions,omitempty"`
 	// Cisco generated identifier for the published security advisory.
-	AdvisoryId *string `json:"AdvisoryId,omitempty"`
+	AdvisoryId     *string            `json:"AdvisoryId,omitempty"`
 	ApiDataSources []TamApiDataSource `json:"ApiDataSources,omitempty"`
 	// CVSS version 3 base score for the security Advisory.
 	BaseScore *float32 `json:"BaseScore,omitempty"`
-	CveIds []string `json:"CveIds,omitempty"`
+	CveIds    []string `json:"CveIds,omitempty"`
 	// Date when the security advisory was first published by Cisco.
 	DatePublished *time.Time `json:"DatePublished,omitempty"`
 	// Date when the security advisory was last updated by Cisco.
@@ -49,8 +49,8 @@ type TamSecurityAdvisory struct {
 	// Cisco assigned advisory version after latest revision.
 	Version *string `json:"Version,omitempty"`
 	// Workarounds available for the advisory.
-	Workaround *string `json:"Workaround,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	Workaround           *string                               `json:"Workaround,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -98,7 +98,7 @@ func (o *TamSecurityAdvisory) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TamSecurityAdvisory) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -122,7 +122,7 @@ func (o *TamSecurityAdvisory) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TamSecurityAdvisory) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -135,7 +135,7 @@ func (o *TamSecurityAdvisory) SetObjectType(v string) {
 
 // GetActions returns the Actions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TamSecurityAdvisory) GetActions() []TamAction {
-	if o == nil  {
+	if o == nil {
 		var ret []TamAction
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *TamSecurityAdvisory) SetAdvisoryId(v string) {
 
 // GetApiDataSources returns the ApiDataSources field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TamSecurityAdvisory) GetApiDataSources() []TamApiDataSource {
-	if o == nil  {
+	if o == nil {
 		var ret []TamApiDataSource
 		return ret
 	}
@@ -265,7 +265,7 @@ func (o *TamSecurityAdvisory) SetBaseScore(v float32) {
 
 // GetCveIds returns the CveIds field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TamSecurityAdvisory) GetCveIds() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -690,14 +690,14 @@ func (o *TamSecurityAdvisory) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Actions []TamAction `json:"Actions,omitempty"`
+		ObjectType string      `json:"ObjectType"`
+		Actions    []TamAction `json:"Actions,omitempty"`
 		// Cisco generated identifier for the published security advisory.
-		AdvisoryId *string `json:"AdvisoryId,omitempty"`
+		AdvisoryId     *string            `json:"AdvisoryId,omitempty"`
 		ApiDataSources []TamApiDataSource `json:"ApiDataSources,omitempty"`
 		// CVSS version 3 base score for the security Advisory.
 		BaseScore *float32 `json:"BaseScore,omitempty"`
-		CveIds []string `json:"CveIds,omitempty"`
+		CveIds    []string `json:"CveIds,omitempty"`
 		// Date when the security advisory was first published by Cisco.
 		DatePublished *time.Time `json:"DatePublished,omitempty"`
 		// Date when the security advisory was last updated by Cisco.
@@ -715,7 +715,7 @@ func (o *TamSecurityAdvisory) UnmarshalJSON(bytes []byte) (err error) {
 		// Cisco assigned advisory version after latest revision.
 		Version *string `json:"Version,omitempty"`
 		// Workarounds available for the advisory.
-		Workaround *string `json:"Workaround,omitempty"`
+		Workaround   *string                               `json:"Workaround,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
@@ -835,5 +835,3 @@ func (v *NullableTamSecurityAdvisory) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

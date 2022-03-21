@@ -19,19 +19,18 @@ import (
 // ComputeRackUnitRelationship - A relationship to the 'compute.RackUnit' resource, or the expanded 'compute.RackUnit' resource, or the 'null' value.
 type ComputeRackUnitRelationship struct {
 	ComputeRackUnit *ComputeRackUnit
-	MoMoRef *MoMoRef
+	MoMoRef         *MoMoRef
 }
 
 // ComputeRackUnitAsComputeRackUnitRelationship is a convenience function that returns ComputeRackUnit wrapped in ComputeRackUnitRelationship
 func ComputeRackUnitAsComputeRackUnitRelationship(v *ComputeRackUnit) ComputeRackUnitRelationship {
-	return ComputeRackUnitRelationship{ ComputeRackUnit: v}
+	return ComputeRackUnitRelationship{ComputeRackUnit: v}
 }
 
 // MoMoRefAsComputeRackUnitRelationship is a convenience function that returns MoMoRef wrapped in ComputeRackUnitRelationship
 func MoMoRefAsComputeRackUnitRelationship(v *MoMoRef) ComputeRackUnitRelationship {
-	return ComputeRackUnitRelationship{ MoMoRef: v}
+	return ComputeRackUnitRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ComputeRackUnitRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ComputeRackUnitRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ComputeRackUnitRelationship) GetActualInstance() (interface{}) {
+func (obj *ComputeRackUnitRelationship) GetActualInstance() interface{} {
 	if obj.ComputeRackUnit != nil {
 		return obj.ComputeRackUnit
 	}
@@ -137,5 +136,3 @@ func (v *NullableComputeRackUnitRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

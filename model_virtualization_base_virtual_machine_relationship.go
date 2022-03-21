@@ -18,20 +18,19 @@ import (
 
 // VirtualizationBaseVirtualMachineRelationship - A relationship to the 'virtualization.BaseVirtualMachine' resource, or the expanded 'virtualization.BaseVirtualMachine' resource, or the 'null' value.
 type VirtualizationBaseVirtualMachineRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                          *MoMoRef
 	VirtualizationBaseVirtualMachine *VirtualizationBaseVirtualMachine
 }
 
 // MoMoRefAsVirtualizationBaseVirtualMachineRelationship is a convenience function that returns MoMoRef wrapped in VirtualizationBaseVirtualMachineRelationship
 func MoMoRefAsVirtualizationBaseVirtualMachineRelationship(v *MoMoRef) VirtualizationBaseVirtualMachineRelationship {
-	return VirtualizationBaseVirtualMachineRelationship{ MoMoRef: v}
+	return VirtualizationBaseVirtualMachineRelationship{MoMoRef: v}
 }
 
 // VirtualizationBaseVirtualMachineAsVirtualizationBaseVirtualMachineRelationship is a convenience function that returns VirtualizationBaseVirtualMachine wrapped in VirtualizationBaseVirtualMachineRelationship
 func VirtualizationBaseVirtualMachineAsVirtualizationBaseVirtualMachineRelationship(v *VirtualizationBaseVirtualMachine) VirtualizationBaseVirtualMachineRelationship {
-	return VirtualizationBaseVirtualMachineRelationship{ VirtualizationBaseVirtualMachine: v}
+	return VirtualizationBaseVirtualMachineRelationship{VirtualizationBaseVirtualMachine: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VirtualizationBaseVirtualMachineRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src VirtualizationBaseVirtualMachineRelationship) MarshalJSON() ([]byte, e
 }
 
 // Get the actual instance
-func (obj *VirtualizationBaseVirtualMachineRelationship) GetActualInstance() (interface{}) {
+func (obj *VirtualizationBaseVirtualMachineRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableVirtualizationBaseVirtualMachineRelationship) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

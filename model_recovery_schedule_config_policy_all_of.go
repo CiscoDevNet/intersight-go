@@ -20,11 +20,11 @@ type RecoveryScheduleConfigPolicyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Schedule NullableRecoveryBackupSchedule `json:"Schedule,omitempty"`
+	ObjectType string                         `json:"ObjectType"`
+	Schedule   NullableRecoveryBackupSchedule `json:"Schedule,omitempty"`
 	// An array of relationships to recoveryBackupProfile resources.
-	BackupProfiles []RecoveryBackupProfileRelationship `json:"BackupProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	BackupProfiles       []RecoveryBackupProfileRelationship   `json:"BackupProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *RecoveryScheduleConfigPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *RecoveryScheduleConfigPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *RecoveryScheduleConfigPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *RecoveryScheduleConfigPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -114,7 +114,7 @@ func (o *RecoveryScheduleConfigPolicyAllOf) GetSchedule() RecoveryBackupSchedule
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RecoveryScheduleConfigPolicyAllOf) GetScheduleOk() (*RecoveryBackupSchedule, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Schedule.Get(), o.Schedule.IsSet()
@@ -133,6 +133,7 @@ func (o *RecoveryScheduleConfigPolicyAllOf) HasSchedule() bool {
 func (o *RecoveryScheduleConfigPolicyAllOf) SetSchedule(v RecoveryBackupSchedule) {
 	o.Schedule.Set(&v)
 }
+
 // SetScheduleNil sets the value for Schedule to be an explicit nil
 func (o *RecoveryScheduleConfigPolicyAllOf) SetScheduleNil() {
 	o.Schedule.Set(nil)
@@ -145,7 +146,7 @@ func (o *RecoveryScheduleConfigPolicyAllOf) UnsetSchedule() {
 
 // GetBackupProfiles returns the BackupProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RecoveryScheduleConfigPolicyAllOf) GetBackupProfiles() []RecoveryBackupProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []RecoveryBackupProfileRelationship
 		return ret
 	}
@@ -289,5 +290,3 @@ func (v *NullableRecoveryScheduleConfigPolicyAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

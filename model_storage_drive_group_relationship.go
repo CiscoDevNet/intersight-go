@@ -18,20 +18,19 @@ import (
 
 // StorageDriveGroupRelationship - A relationship to the 'storage.DriveGroup' resource, or the expanded 'storage.DriveGroup' resource, or the 'null' value.
 type StorageDriveGroupRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 	StorageDriveGroup *StorageDriveGroup
 }
 
 // MoMoRefAsStorageDriveGroupRelationship is a convenience function that returns MoMoRef wrapped in StorageDriveGroupRelationship
 func MoMoRefAsStorageDriveGroupRelationship(v *MoMoRef) StorageDriveGroupRelationship {
-	return StorageDriveGroupRelationship{ MoMoRef: v}
+	return StorageDriveGroupRelationship{MoMoRef: v}
 }
 
 // StorageDriveGroupAsStorageDriveGroupRelationship is a convenience function that returns StorageDriveGroup wrapped in StorageDriveGroupRelationship
 func StorageDriveGroupAsStorageDriveGroupRelationship(v *StorageDriveGroup) StorageDriveGroupRelationship {
-	return StorageDriveGroupRelationship{ StorageDriveGroup: v}
+	return StorageDriveGroupRelationship{StorageDriveGroup: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageDriveGroupRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageDriveGroupRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageDriveGroupRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageDriveGroupRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageDriveGroupRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

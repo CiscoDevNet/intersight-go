@@ -34,8 +34,8 @@ type NiatelemetryNiaLicenseStateAllOf struct {
 	// Serial number of device being inventoried. The serial number is unique per device.
 	Serial *string `json:"Serial,omitempty"`
 	// Name of fabric domain of the controller.
-	SiteName *string `json:"SiteName,omitempty"`
-	Device *NiatelemetryNiaInventoryRelationship `json:"Device,omitempty"`
+	SiteName             *string                               `json:"SiteName,omitempty"`
+	Device               *NiatelemetryNiaInventoryRelationship `json:"Device,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *NiatelemetryNiaLicenseStateAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNiaLicenseStateAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *NiatelemetryNiaLicenseStateAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNiaLicenseStateAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -469,5 +469,3 @@ func (v *NullableNiatelemetryNiaLicenseStateAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

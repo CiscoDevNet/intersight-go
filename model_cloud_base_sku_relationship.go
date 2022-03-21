@@ -19,19 +19,18 @@ import (
 // CloudBaseSkuRelationship - A relationship to the 'cloud.BaseSku' resource, or the expanded 'cloud.BaseSku' resource, or the 'null' value.
 type CloudBaseSkuRelationship struct {
 	CloudBaseSku *CloudBaseSku
-	MoMoRef *MoMoRef
+	MoMoRef      *MoMoRef
 }
 
 // CloudBaseSkuAsCloudBaseSkuRelationship is a convenience function that returns CloudBaseSku wrapped in CloudBaseSkuRelationship
 func CloudBaseSkuAsCloudBaseSkuRelationship(v *CloudBaseSku) CloudBaseSkuRelationship {
-	return CloudBaseSkuRelationship{ CloudBaseSku: v}
+	return CloudBaseSkuRelationship{CloudBaseSku: v}
 }
 
 // MoMoRefAsCloudBaseSkuRelationship is a convenience function that returns MoMoRef wrapped in CloudBaseSkuRelationship
 func MoMoRefAsCloudBaseSkuRelationship(v *MoMoRef) CloudBaseSkuRelationship {
-	return CloudBaseSkuRelationship{ MoMoRef: v}
+	return CloudBaseSkuRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CloudBaseSkuRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src CloudBaseSkuRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CloudBaseSkuRelationship) GetActualInstance() (interface{}) {
+func (obj *CloudBaseSkuRelationship) GetActualInstance() interface{} {
 	if obj.CloudBaseSku != nil {
 		return obj.CloudBaseSku
 	}
@@ -137,5 +136,3 @@ func (v *NullableCloudBaseSkuRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

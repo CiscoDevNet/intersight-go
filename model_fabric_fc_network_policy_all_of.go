@@ -22,10 +22,10 @@ type FabricFcNetworkPolicyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Enable or Disable Trunking on all of configured FC uplink ports.
-	EnableTrunking *bool `json:"EnableTrunking,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	EnableTrunking *bool                                 `json:"EnableTrunking,omitempty"`
+	Organization   *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to fabricSwitchProfile resources.
-	Profiles []FabricSwitchProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []FabricSwitchProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *FabricFcNetworkPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricFcNetworkPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *FabricFcNetworkPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricFcNetworkPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -168,7 +168,7 @@ func (o *FabricFcNetworkPolicyAllOf) SetOrganization(v OrganizationOrganizationR
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FabricFcNetworkPolicyAllOf) GetProfiles() []FabricSwitchProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FabricSwitchProfileRelationship
 		return ret
 	}
@@ -280,5 +280,3 @@ func (v *NullableFabricFcNetworkPolicyAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,19 +19,18 @@ import (
 // IaasDeviceStatusRelationship - A relationship to the 'iaas.DeviceStatus' resource, or the expanded 'iaas.DeviceStatus' resource, or the 'null' value.
 type IaasDeviceStatusRelationship struct {
 	IaasDeviceStatus *IaasDeviceStatus
-	MoMoRef *MoMoRef
+	MoMoRef          *MoMoRef
 }
 
 // IaasDeviceStatusAsIaasDeviceStatusRelationship is a convenience function that returns IaasDeviceStatus wrapped in IaasDeviceStatusRelationship
 func IaasDeviceStatusAsIaasDeviceStatusRelationship(v *IaasDeviceStatus) IaasDeviceStatusRelationship {
-	return IaasDeviceStatusRelationship{ IaasDeviceStatus: v}
+	return IaasDeviceStatusRelationship{IaasDeviceStatus: v}
 }
 
 // MoMoRefAsIaasDeviceStatusRelationship is a convenience function that returns MoMoRef wrapped in IaasDeviceStatusRelationship
 func MoMoRefAsIaasDeviceStatusRelationship(v *MoMoRef) IaasDeviceStatusRelationship {
-	return IaasDeviceStatusRelationship{ MoMoRef: v}
+	return IaasDeviceStatusRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IaasDeviceStatusRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IaasDeviceStatusRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IaasDeviceStatusRelationship) GetActualInstance() (interface{}) {
+func (obj *IaasDeviceStatusRelationship) GetActualInstance() interface{} {
 	if obj.IaasDeviceStatus != nil {
 		return obj.IaasDeviceStatus
 	}
@@ -137,5 +136,3 @@ func (v *NullableIaasDeviceStatusRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

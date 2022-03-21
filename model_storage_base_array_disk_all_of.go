@@ -30,12 +30,12 @@ type StorageBaseArrayDiskAllOf struct {
 	// Disk speed for read or write operation measured in rpm.
 	Speed *int64 `json:"Speed,omitempty"`
 	// Storage disk health status. * `Unknown` - Component status is not available. * `Ok` - Component is healthy and no issues found. * `Degraded` - Functioning, but not at full capability due to a non-fatal failure. * `Critical` - Not functioning or requiring immediate attention. * `Offline` - Component is installed, but powered off. * `Identifying` - Component is in initialization process. * `NotAvailable` - Component is not installed or not available. * `Updating` - Software update is in progress. * `Unrecognized` - Component is not recognized. It may be because the component is not installed properly or it is not supported.
-	Status *string `json:"Status,omitempty"`
+	Status             *string                     `json:"Status,omitempty"`
 	StorageUtilization NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
 	// Storage disk type - it can be SSD, HDD, NVRAM. * `Unknown` - Default unknown disk type. * `SSD` - Storage disk with Solid state disk. * `HDD` - Storage disk with Hard disk drive. * `NVRAM` - Storage disk with Non-volatile random-access memory type. * `SATA` - Disk drive implementation with Serial Advanced Technology Attachment (SATA). * `BSAS` - Bridged SAS-SATA disks with added hardware to enable them to be plugged into a SAS-connected storage shelf. * `FC` - Storage disk with Fiber Channel. * `FSAS` - Near Line SAS. NL-SAS drives are enterprise SATA drives with a SAS interface, head, media, androtational speed of traditional enterprise-class SATA drives with the fully capable SAS interfacetypical for classic SAS drives. * `LUN` - Logical Unit Number refers to a logical disk. * `MSATA` - SATA disk in multi-disk carrier storage shelf. * `SAS` - Storage disk with serial attached SCSI. * `VMDISK` - Virtual machine Data Disk.
 	Type *string `json:"Type,omitempty"`
 	// Storage disk version number.
-	Version *string `json:"Version,omitempty"`
+	Version              *string `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *StorageBaseArrayDiskAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseArrayDiskAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *StorageBaseArrayDiskAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseArrayDiskAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -281,7 +281,7 @@ func (o *StorageBaseArrayDiskAllOf) GetStorageUtilization() StorageBaseCapacity 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageBaseArrayDiskAllOf) GetStorageUtilizationOk() (*StorageBaseCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StorageUtilization.Get(), o.StorageUtilization.IsSet()
@@ -300,6 +300,7 @@ func (o *StorageBaseArrayDiskAllOf) HasStorageUtilization() bool {
 func (o *StorageBaseArrayDiskAllOf) SetStorageUtilization(v StorageBaseCapacity) {
 	o.StorageUtilization.Set(&v)
 }
+
 // SetStorageUtilizationNil sets the value for StorageUtilization to be an explicit nil
 func (o *StorageBaseArrayDiskAllOf) SetStorageUtilizationNil() {
 	o.StorageUtilization.Set(nil)
@@ -475,5 +476,3 @@ func (v *NullableStorageBaseArrayDiskAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

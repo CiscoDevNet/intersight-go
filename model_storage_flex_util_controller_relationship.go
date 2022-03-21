@@ -18,20 +18,19 @@ import (
 
 // StorageFlexUtilControllerRelationship - A relationship to the 'storage.FlexUtilController' resource, or the expanded 'storage.FlexUtilController' resource, or the 'null' value.
 type StorageFlexUtilControllerRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                   *MoMoRef
 	StorageFlexUtilController *StorageFlexUtilController
 }
 
 // MoMoRefAsStorageFlexUtilControllerRelationship is a convenience function that returns MoMoRef wrapped in StorageFlexUtilControllerRelationship
 func MoMoRefAsStorageFlexUtilControllerRelationship(v *MoMoRef) StorageFlexUtilControllerRelationship {
-	return StorageFlexUtilControllerRelationship{ MoMoRef: v}
+	return StorageFlexUtilControllerRelationship{MoMoRef: v}
 }
 
 // StorageFlexUtilControllerAsStorageFlexUtilControllerRelationship is a convenience function that returns StorageFlexUtilController wrapped in StorageFlexUtilControllerRelationship
 func StorageFlexUtilControllerAsStorageFlexUtilControllerRelationship(v *StorageFlexUtilController) StorageFlexUtilControllerRelationship {
-	return StorageFlexUtilControllerRelationship{ StorageFlexUtilController: v}
+	return StorageFlexUtilControllerRelationship{StorageFlexUtilController: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageFlexUtilControllerRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageFlexUtilControllerRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageFlexUtilControllerRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageFlexUtilControllerRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageFlexUtilControllerRelationship) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

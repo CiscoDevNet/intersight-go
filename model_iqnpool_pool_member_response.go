@@ -19,31 +19,30 @@ import (
 // IqnpoolPoolMemberResponse - The response body of a HTTP GET request for the 'iqnpool.PoolMember' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'iqnpool.PoolMember' resources.
 type IqnpoolPoolMemberResponse struct {
 	IqnpoolPoolMemberList *IqnpoolPoolMemberList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform  *MoAggregateTransform
+	MoDocumentCount       *MoDocumentCount
+	MoTagSummary          *MoTagSummary
 }
 
 // IqnpoolPoolMemberListAsIqnpoolPoolMemberResponse is a convenience function that returns IqnpoolPoolMemberList wrapped in IqnpoolPoolMemberResponse
 func IqnpoolPoolMemberListAsIqnpoolPoolMemberResponse(v *IqnpoolPoolMemberList) IqnpoolPoolMemberResponse {
-	return IqnpoolPoolMemberResponse{ IqnpoolPoolMemberList: v}
+	return IqnpoolPoolMemberResponse{IqnpoolPoolMemberList: v}
 }
 
 // MoAggregateTransformAsIqnpoolPoolMemberResponse is a convenience function that returns MoAggregateTransform wrapped in IqnpoolPoolMemberResponse
 func MoAggregateTransformAsIqnpoolPoolMemberResponse(v *MoAggregateTransform) IqnpoolPoolMemberResponse {
-	return IqnpoolPoolMemberResponse{ MoAggregateTransform: v}
+	return IqnpoolPoolMemberResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIqnpoolPoolMemberResponse is a convenience function that returns MoDocumentCount wrapped in IqnpoolPoolMemberResponse
 func MoDocumentCountAsIqnpoolPoolMemberResponse(v *MoDocumentCount) IqnpoolPoolMemberResponse {
-	return IqnpoolPoolMemberResponse{ MoDocumentCount: v}
+	return IqnpoolPoolMemberResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIqnpoolPoolMemberResponse is a convenience function that returns MoTagSummary wrapped in IqnpoolPoolMemberResponse
 func MoTagSummaryAsIqnpoolPoolMemberResponse(v *MoTagSummary) IqnpoolPoolMemberResponse {
-	return IqnpoolPoolMemberResponse{ MoTagSummary: v}
+	return IqnpoolPoolMemberResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IqnpoolPoolMemberResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IqnpoolPoolMemberResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IqnpoolPoolMemberResponse) GetActualInstance() (interface{}) {
+func (obj *IqnpoolPoolMemberResponse) GetActualInstance() interface{} {
 	if obj.IqnpoolPoolMemberList != nil {
 		return obj.IqnpoolPoolMemberList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIqnpoolPoolMemberResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

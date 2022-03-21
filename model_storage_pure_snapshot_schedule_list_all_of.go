@@ -20,7 +20,7 @@ type StoragePureSnapshotScheduleListAllOf struct {
 	// The total number of 'storage.PureSnapshotSchedule' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'storage.PureSnapshotSchedule' resources matching the request.
-	Results []StoragePureSnapshotSchedule `json:"Results,omitempty"`
+	Results              []StoragePureSnapshotSchedule `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *StoragePureSnapshotScheduleListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StoragePureSnapshotScheduleListAllOf) GetResults() []StoragePureSnapshotSchedule {
-	if o == nil  {
+	if o == nil {
 		var ret []StoragePureSnapshotSchedule
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableStoragePureSnapshotScheduleListAllOf) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

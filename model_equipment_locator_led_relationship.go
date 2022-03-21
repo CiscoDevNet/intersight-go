@@ -19,19 +19,18 @@ import (
 // EquipmentLocatorLedRelationship - A relationship to the 'equipment.LocatorLed' resource, or the expanded 'equipment.LocatorLed' resource, or the 'null' value.
 type EquipmentLocatorLedRelationship struct {
 	EquipmentLocatorLed *EquipmentLocatorLed
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 }
 
 // EquipmentLocatorLedAsEquipmentLocatorLedRelationship is a convenience function that returns EquipmentLocatorLed wrapped in EquipmentLocatorLedRelationship
 func EquipmentLocatorLedAsEquipmentLocatorLedRelationship(v *EquipmentLocatorLed) EquipmentLocatorLedRelationship {
-	return EquipmentLocatorLedRelationship{ EquipmentLocatorLed: v}
+	return EquipmentLocatorLedRelationship{EquipmentLocatorLed: v}
 }
 
 // MoMoRefAsEquipmentLocatorLedRelationship is a convenience function that returns MoMoRef wrapped in EquipmentLocatorLedRelationship
 func MoMoRefAsEquipmentLocatorLedRelationship(v *MoMoRef) EquipmentLocatorLedRelationship {
-	return EquipmentLocatorLedRelationship{ MoMoRef: v}
+	return EquipmentLocatorLedRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentLocatorLedRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src EquipmentLocatorLedRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentLocatorLedRelationship) GetActualInstance() (interface{}) {
+func (obj *EquipmentLocatorLedRelationship) GetActualInstance() interface{} {
 	if obj.EquipmentLocatorLed != nil {
 		return obj.EquipmentLocatorLed
 	}
@@ -137,5 +136,3 @@ func (v *NullableEquipmentLocatorLedRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

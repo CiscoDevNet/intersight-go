@@ -18,32 +18,31 @@ import (
 
 // SoftwarerepositoryCategorySupportConstraintResponse - The response body of a HTTP GET request for the 'softwarerepository.CategorySupportConstraint' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'softwarerepository.CategorySupportConstraint' resources.
 type SoftwarerepositoryCategorySupportConstraintResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                            *MoAggregateTransform
+	MoDocumentCount                                 *MoDocumentCount
+	MoTagSummary                                    *MoTagSummary
 	SoftwarerepositoryCategorySupportConstraintList *SoftwarerepositoryCategorySupportConstraintList
 }
 
 // MoAggregateTransformAsSoftwarerepositoryCategorySupportConstraintResponse is a convenience function that returns MoAggregateTransform wrapped in SoftwarerepositoryCategorySupportConstraintResponse
 func MoAggregateTransformAsSoftwarerepositoryCategorySupportConstraintResponse(v *MoAggregateTransform) SoftwarerepositoryCategorySupportConstraintResponse {
-	return SoftwarerepositoryCategorySupportConstraintResponse{ MoAggregateTransform: v}
+	return SoftwarerepositoryCategorySupportConstraintResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsSoftwarerepositoryCategorySupportConstraintResponse is a convenience function that returns MoDocumentCount wrapped in SoftwarerepositoryCategorySupportConstraintResponse
 func MoDocumentCountAsSoftwarerepositoryCategorySupportConstraintResponse(v *MoDocumentCount) SoftwarerepositoryCategorySupportConstraintResponse {
-	return SoftwarerepositoryCategorySupportConstraintResponse{ MoDocumentCount: v}
+	return SoftwarerepositoryCategorySupportConstraintResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsSoftwarerepositoryCategorySupportConstraintResponse is a convenience function that returns MoTagSummary wrapped in SoftwarerepositoryCategorySupportConstraintResponse
 func MoTagSummaryAsSoftwarerepositoryCategorySupportConstraintResponse(v *MoTagSummary) SoftwarerepositoryCategorySupportConstraintResponse {
-	return SoftwarerepositoryCategorySupportConstraintResponse{ MoTagSummary: v}
+	return SoftwarerepositoryCategorySupportConstraintResponse{MoTagSummary: v}
 }
 
 // SoftwarerepositoryCategorySupportConstraintListAsSoftwarerepositoryCategorySupportConstraintResponse is a convenience function that returns SoftwarerepositoryCategorySupportConstraintList wrapped in SoftwarerepositoryCategorySupportConstraintResponse
 func SoftwarerepositoryCategorySupportConstraintListAsSoftwarerepositoryCategorySupportConstraintResponse(v *SoftwarerepositoryCategorySupportConstraintList) SoftwarerepositoryCategorySupportConstraintResponse {
-	return SoftwarerepositoryCategorySupportConstraintResponse{ SoftwarerepositoryCategorySupportConstraintList: v}
+	return SoftwarerepositoryCategorySupportConstraintResponse{SoftwarerepositoryCategorySupportConstraintList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SoftwarerepositoryCategorySupportConstraintResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src SoftwarerepositoryCategorySupportConstraintResponse) MarshalJSON() ([]
 }
 
 // Get the actual instance
-func (obj *SoftwarerepositoryCategorySupportConstraintResponse) GetActualInstance() (interface{}) {
+func (obj *SoftwarerepositoryCategorySupportConstraintResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableSoftwarerepositoryCategorySupportConstraintResponse) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

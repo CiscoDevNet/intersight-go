@@ -20,7 +20,7 @@ type TelemetryDruidMinMaxAggregatorAllOf struct {
 	// Output name for the min/max value.
 	Name string `json:"name"`
 	// Name of the metric column.
-	FieldName string `json:"fieldName"`
+	FieldName            string `json:"fieldName"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -58,7 +58,7 @@ func (o *TelemetryDruidMinMaxAggregatorAllOf) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidMinMaxAggregatorAllOf) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Name, true
@@ -82,7 +82,7 @@ func (o *TelemetryDruidMinMaxAggregatorAllOf) GetFieldName() string {
 // GetFieldNameOk returns a tuple with the FieldName field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidMinMaxAggregatorAllOf) GetFieldNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.FieldName, true
@@ -162,5 +162,3 @@ func (v *NullableTelemetryDruidMinMaxAggregatorAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

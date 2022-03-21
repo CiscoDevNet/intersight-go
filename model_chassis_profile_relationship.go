@@ -19,19 +19,18 @@ import (
 // ChassisProfileRelationship - A relationship to the 'chassis.Profile' resource, or the expanded 'chassis.Profile' resource, or the 'null' value.
 type ChassisProfileRelationship struct {
 	ChassisProfile *ChassisProfile
-	MoMoRef *MoMoRef
+	MoMoRef        *MoMoRef
 }
 
 // ChassisProfileAsChassisProfileRelationship is a convenience function that returns ChassisProfile wrapped in ChassisProfileRelationship
 func ChassisProfileAsChassisProfileRelationship(v *ChassisProfile) ChassisProfileRelationship {
-	return ChassisProfileRelationship{ ChassisProfile: v}
+	return ChassisProfileRelationship{ChassisProfile: v}
 }
 
 // MoMoRefAsChassisProfileRelationship is a convenience function that returns MoMoRef wrapped in ChassisProfileRelationship
 func MoMoRefAsChassisProfileRelationship(v *MoMoRef) ChassisProfileRelationship {
-	return ChassisProfileRelationship{ MoMoRef: v}
+	return ChassisProfileRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ChassisProfileRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ChassisProfileRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ChassisProfileRelationship) GetActualInstance() (interface{}) {
+func (obj *ChassisProfileRelationship) GetActualInstance() interface{} {
 	if obj.ChassisProfile != nil {
 		return obj.ChassisProfile
 	}
@@ -137,5 +136,3 @@ func (v *NullableChassisProfileRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

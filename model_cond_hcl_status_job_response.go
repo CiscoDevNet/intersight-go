@@ -20,30 +20,29 @@ import (
 type CondHclStatusJobResponse struct {
 	CondHclStatusJobList *CondHclStatusJobList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // CondHclStatusJobListAsCondHclStatusJobResponse is a convenience function that returns CondHclStatusJobList wrapped in CondHclStatusJobResponse
 func CondHclStatusJobListAsCondHclStatusJobResponse(v *CondHclStatusJobList) CondHclStatusJobResponse {
-	return CondHclStatusJobResponse{ CondHclStatusJobList: v}
+	return CondHclStatusJobResponse{CondHclStatusJobList: v}
 }
 
 // MoAggregateTransformAsCondHclStatusJobResponse is a convenience function that returns MoAggregateTransform wrapped in CondHclStatusJobResponse
 func MoAggregateTransformAsCondHclStatusJobResponse(v *MoAggregateTransform) CondHclStatusJobResponse {
-	return CondHclStatusJobResponse{ MoAggregateTransform: v}
+	return CondHclStatusJobResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsCondHclStatusJobResponse is a convenience function that returns MoDocumentCount wrapped in CondHclStatusJobResponse
 func MoDocumentCountAsCondHclStatusJobResponse(v *MoDocumentCount) CondHclStatusJobResponse {
-	return CondHclStatusJobResponse{ MoDocumentCount: v}
+	return CondHclStatusJobResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsCondHclStatusJobResponse is a convenience function that returns MoTagSummary wrapped in CondHclStatusJobResponse
 func MoTagSummaryAsCondHclStatusJobResponse(v *MoTagSummary) CondHclStatusJobResponse {
-	return CondHclStatusJobResponse{ MoTagSummary: v}
+	return CondHclStatusJobResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CondHclStatusJobResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src CondHclStatusJobResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CondHclStatusJobResponse) GetActualInstance() (interface{}) {
+func (obj *CondHclStatusJobResponse) GetActualInstance() interface{} {
 	if obj.CondHclStatusJobList != nil {
 		return obj.CondHclStatusJobList
 	}
@@ -184,5 +183,3 @@ func (v *NullableCondHclStatusJobResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

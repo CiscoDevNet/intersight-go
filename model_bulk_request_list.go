@@ -23,7 +23,7 @@ type BulkRequestList struct {
 	// The total number of 'bulk.Request' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'bulk.Request' resources matching the request.
-	Results []BulkRequest `json:"Results,omitempty"`
+	Results              []BulkRequest `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *BulkRequestList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BulkRequestList) GetResults() []BulkRequest {
-	if o == nil  {
+	if o == nil {
 		var ret []BulkRequest
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableBulkRequestList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

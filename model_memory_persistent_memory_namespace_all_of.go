@@ -32,11 +32,11 @@ type MemoryPersistentMemoryNamespaceAllOf struct {
 	// Name of the Persistent Memory Namespace.
 	Name *string `json:"Name,omitempty"`
 	// UUID of the Persistent Memory Namespace.
-	Uuid *string `json:"Uuid,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+	Uuid                         *string                                   `json:"Uuid,omitempty"`
+	InventoryDeviceInfo          *InventoryDeviceInfoRelationship          `json:"InventoryDeviceInfo,omitempty"`
 	MemoryPersistentMemoryRegion *MemoryPersistentMemoryRegionRelationship `json:"MemoryPersistentMemoryRegion,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RegisteredDevice             *AssetDeviceRegistrationRelationship      `json:"RegisteredDevice,omitempty"`
+	AdditionalProperties         map[string]interface{}
 }
 
 type _MemoryPersistentMemoryNamespaceAllOf MemoryPersistentMemoryNamespaceAllOf
@@ -77,7 +77,7 @@ func (o *MemoryPersistentMemoryNamespaceAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryNamespaceAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *MemoryPersistentMemoryNamespaceAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryNamespaceAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -505,5 +505,3 @@ func (v *NullableMemoryPersistentMemoryNamespaceAllOf) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

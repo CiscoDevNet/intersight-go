@@ -31,8 +31,8 @@ type KubernetesAciCniTenantClusterAllocation struct {
 	// End of VLAN range allocated to this tenant cluster.
 	VlanEnd *string `json:"VlanEnd,omitempty"`
 	// Start of VLAN range allocated to this tenant cluster.
-	VlanStart *string `json:"VlanStart,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	VlanStart            *string                               `json:"VlanStart,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *KubernetesAciCniTenantClusterAllocation) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAciCniTenantClusterAllocation) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *KubernetesAciCniTenantClusterAllocation) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAciCniTenantClusterAllocation) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -321,7 +321,7 @@ func (o *KubernetesAciCniTenantClusterAllocation) UnmarshalJSON(bytes []byte) (e
 		// End of VLAN range allocated to this tenant cluster.
 		VlanEnd *string `json:"VlanEnd,omitempty"`
 		// Start of VLAN range allocated to this tenant cluster.
-		VlanStart *string `json:"VlanStart,omitempty"`
+		VlanStart    *string                               `json:"VlanStart,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
@@ -421,5 +421,3 @@ func (v *NullableKubernetesAciCniTenantClusterAllocation) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

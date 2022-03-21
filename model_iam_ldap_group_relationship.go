@@ -19,19 +19,18 @@ import (
 // IamLdapGroupRelationship - A relationship to the 'iam.LdapGroup' resource, or the expanded 'iam.LdapGroup' resource, or the 'null' value.
 type IamLdapGroupRelationship struct {
 	IamLdapGroup *IamLdapGroup
-	MoMoRef *MoMoRef
+	MoMoRef      *MoMoRef
 }
 
 // IamLdapGroupAsIamLdapGroupRelationship is a convenience function that returns IamLdapGroup wrapped in IamLdapGroupRelationship
 func IamLdapGroupAsIamLdapGroupRelationship(v *IamLdapGroup) IamLdapGroupRelationship {
-	return IamLdapGroupRelationship{ IamLdapGroup: v}
+	return IamLdapGroupRelationship{IamLdapGroup: v}
 }
 
 // MoMoRefAsIamLdapGroupRelationship is a convenience function that returns MoMoRef wrapped in IamLdapGroupRelationship
 func MoMoRefAsIamLdapGroupRelationship(v *MoMoRef) IamLdapGroupRelationship {
-	return IamLdapGroupRelationship{ MoMoRef: v}
+	return IamLdapGroupRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamLdapGroupRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamLdapGroupRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamLdapGroupRelationship) GetActualInstance() (interface{}) {
+func (obj *IamLdapGroupRelationship) GetActualInstance() interface{} {
 	if obj.IamLdapGroup != nil {
 		return obj.IamLdapGroup
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamLdapGroupRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -27,14 +27,14 @@ type BiosUnit struct {
 	// The initSeq of the equipment.
 	InitSeq *string `json:"InitSeq,omitempty"`
 	// The initTs of the equipment.
-	InitTs *string `json:"InitTs,omitempty"`
-	ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
-	ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	InitTs              *string                              `json:"InitTs,omitempty"`
+	ComputeBlade        *ComputeBladeRelationship            `json:"ComputeBlade,omitempty"`
+	ComputeRackUnit     *ComputeRackUnitRelationship         `json:"ComputeRackUnit,omitempty"`
+	InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to firmwareRunningFirmware resources.
-	RunningFirmware []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
-	SystemBootOrder *BiosSystemBootOrderRelationship `json:"SystemBootOrder,omitempty"`
+	RunningFirmware      []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
+	SystemBootOrder      *BiosSystemBootOrderRelationship      `json:"SystemBootOrder,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *BiosUnit) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BiosUnit) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *BiosUnit) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BiosUnit) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -305,7 +305,7 @@ func (o *BiosUnit) SetRegisteredDevice(v AssetDeviceRegistrationRelationship) {
 
 // GetRunningFirmware returns the RunningFirmware field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BiosUnit) GetRunningFirmware() []FirmwareRunningFirmwareRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareRunningFirmwareRelationship
 		return ret
 	}
@@ -425,14 +425,14 @@ func (o *BiosUnit) UnmarshalJSON(bytes []byte) (err error) {
 		// The initSeq of the equipment.
 		InitSeq *string `json:"InitSeq,omitempty"`
 		// The initTs of the equipment.
-		InitTs *string `json:"InitTs,omitempty"`
-		ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
-		ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		InitTs              *string                              `json:"InitTs,omitempty"`
+		ComputeBlade        *ComputeBladeRelationship            `json:"ComputeBlade,omitempty"`
+		ComputeRackUnit     *ComputeRackUnitRelationship         `json:"ComputeRackUnit,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 		// An array of relationships to firmwareRunningFirmware resources.
 		RunningFirmware []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
-		SystemBootOrder *BiosSystemBootOrderRelationship `json:"SystemBootOrder,omitempty"`
+		SystemBootOrder *BiosSystemBootOrderRelationship      `json:"SystemBootOrder,omitempty"`
 	}
 
 	varBiosUnitWithoutEmbeddedStruct := BiosUnitWithoutEmbeddedStruct{}
@@ -537,5 +537,3 @@ func (v *NullableBiosUnit) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

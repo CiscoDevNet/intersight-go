@@ -18,32 +18,31 @@ import (
 
 // IamIpAddressResponse - The response body of a HTTP GET request for the 'iam.IpAddress' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'iam.IpAddress' resources.
 type IamIpAddressResponse struct {
-	IamIpAddressList *IamIpAddressList
+	IamIpAddressList     *IamIpAddressList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IamIpAddressListAsIamIpAddressResponse is a convenience function that returns IamIpAddressList wrapped in IamIpAddressResponse
 func IamIpAddressListAsIamIpAddressResponse(v *IamIpAddressList) IamIpAddressResponse {
-	return IamIpAddressResponse{ IamIpAddressList: v}
+	return IamIpAddressResponse{IamIpAddressList: v}
 }
 
 // MoAggregateTransformAsIamIpAddressResponse is a convenience function that returns MoAggregateTransform wrapped in IamIpAddressResponse
 func MoAggregateTransformAsIamIpAddressResponse(v *MoAggregateTransform) IamIpAddressResponse {
-	return IamIpAddressResponse{ MoAggregateTransform: v}
+	return IamIpAddressResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIamIpAddressResponse is a convenience function that returns MoDocumentCount wrapped in IamIpAddressResponse
 func MoDocumentCountAsIamIpAddressResponse(v *MoDocumentCount) IamIpAddressResponse {
-	return IamIpAddressResponse{ MoDocumentCount: v}
+	return IamIpAddressResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIamIpAddressResponse is a convenience function that returns MoTagSummary wrapped in IamIpAddressResponse
 func MoTagSummaryAsIamIpAddressResponse(v *MoTagSummary) IamIpAddressResponse {
-	return IamIpAddressResponse{ MoTagSummary: v}
+	return IamIpAddressResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamIpAddressResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IamIpAddressResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamIpAddressResponse) GetActualInstance() (interface{}) {
+func (obj *IamIpAddressResponse) GetActualInstance() interface{} {
 	if obj.IamIpAddressList != nil {
 		return obj.IamIpAddressList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIamIpAddressResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

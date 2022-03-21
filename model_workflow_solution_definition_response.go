@@ -18,32 +18,31 @@ import (
 
 // WorkflowSolutionDefinitionResponse - The response body of a HTTP GET request for the 'workflow.SolutionDefinition' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'workflow.SolutionDefinition' resources.
 type WorkflowSolutionDefinitionResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform           *MoAggregateTransform
+	MoDocumentCount                *MoDocumentCount
+	MoTagSummary                   *MoTagSummary
 	WorkflowSolutionDefinitionList *WorkflowSolutionDefinitionList
 }
 
 // MoAggregateTransformAsWorkflowSolutionDefinitionResponse is a convenience function that returns MoAggregateTransform wrapped in WorkflowSolutionDefinitionResponse
 func MoAggregateTransformAsWorkflowSolutionDefinitionResponse(v *MoAggregateTransform) WorkflowSolutionDefinitionResponse {
-	return WorkflowSolutionDefinitionResponse{ MoAggregateTransform: v}
+	return WorkflowSolutionDefinitionResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsWorkflowSolutionDefinitionResponse is a convenience function that returns MoDocumentCount wrapped in WorkflowSolutionDefinitionResponse
 func MoDocumentCountAsWorkflowSolutionDefinitionResponse(v *MoDocumentCount) WorkflowSolutionDefinitionResponse {
-	return WorkflowSolutionDefinitionResponse{ MoDocumentCount: v}
+	return WorkflowSolutionDefinitionResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsWorkflowSolutionDefinitionResponse is a convenience function that returns MoTagSummary wrapped in WorkflowSolutionDefinitionResponse
 func MoTagSummaryAsWorkflowSolutionDefinitionResponse(v *MoTagSummary) WorkflowSolutionDefinitionResponse {
-	return WorkflowSolutionDefinitionResponse{ MoTagSummary: v}
+	return WorkflowSolutionDefinitionResponse{MoTagSummary: v}
 }
 
 // WorkflowSolutionDefinitionListAsWorkflowSolutionDefinitionResponse is a convenience function that returns WorkflowSolutionDefinitionList wrapped in WorkflowSolutionDefinitionResponse
 func WorkflowSolutionDefinitionListAsWorkflowSolutionDefinitionResponse(v *WorkflowSolutionDefinitionList) WorkflowSolutionDefinitionResponse {
-	return WorkflowSolutionDefinitionResponse{ WorkflowSolutionDefinitionList: v}
+	return WorkflowSolutionDefinitionResponse{WorkflowSolutionDefinitionList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *WorkflowSolutionDefinitionResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src WorkflowSolutionDefinitionResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *WorkflowSolutionDefinitionResponse) GetActualInstance() (interface{}) {
+func (obj *WorkflowSolutionDefinitionResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableWorkflowSolutionDefinitionResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

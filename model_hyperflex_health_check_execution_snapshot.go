@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // HyperflexHealthCheckExecutionSnapshot Last known health check execution results of a health check Definition.
@@ -46,12 +46,12 @@ type HyperflexHealthCheckExecutionSnapshot struct {
 	// HyperFlex Device Name where the healthcheck is executed.
 	HxDeviceName *string `json:"HxDeviceName,omitempty"`
 	// Information detailing a suggegsted resolution for the healthcheck failure, if the check fails.
-	SuggestedResolution *string `json:"SuggestedResolution,omitempty"`
+	SuggestedResolution   *string                                     `json:"SuggestedResolution,omitempty"`
 	HealthCheckDefinition *HyperflexHealthCheckDefinitionRelationship `json:"HealthCheckDefinition,omitempty"`
-	HxCluster *HyperflexClusterRelationship `json:"HxCluster,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	Workflow *WorkflowWorkflowInfoRelationship `json:"Workflow,omitempty"`
-	AdditionalProperties map[string]interface{}
+	HxCluster             *HyperflexClusterRelationship               `json:"HxCluster,omitempty"`
+	RegisteredDevice      *AssetDeviceRegistrationRelationship        `json:"RegisteredDevice,omitempty"`
+	Workflow              *WorkflowWorkflowInfoRelationship           `json:"Workflow,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _HyperflexHealthCheckExecutionSnapshot HyperflexHealthCheckExecutionSnapshot
@@ -92,7 +92,7 @@ func (o *HyperflexHealthCheckExecutionSnapshot) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHealthCheckExecutionSnapshot) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -116,7 +116,7 @@ func (o *HyperflexHealthCheckExecutionSnapshot) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHealthCheckExecutionSnapshot) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -703,11 +703,11 @@ func (o *HyperflexHealthCheckExecutionSnapshot) UnmarshalJSON(bytes []byte) (err
 		// HyperFlex Device Name where the healthcheck is executed.
 		HxDeviceName *string `json:"HxDeviceName,omitempty"`
 		// Information detailing a suggegsted resolution for the healthcheck failure, if the check fails.
-		SuggestedResolution *string `json:"SuggestedResolution,omitempty"`
+		SuggestedResolution   *string                                     `json:"SuggestedResolution,omitempty"`
 		HealthCheckDefinition *HyperflexHealthCheckDefinitionRelationship `json:"HealthCheckDefinition,omitempty"`
-		HxCluster *HyperflexClusterRelationship `json:"HxCluster,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-		Workflow *WorkflowWorkflowInfoRelationship `json:"Workflow,omitempty"`
+		HxCluster             *HyperflexClusterRelationship               `json:"HxCluster,omitempty"`
+		RegisteredDevice      *AssetDeviceRegistrationRelationship        `json:"RegisteredDevice,omitempty"`
+		Workflow              *WorkflowWorkflowInfoRelationship           `json:"Workflow,omitempty"`
 	}
 
 	varHyperflexHealthCheckExecutionSnapshotWithoutEmbeddedStruct := HyperflexHealthCheckExecutionSnapshotWithoutEmbeddedStruct{}
@@ -826,5 +826,3 @@ func (v *NullableHyperflexHealthCheckExecutionSnapshot) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

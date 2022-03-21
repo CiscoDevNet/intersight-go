@@ -20,7 +20,7 @@ type TelemetryDruidConstantPostAggregatorAllOf struct {
 	// Output name for the post-aggregator.
 	Name *string `json:"name,omitempty"`
 	// The numerical value.
-	Value *float64 `json:"value,omitempty"`
+	Value                *float64 `json:"value,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -176,5 +176,3 @@ func (v *NullableTelemetryDruidConstantPostAggregatorAllOf) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

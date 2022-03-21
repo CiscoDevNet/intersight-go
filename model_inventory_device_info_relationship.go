@@ -19,19 +19,18 @@ import (
 // InventoryDeviceInfoRelationship - A relationship to the 'inventory.DeviceInfo' resource, or the expanded 'inventory.DeviceInfo' resource, or the 'null' value.
 type InventoryDeviceInfoRelationship struct {
 	InventoryDeviceInfo *InventoryDeviceInfo
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 }
 
 // InventoryDeviceInfoAsInventoryDeviceInfoRelationship is a convenience function that returns InventoryDeviceInfo wrapped in InventoryDeviceInfoRelationship
 func InventoryDeviceInfoAsInventoryDeviceInfoRelationship(v *InventoryDeviceInfo) InventoryDeviceInfoRelationship {
-	return InventoryDeviceInfoRelationship{ InventoryDeviceInfo: v}
+	return InventoryDeviceInfoRelationship{InventoryDeviceInfo: v}
 }
 
 // MoMoRefAsInventoryDeviceInfoRelationship is a convenience function that returns MoMoRef wrapped in InventoryDeviceInfoRelationship
 func MoMoRefAsInventoryDeviceInfoRelationship(v *MoMoRef) InventoryDeviceInfoRelationship {
-	return InventoryDeviceInfoRelationship{ MoMoRef: v}
+	return InventoryDeviceInfoRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *InventoryDeviceInfoRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src InventoryDeviceInfoRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *InventoryDeviceInfoRelationship) GetActualInstance() (interface{}) {
+func (obj *InventoryDeviceInfoRelationship) GetActualInstance() interface{} {
 	if obj.InventoryDeviceInfo != nil {
 		return obj.InventoryDeviceInfo
 	}
@@ -137,5 +136,3 @@ func (v *NullableInventoryDeviceInfoRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -26,18 +26,18 @@ type HyperflexLicenseAllOf struct {
 	// Out of compliance date of the cluster
 	GetOutOfComplianceStartAt *string `json:"GetOutOfComplianceStartAt,omitempty"`
 	// Is the cluster in evalution period?
-	InEvaluation *bool `json:"InEvaluation,omitempty"`
+	InEvaluation         *bool                                            `json:"InEvaluation,omitempty"`
 	LicenseAuthorization NullableHyperflexHxLicenseAuthorizationDetailsDt `json:"LicenseAuthorization,omitempty"`
-	LicenseRegistration NullableHyperflexHxRegistrationDetailsDt `json:"LicenseRegistration,omitempty"`
+	LicenseRegistration  NullableHyperflexHxRegistrationDetailsDt         `json:"LicenseRegistration,omitempty"`
 	// The type of license applied on the cluster
 	LicenseType *string `json:"LicenseType,omitempty"`
 	// Is reservation enabled for the cluster?
 	PlrEnabled *bool `json:"PlrEnabled,omitempty"`
 	// Is Smart Licensing Enabled for this cluster?
-	SmartLicensingEnabled *bool `json:"SmartLicensingEnabled,omitempty"`
-	Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SmartLicensingEnabled *bool                                `json:"SmartLicensingEnabled,omitempty"`
+	Cluster               *HyperflexClusterRelationship        `json:"Cluster,omitempty"`
+	RegisteredDevice      *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _HyperflexLicenseAllOf HyperflexLicenseAllOf
@@ -78,7 +78,7 @@ func (o *HyperflexLicenseAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexLicenseAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *HyperflexLicenseAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexLicenseAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -222,7 +222,7 @@ func (o *HyperflexLicenseAllOf) GetLicenseAuthorization() HyperflexHxLicenseAuth
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexLicenseAllOf) GetLicenseAuthorizationOk() (*HyperflexHxLicenseAuthorizationDetailsDt, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LicenseAuthorization.Get(), o.LicenseAuthorization.IsSet()
@@ -241,6 +241,7 @@ func (o *HyperflexLicenseAllOf) HasLicenseAuthorization() bool {
 func (o *HyperflexLicenseAllOf) SetLicenseAuthorization(v HyperflexHxLicenseAuthorizationDetailsDt) {
 	o.LicenseAuthorization.Set(&v)
 }
+
 // SetLicenseAuthorizationNil sets the value for LicenseAuthorization to be an explicit nil
 func (o *HyperflexLicenseAllOf) SetLicenseAuthorizationNil() {
 	o.LicenseAuthorization.Set(nil)
@@ -264,7 +265,7 @@ func (o *HyperflexLicenseAllOf) GetLicenseRegistration() HyperflexHxRegistration
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexLicenseAllOf) GetLicenseRegistrationOk() (*HyperflexHxRegistrationDetailsDt, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LicenseRegistration.Get(), o.LicenseRegistration.IsSet()
@@ -283,6 +284,7 @@ func (o *HyperflexLicenseAllOf) HasLicenseRegistration() bool {
 func (o *HyperflexLicenseAllOf) SetLicenseRegistration(v HyperflexHxRegistrationDetailsDt) {
 	o.LicenseRegistration.Set(&v)
 }
+
 // SetLicenseRegistrationNil sets the value for LicenseRegistration to be an explicit nil
 func (o *HyperflexLicenseAllOf) SetLicenseRegistrationNil() {
 	o.LicenseRegistration.Set(nil)
@@ -562,5 +564,3 @@ func (v *NullableHyperflexLicenseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

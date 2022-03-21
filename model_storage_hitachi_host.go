@@ -29,7 +29,7 @@ type StorageHitachiHost struct {
 	// ID of the host group for this host.
 	HostGroupId *string `json:"HostGroupId,omitempty"`
 	// Host group number for this host.
-	HostGroupNumber *int64 `json:"HostGroupNumber,omitempty"`
+	HostGroupNumber *int64  `json:"HostGroupNumber,omitempty"`
 	HostModeOptions []int64 `json:"HostModeOptions,omitempty"`
 	// Mutual CHAP setting that is Enabled or Disabled.
 	IsChapMutual *bool `json:"IsChapMutual,omitempty"`
@@ -42,9 +42,9 @@ type StorageHitachiHost struct {
 	// Host Group type, it can be FC or iSCSI. * `FC` - Port supports fibre channel protocol. * `iSCSI` - Port supports iSCSI protocol. * `FCoE` - Port supports fibre channel over ethernet protocol.
 	Type *string `json:"Type,omitempty"`
 	// World wide port name, 64 bit address represented in hexa decimal notation.
-	Wwn *string `json:"Wwn,omitempty"`
-	Array *StorageHitachiArrayRelationship `json:"Array,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Wwn                  *string                              `json:"Wwn,omitempty"`
+	Array                *StorageHitachiArrayRelationship     `json:"Array,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -86,7 +86,7 @@ func (o *StorageHitachiHost) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageHitachiHost) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -110,7 +110,7 @@ func (o *StorageHitachiHost) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageHitachiHost) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -219,7 +219,7 @@ func (o *StorageHitachiHost) SetHostGroupNumber(v int64) {
 
 // GetHostModeOptions returns the HostModeOptions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageHitachiHost) GetHostModeOptions() []int64 {
-	if o == nil  {
+	if o == nil {
 		var ret []int64
 		return ret
 	}
@@ -577,7 +577,7 @@ func (o *StorageHitachiHost) UnmarshalJSON(bytes []byte) (err error) {
 		// ID of the host group for this host.
 		HostGroupId *string `json:"HostGroupId,omitempty"`
 		// Host group number for this host.
-		HostGroupNumber *int64 `json:"HostGroupNumber,omitempty"`
+		HostGroupNumber *int64  `json:"HostGroupNumber,omitempty"`
 		HostModeOptions []int64 `json:"HostModeOptions,omitempty"`
 		// Mutual CHAP setting that is Enabled or Disabled.
 		IsChapMutual *bool `json:"IsChapMutual,omitempty"`
@@ -590,8 +590,8 @@ func (o *StorageHitachiHost) UnmarshalJSON(bytes []byte) (err error) {
 		// Host Group type, it can be FC or iSCSI. * `FC` - Port supports fibre channel protocol. * `iSCSI` - Port supports iSCSI protocol. * `FCoE` - Port supports fibre channel over ethernet protocol.
 		Type *string `json:"Type,omitempty"`
 		// World wide port name, 64 bit address represented in hexa decimal notation.
-		Wwn *string `json:"Wwn,omitempty"`
-		Array *StorageHitachiArrayRelationship `json:"Array,omitempty"`
+		Wwn              *string                              `json:"Wwn,omitempty"`
+		Array            *StorageHitachiArrayRelationship     `json:"Array,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -705,5 +705,3 @@ func (v *NullableStorageHitachiHost) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

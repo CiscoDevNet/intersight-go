@@ -22,13 +22,13 @@ type IppoolBlockLeaseAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Type of the IP address requested. * `IPv4` - IP V4 address type requested. * `IPv6` - IP V6 address type requested.
-	IpType *string `json:"IpType,omitempty"`
+	IpType           *string               `json:"IpType,omitempty"`
 	AssignedToEntity *MoBaseMoRelationship `json:"AssignedToEntity,omitempty"`
 	// An array of relationships to ippoolIpLease resources.
-	IpLeases []IppoolIpLeaseRelationship `json:"IpLeases,omitempty"`
-	Pool *IppoolPoolRelationship `json:"Pool,omitempty"`
-	Universe *IppoolUniverseRelationship `json:"Universe,omitempty"`
-	Vrf *VrfVrfRelationship `json:"Vrf,omitempty"`
+	IpLeases             []IppoolIpLeaseRelationship `json:"IpLeases,omitempty"`
+	Pool                 *IppoolPoolRelationship     `json:"Pool,omitempty"`
+	Universe             *IppoolUniverseRelationship `json:"Universe,omitempty"`
+	Vrf                  *VrfVrfRelationship         `json:"Vrf,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *IppoolBlockLeaseAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IppoolBlockLeaseAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *IppoolBlockLeaseAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IppoolBlockLeaseAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -175,7 +175,7 @@ func (o *IppoolBlockLeaseAllOf) SetAssignedToEntity(v MoBaseMoRelationship) {
 
 // GetIpLeases returns the IpLeases field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IppoolBlockLeaseAllOf) GetIpLeases() []IppoolIpLeaseRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IppoolIpLeaseRelationship
 		return ret
 	}
@@ -395,5 +395,3 @@ func (v *NullableIppoolBlockLeaseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

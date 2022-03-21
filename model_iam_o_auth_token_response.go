@@ -18,32 +18,31 @@ import (
 
 // IamOAuthTokenResponse - The response body of a HTTP GET request for the 'iam.OAuthToken' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'iam.OAuthToken' resources.
 type IamOAuthTokenResponse struct {
-	IamOAuthTokenList *IamOAuthTokenList
+	IamOAuthTokenList    *IamOAuthTokenList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IamOAuthTokenListAsIamOAuthTokenResponse is a convenience function that returns IamOAuthTokenList wrapped in IamOAuthTokenResponse
 func IamOAuthTokenListAsIamOAuthTokenResponse(v *IamOAuthTokenList) IamOAuthTokenResponse {
-	return IamOAuthTokenResponse{ IamOAuthTokenList: v}
+	return IamOAuthTokenResponse{IamOAuthTokenList: v}
 }
 
 // MoAggregateTransformAsIamOAuthTokenResponse is a convenience function that returns MoAggregateTransform wrapped in IamOAuthTokenResponse
 func MoAggregateTransformAsIamOAuthTokenResponse(v *MoAggregateTransform) IamOAuthTokenResponse {
-	return IamOAuthTokenResponse{ MoAggregateTransform: v}
+	return IamOAuthTokenResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIamOAuthTokenResponse is a convenience function that returns MoDocumentCount wrapped in IamOAuthTokenResponse
 func MoDocumentCountAsIamOAuthTokenResponse(v *MoDocumentCount) IamOAuthTokenResponse {
-	return IamOAuthTokenResponse{ MoDocumentCount: v}
+	return IamOAuthTokenResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIamOAuthTokenResponse is a convenience function that returns MoTagSummary wrapped in IamOAuthTokenResponse
 func MoTagSummaryAsIamOAuthTokenResponse(v *MoTagSummary) IamOAuthTokenResponse {
-	return IamOAuthTokenResponse{ MoTagSummary: v}
+	return IamOAuthTokenResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamOAuthTokenResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IamOAuthTokenResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamOAuthTokenResponse) GetActualInstance() (interface{}) {
+func (obj *IamOAuthTokenResponse) GetActualInstance() interface{} {
 	if obj.IamOAuthTokenList != nil {
 		return obj.IamOAuthTokenList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIamOAuthTokenResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

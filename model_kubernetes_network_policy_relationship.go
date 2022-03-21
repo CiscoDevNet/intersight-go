@@ -19,19 +19,18 @@ import (
 // KubernetesNetworkPolicyRelationship - A relationship to the 'kubernetes.NetworkPolicy' resource, or the expanded 'kubernetes.NetworkPolicy' resource, or the 'null' value.
 type KubernetesNetworkPolicyRelationship struct {
 	KubernetesNetworkPolicy *KubernetesNetworkPolicy
-	MoMoRef *MoMoRef
+	MoMoRef                 *MoMoRef
 }
 
 // KubernetesNetworkPolicyAsKubernetesNetworkPolicyRelationship is a convenience function that returns KubernetesNetworkPolicy wrapped in KubernetesNetworkPolicyRelationship
 func KubernetesNetworkPolicyAsKubernetesNetworkPolicyRelationship(v *KubernetesNetworkPolicy) KubernetesNetworkPolicyRelationship {
-	return KubernetesNetworkPolicyRelationship{ KubernetesNetworkPolicy: v}
+	return KubernetesNetworkPolicyRelationship{KubernetesNetworkPolicy: v}
 }
 
 // MoMoRefAsKubernetesNetworkPolicyRelationship is a convenience function that returns MoMoRef wrapped in KubernetesNetworkPolicyRelationship
 func MoMoRefAsKubernetesNetworkPolicyRelationship(v *MoMoRef) KubernetesNetworkPolicyRelationship {
-	return KubernetesNetworkPolicyRelationship{ MoMoRef: v}
+	return KubernetesNetworkPolicyRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesNetworkPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesNetworkPolicyRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KubernetesNetworkPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesNetworkPolicyRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesNetworkPolicy != nil {
 		return obj.KubernetesNetworkPolicy
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesNetworkPolicyRelationship) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

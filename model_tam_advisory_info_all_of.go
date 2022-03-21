@@ -22,9 +22,9 @@ type TamAdvisoryInfoAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Current state of the advisory for the owner. Indicates if the user is interested in getting updates for the advisory. * `active` - Advisory is currently active and the user wants to receive updates for this advisory. * `acknowledged` - Advisory is seen and acknowledged by the user and she no longer wants to recieve updates.
-	State *string `json:"State,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
-	Advisory *TamBaseAdvisoryRelationship `json:"Advisory,omitempty"`
+	State                *string                      `json:"State,omitempty"`
+	Account              *IamAccountRelationship      `json:"Account,omitempty"`
+	Advisory             *TamBaseAdvisoryRelationship `json:"Advisory,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *TamAdvisoryInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TamAdvisoryInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *TamAdvisoryInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TamAdvisoryInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -282,5 +282,3 @@ func (v *NullableTamAdvisoryInfoAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

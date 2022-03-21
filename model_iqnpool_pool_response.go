@@ -18,32 +18,31 @@ import (
 
 // IqnpoolPoolResponse - The response body of a HTTP GET request for the 'iqnpool.Pool' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'iqnpool.Pool' resources.
 type IqnpoolPoolResponse struct {
-	IqnpoolPoolList *IqnpoolPoolList
+	IqnpoolPoolList      *IqnpoolPoolList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IqnpoolPoolListAsIqnpoolPoolResponse is a convenience function that returns IqnpoolPoolList wrapped in IqnpoolPoolResponse
 func IqnpoolPoolListAsIqnpoolPoolResponse(v *IqnpoolPoolList) IqnpoolPoolResponse {
-	return IqnpoolPoolResponse{ IqnpoolPoolList: v}
+	return IqnpoolPoolResponse{IqnpoolPoolList: v}
 }
 
 // MoAggregateTransformAsIqnpoolPoolResponse is a convenience function that returns MoAggregateTransform wrapped in IqnpoolPoolResponse
 func MoAggregateTransformAsIqnpoolPoolResponse(v *MoAggregateTransform) IqnpoolPoolResponse {
-	return IqnpoolPoolResponse{ MoAggregateTransform: v}
+	return IqnpoolPoolResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIqnpoolPoolResponse is a convenience function that returns MoDocumentCount wrapped in IqnpoolPoolResponse
 func MoDocumentCountAsIqnpoolPoolResponse(v *MoDocumentCount) IqnpoolPoolResponse {
-	return IqnpoolPoolResponse{ MoDocumentCount: v}
+	return IqnpoolPoolResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIqnpoolPoolResponse is a convenience function that returns MoTagSummary wrapped in IqnpoolPoolResponse
 func MoTagSummaryAsIqnpoolPoolResponse(v *MoTagSummary) IqnpoolPoolResponse {
-	return IqnpoolPoolResponse{ MoTagSummary: v}
+	return IqnpoolPoolResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IqnpoolPoolResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IqnpoolPoolResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IqnpoolPoolResponse) GetActualInstance() (interface{}) {
+func (obj *IqnpoolPoolResponse) GetActualInstance() interface{} {
 	if obj.IqnpoolPoolList != nil {
 		return obj.IqnpoolPoolList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIqnpoolPoolResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -34,7 +34,7 @@ type VirtualizationCloudInitConfig struct {
 	UserData *string `json:"UserData,omitempty"`
 	// Set to true, if the cloud init user data is in base64 format.
 	UserDataBase64Encoded *bool `json:"UserDataBase64Encoded,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties  map[string]interface{}
 }
 
 type _VirtualizationCloudInitConfig VirtualizationCloudInitConfig
@@ -79,7 +79,7 @@ func (o *VirtualizationCloudInitConfig) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationCloudInitConfig) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *VirtualizationCloudInitConfig) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationCloudInitConfig) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -427,5 +427,3 @@ func (v *NullableVirtualizationCloudInitConfig) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,19 +19,18 @@ import (
 // KubernetesContainerRuntimePolicyRelationship - A relationship to the 'kubernetes.ContainerRuntimePolicy' resource, or the expanded 'kubernetes.ContainerRuntimePolicy' resource, or the 'null' value.
 type KubernetesContainerRuntimePolicyRelationship struct {
 	KubernetesContainerRuntimePolicy *KubernetesContainerRuntimePolicy
-	MoMoRef *MoMoRef
+	MoMoRef                          *MoMoRef
 }
 
 // KubernetesContainerRuntimePolicyAsKubernetesContainerRuntimePolicyRelationship is a convenience function that returns KubernetesContainerRuntimePolicy wrapped in KubernetesContainerRuntimePolicyRelationship
 func KubernetesContainerRuntimePolicyAsKubernetesContainerRuntimePolicyRelationship(v *KubernetesContainerRuntimePolicy) KubernetesContainerRuntimePolicyRelationship {
-	return KubernetesContainerRuntimePolicyRelationship{ KubernetesContainerRuntimePolicy: v}
+	return KubernetesContainerRuntimePolicyRelationship{KubernetesContainerRuntimePolicy: v}
 }
 
 // MoMoRefAsKubernetesContainerRuntimePolicyRelationship is a convenience function that returns MoMoRef wrapped in KubernetesContainerRuntimePolicyRelationship
 func MoMoRefAsKubernetesContainerRuntimePolicyRelationship(v *MoMoRef) KubernetesContainerRuntimePolicyRelationship {
-	return KubernetesContainerRuntimePolicyRelationship{ MoMoRef: v}
+	return KubernetesContainerRuntimePolicyRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesContainerRuntimePolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesContainerRuntimePolicyRelationship) MarshalJSON() ([]byte, e
 }
 
 // Get the actual instance
-func (obj *KubernetesContainerRuntimePolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesContainerRuntimePolicyRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesContainerRuntimePolicy != nil {
 		return obj.KubernetesContainerRuntimePolicy
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesContainerRuntimePolicyRelationship) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

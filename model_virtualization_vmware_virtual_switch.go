@@ -29,15 +29,15 @@ type VirtualizationVmwareVirtualSwitch struct {
 	// If macAddressChanges property value is set to reject and the MAC address of the adapter is changed to a value other than the one specified in .vmx configuration file, the switch drops all inbound frames to the adapter. If property value is set to accept and the MAC address is changed, the switch allows frames to the new MAC address to pass. * `Reject` - Indicates that the security policy is rejected. * `Accept` - Indicates that the security policy is accepted.
 	MacAddressChanges *string `json:"MacAddressChanges,omitempty"`
 	// Maximum transmission unit configured on a virtual switch.
-	Mtu *int64 `json:"Mtu,omitempty"`
+	Mtu                   *int64                                         `json:"Mtu,omitempty"`
 	NicTeamingAndFailover NullableVirtualizationVmwareTeamingAndFailover `json:"NicTeamingAndFailover,omitempty"`
 	// Number of networks available on this virtual switch.
 	NumNetworks *int64 `json:"NumNetworks,omitempty"`
 	// Number of physical network interfaces connected with this virtual switch.
 	NumPhysicalNetworkInterfaces *int64 `json:"NumPhysicalNetworkInterfaces,omitempty"`
 	// If promiscuousMode property value is set to reject, the virtual switch forwards only frames that are addressed to the adapter. If property value is set to accept, the virtual switch forwards all frames to the adapter in compliance with the active VLAN policy for the port to which it is connected. * `Reject` - Indicates that the security policy is rejected. * `Accept` - Indicates that the security policy is accepted.
-	PromiscuousMode *string `json:"PromiscuousMode,omitempty"`
-	Host *VirtualizationVmwareHostRelationship `json:"Host,omitempty"`
+	PromiscuousMode      *string                               `json:"PromiscuousMode,omitempty"`
+	Host                 *VirtualizationVmwareHostRelationship `json:"Host,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -91,7 +91,7 @@ func (o *VirtualizationVmwareVirtualSwitch) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVirtualSwitch) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -115,7 +115,7 @@ func (o *VirtualizationVmwareVirtualSwitch) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVirtualSwitch) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -235,7 +235,7 @@ func (o *VirtualizationVmwareVirtualSwitch) GetNicTeamingAndFailover() Virtualiz
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVmwareVirtualSwitch) GetNicTeamingAndFailoverOk() (*VirtualizationVmwareTeamingAndFailover, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NicTeamingAndFailover.Get(), o.NicTeamingAndFailover.IsSet()
@@ -254,6 +254,7 @@ func (o *VirtualizationVmwareVirtualSwitch) HasNicTeamingAndFailover() bool {
 func (o *VirtualizationVmwareVirtualSwitch) SetNicTeamingAndFailover(v VirtualizationVmwareTeamingAndFailover) {
 	o.NicTeamingAndFailover.Set(&v)
 }
+
 // SetNicTeamingAndFailoverNil sets the value for NicTeamingAndFailover to be an explicit nil
 func (o *VirtualizationVmwareVirtualSwitch) SetNicTeamingAndFailoverNil() {
 	o.NicTeamingAndFailover.Set(nil)
@@ -451,15 +452,15 @@ func (o *VirtualizationVmwareVirtualSwitch) UnmarshalJSON(bytes []byte) (err err
 		// If macAddressChanges property value is set to reject and the MAC address of the adapter is changed to a value other than the one specified in .vmx configuration file, the switch drops all inbound frames to the adapter. If property value is set to accept and the MAC address is changed, the switch allows frames to the new MAC address to pass. * `Reject` - Indicates that the security policy is rejected. * `Accept` - Indicates that the security policy is accepted.
 		MacAddressChanges *string `json:"MacAddressChanges,omitempty"`
 		// Maximum transmission unit configured on a virtual switch.
-		Mtu *int64 `json:"Mtu,omitempty"`
+		Mtu                   *int64                                         `json:"Mtu,omitempty"`
 		NicTeamingAndFailover NullableVirtualizationVmwareTeamingAndFailover `json:"NicTeamingAndFailover,omitempty"`
 		// Number of networks available on this virtual switch.
 		NumNetworks *int64 `json:"NumNetworks,omitempty"`
 		// Number of physical network interfaces connected with this virtual switch.
 		NumPhysicalNetworkInterfaces *int64 `json:"NumPhysicalNetworkInterfaces,omitempty"`
 		// If promiscuousMode property value is set to reject, the virtual switch forwards only frames that are addressed to the adapter. If property value is set to accept, the virtual switch forwards all frames to the adapter in compliance with the active VLAN policy for the port to which it is connected. * `Reject` - Indicates that the security policy is rejected. * `Accept` - Indicates that the security policy is accepted.
-		PromiscuousMode *string `json:"PromiscuousMode,omitempty"`
-		Host *VirtualizationVmwareHostRelationship `json:"Host,omitempty"`
+		PromiscuousMode *string                               `json:"PromiscuousMode,omitempty"`
+		Host            *VirtualizationVmwareHostRelationship `json:"Host,omitempty"`
 	}
 
 	varVirtualizationVmwareVirtualSwitchWithoutEmbeddedStruct := VirtualizationVmwareVirtualSwitchWithoutEmbeddedStruct{}
@@ -564,5 +565,3 @@ func (v *NullableVirtualizationVmwareVirtualSwitch) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,32 +18,31 @@ import (
 
 // NiatelemetrySyslogSysMsgResponse - The response body of a HTTP GET request for the 'niatelemetry.SyslogSysMsg' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'niatelemetry.SyslogSysMsg' resources.
 type NiatelemetrySyslogSysMsgResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform         *MoAggregateTransform
+	MoDocumentCount              *MoDocumentCount
+	MoTagSummary                 *MoTagSummary
 	NiatelemetrySyslogSysMsgList *NiatelemetrySyslogSysMsgList
 }
 
 // MoAggregateTransformAsNiatelemetrySyslogSysMsgResponse is a convenience function that returns MoAggregateTransform wrapped in NiatelemetrySyslogSysMsgResponse
 func MoAggregateTransformAsNiatelemetrySyslogSysMsgResponse(v *MoAggregateTransform) NiatelemetrySyslogSysMsgResponse {
-	return NiatelemetrySyslogSysMsgResponse{ MoAggregateTransform: v}
+	return NiatelemetrySyslogSysMsgResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsNiatelemetrySyslogSysMsgResponse is a convenience function that returns MoDocumentCount wrapped in NiatelemetrySyslogSysMsgResponse
 func MoDocumentCountAsNiatelemetrySyslogSysMsgResponse(v *MoDocumentCount) NiatelemetrySyslogSysMsgResponse {
-	return NiatelemetrySyslogSysMsgResponse{ MoDocumentCount: v}
+	return NiatelemetrySyslogSysMsgResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsNiatelemetrySyslogSysMsgResponse is a convenience function that returns MoTagSummary wrapped in NiatelemetrySyslogSysMsgResponse
 func MoTagSummaryAsNiatelemetrySyslogSysMsgResponse(v *MoTagSummary) NiatelemetrySyslogSysMsgResponse {
-	return NiatelemetrySyslogSysMsgResponse{ MoTagSummary: v}
+	return NiatelemetrySyslogSysMsgResponse{MoTagSummary: v}
 }
 
 // NiatelemetrySyslogSysMsgListAsNiatelemetrySyslogSysMsgResponse is a convenience function that returns NiatelemetrySyslogSysMsgList wrapped in NiatelemetrySyslogSysMsgResponse
 func NiatelemetrySyslogSysMsgListAsNiatelemetrySyslogSysMsgResponse(v *NiatelemetrySyslogSysMsgList) NiatelemetrySyslogSysMsgResponse {
-	return NiatelemetrySyslogSysMsgResponse{ NiatelemetrySyslogSysMsgList: v}
+	return NiatelemetrySyslogSysMsgResponse{NiatelemetrySyslogSysMsgList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiatelemetrySyslogSysMsgResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src NiatelemetrySyslogSysMsgResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NiatelemetrySyslogSysMsgResponse) GetActualInstance() (interface{}) {
+func (obj *NiatelemetrySyslogSysMsgResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableNiatelemetrySyslogSysMsgResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

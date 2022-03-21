@@ -52,8 +52,8 @@ type HyperflexAlarmAllOf struct {
 	// The unique identifier for this alarm instance.
 	Uuid *string `json:"Uuid,omitempty"`
 	// An array of relationships to infraBaseCluster resources.
-	AncestorMos []InfraBaseClusterRelationship `json:"AncestorMos,omitempty"`
-	Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
+	AncestorMos          []InfraBaseClusterRelationship `json:"AncestorMos,omitempty"`
+	Cluster              *HyperflexClusterRelationship  `json:"Cluster,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -95,7 +95,7 @@ func (o *HyperflexAlarmAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexAlarmAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -119,7 +119,7 @@ func (o *HyperflexAlarmAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexAlarmAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -612,7 +612,7 @@ func (o *HyperflexAlarmAllOf) SetUuid(v string) {
 
 // GetAncestorMos returns the AncestorMos field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexAlarmAllOf) GetAncestorMos() []InfraBaseClusterRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []InfraBaseClusterRelationship
 		return ret
 	}
@@ -812,5 +812,3 @@ func (v *NullableHyperflexAlarmAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

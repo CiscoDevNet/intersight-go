@@ -23,7 +23,7 @@ type KubernetesVersionList struct {
 	// The total number of 'kubernetes.Version' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'kubernetes.Version' resources matching the request.
-	Results []KubernetesVersion `json:"Results,omitempty"`
+	Results              []KubernetesVersion `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *KubernetesVersionList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesVersionList) GetResults() []KubernetesVersion {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesVersion
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableKubernetesVersionList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

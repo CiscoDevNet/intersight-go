@@ -20,14 +20,14 @@ type CertificatemanagementCertificateBaseAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
+	ObjectType  string                  `json:"ObjectType"`
 	Certificate NullableX509Certificate `json:"Certificate,omitempty"`
 	// Enable/Disable the certificate in Certificate Management policy.
 	Enabled *bool `json:"Enabled,omitempty"`
 	// Indicates whether the value of the 'privatekey' property has been set.
 	IsPrivatekeySet *bool `json:"IsPrivatekeySet,omitempty"`
 	// Private Key which is used to validate the certificate.
-	Privatekey *string `json:"Privatekey,omitempty"`
+	Privatekey           *string `json:"Privatekey,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *CertificatemanagementCertificateBaseAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CertificatemanagementCertificateBaseAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *CertificatemanagementCertificateBaseAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CertificatemanagementCertificateBaseAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -121,7 +121,7 @@ func (o *CertificatemanagementCertificateBaseAllOf) GetCertificate() X509Certifi
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CertificatemanagementCertificateBaseAllOf) GetCertificateOk() (*X509Certificate, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Certificate.Get(), o.Certificate.IsSet()
@@ -140,6 +140,7 @@ func (o *CertificatemanagementCertificateBaseAllOf) HasCertificate() bool {
 func (o *CertificatemanagementCertificateBaseAllOf) SetCertificate(v X509Certificate) {
 	o.Certificate.Set(&v)
 }
+
 // SetCertificateNil sets the value for Certificate to be an explicit nil
 func (o *CertificatemanagementCertificateBaseAllOf) SetCertificateNil() {
 	o.Certificate.Set(nil)
@@ -331,5 +332,3 @@ func (v *NullableCertificatemanagementCertificateBaseAllOf) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -28,11 +28,11 @@ type MemoryPersistentMemoryNamespaceConfigResultAllOf struct {
 	// Socket ID in which the Persistent Memory Namespace needed to be configured.
 	SocketId *string `json:"SocketId,omitempty"`
 	// Socket Memory ID in which the Persistent Memory Namespace needed to be configured.
-	SocketMemoryId *string `json:"SocketMemoryId,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+	SocketMemoryId                     *string                                         `json:"SocketMemoryId,omitempty"`
+	InventoryDeviceInfo                *InventoryDeviceInfoRelationship                `json:"InventoryDeviceInfo,omitempty"`
 	MemoryPersistentMemoryConfigResult *MemoryPersistentMemoryConfigResultRelationship `json:"MemoryPersistentMemoryConfigResult,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RegisteredDevice                   *AssetDeviceRegistrationRelationship            `json:"RegisteredDevice,omitempty"`
+	AdditionalProperties               map[string]interface{}
 }
 
 type _MemoryPersistentMemoryNamespaceConfigResultAllOf MemoryPersistentMemoryNamespaceConfigResultAllOf
@@ -73,7 +73,7 @@ func (o *MemoryPersistentMemoryNamespaceConfigResultAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryNamespaceConfigResultAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *MemoryPersistentMemoryNamespaceConfigResultAllOf) GetObjectType() strin
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryNamespaceConfigResultAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -429,5 +429,3 @@ func (v *NullableMemoryPersistentMemoryNamespaceConfigResultAllOf) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

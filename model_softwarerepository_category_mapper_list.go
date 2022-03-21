@@ -23,7 +23,7 @@ type SoftwarerepositoryCategoryMapperList struct {
 	// The total number of 'softwarerepository.CategoryMapper' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'softwarerepository.CategoryMapper' resources matching the request.
-	Results []SoftwarerepositoryCategoryMapper `json:"Results,omitempty"`
+	Results              []SoftwarerepositoryCategoryMapper `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *SoftwarerepositoryCategoryMapperList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SoftwarerepositoryCategoryMapperList) GetResults() []SoftwarerepositoryCategoryMapper {
-	if o == nil  {
+	if o == nil {
 		var ret []SoftwarerepositoryCategoryMapper
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableSoftwarerepositoryCategoryMapperList) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

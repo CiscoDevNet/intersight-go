@@ -26,7 +26,7 @@ type TemplateTransformationStageAllOf struct {
 	// A collection of arguments for the function being executed.
 	FunctionArguments interface{} `json:"FunctionArguments,omitempty"`
 	// The unique name by which the output of this transformation stage can be accessed in further stages. Only alphanumeric characters are allowed.
-	Name *string `json:"Name,omitempty"`
+	Name                 *string `json:"Name,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *TemplateTransformationStageAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TemplateTransformationStageAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *TemplateTransformationStageAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TemplateTransformationStageAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -137,7 +137,7 @@ func (o *TemplateTransformationStageAllOf) SetFunction(v string) {
 
 // GetFunctionArguments returns the FunctionArguments field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TemplateTransformationStageAllOf) GetFunctionArguments() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -281,5 +281,3 @@ func (v *NullableTemplateTransformationStageAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

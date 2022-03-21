@@ -20,7 +20,7 @@ type ApplianceFileSystemStatusListAllOf struct {
 	// The total number of 'appliance.FileSystemStatus' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'appliance.FileSystemStatus' resources matching the request.
-	Results []ApplianceFileSystemStatus `json:"Results,omitempty"`
+	Results              []ApplianceFileSystemStatus `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *ApplianceFileSystemStatusListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceFileSystemStatusListAllOf) GetResults() []ApplianceFileSystemStatus {
-	if o == nil  {
+	if o == nil {
 		var ret []ApplianceFileSystemStatus
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableApplianceFileSystemStatusListAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

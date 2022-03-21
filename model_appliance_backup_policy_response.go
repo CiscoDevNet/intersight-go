@@ -19,31 +19,30 @@ import (
 // ApplianceBackupPolicyResponse - The response body of a HTTP GET request for the 'appliance.BackupPolicy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'appliance.BackupPolicy' resources.
 type ApplianceBackupPolicyResponse struct {
 	ApplianceBackupPolicyList *ApplianceBackupPolicyList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform      *MoAggregateTransform
+	MoDocumentCount           *MoDocumentCount
+	MoTagSummary              *MoTagSummary
 }
 
 // ApplianceBackupPolicyListAsApplianceBackupPolicyResponse is a convenience function that returns ApplianceBackupPolicyList wrapped in ApplianceBackupPolicyResponse
 func ApplianceBackupPolicyListAsApplianceBackupPolicyResponse(v *ApplianceBackupPolicyList) ApplianceBackupPolicyResponse {
-	return ApplianceBackupPolicyResponse{ ApplianceBackupPolicyList: v}
+	return ApplianceBackupPolicyResponse{ApplianceBackupPolicyList: v}
 }
 
 // MoAggregateTransformAsApplianceBackupPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in ApplianceBackupPolicyResponse
 func MoAggregateTransformAsApplianceBackupPolicyResponse(v *MoAggregateTransform) ApplianceBackupPolicyResponse {
-	return ApplianceBackupPolicyResponse{ MoAggregateTransform: v}
+	return ApplianceBackupPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsApplianceBackupPolicyResponse is a convenience function that returns MoDocumentCount wrapped in ApplianceBackupPolicyResponse
 func MoDocumentCountAsApplianceBackupPolicyResponse(v *MoDocumentCount) ApplianceBackupPolicyResponse {
-	return ApplianceBackupPolicyResponse{ MoDocumentCount: v}
+	return ApplianceBackupPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsApplianceBackupPolicyResponse is a convenience function that returns MoTagSummary wrapped in ApplianceBackupPolicyResponse
 func MoTagSummaryAsApplianceBackupPolicyResponse(v *MoTagSummary) ApplianceBackupPolicyResponse {
-	return ApplianceBackupPolicyResponse{ MoTagSummary: v}
+	return ApplianceBackupPolicyResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ApplianceBackupPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ApplianceBackupPolicyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ApplianceBackupPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *ApplianceBackupPolicyResponse) GetActualInstance() interface{} {
 	if obj.ApplianceBackupPolicyList != nil {
 		return obj.ApplianceBackupPolicyList
 	}
@@ -184,5 +183,3 @@ func (v *NullableApplianceBackupPolicyResponse) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

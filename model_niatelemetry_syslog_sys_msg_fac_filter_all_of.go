@@ -36,8 +36,8 @@ type NiatelemetrySyslogSysMsgFacFilterAllOf struct {
 	// Name of the APIC site from which this data is being collected.
 	SiteName *string `json:"SiteName,omitempty"`
 	// Parent syslog msg for syslog sys msg facility filter in APIC.
-	SyslogSysMsg *string `json:"SyslogSysMsg,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SyslogSysMsg         *string                              `json:"SyslogSysMsg,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *NiatelemetrySyslogSysMsgFacFilterAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetrySyslogSysMsgFacFilterAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *NiatelemetrySyslogSysMsgFacFilterAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetrySyslogSysMsgFacFilterAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -507,5 +507,3 @@ func (v *NullableNiatelemetrySyslogSysMsgFacFilterAllOf) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

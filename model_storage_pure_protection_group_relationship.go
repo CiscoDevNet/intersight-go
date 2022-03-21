@@ -18,20 +18,19 @@ import (
 
 // StoragePureProtectionGroupRelationship - A relationship to the 'storage.PureProtectionGroup' resource, or the expanded 'storage.PureProtectionGroup' resource, or the 'null' value.
 type StoragePureProtectionGroupRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                    *MoMoRef
 	StoragePureProtectionGroup *StoragePureProtectionGroup
 }
 
 // MoMoRefAsStoragePureProtectionGroupRelationship is a convenience function that returns MoMoRef wrapped in StoragePureProtectionGroupRelationship
 func MoMoRefAsStoragePureProtectionGroupRelationship(v *MoMoRef) StoragePureProtectionGroupRelationship {
-	return StoragePureProtectionGroupRelationship{ MoMoRef: v}
+	return StoragePureProtectionGroupRelationship{MoMoRef: v}
 }
 
 // StoragePureProtectionGroupAsStoragePureProtectionGroupRelationship is a convenience function that returns StoragePureProtectionGroup wrapped in StoragePureProtectionGroupRelationship
 func StoragePureProtectionGroupAsStoragePureProtectionGroupRelationship(v *StoragePureProtectionGroup) StoragePureProtectionGroupRelationship {
-	return StoragePureProtectionGroupRelationship{ StoragePureProtectionGroup: v}
+	return StoragePureProtectionGroupRelationship{StoragePureProtectionGroup: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StoragePureProtectionGroupRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StoragePureProtectionGroupRelationship) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *StoragePureProtectionGroupRelationship) GetActualInstance() (interface{}) {
+func (obj *StoragePureProtectionGroupRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStoragePureProtectionGroupRelationship) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

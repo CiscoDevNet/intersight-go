@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // IamOAuthToken The meta data for generating OAuth2 token of a user. It is created when user logged in via OAuth2 using Authorization Code grant and deleted upon logout, expiration timeout or manual deletion.
@@ -40,11 +40,11 @@ type IamOAuthToken struct {
 	// The last login time for user.
 	LastLoginTime *time.Time `json:"LastLoginTime,omitempty"`
 	// Token identifier. Not the Access Token itself.
-	TokenId *string `json:"TokenId,omitempty"`
-	UserMeta NullableIamClientMeta `json:"UserMeta,omitempty"`
-	AppRegistration *IamAppRegistrationRelationship `json:"AppRegistration,omitempty"`
-	Permission *IamPermissionRelationship `json:"Permission,omitempty"`
-	User *IamUserRelationship `json:"User,omitempty"`
+	TokenId              *string                         `json:"TokenId,omitempty"`
+	UserMeta             NullableIamClientMeta           `json:"UserMeta,omitempty"`
+	AppRegistration      *IamAppRegistrationRelationship `json:"AppRegistration,omitempty"`
+	Permission           *IamPermissionRelationship      `json:"Permission,omitempty"`
+	User                 *IamUserRelationship            `json:"User,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -86,7 +86,7 @@ func (o *IamOAuthToken) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamOAuthToken) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -110,7 +110,7 @@ func (o *IamOAuthToken) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamOAuthToken) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -390,7 +390,7 @@ func (o *IamOAuthToken) GetUserMeta() IamClientMeta {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IamOAuthToken) GetUserMetaOk() (*IamClientMeta, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UserMeta.Get(), o.UserMeta.IsSet()
@@ -409,6 +409,7 @@ func (o *IamOAuthToken) HasUserMeta() bool {
 func (o *IamOAuthToken) SetUserMeta(v IamClientMeta) {
 	o.UserMeta.Set(&v)
 }
+
 // SetUserMetaNil sets the value for UserMeta to be an explicit nil
 func (o *IamOAuthToken) SetUserMetaNil() {
 	o.UserMeta.Set(nil)
@@ -596,11 +597,11 @@ func (o *IamOAuthToken) UnmarshalJSON(bytes []byte) (err error) {
 		// The last login time for user.
 		LastLoginTime *time.Time `json:"LastLoginTime,omitempty"`
 		// Token identifier. Not the Access Token itself.
-		TokenId *string `json:"TokenId,omitempty"`
-		UserMeta NullableIamClientMeta `json:"UserMeta,omitempty"`
+		TokenId         *string                         `json:"TokenId,omitempty"`
+		UserMeta        NullableIamClientMeta           `json:"UserMeta,omitempty"`
 		AppRegistration *IamAppRegistrationRelationship `json:"AppRegistration,omitempty"`
-		Permission *IamPermissionRelationship `json:"Permission,omitempty"`
-		User *IamUserRelationship `json:"User,omitempty"`
+		Permission      *IamPermissionRelationship      `json:"Permission,omitempty"`
+		User            *IamUserRelationship            `json:"User,omitempty"`
 	}
 
 	varIamOAuthTokenWithoutEmbeddedStruct := IamOAuthTokenWithoutEmbeddedStruct{}
@@ -713,5 +714,3 @@ func (v *NullableIamOAuthToken) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

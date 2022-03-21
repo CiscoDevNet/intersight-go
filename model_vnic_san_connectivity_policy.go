@@ -33,11 +33,11 @@ type VnicSanConnectivityPolicy struct {
 	// Type of allocation selected to assign a WWNN address for the server node. * `POOL` - The user selects a pool from which the mac/wwn address will be leased for the Virtual Interface. * `STATIC` - The user assigns a static mac/wwn address for the Virtual Interface.
 	WwnnAddressType *string `json:"WwnnAddressType,omitempty"`
 	// An array of relationships to vnicFcIf resources.
-	FcIfs []VnicFcIfRelationship `json:"FcIfs,omitempty"`
+	FcIfs        []VnicFcIfRelationship                `json:"FcIfs,omitempty"`
 	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
-	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
-	WwnnPool *FcpoolPoolRelationship `json:"WwnnPool,omitempty"`
+	Profiles             []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
+	WwnnPool             *FcpoolPoolRelationship                   `json:"WwnnPool,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -91,7 +91,7 @@ func (o *VnicSanConnectivityPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicSanConnectivityPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -115,7 +115,7 @@ func (o *VnicSanConnectivityPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicSanConnectivityPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -256,7 +256,7 @@ func (o *VnicSanConnectivityPolicy) SetWwnnAddressType(v string) {
 
 // GetFcIfs returns the FcIfs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VnicSanConnectivityPolicy) GetFcIfs() []VnicFcIfRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []VnicFcIfRelationship
 		return ret
 	}
@@ -321,7 +321,7 @@ func (o *VnicSanConnectivityPolicy) SetOrganization(v OrganizationOrganizationRe
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VnicSanConnectivityPolicy) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -447,11 +447,11 @@ func (o *VnicSanConnectivityPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// Type of allocation selected to assign a WWNN address for the server node. * `POOL` - The user selects a pool from which the mac/wwn address will be leased for the Virtual Interface. * `STATIC` - The user assigns a static mac/wwn address for the Virtual Interface.
 		WwnnAddressType *string `json:"WwnnAddressType,omitempty"`
 		// An array of relationships to vnicFcIf resources.
-		FcIfs []VnicFcIfRelationship `json:"FcIfs,omitempty"`
+		FcIfs        []VnicFcIfRelationship                `json:"FcIfs,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 		// An array of relationships to policyAbstractConfigProfile resources.
 		Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
-		WwnnPool *FcpoolPoolRelationship `json:"WwnnPool,omitempty"`
+		WwnnPool *FcpoolPoolRelationship                   `json:"WwnnPool,omitempty"`
 	}
 
 	varVnicSanConnectivityPolicyWithoutEmbeddedStruct := VnicSanConnectivityPolicyWithoutEmbeddedStruct{}
@@ -556,5 +556,3 @@ func (v *NullableVnicSanConnectivityPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

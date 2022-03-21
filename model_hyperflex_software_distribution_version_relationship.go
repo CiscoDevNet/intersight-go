@@ -19,19 +19,18 @@ import (
 // HyperflexSoftwareDistributionVersionRelationship - A relationship to the 'hyperflex.SoftwareDistributionVersion' resource, or the expanded 'hyperflex.SoftwareDistributionVersion' resource, or the 'null' value.
 type HyperflexSoftwareDistributionVersionRelationship struct {
 	HyperflexSoftwareDistributionVersion *HyperflexSoftwareDistributionVersion
-	MoMoRef *MoMoRef
+	MoMoRef                              *MoMoRef
 }
 
 // HyperflexSoftwareDistributionVersionAsHyperflexSoftwareDistributionVersionRelationship is a convenience function that returns HyperflexSoftwareDistributionVersion wrapped in HyperflexSoftwareDistributionVersionRelationship
 func HyperflexSoftwareDistributionVersionAsHyperflexSoftwareDistributionVersionRelationship(v *HyperflexSoftwareDistributionVersion) HyperflexSoftwareDistributionVersionRelationship {
-	return HyperflexSoftwareDistributionVersionRelationship{ HyperflexSoftwareDistributionVersion: v}
+	return HyperflexSoftwareDistributionVersionRelationship{HyperflexSoftwareDistributionVersion: v}
 }
 
 // MoMoRefAsHyperflexSoftwareDistributionVersionRelationship is a convenience function that returns MoMoRef wrapped in HyperflexSoftwareDistributionVersionRelationship
 func MoMoRefAsHyperflexSoftwareDistributionVersionRelationship(v *MoMoRef) HyperflexSoftwareDistributionVersionRelationship {
-	return HyperflexSoftwareDistributionVersionRelationship{ MoMoRef: v}
+	return HyperflexSoftwareDistributionVersionRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexSoftwareDistributionVersionRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexSoftwareDistributionVersionRelationship) MarshalJSON() ([]byt
 }
 
 // Get the actual instance
-func (obj *HyperflexSoftwareDistributionVersionRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexSoftwareDistributionVersionRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexSoftwareDistributionVersion != nil {
 		return obj.HyperflexSoftwareDistributionVersion
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexSoftwareDistributionVersionRelationship) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

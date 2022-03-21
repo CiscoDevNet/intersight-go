@@ -18,20 +18,19 @@ import (
 
 // VirtualizationIweVirtualDiskRelationship - A relationship to the 'virtualization.IweVirtualDisk' resource, or the expanded 'virtualization.IweVirtualDisk' resource, or the 'null' value.
 type VirtualizationIweVirtualDiskRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                      *MoMoRef
 	VirtualizationIweVirtualDisk *VirtualizationIweVirtualDisk
 }
 
 // MoMoRefAsVirtualizationIweVirtualDiskRelationship is a convenience function that returns MoMoRef wrapped in VirtualizationIweVirtualDiskRelationship
 func MoMoRefAsVirtualizationIweVirtualDiskRelationship(v *MoMoRef) VirtualizationIweVirtualDiskRelationship {
-	return VirtualizationIweVirtualDiskRelationship{ MoMoRef: v}
+	return VirtualizationIweVirtualDiskRelationship{MoMoRef: v}
 }
 
 // VirtualizationIweVirtualDiskAsVirtualizationIweVirtualDiskRelationship is a convenience function that returns VirtualizationIweVirtualDisk wrapped in VirtualizationIweVirtualDiskRelationship
 func VirtualizationIweVirtualDiskAsVirtualizationIweVirtualDiskRelationship(v *VirtualizationIweVirtualDisk) VirtualizationIweVirtualDiskRelationship {
-	return VirtualizationIweVirtualDiskRelationship{ VirtualizationIweVirtualDisk: v}
+	return VirtualizationIweVirtualDiskRelationship{VirtualizationIweVirtualDisk: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VirtualizationIweVirtualDiskRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src VirtualizationIweVirtualDiskRelationship) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *VirtualizationIweVirtualDiskRelationship) GetActualInstance() (interface{}) {
+func (obj *VirtualizationIweVirtualDiskRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableVirtualizationIweVirtualDiskRelationship) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

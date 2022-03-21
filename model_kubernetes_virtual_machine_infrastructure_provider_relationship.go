@@ -19,19 +19,18 @@ import (
 // KubernetesVirtualMachineInfrastructureProviderRelationship - A relationship to the 'kubernetes.VirtualMachineInfrastructureProvider' resource, or the expanded 'kubernetes.VirtualMachineInfrastructureProvider' resource, or the 'null' value.
 type KubernetesVirtualMachineInfrastructureProviderRelationship struct {
 	KubernetesVirtualMachineInfrastructureProvider *KubernetesVirtualMachineInfrastructureProvider
-	MoMoRef *MoMoRef
+	MoMoRef                                        *MoMoRef
 }
 
 // KubernetesVirtualMachineInfrastructureProviderAsKubernetesVirtualMachineInfrastructureProviderRelationship is a convenience function that returns KubernetesVirtualMachineInfrastructureProvider wrapped in KubernetesVirtualMachineInfrastructureProviderRelationship
 func KubernetesVirtualMachineInfrastructureProviderAsKubernetesVirtualMachineInfrastructureProviderRelationship(v *KubernetesVirtualMachineInfrastructureProvider) KubernetesVirtualMachineInfrastructureProviderRelationship {
-	return KubernetesVirtualMachineInfrastructureProviderRelationship{ KubernetesVirtualMachineInfrastructureProvider: v}
+	return KubernetesVirtualMachineInfrastructureProviderRelationship{KubernetesVirtualMachineInfrastructureProvider: v}
 }
 
 // MoMoRefAsKubernetesVirtualMachineInfrastructureProviderRelationship is a convenience function that returns MoMoRef wrapped in KubernetesVirtualMachineInfrastructureProviderRelationship
 func MoMoRefAsKubernetesVirtualMachineInfrastructureProviderRelationship(v *MoMoRef) KubernetesVirtualMachineInfrastructureProviderRelationship {
-	return KubernetesVirtualMachineInfrastructureProviderRelationship{ MoMoRef: v}
+	return KubernetesVirtualMachineInfrastructureProviderRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesVirtualMachineInfrastructureProviderRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesVirtualMachineInfrastructureProviderRelationship) MarshalJSO
 }
 
 // Get the actual instance
-func (obj *KubernetesVirtualMachineInfrastructureProviderRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesVirtualMachineInfrastructureProviderRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesVirtualMachineInfrastructureProvider != nil {
 		return obj.KubernetesVirtualMachineInfrastructureProvider
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesVirtualMachineInfrastructureProviderRelationship) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,7 +29,7 @@ type ConnectorBaseMessage struct {
 	// The public key that was used to encrypt the values present in SecureProperties dictionary. If the given public key is not same as device connector's public key, an error reponse with appropriate error message is thrown back.
 	EncryptionKey *string `json:"EncryptionKey,omitempty"`
 	// A dictionary of encrypted secure values mapped against the secure property name. The values that are encrypted using AES key must be mapped against the secure property name with a 'AES' prefix Device connector expects the message body to be a golang template and the template can use the secure property names as placeholders.
-	SecureProperties interface{} `json:"SecureProperties,omitempty"`
+	SecureProperties     interface{} `json:"SecureProperties,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *ConnectorBaseMessage) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorBaseMessage) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *ConnectorBaseMessage) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorBaseMessage) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -168,7 +168,7 @@ func (o *ConnectorBaseMessage) SetEncryptionKey(v string) {
 
 // GetSecureProperties returns the SecureProperties field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ConnectorBaseMessage) GetSecureProperties() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -338,5 +338,3 @@ func (v *NullableConnectorBaseMessage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

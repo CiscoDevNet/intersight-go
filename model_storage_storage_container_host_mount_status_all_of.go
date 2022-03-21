@@ -28,7 +28,7 @@ type StorageStorageContainerHostMountStatusAllOf struct {
 	// Host specific storage container mount status.
 	Mounted *bool `json:"Mounted,omitempty"`
 	// Host specific storage container mount status reason.
-	Reason *string `json:"Reason,omitempty"`
+	Reason               *string `json:"Reason,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *StorageStorageContainerHostMountStatusAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageStorageContainerHostMountStatusAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *StorageStorageContainerHostMountStatusAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageStorageContainerHostMountStatusAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -318,5 +318,3 @@ func (v *NullableStorageStorageContainerHostMountStatusAllOf) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,32 +18,31 @@ import (
 
 // TelemetryDruidAggregateSearchSpec - Generic search specification descriptor
 type TelemetryDruidAggregateSearchSpec struct {
-	TelemetryDruidContainsSearchSpec *TelemetryDruidContainsSearchSpec
-	TelemetryDruidFragmentSearchSpec *TelemetryDruidFragmentSearchSpec
+	TelemetryDruidContainsSearchSpec            *TelemetryDruidContainsSearchSpec
+	TelemetryDruidFragmentSearchSpec            *TelemetryDruidFragmentSearchSpec
 	TelemetryDruidInsensitiveContainsSearchSpec *TelemetryDruidInsensitiveContainsSearchSpec
-	TelemetryDruidRegexSearchSpec *TelemetryDruidRegexSearchSpec
+	TelemetryDruidRegexSearchSpec               *TelemetryDruidRegexSearchSpec
 }
 
 // TelemetryDruidContainsSearchSpecAsTelemetryDruidAggregateSearchSpec is a convenience function that returns TelemetryDruidContainsSearchSpec wrapped in TelemetryDruidAggregateSearchSpec
 func TelemetryDruidContainsSearchSpecAsTelemetryDruidAggregateSearchSpec(v *TelemetryDruidContainsSearchSpec) TelemetryDruidAggregateSearchSpec {
-	return TelemetryDruidAggregateSearchSpec{ TelemetryDruidContainsSearchSpec: v}
+	return TelemetryDruidAggregateSearchSpec{TelemetryDruidContainsSearchSpec: v}
 }
 
 // TelemetryDruidFragmentSearchSpecAsTelemetryDruidAggregateSearchSpec is a convenience function that returns TelemetryDruidFragmentSearchSpec wrapped in TelemetryDruidAggregateSearchSpec
 func TelemetryDruidFragmentSearchSpecAsTelemetryDruidAggregateSearchSpec(v *TelemetryDruidFragmentSearchSpec) TelemetryDruidAggregateSearchSpec {
-	return TelemetryDruidAggregateSearchSpec{ TelemetryDruidFragmentSearchSpec: v}
+	return TelemetryDruidAggregateSearchSpec{TelemetryDruidFragmentSearchSpec: v}
 }
 
 // TelemetryDruidInsensitiveContainsSearchSpecAsTelemetryDruidAggregateSearchSpec is a convenience function that returns TelemetryDruidInsensitiveContainsSearchSpec wrapped in TelemetryDruidAggregateSearchSpec
 func TelemetryDruidInsensitiveContainsSearchSpecAsTelemetryDruidAggregateSearchSpec(v *TelemetryDruidInsensitiveContainsSearchSpec) TelemetryDruidAggregateSearchSpec {
-	return TelemetryDruidAggregateSearchSpec{ TelemetryDruidInsensitiveContainsSearchSpec: v}
+	return TelemetryDruidAggregateSearchSpec{TelemetryDruidInsensitiveContainsSearchSpec: v}
 }
 
 // TelemetryDruidRegexSearchSpecAsTelemetryDruidAggregateSearchSpec is a convenience function that returns TelemetryDruidRegexSearchSpec wrapped in TelemetryDruidAggregateSearchSpec
 func TelemetryDruidRegexSearchSpecAsTelemetryDruidAggregateSearchSpec(v *TelemetryDruidRegexSearchSpec) TelemetryDruidAggregateSearchSpec {
-	return TelemetryDruidAggregateSearchSpec{ TelemetryDruidRegexSearchSpec: v}
+	return TelemetryDruidAggregateSearchSpec{TelemetryDruidRegexSearchSpec: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *TelemetryDruidAggregateSearchSpec) UnmarshalJSON(data []byte) error {
@@ -176,7 +175,7 @@ func (src TelemetryDruidAggregateSearchSpec) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *TelemetryDruidAggregateSearchSpec) GetActualInstance() (interface{}) {
+func (obj *TelemetryDruidAggregateSearchSpec) GetActualInstance() interface{} {
 	if obj.TelemetryDruidContainsSearchSpec != nil {
 		return obj.TelemetryDruidContainsSearchSpec
 	}
@@ -232,5 +231,3 @@ func (v *NullableTelemetryDruidAggregateSearchSpec) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

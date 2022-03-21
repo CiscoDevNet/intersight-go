@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // VirtualizationVmwareVirtualMachineSnapshot The virtual machine snapshot is represented here.
@@ -42,8 +42,8 @@ type VirtualizationVmwareVirtualMachineSnapshot struct {
 	// Internally assigned MOR reference value.
 	RefValue *string `json:"RefValue,omitempty"`
 	// Size of the snapshot file created of the virtual machine, stored in bytes.
-	SnapshotSize *int64 `json:"SnapshotSize,omitempty"`
-	VirtualMachine *VirtualizationVmwareVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
+	SnapshotSize         *int64                                          `json:"SnapshotSize,omitempty"`
+	VirtualMachine       *VirtualizationVmwareVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -85,7 +85,7 @@ func (o *VirtualizationVmwareVirtualMachineSnapshot) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVirtualMachineSnapshot) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -109,7 +109,7 @@ func (o *VirtualizationVmwareVirtualMachineSnapshot) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVirtualMachineSnapshot) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -517,7 +517,7 @@ func (o *VirtualizationVmwareVirtualMachineSnapshot) UnmarshalJSON(bytes []byte)
 		// Internally assigned MOR reference value.
 		RefValue *string `json:"RefValue,omitempty"`
 		// Size of the snapshot file created of the virtual machine, stored in bytes.
-		SnapshotSize *int64 `json:"SnapshotSize,omitempty"`
+		SnapshotSize   *int64                                          `json:"SnapshotSize,omitempty"`
 		VirtualMachine *VirtualizationVmwareVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
 	}
 
@@ -627,5 +627,3 @@ func (v *NullableVirtualizationVmwareVirtualMachineSnapshot) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

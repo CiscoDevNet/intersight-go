@@ -19,31 +19,30 @@ import (
 // AssetDeviceContractInformationResponse - The response body of a HTTP GET request for the 'asset.DeviceContractInformation' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'asset.DeviceContractInformation' resources.
 type AssetDeviceContractInformationResponse struct {
 	AssetDeviceContractInformationList *AssetDeviceContractInformationList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform               *MoAggregateTransform
+	MoDocumentCount                    *MoDocumentCount
+	MoTagSummary                       *MoTagSummary
 }
 
 // AssetDeviceContractInformationListAsAssetDeviceContractInformationResponse is a convenience function that returns AssetDeviceContractInformationList wrapped in AssetDeviceContractInformationResponse
 func AssetDeviceContractInformationListAsAssetDeviceContractInformationResponse(v *AssetDeviceContractInformationList) AssetDeviceContractInformationResponse {
-	return AssetDeviceContractInformationResponse{ AssetDeviceContractInformationList: v}
+	return AssetDeviceContractInformationResponse{AssetDeviceContractInformationList: v}
 }
 
 // MoAggregateTransformAsAssetDeviceContractInformationResponse is a convenience function that returns MoAggregateTransform wrapped in AssetDeviceContractInformationResponse
 func MoAggregateTransformAsAssetDeviceContractInformationResponse(v *MoAggregateTransform) AssetDeviceContractInformationResponse {
-	return AssetDeviceContractInformationResponse{ MoAggregateTransform: v}
+	return AssetDeviceContractInformationResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsAssetDeviceContractInformationResponse is a convenience function that returns MoDocumentCount wrapped in AssetDeviceContractInformationResponse
 func MoDocumentCountAsAssetDeviceContractInformationResponse(v *MoDocumentCount) AssetDeviceContractInformationResponse {
-	return AssetDeviceContractInformationResponse{ MoDocumentCount: v}
+	return AssetDeviceContractInformationResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsAssetDeviceContractInformationResponse is a convenience function that returns MoTagSummary wrapped in AssetDeviceContractInformationResponse
 func MoTagSummaryAsAssetDeviceContractInformationResponse(v *MoTagSummary) AssetDeviceContractInformationResponse {
-	return AssetDeviceContractInformationResponse{ MoTagSummary: v}
+	return AssetDeviceContractInformationResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AssetDeviceContractInformationResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src AssetDeviceContractInformationResponse) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *AssetDeviceContractInformationResponse) GetActualInstance() (interface{}) {
+func (obj *AssetDeviceContractInformationResponse) GetActualInstance() interface{} {
 	if obj.AssetDeviceContractInformationList != nil {
 		return obj.AssetDeviceContractInformationList
 	}
@@ -184,5 +183,3 @@ func (v *NullableAssetDeviceContractInformationResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

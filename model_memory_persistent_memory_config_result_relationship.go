@@ -19,19 +19,18 @@ import (
 // MemoryPersistentMemoryConfigResultRelationship - A relationship to the 'memory.PersistentMemoryConfigResult' resource, or the expanded 'memory.PersistentMemoryConfigResult' resource, or the 'null' value.
 type MemoryPersistentMemoryConfigResultRelationship struct {
 	MemoryPersistentMemoryConfigResult *MemoryPersistentMemoryConfigResult
-	MoMoRef *MoMoRef
+	MoMoRef                            *MoMoRef
 }
 
 // MemoryPersistentMemoryConfigResultAsMemoryPersistentMemoryConfigResultRelationship is a convenience function that returns MemoryPersistentMemoryConfigResult wrapped in MemoryPersistentMemoryConfigResultRelationship
 func MemoryPersistentMemoryConfigResultAsMemoryPersistentMemoryConfigResultRelationship(v *MemoryPersistentMemoryConfigResult) MemoryPersistentMemoryConfigResultRelationship {
-	return MemoryPersistentMemoryConfigResultRelationship{ MemoryPersistentMemoryConfigResult: v}
+	return MemoryPersistentMemoryConfigResultRelationship{MemoryPersistentMemoryConfigResult: v}
 }
 
 // MoMoRefAsMemoryPersistentMemoryConfigResultRelationship is a convenience function that returns MoMoRef wrapped in MemoryPersistentMemoryConfigResultRelationship
 func MoMoRefAsMemoryPersistentMemoryConfigResultRelationship(v *MoMoRef) MemoryPersistentMemoryConfigResultRelationship {
-	return MemoryPersistentMemoryConfigResultRelationship{ MoMoRef: v}
+	return MemoryPersistentMemoryConfigResultRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MemoryPersistentMemoryConfigResultRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src MemoryPersistentMemoryConfigResultRelationship) MarshalJSON() ([]byte,
 }
 
 // Get the actual instance
-func (obj *MemoryPersistentMemoryConfigResultRelationship) GetActualInstance() (interface{}) {
+func (obj *MemoryPersistentMemoryConfigResultRelationship) GetActualInstance() interface{} {
 	if obj.MemoryPersistentMemoryConfigResult != nil {
 		return obj.MemoryPersistentMemoryConfigResult
 	}
@@ -137,5 +136,3 @@ func (v *NullableMemoryPersistentMemoryConfigResultRelationship) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

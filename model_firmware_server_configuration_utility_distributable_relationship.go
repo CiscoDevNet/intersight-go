@@ -19,19 +19,18 @@ import (
 // FirmwareServerConfigurationUtilityDistributableRelationship - A relationship to the 'firmware.ServerConfigurationUtilityDistributable' resource, or the expanded 'firmware.ServerConfigurationUtilityDistributable' resource, or the 'null' value.
 type FirmwareServerConfigurationUtilityDistributableRelationship struct {
 	FirmwareServerConfigurationUtilityDistributable *FirmwareServerConfigurationUtilityDistributable
-	MoMoRef *MoMoRef
+	MoMoRef                                         *MoMoRef
 }
 
 // FirmwareServerConfigurationUtilityDistributableAsFirmwareServerConfigurationUtilityDistributableRelationship is a convenience function that returns FirmwareServerConfigurationUtilityDistributable wrapped in FirmwareServerConfigurationUtilityDistributableRelationship
 func FirmwareServerConfigurationUtilityDistributableAsFirmwareServerConfigurationUtilityDistributableRelationship(v *FirmwareServerConfigurationUtilityDistributable) FirmwareServerConfigurationUtilityDistributableRelationship {
-	return FirmwareServerConfigurationUtilityDistributableRelationship{ FirmwareServerConfigurationUtilityDistributable: v}
+	return FirmwareServerConfigurationUtilityDistributableRelationship{FirmwareServerConfigurationUtilityDistributable: v}
 }
 
 // MoMoRefAsFirmwareServerConfigurationUtilityDistributableRelationship is a convenience function that returns MoMoRef wrapped in FirmwareServerConfigurationUtilityDistributableRelationship
 func MoMoRefAsFirmwareServerConfigurationUtilityDistributableRelationship(v *MoMoRef) FirmwareServerConfigurationUtilityDistributableRelationship {
-	return FirmwareServerConfigurationUtilityDistributableRelationship{ MoMoRef: v}
+	return FirmwareServerConfigurationUtilityDistributableRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FirmwareServerConfigurationUtilityDistributableRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src FirmwareServerConfigurationUtilityDistributableRelationship) MarshalJS
 }
 
 // Get the actual instance
-func (obj *FirmwareServerConfigurationUtilityDistributableRelationship) GetActualInstance() (interface{}) {
+func (obj *FirmwareServerConfigurationUtilityDistributableRelationship) GetActualInstance() interface{} {
 	if obj.FirmwareServerConfigurationUtilityDistributable != nil {
 		return obj.FirmwareServerConfigurationUtilityDistributable
 	}
@@ -137,5 +136,3 @@ func (v *NullableFirmwareServerConfigurationUtilityDistributableRelationship) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,15 +20,15 @@ type FabricSwitchProfileAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	ConfigChanges NullablePolicyConfigChange `json:"ConfigChanges,omitempty"`
-	AssignedSwitch *NetworkElementRelationship `json:"AssignedSwitch,omitempty"`
+	ObjectType       string                      `json:"ObjectType"`
+	ConfigChanges    NullablePolicyConfigChange  `json:"ConfigChanges,omitempty"`
+	AssignedSwitch   *NetworkElementRelationship `json:"AssignedSwitch,omitempty"`
 	AssociatedSwitch *NetworkElementRelationship `json:"AssociatedSwitch,omitempty"`
 	// An array of relationships to fabricConfigChangeDetail resources.
 	ConfigChangeDetails []FabricConfigChangeDetailRelationship `json:"ConfigChangeDetails,omitempty"`
-	ConfigResult *FabricConfigResultRelationship `json:"ConfigResult,omitempty"`
+	ConfigResult        *FabricConfigResultRelationship        `json:"ConfigResult,omitempty"`
 	// An array of relationships to workflowWorkflowInfo resources.
-	RunningWorkflows []WorkflowWorkflowInfoRelationship `json:"RunningWorkflows,omitempty"`
+	RunningWorkflows     []WorkflowWorkflowInfoRelationship      `json:"RunningWorkflows,omitempty"`
 	SwitchClusterProfile *FabricSwitchClusterProfileRelationship `json:"SwitchClusterProfile,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -71,7 +71,7 @@ func (o *FabricSwitchProfileAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricSwitchProfileAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *FabricSwitchProfileAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricSwitchProfileAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -119,7 +119,7 @@ func (o *FabricSwitchProfileAllOf) GetConfigChanges() PolicyConfigChange {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FabricSwitchProfileAllOf) GetConfigChangesOk() (*PolicyConfigChange, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ConfigChanges.Get(), o.ConfigChanges.IsSet()
@@ -138,6 +138,7 @@ func (o *FabricSwitchProfileAllOf) HasConfigChanges() bool {
 func (o *FabricSwitchProfileAllOf) SetConfigChanges(v PolicyConfigChange) {
 	o.ConfigChanges.Set(&v)
 }
+
 // SetConfigChangesNil sets the value for ConfigChanges to be an explicit nil
 func (o *FabricSwitchProfileAllOf) SetConfigChangesNil() {
 	o.ConfigChanges.Set(nil)
@@ -214,7 +215,7 @@ func (o *FabricSwitchProfileAllOf) SetAssociatedSwitch(v NetworkElementRelations
 
 // GetConfigChangeDetails returns the ConfigChangeDetails field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FabricSwitchProfileAllOf) GetConfigChangeDetails() []FabricConfigChangeDetailRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FabricConfigChangeDetailRelationship
 		return ret
 	}
@@ -279,7 +280,7 @@ func (o *FabricSwitchProfileAllOf) SetConfigResult(v FabricConfigResultRelations
 
 // GetRunningWorkflows returns the RunningWorkflows field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FabricSwitchProfileAllOf) GetRunningWorkflows() []WorkflowWorkflowInfoRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowWorkflowInfoRelationship
 		return ret
 	}
@@ -439,5 +440,3 @@ func (v *NullableFabricSwitchProfileAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

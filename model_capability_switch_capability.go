@@ -29,7 +29,7 @@ type CapabilitySwitchCapability struct {
 	// Dynamic VIFs support on this switch.
 	DynamicVifsSupported *bool `json:"DynamicVifsSupported,omitempty"`
 	// Fan Modules support on this switch.
-	FanModulesSupported *bool `json:"FanModulesSupported,omitempty"`
+	FanModulesSupported        *bool                 `json:"FanModulesSupported,omitempty"`
 	FcEndHostModeReservedVsans []CapabilityPortRange `json:"FcEndHostModeReservedVsans,omitempty"`
 	// Fc Uplink ports auto negotiation speed support on this switch.
 	FcUplinkPortsAutoNegotiationSupported *bool `json:"FcUplinkPortsAutoNegotiationSupported,omitempty"`
@@ -38,25 +38,25 @@ type CapabilitySwitchCapability struct {
 	// Maximum allowed physical ports on this switch.
 	MaxPorts *int64 `json:"MaxPorts,omitempty"`
 	// Maximum allowed physical slots on this switch.
-	MaxSlots *int64 `json:"MaxSlots,omitempty"`
-	NetworkLimits NullableCapabilitySwitchNetworkLimits `json:"NetworkLimits,omitempty"`
-	PortsSupporting100gSpeed []CapabilityPortRange `json:"PortsSupporting100gSpeed,omitempty"`
-	PortsSupporting10gSpeed []CapabilityPortRange `json:"PortsSupporting10gSpeed,omitempty"`
-	PortsSupporting1gSpeed []CapabilityPortRange `json:"PortsSupporting1gSpeed,omitempty"`
-	PortsSupporting25gSpeed []CapabilityPortRange `json:"PortsSupporting25gSpeed,omitempty"`
-	PortsSupporting40gSpeed []CapabilityPortRange `json:"PortsSupporting40gSpeed,omitempty"`
-	PortsSupportingBreakout []CapabilityPortRange `json:"PortsSupportingBreakout,omitempty"`
-	PortsSupportingFcoe []CapabilityPortRange `json:"PortsSupportingFcoe,omitempty"`
-	PortsSupportingServerRole []CapabilityPortRange `json:"PortsSupportingServerRole,omitempty"`
-	ReservedVsans []CapabilityPortRange `json:"ReservedVsans,omitempty"`
+	MaxSlots                  *int64                                `json:"MaxSlots,omitempty"`
+	NetworkLimits             NullableCapabilitySwitchNetworkLimits `json:"NetworkLimits,omitempty"`
+	PortsSupporting100gSpeed  []CapabilityPortRange                 `json:"PortsSupporting100gSpeed,omitempty"`
+	PortsSupporting10gSpeed   []CapabilityPortRange                 `json:"PortsSupporting10gSpeed,omitempty"`
+	PortsSupporting1gSpeed    []CapabilityPortRange                 `json:"PortsSupporting1gSpeed,omitempty"`
+	PortsSupporting25gSpeed   []CapabilityPortRange                 `json:"PortsSupporting25gSpeed,omitempty"`
+	PortsSupporting40gSpeed   []CapabilityPortRange                 `json:"PortsSupporting40gSpeed,omitempty"`
+	PortsSupportingBreakout   []CapabilityPortRange                 `json:"PortsSupportingBreakout,omitempty"`
+	PortsSupportingFcoe       []CapabilityPortRange                 `json:"PortsSupportingFcoe,omitempty"`
+	PortsSupportingServerRole []CapabilityPortRange                 `json:"PortsSupportingServerRole,omitempty"`
+	ReservedVsans             []CapabilityPortRange                 `json:"ReservedVsans,omitempty"`
 	// Sereno Adaptor with Netflow support on this switch.
-	SerenoNetflowSupported *bool `json:"SerenoNetflowSupported,omitempty"`
-	StorageLimits NullableCapabilitySwitchStorageLimits `json:"StorageLimits,omitempty"`
-	SwitchingModeCapabilities []CapabilitySwitchingModeCapability `json:"SwitchingModeCapabilities,omitempty"`
-	SystemLimits NullableCapabilitySwitchSystemLimits `json:"SystemLimits,omitempty"`
-	UnifiedPorts []CapabilityPortRange `json:"UnifiedPorts,omitempty"`
+	SerenoNetflowSupported    *bool                                 `json:"SerenoNetflowSupported,omitempty"`
+	StorageLimits             NullableCapabilitySwitchStorageLimits `json:"StorageLimits,omitempty"`
+	SwitchingModeCapabilities []CapabilitySwitchingModeCapability   `json:"SwitchingModeCapabilities,omitempty"`
+	SystemLimits              NullableCapabilitySwitchSystemLimits  `json:"SystemLimits,omitempty"`
+	UnifiedPorts              []CapabilityPortRange                 `json:"UnifiedPorts,omitempty"`
 	// The Slider rule for Unified ports on this switch.
-	UnifiedRule *string `json:"UnifiedRule,omitempty"`
+	UnifiedRule          *string `json:"UnifiedRule,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -100,7 +100,7 @@ func (o *CapabilitySwitchCapability) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CapabilitySwitchCapability) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -124,7 +124,7 @@ func (o *CapabilitySwitchCapability) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CapabilitySwitchCapability) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -233,7 +233,7 @@ func (o *CapabilitySwitchCapability) SetFanModulesSupported(v bool) {
 
 // GetFcEndHostModeReservedVsans returns the FcEndHostModeReservedVsans field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilitySwitchCapability) GetFcEndHostModeReservedVsans() []CapabilityPortRange {
-	if o == nil  {
+	if o == nil {
 		var ret []CapabilityPortRange
 		return ret
 	}
@@ -405,7 +405,7 @@ func (o *CapabilitySwitchCapability) GetNetworkLimits() CapabilitySwitchNetworkL
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CapabilitySwitchCapability) GetNetworkLimitsOk() (*CapabilitySwitchNetworkLimits, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NetworkLimits.Get(), o.NetworkLimits.IsSet()
@@ -424,6 +424,7 @@ func (o *CapabilitySwitchCapability) HasNetworkLimits() bool {
 func (o *CapabilitySwitchCapability) SetNetworkLimits(v CapabilitySwitchNetworkLimits) {
 	o.NetworkLimits.Set(&v)
 }
+
 // SetNetworkLimitsNil sets the value for NetworkLimits to be an explicit nil
 func (o *CapabilitySwitchCapability) SetNetworkLimitsNil() {
 	o.NetworkLimits.Set(nil)
@@ -436,7 +437,7 @@ func (o *CapabilitySwitchCapability) UnsetNetworkLimits() {
 
 // GetPortsSupporting100gSpeed returns the PortsSupporting100gSpeed field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilitySwitchCapability) GetPortsSupporting100gSpeed() []CapabilityPortRange {
-	if o == nil  {
+	if o == nil {
 		var ret []CapabilityPortRange
 		return ret
 	}
@@ -469,7 +470,7 @@ func (o *CapabilitySwitchCapability) SetPortsSupporting100gSpeed(v []CapabilityP
 
 // GetPortsSupporting10gSpeed returns the PortsSupporting10gSpeed field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilitySwitchCapability) GetPortsSupporting10gSpeed() []CapabilityPortRange {
-	if o == nil  {
+	if o == nil {
 		var ret []CapabilityPortRange
 		return ret
 	}
@@ -502,7 +503,7 @@ func (o *CapabilitySwitchCapability) SetPortsSupporting10gSpeed(v []CapabilityPo
 
 // GetPortsSupporting1gSpeed returns the PortsSupporting1gSpeed field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilitySwitchCapability) GetPortsSupporting1gSpeed() []CapabilityPortRange {
-	if o == nil  {
+	if o == nil {
 		var ret []CapabilityPortRange
 		return ret
 	}
@@ -535,7 +536,7 @@ func (o *CapabilitySwitchCapability) SetPortsSupporting1gSpeed(v []CapabilityPor
 
 // GetPortsSupporting25gSpeed returns the PortsSupporting25gSpeed field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilitySwitchCapability) GetPortsSupporting25gSpeed() []CapabilityPortRange {
-	if o == nil  {
+	if o == nil {
 		var ret []CapabilityPortRange
 		return ret
 	}
@@ -568,7 +569,7 @@ func (o *CapabilitySwitchCapability) SetPortsSupporting25gSpeed(v []CapabilityPo
 
 // GetPortsSupporting40gSpeed returns the PortsSupporting40gSpeed field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilitySwitchCapability) GetPortsSupporting40gSpeed() []CapabilityPortRange {
-	if o == nil  {
+	if o == nil {
 		var ret []CapabilityPortRange
 		return ret
 	}
@@ -601,7 +602,7 @@ func (o *CapabilitySwitchCapability) SetPortsSupporting40gSpeed(v []CapabilityPo
 
 // GetPortsSupportingBreakout returns the PortsSupportingBreakout field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilitySwitchCapability) GetPortsSupportingBreakout() []CapabilityPortRange {
-	if o == nil  {
+	if o == nil {
 		var ret []CapabilityPortRange
 		return ret
 	}
@@ -634,7 +635,7 @@ func (o *CapabilitySwitchCapability) SetPortsSupportingBreakout(v []CapabilityPo
 
 // GetPortsSupportingFcoe returns the PortsSupportingFcoe field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilitySwitchCapability) GetPortsSupportingFcoe() []CapabilityPortRange {
-	if o == nil  {
+	if o == nil {
 		var ret []CapabilityPortRange
 		return ret
 	}
@@ -667,7 +668,7 @@ func (o *CapabilitySwitchCapability) SetPortsSupportingFcoe(v []CapabilityPortRa
 
 // GetPortsSupportingServerRole returns the PortsSupportingServerRole field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilitySwitchCapability) GetPortsSupportingServerRole() []CapabilityPortRange {
-	if o == nil  {
+	if o == nil {
 		var ret []CapabilityPortRange
 		return ret
 	}
@@ -700,7 +701,7 @@ func (o *CapabilitySwitchCapability) SetPortsSupportingServerRole(v []Capability
 
 // GetReservedVsans returns the ReservedVsans field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilitySwitchCapability) GetReservedVsans() []CapabilityPortRange {
-	if o == nil  {
+	if o == nil {
 		var ret []CapabilityPortRange
 		return ret
 	}
@@ -776,7 +777,7 @@ func (o *CapabilitySwitchCapability) GetStorageLimits() CapabilitySwitchStorageL
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CapabilitySwitchCapability) GetStorageLimitsOk() (*CapabilitySwitchStorageLimits, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StorageLimits.Get(), o.StorageLimits.IsSet()
@@ -795,6 +796,7 @@ func (o *CapabilitySwitchCapability) HasStorageLimits() bool {
 func (o *CapabilitySwitchCapability) SetStorageLimits(v CapabilitySwitchStorageLimits) {
 	o.StorageLimits.Set(&v)
 }
+
 // SetStorageLimitsNil sets the value for StorageLimits to be an explicit nil
 func (o *CapabilitySwitchCapability) SetStorageLimitsNil() {
 	o.StorageLimits.Set(nil)
@@ -807,7 +809,7 @@ func (o *CapabilitySwitchCapability) UnsetStorageLimits() {
 
 // GetSwitchingModeCapabilities returns the SwitchingModeCapabilities field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilitySwitchCapability) GetSwitchingModeCapabilities() []CapabilitySwitchingModeCapability {
-	if o == nil  {
+	if o == nil {
 		var ret []CapabilitySwitchingModeCapability
 		return ret
 	}
@@ -851,7 +853,7 @@ func (o *CapabilitySwitchCapability) GetSystemLimits() CapabilitySwitchSystemLim
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CapabilitySwitchCapability) GetSystemLimitsOk() (*CapabilitySwitchSystemLimits, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SystemLimits.Get(), o.SystemLimits.IsSet()
@@ -870,6 +872,7 @@ func (o *CapabilitySwitchCapability) HasSystemLimits() bool {
 func (o *CapabilitySwitchCapability) SetSystemLimits(v CapabilitySwitchSystemLimits) {
 	o.SystemLimits.Set(&v)
 }
+
 // SetSystemLimitsNil sets the value for SystemLimits to be an explicit nil
 func (o *CapabilitySwitchCapability) SetSystemLimitsNil() {
 	o.SystemLimits.Set(nil)
@@ -882,7 +885,7 @@ func (o *CapabilitySwitchCapability) UnsetSystemLimits() {
 
 // GetUnifiedPorts returns the UnifiedPorts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilitySwitchCapability) GetUnifiedPorts() []CapabilityPortRange {
-	if o == nil  {
+	if o == nil {
 		var ret []CapabilityPortRange
 		return ret
 	}
@@ -1052,7 +1055,7 @@ func (o *CapabilitySwitchCapability) UnmarshalJSON(bytes []byte) (err error) {
 		// Dynamic VIFs support on this switch.
 		DynamicVifsSupported *bool `json:"DynamicVifsSupported,omitempty"`
 		// Fan Modules support on this switch.
-		FanModulesSupported *bool `json:"FanModulesSupported,omitempty"`
+		FanModulesSupported        *bool                 `json:"FanModulesSupported,omitempty"`
 		FcEndHostModeReservedVsans []CapabilityPortRange `json:"FcEndHostModeReservedVsans,omitempty"`
 		// Fc Uplink ports auto negotiation speed support on this switch.
 		FcUplinkPortsAutoNegotiationSupported *bool `json:"FcUplinkPortsAutoNegotiationSupported,omitempty"`
@@ -1061,23 +1064,23 @@ func (o *CapabilitySwitchCapability) UnmarshalJSON(bytes []byte) (err error) {
 		// Maximum allowed physical ports on this switch.
 		MaxPorts *int64 `json:"MaxPorts,omitempty"`
 		// Maximum allowed physical slots on this switch.
-		MaxSlots *int64 `json:"MaxSlots,omitempty"`
-		NetworkLimits NullableCapabilitySwitchNetworkLimits `json:"NetworkLimits,omitempty"`
-		PortsSupporting100gSpeed []CapabilityPortRange `json:"PortsSupporting100gSpeed,omitempty"`
-		PortsSupporting10gSpeed []CapabilityPortRange `json:"PortsSupporting10gSpeed,omitempty"`
-		PortsSupporting1gSpeed []CapabilityPortRange `json:"PortsSupporting1gSpeed,omitempty"`
-		PortsSupporting25gSpeed []CapabilityPortRange `json:"PortsSupporting25gSpeed,omitempty"`
-		PortsSupporting40gSpeed []CapabilityPortRange `json:"PortsSupporting40gSpeed,omitempty"`
-		PortsSupportingBreakout []CapabilityPortRange `json:"PortsSupportingBreakout,omitempty"`
-		PortsSupportingFcoe []CapabilityPortRange `json:"PortsSupportingFcoe,omitempty"`
-		PortsSupportingServerRole []CapabilityPortRange `json:"PortsSupportingServerRole,omitempty"`
-		ReservedVsans []CapabilityPortRange `json:"ReservedVsans,omitempty"`
+		MaxSlots                  *int64                                `json:"MaxSlots,omitempty"`
+		NetworkLimits             NullableCapabilitySwitchNetworkLimits `json:"NetworkLimits,omitempty"`
+		PortsSupporting100gSpeed  []CapabilityPortRange                 `json:"PortsSupporting100gSpeed,omitempty"`
+		PortsSupporting10gSpeed   []CapabilityPortRange                 `json:"PortsSupporting10gSpeed,omitempty"`
+		PortsSupporting1gSpeed    []CapabilityPortRange                 `json:"PortsSupporting1gSpeed,omitempty"`
+		PortsSupporting25gSpeed   []CapabilityPortRange                 `json:"PortsSupporting25gSpeed,omitempty"`
+		PortsSupporting40gSpeed   []CapabilityPortRange                 `json:"PortsSupporting40gSpeed,omitempty"`
+		PortsSupportingBreakout   []CapabilityPortRange                 `json:"PortsSupportingBreakout,omitempty"`
+		PortsSupportingFcoe       []CapabilityPortRange                 `json:"PortsSupportingFcoe,omitempty"`
+		PortsSupportingServerRole []CapabilityPortRange                 `json:"PortsSupportingServerRole,omitempty"`
+		ReservedVsans             []CapabilityPortRange                 `json:"ReservedVsans,omitempty"`
 		// Sereno Adaptor with Netflow support on this switch.
-		SerenoNetflowSupported *bool `json:"SerenoNetflowSupported,omitempty"`
-		StorageLimits NullableCapabilitySwitchStorageLimits `json:"StorageLimits,omitempty"`
-		SwitchingModeCapabilities []CapabilitySwitchingModeCapability `json:"SwitchingModeCapabilities,omitempty"`
-		SystemLimits NullableCapabilitySwitchSystemLimits `json:"SystemLimits,omitempty"`
-		UnifiedPorts []CapabilityPortRange `json:"UnifiedPorts,omitempty"`
+		SerenoNetflowSupported    *bool                                 `json:"SerenoNetflowSupported,omitempty"`
+		StorageLimits             NullableCapabilitySwitchStorageLimits `json:"StorageLimits,omitempty"`
+		SwitchingModeCapabilities []CapabilitySwitchingModeCapability   `json:"SwitchingModeCapabilities,omitempty"`
+		SystemLimits              NullableCapabilitySwitchSystemLimits  `json:"SystemLimits,omitempty"`
+		UnifiedPorts              []CapabilityPortRange                 `json:"UnifiedPorts,omitempty"`
 		// The Slider rule for Unified ports on this switch.
 		UnifiedRule *string `json:"UnifiedRule,omitempty"`
 	}
@@ -1216,5 +1219,3 @@ func (v *NullableCapabilitySwitchCapability) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

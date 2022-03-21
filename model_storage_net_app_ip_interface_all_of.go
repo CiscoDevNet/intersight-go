@@ -38,17 +38,17 @@ type StorageNetAppIpInterfaceAllOf struct {
 	// Service policy name of IP interface.
 	ServicePolicyName *string `json:"ServicePolicyName,omitempty"`
 	// Service policy UUID of IP interface.
-	ServicePolicyUuid *string `json:"ServicePolicyUuid,omitempty"`
-	Services []string `json:"Services,omitempty"`
+	ServicePolicyUuid *string  `json:"ServicePolicyUuid,omitempty"`
+	Services          []string `json:"Services,omitempty"`
 	// The state of the IP interface. * `down` - An inactive port is listed as Down. * `up` - An active port is listed as Up. * `present` - An active port is listed as present.
 	State *string `json:"State,omitempty"`
 	// Uuid of  NetApp IP Interface.
-	Uuid *string `json:"Uuid,omitempty"`
+	Uuid            *string                        `json:"Uuid,omitempty"`
 	ArrayController *StorageNetAppNodeRelationship `json:"ArrayController,omitempty"`
 	// An array of relationships to storageNetAppIpInterfaceEvent resources.
-	Events []StorageNetAppIpInterfaceEventRelationship `json:"Events,omitempty"`
-	NetAppEthernetPort *StorageNetAppEthernetPortRelationship `json:"NetAppEthernetPort,omitempty"`
-	Tenant *StorageNetAppStorageVmRelationship `json:"Tenant,omitempty"`
+	Events               []StorageNetAppIpInterfaceEventRelationship `json:"Events,omitempty"`
+	NetAppEthernetPort   *StorageNetAppEthernetPortRelationship      `json:"NetAppEthernetPort,omitempty"`
+	Tenant               *StorageNetAppStorageVmRelationship         `json:"Tenant,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -90,7 +90,7 @@ func (o *StorageNetAppIpInterfaceAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppIpInterfaceAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -114,7 +114,7 @@ func (o *StorageNetAppIpInterfaceAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppIpInterfaceAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -415,7 +415,7 @@ func (o *StorageNetAppIpInterfaceAllOf) SetServicePolicyUuid(v string) {
 
 // GetServices returns the Services field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppIpInterfaceAllOf) GetServices() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -544,7 +544,7 @@ func (o *StorageNetAppIpInterfaceAllOf) SetArrayController(v StorageNetAppNodeRe
 
 // GetEvents returns the Events field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppIpInterfaceAllOf) GetEvents() []StorageNetAppIpInterfaceEventRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppIpInterfaceEventRelationship
 		return ret
 	}
@@ -772,5 +772,3 @@ func (v *NullableStorageNetAppIpInterfaceAllOf) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

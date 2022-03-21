@@ -19,19 +19,18 @@ import (
 // HyperflexStorageContainerRelationship - A relationship to the 'hyperflex.StorageContainer' resource, or the expanded 'hyperflex.StorageContainer' resource, or the 'null' value.
 type HyperflexStorageContainerRelationship struct {
 	HyperflexStorageContainer *HyperflexStorageContainer
-	MoMoRef *MoMoRef
+	MoMoRef                   *MoMoRef
 }
 
 // HyperflexStorageContainerAsHyperflexStorageContainerRelationship is a convenience function that returns HyperflexStorageContainer wrapped in HyperflexStorageContainerRelationship
 func HyperflexStorageContainerAsHyperflexStorageContainerRelationship(v *HyperflexStorageContainer) HyperflexStorageContainerRelationship {
-	return HyperflexStorageContainerRelationship{ HyperflexStorageContainer: v}
+	return HyperflexStorageContainerRelationship{HyperflexStorageContainer: v}
 }
 
 // MoMoRefAsHyperflexStorageContainerRelationship is a convenience function that returns MoMoRef wrapped in HyperflexStorageContainerRelationship
 func MoMoRefAsHyperflexStorageContainerRelationship(v *MoMoRef) HyperflexStorageContainerRelationship {
-	return HyperflexStorageContainerRelationship{ MoMoRef: v}
+	return HyperflexStorageContainerRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexStorageContainerRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexStorageContainerRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexStorageContainerRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexStorageContainerRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexStorageContainer != nil {
 		return obj.HyperflexStorageContainer
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexStorageContainerRelationship) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

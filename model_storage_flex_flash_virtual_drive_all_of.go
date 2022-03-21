@@ -32,11 +32,11 @@ type StorageFlexFlashVirtualDriveAllOf struct {
 	// Size of virtual drive on the flex controller.
 	Size *string `json:"Size,omitempty"`
 	// Virtual drive on the flex flash controller.
-	VirtualDrive *string `json:"VirtualDrive,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	VirtualDrive               *string                                 `json:"VirtualDrive,omitempty"`
+	InventoryDeviceInfo        *InventoryDeviceInfoRelationship        `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice           *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	StorageFlexFlashController *StorageFlexFlashControllerRelationship `json:"StorageFlexFlashController,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties       map[string]interface{}
 }
 
 type _StorageFlexFlashVirtualDriveAllOf StorageFlexFlashVirtualDriveAllOf
@@ -77,7 +77,7 @@ func (o *StorageFlexFlashVirtualDriveAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageFlexFlashVirtualDriveAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *StorageFlexFlashVirtualDriveAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageFlexFlashVirtualDriveAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -505,5 +505,3 @@ func (v *NullableStorageFlexFlashVirtualDriveAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

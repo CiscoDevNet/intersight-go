@@ -18,20 +18,19 @@ import (
 
 // VirtualizationVmwareVirtualMachineRelationship - A relationship to the 'virtualization.VmwareVirtualMachine' resource, or the expanded 'virtualization.VmwareVirtualMachine' resource, or the 'null' value.
 type VirtualizationVmwareVirtualMachineRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                            *MoMoRef
 	VirtualizationVmwareVirtualMachine *VirtualizationVmwareVirtualMachine
 }
 
 // MoMoRefAsVirtualizationVmwareVirtualMachineRelationship is a convenience function that returns MoMoRef wrapped in VirtualizationVmwareVirtualMachineRelationship
 func MoMoRefAsVirtualizationVmwareVirtualMachineRelationship(v *MoMoRef) VirtualizationVmwareVirtualMachineRelationship {
-	return VirtualizationVmwareVirtualMachineRelationship{ MoMoRef: v}
+	return VirtualizationVmwareVirtualMachineRelationship{MoMoRef: v}
 }
 
 // VirtualizationVmwareVirtualMachineAsVirtualizationVmwareVirtualMachineRelationship is a convenience function that returns VirtualizationVmwareVirtualMachine wrapped in VirtualizationVmwareVirtualMachineRelationship
 func VirtualizationVmwareVirtualMachineAsVirtualizationVmwareVirtualMachineRelationship(v *VirtualizationVmwareVirtualMachine) VirtualizationVmwareVirtualMachineRelationship {
-	return VirtualizationVmwareVirtualMachineRelationship{ VirtualizationVmwareVirtualMachine: v}
+	return VirtualizationVmwareVirtualMachineRelationship{VirtualizationVmwareVirtualMachine: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VirtualizationVmwareVirtualMachineRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src VirtualizationVmwareVirtualMachineRelationship) MarshalJSON() ([]byte,
 }
 
 // Get the actual instance
-func (obj *VirtualizationVmwareVirtualMachineRelationship) GetActualInstance() (interface{}) {
+func (obj *VirtualizationVmwareVirtualMachineRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableVirtualizationVmwareVirtualMachineRelationship) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

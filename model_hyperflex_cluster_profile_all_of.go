@@ -20,7 +20,7 @@ type HyperflexClusterProfileAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType            string                    `json:"ObjectType"`
 	ClusterInternalSubnet NullableCommIpV4Interface `json:"ClusterInternalSubnet,omitempty"`
 	// The storage data IP address for the HyperFlex cluster.
 	DataIpAddress *string `json:"DataIpAddress,omitempty"`
@@ -41,36 +41,36 @@ type HyperflexClusterProfileAllOf struct {
 	// The storage data IP address for the HyperFlex cluster.
 	StorageClientIpAddress *string `json:"StorageClientIpAddress,omitempty"`
 	// The netmask for the Storage client network IP address.
-	StorageClientNetmask *string `json:"StorageClientNetmask,omitempty"`
-	StorageClientVlan NullableHyperflexNamedVlan `json:"StorageClientVlan,omitempty"`
+	StorageClientNetmask *string                    `json:"StorageClientNetmask,omitempty"`
+	StorageClientVlan    NullableHyperflexNamedVlan `json:"StorageClientVlan,omitempty"`
 	// The auxiliary storage IP address for the HyperFlex cluster. For two node clusters, this is the IP address of the auxiliary ZK controller.
-	StorageClusterAuxiliaryIp *string `json:"StorageClusterAuxiliaryIp,omitempty"`
-	StorageDataVlan NullableHyperflexNamedVlan `json:"StorageDataVlan,omitempty"`
+	StorageClusterAuxiliaryIp *string                    `json:"StorageClusterAuxiliaryIp,omitempty"`
+	StorageDataVlan           NullableHyperflexNamedVlan `json:"StorageDataVlan,omitempty"`
 	// The storage type used for the HyperFlex cluster (HyperFlex Storage or 3rd party). * `HyperFlexDp` - The type of storage is HyperFlex Data Platform. * `ThirdParty` - The type of storage is 3rd Party Storage (PureStorage, etc..).
 	StorageType *string `json:"StorageType,omitempty"`
 	// The WWxN prefix in the form of 20:00:00:25:B5:XX.
-	WwxnPrefix *string `json:"WwxnPrefix,omitempty"`
-	AssociatedCluster *HyperflexClusterRelationship `json:"AssociatedCluster,omitempty"`
-	AssociatedComputeCluster *VirtualizationIweClusterRelationship `json:"AssociatedComputeCluster,omitempty"`
-	AutoSupport *HyperflexAutoSupportPolicyRelationship `json:"AutoSupport,omitempty"`
-	ClusterNetwork *HyperflexClusterNetworkPolicyRelationship `json:"ClusterNetwork,omitempty"`
-	ClusterStorage *HyperflexClusterStoragePolicyRelationship `json:"ClusterStorage,omitempty"`
-	ConfigResult *HyperflexConfigResultRelationship `json:"ConfigResult,omitempty"`
-	ExtFcStorage *HyperflexExtFcStoragePolicyRelationship `json:"ExtFcStorage,omitempty"`
-	ExtIscsiStorage *HyperflexExtIscsiStoragePolicyRelationship `json:"ExtIscsiStorage,omitempty"`
-	Httpproxypolicy *CommHttpProxyPolicyRelationship `json:"Httpproxypolicy,omitempty"`
-	LocalCredential *HyperflexLocalCredentialPolicyRelationship `json:"LocalCredential,omitempty"`
-	NodeConfig *HyperflexNodeConfigPolicyRelationship `json:"NodeConfig,omitempty"`
+	WwxnPrefix               *string                                     `json:"WwxnPrefix,omitempty"`
+	AssociatedCluster        *HyperflexClusterRelationship               `json:"AssociatedCluster,omitempty"`
+	AssociatedComputeCluster *VirtualizationIweClusterRelationship       `json:"AssociatedComputeCluster,omitempty"`
+	AutoSupport              *HyperflexAutoSupportPolicyRelationship     `json:"AutoSupport,omitempty"`
+	ClusterNetwork           *HyperflexClusterNetworkPolicyRelationship  `json:"ClusterNetwork,omitempty"`
+	ClusterStorage           *HyperflexClusterStoragePolicyRelationship  `json:"ClusterStorage,omitempty"`
+	ConfigResult             *HyperflexConfigResultRelationship          `json:"ConfigResult,omitempty"`
+	ExtFcStorage             *HyperflexExtFcStoragePolicyRelationship    `json:"ExtFcStorage,omitempty"`
+	ExtIscsiStorage          *HyperflexExtIscsiStoragePolicyRelationship `json:"ExtIscsiStorage,omitempty"`
+	Httpproxypolicy          *CommHttpProxyPolicyRelationship            `json:"Httpproxypolicy,omitempty"`
+	LocalCredential          *HyperflexLocalCredentialPolicyRelationship `json:"LocalCredential,omitempty"`
+	NodeConfig               *HyperflexNodeConfigPolicyRelationship      `json:"NodeConfig,omitempty"`
 	// An array of relationships to hyperflexNodeProfile resources.
-	NodeProfileConfig []HyperflexNodeProfileRelationship `json:"NodeProfileConfig,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	ProxySetting *HyperflexProxySettingPolicyRelationship `json:"ProxySetting,omitempty"`
+	NodeProfileConfig []HyperflexNodeProfileRelationship       `json:"NodeProfileConfig,omitempty"`
+	Organization      *OrganizationOrganizationRelationship    `json:"Organization,omitempty"`
+	ProxySetting      *HyperflexProxySettingPolicyRelationship `json:"ProxySetting,omitempty"`
 	// An array of relationships to workflowWorkflowInfo resources.
-	RunningWorkflows []WorkflowWorkflowInfoRelationship `json:"RunningWorkflows,omitempty"`
-	SoftwareVersion *HyperflexSoftwareVersionPolicyRelationship `json:"SoftwareVersion,omitempty"`
-	SysConfig *HyperflexSysConfigPolicyRelationship `json:"SysConfig,omitempty"`
-	UcsmConfig *HyperflexUcsmConfigPolicyRelationship `json:"UcsmConfig,omitempty"`
-	VcenterConfig *HyperflexVcenterConfigPolicyRelationship `json:"VcenterConfig,omitempty"`
+	RunningWorkflows     []WorkflowWorkflowInfoRelationship          `json:"RunningWorkflows,omitempty"`
+	SoftwareVersion      *HyperflexSoftwareVersionPolicyRelationship `json:"SoftwareVersion,omitempty"`
+	SysConfig            *HyperflexSysConfigPolicyRelationship       `json:"SysConfig,omitempty"`
+	UcsmConfig           *HyperflexUcsmConfigPolicyRelationship      `json:"UcsmConfig,omitempty"`
+	VcenterConfig        *HyperflexVcenterConfigPolicyRelationship   `json:"VcenterConfig,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -124,7 +124,7 @@ func (o *HyperflexClusterProfileAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexClusterProfileAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -148,7 +148,7 @@ func (o *HyperflexClusterProfileAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexClusterProfileAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -172,7 +172,7 @@ func (o *HyperflexClusterProfileAllOf) GetClusterInternalSubnet() CommIpV4Interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexClusterProfileAllOf) GetClusterInternalSubnetOk() (*CommIpV4Interface, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ClusterInternalSubnet.Get(), o.ClusterInternalSubnet.IsSet()
@@ -191,6 +191,7 @@ func (o *HyperflexClusterProfileAllOf) HasClusterInternalSubnet() bool {
 func (o *HyperflexClusterProfileAllOf) SetClusterInternalSubnet(v CommIpV4Interface) {
 	o.ClusterInternalSubnet.Set(&v)
 }
+
 // SetClusterInternalSubnetNil sets the value for ClusterInternalSubnet to be an explicit nil
 func (o *HyperflexClusterProfileAllOf) SetClusterInternalSubnetNil() {
 	o.ClusterInternalSubnet.Set(nil)
@@ -534,7 +535,7 @@ func (o *HyperflexClusterProfileAllOf) GetStorageClientVlan() HyperflexNamedVlan
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexClusterProfileAllOf) GetStorageClientVlanOk() (*HyperflexNamedVlan, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StorageClientVlan.Get(), o.StorageClientVlan.IsSet()
@@ -553,6 +554,7 @@ func (o *HyperflexClusterProfileAllOf) HasStorageClientVlan() bool {
 func (o *HyperflexClusterProfileAllOf) SetStorageClientVlan(v HyperflexNamedVlan) {
 	o.StorageClientVlan.Set(&v)
 }
+
 // SetStorageClientVlanNil sets the value for StorageClientVlan to be an explicit nil
 func (o *HyperflexClusterProfileAllOf) SetStorageClientVlanNil() {
 	o.StorageClientVlan.Set(nil)
@@ -608,7 +610,7 @@ func (o *HyperflexClusterProfileAllOf) GetStorageDataVlan() HyperflexNamedVlan {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexClusterProfileAllOf) GetStorageDataVlanOk() (*HyperflexNamedVlan, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StorageDataVlan.Get(), o.StorageDataVlan.IsSet()
@@ -627,6 +629,7 @@ func (o *HyperflexClusterProfileAllOf) HasStorageDataVlan() bool {
 func (o *HyperflexClusterProfileAllOf) SetStorageDataVlan(v HyperflexNamedVlan) {
 	o.StorageDataVlan.Set(&v)
 }
+
 // SetStorageDataVlanNil sets the value for StorageDataVlan to be an explicit nil
 func (o *HyperflexClusterProfileAllOf) SetStorageDataVlanNil() {
 	o.StorageDataVlan.Set(nil)
@@ -1055,7 +1058,7 @@ func (o *HyperflexClusterProfileAllOf) SetNodeConfig(v HyperflexNodeConfigPolicy
 
 // GetNodeProfileConfig returns the NodeProfileConfig field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexClusterProfileAllOf) GetNodeProfileConfig() []HyperflexNodeProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexNodeProfileRelationship
 		return ret
 	}
@@ -1152,7 +1155,7 @@ func (o *HyperflexClusterProfileAllOf) SetProxySetting(v HyperflexProxySettingPo
 
 // GetRunningWorkflows returns the RunningWorkflows field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexClusterProfileAllOf) GetRunningWorkflows() []WorkflowWorkflowInfoRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowWorkflowInfoRelationship
 		return ret
 	}
@@ -1520,5 +1523,3 @@ func (v *NullableHyperflexClusterProfileAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

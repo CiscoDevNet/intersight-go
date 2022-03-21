@@ -19,31 +19,30 @@ import (
 // IamLocalUserPasswordPolicyResponse - The response body of a HTTP GET request for the 'iam.LocalUserPasswordPolicy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'iam.LocalUserPasswordPolicy' resources.
 type IamLocalUserPasswordPolicyResponse struct {
 	IamLocalUserPasswordPolicyList *IamLocalUserPasswordPolicyList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform           *MoAggregateTransform
+	MoDocumentCount                *MoDocumentCount
+	MoTagSummary                   *MoTagSummary
 }
 
 // IamLocalUserPasswordPolicyListAsIamLocalUserPasswordPolicyResponse is a convenience function that returns IamLocalUserPasswordPolicyList wrapped in IamLocalUserPasswordPolicyResponse
 func IamLocalUserPasswordPolicyListAsIamLocalUserPasswordPolicyResponse(v *IamLocalUserPasswordPolicyList) IamLocalUserPasswordPolicyResponse {
-	return IamLocalUserPasswordPolicyResponse{ IamLocalUserPasswordPolicyList: v}
+	return IamLocalUserPasswordPolicyResponse{IamLocalUserPasswordPolicyList: v}
 }
 
 // MoAggregateTransformAsIamLocalUserPasswordPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in IamLocalUserPasswordPolicyResponse
 func MoAggregateTransformAsIamLocalUserPasswordPolicyResponse(v *MoAggregateTransform) IamLocalUserPasswordPolicyResponse {
-	return IamLocalUserPasswordPolicyResponse{ MoAggregateTransform: v}
+	return IamLocalUserPasswordPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIamLocalUserPasswordPolicyResponse is a convenience function that returns MoDocumentCount wrapped in IamLocalUserPasswordPolicyResponse
 func MoDocumentCountAsIamLocalUserPasswordPolicyResponse(v *MoDocumentCount) IamLocalUserPasswordPolicyResponse {
-	return IamLocalUserPasswordPolicyResponse{ MoDocumentCount: v}
+	return IamLocalUserPasswordPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIamLocalUserPasswordPolicyResponse is a convenience function that returns MoTagSummary wrapped in IamLocalUserPasswordPolicyResponse
 func MoTagSummaryAsIamLocalUserPasswordPolicyResponse(v *MoTagSummary) IamLocalUserPasswordPolicyResponse {
-	return IamLocalUserPasswordPolicyResponse{ MoTagSummary: v}
+	return IamLocalUserPasswordPolicyResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamLocalUserPasswordPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IamLocalUserPasswordPolicyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamLocalUserPasswordPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *IamLocalUserPasswordPolicyResponse) GetActualInstance() interface{} {
 	if obj.IamLocalUserPasswordPolicyList != nil {
 		return obj.IamLocalUserPasswordPolicyList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIamLocalUserPasswordPolicyResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

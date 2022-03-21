@@ -23,14 +23,14 @@ type NiaapiNewReleasePostAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ObjectType string `json:"ObjectType"`
 	// The date when this new release notice is posted.
-	PostDate *time.Time `json:"PostDate,omitempty"`
+	PostDate   *time.Time                     `json:"PostDate,omitempty"`
 	PostDetail NullableNiaapiNewReleaseDetail `json:"PostDetail,omitempty"`
 	// The document type of this post.
 	PostType *string `json:"PostType,omitempty"`
 	// Identificator of this inbox post.
 	Postid *string `json:"Postid,omitempty"`
 	// Revision number of this notice.
-	Revision *string `json:"Revision,omitempty"`
+	Revision             *string `json:"Revision,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *NiaapiNewReleasePostAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiNewReleasePostAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *NiaapiNewReleasePostAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiNewReleasePostAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -148,7 +148,7 @@ func (o *NiaapiNewReleasePostAllOf) GetPostDetail() NiaapiNewReleaseDetail {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiaapiNewReleasePostAllOf) GetPostDetailOk() (*NiaapiNewReleaseDetail, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PostDetail.Get(), o.PostDetail.IsSet()
@@ -167,6 +167,7 @@ func (o *NiaapiNewReleasePostAllOf) HasPostDetail() bool {
 func (o *NiaapiNewReleasePostAllOf) SetPostDetail(v NiaapiNewReleaseDetail) {
 	o.PostDetail.Set(&v)
 }
+
 // SetPostDetailNil sets the value for PostDetail to be an explicit nil
 func (o *NiaapiNewReleasePostAllOf) SetPostDetailNil() {
 	o.PostDetail.Set(nil)
@@ -362,5 +363,3 @@ func (v *NullableNiaapiNewReleasePostAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

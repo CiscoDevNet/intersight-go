@@ -30,7 +30,7 @@ type SyslogRemoteClientBaseAllOf struct {
 	// Port number used for logging on syslog server.
 	Port *int64 `json:"Port,omitempty"`
 	// Transport layer protocol for transmission of log messages to syslog server. * `udp` - Use User Datagram Protocol (UDP) for syslog remote server connection. * `tcp` - Use Transmission Control Protocol (TCP) for syslog remote server connection.
-	Protocol *string `json:"Protocol,omitempty"`
+	Protocol             *string `json:"Protocol,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -88,7 +88,7 @@ func (o *SyslogRemoteClientBaseAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SyslogRemoteClientBaseAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *SyslogRemoteClientBaseAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SyslogRemoteClientBaseAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -372,5 +372,3 @@ func (v *NullableSyslogRemoteClientBaseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

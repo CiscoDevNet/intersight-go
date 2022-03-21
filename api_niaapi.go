@@ -29,11 +29,10 @@ var (
 type NiaapiApiService service
 
 type ApiGetNiaapiApicCcoPostByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NiaapiApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNiaapiApicCcoPostByMoidRequest) Execute() (NiaapiApicCcoPost, *_nethttp.Response, error) {
 	return r.ApiService.GetNiaapiApicCcoPostByMoidExecute(r)
@@ -49,8 +48,8 @@ GetNiaapiApicCcoPostByMoid Read a 'niaapi.ApicCcoPost' resource.
 func (a *NiaapiApiService) GetNiaapiApicCcoPostByMoid(ctx _context.Context, moid string) ApiGetNiaapiApicCcoPostByMoidRequest {
 	return ApiGetNiaapiApicCcoPostByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -157,13 +156,13 @@ func (a *NiaapiApiService) GetNiaapiApicCcoPostByMoidExecute(r ApiGetNiaapiApicC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -180,19 +179,19 @@ func (a *NiaapiApiService) GetNiaapiApicCcoPostByMoidExecute(r ApiGetNiaapiApicC
 }
 
 type ApiGetNiaapiApicCcoPostListRequest struct {
-	ctx _context.Context
-	ApiService *NiaapiApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NiaapiApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -200,51 +199,61 @@ func (r ApiGetNiaapiApicCcoPostListRequest) Filter(filter string) ApiGetNiaapiAp
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNiaapiApicCcoPostListRequest) Orderby(orderby string) ApiGetNiaapiApicCcoPostListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNiaapiApicCcoPostListRequest) Top(top int32) ApiGetNiaapiApicCcoPostListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNiaapiApicCcoPostListRequest) Skip(skip int32) ApiGetNiaapiApicCcoPostListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNiaapiApicCcoPostListRequest) Select_(select_ string) ApiGetNiaapiApicCcoPostListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNiaapiApicCcoPostListRequest) Expand(expand string) ApiGetNiaapiApicCcoPostListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNiaapiApicCcoPostListRequest) Apply(apply string) ApiGetNiaapiApicCcoPostListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNiaapiApicCcoPostListRequest) Count(count bool) ApiGetNiaapiApicCcoPostListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNiaapiApicCcoPostListRequest) Inlinecount(inlinecount string) ApiGetNiaapiApicCcoPostListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNiaapiApicCcoPostListRequest) At(at string) ApiGetNiaapiApicCcoPostListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNiaapiApicCcoPostListRequest) Tags(tags string) ApiGetNiaapiApicCcoPostListRequest {
 	r.tags = &tags
@@ -264,7 +273,7 @@ GetNiaapiApicCcoPostList Read a 'niaapi.ApicCcoPost' resource.
 func (a *NiaapiApiService) GetNiaapiApicCcoPostList(ctx _context.Context) ApiGetNiaapiApicCcoPostListRequest {
 	return ApiGetNiaapiApicCcoPostListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -403,13 +412,13 @@ func (a *NiaapiApiService) GetNiaapiApicCcoPostListExecute(r ApiGetNiaapiApicCco
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -426,11 +435,10 @@ func (a *NiaapiApiService) GetNiaapiApicCcoPostListExecute(r ApiGetNiaapiApicCco
 }
 
 type ApiGetNiaapiApicFieldNoticeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NiaapiApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNiaapiApicFieldNoticeByMoidRequest) Execute() (NiaapiApicFieldNotice, *_nethttp.Response, error) {
 	return r.ApiService.GetNiaapiApicFieldNoticeByMoidExecute(r)
@@ -446,8 +454,8 @@ GetNiaapiApicFieldNoticeByMoid Read a 'niaapi.ApicFieldNotice' resource.
 func (a *NiaapiApiService) GetNiaapiApicFieldNoticeByMoid(ctx _context.Context, moid string) ApiGetNiaapiApicFieldNoticeByMoidRequest {
 	return ApiGetNiaapiApicFieldNoticeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -554,13 +562,13 @@ func (a *NiaapiApiService) GetNiaapiApicFieldNoticeByMoidExecute(r ApiGetNiaapiA
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -577,19 +585,19 @@ func (a *NiaapiApiService) GetNiaapiApicFieldNoticeByMoidExecute(r ApiGetNiaapiA
 }
 
 type ApiGetNiaapiApicFieldNoticeListRequest struct {
-	ctx _context.Context
-	ApiService *NiaapiApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NiaapiApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -597,51 +605,61 @@ func (r ApiGetNiaapiApicFieldNoticeListRequest) Filter(filter string) ApiGetNiaa
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNiaapiApicFieldNoticeListRequest) Orderby(orderby string) ApiGetNiaapiApicFieldNoticeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNiaapiApicFieldNoticeListRequest) Top(top int32) ApiGetNiaapiApicFieldNoticeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNiaapiApicFieldNoticeListRequest) Skip(skip int32) ApiGetNiaapiApicFieldNoticeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNiaapiApicFieldNoticeListRequest) Select_(select_ string) ApiGetNiaapiApicFieldNoticeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNiaapiApicFieldNoticeListRequest) Expand(expand string) ApiGetNiaapiApicFieldNoticeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNiaapiApicFieldNoticeListRequest) Apply(apply string) ApiGetNiaapiApicFieldNoticeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNiaapiApicFieldNoticeListRequest) Count(count bool) ApiGetNiaapiApicFieldNoticeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNiaapiApicFieldNoticeListRequest) Inlinecount(inlinecount string) ApiGetNiaapiApicFieldNoticeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNiaapiApicFieldNoticeListRequest) At(at string) ApiGetNiaapiApicFieldNoticeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNiaapiApicFieldNoticeListRequest) Tags(tags string) ApiGetNiaapiApicFieldNoticeListRequest {
 	r.tags = &tags
@@ -661,7 +679,7 @@ GetNiaapiApicFieldNoticeList Read a 'niaapi.ApicFieldNotice' resource.
 func (a *NiaapiApiService) GetNiaapiApicFieldNoticeList(ctx _context.Context) ApiGetNiaapiApicFieldNoticeListRequest {
 	return ApiGetNiaapiApicFieldNoticeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -800,13 +818,13 @@ func (a *NiaapiApiService) GetNiaapiApicFieldNoticeListExecute(r ApiGetNiaapiApi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -823,11 +841,10 @@ func (a *NiaapiApiService) GetNiaapiApicFieldNoticeListExecute(r ApiGetNiaapiApi
 }
 
 type ApiGetNiaapiApicHweolByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NiaapiApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNiaapiApicHweolByMoidRequest) Execute() (NiaapiApicHweol, *_nethttp.Response, error) {
 	return r.ApiService.GetNiaapiApicHweolByMoidExecute(r)
@@ -843,8 +860,8 @@ GetNiaapiApicHweolByMoid Read a 'niaapi.ApicHweol' resource.
 func (a *NiaapiApiService) GetNiaapiApicHweolByMoid(ctx _context.Context, moid string) ApiGetNiaapiApicHweolByMoidRequest {
 	return ApiGetNiaapiApicHweolByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -951,13 +968,13 @@ func (a *NiaapiApiService) GetNiaapiApicHweolByMoidExecute(r ApiGetNiaapiApicHwe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -974,19 +991,19 @@ func (a *NiaapiApiService) GetNiaapiApicHweolByMoidExecute(r ApiGetNiaapiApicHwe
 }
 
 type ApiGetNiaapiApicHweolListRequest struct {
-	ctx _context.Context
-	ApiService *NiaapiApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NiaapiApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -994,51 +1011,61 @@ func (r ApiGetNiaapiApicHweolListRequest) Filter(filter string) ApiGetNiaapiApic
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNiaapiApicHweolListRequest) Orderby(orderby string) ApiGetNiaapiApicHweolListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNiaapiApicHweolListRequest) Top(top int32) ApiGetNiaapiApicHweolListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNiaapiApicHweolListRequest) Skip(skip int32) ApiGetNiaapiApicHweolListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNiaapiApicHweolListRequest) Select_(select_ string) ApiGetNiaapiApicHweolListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNiaapiApicHweolListRequest) Expand(expand string) ApiGetNiaapiApicHweolListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNiaapiApicHweolListRequest) Apply(apply string) ApiGetNiaapiApicHweolListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNiaapiApicHweolListRequest) Count(count bool) ApiGetNiaapiApicHweolListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNiaapiApicHweolListRequest) Inlinecount(inlinecount string) ApiGetNiaapiApicHweolListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNiaapiApicHweolListRequest) At(at string) ApiGetNiaapiApicHweolListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNiaapiApicHweolListRequest) Tags(tags string) ApiGetNiaapiApicHweolListRequest {
 	r.tags = &tags
@@ -1058,7 +1085,7 @@ GetNiaapiApicHweolList Read a 'niaapi.ApicHweol' resource.
 func (a *NiaapiApiService) GetNiaapiApicHweolList(ctx _context.Context) ApiGetNiaapiApicHweolListRequest {
 	return ApiGetNiaapiApicHweolListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1197,13 +1224,13 @@ func (a *NiaapiApiService) GetNiaapiApicHweolListExecute(r ApiGetNiaapiApicHweol
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1220,11 +1247,10 @@ func (a *NiaapiApiService) GetNiaapiApicHweolListExecute(r ApiGetNiaapiApicHweol
 }
 
 type ApiGetNiaapiApicLatestMaintainedReleaseByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NiaapiApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNiaapiApicLatestMaintainedReleaseByMoidRequest) Execute() (NiaapiApicLatestMaintainedRelease, *_nethttp.Response, error) {
 	return r.ApiService.GetNiaapiApicLatestMaintainedReleaseByMoidExecute(r)
@@ -1240,8 +1266,8 @@ GetNiaapiApicLatestMaintainedReleaseByMoid Read a 'niaapi.ApicLatestMaintainedRe
 func (a *NiaapiApiService) GetNiaapiApicLatestMaintainedReleaseByMoid(ctx _context.Context, moid string) ApiGetNiaapiApicLatestMaintainedReleaseByMoidRequest {
 	return ApiGetNiaapiApicLatestMaintainedReleaseByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1348,13 +1374,13 @@ func (a *NiaapiApiService) GetNiaapiApicLatestMaintainedReleaseByMoidExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1371,19 +1397,19 @@ func (a *NiaapiApiService) GetNiaapiApicLatestMaintainedReleaseByMoidExecute(r A
 }
 
 type ApiGetNiaapiApicLatestMaintainedReleaseListRequest struct {
-	ctx _context.Context
-	ApiService *NiaapiApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NiaapiApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1391,51 +1417,61 @@ func (r ApiGetNiaapiApicLatestMaintainedReleaseListRequest) Filter(filter string
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNiaapiApicLatestMaintainedReleaseListRequest) Orderby(orderby string) ApiGetNiaapiApicLatestMaintainedReleaseListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNiaapiApicLatestMaintainedReleaseListRequest) Top(top int32) ApiGetNiaapiApicLatestMaintainedReleaseListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNiaapiApicLatestMaintainedReleaseListRequest) Skip(skip int32) ApiGetNiaapiApicLatestMaintainedReleaseListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNiaapiApicLatestMaintainedReleaseListRequest) Select_(select_ string) ApiGetNiaapiApicLatestMaintainedReleaseListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNiaapiApicLatestMaintainedReleaseListRequest) Expand(expand string) ApiGetNiaapiApicLatestMaintainedReleaseListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNiaapiApicLatestMaintainedReleaseListRequest) Apply(apply string) ApiGetNiaapiApicLatestMaintainedReleaseListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNiaapiApicLatestMaintainedReleaseListRequest) Count(count bool) ApiGetNiaapiApicLatestMaintainedReleaseListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNiaapiApicLatestMaintainedReleaseListRequest) Inlinecount(inlinecount string) ApiGetNiaapiApicLatestMaintainedReleaseListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNiaapiApicLatestMaintainedReleaseListRequest) At(at string) ApiGetNiaapiApicLatestMaintainedReleaseListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNiaapiApicLatestMaintainedReleaseListRequest) Tags(tags string) ApiGetNiaapiApicLatestMaintainedReleaseListRequest {
 	r.tags = &tags
@@ -1455,7 +1491,7 @@ GetNiaapiApicLatestMaintainedReleaseList Read a 'niaapi.ApicLatestMaintainedRele
 func (a *NiaapiApiService) GetNiaapiApicLatestMaintainedReleaseList(ctx _context.Context) ApiGetNiaapiApicLatestMaintainedReleaseListRequest {
 	return ApiGetNiaapiApicLatestMaintainedReleaseListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1594,13 +1630,13 @@ func (a *NiaapiApiService) GetNiaapiApicLatestMaintainedReleaseListExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1617,11 +1653,10 @@ func (a *NiaapiApiService) GetNiaapiApicLatestMaintainedReleaseListExecute(r Api
 }
 
 type ApiGetNiaapiApicReleaseRecommendByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NiaapiApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNiaapiApicReleaseRecommendByMoidRequest) Execute() (NiaapiApicReleaseRecommend, *_nethttp.Response, error) {
 	return r.ApiService.GetNiaapiApicReleaseRecommendByMoidExecute(r)
@@ -1637,8 +1672,8 @@ GetNiaapiApicReleaseRecommendByMoid Read a 'niaapi.ApicReleaseRecommend' resourc
 func (a *NiaapiApiService) GetNiaapiApicReleaseRecommendByMoid(ctx _context.Context, moid string) ApiGetNiaapiApicReleaseRecommendByMoidRequest {
 	return ApiGetNiaapiApicReleaseRecommendByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1745,13 +1780,13 @@ func (a *NiaapiApiService) GetNiaapiApicReleaseRecommendByMoidExecute(r ApiGetNi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1768,19 +1803,19 @@ func (a *NiaapiApiService) GetNiaapiApicReleaseRecommendByMoidExecute(r ApiGetNi
 }
 
 type ApiGetNiaapiApicReleaseRecommendListRequest struct {
-	ctx _context.Context
-	ApiService *NiaapiApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NiaapiApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1788,51 +1823,61 @@ func (r ApiGetNiaapiApicReleaseRecommendListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNiaapiApicReleaseRecommendListRequest) Orderby(orderby string) ApiGetNiaapiApicReleaseRecommendListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNiaapiApicReleaseRecommendListRequest) Top(top int32) ApiGetNiaapiApicReleaseRecommendListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNiaapiApicReleaseRecommendListRequest) Skip(skip int32) ApiGetNiaapiApicReleaseRecommendListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNiaapiApicReleaseRecommendListRequest) Select_(select_ string) ApiGetNiaapiApicReleaseRecommendListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNiaapiApicReleaseRecommendListRequest) Expand(expand string) ApiGetNiaapiApicReleaseRecommendListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNiaapiApicReleaseRecommendListRequest) Apply(apply string) ApiGetNiaapiApicReleaseRecommendListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNiaapiApicReleaseRecommendListRequest) Count(count bool) ApiGetNiaapiApicReleaseRecommendListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNiaapiApicReleaseRecommendListRequest) Inlinecount(inlinecount string) ApiGetNiaapiApicReleaseRecommendListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNiaapiApicReleaseRecommendListRequest) At(at string) ApiGetNiaapiApicReleaseRecommendListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNiaapiApicReleaseRecommendListRequest) Tags(tags string) ApiGetNiaapiApicReleaseRecommendListRequest {
 	r.tags = &tags
@@ -1852,7 +1897,7 @@ GetNiaapiApicReleaseRecommendList Read a 'niaapi.ApicReleaseRecommend' resource.
 func (a *NiaapiApiService) GetNiaapiApicReleaseRecommendList(ctx _context.Context) ApiGetNiaapiApicReleaseRecommendListRequest {
 	return ApiGetNiaapiApicReleaseRecommendListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1991,13 +2036,13 @@ func (a *NiaapiApiService) GetNiaapiApicReleaseRecommendListExecute(r ApiGetNiaa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2014,11 +2059,10 @@ func (a *NiaapiApiService) GetNiaapiApicReleaseRecommendListExecute(r ApiGetNiaa
 }
 
 type ApiGetNiaapiApicSweolByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NiaapiApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNiaapiApicSweolByMoidRequest) Execute() (NiaapiApicSweol, *_nethttp.Response, error) {
 	return r.ApiService.GetNiaapiApicSweolByMoidExecute(r)
@@ -2034,8 +2078,8 @@ GetNiaapiApicSweolByMoid Read a 'niaapi.ApicSweol' resource.
 func (a *NiaapiApiService) GetNiaapiApicSweolByMoid(ctx _context.Context, moid string) ApiGetNiaapiApicSweolByMoidRequest {
 	return ApiGetNiaapiApicSweolByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2142,13 +2186,13 @@ func (a *NiaapiApiService) GetNiaapiApicSweolByMoidExecute(r ApiGetNiaapiApicSwe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2165,19 +2209,19 @@ func (a *NiaapiApiService) GetNiaapiApicSweolByMoidExecute(r ApiGetNiaapiApicSwe
 }
 
 type ApiGetNiaapiApicSweolListRequest struct {
-	ctx _context.Context
-	ApiService *NiaapiApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NiaapiApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2185,51 +2229,61 @@ func (r ApiGetNiaapiApicSweolListRequest) Filter(filter string) ApiGetNiaapiApic
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNiaapiApicSweolListRequest) Orderby(orderby string) ApiGetNiaapiApicSweolListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNiaapiApicSweolListRequest) Top(top int32) ApiGetNiaapiApicSweolListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNiaapiApicSweolListRequest) Skip(skip int32) ApiGetNiaapiApicSweolListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNiaapiApicSweolListRequest) Select_(select_ string) ApiGetNiaapiApicSweolListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNiaapiApicSweolListRequest) Expand(expand string) ApiGetNiaapiApicSweolListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNiaapiApicSweolListRequest) Apply(apply string) ApiGetNiaapiApicSweolListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNiaapiApicSweolListRequest) Count(count bool) ApiGetNiaapiApicSweolListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNiaapiApicSweolListRequest) Inlinecount(inlinecount string) ApiGetNiaapiApicSweolListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNiaapiApicSweolListRequest) At(at string) ApiGetNiaapiApicSweolListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNiaapiApicSweolListRequest) Tags(tags string) ApiGetNiaapiApicSweolListRequest {
 	r.tags = &tags
@@ -2249,7 +2303,7 @@ GetNiaapiApicSweolList Read a 'niaapi.ApicSweol' resource.
 func (a *NiaapiApiService) GetNiaapiApicSweolList(ctx _context.Context) ApiGetNiaapiApicSweolListRequest {
 	return ApiGetNiaapiApicSweolListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2388,13 +2442,13 @@ func (a *NiaapiApiService) GetNiaapiApicSweolListExecute(r ApiGetNiaapiApicSweol
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2411,11 +2465,10 @@ func (a *NiaapiApiService) GetNiaapiApicSweolListExecute(r ApiGetNiaapiApicSweol
 }
 
 type ApiGetNiaapiDcnmCcoPostByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NiaapiApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNiaapiDcnmCcoPostByMoidRequest) Execute() (NiaapiDcnmCcoPost, *_nethttp.Response, error) {
 	return r.ApiService.GetNiaapiDcnmCcoPostByMoidExecute(r)
@@ -2431,8 +2484,8 @@ GetNiaapiDcnmCcoPostByMoid Read a 'niaapi.DcnmCcoPost' resource.
 func (a *NiaapiApiService) GetNiaapiDcnmCcoPostByMoid(ctx _context.Context, moid string) ApiGetNiaapiDcnmCcoPostByMoidRequest {
 	return ApiGetNiaapiDcnmCcoPostByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2539,13 +2592,13 @@ func (a *NiaapiApiService) GetNiaapiDcnmCcoPostByMoidExecute(r ApiGetNiaapiDcnmC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2562,19 +2615,19 @@ func (a *NiaapiApiService) GetNiaapiDcnmCcoPostByMoidExecute(r ApiGetNiaapiDcnmC
 }
 
 type ApiGetNiaapiDcnmCcoPostListRequest struct {
-	ctx _context.Context
-	ApiService *NiaapiApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NiaapiApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2582,51 +2635,61 @@ func (r ApiGetNiaapiDcnmCcoPostListRequest) Filter(filter string) ApiGetNiaapiDc
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNiaapiDcnmCcoPostListRequest) Orderby(orderby string) ApiGetNiaapiDcnmCcoPostListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNiaapiDcnmCcoPostListRequest) Top(top int32) ApiGetNiaapiDcnmCcoPostListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNiaapiDcnmCcoPostListRequest) Skip(skip int32) ApiGetNiaapiDcnmCcoPostListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNiaapiDcnmCcoPostListRequest) Select_(select_ string) ApiGetNiaapiDcnmCcoPostListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNiaapiDcnmCcoPostListRequest) Expand(expand string) ApiGetNiaapiDcnmCcoPostListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNiaapiDcnmCcoPostListRequest) Apply(apply string) ApiGetNiaapiDcnmCcoPostListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNiaapiDcnmCcoPostListRequest) Count(count bool) ApiGetNiaapiDcnmCcoPostListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNiaapiDcnmCcoPostListRequest) Inlinecount(inlinecount string) ApiGetNiaapiDcnmCcoPostListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNiaapiDcnmCcoPostListRequest) At(at string) ApiGetNiaapiDcnmCcoPostListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNiaapiDcnmCcoPostListRequest) Tags(tags string) ApiGetNiaapiDcnmCcoPostListRequest {
 	r.tags = &tags
@@ -2646,7 +2709,7 @@ GetNiaapiDcnmCcoPostList Read a 'niaapi.DcnmCcoPost' resource.
 func (a *NiaapiApiService) GetNiaapiDcnmCcoPostList(ctx _context.Context) ApiGetNiaapiDcnmCcoPostListRequest {
 	return ApiGetNiaapiDcnmCcoPostListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2785,13 +2848,13 @@ func (a *NiaapiApiService) GetNiaapiDcnmCcoPostListExecute(r ApiGetNiaapiDcnmCco
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2808,11 +2871,10 @@ func (a *NiaapiApiService) GetNiaapiDcnmCcoPostListExecute(r ApiGetNiaapiDcnmCco
 }
 
 type ApiGetNiaapiDcnmFieldNoticeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NiaapiApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNiaapiDcnmFieldNoticeByMoidRequest) Execute() (NiaapiDcnmFieldNotice, *_nethttp.Response, error) {
 	return r.ApiService.GetNiaapiDcnmFieldNoticeByMoidExecute(r)
@@ -2828,8 +2890,8 @@ GetNiaapiDcnmFieldNoticeByMoid Read a 'niaapi.DcnmFieldNotice' resource.
 func (a *NiaapiApiService) GetNiaapiDcnmFieldNoticeByMoid(ctx _context.Context, moid string) ApiGetNiaapiDcnmFieldNoticeByMoidRequest {
 	return ApiGetNiaapiDcnmFieldNoticeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2936,13 +2998,13 @@ func (a *NiaapiApiService) GetNiaapiDcnmFieldNoticeByMoidExecute(r ApiGetNiaapiD
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2959,19 +3021,19 @@ func (a *NiaapiApiService) GetNiaapiDcnmFieldNoticeByMoidExecute(r ApiGetNiaapiD
 }
 
 type ApiGetNiaapiDcnmFieldNoticeListRequest struct {
-	ctx _context.Context
-	ApiService *NiaapiApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NiaapiApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2979,51 +3041,61 @@ func (r ApiGetNiaapiDcnmFieldNoticeListRequest) Filter(filter string) ApiGetNiaa
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNiaapiDcnmFieldNoticeListRequest) Orderby(orderby string) ApiGetNiaapiDcnmFieldNoticeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNiaapiDcnmFieldNoticeListRequest) Top(top int32) ApiGetNiaapiDcnmFieldNoticeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNiaapiDcnmFieldNoticeListRequest) Skip(skip int32) ApiGetNiaapiDcnmFieldNoticeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNiaapiDcnmFieldNoticeListRequest) Select_(select_ string) ApiGetNiaapiDcnmFieldNoticeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNiaapiDcnmFieldNoticeListRequest) Expand(expand string) ApiGetNiaapiDcnmFieldNoticeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNiaapiDcnmFieldNoticeListRequest) Apply(apply string) ApiGetNiaapiDcnmFieldNoticeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNiaapiDcnmFieldNoticeListRequest) Count(count bool) ApiGetNiaapiDcnmFieldNoticeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNiaapiDcnmFieldNoticeListRequest) Inlinecount(inlinecount string) ApiGetNiaapiDcnmFieldNoticeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNiaapiDcnmFieldNoticeListRequest) At(at string) ApiGetNiaapiDcnmFieldNoticeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNiaapiDcnmFieldNoticeListRequest) Tags(tags string) ApiGetNiaapiDcnmFieldNoticeListRequest {
 	r.tags = &tags
@@ -3043,7 +3115,7 @@ GetNiaapiDcnmFieldNoticeList Read a 'niaapi.DcnmFieldNotice' resource.
 func (a *NiaapiApiService) GetNiaapiDcnmFieldNoticeList(ctx _context.Context) ApiGetNiaapiDcnmFieldNoticeListRequest {
 	return ApiGetNiaapiDcnmFieldNoticeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3182,13 +3254,13 @@ func (a *NiaapiApiService) GetNiaapiDcnmFieldNoticeListExecute(r ApiGetNiaapiDcn
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3205,11 +3277,10 @@ func (a *NiaapiApiService) GetNiaapiDcnmFieldNoticeListExecute(r ApiGetNiaapiDcn
 }
 
 type ApiGetNiaapiDcnmHweolByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NiaapiApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNiaapiDcnmHweolByMoidRequest) Execute() (NiaapiDcnmHweol, *_nethttp.Response, error) {
 	return r.ApiService.GetNiaapiDcnmHweolByMoidExecute(r)
@@ -3225,8 +3296,8 @@ GetNiaapiDcnmHweolByMoid Read a 'niaapi.DcnmHweol' resource.
 func (a *NiaapiApiService) GetNiaapiDcnmHweolByMoid(ctx _context.Context, moid string) ApiGetNiaapiDcnmHweolByMoidRequest {
 	return ApiGetNiaapiDcnmHweolByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3333,13 +3404,13 @@ func (a *NiaapiApiService) GetNiaapiDcnmHweolByMoidExecute(r ApiGetNiaapiDcnmHwe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3356,19 +3427,19 @@ func (a *NiaapiApiService) GetNiaapiDcnmHweolByMoidExecute(r ApiGetNiaapiDcnmHwe
 }
 
 type ApiGetNiaapiDcnmHweolListRequest struct {
-	ctx _context.Context
-	ApiService *NiaapiApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NiaapiApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3376,51 +3447,61 @@ func (r ApiGetNiaapiDcnmHweolListRequest) Filter(filter string) ApiGetNiaapiDcnm
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNiaapiDcnmHweolListRequest) Orderby(orderby string) ApiGetNiaapiDcnmHweolListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNiaapiDcnmHweolListRequest) Top(top int32) ApiGetNiaapiDcnmHweolListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNiaapiDcnmHweolListRequest) Skip(skip int32) ApiGetNiaapiDcnmHweolListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNiaapiDcnmHweolListRequest) Select_(select_ string) ApiGetNiaapiDcnmHweolListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNiaapiDcnmHweolListRequest) Expand(expand string) ApiGetNiaapiDcnmHweolListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNiaapiDcnmHweolListRequest) Apply(apply string) ApiGetNiaapiDcnmHweolListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNiaapiDcnmHweolListRequest) Count(count bool) ApiGetNiaapiDcnmHweolListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNiaapiDcnmHweolListRequest) Inlinecount(inlinecount string) ApiGetNiaapiDcnmHweolListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNiaapiDcnmHweolListRequest) At(at string) ApiGetNiaapiDcnmHweolListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNiaapiDcnmHweolListRequest) Tags(tags string) ApiGetNiaapiDcnmHweolListRequest {
 	r.tags = &tags
@@ -3440,7 +3521,7 @@ GetNiaapiDcnmHweolList Read a 'niaapi.DcnmHweol' resource.
 func (a *NiaapiApiService) GetNiaapiDcnmHweolList(ctx _context.Context) ApiGetNiaapiDcnmHweolListRequest {
 	return ApiGetNiaapiDcnmHweolListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3579,13 +3660,13 @@ func (a *NiaapiApiService) GetNiaapiDcnmHweolListExecute(r ApiGetNiaapiDcnmHweol
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3602,11 +3683,10 @@ func (a *NiaapiApiService) GetNiaapiDcnmHweolListExecute(r ApiGetNiaapiDcnmHweol
 }
 
 type ApiGetNiaapiDcnmLatestMaintainedReleaseByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NiaapiApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNiaapiDcnmLatestMaintainedReleaseByMoidRequest) Execute() (NiaapiDcnmLatestMaintainedRelease, *_nethttp.Response, error) {
 	return r.ApiService.GetNiaapiDcnmLatestMaintainedReleaseByMoidExecute(r)
@@ -3622,8 +3702,8 @@ GetNiaapiDcnmLatestMaintainedReleaseByMoid Read a 'niaapi.DcnmLatestMaintainedRe
 func (a *NiaapiApiService) GetNiaapiDcnmLatestMaintainedReleaseByMoid(ctx _context.Context, moid string) ApiGetNiaapiDcnmLatestMaintainedReleaseByMoidRequest {
 	return ApiGetNiaapiDcnmLatestMaintainedReleaseByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3730,13 +3810,13 @@ func (a *NiaapiApiService) GetNiaapiDcnmLatestMaintainedReleaseByMoidExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3753,19 +3833,19 @@ func (a *NiaapiApiService) GetNiaapiDcnmLatestMaintainedReleaseByMoidExecute(r A
 }
 
 type ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest struct {
-	ctx _context.Context
-	ApiService *NiaapiApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NiaapiApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3773,51 +3853,61 @@ func (r ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest) Filter(filter string
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest) Orderby(orderby string) ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest) Top(top int32) ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest) Skip(skip int32) ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest) Select_(select_ string) ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest) Expand(expand string) ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest) Apply(apply string) ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest) Count(count bool) ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest) Inlinecount(inlinecount string) ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest) At(at string) ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest) Tags(tags string) ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest {
 	r.tags = &tags
@@ -3837,7 +3927,7 @@ GetNiaapiDcnmLatestMaintainedReleaseList Read a 'niaapi.DcnmLatestMaintainedRele
 func (a *NiaapiApiService) GetNiaapiDcnmLatestMaintainedReleaseList(ctx _context.Context) ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest {
 	return ApiGetNiaapiDcnmLatestMaintainedReleaseListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3976,13 +4066,13 @@ func (a *NiaapiApiService) GetNiaapiDcnmLatestMaintainedReleaseListExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3999,11 +4089,10 @@ func (a *NiaapiApiService) GetNiaapiDcnmLatestMaintainedReleaseListExecute(r Api
 }
 
 type ApiGetNiaapiDcnmReleaseRecommendByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NiaapiApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNiaapiDcnmReleaseRecommendByMoidRequest) Execute() (NiaapiDcnmReleaseRecommend, *_nethttp.Response, error) {
 	return r.ApiService.GetNiaapiDcnmReleaseRecommendByMoidExecute(r)
@@ -4019,8 +4108,8 @@ GetNiaapiDcnmReleaseRecommendByMoid Read a 'niaapi.DcnmReleaseRecommend' resourc
 func (a *NiaapiApiService) GetNiaapiDcnmReleaseRecommendByMoid(ctx _context.Context, moid string) ApiGetNiaapiDcnmReleaseRecommendByMoidRequest {
 	return ApiGetNiaapiDcnmReleaseRecommendByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4127,13 +4216,13 @@ func (a *NiaapiApiService) GetNiaapiDcnmReleaseRecommendByMoidExecute(r ApiGetNi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4150,19 +4239,19 @@ func (a *NiaapiApiService) GetNiaapiDcnmReleaseRecommendByMoidExecute(r ApiGetNi
 }
 
 type ApiGetNiaapiDcnmReleaseRecommendListRequest struct {
-	ctx _context.Context
-	ApiService *NiaapiApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NiaapiApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4170,51 +4259,61 @@ func (r ApiGetNiaapiDcnmReleaseRecommendListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNiaapiDcnmReleaseRecommendListRequest) Orderby(orderby string) ApiGetNiaapiDcnmReleaseRecommendListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNiaapiDcnmReleaseRecommendListRequest) Top(top int32) ApiGetNiaapiDcnmReleaseRecommendListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNiaapiDcnmReleaseRecommendListRequest) Skip(skip int32) ApiGetNiaapiDcnmReleaseRecommendListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNiaapiDcnmReleaseRecommendListRequest) Select_(select_ string) ApiGetNiaapiDcnmReleaseRecommendListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNiaapiDcnmReleaseRecommendListRequest) Expand(expand string) ApiGetNiaapiDcnmReleaseRecommendListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNiaapiDcnmReleaseRecommendListRequest) Apply(apply string) ApiGetNiaapiDcnmReleaseRecommendListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNiaapiDcnmReleaseRecommendListRequest) Count(count bool) ApiGetNiaapiDcnmReleaseRecommendListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNiaapiDcnmReleaseRecommendListRequest) Inlinecount(inlinecount string) ApiGetNiaapiDcnmReleaseRecommendListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNiaapiDcnmReleaseRecommendListRequest) At(at string) ApiGetNiaapiDcnmReleaseRecommendListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNiaapiDcnmReleaseRecommendListRequest) Tags(tags string) ApiGetNiaapiDcnmReleaseRecommendListRequest {
 	r.tags = &tags
@@ -4234,7 +4333,7 @@ GetNiaapiDcnmReleaseRecommendList Read a 'niaapi.DcnmReleaseRecommend' resource.
 func (a *NiaapiApiService) GetNiaapiDcnmReleaseRecommendList(ctx _context.Context) ApiGetNiaapiDcnmReleaseRecommendListRequest {
 	return ApiGetNiaapiDcnmReleaseRecommendListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4373,13 +4472,13 @@ func (a *NiaapiApiService) GetNiaapiDcnmReleaseRecommendListExecute(r ApiGetNiaa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4396,11 +4495,10 @@ func (a *NiaapiApiService) GetNiaapiDcnmReleaseRecommendListExecute(r ApiGetNiaa
 }
 
 type ApiGetNiaapiDcnmSweolByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NiaapiApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNiaapiDcnmSweolByMoidRequest) Execute() (NiaapiDcnmSweol, *_nethttp.Response, error) {
 	return r.ApiService.GetNiaapiDcnmSweolByMoidExecute(r)
@@ -4416,8 +4514,8 @@ GetNiaapiDcnmSweolByMoid Read a 'niaapi.DcnmSweol' resource.
 func (a *NiaapiApiService) GetNiaapiDcnmSweolByMoid(ctx _context.Context, moid string) ApiGetNiaapiDcnmSweolByMoidRequest {
 	return ApiGetNiaapiDcnmSweolByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4524,13 +4622,13 @@ func (a *NiaapiApiService) GetNiaapiDcnmSweolByMoidExecute(r ApiGetNiaapiDcnmSwe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4547,19 +4645,19 @@ func (a *NiaapiApiService) GetNiaapiDcnmSweolByMoidExecute(r ApiGetNiaapiDcnmSwe
 }
 
 type ApiGetNiaapiDcnmSweolListRequest struct {
-	ctx _context.Context
-	ApiService *NiaapiApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NiaapiApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4567,51 +4665,61 @@ func (r ApiGetNiaapiDcnmSweolListRequest) Filter(filter string) ApiGetNiaapiDcnm
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNiaapiDcnmSweolListRequest) Orderby(orderby string) ApiGetNiaapiDcnmSweolListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNiaapiDcnmSweolListRequest) Top(top int32) ApiGetNiaapiDcnmSweolListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNiaapiDcnmSweolListRequest) Skip(skip int32) ApiGetNiaapiDcnmSweolListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNiaapiDcnmSweolListRequest) Select_(select_ string) ApiGetNiaapiDcnmSweolListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNiaapiDcnmSweolListRequest) Expand(expand string) ApiGetNiaapiDcnmSweolListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNiaapiDcnmSweolListRequest) Apply(apply string) ApiGetNiaapiDcnmSweolListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNiaapiDcnmSweolListRequest) Count(count bool) ApiGetNiaapiDcnmSweolListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNiaapiDcnmSweolListRequest) Inlinecount(inlinecount string) ApiGetNiaapiDcnmSweolListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNiaapiDcnmSweolListRequest) At(at string) ApiGetNiaapiDcnmSweolListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNiaapiDcnmSweolListRequest) Tags(tags string) ApiGetNiaapiDcnmSweolListRequest {
 	r.tags = &tags
@@ -4631,7 +4739,7 @@ GetNiaapiDcnmSweolList Read a 'niaapi.DcnmSweol' resource.
 func (a *NiaapiApiService) GetNiaapiDcnmSweolList(ctx _context.Context) ApiGetNiaapiDcnmSweolListRequest {
 	return ApiGetNiaapiDcnmSweolListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4770,13 +4878,13 @@ func (a *NiaapiApiService) GetNiaapiDcnmSweolListExecute(r ApiGetNiaapiDcnmSweol
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4793,11 +4901,10 @@ func (a *NiaapiApiService) GetNiaapiDcnmSweolListExecute(r ApiGetNiaapiDcnmSweol
 }
 
 type ApiGetNiaapiFileDownloaderByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NiaapiApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNiaapiFileDownloaderByMoidRequest) Execute() (NiaapiFileDownloader, *_nethttp.Response, error) {
 	return r.ApiService.GetNiaapiFileDownloaderByMoidExecute(r)
@@ -4813,8 +4920,8 @@ GetNiaapiFileDownloaderByMoid Read a 'niaapi.FileDownloader' resource.
 func (a *NiaapiApiService) GetNiaapiFileDownloaderByMoid(ctx _context.Context, moid string) ApiGetNiaapiFileDownloaderByMoidRequest {
 	return ApiGetNiaapiFileDownloaderByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4921,13 +5028,13 @@ func (a *NiaapiApiService) GetNiaapiFileDownloaderByMoidExecute(r ApiGetNiaapiFi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4944,19 +5051,19 @@ func (a *NiaapiApiService) GetNiaapiFileDownloaderByMoidExecute(r ApiGetNiaapiFi
 }
 
 type ApiGetNiaapiFileDownloaderListRequest struct {
-	ctx _context.Context
-	ApiService *NiaapiApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NiaapiApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4964,51 +5071,61 @@ func (r ApiGetNiaapiFileDownloaderListRequest) Filter(filter string) ApiGetNiaap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNiaapiFileDownloaderListRequest) Orderby(orderby string) ApiGetNiaapiFileDownloaderListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNiaapiFileDownloaderListRequest) Top(top int32) ApiGetNiaapiFileDownloaderListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNiaapiFileDownloaderListRequest) Skip(skip int32) ApiGetNiaapiFileDownloaderListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNiaapiFileDownloaderListRequest) Select_(select_ string) ApiGetNiaapiFileDownloaderListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNiaapiFileDownloaderListRequest) Expand(expand string) ApiGetNiaapiFileDownloaderListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNiaapiFileDownloaderListRequest) Apply(apply string) ApiGetNiaapiFileDownloaderListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNiaapiFileDownloaderListRequest) Count(count bool) ApiGetNiaapiFileDownloaderListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNiaapiFileDownloaderListRequest) Inlinecount(inlinecount string) ApiGetNiaapiFileDownloaderListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNiaapiFileDownloaderListRequest) At(at string) ApiGetNiaapiFileDownloaderListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNiaapiFileDownloaderListRequest) Tags(tags string) ApiGetNiaapiFileDownloaderListRequest {
 	r.tags = &tags
@@ -5028,7 +5145,7 @@ GetNiaapiFileDownloaderList Read a 'niaapi.FileDownloader' resource.
 func (a *NiaapiApiService) GetNiaapiFileDownloaderList(ctx _context.Context) ApiGetNiaapiFileDownloaderListRequest {
 	return ApiGetNiaapiFileDownloaderListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5167,13 +5284,13 @@ func (a *NiaapiApiService) GetNiaapiFileDownloaderListExecute(r ApiGetNiaapiFile
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5190,11 +5307,10 @@ func (a *NiaapiApiService) GetNiaapiFileDownloaderListExecute(r ApiGetNiaapiFile
 }
 
 type ApiGetNiaapiNiaMetadataByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NiaapiApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNiaapiNiaMetadataByMoidRequest) Execute() (NiaapiNiaMetadata, *_nethttp.Response, error) {
 	return r.ApiService.GetNiaapiNiaMetadataByMoidExecute(r)
@@ -5210,8 +5326,8 @@ GetNiaapiNiaMetadataByMoid Read a 'niaapi.NiaMetadata' resource.
 func (a *NiaapiApiService) GetNiaapiNiaMetadataByMoid(ctx _context.Context, moid string) ApiGetNiaapiNiaMetadataByMoidRequest {
 	return ApiGetNiaapiNiaMetadataByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5318,13 +5434,13 @@ func (a *NiaapiApiService) GetNiaapiNiaMetadataByMoidExecute(r ApiGetNiaapiNiaMe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5341,19 +5457,19 @@ func (a *NiaapiApiService) GetNiaapiNiaMetadataByMoidExecute(r ApiGetNiaapiNiaMe
 }
 
 type ApiGetNiaapiNiaMetadataListRequest struct {
-	ctx _context.Context
-	ApiService *NiaapiApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NiaapiApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5361,51 +5477,61 @@ func (r ApiGetNiaapiNiaMetadataListRequest) Filter(filter string) ApiGetNiaapiNi
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNiaapiNiaMetadataListRequest) Orderby(orderby string) ApiGetNiaapiNiaMetadataListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNiaapiNiaMetadataListRequest) Top(top int32) ApiGetNiaapiNiaMetadataListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNiaapiNiaMetadataListRequest) Skip(skip int32) ApiGetNiaapiNiaMetadataListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNiaapiNiaMetadataListRequest) Select_(select_ string) ApiGetNiaapiNiaMetadataListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNiaapiNiaMetadataListRequest) Expand(expand string) ApiGetNiaapiNiaMetadataListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNiaapiNiaMetadataListRequest) Apply(apply string) ApiGetNiaapiNiaMetadataListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNiaapiNiaMetadataListRequest) Count(count bool) ApiGetNiaapiNiaMetadataListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNiaapiNiaMetadataListRequest) Inlinecount(inlinecount string) ApiGetNiaapiNiaMetadataListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNiaapiNiaMetadataListRequest) At(at string) ApiGetNiaapiNiaMetadataListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNiaapiNiaMetadataListRequest) Tags(tags string) ApiGetNiaapiNiaMetadataListRequest {
 	r.tags = &tags
@@ -5425,7 +5551,7 @@ GetNiaapiNiaMetadataList Read a 'niaapi.NiaMetadata' resource.
 func (a *NiaapiApiService) GetNiaapiNiaMetadataList(ctx _context.Context) ApiGetNiaapiNiaMetadataListRequest {
 	return ApiGetNiaapiNiaMetadataListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5564,13 +5690,13 @@ func (a *NiaapiApiService) GetNiaapiNiaMetadataListExecute(r ApiGetNiaapiNiaMeta
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5587,11 +5713,10 @@ func (a *NiaapiApiService) GetNiaapiNiaMetadataListExecute(r ApiGetNiaapiNiaMeta
 }
 
 type ApiGetNiaapiNibFileDownloaderByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NiaapiApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNiaapiNibFileDownloaderByMoidRequest) Execute() (NiaapiNibFileDownloader, *_nethttp.Response, error) {
 	return r.ApiService.GetNiaapiNibFileDownloaderByMoidExecute(r)
@@ -5607,8 +5732,8 @@ GetNiaapiNibFileDownloaderByMoid Read a 'niaapi.NibFileDownloader' resource.
 func (a *NiaapiApiService) GetNiaapiNibFileDownloaderByMoid(ctx _context.Context, moid string) ApiGetNiaapiNibFileDownloaderByMoidRequest {
 	return ApiGetNiaapiNibFileDownloaderByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5715,13 +5840,13 @@ func (a *NiaapiApiService) GetNiaapiNibFileDownloaderByMoidExecute(r ApiGetNiaap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5738,19 +5863,19 @@ func (a *NiaapiApiService) GetNiaapiNibFileDownloaderByMoidExecute(r ApiGetNiaap
 }
 
 type ApiGetNiaapiNibFileDownloaderListRequest struct {
-	ctx _context.Context
-	ApiService *NiaapiApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NiaapiApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5758,51 +5883,61 @@ func (r ApiGetNiaapiNibFileDownloaderListRequest) Filter(filter string) ApiGetNi
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNiaapiNibFileDownloaderListRequest) Orderby(orderby string) ApiGetNiaapiNibFileDownloaderListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNiaapiNibFileDownloaderListRequest) Top(top int32) ApiGetNiaapiNibFileDownloaderListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNiaapiNibFileDownloaderListRequest) Skip(skip int32) ApiGetNiaapiNibFileDownloaderListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNiaapiNibFileDownloaderListRequest) Select_(select_ string) ApiGetNiaapiNibFileDownloaderListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNiaapiNibFileDownloaderListRequest) Expand(expand string) ApiGetNiaapiNibFileDownloaderListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNiaapiNibFileDownloaderListRequest) Apply(apply string) ApiGetNiaapiNibFileDownloaderListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNiaapiNibFileDownloaderListRequest) Count(count bool) ApiGetNiaapiNibFileDownloaderListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNiaapiNibFileDownloaderListRequest) Inlinecount(inlinecount string) ApiGetNiaapiNibFileDownloaderListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNiaapiNibFileDownloaderListRequest) At(at string) ApiGetNiaapiNibFileDownloaderListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNiaapiNibFileDownloaderListRequest) Tags(tags string) ApiGetNiaapiNibFileDownloaderListRequest {
 	r.tags = &tags
@@ -5822,7 +5957,7 @@ GetNiaapiNibFileDownloaderList Read a 'niaapi.NibFileDownloader' resource.
 func (a *NiaapiApiService) GetNiaapiNibFileDownloaderList(ctx _context.Context) ApiGetNiaapiNibFileDownloaderListRequest {
 	return ApiGetNiaapiNibFileDownloaderListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5961,13 +6096,13 @@ func (a *NiaapiApiService) GetNiaapiNibFileDownloaderListExecute(r ApiGetNiaapiN
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5984,11 +6119,10 @@ func (a *NiaapiApiService) GetNiaapiNibFileDownloaderListExecute(r ApiGetNiaapiN
 }
 
 type ApiGetNiaapiNibMetadataByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NiaapiApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNiaapiNibMetadataByMoidRequest) Execute() (NiaapiNibMetadata, *_nethttp.Response, error) {
 	return r.ApiService.GetNiaapiNibMetadataByMoidExecute(r)
@@ -6004,8 +6138,8 @@ GetNiaapiNibMetadataByMoid Read a 'niaapi.NibMetadata' resource.
 func (a *NiaapiApiService) GetNiaapiNibMetadataByMoid(ctx _context.Context, moid string) ApiGetNiaapiNibMetadataByMoidRequest {
 	return ApiGetNiaapiNibMetadataByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6112,13 +6246,13 @@ func (a *NiaapiApiService) GetNiaapiNibMetadataByMoidExecute(r ApiGetNiaapiNibMe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6135,19 +6269,19 @@ func (a *NiaapiApiService) GetNiaapiNibMetadataByMoidExecute(r ApiGetNiaapiNibMe
 }
 
 type ApiGetNiaapiNibMetadataListRequest struct {
-	ctx _context.Context
-	ApiService *NiaapiApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NiaapiApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -6155,51 +6289,61 @@ func (r ApiGetNiaapiNibMetadataListRequest) Filter(filter string) ApiGetNiaapiNi
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNiaapiNibMetadataListRequest) Orderby(orderby string) ApiGetNiaapiNibMetadataListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNiaapiNibMetadataListRequest) Top(top int32) ApiGetNiaapiNibMetadataListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNiaapiNibMetadataListRequest) Skip(skip int32) ApiGetNiaapiNibMetadataListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNiaapiNibMetadataListRequest) Select_(select_ string) ApiGetNiaapiNibMetadataListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNiaapiNibMetadataListRequest) Expand(expand string) ApiGetNiaapiNibMetadataListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNiaapiNibMetadataListRequest) Apply(apply string) ApiGetNiaapiNibMetadataListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNiaapiNibMetadataListRequest) Count(count bool) ApiGetNiaapiNibMetadataListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNiaapiNibMetadataListRequest) Inlinecount(inlinecount string) ApiGetNiaapiNibMetadataListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNiaapiNibMetadataListRequest) At(at string) ApiGetNiaapiNibMetadataListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNiaapiNibMetadataListRequest) Tags(tags string) ApiGetNiaapiNibMetadataListRequest {
 	r.tags = &tags
@@ -6219,7 +6363,7 @@ GetNiaapiNibMetadataList Read a 'niaapi.NibMetadata' resource.
 func (a *NiaapiApiService) GetNiaapiNibMetadataList(ctx _context.Context) ApiGetNiaapiNibMetadataListRequest {
 	return ApiGetNiaapiNibMetadataListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6358,13 +6502,13 @@ func (a *NiaapiApiService) GetNiaapiNibMetadataListExecute(r ApiGetNiaapiNibMeta
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6381,11 +6525,10 @@ func (a *NiaapiApiService) GetNiaapiNibMetadataListExecute(r ApiGetNiaapiNibMeta
 }
 
 type ApiGetNiaapiVersionRegexByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NiaapiApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNiaapiVersionRegexByMoidRequest) Execute() (NiaapiVersionRegex, *_nethttp.Response, error) {
 	return r.ApiService.GetNiaapiVersionRegexByMoidExecute(r)
@@ -6401,8 +6544,8 @@ GetNiaapiVersionRegexByMoid Read a 'niaapi.VersionRegex' resource.
 func (a *NiaapiApiService) GetNiaapiVersionRegexByMoid(ctx _context.Context, moid string) ApiGetNiaapiVersionRegexByMoidRequest {
 	return ApiGetNiaapiVersionRegexByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6509,13 +6652,13 @@ func (a *NiaapiApiService) GetNiaapiVersionRegexByMoidExecute(r ApiGetNiaapiVers
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6532,19 +6675,19 @@ func (a *NiaapiApiService) GetNiaapiVersionRegexByMoidExecute(r ApiGetNiaapiVers
 }
 
 type ApiGetNiaapiVersionRegexListRequest struct {
-	ctx _context.Context
-	ApiService *NiaapiApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NiaapiApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -6552,51 +6695,61 @@ func (r ApiGetNiaapiVersionRegexListRequest) Filter(filter string) ApiGetNiaapiV
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNiaapiVersionRegexListRequest) Orderby(orderby string) ApiGetNiaapiVersionRegexListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNiaapiVersionRegexListRequest) Top(top int32) ApiGetNiaapiVersionRegexListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNiaapiVersionRegexListRequest) Skip(skip int32) ApiGetNiaapiVersionRegexListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNiaapiVersionRegexListRequest) Select_(select_ string) ApiGetNiaapiVersionRegexListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNiaapiVersionRegexListRequest) Expand(expand string) ApiGetNiaapiVersionRegexListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNiaapiVersionRegexListRequest) Apply(apply string) ApiGetNiaapiVersionRegexListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNiaapiVersionRegexListRequest) Count(count bool) ApiGetNiaapiVersionRegexListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNiaapiVersionRegexListRequest) Inlinecount(inlinecount string) ApiGetNiaapiVersionRegexListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNiaapiVersionRegexListRequest) At(at string) ApiGetNiaapiVersionRegexListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNiaapiVersionRegexListRequest) Tags(tags string) ApiGetNiaapiVersionRegexListRequest {
 	r.tags = &tags
@@ -6616,7 +6769,7 @@ GetNiaapiVersionRegexList Read a 'niaapi.VersionRegex' resource.
 func (a *NiaapiApiService) GetNiaapiVersionRegexList(ctx _context.Context) ApiGetNiaapiVersionRegexListRequest {
 	return ApiGetNiaapiVersionRegexListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6755,13 +6908,13 @@ func (a *NiaapiApiService) GetNiaapiVersionRegexListExecute(r ApiGetNiaapiVersio
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

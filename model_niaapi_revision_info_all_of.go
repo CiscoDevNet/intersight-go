@@ -27,7 +27,7 @@ type NiaapiRevisionInfoAllOf struct {
 	// The changes made in this revision.
 	RevisionComment *string `json:"RevisionComment,omitempty"`
 	// The Revision No. of this revision.
-	RevisionNo *string `json:"RevisionNo,omitempty"`
+	RevisionNo           *string `json:"RevisionNo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *NiaapiRevisionInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiRevisionInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *NiaapiRevisionInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiRevisionInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -281,5 +281,3 @@ func (v *NullableNiaapiRevisionInfoAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

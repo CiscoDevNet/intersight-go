@@ -27,12 +27,12 @@ type StoragePureHostLun struct {
 	// Name of the host group associated with LUN.
 	HostGroupName *string `json:"HostGroupName,omitempty"`
 	// Kind of volume connection to host. True if it is connected through host group. False in case of direct host connection.
-	Shared *bool `json:"Shared,omitempty"`
-	Array *StoragePureArrayRelationship `json:"Array,omitempty"`
-	Host *StoragePureHostRelationship `json:"Host,omitempty"`
-	HostGroup *StoragePureHostGroupRelationship `json:"HostGroup,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	Volume *StoragePureVolumeRelationship `json:"Volume,omitempty"`
+	Shared               *bool                                `json:"Shared,omitempty"`
+	Array                *StoragePureArrayRelationship        `json:"Array,omitempty"`
+	Host                 *StoragePureHostRelationship         `json:"Host,omitempty"`
+	HostGroup            *StoragePureHostGroupRelationship    `json:"HostGroup,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Volume               *StoragePureVolumeRelationship       `json:"Volume,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *StoragePureHostLun) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StoragePureHostLun) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *StoragePureHostLun) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StoragePureHostLun) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -387,12 +387,12 @@ func (o *StoragePureHostLun) UnmarshalJSON(bytes []byte) (err error) {
 		// Name of the host group associated with LUN.
 		HostGroupName *string `json:"HostGroupName,omitempty"`
 		// Kind of volume connection to host. True if it is connected through host group. False in case of direct host connection.
-		Shared *bool `json:"Shared,omitempty"`
-		Array *StoragePureArrayRelationship `json:"Array,omitempty"`
-		Host *StoragePureHostRelationship `json:"Host,omitempty"`
-		HostGroup *StoragePureHostGroupRelationship `json:"HostGroup,omitempty"`
+		Shared           *bool                                `json:"Shared,omitempty"`
+		Array            *StoragePureArrayRelationship        `json:"Array,omitempty"`
+		Host             *StoragePureHostRelationship         `json:"Host,omitempty"`
+		HostGroup        *StoragePureHostGroupRelationship    `json:"HostGroup,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-		Volume *StoragePureVolumeRelationship `json:"Volume,omitempty"`
+		Volume           *StoragePureVolumeRelationship       `json:"Volume,omitempty"`
 	}
 
 	varStoragePureHostLunWithoutEmbeddedStruct := StoragePureHostLunWithoutEmbeddedStruct{}
@@ -495,5 +495,3 @@ func (v *NullableStoragePureHostLun) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

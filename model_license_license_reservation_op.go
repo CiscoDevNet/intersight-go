@@ -37,8 +37,8 @@ type LicenseLicenseReservationOp struct {
 	// Revervation code used to generate authorization code from CSSM.
 	RequestCode *string `json:"RequestCode,omitempty"`
 	// Return code used to return the reserved license to smart license account.
-	ReturnCode *string `json:"ReturnCode,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	ReturnCode           *string                 `json:"ReturnCode,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *LicenseLicenseReservationOp) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *LicenseLicenseReservationOp) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *LicenseLicenseReservationOp) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *LicenseLicenseReservationOp) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -438,8 +438,8 @@ func (o *LicenseLicenseReservationOp) UnmarshalJSON(bytes []byte) (err error) {
 		// Revervation code used to generate authorization code from CSSM.
 		RequestCode *string `json:"RequestCode,omitempty"`
 		// Return code used to return the reserved license to smart license account.
-		ReturnCode *string `json:"ReturnCode,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
+		ReturnCode *string                 `json:"ReturnCode,omitempty"`
+		Account    *IamAccountRelationship `json:"Account,omitempty"`
 	}
 
 	varLicenseLicenseReservationOpWithoutEmbeddedStruct := LicenseLicenseReservationOpWithoutEmbeddedStruct{}
@@ -544,5 +544,3 @@ func (v *NullableLicenseLicenseReservationOp) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

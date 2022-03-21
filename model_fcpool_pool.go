@@ -23,13 +23,13 @@ type FcpoolPool struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	IdBlocks []FcpoolBlock `json:"IdBlocks,omitempty"`
+	ObjectType string        `json:"ObjectType"`
+	IdBlocks   []FcpoolBlock `json:"IdBlocks,omitempty"`
 	// Purpose of this WWN pool.
 	PoolPurpose *string `json:"PoolPurpose,omitempty"`
 	// An array of relationships to fcpoolFcBlock resources.
-	BlockHeads []FcpoolFcBlockRelationship `json:"BlockHeads,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	BlockHeads           []FcpoolFcBlockRelationship           `json:"BlockHeads,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *FcpoolPool) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FcpoolPool) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *FcpoolPool) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FcpoolPool) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -110,7 +110,7 @@ func (o *FcpoolPool) SetObjectType(v string) {
 
 // GetIdBlocks returns the IdBlocks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FcpoolPool) GetIdBlocks() []FcpoolBlock {
-	if o == nil  {
+	if o == nil {
 		var ret []FcpoolBlock
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *FcpoolPool) SetPoolPurpose(v string) {
 
 // GetBlockHeads returns the BlockHeads field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FcpoolPool) GetBlockHeads() []FcpoolFcBlockRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FcpoolFcBlockRelationship
 		return ret
 	}
@@ -279,12 +279,12 @@ func (o *FcpoolPool) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		IdBlocks []FcpoolBlock `json:"IdBlocks,omitempty"`
+		ObjectType string        `json:"ObjectType"`
+		IdBlocks   []FcpoolBlock `json:"IdBlocks,omitempty"`
 		// Purpose of this WWN pool.
 		PoolPurpose *string `json:"PoolPurpose,omitempty"`
 		// An array of relationships to fcpoolFcBlock resources.
-		BlockHeads []FcpoolFcBlockRelationship `json:"BlockHeads,omitempty"`
+		BlockHeads   []FcpoolFcBlockRelationship           `json:"BlockHeads,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
@@ -382,5 +382,3 @@ func (v *NullableFcpoolPool) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

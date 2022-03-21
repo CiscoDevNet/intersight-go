@@ -25,12 +25,12 @@ type BulkMoMerger struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The type of merge action to be applied on the target MOs.  * `Merge` - The null properties/relationships of the source MO will be ignored for the target MO. The non-null properties/relationships of the source will override the target MO properties/relationships. * `Replace` - Merge action as described in RFC 7386. The null properties/relationships of the source MO will be deleted on the target MO.The non-null properties/relationships of the source will override the target MO properties/relationships.When source object type is different from target, only the properties common to both source and target  will be affected.Other properties on the target will be ignored.
-	MergeAction *string `json:"MergeAction,omitempty"`
-	Responses []BulkRestResult `json:"Responses,omitempty"`
-	Sources []MoBaseMo `json:"Sources,omitempty"`
-	TargetConfig *MoBaseMo `json:"TargetConfig,omitempty"`
-	Targets []MoBaseMo `json:"Targets,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	MergeAction          *string                               `json:"MergeAction,omitempty"`
+	Responses            []BulkRestResult                      `json:"Responses,omitempty"`
+	Sources              []MoBaseMo                            `json:"Sources,omitempty"`
+	TargetConfig         *MoBaseMo                             `json:"TargetConfig,omitempty"`
+	Targets              []MoBaseMo                            `json:"Targets,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *BulkMoMerger) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BulkMoMerger) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *BulkMoMerger) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BulkMoMerger) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -145,7 +145,7 @@ func (o *BulkMoMerger) SetMergeAction(v string) {
 
 // GetResponses returns the Responses field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BulkMoMerger) GetResponses() []BulkRestResult {
-	if o == nil  {
+	if o == nil {
 		var ret []BulkRestResult
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *BulkMoMerger) SetResponses(v []BulkRestResult) {
 
 // GetSources returns the Sources field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BulkMoMerger) GetSources() []MoBaseMo {
-	if o == nil  {
+	if o == nil {
 		var ret []MoBaseMo
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *BulkMoMerger) SetTargetConfig(v MoBaseMo) {
 
 // GetTargets returns the Targets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BulkMoMerger) GetTargets() []MoBaseMo {
-	if o == nil  {
+	if o == nil {
 		var ret []MoBaseMo
 		return ret
 	}
@@ -355,11 +355,11 @@ func (o *BulkMoMerger) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The type of merge action to be applied on the target MOs.  * `Merge` - The null properties/relationships of the source MO will be ignored for the target MO. The non-null properties/relationships of the source will override the target MO properties/relationships. * `Replace` - Merge action as described in RFC 7386. The null properties/relationships of the source MO will be deleted on the target MO.The non-null properties/relationships of the source will override the target MO properties/relationships.When source object type is different from target, only the properties common to both source and target  will be affected.Other properties on the target will be ignored.
-		MergeAction *string `json:"MergeAction,omitempty"`
-		Responses []BulkRestResult `json:"Responses,omitempty"`
-		Sources []MoBaseMo `json:"Sources,omitempty"`
-		TargetConfig *MoBaseMo `json:"TargetConfig,omitempty"`
-		Targets []MoBaseMo `json:"Targets,omitempty"`
+		MergeAction  *string                               `json:"MergeAction,omitempty"`
+		Responses    []BulkRestResult                      `json:"Responses,omitempty"`
+		Sources      []MoBaseMo                            `json:"Sources,omitempty"`
+		TargetConfig *MoBaseMo                             `json:"TargetConfig,omitempty"`
+		Targets      []MoBaseMo                            `json:"Targets,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
@@ -461,5 +461,3 @@ func (v *NullableBulkMoMerger) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

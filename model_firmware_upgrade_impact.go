@@ -27,13 +27,13 @@ type FirmwareUpgradeImpact struct {
 	// An array of relationships to equipmentChassis resources.
 	Chassis []EquipmentChassisRelationship `json:"Chassis,omitempty"`
 	// An array of relationships to assetDeviceRegistration resources.
-	Device []AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
-	Distributable *FirmwareDistributableRelationship `json:"Distributable,omitempty"`
+	Device        []AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
+	Distributable *FirmwareDistributableRelationship    `json:"Distributable,omitempty"`
 	// An array of relationships to networkElement resources.
-	NetworkElements []NetworkElementRelationship `json:"NetworkElements,omitempty"`
-	Release *SoftwarerepositoryReleaseRelationship `json:"Release,omitempty"`
+	NetworkElements []NetworkElementRelationship           `json:"NetworkElements,omitempty"`
+	Release         *SoftwarerepositoryReleaseRelationship `json:"Release,omitempty"`
 	// An array of relationships to computePhysical resources.
-	Server []ComputePhysicalRelationship `json:"Server,omitempty"`
+	Server               []ComputePhysicalRelationship `json:"Server,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *FirmwareUpgradeImpact) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareUpgradeImpact) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *FirmwareUpgradeImpact) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareUpgradeImpact) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -116,7 +116,7 @@ func (o *FirmwareUpgradeImpact) SetObjectType(v string) {
 
 // GetChassis returns the Chassis field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareUpgradeImpact) GetChassis() []EquipmentChassisRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentChassisRelationship
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *FirmwareUpgradeImpact) SetChassis(v []EquipmentChassisRelationship) {
 
 // GetDevice returns the Device field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareUpgradeImpact) GetDevice() []AssetDeviceRegistrationRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []AssetDeviceRegistrationRelationship
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *FirmwareUpgradeImpact) SetDistributable(v FirmwareDistributableRelation
 
 // GetNetworkElements returns the NetworkElements field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareUpgradeImpact) GetNetworkElements() []NetworkElementRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []NetworkElementRelationship
 		return ret
 	}
@@ -279,7 +279,7 @@ func (o *FirmwareUpgradeImpact) SetRelease(v SoftwarerepositoryReleaseRelationsh
 
 // GetServer returns the Server field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareUpgradeImpact) GetServer() []ComputePhysicalRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ComputePhysicalRelationship
 		return ret
 	}
@@ -361,11 +361,11 @@ func (o *FirmwareUpgradeImpact) UnmarshalJSON(bytes []byte) (err error) {
 		// An array of relationships to equipmentChassis resources.
 		Chassis []EquipmentChassisRelationship `json:"Chassis,omitempty"`
 		// An array of relationships to assetDeviceRegistration resources.
-		Device []AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
-		Distributable *FirmwareDistributableRelationship `json:"Distributable,omitempty"`
+		Device        []AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
+		Distributable *FirmwareDistributableRelationship    `json:"Distributable,omitempty"`
 		// An array of relationships to networkElement resources.
-		NetworkElements []NetworkElementRelationship `json:"NetworkElements,omitempty"`
-		Release *SoftwarerepositoryReleaseRelationship `json:"Release,omitempty"`
+		NetworkElements []NetworkElementRelationship           `json:"NetworkElements,omitempty"`
+		Release         *SoftwarerepositoryReleaseRelationship `json:"Release,omitempty"`
 		// An array of relationships to computePhysical resources.
 		Server []ComputePhysicalRelationship `json:"Server,omitempty"`
 	}
@@ -468,5 +468,3 @@ func (v *NullableFirmwareUpgradeImpact) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -31,11 +31,11 @@ type HyperflexDatastoreStatistic struct {
 	// HyperFlex Datastore Kind. * `UNKNOWN` - HyperFlex datastore kind is unknown. * `USER_CREATED` - HyperFlex datastore kind is user created. * `INTERNAL` - HyperFlex datastore kind is internal.
 	DatastoreKind *string `json:"DatastoreKind,omitempty"`
 	// HyperFlex datastore status. * `NORMAL` - The HyperFlex datastore status is normal. * `ALERT` - The HyperFlex datastore status is alert. * `FAILED` - The HyperFlex datastore status is failed.
-	DatastoreStatus *string `json:"DatastoreStatus,omitempty"`
-	Dsconfig NullableHyperflexHxPlatformDatastoreConfigDt `json:"Dsconfig,omitempty"`
+	DatastoreStatus *string                                      `json:"DatastoreStatus,omitempty"`
+	Dsconfig        NullableHyperflexHxPlatformDatastoreConfigDt `json:"Dsconfig,omitempty"`
 	// Free capacity of the datastore in bytes.
-	FreeCapacityInBytes *int64 `json:"FreeCapacityInBytes,omitempty"`
-	HostMountStatus []HyperflexHxHostMountStatusDt `json:"HostMountStatus,omitempty"`
+	FreeCapacityInBytes *int64                         `json:"FreeCapacityInBytes,omitempty"`
+	HostMountStatus     []HyperflexHxHostMountStatusDt `json:"HostMountStatus,omitempty"`
 	// Indicates if the datastore is encrypted or un-encrypted.
 	IsEncrypted *bool `json:"IsEncrypted,omitempty"`
 	// Timestamp the datastore object was last accessed.
@@ -45,8 +45,8 @@ type HyperflexDatastoreStatistic struct {
 	// HyperFlex datastore mount summary. * `MOUNTED` - The HyperFlex mount summary is mounted. * `UNMOUNTED` - The HyperFlex mount summary is unmounted. * `MOUNT_FAILURE` - The HyperFlex mount summary is mount failure. * `UNMOUNT_FAILURE` - The HyperFlex mount summary is unmount failure.
 	MountSummary *string `json:"MountSummary,omitempty"`
 	// UUID of the parent datastore object.
-	ParentUuid *string `json:"ParentUuid,omitempty"`
-	Site NullableHyperflexHxSiteDt `json:"Site,omitempty"`
+	ParentUuid *string                   `json:"ParentUuid,omitempty"`
+	Site       NullableHyperflexHxSiteDt `json:"Site,omitempty"`
 	// Total capacity of the datastore object.
 	TotalCapacityInBytes *int64 `json:"TotalCapacityInBytes,omitempty"`
 	// Number of uncompressed used bytes in the datastore.
@@ -54,10 +54,10 @@ type HyperflexDatastoreStatistic struct {
 	// Unshared used capacity of the datastore in bytes.
 	UnsharedUsedBytes *int64 `json:"UnsharedUsedBytes,omitempty"`
 	// UUID for the datastore object.
-	Uuid *string `json:"Uuid,omitempty"`
-	DataProtectionPeer *HyperflexDataProtectionPeerRelationship `json:"DataProtectionPeer,omitempty"`
-	SrcCluster *HyperflexClusterRelationship `json:"SrcCluster,omitempty"`
-	TgtCluster *HyperflexClusterRelationship `json:"TgtCluster,omitempty"`
+	Uuid                 *string                                  `json:"Uuid,omitempty"`
+	DataProtectionPeer   *HyperflexDataProtectionPeerRelationship `json:"DataProtectionPeer,omitempty"`
+	SrcCluster           *HyperflexClusterRelationship            `json:"SrcCluster,omitempty"`
+	TgtCluster           *HyperflexClusterRelationship            `json:"TgtCluster,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -99,7 +99,7 @@ func (o *HyperflexDatastoreStatistic) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexDatastoreStatistic) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -123,7 +123,7 @@ func (o *HyperflexDatastoreStatistic) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexDatastoreStatistic) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -275,7 +275,7 @@ func (o *HyperflexDatastoreStatistic) GetDsconfig() HyperflexHxPlatformDatastore
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexDatastoreStatistic) GetDsconfigOk() (*HyperflexHxPlatformDatastoreConfigDt, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Dsconfig.Get(), o.Dsconfig.IsSet()
@@ -294,6 +294,7 @@ func (o *HyperflexDatastoreStatistic) HasDsconfig() bool {
 func (o *HyperflexDatastoreStatistic) SetDsconfig(v HyperflexHxPlatformDatastoreConfigDt) {
 	o.Dsconfig.Set(&v)
 }
+
 // SetDsconfigNil sets the value for Dsconfig to be an explicit nil
 func (o *HyperflexDatastoreStatistic) SetDsconfigNil() {
 	o.Dsconfig.Set(nil)
@@ -338,7 +339,7 @@ func (o *HyperflexDatastoreStatistic) SetFreeCapacityInBytes(v int64) {
 
 // GetHostMountStatus returns the HostMountStatus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexDatastoreStatistic) GetHostMountStatus() []HyperflexHxHostMountStatusDt {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexHxHostMountStatusDt
 		return ret
 	}
@@ -542,7 +543,7 @@ func (o *HyperflexDatastoreStatistic) GetSite() HyperflexHxSiteDt {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexDatastoreStatistic) GetSiteOk() (*HyperflexHxSiteDt, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Site.Get(), o.Site.IsSet()
@@ -561,6 +562,7 @@ func (o *HyperflexDatastoreStatistic) HasSite() bool {
 func (o *HyperflexDatastoreStatistic) SetSite(v HyperflexHxSiteDt) {
 	o.Site.Set(&v)
 }
+
 // SetSiteNil sets the value for Site to be an explicit nil
 func (o *HyperflexDatastoreStatistic) SetSiteNil() {
 	o.Site.Set(nil)
@@ -892,11 +894,11 @@ func (o *HyperflexDatastoreStatistic) UnmarshalJSON(bytes []byte) (err error) {
 		// HyperFlex Datastore Kind. * `UNKNOWN` - HyperFlex datastore kind is unknown. * `USER_CREATED` - HyperFlex datastore kind is user created. * `INTERNAL` - HyperFlex datastore kind is internal.
 		DatastoreKind *string `json:"DatastoreKind,omitempty"`
 		// HyperFlex datastore status. * `NORMAL` - The HyperFlex datastore status is normal. * `ALERT` - The HyperFlex datastore status is alert. * `FAILED` - The HyperFlex datastore status is failed.
-		DatastoreStatus *string `json:"DatastoreStatus,omitempty"`
-		Dsconfig NullableHyperflexHxPlatformDatastoreConfigDt `json:"Dsconfig,omitempty"`
+		DatastoreStatus *string                                      `json:"DatastoreStatus,omitempty"`
+		Dsconfig        NullableHyperflexHxPlatformDatastoreConfigDt `json:"Dsconfig,omitempty"`
 		// Free capacity of the datastore in bytes.
-		FreeCapacityInBytes *int64 `json:"FreeCapacityInBytes,omitempty"`
-		HostMountStatus []HyperflexHxHostMountStatusDt `json:"HostMountStatus,omitempty"`
+		FreeCapacityInBytes *int64                         `json:"FreeCapacityInBytes,omitempty"`
+		HostMountStatus     []HyperflexHxHostMountStatusDt `json:"HostMountStatus,omitempty"`
 		// Indicates if the datastore is encrypted or un-encrypted.
 		IsEncrypted *bool `json:"IsEncrypted,omitempty"`
 		// Timestamp the datastore object was last accessed.
@@ -906,8 +908,8 @@ func (o *HyperflexDatastoreStatistic) UnmarshalJSON(bytes []byte) (err error) {
 		// HyperFlex datastore mount summary. * `MOUNTED` - The HyperFlex mount summary is mounted. * `UNMOUNTED` - The HyperFlex mount summary is unmounted. * `MOUNT_FAILURE` - The HyperFlex mount summary is mount failure. * `UNMOUNT_FAILURE` - The HyperFlex mount summary is unmount failure.
 		MountSummary *string `json:"MountSummary,omitempty"`
 		// UUID of the parent datastore object.
-		ParentUuid *string `json:"ParentUuid,omitempty"`
-		Site NullableHyperflexHxSiteDt `json:"Site,omitempty"`
+		ParentUuid *string                   `json:"ParentUuid,omitempty"`
+		Site       NullableHyperflexHxSiteDt `json:"Site,omitempty"`
 		// Total capacity of the datastore object.
 		TotalCapacityInBytes *int64 `json:"TotalCapacityInBytes,omitempty"`
 		// Number of uncompressed used bytes in the datastore.
@@ -915,10 +917,10 @@ func (o *HyperflexDatastoreStatistic) UnmarshalJSON(bytes []byte) (err error) {
 		// Unshared used capacity of the datastore in bytes.
 		UnsharedUsedBytes *int64 `json:"UnsharedUsedBytes,omitempty"`
 		// UUID for the datastore object.
-		Uuid *string `json:"Uuid,omitempty"`
+		Uuid               *string                                  `json:"Uuid,omitempty"`
 		DataProtectionPeer *HyperflexDataProtectionPeerRelationship `json:"DataProtectionPeer,omitempty"`
-		SrcCluster *HyperflexClusterRelationship `json:"SrcCluster,omitempty"`
-		TgtCluster *HyperflexClusterRelationship `json:"TgtCluster,omitempty"`
+		SrcCluster         *HyperflexClusterRelationship            `json:"SrcCluster,omitempty"`
+		TgtCluster         *HyperflexClusterRelationship            `json:"TgtCluster,omitempty"`
 	}
 
 	varHyperflexDatastoreStatisticWithoutEmbeddedStruct := HyperflexDatastoreStatisticWithoutEmbeddedStruct{}
@@ -1047,5 +1049,3 @@ func (v *NullableHyperflexDatastoreStatistic) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

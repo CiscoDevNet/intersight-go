@@ -25,8 +25,8 @@ type EquipmentPsu struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// This field is to provide description for the power supply unit.
-	Description *string `json:"Description,omitempty"`
-	OperReason []string `json:"OperReason,omitempty"`
+	Description *string  `json:"Description,omitempty"`
+	OperReason  []string `json:"OperReason,omitempty"`
 	// This field identifies the psu operational state.
 	OperState *string `json:"OperState,omitempty"`
 	// This field identifies the Part Number for this Power Supply Unit.
@@ -48,15 +48,15 @@ type EquipmentPsu struct {
 	// This field identifies the Vendor ID for this Power Supply Unit.
 	Vid *string `json:"Vid,omitempty"`
 	// This field is used to indicate the voltage state for this Power Supply.
-	Voltage *string `json:"Voltage,omitempty"`
-	ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
-	EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
-	EquipmentFex *EquipmentFexRelationship `json:"EquipmentFex,omitempty"`
-	EquipmentRackEnclosure *EquipmentRackEnclosureRelationship `json:"EquipmentRackEnclosure,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	NetworkElement *NetworkElementRelationship `json:"NetworkElement,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Voltage                *string                              `json:"Voltage,omitempty"`
+	ComputeRackUnit        *ComputeRackUnitRelationship         `json:"ComputeRackUnit,omitempty"`
+	EquipmentChassis       *EquipmentChassisRelationship        `json:"EquipmentChassis,omitempty"`
+	EquipmentFex           *EquipmentFexRelationship            `json:"EquipmentFex,omitempty"`
+	EquipmentRackEnclosure *EquipmentRackEnclosureRelationship  `json:"EquipmentRackEnclosure,omitempty"`
+	InventoryDeviceInfo    *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	NetworkElement         *NetworkElementRelationship          `json:"NetworkElement,omitempty"`
+	RegisteredDevice       *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _EquipmentPsu EquipmentPsu
@@ -97,7 +97,7 @@ func (o *EquipmentPsu) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentPsu) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -121,7 +121,7 @@ func (o *EquipmentPsu) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentPsu) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -166,7 +166,7 @@ func (o *EquipmentPsu) SetDescription(v string) {
 
 // GetOperReason returns the OperReason field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentPsu) GetOperReason() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -864,8 +864,8 @@ func (o *EquipmentPsu) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// This field is to provide description for the power supply unit.
-		Description *string `json:"Description,omitempty"`
-		OperReason []string `json:"OperReason,omitempty"`
+		Description *string  `json:"Description,omitempty"`
+		OperReason  []string `json:"OperReason,omitempty"`
 		// This field identifies the psu operational state.
 		OperState *string `json:"OperState,omitempty"`
 		// This field identifies the Part Number for this Power Supply Unit.
@@ -887,14 +887,14 @@ func (o *EquipmentPsu) UnmarshalJSON(bytes []byte) (err error) {
 		// This field identifies the Vendor ID for this Power Supply Unit.
 		Vid *string `json:"Vid,omitempty"`
 		// This field is used to indicate the voltage state for this Power Supply.
-		Voltage *string `json:"Voltage,omitempty"`
-		ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
-		EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
-		EquipmentFex *EquipmentFexRelationship `json:"EquipmentFex,omitempty"`
-		EquipmentRackEnclosure *EquipmentRackEnclosureRelationship `json:"EquipmentRackEnclosure,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		NetworkElement *NetworkElementRelationship `json:"NetworkElement,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		Voltage                *string                              `json:"Voltage,omitempty"`
+		ComputeRackUnit        *ComputeRackUnitRelationship         `json:"ComputeRackUnit,omitempty"`
+		EquipmentChassis       *EquipmentChassisRelationship        `json:"EquipmentChassis,omitempty"`
+		EquipmentFex           *EquipmentFexRelationship            `json:"EquipmentFex,omitempty"`
+		EquipmentRackEnclosure *EquipmentRackEnclosureRelationship  `json:"EquipmentRackEnclosure,omitempty"`
+		InventoryDeviceInfo    *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		NetworkElement         *NetworkElementRelationship          `json:"NetworkElement,omitempty"`
+		RegisteredDevice       *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
 	varEquipmentPsuWithoutEmbeddedStruct := EquipmentPsuWithoutEmbeddedStruct{}
@@ -1023,5 +1023,3 @@ func (v *NullableEquipmentPsu) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

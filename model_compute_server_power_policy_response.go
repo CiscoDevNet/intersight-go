@@ -19,31 +19,30 @@ import (
 // ComputeServerPowerPolicyResponse - The response body of a HTTP GET request for the 'compute.ServerPowerPolicy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'compute.ServerPowerPolicy' resources.
 type ComputeServerPowerPolicyResponse struct {
 	ComputeServerPowerPolicyList *ComputeServerPowerPolicyList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform         *MoAggregateTransform
+	MoDocumentCount              *MoDocumentCount
+	MoTagSummary                 *MoTagSummary
 }
 
 // ComputeServerPowerPolicyListAsComputeServerPowerPolicyResponse is a convenience function that returns ComputeServerPowerPolicyList wrapped in ComputeServerPowerPolicyResponse
 func ComputeServerPowerPolicyListAsComputeServerPowerPolicyResponse(v *ComputeServerPowerPolicyList) ComputeServerPowerPolicyResponse {
-	return ComputeServerPowerPolicyResponse{ ComputeServerPowerPolicyList: v}
+	return ComputeServerPowerPolicyResponse{ComputeServerPowerPolicyList: v}
 }
 
 // MoAggregateTransformAsComputeServerPowerPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in ComputeServerPowerPolicyResponse
 func MoAggregateTransformAsComputeServerPowerPolicyResponse(v *MoAggregateTransform) ComputeServerPowerPolicyResponse {
-	return ComputeServerPowerPolicyResponse{ MoAggregateTransform: v}
+	return ComputeServerPowerPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsComputeServerPowerPolicyResponse is a convenience function that returns MoDocumentCount wrapped in ComputeServerPowerPolicyResponse
 func MoDocumentCountAsComputeServerPowerPolicyResponse(v *MoDocumentCount) ComputeServerPowerPolicyResponse {
-	return ComputeServerPowerPolicyResponse{ MoDocumentCount: v}
+	return ComputeServerPowerPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsComputeServerPowerPolicyResponse is a convenience function that returns MoTagSummary wrapped in ComputeServerPowerPolicyResponse
 func MoTagSummaryAsComputeServerPowerPolicyResponse(v *MoTagSummary) ComputeServerPowerPolicyResponse {
-	return ComputeServerPowerPolicyResponse{ MoTagSummary: v}
+	return ComputeServerPowerPolicyResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ComputeServerPowerPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ComputeServerPowerPolicyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ComputeServerPowerPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *ComputeServerPowerPolicyResponse) GetActualInstance() interface{} {
 	if obj.ComputeServerPowerPolicyList != nil {
 		return obj.ComputeServerPowerPolicyList
 	}
@@ -184,5 +183,3 @@ func (v *NullableComputeServerPowerPolicyResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

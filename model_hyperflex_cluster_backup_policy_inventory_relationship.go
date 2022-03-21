@@ -19,19 +19,18 @@ import (
 // HyperflexClusterBackupPolicyInventoryRelationship - A relationship to the 'hyperflex.ClusterBackupPolicyInventory' resource, or the expanded 'hyperflex.ClusterBackupPolicyInventory' resource, or the 'null' value.
 type HyperflexClusterBackupPolicyInventoryRelationship struct {
 	HyperflexClusterBackupPolicyInventory *HyperflexClusterBackupPolicyInventory
-	MoMoRef *MoMoRef
+	MoMoRef                               *MoMoRef
 }
 
 // HyperflexClusterBackupPolicyInventoryAsHyperflexClusterBackupPolicyInventoryRelationship is a convenience function that returns HyperflexClusterBackupPolicyInventory wrapped in HyperflexClusterBackupPolicyInventoryRelationship
 func HyperflexClusterBackupPolicyInventoryAsHyperflexClusterBackupPolicyInventoryRelationship(v *HyperflexClusterBackupPolicyInventory) HyperflexClusterBackupPolicyInventoryRelationship {
-	return HyperflexClusterBackupPolicyInventoryRelationship{ HyperflexClusterBackupPolicyInventory: v}
+	return HyperflexClusterBackupPolicyInventoryRelationship{HyperflexClusterBackupPolicyInventory: v}
 }
 
 // MoMoRefAsHyperflexClusterBackupPolicyInventoryRelationship is a convenience function that returns MoMoRef wrapped in HyperflexClusterBackupPolicyInventoryRelationship
 func MoMoRefAsHyperflexClusterBackupPolicyInventoryRelationship(v *MoMoRef) HyperflexClusterBackupPolicyInventoryRelationship {
-	return HyperflexClusterBackupPolicyInventoryRelationship{ MoMoRef: v}
+	return HyperflexClusterBackupPolicyInventoryRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexClusterBackupPolicyInventoryRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexClusterBackupPolicyInventoryRelationship) MarshalJSON() ([]by
 }
 
 // Get the actual instance
-func (obj *HyperflexClusterBackupPolicyInventoryRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexClusterBackupPolicyInventoryRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexClusterBackupPolicyInventory != nil {
 		return obj.HyperflexClusterBackupPolicyInventory
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexClusterBackupPolicyInventoryRelationship) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

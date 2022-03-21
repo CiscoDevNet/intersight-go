@@ -23,8 +23,8 @@ type StorageNetAppDiskEvent struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Disk *StorageNetAppBaseDiskRelationship `json:"Disk,omitempty"`
+	ObjectType           string                             `json:"ObjectType"`
+	Disk                 *StorageNetAppBaseDiskRelationship `json:"Disk,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *StorageNetAppDiskEvent) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppDiskEvent) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *StorageNetAppDiskEvent) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppDiskEvent) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -165,8 +165,8 @@ func (o *StorageNetAppDiskEvent) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Disk *StorageNetAppBaseDiskRelationship `json:"Disk,omitempty"`
+		ObjectType string                             `json:"ObjectType"`
+		Disk       *StorageNetAppBaseDiskRelationship `json:"Disk,omitempty"`
 	}
 
 	varStorageNetAppDiskEventWithoutEmbeddedStruct := StorageNetAppDiskEventWithoutEmbeddedStruct{}
@@ -257,5 +257,3 @@ func (v *NullableStorageNetAppDiskEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

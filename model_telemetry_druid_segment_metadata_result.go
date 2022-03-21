@@ -30,7 +30,7 @@ type TelemetryDruidSegmentMetadataResult struct {
 	// estimated total segment byte size as if stored as text
 	Size *int32 `json:"size,omitempty"`
 	// number of rows stored in segment
-	NumRows *int32 `json:"numRows,omitempty"`
+	NumRows              *int32 `json:"numRows,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -366,5 +366,3 @@ func (v *NullableTelemetryDruidSegmentMetadataResult) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

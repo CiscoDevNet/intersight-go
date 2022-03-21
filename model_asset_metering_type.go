@@ -27,7 +27,7 @@ type AssetMeteringType struct {
 	// Metric type used to calculate metering for the device sent from the IB Contract. example  Node, vMemory, vCPU. * `None` - A default value to catch cases where metric type is not correctly detected. * `Node` - The metering of the device is on the basis of Power state. * `Storage` - The metering of the device is on the basis of used Storage. * `vMemory` - The metering of the device is on the basis of VM Memory. * `vCPU` - The metering of the device is on the basis of vCPU. * `vStorage` - The metering of the device is on the basis of used virtual Storage. * `Switch` - The metering of the device is on the basis of Switch.
 	Name *string `json:"Name,omitempty"`
 	// Metric unit used to calculate metering for the device sent from the IB Contract. example  Node, GiB, Cores. * `None` - A default value to catch cases where metric unit is not correctly detected. * `Node` - It is applicable for Node Metric type. * `GiB` - It is applicable for VMemory, vStorage and Storage Metric types. * `TiB` - It is applicable for VMemory, vStorage and Storage Metric types. * `Cores` - It is applicable for vCPU Metric type. * `Switch` - It is applicable for Switch Metric type. * `Port` - It is applicable for Switch Metric type.
-	Unit *string `json:"Unit,omitempty"`
+	Unit                 *string `json:"Unit,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *AssetMeteringType) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetMeteringType) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *AssetMeteringType) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetMeteringType) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -300,5 +300,3 @@ func (v *NullableAssetMeteringType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

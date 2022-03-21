@@ -33,7 +33,7 @@ type KubernetesDeploymentStatus struct {
 	// Total number of non-terminated pods targeted by this deployment (their labels match the selector).
 	Replicas *int64 `json:"Replicas,omitempty"`
 	// Total number of non-terminated pods targeted by this deployment that have the desired template spec.
-	UpdatedReplicas *int64 `json:"UpdatedReplicas,omitempty"`
+	UpdatedReplicas      *int64 `json:"UpdatedReplicas,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -95,7 +95,7 @@ func (o *KubernetesDeploymentStatus) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesDeploymentStatus) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -119,7 +119,7 @@ func (o *KubernetesDeploymentStatus) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesDeploymentStatus) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -443,5 +443,3 @@ func (v *NullableKubernetesDeploymentStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

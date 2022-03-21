@@ -26,10 +26,10 @@ type HyperflexHealthCheckDefinitionAllOf struct {
 	// Static information detailing the common causes for the health check failure.
 	CommonCauses *string `json:"CommonCauses,omitempty"`
 	// Execution configuration fo the health check script.
-	Configuration *string `json:"Configuration,omitempty"`
+	Configuration                *string                                `json:"Configuration,omitempty"`
 	DefaultHealthCheckScriptInfo NullableHyperflexHealthCheckScriptInfo `json:"DefaultHealthCheckScriptInfo,omitempty"`
 	// Description of the health check definition.
-	Description *string `json:"Description,omitempty"`
+	Description            *string                          `json:"Description,omitempty"`
 	HealthCheckScriptInfos []HyperflexHealthCheckScriptInfo `json:"HealthCheckScriptInfos,omitempty"`
 	// Static information detailing the health impact of the health check failure.
 	HealthImpact *string `json:"HealthImpact,omitempty"`
@@ -52,9 +52,9 @@ type HyperflexHealthCheckDefinitionAllOf struct {
 	// Indicates whether the health check is executed only on the leader node, or on all nodes in the HyperFlex cluster. * `EXECUTE_ON_LEADER_NODE` - Execute the health check script only on the HyperFlex cluster's leader node. * `EXECUTE_ON_ALL_NODES` - Execute health check on all nodes and aggregate the results. * `EXECUTE_ON_ALL_NODES_AND_AGGREGATE` - Execute the health check on all Nodes and perform custom aggregation.
 	TargetExecutionType *string `json:"TargetExecutionType,omitempty"`
 	// Health check script execution timeout.
-	Timeout *int64 `json:"Timeout,omitempty"`
+	Timeout                      *int64   `json:"Timeout,omitempty"`
 	UnsupportedHyperFlexVersions []string `json:"UnsupportedHyperFlexVersions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties         map[string]interface{}
 }
 
 type _HyperflexHealthCheckDefinitionAllOf HyperflexHealthCheckDefinitionAllOf
@@ -107,7 +107,7 @@ func (o *HyperflexHealthCheckDefinitionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHealthCheckDefinitionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -131,7 +131,7 @@ func (o *HyperflexHealthCheckDefinitionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHealthCheckDefinitionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -251,7 +251,7 @@ func (o *HyperflexHealthCheckDefinitionAllOf) GetDefaultHealthCheckScriptInfo() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexHealthCheckDefinitionAllOf) GetDefaultHealthCheckScriptInfoOk() (*HyperflexHealthCheckScriptInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DefaultHealthCheckScriptInfo.Get(), o.DefaultHealthCheckScriptInfo.IsSet()
@@ -270,6 +270,7 @@ func (o *HyperflexHealthCheckDefinitionAllOf) HasDefaultHealthCheckScriptInfo() 
 func (o *HyperflexHealthCheckDefinitionAllOf) SetDefaultHealthCheckScriptInfo(v HyperflexHealthCheckScriptInfo) {
 	o.DefaultHealthCheckScriptInfo.Set(&v)
 }
+
 // SetDefaultHealthCheckScriptInfoNil sets the value for DefaultHealthCheckScriptInfo to be an explicit nil
 func (o *HyperflexHealthCheckDefinitionAllOf) SetDefaultHealthCheckScriptInfoNil() {
 	o.DefaultHealthCheckScriptInfo.Set(nil)
@@ -314,7 +315,7 @@ func (o *HyperflexHealthCheckDefinitionAllOf) SetDescription(v string) {
 
 // GetHealthCheckScriptInfos returns the HealthCheckScriptInfos field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexHealthCheckDefinitionAllOf) GetHealthCheckScriptInfos() []HyperflexHealthCheckScriptInfo {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexHealthCheckScriptInfo
 		return ret
 	}
@@ -699,7 +700,7 @@ func (o *HyperflexHealthCheckDefinitionAllOf) SetTimeout(v int64) {
 
 // GetUnsupportedHyperFlexVersions returns the UnsupportedHyperFlexVersions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexHealthCheckDefinitionAllOf) GetUnsupportedHyperFlexVersions() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -871,5 +872,3 @@ func (v *NullableHyperflexHealthCheckDefinitionAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -27,8 +27,8 @@ type ComputeStorageVirtualDriveOperation struct {
 	// Administrative actions that can be performed on the Storage Virtual Drives. * `None` - No action on the selected Storage virtual Drives. * `Delete` - Delete action on the selected Storage Virtual Drives.
 	AdminAction *string `json:"AdminAction,omitempty"`
 	// Storage Controller Id of the storage Virtual Drives of the server.
-	ControllerId *string `json:"ControllerId,omitempty"`
-	VirtualDrives []ComputeStorageVirtualDrive `json:"VirtualDrives,omitempty"`
+	ControllerId         *string                      `json:"ControllerId,omitempty"`
+	VirtualDrives        []ComputeStorageVirtualDrive `json:"VirtualDrives,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *ComputeStorageVirtualDriveOperation) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ComputeStorageVirtualDriveOperation) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *ComputeStorageVirtualDriveOperation) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ComputeStorageVirtualDriveOperation) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -175,7 +175,7 @@ func (o *ComputeStorageVirtualDriveOperation) SetControllerId(v string) {
 
 // GetVirtualDrives returns the VirtualDrives field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeStorageVirtualDriveOperation) GetVirtualDrives() []ComputeStorageVirtualDrive {
-	if o == nil  {
+	if o == nil {
 		var ret []ComputeStorageVirtualDrive
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *ComputeStorageVirtualDriveOperation) UnmarshalJSON(bytes []byte) (err e
 		// Administrative actions that can be performed on the Storage Virtual Drives. * `None` - No action on the selected Storage virtual Drives. * `Delete` - Delete action on the selected Storage Virtual Drives.
 		AdminAction *string `json:"AdminAction,omitempty"`
 		// Storage Controller Id of the storage Virtual Drives of the server.
-		ControllerId *string `json:"ControllerId,omitempty"`
+		ControllerId  *string                      `json:"ControllerId,omitempty"`
 		VirtualDrives []ComputeStorageVirtualDrive `json:"VirtualDrives,omitempty"`
 	}
 
@@ -344,5 +344,3 @@ func (v *NullableComputeStorageVirtualDriveOperation) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

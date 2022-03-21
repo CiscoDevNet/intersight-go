@@ -18,32 +18,31 @@ import (
 
 // KubernetesNodeResponse - The response body of a HTTP GET request for the 'kubernetes.Node' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'kubernetes.Node' resources.
 type KubernetesNodeResponse struct {
-	KubernetesNodeList *KubernetesNodeList
+	KubernetesNodeList   *KubernetesNodeList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // KubernetesNodeListAsKubernetesNodeResponse is a convenience function that returns KubernetesNodeList wrapped in KubernetesNodeResponse
 func KubernetesNodeListAsKubernetesNodeResponse(v *KubernetesNodeList) KubernetesNodeResponse {
-	return KubernetesNodeResponse{ KubernetesNodeList: v}
+	return KubernetesNodeResponse{KubernetesNodeList: v}
 }
 
 // MoAggregateTransformAsKubernetesNodeResponse is a convenience function that returns MoAggregateTransform wrapped in KubernetesNodeResponse
 func MoAggregateTransformAsKubernetesNodeResponse(v *MoAggregateTransform) KubernetesNodeResponse {
-	return KubernetesNodeResponse{ MoAggregateTransform: v}
+	return KubernetesNodeResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsKubernetesNodeResponse is a convenience function that returns MoDocumentCount wrapped in KubernetesNodeResponse
 func MoDocumentCountAsKubernetesNodeResponse(v *MoDocumentCount) KubernetesNodeResponse {
-	return KubernetesNodeResponse{ MoDocumentCount: v}
+	return KubernetesNodeResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsKubernetesNodeResponse is a convenience function that returns MoTagSummary wrapped in KubernetesNodeResponse
 func MoTagSummaryAsKubernetesNodeResponse(v *MoTagSummary) KubernetesNodeResponse {
-	return KubernetesNodeResponse{ MoTagSummary: v}
+	return KubernetesNodeResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesNodeResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src KubernetesNodeResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KubernetesNodeResponse) GetActualInstance() (interface{}) {
+func (obj *KubernetesNodeResponse) GetActualInstance() interface{} {
 	if obj.KubernetesNodeList != nil {
 		return obj.KubernetesNodeList
 	}
@@ -184,5 +183,3 @@ func (v *NullableKubernetesNodeResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

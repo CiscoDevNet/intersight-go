@@ -28,13 +28,13 @@ type MemoryPersistentMemoryConfigResultAllOf struct {
 	// Sequence number of a previously applied Persistent Memory configuration on a server.
 	ConfigSequenceNo *int64 `json:"ConfigSequenceNo,omitempty"`
 	// State of a previously applied Persistent Memory configuration on a server.
-	ConfigState *string `json:"ConfigState,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+	ConfigState                         *string                                          `json:"ConfigState,omitempty"`
+	InventoryDeviceInfo                 *InventoryDeviceInfoRelationship                 `json:"InventoryDeviceInfo,omitempty"`
 	MemoryPersistentMemoryConfiguration *MemoryPersistentMemoryConfigurationRelationship `json:"MemoryPersistentMemoryConfiguration,omitempty"`
 	// An array of relationships to memoryPersistentMemoryNamespaceConfigResult resources.
 	PersistentMemoryNamespaceConfigResults []MemoryPersistentMemoryNamespaceConfigResultRelationship `json:"PersistentMemoryNamespaceConfigResults,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RegisteredDevice                       *AssetDeviceRegistrationRelationship                      `json:"RegisteredDevice,omitempty"`
+	AdditionalProperties                   map[string]interface{}
 }
 
 type _MemoryPersistentMemoryConfigResultAllOf MemoryPersistentMemoryConfigResultAllOf
@@ -75,7 +75,7 @@ func (o *MemoryPersistentMemoryConfigResultAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryConfigResultAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *MemoryPersistentMemoryConfigResultAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryConfigResultAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -304,7 +304,7 @@ func (o *MemoryPersistentMemoryConfigResultAllOf) SetMemoryPersistentMemoryConfi
 
 // GetPersistentMemoryNamespaceConfigResults returns the PersistentMemoryNamespaceConfigResults field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MemoryPersistentMemoryConfigResultAllOf) GetPersistentMemoryNamespaceConfigResults() []MemoryPersistentMemoryNamespaceConfigResultRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []MemoryPersistentMemoryNamespaceConfigResultRelationship
 		return ret
 	}
@@ -468,5 +468,3 @@ func (v *NullableMemoryPersistentMemoryConfigResultAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

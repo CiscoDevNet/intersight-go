@@ -26,13 +26,13 @@ type StorageDiskGroupAllOf struct {
 	// Raid level of the virtual drives in this diskgroup.
 	RaidType *string `json:"RaidType,omitempty"`
 	// An array of relationships to storagePhysicalDisk resources.
-	DedicatedHotSpares []StoragePhysicalDiskRelationship `json:"DedicatedHotSpares,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	DedicatedHotSpares []StoragePhysicalDiskRelationship    `json:"DedicatedHotSpares,omitempty"`
+	RegisteredDevice   *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to storageSpan resources.
-	Spans []StorageSpanRelationship `json:"Spans,omitempty"`
+	Spans             []StorageSpanRelationship      `json:"Spans,omitempty"`
 	StorageController *StorageControllerRelationship `json:"StorageController,omitempty"`
 	// An array of relationships to storageVirtualDrive resources.
-	VirtualDrives []StorageVirtualDriveRelationship `json:"VirtualDrives,omitempty"`
+	VirtualDrives        []StorageVirtualDriveRelationship `json:"VirtualDrives,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *StorageDiskGroupAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageDiskGroupAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *StorageDiskGroupAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageDiskGroupAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -175,7 +175,7 @@ func (o *StorageDiskGroupAllOf) SetRaidType(v string) {
 
 // GetDedicatedHotSpares returns the DedicatedHotSpares field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageDiskGroupAllOf) GetDedicatedHotSpares() []StoragePhysicalDiskRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StoragePhysicalDiskRelationship
 		return ret
 	}
@@ -240,7 +240,7 @@ func (o *StorageDiskGroupAllOf) SetRegisteredDevice(v AssetDeviceRegistrationRel
 
 // GetSpans returns the Spans field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageDiskGroupAllOf) GetSpans() []StorageSpanRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageSpanRelationship
 		return ret
 	}
@@ -305,7 +305,7 @@ func (o *StorageDiskGroupAllOf) SetStorageController(v StorageControllerRelation
 
 // GetVirtualDrives returns the VirtualDrives field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageDiskGroupAllOf) GetVirtualDrives() []StorageVirtualDriveRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageVirtualDriveRelationship
 		return ret
 	}
@@ -433,5 +433,3 @@ func (v *NullableStorageDiskGroupAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

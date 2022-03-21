@@ -23,7 +23,7 @@ type NiatelemetryNiaFeatureUsageList struct {
 	// The total number of 'niatelemetry.NiaFeatureUsage' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'niatelemetry.NiaFeatureUsage' resources matching the request.
-	Results []NiatelemetryNiaFeatureUsage `json:"Results,omitempty"`
+	Results              []NiatelemetryNiaFeatureUsage `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *NiatelemetryNiaFeatureUsageList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetryNiaFeatureUsageList) GetResults() []NiatelemetryNiaFeatureUsage {
-	if o == nil  {
+	if o == nil {
 		var ret []NiatelemetryNiaFeatureUsage
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableNiatelemetryNiaFeatureUsageList) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

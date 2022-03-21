@@ -20,9 +20,9 @@ type IamGroupPermissionToRolesAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Group *MoMoRef `json:"Group,omitempty"`
-	Orgs []MoMoRef `json:"Orgs,omitempty"`
+	ObjectType           string    `json:"ObjectType"`
+	Group                *MoMoRef  `json:"Group,omitempty"`
+	Orgs                 []MoMoRef `json:"Orgs,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,7 +64,7 @@ func (o *IamGroupPermissionToRolesAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamGroupPermissionToRolesAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -88,7 +88,7 @@ func (o *IamGroupPermissionToRolesAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamGroupPermissionToRolesAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -133,7 +133,7 @@ func (o *IamGroupPermissionToRolesAllOf) SetGroup(v MoMoRef) {
 
 // GetOrgs returns the Orgs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamGroupPermissionToRolesAllOf) GetOrgs() []MoMoRef {
-	if o == nil  {
+	if o == nil {
 		var ret []MoMoRef
 		return ret
 	}
@@ -241,5 +241,3 @@ func (v *NullableIamGroupPermissionToRolesAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

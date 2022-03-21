@@ -19,19 +19,18 @@ import (
 // HyperflexClusterRelationship - A relationship to the 'hyperflex.Cluster' resource, or the expanded 'hyperflex.Cluster' resource, or the 'null' value.
 type HyperflexClusterRelationship struct {
 	HyperflexCluster *HyperflexCluster
-	MoMoRef *MoMoRef
+	MoMoRef          *MoMoRef
 }
 
 // HyperflexClusterAsHyperflexClusterRelationship is a convenience function that returns HyperflexCluster wrapped in HyperflexClusterRelationship
 func HyperflexClusterAsHyperflexClusterRelationship(v *HyperflexCluster) HyperflexClusterRelationship {
-	return HyperflexClusterRelationship{ HyperflexCluster: v}
+	return HyperflexClusterRelationship{HyperflexCluster: v}
 }
 
 // MoMoRefAsHyperflexClusterRelationship is a convenience function that returns MoMoRef wrapped in HyperflexClusterRelationship
 func MoMoRefAsHyperflexClusterRelationship(v *MoMoRef) HyperflexClusterRelationship {
-	return HyperflexClusterRelationship{ MoMoRef: v}
+	return HyperflexClusterRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexClusterRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexClusterRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexClusterRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexClusterRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexCluster != nil {
 		return obj.HyperflexCluster
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexClusterRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

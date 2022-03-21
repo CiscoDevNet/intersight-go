@@ -27,8 +27,8 @@ type IamRule struct {
 	// The flag represents if IP addresses in the rule is IPv4 or IPv6.
 	IpV6 *bool `json:"IpV6,omitempty"`
 	// The type of the IP address. Currently three types are supported, ie IP, CIDR range and IP range. * `Ip` - The IP address rule type is IP. * `Cidr` - The IP address rule type is CIDR range. * `IpRange` - The IP address rule type is IP range.
-	RuleType *string `json:"RuleType,omitempty"`
-	RuleValue []string `json:"RuleValue,omitempty"`
+	RuleType             *string  `json:"RuleType,omitempty"`
+	RuleValue            []string `json:"RuleValue,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *IamRule) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamRule) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *IamRule) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamRule) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -175,7 +175,7 @@ func (o *IamRule) SetRuleType(v string) {
 
 // GetRuleValue returns the RuleValue field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamRule) GetRuleValue() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *IamRule) UnmarshalJSON(bytes []byte) (err error) {
 		// The flag represents if IP addresses in the rule is IPv4 or IPv6.
 		IpV6 *bool `json:"IpV6,omitempty"`
 		// The type of the IP address. Currently three types are supported, ie IP, CIDR range and IP range. * `Ip` - The IP address rule type is IP. * `Cidr` - The IP address rule type is CIDR range. * `IpRange` - The IP address rule type is IP range.
-		RuleType *string `json:"RuleType,omitempty"`
+		RuleType  *string  `json:"RuleType,omitempty"`
 		RuleValue []string `json:"RuleValue,omitempty"`
 	}
 
@@ -344,5 +344,3 @@ func (v *NullableIamRule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

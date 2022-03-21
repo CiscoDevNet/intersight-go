@@ -25,17 +25,17 @@ type ResourceReservationAllOf struct {
 	// Expiration of the resource Reservation.
 	Expiration *time.Time `json:"Expiration,omitempty"`
 	// MarkFail is used to set the reservation status to Failed.
-	MarkFail *bool `json:"MarkFail,omitempty"`
+	MarkFail      *bool    `json:"MarkFail,omitempty"`
 	ResourceMoids []string `json:"ResourceMoids,omitempty"`
 	// Type of resources which will get filled into the resource groups.
 	ResourceType *string `json:"ResourceType,omitempty"`
 	// Status of the Reservation. * `Created` - By default, a reservation is in Created status. * `Processing` - A reservation is changed to Processing status for appliance mode resource claim requests. * `Failed` - A reservation is changed to Failed status if the validations on resources, resource groups fails. * `Finished` - A reservation is changed to Finished status if the validations on resources, resource groups are successful. The resource moids in reservation will be added to resource groups using OData filters.
 	Status *string `json:"Status,omitempty"`
 	// Moid of the user who created the reservation.
-	UserMoid *string `json:"UserMoid,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	UserMoid *string                 `json:"UserMoid,omitempty"`
+	Account  *IamAccountRelationship `json:"Account,omitempty"`
 	// An array of relationships to resourceGroup resources.
-	Groups []ResourceGroupRelationship `json:"Groups,omitempty"`
+	Groups               []ResourceGroupRelationship `json:"Groups,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *ResourceReservationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ResourceReservationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *ResourceReservationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ResourceReservationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -178,7 +178,7 @@ func (o *ResourceReservationAllOf) SetMarkFail(v bool) {
 
 // GetResourceMoids returns the ResourceMoids field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ResourceReservationAllOf) GetResourceMoids() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -339,7 +339,7 @@ func (o *ResourceReservationAllOf) SetAccount(v IamAccountRelationship) {
 
 // GetGroups returns the Groups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ResourceReservationAllOf) GetGroups() []ResourceGroupRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ResourceGroupRelationship
 		return ret
 	}
@@ -471,5 +471,3 @@ func (v *NullableResourceReservationAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,19 +19,18 @@ import (
 // HyperflexAppCatalogRelationship - A relationship to the 'hyperflex.AppCatalog' resource, or the expanded 'hyperflex.AppCatalog' resource, or the 'null' value.
 type HyperflexAppCatalogRelationship struct {
 	HyperflexAppCatalog *HyperflexAppCatalog
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 }
 
 // HyperflexAppCatalogAsHyperflexAppCatalogRelationship is a convenience function that returns HyperflexAppCatalog wrapped in HyperflexAppCatalogRelationship
 func HyperflexAppCatalogAsHyperflexAppCatalogRelationship(v *HyperflexAppCatalog) HyperflexAppCatalogRelationship {
-	return HyperflexAppCatalogRelationship{ HyperflexAppCatalog: v}
+	return HyperflexAppCatalogRelationship{HyperflexAppCatalog: v}
 }
 
 // MoMoRefAsHyperflexAppCatalogRelationship is a convenience function that returns MoMoRef wrapped in HyperflexAppCatalogRelationship
 func MoMoRefAsHyperflexAppCatalogRelationship(v *MoMoRef) HyperflexAppCatalogRelationship {
-	return HyperflexAppCatalogRelationship{ MoMoRef: v}
+	return HyperflexAppCatalogRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexAppCatalogRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexAppCatalogRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexAppCatalogRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexAppCatalogRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexAppCatalog != nil {
 		return obj.HyperflexAppCatalog
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexAppCatalogRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

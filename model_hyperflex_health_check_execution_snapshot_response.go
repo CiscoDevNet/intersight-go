@@ -19,31 +19,30 @@ import (
 // HyperflexHealthCheckExecutionSnapshotResponse - The response body of a HTTP GET request for the 'hyperflex.HealthCheckExecutionSnapshot' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'hyperflex.HealthCheckExecutionSnapshot' resources.
 type HyperflexHealthCheckExecutionSnapshotResponse struct {
 	HyperflexHealthCheckExecutionSnapshotList *HyperflexHealthCheckExecutionSnapshotList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                      *MoAggregateTransform
+	MoDocumentCount                           *MoDocumentCount
+	MoTagSummary                              *MoTagSummary
 }
 
 // HyperflexHealthCheckExecutionSnapshotListAsHyperflexHealthCheckExecutionSnapshotResponse is a convenience function that returns HyperflexHealthCheckExecutionSnapshotList wrapped in HyperflexHealthCheckExecutionSnapshotResponse
 func HyperflexHealthCheckExecutionSnapshotListAsHyperflexHealthCheckExecutionSnapshotResponse(v *HyperflexHealthCheckExecutionSnapshotList) HyperflexHealthCheckExecutionSnapshotResponse {
-	return HyperflexHealthCheckExecutionSnapshotResponse{ HyperflexHealthCheckExecutionSnapshotList: v}
+	return HyperflexHealthCheckExecutionSnapshotResponse{HyperflexHealthCheckExecutionSnapshotList: v}
 }
 
 // MoAggregateTransformAsHyperflexHealthCheckExecutionSnapshotResponse is a convenience function that returns MoAggregateTransform wrapped in HyperflexHealthCheckExecutionSnapshotResponse
 func MoAggregateTransformAsHyperflexHealthCheckExecutionSnapshotResponse(v *MoAggregateTransform) HyperflexHealthCheckExecutionSnapshotResponse {
-	return HyperflexHealthCheckExecutionSnapshotResponse{ MoAggregateTransform: v}
+	return HyperflexHealthCheckExecutionSnapshotResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsHyperflexHealthCheckExecutionSnapshotResponse is a convenience function that returns MoDocumentCount wrapped in HyperflexHealthCheckExecutionSnapshotResponse
 func MoDocumentCountAsHyperflexHealthCheckExecutionSnapshotResponse(v *MoDocumentCount) HyperflexHealthCheckExecutionSnapshotResponse {
-	return HyperflexHealthCheckExecutionSnapshotResponse{ MoDocumentCount: v}
+	return HyperflexHealthCheckExecutionSnapshotResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsHyperflexHealthCheckExecutionSnapshotResponse is a convenience function that returns MoTagSummary wrapped in HyperflexHealthCheckExecutionSnapshotResponse
 func MoTagSummaryAsHyperflexHealthCheckExecutionSnapshotResponse(v *MoTagSummary) HyperflexHealthCheckExecutionSnapshotResponse {
-	return HyperflexHealthCheckExecutionSnapshotResponse{ MoTagSummary: v}
+	return HyperflexHealthCheckExecutionSnapshotResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexHealthCheckExecutionSnapshotResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src HyperflexHealthCheckExecutionSnapshotResponse) MarshalJSON() ([]byte, 
 }
 
 // Get the actual instance
-func (obj *HyperflexHealthCheckExecutionSnapshotResponse) GetActualInstance() (interface{}) {
+func (obj *HyperflexHealthCheckExecutionSnapshotResponse) GetActualInstance() interface{} {
 	if obj.HyperflexHealthCheckExecutionSnapshotList != nil {
 		return obj.HyperflexHealthCheckExecutionSnapshotList
 	}
@@ -184,5 +183,3 @@ func (v *NullableHyperflexHealthCheckExecutionSnapshotResponse) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

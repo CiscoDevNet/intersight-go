@@ -18,32 +18,31 @@ import (
 
 // VirtualizationVmwareDatastoreClusterResponse - The response body of a HTTP GET request for the 'virtualization.VmwareDatastoreCluster' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'virtualization.VmwareDatastoreCluster' resources.
 type VirtualizationVmwareDatastoreClusterResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                     *MoAggregateTransform
+	MoDocumentCount                          *MoDocumentCount
+	MoTagSummary                             *MoTagSummary
 	VirtualizationVmwareDatastoreClusterList *VirtualizationVmwareDatastoreClusterList
 }
 
 // MoAggregateTransformAsVirtualizationVmwareDatastoreClusterResponse is a convenience function that returns MoAggregateTransform wrapped in VirtualizationVmwareDatastoreClusterResponse
 func MoAggregateTransformAsVirtualizationVmwareDatastoreClusterResponse(v *MoAggregateTransform) VirtualizationVmwareDatastoreClusterResponse {
-	return VirtualizationVmwareDatastoreClusterResponse{ MoAggregateTransform: v}
+	return VirtualizationVmwareDatastoreClusterResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsVirtualizationVmwareDatastoreClusterResponse is a convenience function that returns MoDocumentCount wrapped in VirtualizationVmwareDatastoreClusterResponse
 func MoDocumentCountAsVirtualizationVmwareDatastoreClusterResponse(v *MoDocumentCount) VirtualizationVmwareDatastoreClusterResponse {
-	return VirtualizationVmwareDatastoreClusterResponse{ MoDocumentCount: v}
+	return VirtualizationVmwareDatastoreClusterResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsVirtualizationVmwareDatastoreClusterResponse is a convenience function that returns MoTagSummary wrapped in VirtualizationVmwareDatastoreClusterResponse
 func MoTagSummaryAsVirtualizationVmwareDatastoreClusterResponse(v *MoTagSummary) VirtualizationVmwareDatastoreClusterResponse {
-	return VirtualizationVmwareDatastoreClusterResponse{ MoTagSummary: v}
+	return VirtualizationVmwareDatastoreClusterResponse{MoTagSummary: v}
 }
 
 // VirtualizationVmwareDatastoreClusterListAsVirtualizationVmwareDatastoreClusterResponse is a convenience function that returns VirtualizationVmwareDatastoreClusterList wrapped in VirtualizationVmwareDatastoreClusterResponse
 func VirtualizationVmwareDatastoreClusterListAsVirtualizationVmwareDatastoreClusterResponse(v *VirtualizationVmwareDatastoreClusterList) VirtualizationVmwareDatastoreClusterResponse {
-	return VirtualizationVmwareDatastoreClusterResponse{ VirtualizationVmwareDatastoreClusterList: v}
+	return VirtualizationVmwareDatastoreClusterResponse{VirtualizationVmwareDatastoreClusterList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VirtualizationVmwareDatastoreClusterResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src VirtualizationVmwareDatastoreClusterResponse) MarshalJSON() ([]byte, e
 }
 
 // Get the actual instance
-func (obj *VirtualizationVmwareDatastoreClusterResponse) GetActualInstance() (interface{}) {
+func (obj *VirtualizationVmwareDatastoreClusterResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableVirtualizationVmwareDatastoreClusterResponse) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

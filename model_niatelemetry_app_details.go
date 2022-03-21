@@ -35,8 +35,8 @@ type NiatelemetryAppDetails struct {
 	// Number of sites on which particular app installed on ND.
 	NumberOfSitesOnboarded *int64 `json:"NumberOfSitesOnboarded,omitempty"`
 	// Type of apps running on ND.
-	Type *string `json:"Type,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Type                 *string                              `json:"Type,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *NiatelemetryAppDetails) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryAppDetails) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *NiatelemetryAppDetails) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryAppDetails) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -399,7 +399,7 @@ func (o *NiatelemetryAppDetails) UnmarshalJSON(bytes []byte) (err error) {
 		// Number of sites on which particular app installed on ND.
 		NumberOfSitesOnboarded *int64 `json:"NumberOfSitesOnboarded,omitempty"`
 		// Type of apps running on ND.
-		Type *string `json:"Type,omitempty"`
+		Type             *string                              `json:"Type,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -503,5 +503,3 @@ func (v *NullableNiatelemetryAppDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

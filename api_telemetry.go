@@ -28,8 +28,8 @@ var (
 type TelemetryApiService service
 
 type ApiQueryTelemetryDatasourceMetadataRequest struct {
-	ctx _context.Context
-	ApiService *TelemetryApiService
+	ctx                                     _context.Context
+	ApiService                              *TelemetryApiService
 	telemetryDruidDataSourceMetadataRequest *TelemetryDruidDataSourceMetadataRequest
 }
 
@@ -54,7 +54,7 @@ Endpoint that exposes Druid DatasourceMetadata requests for time series data.
 func (a *TelemetryApiService) QueryTelemetryDatasourceMetadata(ctx _context.Context) ApiQueryTelemetryDatasourceMetadataRequest {
 	return ApiQueryTelemetryDatasourceMetadataRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -125,13 +125,13 @@ func (a *TelemetryApiService) QueryTelemetryDatasourceMetadataExecute(r ApiQuery
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v TelemetryDruidError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v TelemetryDruidError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -148,8 +148,8 @@ func (a *TelemetryApiService) QueryTelemetryDatasourceMetadataExecute(r ApiQuery
 }
 
 type ApiQueryTelemetryGroupByRequest struct {
-	ctx _context.Context
-	ApiService *TelemetryApiService
+	ctx                          _context.Context
+	ApiService                   *TelemetryApiService
 	telemetryDruidGroupByRequest *TelemetryDruidGroupByRequest
 }
 
@@ -174,7 +174,7 @@ Endpoint that exposes Druid GroupBy requests for time series data.
 func (a *TelemetryApiService) QueryTelemetryGroupBy(ctx _context.Context) ApiQueryTelemetryGroupByRequest {
 	return ApiQueryTelemetryGroupByRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -245,13 +245,13 @@ func (a *TelemetryApiService) QueryTelemetryGroupByExecute(r ApiQueryTelemetryGr
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v TelemetryDruidError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v TelemetryDruidError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -268,8 +268,8 @@ func (a *TelemetryApiService) QueryTelemetryGroupByExecute(r ApiQueryTelemetryGr
 }
 
 type ApiQueryTelemetryScanRequest struct {
-	ctx _context.Context
-	ApiService *TelemetryApiService
+	ctx                       _context.Context
+	ApiService                *TelemetryApiService
 	telemetryDruidScanRequest *TelemetryDruidScanRequest
 }
 
@@ -294,7 +294,7 @@ Endpoint that exposes Druid Scan requests for time series data.
 func (a *TelemetryApiService) QueryTelemetryScan(ctx _context.Context) ApiQueryTelemetryScanRequest {
 	return ApiQueryTelemetryScanRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -365,13 +365,13 @@ func (a *TelemetryApiService) QueryTelemetryScanExecute(r ApiQueryTelemetryScanR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v TelemetryDruidError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v TelemetryDruidError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -388,8 +388,8 @@ func (a *TelemetryApiService) QueryTelemetryScanExecute(r ApiQueryTelemetryScanR
 }
 
 type ApiQueryTelemetrySearchRequest struct {
-	ctx _context.Context
-	ApiService *TelemetryApiService
+	ctx                         _context.Context
+	ApiService                  *TelemetryApiService
 	telemetryDruidSearchRequest *TelemetryDruidSearchRequest
 }
 
@@ -414,7 +414,7 @@ Endpoint that exposes Druid Search requests for time series data.
 func (a *TelemetryApiService) QueryTelemetrySearch(ctx _context.Context) ApiQueryTelemetrySearchRequest {
 	return ApiQueryTelemetrySearchRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -485,13 +485,13 @@ func (a *TelemetryApiService) QueryTelemetrySearchExecute(r ApiQueryTelemetrySea
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v TelemetryDruidError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v TelemetryDruidError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -508,8 +508,8 @@ func (a *TelemetryApiService) QueryTelemetrySearchExecute(r ApiQueryTelemetrySea
 }
 
 type ApiQueryTelemetrySegmentMetadataRequest struct {
-	ctx _context.Context
-	ApiService *TelemetryApiService
+	ctx                                  _context.Context
+	ApiService                           *TelemetryApiService
 	telemetryDruidSegmentMetadataRequest *TelemetryDruidSegmentMetadataRequest
 }
 
@@ -534,7 +534,7 @@ Endpoint that exposes Druid SegmentMetadata requests for time series data.
 func (a *TelemetryApiService) QueryTelemetrySegmentMetadata(ctx _context.Context) ApiQueryTelemetrySegmentMetadataRequest {
 	return ApiQueryTelemetrySegmentMetadataRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -605,13 +605,13 @@ func (a *TelemetryApiService) QueryTelemetrySegmentMetadataExecute(r ApiQueryTel
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v TelemetryDruidError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v TelemetryDruidError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -628,8 +628,8 @@ func (a *TelemetryApiService) QueryTelemetrySegmentMetadataExecute(r ApiQueryTel
 }
 
 type ApiQueryTelemetryTimeBoundaryRequest struct {
-	ctx _context.Context
-	ApiService *TelemetryApiService
+	ctx                               _context.Context
+	ApiService                        *TelemetryApiService
 	telemetryDruidTimeBoundaryRequest *TelemetryDruidTimeBoundaryRequest
 }
 
@@ -654,7 +654,7 @@ Endpoint that exposes Druid TimeBoundary requests for time series data.
 func (a *TelemetryApiService) QueryTelemetryTimeBoundary(ctx _context.Context) ApiQueryTelemetryTimeBoundaryRequest {
 	return ApiQueryTelemetryTimeBoundaryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -725,13 +725,13 @@ func (a *TelemetryApiService) QueryTelemetryTimeBoundaryExecute(r ApiQueryTeleme
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v TelemetryDruidError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v TelemetryDruidError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -748,8 +748,8 @@ func (a *TelemetryApiService) QueryTelemetryTimeBoundaryExecute(r ApiQueryTeleme
 }
 
 type ApiQueryTelemetryTimeSeriesRequest struct {
-	ctx _context.Context
-	ApiService *TelemetryApiService
+	ctx                             _context.Context
+	ApiService                      *TelemetryApiService
 	telemetryDruidTimeSeriesRequest *TelemetryDruidTimeSeriesRequest
 }
 
@@ -774,7 +774,7 @@ Endpoint that exposes Druid requests for time series data. This endpoint exposes
 func (a *TelemetryApiService) QueryTelemetryTimeSeries(ctx _context.Context) ApiQueryTelemetryTimeSeriesRequest {
 	return ApiQueryTelemetryTimeSeriesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -845,13 +845,13 @@ func (a *TelemetryApiService) QueryTelemetryTimeSeriesExecute(r ApiQueryTelemetr
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v TelemetryDruidError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v TelemetryDruidError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -868,8 +868,8 @@ func (a *TelemetryApiService) QueryTelemetryTimeSeriesExecute(r ApiQueryTelemetr
 }
 
 type ApiQueryTelemetryTopNRequest struct {
-	ctx _context.Context
-	ApiService *TelemetryApiService
+	ctx                       _context.Context
+	ApiService                *TelemetryApiService
 	telemetryDruidTopNRequest *TelemetryDruidTopNRequest
 }
 
@@ -894,7 +894,7 @@ Endpoint that exposes Druid TopN requests for time series data.
 func (a *TelemetryApiService) QueryTelemetryTopN(ctx _context.Context) ApiQueryTelemetryTopNRequest {
 	return ApiQueryTelemetryTopNRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -965,13 +965,13 @@ func (a *TelemetryApiService) QueryTelemetryTopNExecute(r ApiQueryTelemetryTopNR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v TelemetryDruidError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v TelemetryDruidError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

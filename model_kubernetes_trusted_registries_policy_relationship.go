@@ -19,19 +19,18 @@ import (
 // KubernetesTrustedRegistriesPolicyRelationship - A relationship to the 'kubernetes.TrustedRegistriesPolicy' resource, or the expanded 'kubernetes.TrustedRegistriesPolicy' resource, or the 'null' value.
 type KubernetesTrustedRegistriesPolicyRelationship struct {
 	KubernetesTrustedRegistriesPolicy *KubernetesTrustedRegistriesPolicy
-	MoMoRef *MoMoRef
+	MoMoRef                           *MoMoRef
 }
 
 // KubernetesTrustedRegistriesPolicyAsKubernetesTrustedRegistriesPolicyRelationship is a convenience function that returns KubernetesTrustedRegistriesPolicy wrapped in KubernetesTrustedRegistriesPolicyRelationship
 func KubernetesTrustedRegistriesPolicyAsKubernetesTrustedRegistriesPolicyRelationship(v *KubernetesTrustedRegistriesPolicy) KubernetesTrustedRegistriesPolicyRelationship {
-	return KubernetesTrustedRegistriesPolicyRelationship{ KubernetesTrustedRegistriesPolicy: v}
+	return KubernetesTrustedRegistriesPolicyRelationship{KubernetesTrustedRegistriesPolicy: v}
 }
 
 // MoMoRefAsKubernetesTrustedRegistriesPolicyRelationship is a convenience function that returns MoMoRef wrapped in KubernetesTrustedRegistriesPolicyRelationship
 func MoMoRefAsKubernetesTrustedRegistriesPolicyRelationship(v *MoMoRef) KubernetesTrustedRegistriesPolicyRelationship {
-	return KubernetesTrustedRegistriesPolicyRelationship{ MoMoRef: v}
+	return KubernetesTrustedRegistriesPolicyRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesTrustedRegistriesPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesTrustedRegistriesPolicyRelationship) MarshalJSON() ([]byte, 
 }
 
 // Get the actual instance
-func (obj *KubernetesTrustedRegistriesPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesTrustedRegistriesPolicyRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesTrustedRegistriesPolicy != nil {
 		return obj.KubernetesTrustedRegistriesPolicy
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesTrustedRegistriesPolicyRelationship) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

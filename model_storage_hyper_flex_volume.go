@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // StorageHyperFlexVolume A HyperFlex Volume entity.
@@ -42,10 +42,10 @@ type StorageHyperFlexVolume struct {
 	// Mode of the volume. * `Block` - It is a Block virtual disk. * `Filesystem` - It is a File system virtual disk. * `` - Disk mode is either unknown or not supported.
 	VolumeMode *string `json:"VolumeMode,omitempty"`
 	// The Type of the volume.
-	VolumeType *string `json:"VolumeType,omitempty"`
-	Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	StorageContainer *StorageHyperFlexStorageContainerRelationship `json:"StorageContainer,omitempty"`
+	VolumeType           *string                                       `json:"VolumeType,omitempty"`
+	Cluster              *HyperflexClusterRelationship                 `json:"Cluster,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship          `json:"RegisteredDevice,omitempty"`
+	StorageContainer     *StorageHyperFlexStorageContainerRelationship `json:"StorageContainer,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -87,7 +87,7 @@ func (o *StorageHyperFlexVolume) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageHyperFlexVolume) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -111,7 +111,7 @@ func (o *StorageHyperFlexVolume) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageHyperFlexVolume) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -589,9 +589,9 @@ func (o *StorageHyperFlexVolume) UnmarshalJSON(bytes []byte) (err error) {
 		// Mode of the volume. * `Block` - It is a Block virtual disk. * `Filesystem` - It is a File system virtual disk. * `` - Disk mode is either unknown or not supported.
 		VolumeMode *string `json:"VolumeMode,omitempty"`
 		// The Type of the volume.
-		VolumeType *string `json:"VolumeType,omitempty"`
-		Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		VolumeType       *string                                       `json:"VolumeType,omitempty"`
+		Cluster          *HyperflexClusterRelationship                 `json:"Cluster,omitempty"`
+		RegisteredDevice *AssetDeviceRegistrationRelationship          `json:"RegisteredDevice,omitempty"`
 		StorageContainer *StorageHyperFlexStorageContainerRelationship `json:"StorageContainer,omitempty"`
 	}
 
@@ -705,5 +705,3 @@ func (v *NullableStorageHyperFlexVolume) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

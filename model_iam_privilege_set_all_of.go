@@ -24,14 +24,14 @@ type IamPrivilegeSetAllOf struct {
 	// Description of the privilege set.
 	Description *string `json:"Description,omitempty"`
 	// Name of the privilege set.
-	Name *string `json:"Name,omitempty"`
-	PrivilegeNames []string `json:"PrivilegeNames,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	Name           *string                 `json:"Name,omitempty"`
+	PrivilegeNames []string                `json:"PrivilegeNames,omitempty"`
+	Account        *IamAccountRelationship `json:"Account,omitempty"`
 	// An array of relationships to iamPrivilegeSet resources.
 	AssociatedPrivilegeSets []IamPrivilegeSetRelationship `json:"AssociatedPrivilegeSets,omitempty"`
 	// An array of relationships to iamPrivilege resources.
-	Privileges []IamPrivilegeRelationship `json:"Privileges,omitempty"`
-	System *IamSystemRelationship `json:"System,omitempty"`
+	Privileges           []IamPrivilegeRelationship `json:"Privileges,omitempty"`
+	System               *IamSystemRelationship     `json:"System,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *IamPrivilegeSetAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamPrivilegeSetAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *IamPrivilegeSetAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamPrivilegeSetAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -174,7 +174,7 @@ func (o *IamPrivilegeSetAllOf) SetName(v string) {
 
 // GetPrivilegeNames returns the PrivilegeNames field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamPrivilegeSetAllOf) GetPrivilegeNames() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *IamPrivilegeSetAllOf) SetAccount(v IamAccountRelationship) {
 
 // GetAssociatedPrivilegeSets returns the AssociatedPrivilegeSets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamPrivilegeSetAllOf) GetAssociatedPrivilegeSets() []IamPrivilegeSetRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPrivilegeSetRelationship
 		return ret
 	}
@@ -272,7 +272,7 @@ func (o *IamPrivilegeSetAllOf) SetAssociatedPrivilegeSets(v []IamPrivilegeSetRel
 
 // GetPrivileges returns the Privileges field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamPrivilegeSetAllOf) GetPrivileges() []IamPrivilegeRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPrivilegeRelationship
 		return ret
 	}
@@ -432,5 +432,3 @@ func (v *NullableIamPrivilegeSetAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

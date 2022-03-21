@@ -25,13 +25,13 @@ type StorageBaseHost struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ObjectType string `json:"ObjectType"`
 	// Short description about the host.
-	Description *string `json:"Description,omitempty"`
-	Initiators []StorageBaseInitiator `json:"Initiators,omitempty"`
+	Description *string                `json:"Description,omitempty"`
+	Initiators  []StorageBaseInitiator `json:"Initiators,omitempty"`
 	// Name of the host in storage array.
 	Name *string `json:"Name,omitempty"`
 	// Operating system running on the host.
-	OsType *string `json:"OsType,omitempty"`
-	StorageUtilization NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
+	OsType               *string                     `json:"OsType,omitempty"`
+	StorageUtilization   NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *StorageBaseHost) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseHost) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *StorageBaseHost) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseHost) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -138,7 +138,7 @@ func (o *StorageBaseHost) SetDescription(v string) {
 
 // GetInitiators returns the Initiators field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageBaseHost) GetInitiators() []StorageBaseInitiator {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageBaseInitiator
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *StorageBaseHost) GetStorageUtilization() StorageBaseCapacity {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageBaseHost) GetStorageUtilizationOk() (*StorageBaseCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StorageUtilization.Get(), o.StorageUtilization.IsSet()
@@ -265,6 +265,7 @@ func (o *StorageBaseHost) HasStorageUtilization() bool {
 func (o *StorageBaseHost) SetStorageUtilization(v StorageBaseCapacity) {
 	o.StorageUtilization.Set(&v)
 }
+
 // SetStorageUtilizationNil sets the value for StorageUtilization to be an explicit nil
 func (o *StorageBaseHost) SetStorageUtilizationNil() {
 	o.StorageUtilization.Set(nil)
@@ -321,12 +322,12 @@ func (o *StorageBaseHost) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 		ObjectType string `json:"ObjectType"`
 		// Short description about the host.
-		Description *string `json:"Description,omitempty"`
-		Initiators []StorageBaseInitiator `json:"Initiators,omitempty"`
+		Description *string                `json:"Description,omitempty"`
+		Initiators  []StorageBaseInitiator `json:"Initiators,omitempty"`
 		// Name of the host in storage array.
 		Name *string `json:"Name,omitempty"`
 		// Operating system running on the host.
-		OsType *string `json:"OsType,omitempty"`
+		OsType             *string                     `json:"OsType,omitempty"`
 		StorageUtilization NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
 	}
 
@@ -426,5 +427,3 @@ func (v *NullableStorageBaseHost) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

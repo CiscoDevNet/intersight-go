@@ -24,8 +24,8 @@ type WorkflowSolutionOutputAllOf struct {
 	// Output name which is used in the output definition of the solution.
 	Name *string `json:"Name,omitempty"`
 	// Solution output for a solution instance and the format is specified by output definition of the solution definition.
-	Output interface{} `json:"Output,omitempty"`
-	SolutionInstance *WorkflowSolutionInstanceRelationship `json:"SolutionInstance,omitempty"`
+	Output               interface{}                           `json:"Output,omitempty"`
+	SolutionInstance     *WorkflowSolutionInstanceRelationship `json:"SolutionInstance,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *WorkflowSolutionOutputAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowSolutionOutputAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *WorkflowSolutionOutputAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowSolutionOutputAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -136,7 +136,7 @@ func (o *WorkflowSolutionOutputAllOf) SetName(v string) {
 
 // GetOutput returns the Output field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionOutputAllOf) GetOutput() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -280,5 +280,3 @@ func (v *NullableWorkflowSolutionOutputAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

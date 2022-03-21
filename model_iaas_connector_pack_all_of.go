@@ -22,7 +22,7 @@ type IaasConnectorPackAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Complete version of the connector pack including build number.
-	CompleteVersion *string `json:"CompleteVersion,omitempty"`
+	CompleteVersion *string  `json:"CompleteVersion,omitempty"`
 	DependencyNames []string `json:"DependencyNames,omitempty"`
 	// Version of the connector pack that is last downloaded successfully to UCSD.
 	DownloadedVersion *string `json:"DownloadedVersion,omitempty"`
@@ -31,8 +31,8 @@ type IaasConnectorPackAllOf struct {
 	// State of the connector pack whether it is enabled or disabled.
 	State *string `json:"State,omitempty"`
 	// Version of the connector pack.
-	Version *string `json:"Version,omitempty"`
-	Guid *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
+	Version              *string                   `json:"Version,omitempty"`
+	Guid                 *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *IaasConnectorPackAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IaasConnectorPackAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *IaasConnectorPackAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IaasConnectorPackAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -143,7 +143,7 @@ func (o *IaasConnectorPackAllOf) SetCompleteVersion(v string) {
 
 // GetDependencyNames returns the DependencyNames field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IaasConnectorPackAllOf) GetDependencyNames() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -431,5 +431,3 @@ func (v *NullableIaasConnectorPackAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

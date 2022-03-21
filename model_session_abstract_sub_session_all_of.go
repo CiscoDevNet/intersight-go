@@ -22,10 +22,10 @@ type SessionAbstractSubSessionAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ObjectType string `json:"ObjectType"`
 	// Name of target on which session is initiated.
-	TargetName *string `json:"TargetName,omitempty"`
-	Session *SessionAbstractSessionRelationship `json:"Session,omitempty"`
-	Target *MoBaseMoRelationship `json:"Target,omitempty"`
-	User *IamUserRelationship `json:"User,omitempty"`
+	TargetName           *string                             `json:"TargetName,omitempty"`
+	Session              *SessionAbstractSessionRelationship `json:"Session,omitempty"`
+	Target               *MoBaseMoRelationship               `json:"Target,omitempty"`
+	User                 *IamUserRelationship                `json:"User,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -63,7 +63,7 @@ func (o *SessionAbstractSubSessionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SessionAbstractSubSessionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -87,7 +87,7 @@ func (o *SessionAbstractSubSessionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SessionAbstractSubSessionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -311,5 +311,3 @@ func (v *NullableSessionAbstractSubSessionAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

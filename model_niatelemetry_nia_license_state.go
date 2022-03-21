@@ -37,8 +37,8 @@ type NiatelemetryNiaLicenseState struct {
 	// Serial number of device being inventoried. The serial number is unique per device.
 	Serial *string `json:"Serial,omitempty"`
 	// Name of fabric domain of the controller.
-	SiteName *string `json:"SiteName,omitempty"`
-	Device *NiatelemetryNiaInventoryRelationship `json:"Device,omitempty"`
+	SiteName             *string                               `json:"SiteName,omitempty"`
+	Device               *NiatelemetryNiaInventoryRelationship `json:"Device,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *NiatelemetryNiaLicenseState) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNiaLicenseState) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *NiatelemetryNiaLicenseState) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNiaLicenseState) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -438,8 +438,8 @@ func (o *NiatelemetryNiaLicenseState) UnmarshalJSON(bytes []byte) (err error) {
 		// Serial number of device being inventoried. The serial number is unique per device.
 		Serial *string `json:"Serial,omitempty"`
 		// Name of fabric domain of the controller.
-		SiteName *string `json:"SiteName,omitempty"`
-		Device *NiatelemetryNiaInventoryRelationship `json:"Device,omitempty"`
+		SiteName *string                               `json:"SiteName,omitempty"`
+		Device   *NiatelemetryNiaInventoryRelationship `json:"Device,omitempty"`
 	}
 
 	varNiatelemetryNiaLicenseStateWithoutEmbeddedStruct := NiatelemetryNiaLicenseStateWithoutEmbeddedStruct{}
@@ -544,5 +544,3 @@ func (v *NullableNiatelemetryNiaLicenseState) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

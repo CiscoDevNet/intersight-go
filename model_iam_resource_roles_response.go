@@ -20,30 +20,29 @@ import (
 type IamResourceRolesResponse struct {
 	IamResourceRolesList *IamResourceRolesList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IamResourceRolesListAsIamResourceRolesResponse is a convenience function that returns IamResourceRolesList wrapped in IamResourceRolesResponse
 func IamResourceRolesListAsIamResourceRolesResponse(v *IamResourceRolesList) IamResourceRolesResponse {
-	return IamResourceRolesResponse{ IamResourceRolesList: v}
+	return IamResourceRolesResponse{IamResourceRolesList: v}
 }
 
 // MoAggregateTransformAsIamResourceRolesResponse is a convenience function that returns MoAggregateTransform wrapped in IamResourceRolesResponse
 func MoAggregateTransformAsIamResourceRolesResponse(v *MoAggregateTransform) IamResourceRolesResponse {
-	return IamResourceRolesResponse{ MoAggregateTransform: v}
+	return IamResourceRolesResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIamResourceRolesResponse is a convenience function that returns MoDocumentCount wrapped in IamResourceRolesResponse
 func MoDocumentCountAsIamResourceRolesResponse(v *MoDocumentCount) IamResourceRolesResponse {
-	return IamResourceRolesResponse{ MoDocumentCount: v}
+	return IamResourceRolesResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIamResourceRolesResponse is a convenience function that returns MoTagSummary wrapped in IamResourceRolesResponse
 func MoTagSummaryAsIamResourceRolesResponse(v *MoTagSummary) IamResourceRolesResponse {
-	return IamResourceRolesResponse{ MoTagSummary: v}
+	return IamResourceRolesResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamResourceRolesResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IamResourceRolesResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamResourceRolesResponse) GetActualInstance() (interface{}) {
+func (obj *IamResourceRolesResponse) GetActualInstance() interface{} {
 	if obj.IamResourceRolesList != nil {
 		return obj.IamResourceRolesList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIamResourceRolesResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

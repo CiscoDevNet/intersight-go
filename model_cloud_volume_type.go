@@ -27,7 +27,7 @@ type CloudVolumeType struct {
 	// The type of the volume.Types vary from cloud to cloud.
 	Name *string `json:"Name,omitempty"`
 	// Unique identity of the volume type, assigned by the cloud provider.
-	VolumeTypeId *string `json:"VolumeTypeId,omitempty"`
+	VolumeTypeId         *string `json:"VolumeTypeId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *CloudVolumeType) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudVolumeType) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *CloudVolumeType) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudVolumeType) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -300,5 +300,3 @@ func (v *NullableCloudVolumeType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

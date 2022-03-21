@@ -31,24 +31,24 @@ type IamAppRegistrationAllOf struct {
 	// The type of the OAuth2 client (public or confidential), as specified in https://tools.ietf.org/html/rfc6749#section-2.1. * `public` - Clients incapable of maintaining the confidentiality of their credentials.This includes clients executing on the device used by the resource owner,such as mobile applications, installed native application or a webbrowser-based application. * `confidential` - Clients capable of maintaining the confidentiality of their credentials.For example, this could be a client implemented on a secure server withrestricted access to the client credentials.To maintain the confidentiality of the OAuth2 credentials, two use cases areconsidered.1) The application is running as a service within Intersight. The application automatically   obtains the OAuth2 credentials when the application starts and the credentials are not   exposed to the end-user.   Because end-users (even account administrators) do not have access the OAuth2 credentials,   they cannot take the credentials with them when they leave their organization.2) The application is under the control of a \"trusted\" end-user. For example,   the end-user may create a native application running outside Intersight. The application   uses OAuth2 credentials to interact with the Intersight API. In that case, the Intersight   account administrator may generate OAuth2 credentials with a registered application   using \"client_credentials\" grant type.   In that case, the end-user is responsible for maintaining the confidentiality of the   OAuth2 credentials. If the end-user leaves the organization, you should revoke the   credentials and issue new Oauth2 credentials.Here is a possible workflow for handling OAuth2 tokens.1) User Alice (Intersight Account Administrator) logins to Intersight and deploys an Intersight   application that requires an OAuth2 token.2) Intersight automatically deploys the application. The application is assigned a OAuth2 token,   possibly linked to Alice. The application must NOT expose the OAuth2 secret to Alice, otherwise   Alice would be able to use the token after she leaves the company.3) The application can make API calls to Intersight using its assigned OAuth2 token. For example,   the application could make weekly scheduled API calls to Intersight.4) Separately, Alice may also get OAuth2 tokens that she can use to make API calls from the   Intersight SDK through the northbound API. In that case, Alice will get the associated OAuth2   secrets, but not the one assigned in step #2.5) Alice leaves the organization. The OAuth2 tokens assigned in step #2 must retain their validity   even after Alice has left the organization. Because the OAuth2 secrets were never shared with   Alice, there is no risk Alice can reuse the OAuth2 secrets.   On the other hand, the OAuth2 tokens assigned in step #4 must be invalidated because Alice had   the OAuth2 tokens in her possession.
 	ClientType *string `json:"ClientType,omitempty"`
 	// Description of the application.
-	Description *string `json:"Description,omitempty"`
-	GrantTypes []string `json:"GrantTypes,omitempty"`
+	Description  *string  `json:"Description,omitempty"`
+	GrantTypes   []string `json:"GrantTypes,omitempty"`
 	RedirectUris []string `json:"RedirectUris,omitempty"`
 	// Set value to true to renew the client-secret. Applicable to client_credentials grant type.
-	RenewClientSecret *bool `json:"RenewClientSecret,omitempty"`
-	ResponseTypes []string `json:"ResponseTypes,omitempty"`
+	RenewClientSecret *bool    `json:"RenewClientSecret,omitempty"`
+	ResponseTypes     []string `json:"ResponseTypes,omitempty"`
 	// Used to perform revocation for tokens of AppRegistration. Updated only internally is case Revoke property come from UI with value true. On each request with OAuth2 access token the CreationTime of the OAuth2 token will be compared to RevokationTimestamp of the corresponding App Registration.
 	RevocationTimestamp *time.Time `json:"RevocationTimestamp,omitempty"`
 	// Used to trigger update the revocationTimestamp value. If UI sent updating request with the Revoke value is true, then update RevocationTimestamp.
-	Revoke *bool `json:"Revoke,omitempty"`
+	Revoke  *bool                   `json:"Revoke,omitempty"`
 	Account *IamAccountRelationship `json:"Account,omitempty"`
 	// An array of relationships to iamOAuthToken resources.
 	OauthTokens []IamOAuthTokenRelationship `json:"OauthTokens,omitempty"`
-	Permission *IamPermissionRelationship `json:"Permission,omitempty"`
+	Permission  *IamPermissionRelationship  `json:"Permission,omitempty"`
 	// An array of relationships to iamRole resources.
 	// Deprecated
-	Roles []IamRoleRelationship `json:"Roles,omitempty"`
-	User *IamUserRelationship `json:"User,omitempty"`
+	Roles                []IamRoleRelationship `json:"Roles,omitempty"`
+	User                 *IamUserRelationship  `json:"User,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -102,7 +102,7 @@ func (o *IamAppRegistrationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamAppRegistrationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -126,7 +126,7 @@ func (o *IamAppRegistrationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamAppRegistrationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -299,7 +299,7 @@ func (o *IamAppRegistrationAllOf) SetDescription(v string) {
 
 // GetGrantTypes returns the GrantTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAppRegistrationAllOf) GetGrantTypes() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -332,7 +332,7 @@ func (o *IamAppRegistrationAllOf) SetGrantTypes(v []string) {
 
 // GetRedirectUris returns the RedirectUris field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAppRegistrationAllOf) GetRedirectUris() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -397,7 +397,7 @@ func (o *IamAppRegistrationAllOf) SetRenewClientSecret(v bool) {
 
 // GetResponseTypes returns the ResponseTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAppRegistrationAllOf) GetResponseTypes() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -526,7 +526,7 @@ func (o *IamAppRegistrationAllOf) SetAccount(v IamAccountRelationship) {
 
 // GetOauthTokens returns the OauthTokens field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAppRegistrationAllOf) GetOauthTokens() []IamOAuthTokenRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamOAuthTokenRelationship
 		return ret
 	}
@@ -592,7 +592,7 @@ func (o *IamAppRegistrationAllOf) SetPermission(v IamPermissionRelationship) {
 // GetRoles returns the Roles field value if set, zero value otherwise (both if not set or set to explicit null).
 // Deprecated
 func (o *IamAppRegistrationAllOf) GetRoles() []IamRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamRoleRelationship
 		return ret
 	}
@@ -790,5 +790,3 @@ func (v *NullableIamAppRegistrationAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

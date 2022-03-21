@@ -22,7 +22,7 @@ type TelemetryDruidDefaultDimensionSpecAllOf struct {
 	// null
 	OutputName string `json:"outputName"`
 	// null
-	OutputType string `json:"outputType"`
+	OutputType           string `json:"outputType"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -63,7 +63,7 @@ func (o *TelemetryDruidDefaultDimensionSpecAllOf) GetDimension() string {
 // GetDimensionOk returns a tuple with the Dimension field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidDefaultDimensionSpecAllOf) GetDimensionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Dimension, true
@@ -87,7 +87,7 @@ func (o *TelemetryDruidDefaultDimensionSpecAllOf) GetOutputName() string {
 // GetOutputNameOk returns a tuple with the OutputName field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidDefaultDimensionSpecAllOf) GetOutputNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.OutputName, true
@@ -111,7 +111,7 @@ func (o *TelemetryDruidDefaultDimensionSpecAllOf) GetOutputType() string {
 // GetOutputTypeOk returns a tuple with the OutputType field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidDefaultDimensionSpecAllOf) GetOutputTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.OutputType, true
@@ -195,5 +195,3 @@ func (v *NullableTelemetryDruidDefaultDimensionSpecAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

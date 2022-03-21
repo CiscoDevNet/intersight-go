@@ -27,7 +27,7 @@ type FabricMacAgingSettings struct {
 	// This specifies one of the option to configure the MAC address aging time. * `Default` - This option sets the default MAC address aging time to 14500 seconds for End Host mode. * `Custom` - This option allows the the user to configure the MAC address aging time on the switch. For Switch Model UCS-FI-6454 or higher, the valid range is 120 to 918000 seconds and the switch will set the lower multiple of 5 of the given time. * `Never` - This option disables the MAC address aging process and never allows the MAC address entries to get removed from the table.
 	MacAgingOption *string `json:"MacAgingOption,omitempty"`
 	// Define the MAC address aging time in seconds. This field is valid when the \"Custom\" MAC address aging option is selected.
-	MacAgingTime *int32 `json:"MacAgingTime,omitempty"`
+	MacAgingTime         *int32 `json:"MacAgingTime,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *FabricMacAgingSettings) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricMacAgingSettings) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *FabricMacAgingSettings) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricMacAgingSettings) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -308,5 +308,3 @@ func (v *NullableFabricMacAgingSettings) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

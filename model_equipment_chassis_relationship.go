@@ -19,19 +19,18 @@ import (
 // EquipmentChassisRelationship - A relationship to the 'equipment.Chassis' resource, or the expanded 'equipment.Chassis' resource, or the 'null' value.
 type EquipmentChassisRelationship struct {
 	EquipmentChassis *EquipmentChassis
-	MoMoRef *MoMoRef
+	MoMoRef          *MoMoRef
 }
 
 // EquipmentChassisAsEquipmentChassisRelationship is a convenience function that returns EquipmentChassis wrapped in EquipmentChassisRelationship
 func EquipmentChassisAsEquipmentChassisRelationship(v *EquipmentChassis) EquipmentChassisRelationship {
-	return EquipmentChassisRelationship{ EquipmentChassis: v}
+	return EquipmentChassisRelationship{EquipmentChassis: v}
 }
 
 // MoMoRefAsEquipmentChassisRelationship is a convenience function that returns MoMoRef wrapped in EquipmentChassisRelationship
 func MoMoRefAsEquipmentChassisRelationship(v *MoMoRef) EquipmentChassisRelationship {
-	return EquipmentChassisRelationship{ MoMoRef: v}
+	return EquipmentChassisRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentChassisRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src EquipmentChassisRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentChassisRelationship) GetActualInstance() (interface{}) {
+func (obj *EquipmentChassisRelationship) GetActualInstance() interface{} {
 	if obj.EquipmentChassis != nil {
 		return obj.EquipmentChassis
 	}
@@ -137,5 +136,3 @@ func (v *NullableEquipmentChassisRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

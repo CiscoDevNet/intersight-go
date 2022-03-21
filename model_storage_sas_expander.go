@@ -33,12 +33,12 @@ type StorageSasExpander struct {
 	// The operability status of the storage expander.
 	Operability *string `json:"Operability,omitempty"`
 	// The SAS address of the SAS expander.
-	SasAddress *string `json:"SasAddress,omitempty"`
-	ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
-	Controller *ManagementControllerRelationship `json:"Controller,omitempty"`
-	EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SasAddress           *string                              `json:"SasAddress,omitempty"`
+	ComputeRackUnit      *ComputeRackUnitRelationship         `json:"ComputeRackUnit,omitempty"`
+	Controller           *ManagementControllerRelationship    `json:"Controller,omitempty"`
+	EquipmentChassis     *EquipmentChassisRelationship        `json:"EquipmentChassis,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *StorageSasExpander) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageSasExpander) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *StorageSasExpander) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageSasExpander) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -504,12 +504,12 @@ func (o *StorageSasExpander) UnmarshalJSON(bytes []byte) (err error) {
 		// The operability status of the storage expander.
 		Operability *string `json:"Operability,omitempty"`
 		// The SAS address of the SAS expander.
-		SasAddress *string `json:"SasAddress,omitempty"`
-		ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
-		Controller *ManagementControllerRelationship `json:"Controller,omitempty"`
-		EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		SasAddress          *string                              `json:"SasAddress,omitempty"`
+		ComputeRackUnit     *ComputeRackUnitRelationship         `json:"ComputeRackUnit,omitempty"`
+		Controller          *ManagementControllerRelationship    `json:"Controller,omitempty"`
+		EquipmentChassis    *EquipmentChassisRelationship        `json:"EquipmentChassis,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
 	varStorageSasExpanderWithoutEmbeddedStruct := StorageSasExpanderWithoutEmbeddedStruct{}
@@ -618,5 +618,3 @@ func (v *NullableStorageSasExpander) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

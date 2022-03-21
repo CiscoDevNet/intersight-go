@@ -25,11 +25,11 @@ type VirtualizationIweHostVswitch struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The name of the host to which this vSwitch belongs to.
-	HostName *string `json:"HostName,omitempty"`
-	Ports []VirtualizationNetworkPort `json:"Ports,omitempty"`
-	Cluster *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
-	DvSwitch *VirtualizationIweDvswitchRelationship `json:"DvSwitch,omitempty"`
-	Host *VirtualizationIweHostRelationship `json:"Host,omitempty"`
+	HostName             *string                                `json:"HostName,omitempty"`
+	Ports                []VirtualizationNetworkPort            `json:"Ports,omitempty"`
+	Cluster              *VirtualizationIweClusterRelationship  `json:"Cluster,omitempty"`
+	DvSwitch             *VirtualizationIweDvswitchRelationship `json:"DvSwitch,omitempty"`
+	Host                 *VirtualizationIweHostRelationship     `json:"Host,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *VirtualizationIweHostVswitch) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweHostVswitch) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *VirtualizationIweHostVswitch) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweHostVswitch) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -140,7 +140,7 @@ func (o *VirtualizationIweHostVswitch) SetHostName(v string) {
 
 // GetPorts returns the Ports field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationIweHostVswitch) GetPorts() []VirtualizationNetworkPort {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationNetworkPort
 		return ret
 	}
@@ -313,11 +313,11 @@ func (o *VirtualizationIweHostVswitch) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The name of the host to which this vSwitch belongs to.
-		HostName *string `json:"HostName,omitempty"`
-		Ports []VirtualizationNetworkPort `json:"Ports,omitempty"`
-		Cluster *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
+		HostName *string                                `json:"HostName,omitempty"`
+		Ports    []VirtualizationNetworkPort            `json:"Ports,omitempty"`
+		Cluster  *VirtualizationIweClusterRelationship  `json:"Cluster,omitempty"`
 		DvSwitch *VirtualizationIweDvswitchRelationship `json:"DvSwitch,omitempty"`
-		Host *VirtualizationIweHostRelationship `json:"Host,omitempty"`
+		Host     *VirtualizationIweHostRelationship     `json:"Host,omitempty"`
 	}
 
 	varVirtualizationIweHostVswitchWithoutEmbeddedStruct := VirtualizationIweHostVswitchWithoutEmbeddedStruct{}
@@ -416,5 +416,3 @@ func (v *NullableVirtualizationIweHostVswitch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

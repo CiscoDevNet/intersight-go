@@ -29,11 +29,10 @@ var (
 type EtherApiService service
 
 type ApiGetEtherHostPortByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EtherApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEtherHostPortByMoidRequest) Execute() (EtherHostPort, *_nethttp.Response, error) {
 	return r.ApiService.GetEtherHostPortByMoidExecute(r)
@@ -49,8 +48,8 @@ GetEtherHostPortByMoid Read a 'ether.HostPort' resource.
 func (a *EtherApiService) GetEtherHostPortByMoid(ctx _context.Context, moid string) ApiGetEtherHostPortByMoidRequest {
 	return ApiGetEtherHostPortByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -157,13 +156,13 @@ func (a *EtherApiService) GetEtherHostPortByMoidExecute(r ApiGetEtherHostPortByM
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -180,19 +179,19 @@ func (a *EtherApiService) GetEtherHostPortByMoidExecute(r ApiGetEtherHostPortByM
 }
 
 type ApiGetEtherHostPortListRequest struct {
-	ctx _context.Context
-	ApiService *EtherApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EtherApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -200,51 +199,61 @@ func (r ApiGetEtherHostPortListRequest) Filter(filter string) ApiGetEtherHostPor
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEtherHostPortListRequest) Orderby(orderby string) ApiGetEtherHostPortListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEtherHostPortListRequest) Top(top int32) ApiGetEtherHostPortListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEtherHostPortListRequest) Skip(skip int32) ApiGetEtherHostPortListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEtherHostPortListRequest) Select_(select_ string) ApiGetEtherHostPortListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEtherHostPortListRequest) Expand(expand string) ApiGetEtherHostPortListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEtherHostPortListRequest) Apply(apply string) ApiGetEtherHostPortListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEtherHostPortListRequest) Count(count bool) ApiGetEtherHostPortListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEtherHostPortListRequest) Inlinecount(inlinecount string) ApiGetEtherHostPortListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEtherHostPortListRequest) At(at string) ApiGetEtherHostPortListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEtherHostPortListRequest) Tags(tags string) ApiGetEtherHostPortListRequest {
 	r.tags = &tags
@@ -264,7 +273,7 @@ GetEtherHostPortList Read a 'ether.HostPort' resource.
 func (a *EtherApiService) GetEtherHostPortList(ctx _context.Context) ApiGetEtherHostPortListRequest {
 	return ApiGetEtherHostPortListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -403,13 +412,13 @@ func (a *EtherApiService) GetEtherHostPortListExecute(r ApiGetEtherHostPortListR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -426,11 +435,10 @@ func (a *EtherApiService) GetEtherHostPortListExecute(r ApiGetEtherHostPortListR
 }
 
 type ApiGetEtherNetworkPortByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EtherApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEtherNetworkPortByMoidRequest) Execute() (EtherNetworkPort, *_nethttp.Response, error) {
 	return r.ApiService.GetEtherNetworkPortByMoidExecute(r)
@@ -446,8 +454,8 @@ GetEtherNetworkPortByMoid Read a 'ether.NetworkPort' resource.
 func (a *EtherApiService) GetEtherNetworkPortByMoid(ctx _context.Context, moid string) ApiGetEtherNetworkPortByMoidRequest {
 	return ApiGetEtherNetworkPortByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -554,13 +562,13 @@ func (a *EtherApiService) GetEtherNetworkPortByMoidExecute(r ApiGetEtherNetworkP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -577,19 +585,19 @@ func (a *EtherApiService) GetEtherNetworkPortByMoidExecute(r ApiGetEtherNetworkP
 }
 
 type ApiGetEtherNetworkPortListRequest struct {
-	ctx _context.Context
-	ApiService *EtherApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EtherApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -597,51 +605,61 @@ func (r ApiGetEtherNetworkPortListRequest) Filter(filter string) ApiGetEtherNetw
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEtherNetworkPortListRequest) Orderby(orderby string) ApiGetEtherNetworkPortListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEtherNetworkPortListRequest) Top(top int32) ApiGetEtherNetworkPortListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEtherNetworkPortListRequest) Skip(skip int32) ApiGetEtherNetworkPortListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEtherNetworkPortListRequest) Select_(select_ string) ApiGetEtherNetworkPortListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEtherNetworkPortListRequest) Expand(expand string) ApiGetEtherNetworkPortListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEtherNetworkPortListRequest) Apply(apply string) ApiGetEtherNetworkPortListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEtherNetworkPortListRequest) Count(count bool) ApiGetEtherNetworkPortListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEtherNetworkPortListRequest) Inlinecount(inlinecount string) ApiGetEtherNetworkPortListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEtherNetworkPortListRequest) At(at string) ApiGetEtherNetworkPortListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEtherNetworkPortListRequest) Tags(tags string) ApiGetEtherNetworkPortListRequest {
 	r.tags = &tags
@@ -661,7 +679,7 @@ GetEtherNetworkPortList Read a 'ether.NetworkPort' resource.
 func (a *EtherApiService) GetEtherNetworkPortList(ctx _context.Context) ApiGetEtherNetworkPortListRequest {
 	return ApiGetEtherNetworkPortListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -800,13 +818,13 @@ func (a *EtherApiService) GetEtherNetworkPortListExecute(r ApiGetEtherNetworkPor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -823,11 +841,10 @@ func (a *EtherApiService) GetEtherNetworkPortListExecute(r ApiGetEtherNetworkPor
 }
 
 type ApiGetEtherPhysicalPortByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EtherApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEtherPhysicalPortByMoidRequest) Execute() (EtherPhysicalPort, *_nethttp.Response, error) {
 	return r.ApiService.GetEtherPhysicalPortByMoidExecute(r)
@@ -843,8 +860,8 @@ GetEtherPhysicalPortByMoid Read a 'ether.PhysicalPort' resource.
 func (a *EtherApiService) GetEtherPhysicalPortByMoid(ctx _context.Context, moid string) ApiGetEtherPhysicalPortByMoidRequest {
 	return ApiGetEtherPhysicalPortByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -951,13 +968,13 @@ func (a *EtherApiService) GetEtherPhysicalPortByMoidExecute(r ApiGetEtherPhysica
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -974,19 +991,19 @@ func (a *EtherApiService) GetEtherPhysicalPortByMoidExecute(r ApiGetEtherPhysica
 }
 
 type ApiGetEtherPhysicalPortListRequest struct {
-	ctx _context.Context
-	ApiService *EtherApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EtherApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -994,51 +1011,61 @@ func (r ApiGetEtherPhysicalPortListRequest) Filter(filter string) ApiGetEtherPhy
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEtherPhysicalPortListRequest) Orderby(orderby string) ApiGetEtherPhysicalPortListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEtherPhysicalPortListRequest) Top(top int32) ApiGetEtherPhysicalPortListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEtherPhysicalPortListRequest) Skip(skip int32) ApiGetEtherPhysicalPortListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEtherPhysicalPortListRequest) Select_(select_ string) ApiGetEtherPhysicalPortListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEtherPhysicalPortListRequest) Expand(expand string) ApiGetEtherPhysicalPortListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEtherPhysicalPortListRequest) Apply(apply string) ApiGetEtherPhysicalPortListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEtherPhysicalPortListRequest) Count(count bool) ApiGetEtherPhysicalPortListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEtherPhysicalPortListRequest) Inlinecount(inlinecount string) ApiGetEtherPhysicalPortListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEtherPhysicalPortListRequest) At(at string) ApiGetEtherPhysicalPortListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEtherPhysicalPortListRequest) Tags(tags string) ApiGetEtherPhysicalPortListRequest {
 	r.tags = &tags
@@ -1058,7 +1085,7 @@ GetEtherPhysicalPortList Read a 'ether.PhysicalPort' resource.
 func (a *EtherApiService) GetEtherPhysicalPortList(ctx _context.Context) ApiGetEtherPhysicalPortListRequest {
 	return ApiGetEtherPhysicalPortListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1197,13 +1224,13 @@ func (a *EtherApiService) GetEtherPhysicalPortListExecute(r ApiGetEtherPhysicalP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1220,11 +1247,10 @@ func (a *EtherApiService) GetEtherPhysicalPortListExecute(r ApiGetEtherPhysicalP
 }
 
 type ApiGetEtherPortChannelByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *EtherApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetEtherPortChannelByMoidRequest) Execute() (EtherPortChannel, *_nethttp.Response, error) {
 	return r.ApiService.GetEtherPortChannelByMoidExecute(r)
@@ -1240,8 +1266,8 @@ GetEtherPortChannelByMoid Read a 'ether.PortChannel' resource.
 func (a *EtherApiService) GetEtherPortChannelByMoid(ctx _context.Context, moid string) ApiGetEtherPortChannelByMoidRequest {
 	return ApiGetEtherPortChannelByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1348,13 +1374,13 @@ func (a *EtherApiService) GetEtherPortChannelByMoidExecute(r ApiGetEtherPortChan
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1371,19 +1397,19 @@ func (a *EtherApiService) GetEtherPortChannelByMoidExecute(r ApiGetEtherPortChan
 }
 
 type ApiGetEtherPortChannelListRequest struct {
-	ctx _context.Context
-	ApiService *EtherApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *EtherApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1391,51 +1417,61 @@ func (r ApiGetEtherPortChannelListRequest) Filter(filter string) ApiGetEtherPort
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetEtherPortChannelListRequest) Orderby(orderby string) ApiGetEtherPortChannelListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetEtherPortChannelListRequest) Top(top int32) ApiGetEtherPortChannelListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetEtherPortChannelListRequest) Skip(skip int32) ApiGetEtherPortChannelListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetEtherPortChannelListRequest) Select_(select_ string) ApiGetEtherPortChannelListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetEtherPortChannelListRequest) Expand(expand string) ApiGetEtherPortChannelListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetEtherPortChannelListRequest) Apply(apply string) ApiGetEtherPortChannelListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetEtherPortChannelListRequest) Count(count bool) ApiGetEtherPortChannelListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetEtherPortChannelListRequest) Inlinecount(inlinecount string) ApiGetEtherPortChannelListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetEtherPortChannelListRequest) At(at string) ApiGetEtherPortChannelListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetEtherPortChannelListRequest) Tags(tags string) ApiGetEtherPortChannelListRequest {
 	r.tags = &tags
@@ -1455,7 +1491,7 @@ GetEtherPortChannelList Read a 'ether.PortChannel' resource.
 func (a *EtherApiService) GetEtherPortChannelList(ctx _context.Context) ApiGetEtherPortChannelListRequest {
 	return ApiGetEtherPortChannelListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1594,13 +1630,13 @@ func (a *EtherApiService) GetEtherPortChannelListExecute(r ApiGetEtherPortChanne
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1617,11 +1653,11 @@ func (a *EtherApiService) GetEtherPortChannelListExecute(r ApiGetEtherPortChanne
 }
 
 type ApiPatchEtherHostPortRequest struct {
-	ctx _context.Context
-	ApiService *EtherApiService
-	moid string
+	ctx           _context.Context
+	ApiService    *EtherApiService
+	moid          string
 	etherHostPort *EtherHostPort
-	ifMatch *string
+	ifMatch       *string
 }
 
 // The &#39;ether.HostPort&#39; resource to update.
@@ -1629,6 +1665,7 @@ func (r ApiPatchEtherHostPortRequest) EtherHostPort(etherHostPort EtherHostPort)
 	r.etherHostPort = &etherHostPort
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEtherHostPortRequest) IfMatch(ifMatch string) ApiPatchEtherHostPortRequest {
 	r.ifMatch = &ifMatch
@@ -1649,8 +1686,8 @@ PatchEtherHostPort Update a 'ether.HostPort' resource.
 func (a *EtherApiService) PatchEtherHostPort(ctx _context.Context, moid string) ApiPatchEtherHostPortRequest {
 	return ApiPatchEtherHostPortRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1765,13 +1802,13 @@ func (a *EtherApiService) PatchEtherHostPortExecute(r ApiPatchEtherHostPortReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1788,11 +1825,11 @@ func (a *EtherApiService) PatchEtherHostPortExecute(r ApiPatchEtherHostPortReque
 }
 
 type ApiPatchEtherNetworkPortRequest struct {
-	ctx _context.Context
-	ApiService *EtherApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *EtherApiService
+	moid             string
 	etherNetworkPort *EtherNetworkPort
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;ether.NetworkPort&#39; resource to update.
@@ -1800,6 +1837,7 @@ func (r ApiPatchEtherNetworkPortRequest) EtherNetworkPort(etherNetworkPort Ether
 	r.etherNetworkPort = &etherNetworkPort
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEtherNetworkPortRequest) IfMatch(ifMatch string) ApiPatchEtherNetworkPortRequest {
 	r.ifMatch = &ifMatch
@@ -1820,8 +1858,8 @@ PatchEtherNetworkPort Update a 'ether.NetworkPort' resource.
 func (a *EtherApiService) PatchEtherNetworkPort(ctx _context.Context, moid string) ApiPatchEtherNetworkPortRequest {
 	return ApiPatchEtherNetworkPortRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1936,13 +1974,13 @@ func (a *EtherApiService) PatchEtherNetworkPortExecute(r ApiPatchEtherNetworkPor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1959,11 +1997,11 @@ func (a *EtherApiService) PatchEtherNetworkPortExecute(r ApiPatchEtherNetworkPor
 }
 
 type ApiPatchEtherPhysicalPortRequest struct {
-	ctx _context.Context
-	ApiService *EtherApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *EtherApiService
+	moid              string
 	etherPhysicalPort *EtherPhysicalPort
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;ether.PhysicalPort&#39; resource to update.
@@ -1971,6 +2009,7 @@ func (r ApiPatchEtherPhysicalPortRequest) EtherPhysicalPort(etherPhysicalPort Et
 	r.etherPhysicalPort = &etherPhysicalPort
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchEtherPhysicalPortRequest) IfMatch(ifMatch string) ApiPatchEtherPhysicalPortRequest {
 	r.ifMatch = &ifMatch
@@ -1991,8 +2030,8 @@ PatchEtherPhysicalPort Update a 'ether.PhysicalPort' resource.
 func (a *EtherApiService) PatchEtherPhysicalPort(ctx _context.Context, moid string) ApiPatchEtherPhysicalPortRequest {
 	return ApiPatchEtherPhysicalPortRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2107,13 +2146,13 @@ func (a *EtherApiService) PatchEtherPhysicalPortExecute(r ApiPatchEtherPhysicalP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2130,11 +2169,11 @@ func (a *EtherApiService) PatchEtherPhysicalPortExecute(r ApiPatchEtherPhysicalP
 }
 
 type ApiUpdateEtherHostPortRequest struct {
-	ctx _context.Context
-	ApiService *EtherApiService
-	moid string
+	ctx           _context.Context
+	ApiService    *EtherApiService
+	moid          string
 	etherHostPort *EtherHostPort
-	ifMatch *string
+	ifMatch       *string
 }
 
 // The &#39;ether.HostPort&#39; resource to update.
@@ -2142,6 +2181,7 @@ func (r ApiUpdateEtherHostPortRequest) EtherHostPort(etherHostPort EtherHostPort
 	r.etherHostPort = &etherHostPort
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEtherHostPortRequest) IfMatch(ifMatch string) ApiUpdateEtherHostPortRequest {
 	r.ifMatch = &ifMatch
@@ -2162,8 +2202,8 @@ UpdateEtherHostPort Update a 'ether.HostPort' resource.
 func (a *EtherApiService) UpdateEtherHostPort(ctx _context.Context, moid string) ApiUpdateEtherHostPortRequest {
 	return ApiUpdateEtherHostPortRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2278,13 +2318,13 @@ func (a *EtherApiService) UpdateEtherHostPortExecute(r ApiUpdateEtherHostPortReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2301,11 +2341,11 @@ func (a *EtherApiService) UpdateEtherHostPortExecute(r ApiUpdateEtherHostPortReq
 }
 
 type ApiUpdateEtherNetworkPortRequest struct {
-	ctx _context.Context
-	ApiService *EtherApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *EtherApiService
+	moid             string
 	etherNetworkPort *EtherNetworkPort
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;ether.NetworkPort&#39; resource to update.
@@ -2313,6 +2353,7 @@ func (r ApiUpdateEtherNetworkPortRequest) EtherNetworkPort(etherNetworkPort Ethe
 	r.etherNetworkPort = &etherNetworkPort
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEtherNetworkPortRequest) IfMatch(ifMatch string) ApiUpdateEtherNetworkPortRequest {
 	r.ifMatch = &ifMatch
@@ -2333,8 +2374,8 @@ UpdateEtherNetworkPort Update a 'ether.NetworkPort' resource.
 func (a *EtherApiService) UpdateEtherNetworkPort(ctx _context.Context, moid string) ApiUpdateEtherNetworkPortRequest {
 	return ApiUpdateEtherNetworkPortRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2449,13 +2490,13 @@ func (a *EtherApiService) UpdateEtherNetworkPortExecute(r ApiUpdateEtherNetworkP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2472,11 +2513,11 @@ func (a *EtherApiService) UpdateEtherNetworkPortExecute(r ApiUpdateEtherNetworkP
 }
 
 type ApiUpdateEtherPhysicalPortRequest struct {
-	ctx _context.Context
-	ApiService *EtherApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *EtherApiService
+	moid              string
 	etherPhysicalPort *EtherPhysicalPort
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;ether.PhysicalPort&#39; resource to update.
@@ -2484,6 +2525,7 @@ func (r ApiUpdateEtherPhysicalPortRequest) EtherPhysicalPort(etherPhysicalPort E
 	r.etherPhysicalPort = &etherPhysicalPort
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateEtherPhysicalPortRequest) IfMatch(ifMatch string) ApiUpdateEtherPhysicalPortRequest {
 	r.ifMatch = &ifMatch
@@ -2504,8 +2546,8 @@ UpdateEtherPhysicalPort Update a 'ether.PhysicalPort' resource.
 func (a *EtherApiService) UpdateEtherPhysicalPort(ctx _context.Context, moid string) ApiUpdateEtherPhysicalPortRequest {
 	return ApiUpdateEtherPhysicalPortRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2620,13 +2662,13 @@ func (a *EtherApiService) UpdateEtherPhysicalPortExecute(r ApiUpdateEtherPhysica
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

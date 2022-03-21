@@ -18,32 +18,31 @@ import (
 
 // OsSupportedVersionResponse - The response body of a HTTP GET request for the 'os.SupportedVersion' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'os.SupportedVersion' resources.
 type OsSupportedVersionResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform   *MoAggregateTransform
+	MoDocumentCount        *MoDocumentCount
+	MoTagSummary           *MoTagSummary
 	OsSupportedVersionList *OsSupportedVersionList
 }
 
 // MoAggregateTransformAsOsSupportedVersionResponse is a convenience function that returns MoAggregateTransform wrapped in OsSupportedVersionResponse
 func MoAggregateTransformAsOsSupportedVersionResponse(v *MoAggregateTransform) OsSupportedVersionResponse {
-	return OsSupportedVersionResponse{ MoAggregateTransform: v}
+	return OsSupportedVersionResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsOsSupportedVersionResponse is a convenience function that returns MoDocumentCount wrapped in OsSupportedVersionResponse
 func MoDocumentCountAsOsSupportedVersionResponse(v *MoDocumentCount) OsSupportedVersionResponse {
-	return OsSupportedVersionResponse{ MoDocumentCount: v}
+	return OsSupportedVersionResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsOsSupportedVersionResponse is a convenience function that returns MoTagSummary wrapped in OsSupportedVersionResponse
 func MoTagSummaryAsOsSupportedVersionResponse(v *MoTagSummary) OsSupportedVersionResponse {
-	return OsSupportedVersionResponse{ MoTagSummary: v}
+	return OsSupportedVersionResponse{MoTagSummary: v}
 }
 
 // OsSupportedVersionListAsOsSupportedVersionResponse is a convenience function that returns OsSupportedVersionList wrapped in OsSupportedVersionResponse
 func OsSupportedVersionListAsOsSupportedVersionResponse(v *OsSupportedVersionList) OsSupportedVersionResponse {
-	return OsSupportedVersionResponse{ OsSupportedVersionList: v}
+	return OsSupportedVersionResponse{OsSupportedVersionList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *OsSupportedVersionResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src OsSupportedVersionResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *OsSupportedVersionResponse) GetActualInstance() (interface{}) {
+func (obj *OsSupportedVersionResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableOsSupportedVersionResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

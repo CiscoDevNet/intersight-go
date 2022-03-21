@@ -21,21 +21,21 @@ type ApplianceImageBundleAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType      string               `json:"ObjectType"`
 	AnsiblePackages []OnpremImagePackage `json:"AnsiblePackages,omitempty"`
 	// Indicates that the software upgrade was automatically initiated by the Intersight Appliance.
-	AutoUpgrade *bool `json:"AutoUpgrade,omitempty"`
-	DcPackages []OnpremImagePackage `json:"DcPackages,omitempty"`
+	AutoUpgrade   *bool                `json:"AutoUpgrade,omitempty"`
+	DcPackages    []OnpremImagePackage `json:"DcPackages,omitempty"`
 	DebugPackages []OnpremImagePackage `json:"DebugPackages,omitempty"`
 	// Short description of the software upgrade bundle.
-	Description *string `json:"Description,omitempty"`
+	Description      *string              `json:"Description,omitempty"`
 	EndpointPackages []OnpremImagePackage `json:"EndpointPackages,omitempty"`
 	// Fingerprint of the software manifest from which this bundle is created. Fingerprint is calculated using the SHA256 algorithm.
 	Fingerprint *string `json:"Fingerprint,omitempty"`
 	// Indicates that the ImageBundle has errors. The upgrade service sets this field when it encounters errors during the manifest processing.
-	HasError *bool `json:"HasError,omitempty"`
+	HasError      *bool                `json:"HasError,omitempty"`
 	InfraPackages []OnpremImagePackage `json:"InfraPackages,omitempty"`
-	InitPackages []OnpremImagePackage `json:"InitPackages,omitempty"`
+	InitPackages  []OnpremImagePackage `json:"InitPackages,omitempty"`
 	// Name of the software upgrade bundle.
 	Name *string `json:"Name,omitempty"`
 	// Detailed description of the software upgrade bundle.
@@ -43,12 +43,12 @@ type ApplianceImageBundleAllOf struct {
 	// Software upgrade manifest's upgrade priority. The upgrade service supports two priorities, Normal and Critical. Normal priority is used for regular software upgrades, and the upgrade service uses the Upgrade Policy to compute upgrade start time. Critical priority is used for the critical software security patches, and the upgrade service ignores the Upgrade Policy when it computes the upgrade start time. * `Normal` - Normal upgrade priority is used for all the software upgrades except for the critical security updates. The upgrade service of Intersight Appliance uses the Software Upgrade Policy settings to start the upgrade process. * `Critical` - Critical upgrade priority is used for critical updates such as security patches. The upgrade service of the Intersight Appliance starts the upgrade as specified by the upgrade properties in the software manifest file. The upgrade service will not use the settings specified in the Software Upgrade Policy.
 	Priority *string `json:"Priority,omitempty"`
 	// Software upgrade manifest's release date and time.
-	ReleaseTime *time.Time `json:"ReleaseTime,omitempty"`
+	ReleaseTime     *time.Time           `json:"ReleaseTime,omitempty"`
 	ServicePackages []OnpremImagePackage `json:"ServicePackages,omitempty"`
 	// Status message set during the manifest processing.
-	StatusMessage *string `json:"StatusMessage,omitempty"`
+	StatusMessage  *string              `json:"StatusMessage,omitempty"`
 	SystemPackages []OnpremImagePackage `json:"SystemPackages,omitempty"`
-	UiPackages []OnpremImagePackage `json:"UiPackages,omitempty"`
+	UiPackages     []OnpremImagePackage `json:"UiPackages,omitempty"`
 	// End date of the software upgrade process.
 	UpgradeEndTime *time.Time `json:"UpgradeEndTime,omitempty"`
 	// Grace period in seconds before the automatic upgrade is initiated. The upgrade service uses the grace period to compute the upgrade start time when it receives an upgrade notfication from the Intersight. If there is an Upgrade Policy configured for the Intersight Appliance, then the upgrade service uses the policy to compute the upgrade start time. However, the upgrade start time cannot not exceed the limit enforced by the grace period.
@@ -60,7 +60,7 @@ type ApplianceImageBundleAllOf struct {
 	// Start date of the software upgrade process.
 	UpgradeStartTime *time.Time `json:"UpgradeStartTime,omitempty"`
 	// Software upgrade manifest's version.
-	Version *string `json:"Version,omitempty"`
+	Version              *string `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -102,7 +102,7 @@ func (o *ApplianceImageBundleAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceImageBundleAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -126,7 +126,7 @@ func (o *ApplianceImageBundleAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceImageBundleAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -139,7 +139,7 @@ func (o *ApplianceImageBundleAllOf) SetObjectType(v string) {
 
 // GetAnsiblePackages returns the AnsiblePackages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceImageBundleAllOf) GetAnsiblePackages() []OnpremImagePackage {
-	if o == nil  {
+	if o == nil {
 		var ret []OnpremImagePackage
 		return ret
 	}
@@ -204,7 +204,7 @@ func (o *ApplianceImageBundleAllOf) SetAutoUpgrade(v bool) {
 
 // GetDcPackages returns the DcPackages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceImageBundleAllOf) GetDcPackages() []OnpremImagePackage {
-	if o == nil  {
+	if o == nil {
 		var ret []OnpremImagePackage
 		return ret
 	}
@@ -237,7 +237,7 @@ func (o *ApplianceImageBundleAllOf) SetDcPackages(v []OnpremImagePackage) {
 
 // GetDebugPackages returns the DebugPackages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceImageBundleAllOf) GetDebugPackages() []OnpremImagePackage {
-	if o == nil  {
+	if o == nil {
 		var ret []OnpremImagePackage
 		return ret
 	}
@@ -302,7 +302,7 @@ func (o *ApplianceImageBundleAllOf) SetDescription(v string) {
 
 // GetEndpointPackages returns the EndpointPackages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceImageBundleAllOf) GetEndpointPackages() []OnpremImagePackage {
-	if o == nil  {
+	if o == nil {
 		var ret []OnpremImagePackage
 		return ret
 	}
@@ -399,7 +399,7 @@ func (o *ApplianceImageBundleAllOf) SetHasError(v bool) {
 
 // GetInfraPackages returns the InfraPackages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceImageBundleAllOf) GetInfraPackages() []OnpremImagePackage {
-	if o == nil  {
+	if o == nil {
 		var ret []OnpremImagePackage
 		return ret
 	}
@@ -432,7 +432,7 @@ func (o *ApplianceImageBundleAllOf) SetInfraPackages(v []OnpremImagePackage) {
 
 // GetInitPackages returns the InitPackages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceImageBundleAllOf) GetInitPackages() []OnpremImagePackage {
-	if o == nil  {
+	if o == nil {
 		var ret []OnpremImagePackage
 		return ret
 	}
@@ -593,7 +593,7 @@ func (o *ApplianceImageBundleAllOf) SetReleaseTime(v time.Time) {
 
 // GetServicePackages returns the ServicePackages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceImageBundleAllOf) GetServicePackages() []OnpremImagePackage {
-	if o == nil  {
+	if o == nil {
 		var ret []OnpremImagePackage
 		return ret
 	}
@@ -658,7 +658,7 @@ func (o *ApplianceImageBundleAllOf) SetStatusMessage(v string) {
 
 // GetSystemPackages returns the SystemPackages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceImageBundleAllOf) GetSystemPackages() []OnpremImagePackage {
-	if o == nil  {
+	if o == nil {
 		var ret []OnpremImagePackage
 		return ret
 	}
@@ -691,7 +691,7 @@ func (o *ApplianceImageBundleAllOf) SetSystemPackages(v []OnpremImagePackage) {
 
 // GetUiPackages returns the UiPackages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceImageBundleAllOf) GetUiPackages() []OnpremImagePackage {
-	if o == nil  {
+	if o == nil {
 		var ret []OnpremImagePackage
 		return ret
 	}
@@ -1079,5 +1079,3 @@ func (v *NullableApplianceImageBundleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

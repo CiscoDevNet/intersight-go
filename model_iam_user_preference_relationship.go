@@ -19,19 +19,18 @@ import (
 // IamUserPreferenceRelationship - A relationship to the 'iam.UserPreference' resource, or the expanded 'iam.UserPreference' resource, or the 'null' value.
 type IamUserPreferenceRelationship struct {
 	IamUserPreference *IamUserPreference
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 }
 
 // IamUserPreferenceAsIamUserPreferenceRelationship is a convenience function that returns IamUserPreference wrapped in IamUserPreferenceRelationship
 func IamUserPreferenceAsIamUserPreferenceRelationship(v *IamUserPreference) IamUserPreferenceRelationship {
-	return IamUserPreferenceRelationship{ IamUserPreference: v}
+	return IamUserPreferenceRelationship{IamUserPreference: v}
 }
 
 // MoMoRefAsIamUserPreferenceRelationship is a convenience function that returns MoMoRef wrapped in IamUserPreferenceRelationship
 func MoMoRefAsIamUserPreferenceRelationship(v *MoMoRef) IamUserPreferenceRelationship {
-	return IamUserPreferenceRelationship{ MoMoRef: v}
+	return IamUserPreferenceRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamUserPreferenceRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamUserPreferenceRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamUserPreferenceRelationship) GetActualInstance() (interface{}) {
+func (obj *IamUserPreferenceRelationship) GetActualInstance() interface{} {
 	if obj.IamUserPreference != nil {
 		return obj.IamUserPreference
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamUserPreferenceRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

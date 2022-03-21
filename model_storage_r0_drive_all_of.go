@@ -26,8 +26,8 @@ type StorageR0DriveAllOf struct {
 	// The list of drive slots where RAID0 virtual drives must be created (comma seperated).
 	DriveSlotsList *string `json:"DriveSlotsList,omitempty"`
 	// If enabled, this will create a RAID0 virtual drive per disk and encompassing the whole disk.
-	Enable *bool `json:"Enable,omitempty"`
-	VirtualDrivePolicy NullableStorageVirtualDrivePolicy `json:"VirtualDrivePolicy,omitempty"`
+	Enable               *bool                             `json:"Enable,omitempty"`
+	VirtualDrivePolicy   NullableStorageVirtualDrivePolicy `json:"VirtualDrivePolicy,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *StorageR0DriveAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageR0DriveAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *StorageR0DriveAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageR0DriveAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -217,7 +217,7 @@ func (o *StorageR0DriveAllOf) GetVirtualDrivePolicy() StorageVirtualDrivePolicy 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageR0DriveAllOf) GetVirtualDrivePolicyOk() (*StorageVirtualDrivePolicy, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VirtualDrivePolicy.Get(), o.VirtualDrivePolicy.IsSet()
@@ -236,6 +236,7 @@ func (o *StorageR0DriveAllOf) HasVirtualDrivePolicy() bool {
 func (o *StorageR0DriveAllOf) SetVirtualDrivePolicy(v StorageVirtualDrivePolicy) {
 	o.VirtualDrivePolicy.Set(&v)
 }
+
 // SetVirtualDrivePolicyNil sets the value for VirtualDrivePolicy to be an explicit nil
 func (o *StorageR0DriveAllOf) SetVirtualDrivePolicyNil() {
 	o.VirtualDrivePolicy.Set(nil)
@@ -331,5 +332,3 @@ func (v *NullableStorageR0DriveAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

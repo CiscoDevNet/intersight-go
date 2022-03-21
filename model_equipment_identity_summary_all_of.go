@@ -36,7 +36,7 @@ type EquipmentIdentitySummaryAllOf struct {
 	// Describes whether the running CIMC version supports Intersight managed mode. * `Unknown` - The running firmware version is unknown. * `Supported` - The running firmware version is known and supports IMM mode. * `NotSupported` - The running firmware version is known and does not support IMM mode.
 	FirmwareSupportability *string `json:"FirmwareSupportability,omitempty"`
 	// Numeric Identifier assigned by the management system to the equipment.
-	Identifier *int64 `json:"Identifier,omitempty"`
+	Identifier         *int64                    `json:"Identifier,omitempty"`
 	IoCardIdentityList []EquipmentIoCardIdentity `json:"IoCardIdentityList,omitempty"`
 	// The equipment's lifecycle status. * `None` - Default state of an equipment. This should be an initial state when no state is defined for an equipment. * `Active` - Default Lifecycle State for a physical entity. * `Decommissioned` - Decommission Lifecycle state. * `DecommissionInProgress` - Decommission Inprogress Lifecycle state. * `RecommissionInProgress` - Recommission Inprogress Lifecycle state. * `OperationFailed` - Failed Operation Lifecycle state. * `ReackInProgress` - ReackInProgress Lifecycle state. * `RemoveInProgress` - RemoveInProgress Lifecycle state. * `Discovered` - Discovered Lifecycle state. * `DiscoveryInProgress` - DiscoveryInProgress Lifecycle state. * `DiscoveryFailed` - DiscoveryFailed Lifecycle state. * `FirmwareUpgradeInProgress` - Firmware upgrade is in progress on given physical entity. * `BladeMigrationInProgress` - Server slot migration is in progress on given physical entity. * `Inactive` - Inactive Lifecycle state. * `ReplaceInProgress` - ReplaceInProgress Lifecycle state. * `SlotMismatch` - The blade server is detected in a different chassis/slot than it was previously.
 	Lifecycle *string `json:"Lifecycle,omitempty"`
@@ -53,8 +53,8 @@ type EquipmentIdentitySummaryAllOf struct {
 	// Switch ID to which Fabric Extender is connected, ID can be either 1 or 2, equalent to A or B.
 	SwitchId *int64 `json:"SwitchId,omitempty"`
 	// The manufacturer of the equipment.
-	Vendor *string `json:"Vendor,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Vendor               *string                              `json:"Vendor,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -96,7 +96,7 @@ func (o *EquipmentIdentitySummaryAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentIdentitySummaryAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -120,7 +120,7 @@ func (o *EquipmentIdentitySummaryAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentIdentitySummaryAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -389,7 +389,7 @@ func (o *EquipmentIdentitySummaryAllOf) SetIdentifier(v int64) {
 
 // GetIoCardIdentityList returns the IoCardIdentityList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentIdentitySummaryAllOf) GetIoCardIdentityList() []EquipmentIoCardIdentity {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentIoCardIdentity
 		return ret
 	}
@@ -849,5 +849,3 @@ func (v *NullableEquipmentIdentitySummaryAllOf) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

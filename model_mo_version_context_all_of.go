@@ -21,15 +21,15 @@ type MoVersionContextAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType    string    `json:"ObjectType"`
 	InterestedMos []MoMoRef `json:"InterestedMos,omitempty"`
-	RefMo *MoMoRef `json:"RefMo,omitempty"`
+	RefMo         *MoMoRef  `json:"RefMo,omitempty"`
 	// The time this versioned Managed Object was created.
 	Timestamp *time.Time `json:"Timestamp,omitempty"`
 	// The version of the Managed Object, e.g. an incrementing number or a hash id.
 	Version *string `json:"Version,omitempty"`
 	// Specifies type of version. Currently the only supported value is \"Configured\" that is used to keep track of snapshots of policies and profiles that are intended to be configured to target endpoints. * `Modified` - Version created every time an object is modified. * `Configured` - Version created every time an object is configured to the service profile. * `Deployed` - Version created for objects related to a service profile when it is deployed.
-	VersionType *string `json:"VersionType,omitempty"`
+	VersionType          *string `json:"VersionType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *MoVersionContextAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MoVersionContextAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *MoVersionContextAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MoVersionContextAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -108,7 +108,7 @@ func (o *MoVersionContextAllOf) SetObjectType(v string) {
 
 // GetInterestedMos returns the InterestedMos field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MoVersionContextAllOf) GetInterestedMos() []MoMoRef {
-	if o == nil  {
+	if o == nil {
 		var ret []MoMoRef
 		return ret
 	}
@@ -356,5 +356,3 @@ func (v *NullableMoVersionContextAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

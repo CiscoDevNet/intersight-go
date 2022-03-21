@@ -20,30 +20,29 @@ import (
 type IppoolBlockLeaseResponse struct {
 	IppoolBlockLeaseList *IppoolBlockLeaseList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IppoolBlockLeaseListAsIppoolBlockLeaseResponse is a convenience function that returns IppoolBlockLeaseList wrapped in IppoolBlockLeaseResponse
 func IppoolBlockLeaseListAsIppoolBlockLeaseResponse(v *IppoolBlockLeaseList) IppoolBlockLeaseResponse {
-	return IppoolBlockLeaseResponse{ IppoolBlockLeaseList: v}
+	return IppoolBlockLeaseResponse{IppoolBlockLeaseList: v}
 }
 
 // MoAggregateTransformAsIppoolBlockLeaseResponse is a convenience function that returns MoAggregateTransform wrapped in IppoolBlockLeaseResponse
 func MoAggregateTransformAsIppoolBlockLeaseResponse(v *MoAggregateTransform) IppoolBlockLeaseResponse {
-	return IppoolBlockLeaseResponse{ MoAggregateTransform: v}
+	return IppoolBlockLeaseResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIppoolBlockLeaseResponse is a convenience function that returns MoDocumentCount wrapped in IppoolBlockLeaseResponse
 func MoDocumentCountAsIppoolBlockLeaseResponse(v *MoDocumentCount) IppoolBlockLeaseResponse {
-	return IppoolBlockLeaseResponse{ MoDocumentCount: v}
+	return IppoolBlockLeaseResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIppoolBlockLeaseResponse is a convenience function that returns MoTagSummary wrapped in IppoolBlockLeaseResponse
 func MoTagSummaryAsIppoolBlockLeaseResponse(v *MoTagSummary) IppoolBlockLeaseResponse {
-	return IppoolBlockLeaseResponse{ MoTagSummary: v}
+	return IppoolBlockLeaseResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IppoolBlockLeaseResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IppoolBlockLeaseResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IppoolBlockLeaseResponse) GetActualInstance() (interface{}) {
+func (obj *IppoolBlockLeaseResponse) GetActualInstance() interface{} {
 	if obj.IppoolBlockLeaseList != nil {
 		return obj.IppoolBlockLeaseList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIppoolBlockLeaseResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

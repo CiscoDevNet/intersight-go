@@ -31,8 +31,8 @@ type VirtualizationBaseHypervisorManager struct {
 	// The user provided name for the hypervisor manager. For example, vCenterIreland. Usually, this name is subject to manipulation by the user. It is not the identity of the hypervisor.
 	Name *string `json:"Name,omitempty"`
 	// Release version of the Hypervisor Manger (VMware vCenter Server 6.0.0 build-4541947).
-	Version *string `json:"Version,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Version              *string                              `json:"Version,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *VirtualizationBaseHypervisorManager) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBaseHypervisorManager) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *VirtualizationBaseHypervisorManager) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBaseHypervisorManager) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -317,7 +317,7 @@ func (o *VirtualizationBaseHypervisorManager) UnmarshalJSON(bytes []byte) (err e
 		// The user provided name for the hypervisor manager. For example, vCenterIreland. Usually, this name is subject to manipulation by the user. It is not the identity of the hypervisor.
 		Name *string `json:"Name,omitempty"`
 		// Release version of the Hypervisor Manger (VMware vCenter Server 6.0.0 build-4541947).
-		Version *string `json:"Version,omitempty"`
+		Version          *string                              `json:"Version,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -417,5 +417,3 @@ func (v *NullableVirtualizationBaseHypervisorManager) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

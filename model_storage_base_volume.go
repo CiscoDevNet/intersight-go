@@ -31,8 +31,8 @@ type StorageBaseVolume struct {
 	// Named entity of the volume.
 	Name *string `json:"Name,omitempty"`
 	// User provisioned volume size. It is the size exposed to host.
-	Size *int64 `json:"Size,omitempty"`
-	StorageUtilization NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
+	Size                 *int64                      `json:"Size,omitempty"`
+	StorageUtilization   NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *StorageBaseVolume) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseVolume) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *StorageBaseVolume) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseVolume) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -246,7 +246,7 @@ func (o *StorageBaseVolume) GetStorageUtilization() StorageBaseCapacity {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageBaseVolume) GetStorageUtilizationOk() (*StorageBaseCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StorageUtilization.Get(), o.StorageUtilization.IsSet()
@@ -265,6 +265,7 @@ func (o *StorageBaseVolume) HasStorageUtilization() bool {
 func (o *StorageBaseVolume) SetStorageUtilization(v StorageBaseCapacity) {
 	o.StorageUtilization.Set(&v)
 }
+
 // SetStorageUtilizationNil sets the value for StorageUtilization to be an explicit nil
 func (o *StorageBaseVolume) SetStorageUtilizationNil() {
 	o.StorageUtilization.Set(nil)
@@ -327,7 +328,7 @@ func (o *StorageBaseVolume) UnmarshalJSON(bytes []byte) (err error) {
 		// Named entity of the volume.
 		Name *string `json:"Name,omitempty"`
 		// User provisioned volume size. It is the size exposed to host.
-		Size *int64 `json:"Size,omitempty"`
+		Size               *int64                      `json:"Size,omitempty"`
 		StorageUtilization NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
 	}
 
@@ -427,5 +428,3 @@ func (v *NullableStorageBaseVolume) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

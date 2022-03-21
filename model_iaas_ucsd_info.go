@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // IaasUcsdInfo UCS Director accounts managed by Intersight.
@@ -49,11 +49,11 @@ type IaasUcsdInfo struct {
 	ConnectorPack []IaasConnectorPackRelationship `json:"ConnectorPack,omitempty"`
 	// An array of relationships to iaasDeviceStatus resources.
 	DeviceStatus []IaasDeviceStatusRelationship `json:"DeviceStatus,omitempty"`
-	LicenseInfo *IaasLicenseInfoRelationship `json:"LicenseInfo,omitempty"`
+	LicenseInfo  *IaasLicenseInfoRelationship   `json:"LicenseInfo,omitempty"`
 	// An array of relationships to iaasMostRunTasks resources.
-	MostRunTasks []IaasMostRunTasksRelationship `json:"MostRunTasks,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	UcsdManagedInfra *IaasUcsdManagedInfraRelationship `json:"UcsdManagedInfra,omitempty"`
+	MostRunTasks         []IaasMostRunTasksRelationship       `json:"MostRunTasks,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	UcsdManagedInfra     *IaasUcsdManagedInfraRelationship    `json:"UcsdManagedInfra,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -95,7 +95,7 @@ func (o *IaasUcsdInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IaasUcsdInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -119,7 +119,7 @@ func (o *IaasUcsdInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IaasUcsdInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -452,7 +452,7 @@ func (o *IaasUcsdInfo) SetStatus(v string) {
 
 // GetConnectorPack returns the ConnectorPack field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IaasUcsdInfo) GetConnectorPack() []IaasConnectorPackRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IaasConnectorPackRelationship
 		return ret
 	}
@@ -485,7 +485,7 @@ func (o *IaasUcsdInfo) SetConnectorPack(v []IaasConnectorPackRelationship) {
 
 // GetDeviceStatus returns the DeviceStatus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IaasUcsdInfo) GetDeviceStatus() []IaasDeviceStatusRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IaasDeviceStatusRelationship
 		return ret
 	}
@@ -550,7 +550,7 @@ func (o *IaasUcsdInfo) SetLicenseInfo(v IaasLicenseInfoRelationship) {
 
 // GetMostRunTasks returns the MostRunTasks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IaasUcsdInfo) GetMostRunTasks() []IaasMostRunTasksRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IaasMostRunTasksRelationship
 		return ret
 	}
@@ -747,11 +747,11 @@ func (o *IaasUcsdInfo) UnmarshalJSON(bytes []byte) (err error) {
 		ConnectorPack []IaasConnectorPackRelationship `json:"ConnectorPack,omitempty"`
 		// An array of relationships to iaasDeviceStatus resources.
 		DeviceStatus []IaasDeviceStatusRelationship `json:"DeviceStatus,omitempty"`
-		LicenseInfo *IaasLicenseInfoRelationship `json:"LicenseInfo,omitempty"`
+		LicenseInfo  *IaasLicenseInfoRelationship   `json:"LicenseInfo,omitempty"`
 		// An array of relationships to iaasMostRunTasks resources.
-		MostRunTasks []IaasMostRunTasksRelationship `json:"MostRunTasks,omitempty"`
+		MostRunTasks     []IaasMostRunTasksRelationship       `json:"MostRunTasks,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-		UcsdManagedInfra *IaasUcsdManagedInfraRelationship `json:"UcsdManagedInfra,omitempty"`
+		UcsdManagedInfra *IaasUcsdManagedInfraRelationship    `json:"UcsdManagedInfra,omitempty"`
 	}
 
 	varIaasUcsdInfoWithoutEmbeddedStruct := IaasUcsdInfoWithoutEmbeddedStruct{}
@@ -872,5 +872,3 @@ func (v *NullableIaasUcsdInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

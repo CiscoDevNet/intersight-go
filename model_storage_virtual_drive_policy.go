@@ -33,7 +33,7 @@ type StorageVirtualDrivePolicy struct {
 	// Desired strip size - Allowed values are 64KiB, 128KiB, 256KiB, 512KiB, 1024KiB. * `64` - Number of bytes in a strip is 64 Kibibytes. * `128` - Number of bytes in a strip is 128 Kibibytes. * `256` - Number of bytes in a strip is 256 Kibibytes. * `512` - Number of bytes in a strip is 512 Kibibytes. * `1024` - Number of bytes in a strip is 1024 Kibibytes or 1 Mebibyte.
 	StripSize *int32 `json:"StripSize,omitempty"`
 	// Write mode to be used to write data to this virtual drive. * `Default` - Use platform default write mode. * `WriteThrough` - Data is written through the cache and to the physical drives. Performance is improved, because subsequent reads of that data can be satisfied from the cache. * `WriteBackGoodBbu` - Data is stored in the cache, and is only written to the physical drives when space in the cache is needed. Virtual drives requesting this policy fall back to Write Through caching when the battery backup unit (BBU) cannot guarantee the safety of the cache in the event of a power failure. * `AlwaysWriteBack` - With this policy, write caching remains Write Back even if the battery backup unit is defective or discharged.
-	WritePolicy *string `json:"WritePolicy,omitempty"`
+	WritePolicy          *string `json:"WritePolicy,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -95,7 +95,7 @@ func (o *StorageVirtualDrivePolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageVirtualDrivePolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -119,7 +119,7 @@ func (o *StorageVirtualDrivePolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageVirtualDrivePolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -443,5 +443,3 @@ func (v *NullableStorageVirtualDrivePolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

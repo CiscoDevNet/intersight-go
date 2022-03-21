@@ -23,13 +23,13 @@ type NiatelemetrySiteInventory struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Apps []string `json:"Apps,omitempty"`
+	ObjectType string   `json:"ObjectType"`
+	Apps       []string `json:"Apps,omitempty"`
 	// Version of the specified site.
 	FirmwareVersion *string `json:"FirmwareVersion,omitempty"`
 	// Fine-grained type DCNM either SAN or LAN.
-	InstallType *string `json:"InstallType,omitempty"`
-	IpAddress []string `json:"IpAddress,omitempty"`
+	InstallType *string  `json:"InstallType,omitempty"`
+	IpAddress   []string `json:"IpAddress,omitempty"`
 	// Name of the APIC / DCNM site onboarded.
 	Name *string `json:"Name,omitempty"`
 	// Name of ND on which site has been onboarded.
@@ -39,8 +39,8 @@ type NiatelemetrySiteInventory struct {
 	// Specifies whether Site object is DCNM or APIC or ND.
 	RecordType *string `json:"RecordType,omitempty"`
 	// Type of site onboarded either APIC or DCNM.
-	Type *string `json:"Type,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Type                 *string                              `json:"Type,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *NiatelemetrySiteInventory) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetrySiteInventory) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *NiatelemetrySiteInventory) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetrySiteInventory) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -119,7 +119,7 @@ func (o *NiatelemetrySiteInventory) SetObjectType(v string) {
 
 // GetApps returns the Apps field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetrySiteInventory) GetApps() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *NiatelemetrySiteInventory) SetInstallType(v string) {
 
 // GetIpAddress returns the IpAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetrySiteInventory) GetIpAddress() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -498,13 +498,13 @@ func (o *NiatelemetrySiteInventory) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Apps []string `json:"Apps,omitempty"`
+		ObjectType string   `json:"ObjectType"`
+		Apps       []string `json:"Apps,omitempty"`
 		// Version of the specified site.
 		FirmwareVersion *string `json:"FirmwareVersion,omitempty"`
 		// Fine-grained type DCNM either SAN or LAN.
-		InstallType *string `json:"InstallType,omitempty"`
-		IpAddress []string `json:"IpAddress,omitempty"`
+		InstallType *string  `json:"InstallType,omitempty"`
+		IpAddress   []string `json:"IpAddress,omitempty"`
 		// Name of the APIC / DCNM site onboarded.
 		Name *string `json:"Name,omitempty"`
 		// Name of ND on which site has been onboarded.
@@ -514,7 +514,7 @@ func (o *NiatelemetrySiteInventory) UnmarshalJSON(bytes []byte) (err error) {
 		// Specifies whether Site object is DCNM or APIC or ND.
 		RecordType *string `json:"RecordType,omitempty"`
 		// Type of site onboarded either APIC or DCNM.
-		Type *string `json:"Type,omitempty"`
+		Type             *string                              `json:"Type,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -624,5 +624,3 @@ func (v *NullableNiatelemetrySiteInventory) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -22,8 +22,8 @@ type SdcardPartitionAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// This specifies the type of the partition. Allowed values are OS, Utility. * `OS` - This partition contains virtual drives where user can install operating system. * `Utility` - This partition contains virtual drives for utilities such as SCU, HUU, Drivers and Diagnostics.
-	Type *string `json:"Type,omitempty"`
-	VirtualDrives []SdcardVirtualDrive `json:"VirtualDrives,omitempty"`
+	Type                 *string              `json:"Type,omitempty"`
+	VirtualDrives        []SdcardVirtualDrive `json:"VirtualDrives,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *SdcardPartitionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SdcardPartitionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *SdcardPartitionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SdcardPartitionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -138,7 +138,7 @@ func (o *SdcardPartitionAllOf) SetType(v string) {
 
 // GetVirtualDrives returns the VirtualDrives field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SdcardPartitionAllOf) GetVirtualDrives() []SdcardVirtualDrive {
-	if o == nil  {
+	if o == nil {
 		var ret []SdcardVirtualDrive
 		return ret
 	}
@@ -246,5 +246,3 @@ func (v *NullableSdcardPartitionAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

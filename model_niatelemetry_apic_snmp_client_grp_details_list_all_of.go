@@ -20,7 +20,7 @@ type NiatelemetryApicSnmpClientGrpDetailsListAllOf struct {
 	// The total number of 'niatelemetry.ApicSnmpClientGrpDetails' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'niatelemetry.ApicSnmpClientGrpDetails' resources matching the request.
-	Results []NiatelemetryApicSnmpClientGrpDetails `json:"Results,omitempty"`
+	Results              []NiatelemetryApicSnmpClientGrpDetails `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *NiatelemetryApicSnmpClientGrpDetailsListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetryApicSnmpClientGrpDetailsListAllOf) GetResults() []NiatelemetryApicSnmpClientGrpDetails {
-	if o == nil  {
+	if o == nil {
 		var ret []NiatelemetryApicSnmpClientGrpDetails
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableNiatelemetryApicSnmpClientGrpDetailsListAllOf) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

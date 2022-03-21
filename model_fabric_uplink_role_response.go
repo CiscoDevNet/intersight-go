@@ -20,30 +20,29 @@ import (
 type FabricUplinkRoleResponse struct {
 	FabricUplinkRoleList *FabricUplinkRoleList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // FabricUplinkRoleListAsFabricUplinkRoleResponse is a convenience function that returns FabricUplinkRoleList wrapped in FabricUplinkRoleResponse
 func FabricUplinkRoleListAsFabricUplinkRoleResponse(v *FabricUplinkRoleList) FabricUplinkRoleResponse {
-	return FabricUplinkRoleResponse{ FabricUplinkRoleList: v}
+	return FabricUplinkRoleResponse{FabricUplinkRoleList: v}
 }
 
 // MoAggregateTransformAsFabricUplinkRoleResponse is a convenience function that returns MoAggregateTransform wrapped in FabricUplinkRoleResponse
 func MoAggregateTransformAsFabricUplinkRoleResponse(v *MoAggregateTransform) FabricUplinkRoleResponse {
-	return FabricUplinkRoleResponse{ MoAggregateTransform: v}
+	return FabricUplinkRoleResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsFabricUplinkRoleResponse is a convenience function that returns MoDocumentCount wrapped in FabricUplinkRoleResponse
 func MoDocumentCountAsFabricUplinkRoleResponse(v *MoDocumentCount) FabricUplinkRoleResponse {
-	return FabricUplinkRoleResponse{ MoDocumentCount: v}
+	return FabricUplinkRoleResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsFabricUplinkRoleResponse is a convenience function that returns MoTagSummary wrapped in FabricUplinkRoleResponse
 func MoTagSummaryAsFabricUplinkRoleResponse(v *MoTagSummary) FabricUplinkRoleResponse {
-	return FabricUplinkRoleResponse{ MoTagSummary: v}
+	return FabricUplinkRoleResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FabricUplinkRoleResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src FabricUplinkRoleResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FabricUplinkRoleResponse) GetActualInstance() (interface{}) {
+func (obj *FabricUplinkRoleResponse) GetActualInstance() interface{} {
 	if obj.FabricUplinkRoleList != nil {
 		return obj.FabricUplinkRoleList
 	}
@@ -184,5 +183,3 @@ func (v *NullableFabricUplinkRoleResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

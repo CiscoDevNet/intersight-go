@@ -25,10 +25,10 @@ type OsTemplateFile struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The name of the OS Template File that user uploads for unattended installation.
-	Name *string `json:"Name,omitempty"`
+	Name         *string  `json:"Name,omitempty"`
 	Placeholders []string `json:"Placeholders,omitempty"`
 	// The content of the entire template file is stored as value. The content can either be a static file content or a template content. The template is expected to conform to the golang template syntax.  The placeholders, if any, would be populated and the values provided would be  used to populate this template.
-	TemplateContent *string `json:"TemplateContent,omitempty"`
+	TemplateContent      *string `json:"TemplateContent,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *OsTemplateFile) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OsTemplateFile) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *OsTemplateFile) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OsTemplateFile) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -139,7 +139,7 @@ func (o *OsTemplateFile) SetName(v string) {
 
 // GetPlaceholders returns the Placeholders field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsTemplateFile) GetPlaceholders() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -242,7 +242,7 @@ func (o *OsTemplateFile) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The name of the OS Template File that user uploads for unattended installation.
-		Name *string `json:"Name,omitempty"`
+		Name         *string  `json:"Name,omitempty"`
 		Placeholders []string `json:"Placeholders,omitempty"`
 		// The content of the entire template file is stored as value. The content can either be a static file content or a template content. The template is expected to conform to the golang template syntax.  The placeholders, if any, would be populated and the values provided would be  used to populate this template.
 		TemplateContent *string `json:"TemplateContent,omitempty"`
@@ -340,5 +340,3 @@ func (v *NullableOsTemplateFile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

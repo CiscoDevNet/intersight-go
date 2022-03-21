@@ -23,23 +23,23 @@ type StorageNetAppCluster struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	AvgPerformanceMetrics *StorageNetAppPerformanceMetricsAverage `json:"AvgPerformanceMetrics,omitempty"`
-	ClusterEfficiency NullableStorageNetAppStorageClusterEfficiency `json:"ClusterEfficiency,omitempty"`
+	ObjectType            string                                        `json:"ObjectType"`
+	AvgPerformanceMetrics *StorageNetAppPerformanceMetricsAverage       `json:"AvgPerformanceMetrics,omitempty"`
+	ClusterEfficiency     NullableStorageNetAppStorageClusterEfficiency `json:"ClusterEfficiency,omitempty"`
 	// The health status of the cluster. Possible states are ok, ok-with-suppressed, degraded, and unreachable. * `Unreachable` - Cluster status is unreachable. * `OK` - Cluster status is either ok or ok-with-suppressed. * `Degraded` - Cluster status is degraded.
-	ClusterHealthStatus *string `json:"ClusterHealthStatus,omitempty"`
-	DnsDomains []string `json:"DnsDomains,omitempty"`
+	ClusterHealthStatus *string  `json:"ClusterHealthStatus,omitempty"`
+	DnsDomains          []string `json:"DnsDomains,omitempty"`
 	// Unique identifier of NetApp Cluster across data center.
 	Key *string `json:"Key,omitempty"`
 	// Location of the storage controller.
 	Location *string `json:"Location,omitempty"`
 	// FQDN or IP Address of Storage Cluster.
-	ManagementAddress *string `json:"ManagementAddress,omitempty"`
-	NameServers []string `json:"NameServers,omitempty"`
-	NtpServers []string `json:"NtpServers,omitempty"`
+	ManagementAddress *string  `json:"ManagementAddress,omitempty"`
+	NameServers       []string `json:"NameServers,omitempty"`
+	NtpServers        []string `json:"NtpServers,omitempty"`
 	// An array of relationships to storageNetAppClusterEvent resources.
-	Events []StorageNetAppClusterEventRelationship `json:"Events,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Events               []StorageNetAppClusterEventRelationship `json:"Events,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *StorageNetAppCluster) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppCluster) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *StorageNetAppCluster) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppCluster) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -161,7 +161,7 @@ func (o *StorageNetAppCluster) GetClusterEfficiency() StorageNetAppStorageCluste
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageNetAppCluster) GetClusterEfficiencyOk() (*StorageNetAppStorageClusterEfficiency, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ClusterEfficiency.Get(), o.ClusterEfficiency.IsSet()
@@ -180,6 +180,7 @@ func (o *StorageNetAppCluster) HasClusterEfficiency() bool {
 func (o *StorageNetAppCluster) SetClusterEfficiency(v StorageNetAppStorageClusterEfficiency) {
 	o.ClusterEfficiency.Set(&v)
 }
+
 // SetClusterEfficiencyNil sets the value for ClusterEfficiency to be an explicit nil
 func (o *StorageNetAppCluster) SetClusterEfficiencyNil() {
 	o.ClusterEfficiency.Set(nil)
@@ -224,7 +225,7 @@ func (o *StorageNetAppCluster) SetClusterHealthStatus(v string) {
 
 // GetDnsDomains returns the DnsDomains field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppCluster) GetDnsDomains() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -353,7 +354,7 @@ func (o *StorageNetAppCluster) SetManagementAddress(v string) {
 
 // GetNameServers returns the NameServers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppCluster) GetNameServers() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -386,7 +387,7 @@ func (o *StorageNetAppCluster) SetNameServers(v []string) {
 
 // GetNtpServers returns the NtpServers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppCluster) GetNtpServers() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -419,7 +420,7 @@ func (o *StorageNetAppCluster) SetNtpServers(v []string) {
 
 // GetEvents returns the Events field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppCluster) GetEvents() []StorageNetAppClusterEventRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppClusterEventRelationship
 		return ret
 	}
@@ -544,23 +545,23 @@ func (o *StorageNetAppCluster) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		AvgPerformanceMetrics *StorageNetAppPerformanceMetricsAverage `json:"AvgPerformanceMetrics,omitempty"`
-		ClusterEfficiency NullableStorageNetAppStorageClusterEfficiency `json:"ClusterEfficiency,omitempty"`
+		ObjectType            string                                        `json:"ObjectType"`
+		AvgPerformanceMetrics *StorageNetAppPerformanceMetricsAverage       `json:"AvgPerformanceMetrics,omitempty"`
+		ClusterEfficiency     NullableStorageNetAppStorageClusterEfficiency `json:"ClusterEfficiency,omitempty"`
 		// The health status of the cluster. Possible states are ok, ok-with-suppressed, degraded, and unreachable. * `Unreachable` - Cluster status is unreachable. * `OK` - Cluster status is either ok or ok-with-suppressed. * `Degraded` - Cluster status is degraded.
-		ClusterHealthStatus *string `json:"ClusterHealthStatus,omitempty"`
-		DnsDomains []string `json:"DnsDomains,omitempty"`
+		ClusterHealthStatus *string  `json:"ClusterHealthStatus,omitempty"`
+		DnsDomains          []string `json:"DnsDomains,omitempty"`
 		// Unique identifier of NetApp Cluster across data center.
 		Key *string `json:"Key,omitempty"`
 		// Location of the storage controller.
 		Location *string `json:"Location,omitempty"`
 		// FQDN or IP Address of Storage Cluster.
-		ManagementAddress *string `json:"ManagementAddress,omitempty"`
-		NameServers []string `json:"NameServers,omitempty"`
-		NtpServers []string `json:"NtpServers,omitempty"`
+		ManagementAddress *string  `json:"ManagementAddress,omitempty"`
+		NameServers       []string `json:"NameServers,omitempty"`
+		NtpServers        []string `json:"NtpServers,omitempty"`
 		// An array of relationships to storageNetAppClusterEvent resources.
-		Events []StorageNetAppClusterEventRelationship `json:"Events,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		Events           []StorageNetAppClusterEventRelationship `json:"Events,omitempty"`
+		RegisteredDevice *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	}
 
 	varStorageNetAppClusterWithoutEmbeddedStruct := StorageNetAppClusterWithoutEmbeddedStruct{}
@@ -671,5 +672,3 @@ func (v *NullableStorageNetAppCluster) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

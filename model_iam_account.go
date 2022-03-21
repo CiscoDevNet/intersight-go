@@ -43,12 +43,12 @@ type IamAccount struct {
 	// An array of relationships to iamPrivilegeSet resources.
 	PrivilegeSets []IamPrivilegeSetRelationship `json:"PrivilegeSets,omitempty"`
 	// An array of relationships to iamPrivilege resources.
-	Privileges []IamPrivilegeRelationship `json:"Privileges,omitempty"`
+	Privileges     []IamPrivilegeRelationship     `json:"Privileges,omitempty"`
 	ResourceLimits *IamResourceLimitsRelationship `json:"ResourceLimits,omitempty"`
 	// An array of relationships to iamRole resources.
-	Roles []IamRoleRelationship `json:"Roles,omitempty"`
-	SecurityHolder *IamSecurityHolderRelationship `json:"SecurityHolder,omitempty"`
-	SessionLimits *IamSessionLimitsRelationship `json:"SessionLimits,omitempty"`
+	Roles                []IamRoleRelationship          `json:"Roles,omitempty"`
+	SecurityHolder       *IamSecurityHolderRelationship `json:"SecurityHolder,omitempty"`
+	SessionLimits        *IamSessionLimitsRelationship  `json:"SessionLimits,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -90,7 +90,7 @@ func (o *IamAccount) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamAccount) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -114,7 +114,7 @@ func (o *IamAccount) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamAccount) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -191,7 +191,7 @@ func (o *IamAccount) SetStatus(v string) {
 
 // GetAppRegistrations returns the AppRegistrations field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccount) GetAppRegistrations() []IamAppRegistrationRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamAppRegistrationRelationship
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *IamAccount) SetAppRegistrations(v []IamAppRegistrationRelationship) {
 
 // GetDomainGroups returns the DomainGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccount) GetDomainGroups() []IamDomainGroupRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamDomainGroupRelationship
 		return ret
 	}
@@ -257,7 +257,7 @@ func (o *IamAccount) SetDomainGroups(v []IamDomainGroupRelationship) {
 
 // GetEndPointRoles returns the EndPointRoles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccount) GetEndPointRoles() []IamEndPointRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamEndPointRoleRelationship
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *IamAccount) SetEndPointRoles(v []IamEndPointRoleRelationship) {
 
 // GetIdpreferences returns the Idpreferences field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccount) GetIdpreferences() []IamIdpReferenceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamIdpReferenceRelationship
 		return ret
 	}
@@ -323,7 +323,7 @@ func (o *IamAccount) SetIdpreferences(v []IamIdpReferenceRelationship) {
 
 // GetIdps returns the Idps field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccount) GetIdps() []IamIdpRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamIdpRelationship
 		return ret
 	}
@@ -356,7 +356,7 @@ func (o *IamAccount) SetIdps(v []IamIdpRelationship) {
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccount) GetPermissions() []IamPermissionRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPermissionRelationship
 		return ret
 	}
@@ -389,7 +389,7 @@ func (o *IamAccount) SetPermissions(v []IamPermissionRelationship) {
 
 // GetPrivilegeSets returns the PrivilegeSets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccount) GetPrivilegeSets() []IamPrivilegeSetRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPrivilegeSetRelationship
 		return ret
 	}
@@ -422,7 +422,7 @@ func (o *IamAccount) SetPrivilegeSets(v []IamPrivilegeSetRelationship) {
 
 // GetPrivileges returns the Privileges field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccount) GetPrivileges() []IamPrivilegeRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPrivilegeRelationship
 		return ret
 	}
@@ -487,7 +487,7 @@ func (o *IamAccount) SetResourceLimits(v IamResourceLimitsRelationship) {
 
 // GetRoles returns the Roles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccount) GetRoles() []IamRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamRoleRelationship
 		return ret
 	}
@@ -673,12 +673,12 @@ func (o *IamAccount) UnmarshalJSON(bytes []byte) (err error) {
 		// An array of relationships to iamPrivilegeSet resources.
 		PrivilegeSets []IamPrivilegeSetRelationship `json:"PrivilegeSets,omitempty"`
 		// An array of relationships to iamPrivilege resources.
-		Privileges []IamPrivilegeRelationship `json:"Privileges,omitempty"`
+		Privileges     []IamPrivilegeRelationship     `json:"Privileges,omitempty"`
 		ResourceLimits *IamResourceLimitsRelationship `json:"ResourceLimits,omitempty"`
 		// An array of relationships to iamRole resources.
-		Roles []IamRoleRelationship `json:"Roles,omitempty"`
+		Roles          []IamRoleRelationship          `json:"Roles,omitempty"`
 		SecurityHolder *IamSecurityHolderRelationship `json:"SecurityHolder,omitempty"`
-		SessionLimits *IamSessionLimitsRelationship `json:"SessionLimits,omitempty"`
+		SessionLimits  *IamSessionLimitsRelationship  `json:"SessionLimits,omitempty"`
 	}
 
 	varIamAccountWithoutEmbeddedStruct := IamAccountWithoutEmbeddedStruct{}
@@ -795,5 +795,3 @@ func (v *NullableIamAccount) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

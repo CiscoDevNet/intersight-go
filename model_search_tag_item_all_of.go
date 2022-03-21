@@ -24,8 +24,8 @@ type SearchTagItemAllOf struct {
 	// The number of times this tag key has been set across all resources.
 	Count *int64 `json:"Count,omitempty"`
 	// Key of the Tag from all the resources in Intersight.
-	Key *string `json:"Key,omitempty"`
-	Values []string `json:"Values,omitempty"`
+	Key                  *string  `json:"Key,omitempty"`
+	Values               []string `json:"Values,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *SearchTagItemAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SearchTagItemAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *SearchTagItemAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SearchTagItemAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -168,7 +168,7 @@ func (o *SearchTagItemAllOf) SetKey(v string) {
 
 // GetValues returns the Values field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SearchTagItemAllOf) GetValues() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -280,5 +280,3 @@ func (v *NullableSearchTagItemAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

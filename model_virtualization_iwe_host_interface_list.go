@@ -23,7 +23,7 @@ type VirtualizationIweHostInterfaceList struct {
 	// The total number of 'virtualization.IweHostInterface' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'virtualization.IweHostInterface' resources matching the request.
-	Results []VirtualizationIweHostInterface `json:"Results,omitempty"`
+	Results              []VirtualizationIweHostInterface `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *VirtualizationIweHostInterfaceList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationIweHostInterfaceList) GetResults() []VirtualizationIweHostInterface {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationIweHostInterface
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableVirtualizationIweHostInterfaceList) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

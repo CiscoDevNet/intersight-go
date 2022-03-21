@@ -39,7 +39,7 @@ type FabricQosClass struct {
 	// If enabled, this QoS class will allow packet drops within an acceptable limit.
 	PacketDrop *bool `json:"PacketDrop,omitempty"`
 	// The weight of the QoS Class controls the distribution of bandwidth between QoS Classes, with the same priority after the Guarantees for the QoS Classes are reached.
-	Weight *int64 `json:"Weight,omitempty"`
+	Weight               *int64 `json:"Weight,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -101,7 +101,7 @@ func (o *FabricQosClass) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricQosClass) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -125,7 +125,7 @@ func (o *FabricQosClass) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricQosClass) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -566,5 +566,3 @@ func (v *NullableFabricQosClass) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

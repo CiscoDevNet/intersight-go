@@ -27,8 +27,8 @@ type KubernetesAbstractNode struct {
 	// Kubernetes metadata annotations for a Node.
 	Annotations interface{} `json:"Annotations,omitempty"`
 	// Kubernetes metadata labels for a Node.
-	Labels interface{} `json:"Labels,omitempty"`
-	Taints []KubernetesTaint `json:"Taints,omitempty"`
+	Labels               interface{}       `json:"Labels,omitempty"`
+	Taints               []KubernetesTaint `json:"Taints,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *KubernetesAbstractNode) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAbstractNode) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *KubernetesAbstractNode) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAbstractNode) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -107,7 +107,7 @@ func (o *KubernetesAbstractNode) SetObjectType(v string) {
 
 // GetAnnotations returns the Annotations field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesAbstractNode) GetAnnotations() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *KubernetesAbstractNode) SetAnnotations(v interface{}) {
 
 // GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesAbstractNode) GetLabels() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *KubernetesAbstractNode) SetLabels(v interface{}) {
 
 // GetTaints returns the Taints field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesAbstractNode) GetTaints() []KubernetesTaint {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesTaint
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *KubernetesAbstractNode) UnmarshalJSON(bytes []byte) (err error) {
 		// Kubernetes metadata annotations for a Node.
 		Annotations interface{} `json:"Annotations,omitempty"`
 		// Kubernetes metadata labels for a Node.
-		Labels interface{} `json:"Labels,omitempty"`
+		Labels interface{}       `json:"Labels,omitempty"`
 		Taints []KubernetesTaint `json:"Taints,omitempty"`
 	}
 
@@ -342,5 +342,3 @@ func (v *NullableKubernetesAbstractNode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

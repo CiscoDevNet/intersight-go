@@ -24,7 +24,7 @@ type ConnectorXmlApiMessageAllOf struct {
 	// Flag to disable authentication bypassing. If set to true it is expected a valid cookie/login is provided within the XML API request body.
 	WithAuth *bool `json:"WithAuth,omitempty"`
 	// The XML request body to proxy to the platform.
-	XmlRequest *string `json:"XmlRequest,omitempty"`
+	XmlRequest           *string `json:"XmlRequest,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *ConnectorXmlApiMessageAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorXmlApiMessageAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *ConnectorXmlApiMessageAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorXmlApiMessageAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -242,5 +242,3 @@ func (v *NullableConnectorXmlApiMessageAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

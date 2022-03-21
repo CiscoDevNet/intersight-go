@@ -18,20 +18,19 @@ import (
 
 // VnicFcQosPolicyRelationship - A relationship to the 'vnic.FcQosPolicy' resource, or the expanded 'vnic.FcQosPolicy' resource, or the 'null' value.
 type VnicFcQosPolicyRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef         *MoMoRef
 	VnicFcQosPolicy *VnicFcQosPolicy
 }
 
 // MoMoRefAsVnicFcQosPolicyRelationship is a convenience function that returns MoMoRef wrapped in VnicFcQosPolicyRelationship
 func MoMoRefAsVnicFcQosPolicyRelationship(v *MoMoRef) VnicFcQosPolicyRelationship {
-	return VnicFcQosPolicyRelationship{ MoMoRef: v}
+	return VnicFcQosPolicyRelationship{MoMoRef: v}
 }
 
 // VnicFcQosPolicyAsVnicFcQosPolicyRelationship is a convenience function that returns VnicFcQosPolicy wrapped in VnicFcQosPolicyRelationship
 func VnicFcQosPolicyAsVnicFcQosPolicyRelationship(v *VnicFcQosPolicy) VnicFcQosPolicyRelationship {
-	return VnicFcQosPolicyRelationship{ VnicFcQosPolicy: v}
+	return VnicFcQosPolicyRelationship{VnicFcQosPolicy: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VnicFcQosPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src VnicFcQosPolicyRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *VnicFcQosPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *VnicFcQosPolicyRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableVnicFcQosPolicyRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -41,7 +41,7 @@ type HyperflexHxRegistrationDetailsDt struct {
 	// Registration Status
 	Status *string `json:"Status,omitempty"`
 	// Virtual Account mapped to cluster
-	VirtualAccount *string `json:"VirtualAccount,omitempty"`
+	VirtualAccount       *string `json:"VirtualAccount,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -83,7 +83,7 @@ func (o *HyperflexHxRegistrationDetailsDt) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHxRegistrationDetailsDt) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -107,7 +107,7 @@ func (o *HyperflexHxRegistrationDetailsDt) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHxRegistrationDetailsDt) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -587,5 +587,3 @@ func (v *NullableHyperflexHxRegistrationDetailsDt) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

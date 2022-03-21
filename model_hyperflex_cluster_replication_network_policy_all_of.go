@@ -22,14 +22,14 @@ type HyperflexClusterReplicationNetworkPolicyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Bandwidth for the Replication network in Mbps.
-	ReplicationBandwidthMbps *int64 `json:"ReplicationBandwidthMbps,omitempty"`
-	ReplicationIpranges []HyperflexIpAddrRange `json:"ReplicationIpranges,omitempty"`
+	ReplicationBandwidthMbps *int64                 `json:"ReplicationBandwidthMbps,omitempty"`
+	ReplicationIpranges      []HyperflexIpAddrRange `json:"ReplicationIpranges,omitempty"`
 	// MTU for the Replication network.
-	ReplicationMtu *int64 `json:"ReplicationMtu,omitempty"`
+	ReplicationMtu  *int64                     `json:"ReplicationMtu,omitempty"`
 	ReplicationVlan NullableHyperflexNamedVlan `json:"ReplicationVlan,omitempty"`
 	// An array of relationships to hyperflexClusterProfile resources.
-	ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ClusterProfiles      []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *HyperflexClusterReplicationNetworkPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexClusterReplicationNetworkPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *HyperflexClusterReplicationNetworkPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexClusterReplicationNetworkPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -148,7 +148,7 @@ func (o *HyperflexClusterReplicationNetworkPolicyAllOf) SetReplicationBandwidthM
 
 // GetReplicationIpranges returns the ReplicationIpranges field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexClusterReplicationNetworkPolicyAllOf) GetReplicationIpranges() []HyperflexIpAddrRange {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexIpAddrRange
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *HyperflexClusterReplicationNetworkPolicyAllOf) GetReplicationVlan() Hyp
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexClusterReplicationNetworkPolicyAllOf) GetReplicationVlanOk() (*HyperflexNamedVlan, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ReplicationVlan.Get(), o.ReplicationVlan.IsSet()
@@ -243,6 +243,7 @@ func (o *HyperflexClusterReplicationNetworkPolicyAllOf) HasReplicationVlan() boo
 func (o *HyperflexClusterReplicationNetworkPolicyAllOf) SetReplicationVlan(v HyperflexNamedVlan) {
 	o.ReplicationVlan.Set(&v)
 }
+
 // SetReplicationVlanNil sets the value for ReplicationVlan to be an explicit nil
 func (o *HyperflexClusterReplicationNetworkPolicyAllOf) SetReplicationVlanNil() {
 	o.ReplicationVlan.Set(nil)
@@ -255,7 +256,7 @@ func (o *HyperflexClusterReplicationNetworkPolicyAllOf) UnsetReplicationVlan() {
 
 // GetClusterProfiles returns the ClusterProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexClusterReplicationNetworkPolicyAllOf) GetClusterProfiles() []HyperflexClusterProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexClusterProfileRelationship
 		return ret
 	}
@@ -411,5 +412,3 @@ func (v *NullableHyperflexClusterReplicationNetworkPolicyAllOf) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

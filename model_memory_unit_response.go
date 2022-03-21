@@ -18,32 +18,31 @@ import (
 
 // MemoryUnitResponse - The response body of a HTTP GET request for the 'memory.Unit' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'memory.Unit' resources.
 type MemoryUnitResponse struct {
-	MemoryUnitList *MemoryUnitList
+	MemoryUnitList       *MemoryUnitList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // MemoryUnitListAsMemoryUnitResponse is a convenience function that returns MemoryUnitList wrapped in MemoryUnitResponse
 func MemoryUnitListAsMemoryUnitResponse(v *MemoryUnitList) MemoryUnitResponse {
-	return MemoryUnitResponse{ MemoryUnitList: v}
+	return MemoryUnitResponse{MemoryUnitList: v}
 }
 
 // MoAggregateTransformAsMemoryUnitResponse is a convenience function that returns MoAggregateTransform wrapped in MemoryUnitResponse
 func MoAggregateTransformAsMemoryUnitResponse(v *MoAggregateTransform) MemoryUnitResponse {
-	return MemoryUnitResponse{ MoAggregateTransform: v}
+	return MemoryUnitResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsMemoryUnitResponse is a convenience function that returns MoDocumentCount wrapped in MemoryUnitResponse
 func MoDocumentCountAsMemoryUnitResponse(v *MoDocumentCount) MemoryUnitResponse {
-	return MemoryUnitResponse{ MoDocumentCount: v}
+	return MemoryUnitResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsMemoryUnitResponse is a convenience function that returns MoTagSummary wrapped in MemoryUnitResponse
 func MoTagSummaryAsMemoryUnitResponse(v *MoTagSummary) MemoryUnitResponse {
-	return MemoryUnitResponse{ MoTagSummary: v}
+	return MemoryUnitResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MemoryUnitResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src MemoryUnitResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *MemoryUnitResponse) GetActualInstance() (interface{}) {
+func (obj *MemoryUnitResponse) GetActualInstance() interface{} {
 	if obj.MemoryUnitList != nil {
 		return obj.MemoryUnitList
 	}
@@ -184,5 +183,3 @@ func (v *NullableMemoryUnitResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

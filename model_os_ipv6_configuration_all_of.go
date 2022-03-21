@@ -20,8 +20,8 @@ type OsIpv6ConfigurationAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	IpV6Config NullableCommIpV6Interface `json:"IpV6Config,omitempty"`
+	ObjectType           string                    `json:"ObjectType"`
+	IpV6Config           NullableCommIpV6Interface `json:"IpV6Config,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -63,7 +63,7 @@ func (o *OsIpv6ConfigurationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OsIpv6ConfigurationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -87,7 +87,7 @@ func (o *OsIpv6ConfigurationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OsIpv6ConfigurationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -111,7 +111,7 @@ func (o *OsIpv6ConfigurationAllOf) GetIpV6Config() CommIpV6Interface {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsIpv6ConfigurationAllOf) GetIpV6ConfigOk() (*CommIpV6Interface, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IpV6Config.Get(), o.IpV6Config.IsSet()
@@ -130,6 +130,7 @@ func (o *OsIpv6ConfigurationAllOf) HasIpV6Config() bool {
 func (o *OsIpv6ConfigurationAllOf) SetIpV6Config(v CommIpV6Interface) {
 	o.IpV6Config.Set(&v)
 }
+
 // SetIpV6ConfigNil sets the value for IpV6Config to be an explicit nil
 func (o *OsIpv6ConfigurationAllOf) SetIpV6ConfigNil() {
 	o.IpV6Config.Set(nil)
@@ -213,5 +214,3 @@ func (v *NullableOsIpv6ConfigurationAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

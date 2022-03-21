@@ -19,19 +19,18 @@ import (
 // CloudRegionsRelationship - A relationship to the 'cloud.Regions' resource, or the expanded 'cloud.Regions' resource, or the 'null' value.
 type CloudRegionsRelationship struct {
 	CloudRegions *CloudRegions
-	MoMoRef *MoMoRef
+	MoMoRef      *MoMoRef
 }
 
 // CloudRegionsAsCloudRegionsRelationship is a convenience function that returns CloudRegions wrapped in CloudRegionsRelationship
 func CloudRegionsAsCloudRegionsRelationship(v *CloudRegions) CloudRegionsRelationship {
-	return CloudRegionsRelationship{ CloudRegions: v}
+	return CloudRegionsRelationship{CloudRegions: v}
 }
 
 // MoMoRefAsCloudRegionsRelationship is a convenience function that returns MoMoRef wrapped in CloudRegionsRelationship
 func MoMoRefAsCloudRegionsRelationship(v *MoMoRef) CloudRegionsRelationship {
-	return CloudRegionsRelationship{ MoMoRef: v}
+	return CloudRegionsRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CloudRegionsRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src CloudRegionsRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CloudRegionsRelationship) GetActualInstance() (interface{}) {
+func (obj *CloudRegionsRelationship) GetActualInstance() interface{} {
 	if obj.CloudRegions != nil {
 		return obj.CloudRegions
 	}
@@ -137,5 +136,3 @@ func (v *NullableCloudRegionsRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

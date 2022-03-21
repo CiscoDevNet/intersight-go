@@ -18,20 +18,19 @@ import (
 
 // StorageHitachiParityGroupRelationship - A relationship to the 'storage.HitachiParityGroup' resource, or the expanded 'storage.HitachiParityGroup' resource, or the 'null' value.
 type StorageHitachiParityGroupRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                   *MoMoRef
 	StorageHitachiParityGroup *StorageHitachiParityGroup
 }
 
 // MoMoRefAsStorageHitachiParityGroupRelationship is a convenience function that returns MoMoRef wrapped in StorageHitachiParityGroupRelationship
 func MoMoRefAsStorageHitachiParityGroupRelationship(v *MoMoRef) StorageHitachiParityGroupRelationship {
-	return StorageHitachiParityGroupRelationship{ MoMoRef: v}
+	return StorageHitachiParityGroupRelationship{MoMoRef: v}
 }
 
 // StorageHitachiParityGroupAsStorageHitachiParityGroupRelationship is a convenience function that returns StorageHitachiParityGroup wrapped in StorageHitachiParityGroupRelationship
 func StorageHitachiParityGroupAsStorageHitachiParityGroupRelationship(v *StorageHitachiParityGroup) StorageHitachiParityGroupRelationship {
-	return StorageHitachiParityGroupRelationship{ StorageHitachiParityGroup: v}
+	return StorageHitachiParityGroupRelationship{StorageHitachiParityGroup: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageHitachiParityGroupRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageHitachiParityGroupRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageHitachiParityGroupRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageHitachiParityGroupRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageHitachiParityGroupRelationship) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

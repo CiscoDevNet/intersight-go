@@ -23,7 +23,7 @@ type ServerProfileList struct {
 	// The total number of 'server.Profile' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'server.Profile' resources matching the request.
-	Results []ServerProfile `json:"Results,omitempty"`
+	Results              []ServerProfile `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *ServerProfileList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ServerProfileList) GetResults() []ServerProfile {
-	if o == nil  {
+	if o == nil {
 		var ret []ServerProfile
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableServerProfileList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

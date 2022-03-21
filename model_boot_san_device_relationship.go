@@ -19,19 +19,18 @@ import (
 // BootSanDeviceRelationship - A relationship to the 'boot.SanDevice' resource, or the expanded 'boot.SanDevice' resource, or the 'null' value.
 type BootSanDeviceRelationship struct {
 	BootSanDevice *BootSanDevice
-	MoMoRef *MoMoRef
+	MoMoRef       *MoMoRef
 }
 
 // BootSanDeviceAsBootSanDeviceRelationship is a convenience function that returns BootSanDevice wrapped in BootSanDeviceRelationship
 func BootSanDeviceAsBootSanDeviceRelationship(v *BootSanDevice) BootSanDeviceRelationship {
-	return BootSanDeviceRelationship{ BootSanDevice: v}
+	return BootSanDeviceRelationship{BootSanDevice: v}
 }
 
 // MoMoRefAsBootSanDeviceRelationship is a convenience function that returns MoMoRef wrapped in BootSanDeviceRelationship
 func MoMoRefAsBootSanDeviceRelationship(v *MoMoRef) BootSanDeviceRelationship {
-	return BootSanDeviceRelationship{ MoMoRef: v}
+	return BootSanDeviceRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BootSanDeviceRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BootSanDeviceRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BootSanDeviceRelationship) GetActualInstance() (interface{}) {
+func (obj *BootSanDeviceRelationship) GetActualInstance() interface{} {
 	if obj.BootSanDevice != nil {
 		return obj.BootSanDevice
 	}
@@ -137,5 +136,3 @@ func (v *NullableBootSanDeviceRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

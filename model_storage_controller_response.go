@@ -18,32 +18,31 @@ import (
 
 // StorageControllerResponse - The response body of a HTTP GET request for the 'storage.Controller' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'storage.Controller' resources.
 type StorageControllerResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform  *MoAggregateTransform
+	MoDocumentCount       *MoDocumentCount
+	MoTagSummary          *MoTagSummary
 	StorageControllerList *StorageControllerList
 }
 
 // MoAggregateTransformAsStorageControllerResponse is a convenience function that returns MoAggregateTransform wrapped in StorageControllerResponse
 func MoAggregateTransformAsStorageControllerResponse(v *MoAggregateTransform) StorageControllerResponse {
-	return StorageControllerResponse{ MoAggregateTransform: v}
+	return StorageControllerResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsStorageControllerResponse is a convenience function that returns MoDocumentCount wrapped in StorageControllerResponse
 func MoDocumentCountAsStorageControllerResponse(v *MoDocumentCount) StorageControllerResponse {
-	return StorageControllerResponse{ MoDocumentCount: v}
+	return StorageControllerResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsStorageControllerResponse is a convenience function that returns MoTagSummary wrapped in StorageControllerResponse
 func MoTagSummaryAsStorageControllerResponse(v *MoTagSummary) StorageControllerResponse {
-	return StorageControllerResponse{ MoTagSummary: v}
+	return StorageControllerResponse{MoTagSummary: v}
 }
 
 // StorageControllerListAsStorageControllerResponse is a convenience function that returns StorageControllerList wrapped in StorageControllerResponse
 func StorageControllerListAsStorageControllerResponse(v *StorageControllerList) StorageControllerResponse {
-	return StorageControllerResponse{ StorageControllerList: v}
+	return StorageControllerResponse{StorageControllerList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageControllerResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src StorageControllerResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageControllerResponse) GetActualInstance() (interface{}) {
+func (obj *StorageControllerResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableStorageControllerResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

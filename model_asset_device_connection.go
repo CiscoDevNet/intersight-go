@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // AssetDeviceConnection An abstract class that holds the details of a device connectors connection to Intersight.
@@ -42,7 +42,7 @@ type AssetDeviceConnection struct {
 	// The IP Address of the managed device as seen from Intersight at the time of registration. This could be the IP address of the managed device's interface which has a route to the internet or a NAT IP addresss when the managed device is deployed in a private network.
 	DeviceExternalIpAddress *string `json:"DeviceExternalIpAddress,omitempty"`
 	// The name of the app which will proxy the messages to the device connector.
-	ProxyApp *string `json:"ProxyApp,omitempty"`
+	ProxyApp             *string `json:"ProxyApp,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *AssetDeviceConnection) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeviceConnection) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *AssetDeviceConnection) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeviceConnection) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -584,5 +584,3 @@ func (v *NullableAssetDeviceConnection) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

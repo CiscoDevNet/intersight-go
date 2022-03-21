@@ -27,10 +27,10 @@ type StoragePureSnapshotSchedule struct {
 	// Total number of snapshots per day to be available on source above and over the specified retention time. PureStorage FlashArray maintains all created snapshot until retention period. Daily limit is applied only on the snapshots once retention time is expired. In case of, daily limit is less than the number of snapshot available on source, system select snapshots evenly spaced out throughout the day.
 	DailyLimit *int64 `json:"DailyLimit,omitempty"`
 	// Duration to keep the daily limit snapshots on source array. StorageArray deletes the snapshots permanently from source beyond this period.
-	SnapshotExpiryTime *string `json:"SnapshotExpiryTime,omitempty"`
-	Array *StoragePureArrayRelationship `json:"Array,omitempty"`
-	ProtectionGroup *StoragePureProtectionGroupRelationship `json:"ProtectionGroup,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SnapshotExpiryTime   *string                                 `json:"SnapshotExpiryTime,omitempty"`
+	Array                *StoragePureArrayRelationship           `json:"Array,omitempty"`
+	ProtectionGroup      *StoragePureProtectionGroupRelationship `json:"ProtectionGroup,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *StoragePureSnapshotSchedule) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StoragePureSnapshotSchedule) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *StoragePureSnapshotSchedule) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StoragePureSnapshotSchedule) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -315,10 +315,10 @@ func (o *StoragePureSnapshotSchedule) UnmarshalJSON(bytes []byte) (err error) {
 		// Total number of snapshots per day to be available on source above and over the specified retention time. PureStorage FlashArray maintains all created snapshot until retention period. Daily limit is applied only on the snapshots once retention time is expired. In case of, daily limit is less than the number of snapshot available on source, system select snapshots evenly spaced out throughout the day.
 		DailyLimit *int64 `json:"DailyLimit,omitempty"`
 		// Duration to keep the daily limit snapshots on source array. StorageArray deletes the snapshots permanently from source beyond this period.
-		SnapshotExpiryTime *string `json:"SnapshotExpiryTime,omitempty"`
-		Array *StoragePureArrayRelationship `json:"Array,omitempty"`
-		ProtectionGroup *StoragePureProtectionGroupRelationship `json:"ProtectionGroup,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		SnapshotExpiryTime *string                                 `json:"SnapshotExpiryTime,omitempty"`
+		Array              *StoragePureArrayRelationship           `json:"Array,omitempty"`
+		ProtectionGroup    *StoragePureProtectionGroupRelationship `json:"ProtectionGroup,omitempty"`
+		RegisteredDevice   *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	}
 
 	varStoragePureSnapshotScheduleWithoutEmbeddedStruct := StoragePureSnapshotScheduleWithoutEmbeddedStruct{}
@@ -417,5 +417,3 @@ func (v *NullableStoragePureSnapshotSchedule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
